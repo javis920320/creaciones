@@ -26,11 +26,16 @@ class Mlogin extends CI_Model
 
 		if ($resul->num_rows()>0) {
 			//return'usuario encontrado';
-			while ($r=$resul->fetch_array) {
-				$retu[]=$r;
-			}
 
-			return $retu;
+			$res=$resul->row();
+			if (isset($res)) {
+
+				return$res->tipouser;
+			} else {
+				return'nada';
+			}
+			
+
 		
 		} else {
 			$resp='Usuario no existe o esta inactivo';
