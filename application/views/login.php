@@ -8,7 +8,7 @@ $msn='';
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Log in</title>
+  <title>Admin| Log in</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -32,19 +32,19 @@ $msn='';
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="../../index2.html"><b>Admin</b>LTE</a>
+    <a href="../../index2.html"><b>Admin</b>Creaciones</a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
     <p class="login-box-msg">Ingresan  Tus  Datos</p>
 
-    <form action="loginuser/logueo" method="post">
+    <form action="<?php echo base_url();?>index.php/loginuser/logueo" method="POST">
       <div class="form-group has-feedback">
-        <input type="text" class="form-control"  name="txtUsuario" placeholder="Usuario">
+        <input type="text" class="form-control"  name="txtUsuario" placeholder="Usuario" required>
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="password" class="form-control" name="txtPass" placeholder="Password">
+        <input type="password" class="form-control" name="txtPass" placeholder="Password" required>
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="row">

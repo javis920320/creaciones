@@ -1,8 +1,6 @@
 <?php 
 
-/**
-* 
-*/
+
 class Loginuser extends CI_Controller
 {
 	
@@ -13,12 +11,27 @@ class Loginuser extends CI_Controller
 
 	}
 
-
+public function index(){
+	$this->load->view('login');
+}
 
 	public  function logueo(){
-		$user=$this->input->post('txtUsuario');
 
-		echo "hola"+$user;
+		$param[]= array();
+
+
+		$param['user']=$this->input->post("txtUsuario");	
+		$param['pass']=$this->input->post("txtPass");
+	
+
+
+	// cargar el modelo  de logueo
+
+		$res=$this->mlogin->loguear($param);
+		echo $res;
+
+	
+		
 
 
 	}
