@@ -7,7 +7,7 @@ class Mlogin extends CI_Model
 	
 	function __construct()
 	{
-		# code...
+		parent::__construct();
 	}
 
 
@@ -15,31 +15,37 @@ class Mlogin extends CI_Model
 	
 
 	//consultas en  base de  datos 
-		$this->db->select('u.name , u.password');
+		/*$this->db->select('u.name , u.password');
 		$this->db->from('usuarios u');
 		$this->db->where('u.name',$param['user']);
 		$this->db->where('u.password',$param['pass']);
-		$this->db->where ('u.tipouser','1');
+		$this->db->where ('u.tipouser','1');*/
+
+	$this->db->select('u.name,u.password')->from('usuarios u');//->where('u.tipouser=',1);
 
 		$resul=$this->db->get();
 
 
 		if ($resul->num_rows()>0) {
+
+			$p=$resul->row();
 			//return'usuario encontrado';
 
-			$res=$resul->row();
-			if (isset($res)) {
+			$r = array(
+				'id' => $p->name,
+				'pass'=>$p->password
 
-				return$res->tipouser;
-			} else {
-				return'nada';
-			}
+
+						 );
+
+			$this->session->set_userdata($r);
+
+
 			
-
+		return $this->session->userdata('id');
 		
 		} else {
-			$resp='Usuario no existe o esta inactivo';
-			redirect('loginuser/',$resp);
+			return 0;
 		}
 		
 

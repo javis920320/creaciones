@@ -28,7 +28,7 @@ public function index(){
 	// cargar el modelo  de logueo
 
 		$res=$this->mlogin->loguear($param);
-		echo $res;
+	echo$res;
 
 	
 		
