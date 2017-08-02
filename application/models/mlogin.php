@@ -1,7 +1,5 @@
 <?php 
-/**
-* 
-*/
+
 class Mlogin extends CI_Model
 {
 	
@@ -15,12 +13,7 @@ class Mlogin extends CI_Model
 	
 
 	//consultas en  base de  datos 
-		/*$this->db->select('u.name , u.password');
-		$this->db->from('usuarios u');
-		$this->db->where('u.name',$param['user']);
-		$this->db->where('u.password',$param['pass']);
-		$this->db->where ('u.tipouser','1');*/
-
+		
 	$this->db->select('u.name,u.password,u.tipouser')->from('usuarios u')->where('u.name=',$param['user'])->where('u.password=',$param['pass'])->where('u.tipouser=',1);
 
 		$resul=$this->db->get();

@@ -12,7 +12,10 @@ class Loginuser extends CI_Controller
 	}
 
 public function index(){
-	$this->load->view('login');
+
+
+	$data['msn']="";
+	$this->load->view('login',$data);
 }
 
 	public  function logueo(){
@@ -50,7 +53,8 @@ public function index(){
 
 
 		}else{
-			echo "Usuario no existe o esta inactivo";
+			$data['msn']='Usuario incorrecto o no Activo';
+			$this->load->view('login',$data);
 
 		}
 	
