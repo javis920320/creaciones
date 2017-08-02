@@ -15,37 +15,43 @@ class Mlogin extends CI_Model
 	
 
 	//consultas en  base de  datos 
-		$this->db->select('u.name , u.password');
+		/*$this->db->select('u.name , u.password');
 		$this->db->from('usuarios u');
 		$this->db->where('u.name',$param['user']);
 		$this->db->where('u.password',$param['pass']);
-		$this->db->where ('u.tipouser','1');
+		$this->db->where ('u.tipo','1');/*/
+		//$this->db->select('persona_idpersona,name')->from('usuarios')->where('name',$param['user'])->where('password',$param['pass']);
 
-		$resul=$this->db->get();
-
-
-		if ($resul->num_rows()>0) {
-			//return'usuario encontrado';
-
-			$res=$resul->row();
-			if (isset($res)) {
-
-				return$res->tipouser;
-			} else {
-				return'nada';
-			}
-			
+		$this->db->query("SELECT  FROM usuarios where name=".$param['user']." ");
 
 		
-		} else {
-			$resp='Usuario no existe o esta inactivo';
-			redirect('loginuser/',$resp);
-		}
+	 $resultado=$this->db->get();
+
+	   if ($resultado->num_rows() == 1) {
+	  		$res=$resultado->row();
+
+
+	  		$r = array(
+
+	  			'session_id' => $res->persona_idpersona, 
+	  			'session_nombre' => $res->name 
+
+
+	  			);
+		    $this->load->library('session');
+	  		$this->session->set_userdata($r);
+	  		return 1;
+
+	   } else {
+	   	return 0;
+	   }
 		
 
 
 
 	}
+
+
 }
 
  ?>
