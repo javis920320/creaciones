@@ -28,7 +28,32 @@ public function index(){
 	// cargar el modelo  de logueo
 
 		$res=$this->mlogin->loguear($param);
-	echo$res;
+		if ($res==1){
+
+			$datos=$this->session->userdata('tipouser');
+			
+		switch ($datos) {
+				case 0:
+					echo'Usuario Ventas';
+					break;
+
+					case 1:
+						$this->load->view('welcome_message');
+						break;
+				
+				default:
+					echo'Tipo User no identity';
+					break;
+			}
+			
+
+
+
+		}else{
+			echo "Usuario no existe o esta inactivo";
+
+		}
+	
 
 	
 		
