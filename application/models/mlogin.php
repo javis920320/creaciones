@@ -1,5 +1,5 @@
 <?php 
-
+if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 class Mlogin extends CI_Model
 {
 	
@@ -14,7 +14,14 @@ class Mlogin extends CI_Model
 
 	//consultas en  base de  datos 
 		
-	$this->db->select('u.name,u.password,u.tipo,u.estado,u.persona_idpersona')->from('usuarios u')->where('u.name=',$param['user'])->where('u.password=',$param['pass'])->where('u.estado=',1);
+
+		/**/
+	//$this->db->select('u.name,u.password,u.tipo,u.estado,u.persona_idpersona')->from('usuarios u')->where('u.name=',$param['user'])->where('u.password=',$param['pass'])->where('u.estado=',1);
+$this->db->select('u.name,u.password,u.tipo,u.estado,u.persona_idpersona,p.nombres');
+$this->db->from('usuarios u');
+$this->db->join('persona p','p.idpersona=u.persona_idpersona');
+$this->db->where('u.name=',$param['user']);
+$this->db->where('u.password=',$param['pass']);
 
 		$resul=$this->db->get();
 
@@ -27,7 +34,8 @@ class Mlogin extends CI_Model
 			$r = array(
 				'id' => $p->persona_idpersona,
 				'name'=>$p->name,
-				'tipo'=>$p->tipo
+				'tipo'=>$p->tipo,
+				'nombres'=>$p->nombres
 
 
 						 );

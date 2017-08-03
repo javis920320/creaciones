@@ -51,8 +51,11 @@
 <script src="<?php echo  base_url();?>assets/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="<?php echo  base_url();?>assets/plugins/datatables/dataTables.bootstrap.min.js"></script>
 
+<script type="text/javascript" src="<?php echo base_url();?>js/fpedidos.js"></script>
+
+
 <?php  if($this->uri->segment(1)=='loginUser'){ ?>
-<script src="<?php echo  base_url();?>js/functions.js"></script>
+<script src="<?php echo  base_url();?>js/fpedidos.js"></script>
 <?php  }?>
 
 <?php  if($this->uri->segment(1)=='clibros'){ ?>

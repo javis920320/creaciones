@@ -34,19 +34,21 @@ public function index(){
 		if ($res==1){
 
 			$datos=$this->session->userdata('tipo');
+			$nombres['nombres']=$this->session->userdata('nombres');
 			
 		switch ($datos) {
 				case 0:
 				        $this->load->view('layou/header');
-						$this->load->view('layou/menu');
-						$this->load->view('vendedor/vivendedor');		
+						$this->load->view('layou/menu',$nombres);
+						$this->load->view('vendedor/vivendedor',$nombres);		
 						$this->load->view('layou/footer');
 					//echo'Usuario Ventas';
 					break;
 
 					case 1:
+					
 						$this->load->view('layou/header');
-						$this->load->view('layou/menu');		
+						$this->load->view('layou/menu',$nombres);		
 						$this->load->view('layou/footer');
 						break;
 				
