@@ -1,5 +1,4 @@
 <?php
-$msn='';
 
 ?>
 
@@ -36,7 +35,7 @@ $msn='';
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
-    <p class="login-box-msg">Ingresan  Tus  Datos</p>
+    <p class="login-box-msg">Ingresa Tus  Datos</p>
 
     <form action="<?php echo base_url();?>index.php/loginuser/logueo" method="POST">
       <div class="form-group has-feedback">

@@ -1,13 +1,11 @@
 <?php 
-/**
-* 
-*/
+
 class Mlogin extends CI_Model
 {
 	
 	function __construct()
 	{
-		# code...
+		parent::__construct();
 	}
 
 
@@ -15,12 +13,17 @@ class Mlogin extends CI_Model
 	
 
 	//consultas en  base de  datos 
+<<<<<<< HEAD
 		/*$this->db->select('u.name , u.password');
 		$this->db->from('usuarios u');
 		$this->db->where('u.name',$param['user']);
 		$this->db->where('u.password',$param['pass']);
 		$this->db->where ('u.tipo','1');/*/
 		//$this->db->select('persona_idpersona,name')->from('usuarios')->where('name',$param['user'])->where('password',$param['pass']);
+=======
+		
+	$this->db->select('u.name,u.password,u.tipouser')->from('usuarios u')->where('u.name=',$param['user'])->where('u.password=',$param['pass'])->where('u.tipouser=',1);
+>>>>>>> 185f8d0f33714c7834defdae6f21ec0ec320aed3
 
 		$this->db->query("SELECT  FROM usuarios where name=".$param['user']." ");
 
@@ -48,21 +51,26 @@ class Mlogin extends CI_Model
 	   }
 =======
 		if ($resul->num_rows()>0) {
+
+			$p=$resul->row();
 			//return'usuario encontrado';
 
-			$res=$resul->row();
-			if (isset($res)) {
+			$r = array(
+				'id' => $p->name,
+				'pass'=>$p->password,
+				'tipouser'=>$p->tipouser
 
-				return$res->tipouser;
-			} else {
-				return'nada';
-			}
+
+						 );
+
+			$this->session->set_userdata($r);
+
+
 			
-
+		return 1;
 		
 		} else {
-			$resp='Usuario no existe o esta inactivo';
-			redirect('loginuser/',$resp);
+			return 0;
 		}
 >>>>>>> c8359a81ccb16a9a69a1d93902c351cf8826bf5c
 		
