@@ -27,6 +27,7 @@ class Mlogin extends CI_Model
 		
 	 $resultado=$this->db->get();
 
+<<<<<<< HEAD
 	   if ($resultado->num_rows() == 1) {
 	  		$res=$resultado->row();
 
@@ -45,6 +46,25 @@ class Mlogin extends CI_Model
 	   } else {
 	   	return 0;
 	   }
+=======
+		if ($resul->num_rows()>0) {
+			//return'usuario encontrado';
+
+			$res=$resul->row();
+			if (isset($res)) {
+
+				return$res->tipouser;
+			} else {
+				return'nada';
+			}
+			
+
+		
+		} else {
+			$resp='Usuario no existe o esta inactivo';
+			redirect('loginuser/',$resp);
+		}
+>>>>>>> c8359a81ccb16a9a69a1d93902c351cf8826bf5c
 		
 
 
