@@ -14,7 +14,7 @@ class Loginuser extends CI_Controller
 public function index(){
 
 
-	$data['msn']="";
+	$dat['msn']="";
 	$this->load->view('login',$data);
 }
 
@@ -31,20 +31,23 @@ public function index(){
 	// cargar el modelo  de logueo
 
 		$res=$this->mlogin->loguear($param);
-<<<<<<< HEAD
-		echo $this->session->userdata('session_id');
-=======
 		if ($res==1){
 
-			$datos=$this->session->userdata('tipouser');
+			$datos=$this->session->userdata('tipo');
 			
 		switch ($datos) {
 				case 0:
-					echo'Usuario Ventas';
+				        $this->load->view('layou/header');
+						$this->load->view('layou/menu');
+						$this->load->view('vendedor/vivendedor');		
+						$this->load->view('layou/footer');
+					//echo'Usuario Ventas';
 					break;
 
 					case 1:
-						$this->load->view('welcome_message');
+						$this->load->view('layou/header');
+						$this->load->view('layou/menu');		
+						$this->load->view('layou/footer');
 						break;
 				
 				default:
@@ -61,7 +64,6 @@ public function index(){
 
 		}
 	
->>>>>>> 185f8d0f33714c7834defdae6f21ec0ec320aed3
 
 	
 		
