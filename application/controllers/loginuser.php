@@ -14,7 +14,7 @@ class Loginuser extends CI_Controller
 public function index(){
 
 
-	$dat['msn']="";
+	$data['msn']="";
 	$this->load->view('login',$data);
 }
 
@@ -38,16 +38,17 @@ public function index(){
 			
 		switch ($datos) {
 				case 0:
-				        $this->load->view('layou/header');
+				        /*$this->load->view('layou/header');
 						$this->load->view('layou/menu',$nombres);
 						$this->load->view('vendedor/vivendedor',$nombres);		
-						$this->load->view('layou/footer');
+						$this->load->view('layou/footer');*/
 					//echo'Usuario Ventas';
+						redirect('cpedidoscliente/buscarcliente');
 					break;
 
 					case 1:
 					
-						$this->load->view('layou/header');
+						$this->load->view('layou/header',$nombres);
 						$this->load->view('layou/menu',$nombres);		
 						$this->load->view('layou/footer');
 						break;

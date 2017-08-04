@@ -7,6 +7,15 @@
 
 </head>
 <body>
+	<style type="text/css">
+	.loader{
+	display: none;
+	margin-left: 200px;
+	margin-top: -45px;
+	position: absolute;
+		}
+
+	</style>
 	<h2><strong>Configurando  Vista...</strong></h2>
 
 	<strong><?php echo$nombres;?></strong>
@@ -14,26 +23,13 @@
 
 	<div class="container">
 	 <div class="row">
-	 	<div class="content-wraper">
 
-	 		<div>
-	 			<h1><strong class='text-danger'>Informacion del Cliente</strong></h1>
-	 		</div>
-	 	       <form class='form-inline' name='formcliente'  action='<?php echo base_url();?>cajax/buscarcliente'id='formulario_ajax' method="post">
-	 			<div class="form-group">
-	 			<label for="exampleInputName2">*</label>
-	 				<input  class='form-control'type='text' placeholder='ID/Cedula' name='txtcedulabus'id='txtcedulabus' required='true'>
-
-	 			</div>
-
-	 		
-
-	 			<input type="submit" value="Enviar mensaje" title="Enviar mensaje">
-	 		</form>
-			
-		</div>
+	 	<input type='text' class='form-control' id='txtbuscarcliente'>
+	 	<button id='btnbuscar'>Presione</button>
+	 	
 
 	 </div>
+	 <div class='loader' type='hidden'> aqui</div>
 	</div>
 </body>
 </html>
