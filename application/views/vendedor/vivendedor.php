@@ -29,7 +29,7 @@
 	 	
 
 	 </div>
-	 <div class='loader' type='hidden'> aqui</div>
+
 	</div>
 </body>
 </html>
