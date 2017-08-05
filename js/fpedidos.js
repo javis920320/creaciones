@@ -1,9 +1,10 @@
-$('#btnbuscar').on('click',function(){
+alert('ssss');
+/*$('#btnbuscar').on('click',function(){
 
- var id=$('#txtbuscarcliente').val();
+ //var id=$('#txtbuscarcliente').val();
  alert(id);
 
-	 $.post(baseurl="",
+	/*$.post(baseurl="cajax/buscarcliente",
 	        {texto:id},
 	 	function(data){
 	 		alert(data);
