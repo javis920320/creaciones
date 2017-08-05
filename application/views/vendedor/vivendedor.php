@@ -29,7 +29,7 @@
 	 	
 
 	 </div>
-	 <div class='loader' type='hidden'> aqui</div>
+	 <div class='' id='respuesta'></div>
 	</div>
 </body>
 </html>

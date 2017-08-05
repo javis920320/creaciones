@@ -1,13 +1,11 @@
-$('#btnbuscar').on('click',function(){
+$('#btnbuscar').on ('click',function(){
 
- var id=$('#txtbuscarcliente').val();
- alert(id);
+	 var buscar=$('#txtbuscarcliente').val();
 
-	 $.post(baseurl="",
-	        {texto:id},
-	 	function(data){
-	 		alert(data);
+$.post("http://localhost/creaciones/index.php/cajax/buscarcliente",
+	{id: buscar},
+       function(data){
+		alert(data);
 
-	 });
 });
-
+});

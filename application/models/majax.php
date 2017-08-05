@@ -12,7 +12,7 @@ class Majax extends CI_Model
 	public  function buscarcliente($identificacion){
 
 
-		/*$this->db->select('idpersona,apellidos,genero,fecha_nac,telefono');
+		$this->db->select('idpersona,apellidos,genero,fecha_nac,telefono');
 		$this->db->from('persona');
 		$this->db->where('idpersona=',$identificacion['identificacion']);
 		$resultados= $this->db->get();
@@ -28,8 +28,8 @@ class Majax extends CI_Model
 		}
 
 
-*/
-return 0;
+
+
 
 
 

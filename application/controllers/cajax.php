@@ -16,10 +16,10 @@ class Cajax extends CI_Controller
 
 	public  function buscarcliente(){
 
-		$cc['identificacion']=$this->input->post("txtcedulabus");
+		$cc['identificacion']=$this->input->post("id");
 
 		//$res=$this->buscarcliente($cc);
-		echo $cc['identificacion'];
+		echo$cc['identificacion'];
 
 
 
