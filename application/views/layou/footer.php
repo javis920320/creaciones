@@ -4,7 +4,7 @@
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.3.6
     </div>
-    <strong>Copyright &copy; 2014-2016 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights
+    <strong>Copyright &copy; 2017 <a href="http://almsaeedstudio.com"> Studio</a>.</strong> All rights
     reserved.
   </footer>
 
@@ -51,10 +51,10 @@
 <script src="<?php echo  base_url();?>assets/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="<?php echo  base_url();?>assets/plugins/datatables/dataTables.bootstrap.min.js"></script>
 
-<script type="text/javascript" src="<?php echo base_url();?>js/fpedidos.js"></script>
+<!--<script type="text/javascript" src="<?php echo base_url();?>js/fpedidos.js"></script>-->
 
 
-<?php  if($this->uri->segment(1)=='loginUser'){ ?>
+<?php  if($this->uri->segment(1)=='cpedidoscliente'){ ?>
 <script src="<?php echo  base_url();?>js/fpedidos.js"></script>
 <?php  }?>
 
