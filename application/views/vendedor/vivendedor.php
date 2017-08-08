@@ -27,6 +27,8 @@
 	 	<input type='text' class='form-control' id='txtbuscarcliente'>
 	 	<button id='btnbuscar'>Presione</button>
 
+	 	<div class='hide' id='msn'><span class='text-primary'>Cliente Ingresado correctamente</span></div>
+
 	 	<div class="hide" id='formcliente'>
 	 		
 	 		<form id='insertcliente'>

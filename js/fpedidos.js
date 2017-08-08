@@ -7,7 +7,7 @@ $('#btnbuscar').on ('click',function(){
 	 var buscar=$('#txtbuscarcliente').val();
 //alert(buscar);
 
-$.post("http://localhost/creaciones001/cajax/buscarcliente",
+$.post("http://localhost/creaciones/cajax/buscarcliente",
 	{id : buscar},
        function(data){
        	alert(data);
@@ -45,11 +45,13 @@ $('#insertcliente').submit(function(){
 
 
 $.ajax({
-	url:'http://localhost/creaciones001/cajax/ingresarCliente',
+	url:'http://localhost/creaciones/cajax/ingresarCliente',
 	type:'POST',
 	data:dato,
 	success:function(data){
-		alert(data);
+		if(data){
+			$('.msn').removeClass('hide');
+		}
 
 	}
 	});

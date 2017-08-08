@@ -50,7 +50,9 @@ class Majax extends CI_Model
 
 			$this->db->insert('persona',$datos);
 
-			return $this->db->insert_id();
+			//return $this->db->insert_id();
+
+			return true;
 	}
 
 
@@ -61,7 +63,7 @@ class Majax extends CI_Model
 			'idcliente' =>'null' ,
 			'persona_idpersona'=>$arreglo['idpersona']
 		 );
-		$this->db->insert($datos);
+		$this->db->insert('cliente',$datos);
 
 
 

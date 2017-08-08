@@ -50,14 +50,20 @@ class Cajax extends CI_Controller
 			);
 
 		$resp=$this->majax->insertarcliente($arreglo);
+		if($resp){
 
-		if($resp>0){
-			$arreglo['idpersona']=$resp;
+			$this->majax->clienteinsert($arreglo);
+
+		}
+		//echo$resp;
+
+		/*if($resp>0){
+			$arreglo['last_id']=$resp;
 			$this->majax->clienteinsert($arreglo);
 
 
 
-		}
+		}*/
 
 	}
 }
