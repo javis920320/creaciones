@@ -26,14 +26,29 @@
 
 	 	<input type='text' class='form-control' id='txtbuscarcliente'>
 	 	<button id='btnbuscar'>Presione</button>
+
+	 	<div class="hide" id='formcliente'>
+	 		
+	 		<form id='insertcliente'>
+
+	 			<input type="text" id='identidad' class="hide" name='identidad'>
+	 			<input type="text" placeholder="Apellidos" class="form-control" name='apellidos'>
+	 			<input type="text" placeholder="Nombres" class="form-control" id='nombres' name='nombres'>
+	 			<input type="radio" name="genero" value="M" checked> Masculino<br>
+  				<input type="radio" name="genero" value="F"> Femenino<br>
+	 			<input type="date" class="form-control" name='fecha_nac'>
+
+	 			<input type="text"  placeholder="Celular" class="form-control" name='celular'>
+
+	 			<input type="submit" value="Ingresar Cliente" title="Presionar">
+	 		</form>
+	 	</div>
 	 	
 
 	 </div>
-<<<<<<< HEAD
-	 <div class='' id='respuesta'></div>
-=======
 
->>>>>>> ae8358f5b2d10d7b386ffb8ade1eaee817229481
+	 <div class='' id='respuesta'></div>
+
 	</div>
 </body>
 </html>
