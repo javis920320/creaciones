@@ -13,16 +13,17 @@ class Majax extends CI_Model
 
 		
 
-		$this->db->select('p.idpersona');
+		$this->db->select('*');
 		$this->db->from('persona p');
 		$this->db->join('cliente c','c.persona_idpersona=p.idpersona');
-		$this->db->where('p.idpersona=',$cc['identificacion']);
+		$this->db->where('c.persona_idpersona=',$cc['identificacion']);
 		$resultados= $this->db->get();
 
 		if($resultados->num_rows()>0){
-			/*$r=$resultados->row();
-			 $arrglo = array('' => , );*/
-			 return $resultados;
+			//$r=$resultados->row();
+			 //$arreglo = array('nombre' => $r->nombres );
+			return $resultados;
+			// return $arreglo;
 
 		}else{
 

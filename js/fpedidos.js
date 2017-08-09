@@ -10,28 +10,27 @@ $('#btnbuscar').on ('click',function(){
 $.post("http://localhost/creaciones/cajax/buscarcliente",
 	{id : buscar},
        function(data){
-       	alert(data);
-       	alert('si respuestas');
+       
 		if(data==0){
+			console.log(data);
 			$('#formcliente').removeClass('hide');
 
 			$('#identidad').val(buscar);
 
 		}else{
+			console.log(data);
 
 			 var obj=JSON.parse(data);
 
-			salida='';
+			
 
-			each(obj,function(i,item){
-				salida+='<table>'+
-				'<tr><td>'+item.nombres+'</td><tr>';
+			 $.each(obj,function(i,item){
+				$(".contenedor_json").append('<li>' + item.nombres + '</li>');
 
 
 			});
-			$('#respuesta').append(salida);
-		
-			//$('#formcliente').addClass('hide');
+			
+			//$('#formcliente').addClass('hide');*/
 			
 		}
 

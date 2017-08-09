@@ -19,8 +19,9 @@ class Cajax extends CI_Controller
 		$cc['identificacion']=$this->input->post("id");
 
 		$res=$this->majax->buscarcliente($cc);
-		//echo"Mi respuesta ajax".$cc['identificacion'];
+		
 		echo json_encode($res);
+		///echo $res;
 
 
 
