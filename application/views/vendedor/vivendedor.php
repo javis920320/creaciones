@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>Prestamos  libros</title>
+	<title>Pedidos Creaciones</title>
 
 
 </head>
@@ -41,6 +41,7 @@
 
 	 	<input type='text' class='form-control' id='txtbuscarcliente'>
 	 	<button id='btnbuscar'>Presione</button>
+	 	<div class='contenedor_json'></div>
 
 	 	<div class='hide' id='msn'><span class='text-primary'>Cliente Ingresado correctamente</span></div>
 
@@ -63,6 +64,25 @@
 	 	
 
 	 </div>
+
+
+	 <!-- /.box-header -->
+            <div class="box-body table-responsive no-padding">
+              <table  id='tblclientes' class="table table-hover">
+                <thead class="bg-primary">
+                <tr>
+                  <th>Codigo</th>
+                  <th>Nombres</th>
+                  <th>Apellidos</th>
+                  <th>Fecha nacimiento</th>
+                  <th>Genero</th>
+                  <th>telefono</th>
+                </tr>
+                </thead>
+                <tbody></tbody>
+                
+              </table>
+            </div>
 	        
 	       </div>
 	       <div class="modal-footer">
@@ -73,7 +93,7 @@
 	   </div>
 	 </div>
 
-	 <div class='contenedor_json'></div>
+	 
 
 	</div>
 </body>

@@ -55,16 +55,10 @@ class Cajax extends CI_Controller
 
 			$this->majax->clienteinsert($arreglo);
 
+			echo "Cliente  registrado correctamente";
+
 		}
-		//echo$resp;
 
-		/*if($resp>0){
-			$arreglo['last_id']=$resp;
-			$this->majax->clienteinsert($arreglo);
-
-
-
-		}*/
 
 	}
 }

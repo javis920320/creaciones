@@ -51,7 +51,7 @@ $.ajax({
 	data:dato,
 	success:function(data){
 		if(data){
-			$('.msn').removeClass('hide');
+			$('#msn').removeClass('hide');
 		}
 
 	}

@@ -35,14 +35,14 @@
 
 
 		//contador=contador+1;
-$('#tblLibros').DataTable({
+$('#tblclientes').DataTable({
 			'paging':true,
 			'info':true,
 			'filter':true,
 			'stateSave':true,
 
 			'ajax':{
-				"url":baseurl+"clibros/getLibros/",
+				"url":baseurl+"cclientes/getclientes/",
 				'type':'POST',
 				dataSrc:''
 			},
