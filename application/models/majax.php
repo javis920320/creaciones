@@ -21,9 +21,11 @@ class Majax extends CI_Model
 
 		if($resultados->num_rows()>0){
 			//$r=$resultados->row();
-			 //$arreglo = array('nombre' => $r->nombres );
-			return $resultados;
-			// return $arreglo;
+			 //$arreglo = array('nombre' => $r->nombres);
+			//return $r;
+			return $r=$resultados->result();
+
+			//return 1;
 
 		}else{
 

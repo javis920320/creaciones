@@ -21,7 +21,7 @@ class Cajax extends CI_Controller
 		$res=$this->majax->buscarcliente($cc);
 		
 		echo json_encode($res);
-		///echo $res;
+		//echo "Cliente ".$res['nombre']."Ya existe";
 
 
 
