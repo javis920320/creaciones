@@ -26,5 +26,13 @@ class Mclientes extends CI_Model
 
 
 	}
+
+	 public function updatecliente($param){
+
+
+	 	$this->db->where('idpersona',$param['idpersona']);
+	 	$this->db->update('persona',$param);
+
+	 }
 }
  ?>

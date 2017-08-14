@@ -21,6 +21,31 @@ class Cclientes extends CI_Controller
 
 
 	 }
+
+	 public  function updatecliente(){
+	 	//obtener datos del cliente
+
+	 	$param['idpersona']=1085298221;
+	 	$param['apellidos']='LOPEZ LOPEZ';
+	 	$param['nombres']='JAVIER ALEXANDER ';
+	 	$param['genero']='M';
+	 	$param['fecha_nac']='023323';
+	 	$param['telefono']='1234';
+
+	 	$param = array(
+	 		'idpersona' => $param['idpersona'],
+	 		'apellidos' => $param['apellidos'],
+	 		'nombres' => $param['nombres'],
+	 		'genero' => $param['genero'],
+	 		'fecha_nac' => $param['fecha_nac'],
+	 		'telefono'=> $param['telefono']
+
+	 		 );
+
+
+
+	 	$this->mclientes->updatecliente($param);
+	 }
 }
 
  ?>
