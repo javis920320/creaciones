@@ -42,18 +42,18 @@ $('#tblclientes').DataTable({
 			'stateSave':true,
 
 			'ajax':{
-				"url":baseurl+"cclientes/getclientes/",
+				"url":"http://localhost/creaciones001/cclientes/getclientes/",
 				'type':'POST',
 				dataSrc:''
 			},
 
 			'columns':[
-			{data: 'isbn','sClass':'dt-body-center'},
-			{data:'title'},
-			{data:'subtitle'},
-			{data:'author_id'},
-			{data:'description'},
-			{data:'year'},
+			{data: 'idpersona','sClass':'dt-body-center'},
+			{data:'apellidos'},
+			{data:'nombres'},
+			{data:'genero'},
+			{data:'fecha_nac'},
+			{data:'telefono'},
 			{"orderable":true,
 			render:function(data,type,row){
 
@@ -71,7 +71,7 @@ $('#tblclientes').DataTable({
 
 
 //PROBAMOS  EL  AJAX  PARA  EL INGRESO  DE   EL  REGISTRO
-$('#formIngreso').submit(function(){
+/*$('#formIngreso').submit(function(){
 	
    var datos = $('#formIngreso').serialize();
   
@@ -85,12 +85,13 @@ $('#formIngreso').submit(function(){
 
 	}
 
-	});
+	});*/
 
 
 
 
-});
+//});
+
 
 /*
 	}
@@ -107,6 +108,5 @@ $('#tblLibros').DataTable({
 			'info':true,
 			'filter':true
 		});	*/
-
 
 

@@ -15,7 +15,7 @@ class Cclientes extends CI_Controller
 
 	 	$param=$this->input->post('dato');
 
-	 	$res=$this->model->mclientes($param);
+	 	$res=$this->mclientes->getclientes($param);
 
 	 	echo json_encode($res);
 

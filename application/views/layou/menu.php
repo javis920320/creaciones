@@ -27,7 +27,7 @@
         <li class="header">Menu  de  Navegacion</li>
         <li class="active treeview">
           <a href="#">
-            <i class="fa fa-dashboard"></i> <span>Prestamo  Libros </span>
+            <i class="fa fa-dashboard"></i> <span>Pedidos </span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -40,13 +40,13 @@
 
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-folder"></i> <span>Libros</span>
+            <i class="fa fa-folder"></i> <span>CLientes</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url();?>clibros/lista_libros"><i class="fa fa-circle-o"></i> Ingresar libros</a></li>
+            <li><a href="<?php echo base_url();?>clibros/lista_libros"><i class="fa fa-circle-o"></i> Ingresar </a></li>
             <li><a href="pages/examples/profile.html"><i class="fa fa-circle-o"></i> Profile</a></li>
             <li><a href="pages/examples/login.html"><i class="fa fa-circle-o"></i> Login</a></li>
             <li><a href="pages/examples/register.html"><i class="fa fa-circle-o"></i> Register</a></li>

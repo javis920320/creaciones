@@ -66,23 +66,7 @@
 	 </div>
 
 
-	 <!-- /.box-header -->
-            <div class="box-body table-responsive no-padding">
-              <table  id='tblclientes' class="table table-hover">
-                <thead class="bg-primary">
-                <tr>
-                  <th>Codigo</th>
-                  <th>Nombres</th>
-                  <th>Apellidos</th>
-                  <th>Fecha nacimiento</th>
-                  <th>Genero</th>
-                  <th>telefono</th>
-                </tr>
-                </thead>
-                <tbody></tbody>
-                
-              </table>
-            </div>
+	 
 	        
 	       </div>
 	       <div class="modal-footer">
@@ -90,10 +74,64 @@
 	         <button type="button" class="btn btn-primary">Save changes</button>
 	       </div>
 	     </div>
+
 	   </div>
 	 </div>
+<!-- /.box-header -->
+        
+        <div class="col-xs-8">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Lista Clientes</h3><br><br>
+              
 
-	 
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body table-responsive no-padding">
+              <table  id='tblclientes' class="table table-hover">
+                <thead class="bg-primary">
+                <tr>
+                  <th>Identificacion</th>
+                  <th>Apellidos</th>
+                  <th>Nombres</th>
+                  <th>Genero</th>
+                  <th>Fecha Nacimiento</th>
+                   <th>Telefono</th>
+
+                  <th>Accion</th>
+                </tr>
+                </thead>
+                <tbody></tbody>
+                
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+
+
+
+    
+        
+        <!-- Modal -->
+        <div class="modal fade" id="modaleditar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+              </div>
+              <div class="modal-body">
+                ...
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
 
 	</div>
 </body>
