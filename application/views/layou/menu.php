@@ -34,6 +34,7 @@
           </a>
           <ul class="treeview-menu">
             <li class="active"><a href="<?php echo base_url();?>cprestamo_libro"><i class="fa fa-circle-o"></i> Ingreso  Registro</a></li>
+            <li class="active"><a href="<?php echo base_url();?>cpedidos"><i class="fa fa-circle-o"></i> Ingreso  Pedidos</a></li>
             <!--<li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>-->
           </ul>
         </li>
