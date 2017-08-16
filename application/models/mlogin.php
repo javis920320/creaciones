@@ -17,9 +17,9 @@ class Mlogin extends CI_Model
 
 		/**/
 	//$this->db->select('u.name,u.password,u.tipo,u.estado,u.persona_idpersona')->from('usuarios u')->where('u.name=',$param['user'])->where('u.password=',$param['pass'])->where('u.estado=',1);
-		$this->db->select('u.name,u.password,u.tipo,u.estado,u.persona_idpersona,p.nombres');
+		$this->db->select('u.name,u.password,u.tipo,u.estado,u.idpersona,p.nombres');
 		$this->db->from('usuarios u');
-		$this->db->join('persona p','p.idpersona=u.persona_idpersona');
+		$this->db->join('persona p','p.idpersona=u.idpersona');
 		$this->db->where('u.name=',$param['user']);
 		$this->db->where('u.password=',$param['pass']);
 

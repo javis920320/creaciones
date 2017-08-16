@@ -57,7 +57,7 @@ $('#tblclientes').DataTable({
 			{"orderable":true,
 			render:function(data,type,row){
 
-					return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" datatoggle="modal" data-target="#modaleditar"><i class=" fa fa-edit"></i></a>';
+					return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" title="Editar informacion" data-toggle="modal" data-target="#modalEditPersona"><i class=" fa fa-edit"></i></a>';
 					}
 			}
 
