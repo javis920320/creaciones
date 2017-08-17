@@ -10,6 +10,7 @@ $('#btnbuscar').on ('click',function(){
 $.post("http://localhost/creaciones001/cajax/buscarcliente",
 	{id : buscar},
        function(data){
+       	alert();
        
 		if(data==0){
 			console.log(data);

@@ -41,30 +41,31 @@ class Majax extends CI_Model
 	public  function insertarcliente($arreglo){
 
 		$datos = array(
-
-			'idpersona' =>$arreglo['idpersona'],
-			'apellidos'=>$arreglo['apellidos'],
+			'idpersona'=>$arreglo['llave'],
+			'cedula' =>$arreglo['idpersona'],
 			'nombres'=>$arreglo['nombres'],
-			'genero'=>$arreglo['genero'],
-			'fecha_nac'=>$arreglo['fecha_nac'],
 			'telefono'=>$arreglo['telefono']
 
 		 );
 
 			$this->db->insert('persona',$datos);
 
-			//return $this->db->insert_id();
+			$insert_id = $this->db->insert_id();
 
-			return true;
-	}
+   return  $insert_id;
+}
+
+			//return true;
+	
 
 
 
 	public function clienteinsert($arreglo){
 
 		$datos = array(
-			'idcliente' =>'null' ,
-			'persona_idpersona'=>$arreglo['idpersona']
+			'idcliente' =>null,
+			'estado'=>1,
+			'idpersona'=>$arreglo['foranea']
 		 );
 		$this->db->insert('cliente',$datos);
 

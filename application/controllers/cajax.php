@@ -36,22 +36,20 @@ class Cajax extends CI_Controller
 
 		$id=$this->input->post('identidad');
 		$nom=$this->input->post('nombres');
-		$ape=$this->input->post('apellidos');
-		$genero=$this->input->post('genero');
-		$fecha_nac=$this->input->post('fecha_nac');
 		$celular=$this->input->post('celular');
+		$a='';
 
 		$arreglo= array(
+			'llave'=>$a,
 			'idpersona'=>$id,
-			'apellidos'=>$ape,
 			'nombres'=>$nom,
-			'genero'=>$genero,
-			'fecha_nac'=>$fecha_nac,
+
 			'telefono'=>$celular
 			);
 
-		$resp=$this->majax->insertarcliente($arreglo);
+		$resp=$this->majax->clienteinsert($arreglo);
 		if($resp){
+			$arreglo['foranea']=$resp;
 
 			$this->majax->clienteinsert($arreglo);
 

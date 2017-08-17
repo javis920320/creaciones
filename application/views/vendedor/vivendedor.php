@@ -50,12 +50,7 @@
 	 		<form id='insertcliente'>
 
 	 			<input type="text" id='identidad' class="hide" name='identidad'>
-	 			<input type="text" placeholder="Apellidos" class="form-control" name='apellidos'>
-	 			<input type="text" placeholder="Nombres" class="form-control" id='nombres' name='nombres'>
-	 			<input type="radio" name="genero" value="M" checked> Masculino<br>
-  				<input type="radio" name="genero" value="F"> Femenino<br>
-	 			<input type="date" class="form-control" name='fecha_nac'>
-
+	 			<input type="text" placeholder="Ingresa tu nombre" class="form-control" id='nombres' name='nombres'>
 	 			<input type="text"  placeholder="Celular" class="form-control" name='celular'>
 
 	 			<input type="submit" value="Ingresar Cliente" title="Presionar">
