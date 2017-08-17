@@ -7,6 +7,7 @@ class Loginuser extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
+		
 		$this->load->model('mlogin');
 
 	}
@@ -14,8 +15,8 @@ class Loginuser extends CI_Controller
 public function index(){
 
 
-	$data['msn']=" ";
-	$this->load->view('login',$data);
+	$msn['msn']=" ";
+	$this->load->view('login',$msn);
 }
 
 	public  function logueo(){
