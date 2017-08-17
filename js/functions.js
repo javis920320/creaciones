@@ -48,23 +48,18 @@ $('#tblclientes').DataTable({
 			},
 
 			'columns':[
-			{data: 'idpersona','sClass':'dt-body-center'},
-			{data:'apellidos'},
+			{data: 'cedula','sClass':'dt-body-center'},
 			{data:'nombres'},
-			{data:'genero'},
-			{data:'fecha_nac'},
 			{data:'telefono'},
 			{"orderable":true,
 			render:function(data,type,row){
 
-<<<<<<< HEAD
+
 
 				
 
-					//return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" data-toggle="modal" data-target="#myModal"><i class=" fa fa-edit"></i></a>';
-=======
+					//return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" data-toggle="modal" data-target="#myModal"><i class=" fa fa-edit"></i></a
 					return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" title="Editar informacion" data-toggle="modal" data-target="#modalEditPersona"><i class=" fa fa-edit"></i></a>';
->>>>>>> b01e946ef54a38d115b9a78f6ffa9f2e53c405fc
 					}
 			}
 

@@ -16,9 +16,9 @@ class Mclientes extends CI_Model
 	public function getclientes($param){
 
 
-		$this->db->select('p.idpersona,p.nombres,p.apellidos,p.genero,p.fecha_nac,p.telefono');
+		$this->db->select('p.cedula,p.nombres,p.telefono');
 		$this->db->from('persona p');
-		$this->db->join('cliente c','c.persona_idpersona=p.idpersona');
+		$this->db->join('cliente c','c.idpersona=p.idpersona');
 		$resul=$this->db->get();
 		return $resul->result();
 

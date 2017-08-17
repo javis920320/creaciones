@@ -15,8 +15,8 @@ class Majax extends CI_Model
 
 		$this->db->select('p.nombres');
 		$this->db->from('persona p');
-		$this->db->join('cliente c','c.persona_idpersona=p.idpersona');
-		$this->db->where('c.persona_idpersona=',$cc['identificacion']);
+		$this->db->join('cliente c','c.idpersona=p.idpersona');
+		$this->db->where('p.cedula=',$cc['identificacion']);
 		$resultados= $this->db->get();
 
 		if($resultados->num_rows()>0){

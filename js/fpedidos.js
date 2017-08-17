@@ -29,7 +29,7 @@ $.post("http://localhost/creaciones001/cajax/buscarcliente",
 			
 
 			$.each(obj,function(i,items){
-				$(".contenedor_json").append('<span class="text-danger"><strong> El Cliente ' + items.nombres+'  '+items.apellidos + ' Ya se encuentra registrado..<strong></span>');
+				$(".contenedor_json").append('<span class="text-danger"><strong> El Cliente ' + items.nombres+ ' Ya se encuentra registrado..<strong></span>');
 			});
 			
 			//$('#formcliente').addClass('hide');*/

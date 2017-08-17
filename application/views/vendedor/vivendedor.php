@@ -79,7 +79,7 @@
 	 </div>
 <!-- /.box-header -->
         
-        <div class="col-xs-8">
+        <div class="col-xs-10 col-md-10">
           <div class="box">
             <div class="box-header">
               <h3 class="box-title">Lista Clientes</h3><br><br>
@@ -92,10 +92,7 @@
                 <thead class="bg-primary">
                 <tr>
                   <th>Identificacion</th>
-                  <th>Apellidos</th>
                   <th>Nombres</th>
-                  <th>Genero</th>
-                  <th>Fecha Nacimiento</th>
                    <th>Telefono</th>
 
                   <th>Accion</th>
