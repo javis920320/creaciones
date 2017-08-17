@@ -42,7 +42,7 @@ $('#tblclientes').DataTable({
 			'stateSave':true,
 
 			'ajax':{
-				"url":"http://localhost/creaciones/cclientes/getclientes/",
+				"url":"http://localhost/creaciones001/cclientes/getclientes/",
 				'type':'POST',
 				dataSrc:''
 			},
@@ -57,7 +57,10 @@ $('#tblclientes').DataTable({
 			{"orderable":true,
 			render:function(data,type,row){
 
-					return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" datatoggle="modal" data-target="#modaleditar"><i class=" fa fa-edit"></i></a>';
+
+				
+
+					//return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" data-toggle="modal" data-target="#myModal"><i class=" fa fa-edit"></i></a>';
 					}
 			}
 
@@ -69,44 +72,5 @@ $('#tblclientes').DataTable({
 		});	
 
 
-
-//PROBAMOS  EL  AJAX  PARA  EL INGRESO  DE   EL  REGISTRO
-/*$('#formIngreso').submit(function(){
-	
-   var datos = $('#formIngreso').serialize();
-  
-
-	$.ajax({
-	url:baseurl+'clibros/getingresolibros',
-	type:'POST',
-	data:datos,
-	success:function(resp){
-		alert(resp);
-
-	}
-
-	});*/
-
-
-
-
-//});
-
-
-/*
-	}
-
-
-
-	);
-
-
-
-
-$('#tblLibros').DataTable({
-			'paging':true,
-			'info':true,
-			'filter':true
-		});	*/
 
 
