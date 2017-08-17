@@ -41,8 +41,8 @@ class Majax extends CI_Model
 	public  function insertarcliente($arreglo){
 
 		$datos = array(
-			'idpersona'=>$arreglo['llave'],
-			'cedula' =>$arreglo['idpersona'],
+			'idpersona'=>NULL,
+			'cedula' =>$arreglo['cedula'],
 			'nombres'=>$arreglo['nombres'],
 			'telefono'=>$arreglo['telefono']
 
