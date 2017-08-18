@@ -48,12 +48,20 @@
 	 	<div class="hide" id='formcliente'>
 	 		
 	 		<form id='insertcliente'>
+	 		<div class="form-body">
 
+				<div class="form-group">
+					
+				</div>
 	 			<input type="text" id='identidad' class="hide" name='identidad'>
 	 			<input type="text" placeholder="Ingresa tu nombre" class="form-control" id='nombres' name='nombres'>
 	 			<input type="text"  placeholder="Celular" class="form-control" name='celular'>
 
 	 			<input type="submit" value="Ingresar Cliente" title="Presionar">
+	 			
+	 		</div>
+
+	 			
 	 		</form>
 	 	</div>
 	 	
