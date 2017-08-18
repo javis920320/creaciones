@@ -42,7 +42,7 @@ $('#tblclientes').DataTable({
 			'stateSave':true,
 
 			'ajax':{
-				"url":"http://localhost/creaciones001/cclientes/getclientes",
+				"url":"http://localhost/creaciones/cclientes/getclientes",
 				'type':'POST',
 				dataSrc:''
 			},

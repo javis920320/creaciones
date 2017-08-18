@@ -16,9 +16,8 @@
 		}
 
 	</style>
-	<h2><strong>Configurando  Vista...</strong></h2>
+	<h2><strong>Campo Atencion al Cliente...</strong></h2>
 
-	<strong><?php echo$nombres;?></strong>
 
 
 	<div class="container">
@@ -38,26 +37,52 @@
 	       </div>
 	       <div class="modal-body">
 	       	<div class="row">
+	       		<div class='col-xs-7 form-inline'>
+		       	<div class='form-group'>
+		       		<label for='txtbuscarcliente'>Documento de identidad</label>
+		       	<input type='text' class='form-control' id='txtbuscarcliente' placeholder='Inspeccionar identificacion'>
+		 		<button id='btnbuscar' class='btn btn-defaul btn-large'>Presione</button>
+	       		</div>
+	       		</div>
+	 	
+	 			<div class='contenedor_json'></div>
 
-	 	<input type='text' class='form-control' id='txtbuscarcliente'>
-	 	<button id='btnbuscar'>Presione</button>
-	 	<div class='contenedor_json'></div>
+	 			<div class='hide' id='msn'><span class='text-primary'>Cliente Ingresado correctamente</span></div>
 
-	 	<div class='hide' id='msn'><span class='text-primary'>Cliente Ingresado correctamente</span></div>
-
-	 	<div class="hide" id='formcliente'>
+	 			<div class="hide" id='formcliente'>
 	 		
 	 		<form id='insertcliente'>
 	 		<div class="form-body">
-
-				<div class="form-group">
-					
-				</div>
-	 			<input type="text" id='identidad' class="hide" name='identidad'>
+	 			<div class='col-xs-8'>
+	 				<div class="form-group">
+					<input type="text" id='identidad' class="hide" name='identidad'>
+					</div>
+	 			</div>
+				
+	 			<div class='col-xs-8'>
+	 			<div classs='form-group'>
+	 				<label for='nombres'>Nombres y Apellidos </label>
 	 			<input type="text" placeholder="Ingresa tu nombre" class="form-control" id='nombres' name='nombres'>
-	 			<input type="text"  placeholder="Celular" class="form-control" name='celular'>
+	 			</div>
+	 			</div>
+	 			<br>
+	 			<br>
 
-	 			<input type="submit" value="Ingresar Cliente" title="Presionar">
+
+	 			<div class='col-xs-8'>	
+	 			 <div class='form-group'>
+	 			 	<label for='celular'>Celular o telefono </label>
+	 			 <input type="text"  placeholder="Celular" class="form-control" name='celular'>
+	 			 </div>
+	 			</div>
+	 			
+	 			<div class='col-xs-8'>	
+	 			 <div class='form-group'>
+	 			 <input type="submit" value="Ingresar Cliente" title="Presionar" class='btn btn-success'>
+	 			 </div>
+
+	 			</div>
+	 			
 	 			
 	 		</div>
 
@@ -74,7 +99,7 @@
 	       </div>
 	       <div class="modal-footer">
 	         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	         <button type="button" class="btn btn-primary">Save changes</button>
+	        
 	       </div>
 	     </div>
 
@@ -85,7 +110,7 @@
         <div class="col-xs-10 col-md-10">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Lista Clientes</h3><br><br>
+              <h3 class="box-title" class='text-primary'>Listado Clientes Creaciones Goretti Pasto</h3><br><br>
               
 
             </div>
@@ -127,7 +152,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+               
               </div>
             </div>
           </div>
