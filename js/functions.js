@@ -42,7 +42,7 @@ $('#tblclientes').DataTable({
 			'stateSave':true,
 
 			'ajax':{
-				"url":"http://localhost/creaciones/cclientes/getclientes",
+				"url":"http://localhost/creaciones001/cclientes/getclientes",
 				'type':'POST',
 				dataSrc:''
 			},
@@ -59,7 +59,7 @@ $('#tblclientes').DataTable({
 				
 
 					//return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" data-toggle="modal" data-target="#myModal"><i class=" fa fa-edit"></i></a
-					return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" title="Editar informacion" data-toggle="modal" data-target="#modalEditPersona"><i class=" fa fa-edit"></i></a>';
+					return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" title="Editar informacion" data-toggle="modal" data-target="#modalEditPersona" onClick="selPersona(\''+row.cedula+'\',\''+row.nombres+'\',\''+row.telefono+'\');"><i class=" fa fa-edit"></i></a>';
 					}
 			}
 
@@ -69,6 +69,38 @@ $('#tblclientes').DataTable({
  "order":[[0,"asc"]],
 
 		});	
+
+
+
+
+//con esta funcion pasamos los paremtros a los text del modal.
+selPersona = function(cedula, nombres, telefono){
+	$('#upidpersona').val(cedula);
+	$('#upname').val(nombres);
+	$('#uptelefono').val(telefono);
+
+  
+};
+
+
+$('#formedit').submit(function(){
+
+	dato=$('#formedit').serialize();
+
+	$.ajax({
+	url:'http://localhost/creaciones001/cajax/updatecliente',
+	type:'POST',
+	data:dato,
+	success:function(data){
+		alert(data);
+		/*if(data){
+			$('#msn').removeClass('hide');
+		}*/
+
+	}
+	});
+
+});
 
 
 

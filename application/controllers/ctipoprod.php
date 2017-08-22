@@ -37,8 +37,8 @@ $datos['estado']=1;
 
 
 	$param= array(
-				'id_tip_prod'=>null,
-				'tipo_prod'=>$datos['tipo_prod'],
+				'idtipoprod'=>null,
+				'nomtipoprod'=>$datos['tipo_prod'],
 				'estado'=>$datos['estado']
 
 		);
@@ -46,6 +46,18 @@ $datos['estado']=1;
 
 
 	$this->mtipoprod->inertartprod($param);
+}
+
+
+public function gettipoprod(){
+
+$s=$this->input->post('id');
+
+$res=$this->mtipoprod->gettipoprod($s);
+echo json_encode($res);
+
+
+
 }
 
 

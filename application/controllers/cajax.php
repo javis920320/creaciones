@@ -36,5 +36,26 @@ class Cajax extends CI_Controller
 			echo "Cliente  registrado correctamente";
 		}
 	}
+
+
+	public function updatecliente(){
+
+        $id=$this->input->post('upidpersona');
+		$nom=$this->input->post('upname');
+		$celular=$this->input->post('uptelefono');
+
+
+		
+		$arreglo= array(
+			'cedula'=>$id,
+			'nombres'=>$nom,
+			'telefono'=>$celular
+			);
+		$resp=$this->majax->updatecliente($arreglo);
+		if($resp){
+			echo 'Registro actualizado..';
+		}
+
+	}
 }
  ?>

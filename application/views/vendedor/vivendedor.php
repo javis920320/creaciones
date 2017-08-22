@@ -52,6 +52,9 @@
 	 			<div class="hide" id='formcliente'>
 	 		
 	 		<form id='insertcliente'>
+	 		
+	 			
+	 		
 	 		<div class="form-body">
 	 			<div class='col-xs-8'>
 	 				<div class="form-group">
@@ -145,10 +148,44 @@
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                <h4 class="modal-title" id="myModalLabel"><strong>EDITAR CLIENTE</strong></h4>
               </div>
               <div class="modal-body">
-                ...
+              <form action="" id='formedit'>
+              <div class="form-body">
+              	<div class="col-xs-8">
+              			<div class="form-group" >
+              			<label for="upidpersona">Identificacion</label>
+              			<input class="form-control" type="text" id='upidpersona' name='upidpersona' required="">            		
+              			</div>
+              	</div>
+              
+				<div class="col-xs-8">
+	              	<div class="form-group" >
+	              	<label for="upname">Nombre completo</label>
+	              	<input class="form-control" type="text" id='upname' name='upname'required>
+	              	</div>
+              	</div>
+
+				<div class="col-xs-8">
+	              	<div class="form-group" >
+	              	<label for="uptelefono">Telefono o celular</label>
+	              	<input  class='form-control'type="text" id='uptelefono' name='uptelefono' required="">
+	              	</div>
+              	</div>
+
+              	<div class='col-xs-8'>	
+		 			 <div class='form-group'>
+		 			 <input type="submit" value="Editar Cliente" title="Presionar" class='btn btn-success'>
+		 			 </div>
+
+	 			</div>
+
+
+				</div>	
+
+              </form>
+                
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

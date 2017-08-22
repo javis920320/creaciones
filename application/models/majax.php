@@ -36,6 +36,20 @@ class Majax extends CI_Model
 
 	}
 
+    public function	updatecliente($arreglo){
+
+
+    	$campos = array(
+			'cedula' => $arreglo['cedula'],
+			'nombres' => $arreglo['nombres'],
+			'telefono' => $arreglo['telefono']
+		);
+		$this->db->where('cedula',$arreglo['cedula']);
+		$this->db->update('persona',$campos);
+
+		return true;
+    }
+
 
 
 	public  function insertarcliente($arreglo){

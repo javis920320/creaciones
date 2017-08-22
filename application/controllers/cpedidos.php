@@ -19,6 +19,7 @@ class Cpedidos extends CI_Controller
 
 	 	$this->load->view('layou/header',$nombres);
 	 	$this->load->view('layou/menu',$nombres);
+	 	$this->load->view('vendedor/vpedidos');
 
 
 	 	$this->load->view('layou/footer',$nombres);
