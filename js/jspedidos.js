@@ -7,16 +7,27 @@ $('#btnbuscar').on('click',function(){
 	$.post("http://localhost/creaciones001/cajax/buscarcliente",
 	{id : txtide},
        function(data){
+
+       	var f = new Date();
+		//dat=f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear();
+		dat=f.getDate();
+
        	//alert();
        
 		if(data==0){
 			console.log(data);
 			$('#alerta').removeClass('hide');
+			var f = new Date();
+			//dat=f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear();
+			dat=f.getDate();
+
+			alert(dat);
 
 
 		}else{
 			cargarproductos();
 			$('#ingpedido').removeClass('hide');
+
 			
 
 			 var obj=JSON.parse(data);
@@ -27,6 +38,7 @@ $('#btnbuscar').on('click',function(){
 
 			$.each(obj,function(i,items){
 				$(".contenedor_json").append('<span class="text-success"><strong>Nombre del CLiente' + items.nombres+ '<strong></span>');
+				$('#idpersona').val(items.nombres);
 			});
 			
 			//$('#formcliente').addClass('hide');*/

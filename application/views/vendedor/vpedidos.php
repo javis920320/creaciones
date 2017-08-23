@@ -20,7 +20,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        <h4 class="modal-title" id="myModalLabel">INFORMACION DEL PEDIDO</h4>
       </div>
       <div class="modal-body">
         <div class="col-xs-12">
@@ -32,6 +32,7 @@
 			</div>
 
 			<div class="text-danger hide" id='alerta'><strong>El Cliente No esta registrado..</strong></div>
+			<div id="fecha"></div>
 			 </div>
 
 
@@ -42,11 +43,13 @@
 				<label for="factura">N.Factura</label>
 				
 				<input type="text" placeholder="Numero de factura" class="form-control" name='factura' id='factura'>
+				<label for="facultad">Facultad</label>
+				<input type="text" class="form-control"  id ='facultad' placeholder="Facultad">
 				<label for="seltp"></label>
 				<div class="prodtp"><strong>Tipo de Proucto</strong></div>
 				<label for="cantidad">Cantidad:</label>
 				<input type="number" id='cantidad' class="form-control">
-				<label for="talla"></label>
+				<label for="talla">Talla</label>
 				<select name="talla" id="talla" class="form-control">
 					<option value="A">A</option>
 					<option value="A">A</option>
@@ -54,8 +57,13 @@
 					<option value="A">A</option>
 
 				</select>
+				<label for="descripcion:">Descripcion:</label>
+				<textarea name="descripcion" id="descripcion" cols="120" rows="10">
+					
+				</textarea>
+				<input type="text" class="idpersona" id='idpersona' name="idpersona">
 
-				<input type="button" title="Presionar" value='Buscar' id='' class="form-control btn btn-primary">
+				<input type="button" title="Presionar" value='Ingresar Pedido' id='' class="form-control btn btn-primary">
 			</form>			
 			</div>
         </div>
@@ -65,7 +73,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        
       </div>
     </div>
   </div>
