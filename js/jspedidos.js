@@ -4,7 +4,7 @@ $('#btnbuscar').on('click',function(){
 	txtide=$('#idcliente').val();
 
 
-	$.post("http://localhost/creaciones001/cajax/buscarcliente",
+	$.post("http://localhost/creaciones/cajax/buscarcliente",
 	{id : txtide},
        function(data){
 
@@ -52,7 +52,7 @@ $('#btnbuscar').on('click',function(){
 
 
 function cargarproductos(){
-	$.post("http://localhost/creaciones001/ctipoprod/gettipoprod",
+	$.post("http://localhost/creaciones/ctipoprod/gettipoprod",
 	{id : 1},
        function(data){
        //	alert(data);

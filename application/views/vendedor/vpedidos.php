@@ -5,6 +5,11 @@
 	
 </head>
 <body>
+	<style type="text/css">
+	.responsive-input{
+  width: 100%;
+}
+	</style>
 
 <div class="col-xs-17"> <strong align='center'>PEDIDOS CREACIONES GORETTI</strong></div>
 
@@ -58,9 +63,12 @@
 
 				</select>
 				<label for="descripcion:">Descripcion:</label>
-				<textarea name="descripcion" id="descripcion" cols="120" rows="10">
+				<div class='col-xs-12'>
+						<textarea name="descripcion" id="descripcion" cols="120" rows="10"  class='form-control'>
 					
-				</textarea>
+						</textarea>
+				</div>
+			
 				<input type="text" class="idpersona" id='idpersona' name="idpersona">
 
 				<input type="button" title="Presionar" value='Ingresar Pedido' id='' class="form-control btn btn-primary">

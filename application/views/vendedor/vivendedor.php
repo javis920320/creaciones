@@ -119,7 +119,7 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body table-responsive no-padding">
-              <table  id='tblclientes' class="table table-hover">
+              <table  id='tblclientes' class="table table-hover table-responsive">
                 <thead class="bg-primary">
                 <tr>
                   <th>Identificacion</th>
