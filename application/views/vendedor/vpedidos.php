@@ -87,6 +87,39 @@
     </div>
   </div>
 </div>
+
+
+<div class="col-xs-10 col-md-10">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title" class='text-primary'>PEDIDOS</h3><br><br>
+              
+
+            </div>
+            <!-- /.box-header -->
+             
+            <div class="box-body table-responsive no-padding">
+              <table  id='tblpedidos' class="table table-hover table-responsive">
+                <thead class="bg-primary">
+                <tr>
+                  <th>Factura</th>
+                  <th>Facultad</th>
+                   <th>Cantidad</th>
+                   <th>Talla</th>
+                   <th>Descripcion</th>
+                   <th>Cliente</th>
+                  <th>Fecha ingreso</th>
+                  <th>Accion</th>
+                </tr>
+                </thead>
+                <tbody></tbody>
+                
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
 	
 </body>
 </html>

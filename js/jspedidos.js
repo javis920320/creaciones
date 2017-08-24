@@ -4,7 +4,7 @@ $('#btnbuscar').on('click',function(){
 	txtide=$('#idcliente').val();
 
 
-	$.post("http://localhost/creaciones001/cajax/buscarcliente",
+	$.post("http://localhost/creaciones/cajax/buscarcliente",
 	{id : txtide},
        function(data){
 
@@ -28,7 +28,7 @@ $('#btnbuscar').on('click',function(){
 			dat=f.getDate();
 			dat1=f.getFullYear();
 			dat2=f.getMonth() +1
-			cadena=dat1+'-'+dat2+'-'+dat;
+			cadena=dat+'/'+dat2+'/'+dat1;
 
 			//alert(cadena);
 			$('#fecha').val(cadena);
@@ -57,7 +57,7 @@ $('#btnbuscar').on('click',function(){
 
 
 function cargarproductos(){
-	$.post("http://localhost/creaciones001/ctipoprod/gettipoprod",
+	$.post("http://localhost/creaciones/ctipoprod/gettipoprod",
 	{id : 1},
        function(data){
        //	alert(data);
@@ -80,9 +80,9 @@ function cargarproductos(){
 });}
 
 	$('#ingpedido').submit(function(){
-		dato=$('#ingpedido').serialize();
+		//alert($('#fecha').val());
 		$.ajax({
-	url:'http://localhost/creaciones001/cpedidos/insertpedido',
+	url:'http://localhost/creaciones/cpedidos/insertpedido',
 	type:'POST',
 	data:$(this).serialize(),
 	success:function(data){
@@ -94,3 +94,43 @@ function cargarproductos(){
 	}
 	});
 	});
+
+
+	$('#tblpedidos').DataTable({
+			'paging':true,
+			'info':true,
+			'filter':true,
+			'stateSave':true,
+
+			'ajax':{
+				"url":"http://localhost/creaciones/cpedidos/lista",
+				'type':'POST',
+				dataSrc:''
+			},
+
+			'columns':[
+			{data: 'factura','sClass':'dt-body-center'},
+			{data:'facultad'},
+			{data:'cantidad'},
+			{data:'talla'},
+			{data:'descripcion'},
+			{data:'nombres'},
+			{data:'fecha_ingreso'},
+			{"orderable":true,
+			render:function(data,type,row){
+
+
+
+				
+
+					//return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" data-toggle="modal" data-target="#myModal"><i class=" fa fa-edit"></i></a
+					return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" title="Editar informacion" data-toggle="modal" data-target="#modalEditPersona" onClick="selPersona(\''+row.cedula+'\',\''+row.nombres+'\',\''+row.telefono+'\');"><i class=" fa fa-edit"></i></a>';
+					}
+			}
+
+
+			],
+
+ "order":[[0,"asc"]],
+
+		});	

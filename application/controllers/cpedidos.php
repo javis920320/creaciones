@@ -40,7 +40,7 @@ class Cpedidos extends CI_Controller
 	 		$param ['cantidad']=$this->input->post('cantidad');
 	 		$param ['talla']=$this->input->post('talla');
 	 		$param ['descripcion']=$this->input->post('descripcion');
-	 		$param ['fecha_ingreso']=$this->input->post('fecha');
+	 		$param ['fecha_ingreso']=$hoy = date("Y/m/d");
 	 		$param ['idcliente']=$this->input->post('idpersona');
 	 		$param ['idtipoprod']=$this->input->post('seltp');
 
@@ -48,10 +48,20 @@ class Cpedidos extends CI_Controller
 
 	 	$resp=$this->mpedidos->insertpedido($param);
 	 	echo "Pedido registrado correctamente";
+	 	//echo $hoy = date("Y/m/d");
 
 
 
 
+	 }
+
+	 public function lista(){
+
+	 	$param=$this->input->post('dato');
+
+	 	$res=$this->mpedidos->lista($param);
+
+	 	echo json_encode($res);
 	 }
 
 
