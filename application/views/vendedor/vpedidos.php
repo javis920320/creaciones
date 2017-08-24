@@ -49,11 +49,11 @@
 				
 				<input type="text" placeholder="Numero de factura" class="form-control" name='factura' id='factura'>
 				<label for="facultad">Facultad</label>
-				<input type="text" class="form-control"  id ='facultad' placeholder="Facultad">
+				<input type="text" class="form-control"  id ='facultad' placeholder="Facultad" name="facultad">
 				<label for="seltp"></label>
 				<div class="prodtp"><strong>Tipo de Proucto</strong></div>
 				<label for="cantidad">Cantidad:</label>
-				<input type="number" id='cantidad' class="form-control">
+				<input type="number" id='cantidad' class="form-control" name="cantidad">
 				<label for="talla">Talla</label>
 				<select name="talla" id="talla" class="form-control">
 					<option value="A">A</option>
@@ -69,9 +69,10 @@
 						</textarea>
 				</div>
 			
-				<input type="text" class="idpersona" id='idpersona' name="idpersona">
+				<input type="hidden" class="idpersona" id='idpersona' name="idpersona">
+				<input type="hidden" class="fecha" id='fecha' name="fecha">
 
-				<input type="button" title="Presionar" value='Ingresar Pedido' id='' class="form-control btn btn-primary">
+				<input type="submit" title="Presionar" value='Ingresar Pedido' id='' class="form-control btn btn-primary">
 			</form>			
 			</div>
         </div>
