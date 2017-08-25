@@ -1,3 +1,5 @@
+//alert();
+
 $('#btnbuscar').on('click',function(){
 	$('#alerta').addClass('hide');
 
@@ -134,3 +136,10 @@ function cargarproductos(){
  "order":[[0,"asc"]],
 
 		});	
+
+
+$('#pdf').on('click',function(){
+	window.open("http://localhost/creaciones/Pdfci/");
+	//alert();
+
+});

@@ -15,8 +15,8 @@
 
 
 		<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  Crear pedido
+<button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">
+  <span class='glyphicon glyphicon-plus'></span>Crear pedido
 </button>
 
 <!-- Modal -->
@@ -94,7 +94,7 @@
             <div class="box-header">
               <h3 class="box-title" class='text-primary'>PEDIDOS</h3><br><br>
               
-
+<button id='pdf' class='btn btn-danger'><span class='glyphicon glyphicon-print'></span>  Crear Pdf</button>
             </div>
             <!-- /.box-header -->
              
