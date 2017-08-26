@@ -44,7 +44,7 @@ public function index(){
 						$this->load->view('vendedor/vivendedor',$nombres);		
 						$this->load->view('layou/footer');*/
 					//echo'Usuario Ventas';
-						redirect('cpedidoscliente/buscarcliente');
+						redirect('cpedidos');
 					break;
 
 					case 1:

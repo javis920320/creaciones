@@ -42,6 +42,7 @@ public  function lista($param){
 		$this->db->from('pedido p');
 		$this->db->join('cliente c','c.idpersona=p.idcliente');
 		$this->db->join('persona pe','pe.idpersona=c.idpersona');
+		$this->db->order_by('fecha_ingreso', 'DESC');
 
 		$resul=$this->db->get();
 		return $resul->result();
