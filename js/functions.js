@@ -42,7 +42,7 @@ $('#tblclientes').DataTable({
 			'stateSave':true,
 
 			'ajax':{
-				"url":"http://localhost/creaciones/cclientes/getclientes",
+				"url":"http://localhost/creaciones001/cclientes/getclientes",
 				'type':'POST',
 				dataSrc:''
 			},
@@ -88,7 +88,7 @@ $('#formedit').submit(function(){
 	dato=$('#formedit').serialize();
 
 	$.ajax({
-	url:'http://localhost/creaciones/cajax/updatecliente',
+	url:'http://localhost/creaciones001/cajax/updatecliente',
 	type:'POST',
 	data:dato,
 	success:function(data){
