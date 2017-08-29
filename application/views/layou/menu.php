@@ -51,6 +51,18 @@
             
           </ul>
         </li> 
+        <li class="treeview">
+          <a href="#">
+            <i class="glyphicon glyphicon-shopping-cart"></i> <span>Productos</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="<?php echo base_url();?>cproductos/"><i class="fa fa-circle-o"></i> Ingresar </a></li>
+            
+          </ul>
+        </li> 
         <!--<li class="treeview">
           <a href="#">
             <i class="fa fa-share"></i> <span>Multilevel</span>

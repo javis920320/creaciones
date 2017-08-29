@@ -58,7 +58,7 @@
 <script src="<?php echo  base_url();?>js/fpedidos.js"></script>
 <?php  }?>
 
-<?php  if($this->uri->segment(1)=='cpedidos') { ?>
+<?php  if($this->uri->segment(1)=='cpedidos' or $this->uri->segment(1)=='cproductos' ) { ?>
 <script src="<?php echo  base_url();?>js/jspedidos.js"></script>
 <?php  }?>
 
