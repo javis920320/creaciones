@@ -32,7 +32,10 @@ class Cproductos extends CI_Controller
 
 	    $arreglo['nomprod']=$this->input->post('nomprod');
 	 	
-	 	$arreglo['idtipoprod']=$this->input->post('idtipoprod');
+	 	$arreglo['idtipoprod']=$this->input->post('seltp');
+
+	 	//$arreglo['nomprod']='prueba';
+	 		//$arreglo['idtipoprod']=1;
 
 	 	$res=$this->mproductos->ingresarprd($arreglo);
 
@@ -43,6 +46,20 @@ class Cproductos extends CI_Controller
 	 	}
 
 
+	 	
+
+
+	 }
+
+
+
+	 public function lista(){
+
+	 	$param=$this->input->post('dato');
+
+	 	$res=$this->mproductos->getproductos($param);
+
+	 	echo json_encode($res);
 	 }
 }
 

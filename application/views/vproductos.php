@@ -5,7 +5,7 @@
 	
 </head>
 <body>
-	<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+	<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" onclick="cargarproductos()">
 	 Ingresar Producto
 	</button>
 	
@@ -18,12 +18,14 @@
 	        <h4 class="modal-title" id="myModalLabel">Productos</h4>
 	      </div>
 	      <div class="modal-body">
-	         <form class='form'>
+	         <form class='form' id='formprod'>
 
 	         	 <div class='form-group'>
 	         	 	<label for='nomprod'></label>
-	         	 	<input type=' text' placeholder='Nombre del Producto' name='nomprod' id='nomprod'>
+	         	 	<input type=' text' placeholder='Nombre del Producto' name='nomprod' id='nomprod' class="form-control">
+
 	         	 </div>
+	         	 <div id='tpprod'></div>
 
 	         	  <input type='submit' value='Nuevo Producto' id='btningresar'>
 	         </form>
@@ -46,16 +48,13 @@
             <!-- /.box-header -->
              
             <div class="box-body table-responsive no-padding">
-              <table  id='tblpedidos' class="table table-hover table-responsive">
+              <table  id='tblproductos' class="table table-hover table-responsive">
                 <thead class="bg-primary">
                 <tr>
-                  <th>Factura</th>
-                  <th>Facultad</th>
-                   <th>Cantidad</th>
-                   <th>Talla</th>
-                   <th>Descripcion</th>
-                   <th>Cliente</th>
-                  <th>Fecha ingreso</th>
+                  <th>Tipo Producto</th>
+                  <th>Nombre Producto</th>
+                   <th>Valor</th>
+                   <th>Subvalor</th>
                   <th>Accion</th>
                 </tr>
                 </thead>

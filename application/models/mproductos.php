@@ -23,9 +23,9 @@ class Mproductos extends CI_Model
 
 		$datos = array(
 			'id_prod'=> null,
-			'nomprod' =>  $arreglo['$arreglo'],
+			'nomprod' =>  $arreglo['nomprod'],
 			'estado' => 1,
-			'idtipoprod'=> $arreglo['$idtipoprod']
+			'idtipoprod'=> $arreglo['idtipoprod']
 			);
 
 
@@ -39,6 +39,33 @@ class Mproductos extends CI_Model
 
 
 	}
+
+
+
+
+public  function getproductos($param){
+
+
+
+
+
+
+    $this->db->select('TP.NOMTIPOPROD,P.NOMPROD,pr.valor,pr.subvalor');
+		$this->db->from('PRODUCTO  P');
+		$this->db->join('TIPO_PRODUCTO TP ','TP.IDTIPOPROD=P.IDTIPOPROD');
+		$this->db->join('precio pr','pr.id_prod=p.id_prod');
+		//$this->db->WHERE('P.ESTADO', 'DESC');
+
+		$resul=$this->db->get();
+		return $resul->result();
+
+
+
+
+
+
+
+}
 
 
 

@@ -1,4 +1,4 @@
-alert();
+//alert();
 
 $('#btnbuscar').on('click',function(){
 	$('#alerta').addClass('hide');
@@ -77,6 +77,7 @@ function cargarproductos(){
 
 		html+='</select>';
 		$(".prodtp").append(html);
+		$("#tpprod").append(html);
 
 
 });}
@@ -141,5 +142,25 @@ function cargarproductos(){
 $('#pdf').on('click',function(){
 	window.open("http://localhost/creaciones001/Pdfci/");
 	//alert();
+
+});
+
+
+$('#formprod').submit(function(){
+	alert();
+
+	$.ajax({
+	url:'http://localhost/creaciones001/cproductos/ingresarprd',
+	type:'POST',
+	data:$(this).serialize(),
+	success:function(data){
+		alert(data);
+		/*if(data){
+			$('#msn').removeClass('hide');
+		}*/
+
+	}
+	});
+
 
 });
