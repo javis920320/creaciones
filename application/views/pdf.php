@@ -82,19 +82,17 @@
     <table border='2'>
         <thead>
             <tr>
-                <th width="50">Factura</th>
-                <th width="50">Facultad</th>
+                <th width="10">Factura</th>
+               <!-- <th width="50">Facultad</th>
                 <th width="50">descripcion</th>
-                 <th width="100">Cliente</th>
+                 <th width="100">Cliente</th>-->
             </tr>
         </thead>
         <tbody>
             <?php foreach($provincias as $provincia) { ?>
             <tr>
-                <td width="50"><?php echo $provincia->factura ?></td>
-                <td width="50"><?php echo $provincia->facultad ?></td>
-                <td width="50"><?php echo $provincia->descripcion ?></td>
-                <td width="100"><?php echo $provincia->nombres ?></td>
+                <td width="10"><?php echo $provincia->factura.'|'.$provincia->facultad.'|'.$provincia->descripcion?></td>
+                
             </tr>
             <?php } ?>
         </tbody>

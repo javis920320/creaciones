@@ -139,7 +139,7 @@ function cargarproductos(){
 
 
 $('#pdf').on('click',function(){
-	window.open("http://localhost/creaciones/Pdfci/");
+	window.open("http://localhost/creaciones001/Pdfci/");
 	//alert();
 
 });

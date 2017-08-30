@@ -56,10 +56,22 @@
 				<input type="number" id='cantidad' class="form-control" name="cantidad">
 				<label for="talla">Talla</label>
 				<select name="talla" id="talla" class="form-control">
-					<option value="A">A</option>
-					<option value="A">A</option>
-					<option value="A">A</option>
-					<option value="A">A</option>
+					<option value="0">0</option>
+					<option value="2">2</option>
+					<option value="4">4</option>
+					<option value="6">6</option>
+					<option value="8">8</option>
+					<option value="10">10</option>
+					<option value="12">12</option>
+					<option value="14">14</option>
+					<option value="16">16</option>
+					<option value="S">S</option>
+					<option value="XS">XS</option>
+					<option value="M">M</option>
+					<option value="L">L</option>
+					<option value="XL">XL</option>
+					<option value="XXL">XXL</option>
+					
 
 				</select>
 				<label for="descripcion:">Descripcion:</label>
