@@ -1,4 +1,4 @@
-//alert();
+alert();
 
 $('#btnbuscar').on('click',function(){
 	$('#alerta').addClass('hide');
