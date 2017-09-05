@@ -68,6 +68,9 @@
 <?php  if($this->uri->segment(1)=='cpedidoscliente'){ ?>
 <script src="<?php echo  base_url();?>js/functions.js"></script>
 <?php  }?>
+<?php  if($this->uri->segment(1)=='ctrabajos'){ ?>
+<script src="<?php echo  base_url();?>js/jstrabajos.js"></script>
+<?php  }?>
 
 </body>
 </html>
