@@ -1,3 +1,6 @@
+
+//
+//alert();
 $('#tblproductos').DataTable({
 			'paging':true,
 			'info':true,
@@ -5,14 +8,14 @@ $('#tblproductos').DataTable({
 			'stateSave':true,
 
 			'ajax':{
-				"url":"http://localhost/creaciones001/cproductos/lista",
+				"url":"http://localhost/creaciones/cproductos/lista",
 				'type':'POST',
 				dataSrc:''
 			},
 
 			'columns':[
-			{data: 'NOMTIPOPROD','sClass':'dt-body-center'},
-			{data:'NOMPROD'},
+			{data: 'nomtipoprod','sClass':'dt-body-center'},
+			{data:'nomprod'},
 			{data:'valor'},
 			{data:'subvalor'},
 			

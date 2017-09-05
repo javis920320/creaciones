@@ -47,10 +47,7 @@ public  function getproductos($param){
 
 
 
-
-
-
-    $this->db->select('TP.NOMTIPOPROD,P.NOMPROD,pr.valor,pr.subvalor');
+        $this->db->select('tp.nomtipoprod,p.nomprod,pr.valor,pr.subvalor');
 		$this->db->from('PRODUCTO  P');
 		$this->db->join('TIPO_PRODUCTO TP ','TP.IDTIPOPROD=P.IDTIPOPROD');
 		$this->db->join('precio pr','pr.id_prod=p.id_prod');
@@ -58,9 +55,6 @@ public  function getproductos($param){
 
 		$resul=$this->db->get();
 		return $resul->result();
-
-
-
 
 
 

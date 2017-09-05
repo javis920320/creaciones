@@ -32,7 +32,7 @@ class Mlogin extends CI_Model
 			//return'usuario encontrado';
 
 			$r = array(
-				'id' => $p->persona_idpersona,
+				'id' => $p->idpersona,
 				'name'=>$p->name,
 				'tipo'=>$p->tipo,
 				'nombres'=>$p->nombres

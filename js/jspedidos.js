@@ -6,7 +6,7 @@ $('#btnbuscar').on('click',function(){
 	txtide=$('#idcliente').val();
 
 
-	$.post("http://localhost/creaciones001/cajax/buscarcliente",
+	$.post("http://localhost/creaciones/cajax/buscarcliente",
 	{id : txtide},
        function(data){
 
@@ -59,7 +59,7 @@ $('#btnbuscar').on('click',function(){
 
 
 function cargarproductos(){
-	$.post("http://localhost/creaciones001/ctipoprod/gettipoprod",
+	$.post("http://localhost/creaciones/ctipoprod/gettipoprod",
 	{id : 1},
        function(data){
        //	alert(data);
@@ -85,7 +85,7 @@ function cargarproductos(){
 	$('#ingpedido').submit(function(){
 		//alert($('#fecha').val());
 		$.ajax({
-	url:'http://localhost/creaciones001/cpedidos/insertpedido',
+	url:'http://localhost/creaciones/cpedidos/insertpedido',
 	type:'POST',
 	data:$(this).serialize(),
 	success:function(data){
@@ -106,7 +106,7 @@ function cargarproductos(){
 			'stateSave':true,
 
 			'ajax':{
-				"url":"http://localhost/creaciones001/cpedidos/lista",
+				"url":"http://localhost/creaciones/cpedidos/lista",
 				'type':'POST',
 				dataSrc:''
 			},
@@ -140,7 +140,7 @@ function cargarproductos(){
 
 
 $('#pdf').on('click',function(){
-	window.open("http://localhost/creaciones001/Pdfci/");
+	window.open("http://localhost/creaciones/Pdfci/");
 	//alert();
 
 });
@@ -150,7 +150,7 @@ $('#formprod').submit(function(){
 	alert();
 
 	$.ajax({
-	url:'http://localhost/creaciones001/cproductos/ingresarprd',
+	url:'http://localhost/creaciones/cproductos/ingresarprd',
 	type:'POST',
 	data:$(this).serialize(),
 	success:function(data){
