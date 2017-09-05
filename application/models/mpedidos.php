@@ -25,7 +25,8 @@ public function insertpedido($param){
 	 			 'descripcion'=>$param ['descripcion'],
 	 			 'fecha_ingreso'=>$param ['fecha_ingreso'],
 	 			 'idcliente'=>$param ['idcliente'],
-	 			  'idtipoprod'=>$param ['idtipoprod']
+	 			  'idtipoprod'=>$param ['idtipoprod'],
+	 			  'estado'=>1
 
 	 					);
 

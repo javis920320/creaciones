@@ -111,7 +111,7 @@
 <!-- /.box-header -->
         
         <div class="col-xs-10 col-md-10">
-          <div class="box">
+          <div class="box box-primary">
             <div class="box-header">
               <h3 class="box-title" class='text-primary'>Listado Clientes Creaciones Goretti Pasto</h3><br><br>
               
@@ -119,14 +119,14 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body table-responsive no-padding">
-              <table  id='tblclientes' class="table table-hover table-responsive">
+              <table  id='tblclientes' class="table table-hover table-responsive table-bordered table-striped">
                 <thead class="bg-primary">
                 <tr>
-                  <th>Identificacion</th>
-                  <th>Nombres</th>
-                   <th>Telefono</th>
+                  <th style="width: 10%;background-color: #006699; color: white;" >Identificacion</th>
+                  <th style="width: 10%;background-color: #006699; color: white;">Nombres</th>
+                   <th style="width: 10%;background-color: #006699; color: white;">Telefono</th>
 
-                  <th>Accion</th>
+                  <th style="width: 5%;background-color: #006699; color: white;">Accion</th>
                 </tr>
                 </thead>
                 <tbody></tbody>

@@ -29,7 +29,7 @@ class Cajax extends CI_Controller
 			'telefono'=>$celular
 			);
 		$resp=$this->majax->insertarcliente($arreglo);
-		//echo $resp;
+		echo $resp;
 		if($resp){
 			$arreglo['foranea']=$resp;
 			$this->majax->clienteinsert($arreglo);
