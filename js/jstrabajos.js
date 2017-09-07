@@ -23,7 +23,8 @@ $('#btnbuscar').on('click',function(){
 			});
 
 
-
+			html+='</select>';
+			$("#desc").append('<select class="text-danger form-control"><option>' + items.nomtipoprod+ '</option></select>');
 			}
 
 			 		
