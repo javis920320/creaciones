@@ -15,16 +15,16 @@ $('#btnbuscar').on('click',function(){
 
 			 console.log(obj[0].nombres);
 
-			html='<select>';
-			html+='<option>Seleccione una opcion</option>';
+			html='<select id="tpprod" name="tpprod" class="form-control">';
+			html+='<option value="">Seleccione una opcion</option>';
 
 			$.each(obj,function(i,items){
-				$("#desc").append('<select class="text-danger form-control"><option>' + items.nomtipoprod+ '</option></select>');
+				html+='<option value="'+items.idtipoprod+'"">'+ items.nomtipoprod+'</option>';
 			});
 
 
 			html+='</select>';
-			$("#desc").append('<select class="text-danger form-control"><option>' + items.nomtipoprod+ '</option></select>');
+			$("#desc").html(html);
 			}
 
 			 		
@@ -35,5 +35,19 @@ $('#btnbuscar').on('click',function(){
 
 
 
-
 });
+
+$('#tpprod').change(function(event){
+
+		 var dato=$('#tpprod').find(':selected').val();
+		 $('#prueba').val(dato);
+	});
+
+
+/*$(document).ready(function(){
+$(“#select4”).change(function(event){
+var id = $(“#select4”).find(‘:selected’).val();
+$(“#select5”).load(‘genera-tarjeta.php?id=’+id);*/
+
+//});
+//});*/

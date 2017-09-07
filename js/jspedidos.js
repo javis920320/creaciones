@@ -6,7 +6,7 @@ $('#btnbuscar').on('click',function(){
 	txtide=$('#idcliente').val();
 
 
-	$.post("http://localhost/creaciones001/cajax/buscarcliente",
+	$.post(baseurl+"cajax/buscarcliente",
 	{id : txtide},
        function(data){
 
@@ -59,7 +59,7 @@ $('#btnbuscar').on('click',function(){
 
 
 function cargarproductos(){
-	$.post("http://localhost/creaciones001/ctipoprod/gettipoprod",
+	$.post(baseurl+"ctipoprod/gettipoprod",
 	{id : 1},
        function(data){
        //	alert(data);
@@ -85,7 +85,7 @@ function cargarproductos(){
 	$('#ingpedido').submit(function(){
 		//alert($('#fecha').val());
 		$.ajax({
-	url:'http://localhost/creaciones001/cpedidos/insertpedido',
+	url:baseurl+'cpedidos/insertpedido',
 	type:'POST',
 	data:$(this).serialize(),
 	success:function(data){
@@ -106,7 +106,7 @@ function cargarproductos(){
 			'stateSave':true,
 
 			'ajax':{
-				"url":"http://localhost/creaciones001/cpedidos/lista",
+				"url":baseurl+"cpedidos/lista",
 				'type':'POST',
 				dataSrc:''
 			},
@@ -140,7 +140,7 @@ function cargarproductos(){
 
 
 $('#pdf').on('click',function(){
-	window.open("http://localhost/creaciones001/Pdfci/");
+	window.open(baseurl+"/Pdfci/");
 	//alert();
 
 });
@@ -150,7 +150,7 @@ $('#formprod').submit(function(){
 	alert();
 
 	$.ajax({
-	url:'http://localhost/creaciones001/cproductos/ingresarprd',
+	url:baseurl+'cproductos/ingresarprd',
 	type:'POST',
 	data:$(this).serialize(),
 	success:function(data){

@@ -5,7 +5,7 @@ $('#tblproductos').DataTable({
 			'stateSave':true,
 
 			'ajax':{
-				"url":"http://localhost/creaciones001/cproductos/lista",
+				"url":baseurl+"cproductos/lista",
 				'type':'POST',
 				dataSrc:''
 			},

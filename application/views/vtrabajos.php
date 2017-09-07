@@ -30,7 +30,7 @@
 		<div class="col-sm-2"><span class='label label-warning' id="spSuma"></span></div>
 		</div>
 	</div>
-	
+
 
 		<!-- Button trigger modal -->
     
@@ -56,6 +56,12 @@
             
             <form action="">
             <div id="desc"></div>
+
+            <div class='form-group'>
+            	<label for='cantidad'>Cantidad:</label>
+            	<input type='number' name='cantidad' id='cantidad' class='form-control'>
+            </div>
+
             	
 
             </form>
