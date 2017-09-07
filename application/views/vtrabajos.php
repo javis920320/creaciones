@@ -52,9 +52,10 @@
           		<button class="btn" id='btnbuscar'>Buscar factura</button>
           	</div>
 
-          	<div id="desc"></div>
+			<div id="res"></div>
             
             <form action="">
+            <div id="desc"></div>
             	
 
             </form>
