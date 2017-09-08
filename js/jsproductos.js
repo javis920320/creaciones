@@ -8,11 +8,9 @@ $('#tblproductos').DataTable({
 			'stateSave':true,
 
 			'ajax':{
-<<<<<<< HEAD
+
 				"url":baseurl+"cproductos/lista",
-=======
-				"url":"http://localhost/creaciones/cproductos/lista",
->>>>>>> 5d072e317903217a7d6bf13cb3d3ed63e91733fd
+
 				'type':'POST',
 				dataSrc:''
 			},

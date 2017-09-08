@@ -7,11 +7,9 @@ $('#btnbuscar').on ('click',function(){
 	 var buscar=$('#txtbuscarcliente').val();
 //alert(buscar);
 
-<<<<<<< HEAD
+
 $.post(baseurl+"cajax/buscarcliente",
-=======
-$.post("http://localhost/creaciones/cajax/buscarcliente",
->>>>>>> 5d072e317903217a7d6bf13cb3d3ed63e91733fd
+
 	{id : buscar},
        function(data){
        	//alert();
@@ -51,11 +49,9 @@ $('#insertcliente').submit(function(){
 
 
 $.ajax({
-<<<<<<< HEAD
+
 	url:baseurl+'cajax/ingresarCliente',
-=======
-	url:'http://localhost/creaciones/cajax/ingresarCliente',
->>>>>>> 5d072e317903217a7d6bf13cb3d3ed63e91733fd
+
 	type:'POST',
 	data:dato,
 	success:function(data){

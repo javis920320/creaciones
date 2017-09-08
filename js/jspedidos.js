@@ -6,11 +6,8 @@ $('#btnbuscar').on('click',function(){
 	txtide=$('#idcliente').val();
 
 
-<<<<<<< HEAD
+
 	$.post(baseurl+"cajax/buscarcliente",
-=======
-	$.post("http://localhost/creaciones/cajax/buscarcliente",
->>>>>>> 5d072e317903217a7d6bf13cb3d3ed63e91733fd
 	{id : txtide},
        function(data){
 
@@ -63,11 +60,9 @@ $('#btnbuscar').on('click',function(){
 
 
 function cargarproductos(){
-<<<<<<< HEAD
+
 	$.post(baseurl+"ctipoprod/gettipoprod",
-=======
-	$.post("http://localhost/creaciones/ctipoprod/gettipoprod",
->>>>>>> 5d072e317903217a7d6bf13cb3d3ed63e91733fd
+
 	{id : 1},
        function(data){
        //	alert(data);
@@ -93,11 +88,8 @@ function cargarproductos(){
 	$('#ingpedido').submit(function(){
 		//alert($('#fecha').val());
 		$.ajax({
-<<<<<<< HEAD
+
 	url:baseurl+'cpedidos/insertpedido',
-=======
-	url:'http://localhost/creaciones/cpedidos/insertpedido',
->>>>>>> 5d072e317903217a7d6bf13cb3d3ed63e91733fd
 	type:'POST',
 	data:$(this).serialize(),
 	success:function(data){
@@ -118,11 +110,8 @@ function cargarproductos(){
 			'stateSave':true,
 
 			'ajax':{
-<<<<<<< HEAD
 				"url":baseurl+"cpedidos/lista",
-=======
-				"url":"http://localhost/creaciones/cpedidos/lista",
->>>>>>> 5d072e317903217a7d6bf13cb3d3ed63e91733fd
+
 				'type':'POST',
 				dataSrc:''
 			},
@@ -156,12 +145,9 @@ function cargarproductos(){
 
 
 $('#pdf').on('click',function(){
-<<<<<<< HEAD
+
 	window.open(baseurl+"/Pdfci/");
-=======
-	window.open("http://localhost/creaciones/Pdfci/");
->>>>>>> 5d072e317903217a7d6bf13cb3d3ed63e91733fd
-	//alert();
+
 
 });
 
@@ -170,11 +156,7 @@ $('#formprod').submit(function(){
 	alert();
 
 	$.ajax({
-<<<<<<< HEAD
 	url:baseurl+'cproductos/ingresarprd',
-=======
-	url:'http://localhost/creaciones/cproductos/ingresarprd',
->>>>>>> 5d072e317903217a7d6bf13cb3d3ed63e91733fd
 	type:'POST',
 	data:$(this).serialize(),
 	success:function(data){

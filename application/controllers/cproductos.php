@@ -61,6 +61,16 @@ class Cproductos extends CI_Controller
 
 	 	echo json_encode($res);
 	 }
+
+
+	  public function listaproductosf(){
+
+	 	$param=$this->input->post('dato');
+
+	 	$res=$this->mproductos->filtroproductos($param);
+
+	 	echo json_encode($res);
+	 }
 }
 
 

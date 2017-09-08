@@ -55,7 +55,11 @@
 			<div id="res"></div>
             
             <form action="">
-            <div id="desc"></div>
+            <label for='tpprod'>Categoria Producto</label>
+              <select id="tpprod" name="tpprod" class=" pr form-control"></select>
+              <label for='productos'>Productos</label>
+              <select id="productos" name="productos" class="form-control"></select>
+           
 
             <div class='form-group'>
             	<label for='cantidad'>Cantidad:</label>

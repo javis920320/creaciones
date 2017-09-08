@@ -62,6 +62,28 @@ public  function getproductos($param){
 }
 
 
+public  function filtroproductos($param){
+
+
+
+        $this->db->select('p.id_prod,tp.nomtipoprod,p.nomprod,pr.valor,pr.subvalor');
+		$this->db->from('producto  p');
+		$this->db->join('tipo_producto tp ','tp.idtipoprod=p.idtipoprod');
+		$this->db->join('precio pr','pr.id_prod=p.id_prod');
+		$this->db->WHERE('tp.nomtipoprod',$param);
+
+		$resul=$this->db->get();
+		return $resul->result();
+
+
+
+
+}
+
+
+
+
+
 
 }
 
