@@ -101,6 +101,26 @@
 </div>
 
 
+<!-- Modal -->
+<div class="modal fade" id="estado" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <div class="col-xs-10 col-md-10">
           <div class="box">
             <div class="box-header">
@@ -132,6 +152,9 @@
           </div>
           <!-- /.box -->
         </div>
+        <script type="text/javascript">
+	var baseurl = "<?php echo base_url(); ?>";
+</script>
 	
 </body>
 </html>

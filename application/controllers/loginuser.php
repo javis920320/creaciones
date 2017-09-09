@@ -36,6 +36,7 @@ public function index(){
 
 			$datos=$this->session->userdata('tipo');
 			$nombres['nombres']=$this->session->userdata('nombres');
+			$idpersona['idpersona']=$this->session->userdata('idpersona');
 			
 		switch ($datos) {
 				case 0:

@@ -15,27 +15,21 @@ $('#btnbuscar').on('click',function(){
 
 			 console.log(obj[0].nombres);
 
-<<<<<<< HEAD
+
 			//html='<select id="tpprod" name="tpprod" class=" pr form-control">';
 			html='';
 			html+='<option value="">Seleccione una opcion</option>';
-=======
-			html='<select>';
-			html+='<option>Seleccione una opcion</option>';
->>>>>>> parent of a91af52... cambios
+
 
 			$.each(obj,function(i,items){
-				$("#desc").append('<select class="text-danger form-control"><option>' + items.nomtipoprod+ '</option></select>');
+				html+='<option value="'+items.idtipoprod+'"">' + items.nomtipoprod+ '</option>';
 			});
 
 
-<<<<<<< HEAD
+
 			//html+='</select>';
 			$("#tpprod").html(html);
-=======
-			html+='</select>';
-			$("#desc").append('<select class="text-danger form-control"><option>' + items.nomtipoprod+ '</option></select>');
->>>>>>> parent of a91af52... cambios
+
 			}
 
 			 		
@@ -44,14 +38,17 @@ $('#btnbuscar').on('click',function(){
 
 		});
 
+		});
 
 
 
-<<<<<<< HEAD
+
+
 $('#tpprod').on('change',function(event){
 
 		
-		var dato= $('.pr option:selected').text();
+		var dato= $('#tpprod option:selected').text();
+		alert(dato);
 
 			$.post(baseurl+"cproductos/listaproductosf",
 			{dato:dato},
@@ -63,9 +60,7 @@ $('#tpprod').on('change',function(event){
 
 			var obj=JSON.parse(data);
 
-			 //console.log(obj[0].nombres);
-
-			//html='<select id="tpprod" name="tpprod" class=" pr form-control">';
+			
 			html='';
 			html+='<option value="">Seleccione una opcion</option>';
 
@@ -79,8 +74,17 @@ $('#tpprod').on('change',function(event){
 			}
 			
 			});
+			});
 
-	});
+
+$('#formtrabajos').submit(function(){
+
+	var datos=$(this).serialize();
+	alert(datos);
+
+});
+			
+
 
 
 
@@ -133,6 +137,4 @@ $(“#select5”).load(‘genera-tarjeta.php?id=’+id);*/
 
 //});
 //});*/
-=======
-});
->>>>>>> parent of a91af52... cambios
+

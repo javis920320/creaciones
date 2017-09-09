@@ -18,9 +18,10 @@ class Ctrabajos extends CI_Controller
 
 
 		$nombres['nombres']=$this->session->userdata('nombres');
+		$idpersona['idpersona']=$this->session->userdata('id');
 		$this->load->view('layou/header',$nombres);
 		$this->load->view('layou/menu',$nombres);
-		$this->load->view('vtrabajos');
+		$this->load->view('vtrabajos',$idpersona);
 		$this->load->view('layou/footer');
 
 

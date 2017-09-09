@@ -54,7 +54,7 @@
 
 			<div id="res"></div>
             
-            <form action="">
+            <form id='formtrabajos'>
 
             <label for='tpprod'>Categoria Producto</label>
               <select id="tpprod" name="tpprod" class=" pr form-control"></select>
@@ -66,9 +66,11 @@
             	<label for='cantidad'>Cantidad:</label>
             	<input type='number' name='cantidad' id='cantidad' class='form-control'>
             </div>
+            <input id='trabajador' hidden value="<?php echo$idpersona;?>">
 
 
-            	
+
+            <input type='submit' value='Guardar'title='Presiona para Guardar' class='btn btn-primary'>	
 
             </form>
           </div>

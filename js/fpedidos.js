@@ -7,13 +7,11 @@ $('#btnbuscar').on ('click',function(){
 	 var buscar=$('#txtbuscarcliente').val();
 //alert(buscar);
 
-<<<<<<< HEAD
+
 
 $.post(baseurl+"cajax/buscarcliente",
 
-=======
-$.post("http://localhost/creaciones001/cajax/buscarcliente",
->>>>>>> parent of a91af52... cambios
+
 	{id : buscar},
        function(data){
        	//alert();
@@ -53,13 +51,11 @@ $('#insertcliente').submit(function(){
 
 
 $.ajax({
-<<<<<<< HEAD
+
 
 	url:baseurl+'cajax/ingresarCliente',
 
-=======
-	url:'http://localhost/creaciones001/cajax/ingresarCliente',
->>>>>>> parent of a91af52... cambios
+
 	type:'POST',
 	data:dato,
 	success:function(data){
