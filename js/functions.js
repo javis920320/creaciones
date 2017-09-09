@@ -42,8 +42,12 @@ $('#tblclientes').DataTable({
 			'stateSave':true,
 
 			'ajax':{
+<<<<<<< HEAD
 				"url":baseurl+"cclientes/getclientes",
 
+=======
+				"url":"http://localhost/creaciones001/cclientes/getclientes",
+>>>>>>> parent of a91af52... cambios
 				'type':'POST',
 				dataSrc:''
 			},
@@ -89,8 +93,12 @@ $('#formedit').submit(function(){
 	dato=$('#formedit').serialize();
 
 	$.ajax({
+<<<<<<< HEAD
 	url:baseurl+'cajax/updatecliente',
 
+=======
+	url:'http://localhost/creaciones001/cajax/updatecliente',
+>>>>>>> parent of a91af52... cambios
 	type:'POST',
 	data:dato,
 	success:function(data){

@@ -39,6 +39,33 @@ class Ctrabajos extends CI_Controller
 		 
 	}
 
+
+
+
+	public function insertrabajo(){
+		//$this->input->post('');
+
+
+		$datos = array(
+
+
+			'cantidad' => $this->input->post('cantidad'),
+			//nesecitamos el valor del producto  y el subvalor
+			//	'valor' => $this->input->post('valor'),
+			'idpedido' => $this->input->post('idpedido'),
+			'idtrabajador' => $this->input->post('idtrabajador'),
+
+
+			 );
+
+		if($this->mtrabajos->insertrabajo()){
+
+			echo 'Pedido registrado correctamente';
+		}
+
+
+	}
+
 }
 
 

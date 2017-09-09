@@ -8,9 +8,13 @@ $('#tblproductos').DataTable({
 			'stateSave':true,
 
 			'ajax':{
+<<<<<<< HEAD
 
 				"url":baseurl+"cproductos/lista",
 
+=======
+				"url":"http://localhost/creaciones001/cproductos/lista",
+>>>>>>> parent of a91af52... cambios
 				'type':'POST',
 				dataSrc:''
 			},

@@ -14,11 +14,23 @@ class Mtrabajos extends CI_Model
 
 
 
-	public function insertrabajo(){
+	public function insertrabajo($param){
 
 
+	$datos=array(
 
+		'idproceso'=>null,
+		'cantidad'=>$param['cantidad'],
+		'estado'=>1,
+		'fecha'=>date("Y/m/d"),
+		'idpedido'=>$param['idpedido'],
+		'idtrabajador'=>$param['idtrabajador']
 
+				);	
+
+		$this->db->insert('proceso',$datos);
+
+		return true;
 	}
 
 

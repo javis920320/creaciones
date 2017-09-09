@@ -30,7 +30,7 @@
 		<div class="col-sm-2"><span class='label label-warning' id="spSuma"></span></div>
 		</div>
 	</div>
-
+	
 
 		<!-- Button trigger modal -->
     
@@ -55,6 +55,7 @@
 			<div id="res"></div>
             
             <form action="">
+
             <label for='tpprod'>Categoria Producto</label>
               <select id="tpprod" name="tpprod" class=" pr form-control"></select>
               <label for='productos'>Productos</label>
@@ -65,6 +66,7 @@
             	<label for='cantidad'>Cantidad:</label>
             	<input type='number' name='cantidad' id='cantidad' class='form-control'>
             </div>
+
 
             	
 

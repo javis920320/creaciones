@@ -6,8 +6,12 @@ $('#btnbuscar').on('click',function(){
 	txtide=$('#idcliente').val();
 
 
+<<<<<<< HEAD
 
 	$.post(baseurl+"cajax/buscarcliente",
+=======
+	$.post("http://localhost/creaciones001/cajax/buscarcliente",
+>>>>>>> parent of a91af52... cambios
 	{id : txtide},
        function(data){
 
@@ -60,9 +64,13 @@ $('#btnbuscar').on('click',function(){
 
 
 function cargarproductos(){
+<<<<<<< HEAD
 
 	$.post(baseurl+"ctipoprod/gettipoprod",
 
+=======
+	$.post("http://localhost/creaciones001/ctipoprod/gettipoprod",
+>>>>>>> parent of a91af52... cambios
 	{id : 1},
        function(data){
        //	alert(data);
@@ -88,8 +96,12 @@ function cargarproductos(){
 	$('#ingpedido').submit(function(){
 		//alert($('#fecha').val());
 		$.ajax({
+<<<<<<< HEAD
 
 	url:baseurl+'cpedidos/insertpedido',
+=======
+	url:'http://localhost/creaciones001/cpedidos/insertpedido',
+>>>>>>> parent of a91af52... cambios
 	type:'POST',
 	data:$(this).serialize(),
 	success:function(data){
@@ -110,8 +122,12 @@ function cargarproductos(){
 			'stateSave':true,
 
 			'ajax':{
+<<<<<<< HEAD
 				"url":baseurl+"cpedidos/lista",
 
+=======
+				"url":"http://localhost/creaciones001/cpedidos/lista",
+>>>>>>> parent of a91af52... cambios
 				'type':'POST',
 				dataSrc:''
 			},
@@ -145,9 +161,14 @@ function cargarproductos(){
 
 
 $('#pdf').on('click',function(){
+<<<<<<< HEAD
 
 	window.open(baseurl+"/Pdfci/");
 
+=======
+	window.open("http://localhost/creaciones001/Pdfci/");
+	//alert();
+>>>>>>> parent of a91af52... cambios
 
 });
 
@@ -156,7 +177,7 @@ $('#formprod').submit(function(){
 	alert();
 
 	$.ajax({
-	url:baseurl+'cproductos/ingresarprd',
+	url:'http://localhost/creaciones001/cproductos/ingresarprd',
 	type:'POST',
 	data:$(this).serialize(),
 	success:function(data){

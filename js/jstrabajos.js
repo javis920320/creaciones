@@ -15,17 +15,27 @@ $('#btnbuscar').on('click',function(){
 
 			 console.log(obj[0].nombres);
 
+<<<<<<< HEAD
 			//html='<select id="tpprod" name="tpprod" class=" pr form-control">';
 			html='';
 			html+='<option value="">Seleccione una opcion</option>';
+=======
+			html='<select>';
+			html+='<option>Seleccione una opcion</option>';
+>>>>>>> parent of a91af52... cambios
 
 			$.each(obj,function(i,items){
-				html+='<option value="'+items.idtipoprod+'"">'+ items.nomtipoprod+'</option>';
+				$("#desc").append('<select class="text-danger form-control"><option>' + items.nomtipoprod+ '</option></select>');
 			});
 
 
+<<<<<<< HEAD
 			//html+='</select>';
 			$("#tpprod").html(html);
+=======
+			html+='</select>';
+			$("#desc").append('<select class="text-danger form-control"><option>' + items.nomtipoprod+ '</option></select>');
+>>>>>>> parent of a91af52... cambios
 			}
 
 			 		
@@ -36,8 +46,8 @@ $('#btnbuscar').on('click',function(){
 
 
 
-});
 
+<<<<<<< HEAD
 $('#tpprod').on('change',function(event){
 
 		
@@ -123,3 +133,6 @@ $(“#select5”).load(‘genera-tarjeta.php?id=’+id);*/
 
 //});
 //});*/
+=======
+});
+>>>>>>> parent of a91af52... cambios
