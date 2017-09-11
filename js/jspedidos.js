@@ -141,7 +141,7 @@ function cargarproductos(){
 				
 
 					//return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" data-toggle="modal" data-target="#myModal"><i class=" fa fa-edit"></i></a
-					return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" title="Enviar informacion" data-toggle="modal" data-target="#estado" onClick="selPersona(\''+row.cedula+'\',\''+row.nombres+'\',\''+row.telefono+'\');"><i class=" glyphicon glyphicon-plane"></i><span> Enviar</span></a>';
+					return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" title="Enviar informacion" data-toggle="modal" data-target="#estado" onClick="estadopedido(\''+row.idpedido+'\',\''+row.nombres+'\',\''+row.telefono+'\');"><i class=" glyphicon glyphicon-plane"></i><span> Enviar</span></a>';
 					}
 			}
 
@@ -178,6 +178,39 @@ $('#formprod').submit(function(){
 
 	}
 	});
+
+
+});
+
+
+
+//con esta funcion pasamos los paremtros a los text del modal.
+estadopedido = function(idpedido, nombres, telefono){
+	$('#idpedido').val(idpedido);
+	$('#enviar').val(2);
+	
+
+  
+};
+
+$('#cambioestado').submit(function(){
+
+
+
+	$.ajax({
+	url:baseurl+'cpedidos/enviarpedido',
+	type:'POST',
+	data:$(this).serialize(),
+	success:function(data){
+		alert(data);
+		/*if(data){
+			$('#msn').removeClass('hide');
+		}*/
+
+	}
+
+	});
+
 
 
 });

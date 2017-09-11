@@ -107,14 +107,26 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        <h4 class="modal-title" id="myModalLabel">Proceso de envio</h4>
       </div>
       <div class="modal-body">
-        ...
-      </div>
+
+      <form id="cambioestado">
+      <strong class="text-success">Estas seguro de Enviar el pedido...?</strong>
+      	<input type="hidden" id='idpedido' name="idpedido">  
+      		<input type="hidden" id='enviar' name="enviar">
+      	<div class="form-group">
+      	<input type="submit" title="Presionar" value="Enviar" class="btn btn-success">
+      	<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+      		
+      	</div>
+      	
+
+      </form>
+            </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        
+        
       </div>
     </div>
   </div>

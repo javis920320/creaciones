@@ -51,7 +51,8 @@ public function index(){
 					case 1:
 					
 						$this->load->view('layou/header',$nombres);
-						$this->load->view('layou/menu',$nombres);		
+						$this->load->view('layou/menu',$nombres);
+						$this->load->view('vendedor/viewadmin');		
 						$this->load->view('layou/footer');
 						break;
 				

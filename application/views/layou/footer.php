@@ -70,6 +70,12 @@
 <?php  }?>
 <?php  if($this->uri->segment(1)=='ctrabajos'){ ?>
 <script src="<?php echo  base_url();?>js/jstrabajos.js"></script>
+
+<?php  }?>
+
+<?php  if($this->uri->segment(1)=='cproductosen'){ ?>
+<script src="<?php echo  base_url();?>js/jsproductosen.js"></script>
+
 <?php  }?>
 
 </body>
