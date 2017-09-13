@@ -10,6 +10,7 @@ class Loginuser extends CI_Controller
 		
 		$this->load->model('mlogin');
 
+	
 	}
 
 public function index(){
@@ -75,6 +76,12 @@ public function index(){
 		
 
 
+	}
+
+
+public function logout(){
+		$this->session->sess_destroy();
+		redirect(base_url());
 	}
 
 

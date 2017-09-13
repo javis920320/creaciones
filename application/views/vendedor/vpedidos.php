@@ -101,6 +101,66 @@
 </div>
 
 
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="modalEditPersona" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">EDITAR PEDIDO</h4>
+      </div>
+      <div class="modal-body">
+
+        <form id='form-edit'>
+
+          <div class='form-group'>
+            <label for='Facturaedit'>Factura</label>
+            <input type='text' placeholder='Facturaedit' id='facturaedit' name='facturaedit' class='form-control'>
+          </div>
+            <div class='form-group'>
+            <label for='facultadedit'>Factura</label>
+            <input type='text' placeholder='Facturaedit' id='facultadedit' name='facultadedit' class='form-control'>
+          </div>
+
+        <div class='form-group'>
+          <label for='editcantidad'>Cantidad</label>
+          <input type='number' placeholder='' id='editcantidad' name='editcantidad' class='form-control'>
+
+        </div>
+         <div class='form-group'>
+          <label for='tallaedit'>Talla</label>
+          <input type='text' placeholder='talla' id='tallaedit' name='tallaedit' class='form-control'>
+        </div>
+
+
+        <label for="descripcion:">Descripcion:</label>
+        <div class='col-xs-12'>
+            <textarea name="descripcion_edit" id="descripcion_edit" cols="120" rows="10"  class='form-control'>
+          
+            </textarea>
+        </div>
+      
+        <input type="hidden" class="idpersonaedit" id='idpersonaedit' name="idpersonaedit">
+        <input type="hidden" class="fechaedit" id='fecha' name="fechaedit">
+
+        <input type="submit" title="Presionar" value='Editar Pedido' id='' class="form-control btn btn-primary">
+
+
+
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- Modal -->
 <div class="modal fade" id="estado" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
@@ -154,6 +214,7 @@
                    <th>Cliente</th>
                   <th>Fecha ingreso</th>
                   <th>Accion</th>
+
                 </tr>
                 </thead>
                 <tbody></tbody>
