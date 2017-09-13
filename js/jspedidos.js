@@ -8,7 +8,7 @@ $('#btnbuscar').on('click',function(){
 
 
 
-	$.post(baseurl+"cajax/buscarcliente",
+	$.post(baseurl+"Cajax/buscarcliente",
 
 
 	{id : txtide},
@@ -65,7 +65,7 @@ $('#btnbuscar').on('click',function(){
 function cargarproductos(){
 
 
-	$.post(baseurl+"ctipoprod/gettipoprod",
+	$.post(baseurl+"Ctipoprod/gettipoprod",
 
 
 	{id : 1},
@@ -95,7 +95,7 @@ function cargarproductos(){
 		$.ajax({
 
 
-	url:baseurl+'cpedidos/insertpedido',
+	url:baseurl+'Cpedidos/insertpedido',
 
 	type:'POST',
 	data:$(this).serialize(),
@@ -118,7 +118,7 @@ function cargarproductos(){
 
 			'ajax':{
 
-				"url":baseurl+"cpedidos/lista",
+				"url":baseurl+"Cpedidos/lista",
 
 
 				'type':'POST',
@@ -197,7 +197,7 @@ $('#formprod').submit(function(){
 	alert();
 
 	$.ajax({
-	url:baseurl+'cproductos/ingresarprd',
+	url:baseurl+'Cproductos/ingresarprd',
 	type:'POST',
 	data:$(this).serialize(),
 	success:function(data){
@@ -228,7 +228,7 @@ $('#cambioestado').submit(function(){
 
 
 	$.ajax({
-	url:baseurl+'cpedidos/enviarpedido',
+	url:baseurl+'Cpedidos/enviarpedido',
 	type:'POST',
 	data:$(this).serialize(),
 	success:function(data){

@@ -10,7 +10,7 @@ class Ctipoprod extends Ci_Controller
 		# code...
 
 		parent::__construct();
-		$this->load->model('mtipoprod');
+		$this->load->model('Mtipoprod');
 	}
 
 
@@ -45,7 +45,7 @@ $datos['estado']=1;
 
 
 
-	$this->mtipoprod->inertartprod($param);
+	$this->Mtipoprod->inertartprod($param);
 }
 
 
@@ -53,7 +53,7 @@ public function gettipoprod(){
 
 $s=$this->input->post('id');
 
-$res=$this->mtipoprod->gettipoprod($s);
+$res=$this->Mtipoprod->gettipoprod($s);
 echo json_encode($res);
 
 

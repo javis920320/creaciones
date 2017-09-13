@@ -6,11 +6,11 @@ class Cajax extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->model('majax');
+		$this->load->model('Majax');
 	}
 	public  function buscarcliente(){
 		$cc['identificacion']=$this->input->post("id");
-		$res=$this->majax->buscarcliente($cc);
+		$res=$this->Majax->buscarcliente($cc);
 		
 		echo json_encode($res);
 		//echo "Cliente ".$res['nombre']."Ya existe";
@@ -28,11 +28,11 @@ class Cajax extends CI_Controller
 			'nombres'=>$nom,
 			'telefono'=>$celular
 			);
-		$resp=$this->majax->insertarcliente($arreglo);
+		$resp=$this->Majax->insertarcliente($arreglo);
 		echo $resp;
 		if($resp){
 			$arreglo['foranea']=$resp;
-			$this->majax->clienteinsert($arreglo);
+			$this->Majax->clienteinsert($arreglo);
 			echo "Cliente  registrado correctamente";
 		}
 	}
@@ -51,7 +51,7 @@ class Cajax extends CI_Controller
 			'nombres'=>$nom,
 			'telefono'=>$celular
 			);
-		$resp=$this->majax->updatecliente($arreglo);
+		$resp=$this->Majax->updatecliente($arreglo);
 		if($resp){
 			echo 'Registro actualizado..';
 		}

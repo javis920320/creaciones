@@ -7,7 +7,7 @@ class Cproductos extends CI_Controller
 	{
 		parent::__construct();
 
-		$this->load->model('mproductos');
+		$this->load->model('Mproductos');
 	}
 
 
@@ -37,7 +37,7 @@ class Cproductos extends CI_Controller
 	 	//$arreglo['nomprod']='prueba';
 	 		//$arreglo['idtipoprod']=1;
 
-	 	$res=$this->mproductos->ingresarprd($arreglo);
+	 	$res=$this->Mproductos->ingresarprd($arreglo);
 
 	 	if($res){
 
@@ -57,7 +57,7 @@ class Cproductos extends CI_Controller
 
 	 	$param=$this->input->post('dato');
 
-	 	$res=$this->mproductos->getproductos($param);
+	 	$res=$this->Mproductos->getproductos($param);
 
 	 	echo json_encode($res);
 	 }
@@ -67,7 +67,7 @@ class Cproductos extends CI_Controller
 
 	 	$param=$this->input->post('dato');
 
-	 	$res=$this->mproductos->filtroproductos($param);
+	 	$res=$this->Mproductos->filtroproductos($param);
 
 	 	echo json_encode($res);
 	 }

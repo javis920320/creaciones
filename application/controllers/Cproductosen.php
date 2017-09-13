@@ -7,7 +7,7 @@ class Cproductosen extends CI_COntroller
 	function __construct()
 	{
 		parent::__construct();
-				$this->load->model('mpedidos');
+				$this->load->model('Mpedidos');
 
 
 	}
@@ -31,7 +31,7 @@ class Cproductosen extends CI_COntroller
 	 	$param['datos']=$this->input->post('dato');
 	 	$param['estado']=2;
 
-	 	$res=$this->mpedidos->lista($param);
+	 	$res=$this->Mpedidos->lista($param);
 
 	 	echo json_encode($res);
 	 }
