@@ -8,8 +8,9 @@ class Loginuser extends CI_Controller
 	{
 		parent::__construct();
 		
-		$this->load->model('mlogin');
+		$this->load->model('Mlogin');
 
+	
 	}
 
 public function index(){
@@ -31,7 +32,7 @@ public function index(){
 
 	// cargar el modelo  de logueo
 
-		$res=$this->mlogin->loguear($param);
+		$res=$this->Mlogin->loguear($param);
 		if ($res==1){
 
 			$datos=$this->session->userdata('tipo');
@@ -45,7 +46,7 @@ public function index(){
 						$this->load->view('vendedor/vivendedor',$nombres);		
 						$this->load->view('layou/footer');*/
 					//echo'Usuario Ventas';
-						redirect('cpedidos');
+						redirect('Cpedidos');
 					break;
 
 					case 1:
@@ -75,6 +76,12 @@ public function index(){
 		
 
 
+	}
+
+
+public function logout(){
+		$this->session->sess_destroy();
+		redirect(base_url());
 	}
 
 

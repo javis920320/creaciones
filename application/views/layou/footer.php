@@ -54,22 +54,28 @@
 <!--<script type="text/javascript" src="<?php echo base_url();?>js/fpedidos.js"></script>-->
 
 
-<?php  if($this->uri->segment(1)=='cpedidoscliente') { ?>
+<?php  if($this->uri->segment(1)=='Cpedidoscliente') { ?>
 <script src="<?php echo  base_url();?>js/fpedidos.js"></script>
 <?php  }?>
-<?php  if($this->uri->segment(1)=='cproductos') { ?>
+<?php  if($this->uri->segment(1)=='Cproductos') { ?>
 <script src="<?php echo  base_url();?>js/jsproductos.js"></script>
 <?php  }?>
 
-<?php  if($this->uri->segment(1)=='cpedidos' or $this->uri->segment(1)=='cproductos' ) { ?>
+<?php  if($this->uri->segment(1)=='Cpedidos' or $this->uri->segment(1)=='Cproductos' ) { ?>
 <script src="<?php echo  base_url();?>js/jspedidos.js"></script>
 <?php  }?>
 
-<?php  if($this->uri->segment(1)=='cpedidoscliente'){ ?>
+<?php  if($this->uri->segment(1)=='Cpedidoscliente'){ ?>
 <script src="<?php echo  base_url();?>js/functions.js"></script>
 <?php  }?>
-<?php  if($this->uri->segment(1)=='ctrabajos'){ ?>
+<?php  if($this->uri->segment(1)=='Ctrabajos'){ ?>
 <script src="<?php echo  base_url();?>js/jstrabajos.js"></script>
+
+<?php  }?>
+
+<?php  if($this->uri->segment(1)=='Cproductosen'){ ?>
+<script src="<?php echo  base_url();?>js/jsproductosen.js"></script>
+
 <?php  }?>
 
 </body>

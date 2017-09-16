@@ -43,7 +43,7 @@ $('#tblclientes').DataTable({
 
 			'ajax':{
 
-				"url":baseurl+"cclientes/getclientes",
+				"url":baseurl+"Cclientes/getclientes",
 
 
 				'type':'POST',
@@ -92,7 +92,7 @@ $('#formedit').submit(function(){
 
 	$.ajax({
 
-	url:baseurl+'cajax/updatecliente',
+	url:baseurl+'Cajax/updatecliente',
 
 
 	type:'POST',

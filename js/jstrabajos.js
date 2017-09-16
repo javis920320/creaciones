@@ -1,9 +1,9 @@
-
+﻿
 $('#btnbuscar').on('click',function(){
 	dato=$('#nfac').val();
 	//alert();
 
-	$.post(baseurl+"ctrabajos/buscarpedido",
+	$.post(baseurl+"Ctrabajos/buscarpedido",
 		{fac:dato},
 		function(data){
 			if(data==0){
@@ -50,7 +50,7 @@ $('#tpprod').on('change',function(event){
 		var dato= $('#tpprod option:selected').text();
 		alert(dato);
 
-			$.post(baseurl+"cproductos/listaproductosf",
+			$.post(baseurl+"Cproductos/listaproductosf",
 			{dato:dato},
 			function(data){
 				if(data==0){

@@ -8,7 +8,7 @@ class Ctrabajos extends CI_Controller
 	{
 		parent::__construct();
 
-		$this->load->model('mtrabajos');
+		$this->load->model('Mtrabajos');
 	}
 
 
@@ -33,7 +33,7 @@ class Ctrabajos extends CI_Controller
 
 		 $dato['fac']=$this->input->post('fac');
 
-		 $res=$this->mtrabajos->buscarpedido($dato);
+		 $res=$this->Mtrabajos->buscarpedido($dato);
 
 		 echo json_encode($res);
 
@@ -59,7 +59,7 @@ class Ctrabajos extends CI_Controller
 
 			 );
 
-		if($this->mtrabajos->insertrabajo()){
+		if($this->Mtrabajos->insertrabajo()){
 
 			echo 'Pedido registrado correctamente';
 		}

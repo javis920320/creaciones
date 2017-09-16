@@ -37,6 +37,16 @@
   <![endif]-->
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
+
+  <?php 
+if(!$this->session->userdata('id')){
+      redirect('Loginuser');
+
+    }
+
+
+
+   ?>
 <div class="wrapper">
 
   <header class="main-header">
@@ -286,7 +296,7 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="<?php echo base_url(); ?>Loginuser/logout" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>

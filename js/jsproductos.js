@@ -10,7 +10,7 @@ $('#tblproductos').DataTable({
 			'ajax':{
 
 
-				"url":baseurl+"cproductos/lista",
+				"url":baseurl+"Cproductos/lista",
 
 
 				'type':'POST',

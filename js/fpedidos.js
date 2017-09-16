@@ -9,7 +9,7 @@ $('#btnbuscar').on ('click',function(){
 
 
 
-$.post(baseurl+"cajax/buscarcliente",
+$.post(baseurl+"Cajax/buscarcliente",
 
 
 	{id : buscar},
@@ -53,7 +53,7 @@ $('#insertcliente').submit(function(){
 $.ajax({
 
 
-	url:baseurl+'cajax/ingresarCliente',
+	url:baseurl+'Cajax/ingresarCliente',
 
 
 	type:'POST',

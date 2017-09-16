@@ -7,7 +7,7 @@ class Cclientes extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->model('mclientes');
+		$this->load->model('Mclientes');
 	}
 
 
@@ -15,7 +15,7 @@ class Cclientes extends CI_Controller
 
 	 	$param=$this->input->post('dato');
 
-	 	$res=$this->mclientes->getclientes($param);
+	 	$res=$this->Mclientes->getclientes($param);
 
 	 	echo json_encode($res);
 
@@ -44,7 +44,7 @@ class Cclientes extends CI_Controller
 
 
 
-	 	$this->mclientes->updatecliente($param);
+	 	$this->Mclientes->updatecliente($param);
 	 }
 }
 
