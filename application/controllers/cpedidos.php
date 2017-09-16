@@ -57,11 +57,30 @@ class Cpedidos extends CI_Controller
 
 	 public function lista(){
 
-	 	$param=$this->input->post('dato');
+	 	$param['datos']=$this->input->post('dato');
+	 	$param['estado']=1;
 
 	 	$res=$this->mpedidos->lista($param);
 
 	 	echo json_encode($res);
+	 }
+
+
+
+	 public function enviarpedido(){
+
+
+	 	$param['idpedido']=$this->input->post('idpedido');
+	 	$param['estado']=$this->input->post('enviar');
+
+
+	 	if($this->mpedidos->updatepedido($param)){
+	 		echo'Se Actualizo el estado correctamente';
+	 	}
+
+
+
+
 	 }
 
 

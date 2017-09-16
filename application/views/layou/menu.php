@@ -25,6 +25,10 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
         <li class="header">Menu  de  Navegacion</li>
+
+        <?php  if($this->session->userdata('tipo')==0) { ?>
+
+
         <li class="active treeview">
           <a href="#">
             <i class="glyphicon glyphicon-list-alt"></i> <span>Pedidos </span>
@@ -34,10 +38,13 @@
           </a>
           <ul class="treeview-menu">
             <li class="active"><a href="<?php echo base_url();?>cpedidos"><i class="fa fa-circle-o"></i> Ingreso  Registro</a></li>
+             <li class="active"><a href="<?php echo base_url();?>cproductosen"><i class="fa fa-circle-o"></i> Productos enviados</a></li>
             
             <!--<li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>-->
           </ul>
         </li>
+        <?php  }?>
+         <?php  if($this->session->userdata('tipo')==0) { ?>
 
         <li class="treeview">
           <a href="#">
@@ -51,6 +58,11 @@
             
           </ul>
         </li> 
+
+        <?php  }?>
+
+         <?php  if($this->session->userdata('tipo')==2) { ?>
+
         <li class="treeview">
           <a href="#">
             <i class="glyphicon glyphicon-shopping-cart"></i> <span>Productos</span>
@@ -63,6 +75,9 @@
             
           </ul>
         </li> 
+        <?php  }?>
+
+         <?php  if($this->session->userdata('tipo')==3) { ?>
 
         <li class="treeview">
           <a href="#">
@@ -76,6 +91,7 @@
             
           </ul>
         </li> 
+        <?php  }?>
         <!--<li class="treeview">
           <a href="#">
             <i class="fa fa-share"></i> <span>Multilevel</span>
