@@ -7,6 +7,7 @@ class Cproductosen extends CI_COntroller
 	function __construct()
 	{
 		parent::__construct();
+				$this->load->model('Mpedidos');
 
 
 	}
@@ -23,6 +24,22 @@ class Cproductosen extends CI_COntroller
 
 	 	$this->load->view('layou/footer',$nombres);
 	}
+
+
+	 public function lista(){
+
+	 	$param['datos']=$this->input->post('dato');
+	 	$param['estado']=2;
+
+	 	$res=$this->Mpedidos->lista($param);
+
+	 	echo json_encode($res);
+	 }
+
+
+
+
+
 }
 
 

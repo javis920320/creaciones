@@ -8,7 +8,7 @@ class Cpedidos extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->model('mpedidos');
+		$this->load->model('Mpedidos');
 
 
 	}
@@ -46,7 +46,7 @@ class Cpedidos extends CI_Controller
 
 	
 
-	 	$resp=$this->mpedidos->insertpedido($param);
+	 	$resp=$this->Mpedidos->insertpedido($param);
 	 	echo "Pedido registrado correctamente";
 	 	//echo $hoy = date("Y/m/d");
 
@@ -60,7 +60,7 @@ class Cpedidos extends CI_Controller
 	 	$param['datos']=$this->input->post('dato');
 	 	$param['estado']=1;
 
-	 	$res=$this->mpedidos->lista($param);
+	 	$res=$this->Mpedidos->lista($param);
 
 	 	echo json_encode($res);
 	 }
@@ -93,7 +93,7 @@ class Cpedidos extends CI_Controller
 	 	$param['estado']=$this->input->post('enviar');
 
 
-	 	if($this->mpedidos->updatepedido($param)){
+	 	if($this->Mpedidos->updatepedido($param)){
 	 		echo'Se Actualizo el estado correctamente';
 	 	}
 

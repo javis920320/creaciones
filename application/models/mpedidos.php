@@ -46,7 +46,7 @@ public function updatepedido($param){
 
 		 );
 
-	$this->db->where('idpedido',$param['estado']);
+	$this->db->where('idpedido',$param['idpedido']);
 	$this->db->update('pedido',$datos);
 
 

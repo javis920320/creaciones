@@ -8,7 +8,7 @@ $('#btnbuscar').on('click',function(){
 
 
 
-	$.post(baseurl+"cajax/buscarcliente",
+	$.post(baseurl+"Cajax/buscarcliente",
 
 
 	{id : txtide},
@@ -65,7 +65,7 @@ $('#btnbuscar').on('click',function(){
 function cargarproductos(){
 
 
-	$.post(baseurl+"ctipoprod/gettipoprod",
+	$.post(baseurl+"Ctipoprod/gettipoprod",
 
 
 	{id : 1},
@@ -95,7 +95,7 @@ function cargarproductos(){
 		$.ajax({
 
 
-	url:baseurl+'cpedidos/insertpedido',
+	url:baseurl+'Cpedidos/insertpedido',
 
 	type:'POST',
 	data:$(this).serialize(),
@@ -118,7 +118,7 @@ function cargarproductos(){
 
 			'ajax':{
 
-				"url":baseurl+"cpedidos/lista",
+				"url":baseurl+"Cpedidos/lista",
 
 
 				'type':'POST',
@@ -133,12 +133,12 @@ function cargarproductos(){
 			{data:'descripcion'},
 			{data:'nombres'},
 			{data:'fecha_ingreso'},
+
 			{"orderable":true,
 			render:function(data,type,row){
 
 
 
-<<<<<<< HEAD
 return '<span class="pull-right">' +
                       '<div class="dropdown">' +
                       '  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">' +
@@ -155,12 +155,10 @@ return '<span class="pull-right">' +
                       '</span>';
 
 
-=======
->>>>>>> ae148eb3dd448fb2b70052a416963f3fade145f3
 				
 
 					//return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" data-toggle="modal" data-target="#myModal"><i class=" fa fa-edit"></i></a
-					return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" title="Enviar informacion" data-toggle="modal" data-target="#estado" onClick="estadopedido(\''+row.idpedido+'\',\''+row.nombres+'\',\''+row.telefono+'\');"><i class=" glyphicon glyphicon-plane"></i><span> Enviar</span></a>';
+					//return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" title="Enviar informacion" data-toggle="modal" data-target="#estado" onClick="estadopedido(\''+row.idpedido+'\',\''+row.nombres+'\',\''+row.telefono+'\');"><i class=" glyphicon glyphicon-plane"></i><span> Enviar</span></a>';
 					}
 			}
 
@@ -172,6 +170,9 @@ return '<span class="pull-right">' +
 		});	
 
 
+
+
+
 $('#pdf').on('click',function(){
 
 
@@ -181,7 +182,6 @@ $('#pdf').on('click',function(){
 
 });
 
-<<<<<<< HEAD
 selPersona = function(factura, facultad,cantidad,talla,idpedido){
 	$('#facturaedit').val(factura);
 	$('#facultadedit').val(facultad);
@@ -193,14 +193,12 @@ selPersona = function(factura, facultad,cantidad,talla,idpedido){
   
 };
 
-=======
->>>>>>> ae148eb3dd448fb2b70052a416963f3fade145f3
 
 $('#formprod').submit(function(){
 	alert();
 
 	$.ajax({
-	url:baseurl+'cproductos/ingresarprd',
+	url:baseurl+'Cproductos/ingresarprd',
 	type:'POST',
 	data:$(this).serialize(),
 	success:function(data){
@@ -249,7 +247,7 @@ $('#cambioestado').submit(function(){
 
 
 	$.ajax({
-	url:baseurl+'cpedidos/enviarpedido',
+	url:baseurl+'Cpedidos/enviarpedido',
 	type:'POST',
 	data:$(this).serialize(),
 	success:function(data){
