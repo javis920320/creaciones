@@ -101,6 +101,7 @@
 </div>
 
 
+<<<<<<< HEAD
 
 
 
@@ -161,6 +162,8 @@
   </div>
 </div>
 
+=======
+>>>>>>> ae148eb3dd448fb2b70052a416963f3fade145f3
 <!-- Modal -->
 <div class="modal fade" id="estado" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
@@ -214,7 +217,6 @@
                    <th>Cliente</th>
                   <th>Fecha ingreso</th>
                   <th>Accion</th>
-
                 </tr>
                 </thead>
                 <tbody></tbody>

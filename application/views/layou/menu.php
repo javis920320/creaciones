@@ -37,8 +37,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="<?php echo base_url();?>Cpedidos"><i class="fa fa-circle-o"></i> Ingreso  Registro</a></li>
-             <li class="active"><a href="<?php echo base_url();?>Cproductosen"><i class="fa fa-circle-o"></i> Productos enviados</a></li>
+            <li class="active"><a href="<?php echo base_url();?>cpedidos"><i class="fa fa-circle-o"></i> Ingreso  Registro</a></li>
+             <li class="active"><a href="<?php echo base_url();?>cproductosen"><i class="fa fa-circle-o"></i> Productos enviados</a></li>
             
             <!--<li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>-->
           </ul>
@@ -54,7 +54,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url();?>Cpedidoscliente/buscarcliente"><i class="fa fa-circle-o"></i> Ingresar </a></li>
+            <li><a href="<?php echo base_url();?>cpedidoscliente/buscarcliente"><i class="fa fa-circle-o"></i> Ingresar </a></li>
             
           </ul>
         </li> 
@@ -71,7 +71,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url();?>Cproductos/"><i class="fa fa-circle-o"></i> Ingresar </a></li>
+            <li><a href="<?php echo base_url();?>cproductos/"><i class="fa fa-circle-o"></i> Ingresar </a></li>
             
           </ul>
         </li> 
@@ -87,7 +87,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url();?>Ctrabajos/"><i class="fa fa-circle-o"></i> Ingresar </a></li>
+            <li><a href="<?php echo base_url();?>ctrabajos/"><i class="fa fa-circle-o"></i> Ingresar </a></li>
             
           </ul>
         </li> 
