@@ -118,27 +118,27 @@
 
           <div class='form-group'>
             <label for='Facturaedit'>Factura</label>
-            <input type='text' placeholder='Facturaedit' id='facturaedit' name='facturaedit' class='form-control'>
+            <input type='text' placeholder='Facturaedit' id='facturaedit' name='facturaedit' class='form-control' required>
           </div>
             <div class='form-group'>
             <label for='facultadedit'>Factura</label>
-            <input type='text' placeholder='Facturaedit' id='facultadedit' name='facultadedit' class='form-control'>
+            <input type='text' placeholder='Facturaedit' id='facultadedit' name='facultadedit' class='form-control' required>
           </div>
 
         <div class='form-group'>
           <label for='editcantidad'>Cantidad</label>
-          <input type='number' placeholder='' id='editcantidad' name='editcantidad' class='form-control'>
+          <input type='number' placeholder='' id='editcantidad' name='editcantidad' class='form-control'required>
 
         </div>
          <div class='form-group'>
           <label for='tallaedit'>Talla</label>
-          <input type='text' placeholder='talla' id='tallaedit' name='tallaedit' class='form-control'>
+          <input type='text' placeholder='talla' id='tallaedit' name='tallaedit' class='form-control' required>
         </div>
 
 
         <label for="descripcion:">Descripcion:</label>
         <div class='col-xs-12'>
-            <textarea name="descripcion_edit" id="descripcion_edit" cols="120" rows="10"  class='form-control'>
+            <textarea name="descripcion_edit" id="descripcion_edit" cols="120" rows="10"  class='form-control' required='true'>
           
             </textarea>
         </div>

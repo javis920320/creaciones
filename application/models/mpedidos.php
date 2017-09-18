@@ -53,6 +53,29 @@ public function updatepedido($param){
 	return true;
 }
 
+public function updatepedidoid($param){
+
+	$datos = array(
+		
+		
+		'factura'=>$param['factura'],
+		'facultad'=>$param['facultad'],
+		'cantidad'=>$param['cantidad'],
+		'talla'=>$param['talla'],
+		'descripcion'=>$param['descripcion']
+
+
+
+		 );
+
+	$this->db->where('idpedido',$param['idpedido']);
+	$this->db->update('pedido',$datos);
+
+
+	return true;
+}
+
+
 
 public  function lista($param){
 

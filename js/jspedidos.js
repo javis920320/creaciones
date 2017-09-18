@@ -146,10 +146,10 @@ return '<span class="pull-right">' +
                       '  <span class="caret"></span>' +
                       '  </button>' +
                       '    <ul class="dropdown-menu pull-right" aria-labelledby="dropdownMenu1">' +
-                      '    <li><a href="#" title="Editar informacion" data-toggle="modal" data-target="#modalEditPersona" onClick="selPersona(\''+row.factura+'\',\''+row.facultad+'\',\''+row.cantidad+'\',\''+row.talla+'\',\''+row.emi+'\');"><i style="color:#555;" class="glyphicon glyphicon-edit"></i> Editar</a></li>' +
-                      '    <li><a href="'+baseurl+'cafiliado/descargar/'+row.idPersona+'" title="Imprimir formato"><i class="glyphicon glyphicon-print" style="color:#006699"></i> Imprimir</a></li>' +
-                      '    <li><a href="#" title="Aprobar afiliado" onClick="updEstadoAfiliado('+row.idPersona+','+1+')"><i style="color:green;" class="glyphicon glyphicon-ok"></i> Aprobar</a></li>' +
-                      '    <li><a href="#" title="Desaprobar afiliado" onClick="updEstadoAfiliado('+row.idPersona+','+2+')"><i style="color:red;" class="glyphicon glyphicon-remove"></i> Desaprobar</a></li>' +
+                      '    <li><a href="#" title="Editar informacion" data-toggle="modal" data-target="#modalEditPersona" onClick="selPersona(\''+row.factura+'\',\''+row.facultad+'\',\''+row.cantidad+'\',\''+row.talla+'\',\''+row.idpedido+'\');"><i style="color:#555;" class="glyphicon glyphicon-edit"></i> Editar</a></li>' +
+                      //'    <li><a href="'+baseurl+'cafiliado/descargar/'+row.idPersona+'" title="Imprimir formato"><i class="glyphicon glyphicon-print" style="color:#006699"></i> Imprimir</a></li>' +
+                      '    <li><a href="#" title="Enviar Pedido"  data-toggle="modal" data-target="#estado"  onClick="estadopedido(\''+row.idpedido+'\',\''+row.nombres+'\',\''+row.telefono+'\')"><i style="color:green;" class="glyphicon glyphicon-plane"></i> Enviar Pedido</a></li>' +
+                      //'    <li><a href="#" title="Desaprobar afiliado" onClick="updEstadoAfiliado('+row.idPersona+','+2+')"><i style="color:red;" class="glyphicon glyphicon-remove"></i> Desaprobar</a></li>' +
                       '    </ul>' +
                       '</div>' +
                       '</span>';
@@ -182,12 +182,13 @@ $('#pdf').on('click',function(){
 
 });
 
-selPersona = function(factura, facultad,cantidad,talla,descripcion){
+selPersona = function(factura, facultad,cantidad,talla,idpedido){
 	$('#facturaedit').val(factura);
 	$('#facultadedit').val(facultad);
 	$('#editcantidad').val(cantidad);
 	$('#tallaedit').val(talla);
-	$('#descripcion_edit').val(descripcion);
+	$('#idpersonaedit').val(idpedido);
+
 
   
 };
@@ -198,6 +199,24 @@ $('#formprod').submit(function(){
 
 	$.ajax({
 	url:baseurl+'Cproductos/ingresarprd',
+	type:'POST',
+	data:$(this).serialize(),
+	success:function(data){
+		alert(data);
+		/*if(data){
+			$('#msn').removeClass('hide');
+		}*/
+
+	}
+	});
+
+
+});
+$('#form-edit').submit(function(){
+	alert();
+
+	$.ajax({
+	url:baseurl+'Cpedidos/editar',
 	type:'POST',
 	data:$(this).serialize(),
 	success:function(data){

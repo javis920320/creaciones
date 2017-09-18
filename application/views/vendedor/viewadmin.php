@@ -7,7 +7,7 @@
 
 
 
-	<h1>Soy William</h1>
+	
 </head>
 <body>
 	

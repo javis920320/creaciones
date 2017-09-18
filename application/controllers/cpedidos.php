@@ -66,6 +66,25 @@ class Cpedidos extends CI_Controller
 	 }
 
 
+	 public function editar(){
+
+	 	$param['factura']=$this->input->post('facturaedit');
+	 	$param['facultad']=$this->input->post('facultadedit');
+	 	$param['cantidad']=$this->input->post('editcantidad');
+	 	$param['talla']=$this->input->post('tallaedit');
+	 	$param['descripcion']=$this->input->post('descripcion_edit');
+	 	$param['idpedido']=$this->input->post('idpersonaedit');
+	 	
+
+	 	if($this->Mpedidos->updatepedidoid($param)){
+	 		echo 'Se Actulizao correctamente el pedido';
+	 	}
+	 	
+	 	
+	 	
+	 }
+
+
 
 	 public function enviarpedido(){
 
