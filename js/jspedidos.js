@@ -14,30 +14,19 @@ $('#btnbuscar').on('click',function(){
 	{id : txtide},
        function(data){
 
-       	var f = new Date();
-		//dat=f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear();
-		dat=f.getDate();
-
-       	//alert();
+       	
        
 		if(data==0){
 			console.log(data);
 			$('#alerta').removeClass('hide');
+			$('.contenedor_json').addClass('hide');
 			
 
 
 		}else{
 			cargarproductos();
 			$('#ingpedido').removeClass('hide');
-			var f = new Date();
-			//dat=f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear();
-			dat=f.getDate();
-			dat1=f.getFullYear();
-			dat2=f.getMonth() +1
-			cadena=dat+'/'+dat2+'/'+dat1;
-
-			//alert(cadena);
-			$('#fecha').val(cadena);
+		
 
 			
 
@@ -48,7 +37,7 @@ $('#btnbuscar').on('click',function(){
 			
 
 			$.each(obj,function(i,items){
-				$(".contenedor_json").append('<span class="text-success"><strong>Nombre del CLiente' + items.nombres+ '<strong></span>');
+				$(".contenedor_json").append('<span class="text-success"><strong><h1> Cliente:' + items.nombres+ '</h1><strong></span>');
 				$('#idpersona').val(items.idpersona);
 			});
 			
@@ -261,5 +250,20 @@ $('#cambioestado').submit(function(){
 	});
 
 
+
+});
+
+
+$('#agregarprod').on('click',function(){
+
+	  var seleeccion =$('#seltp').val();
+	   var arreglo = new Array();
+	   var factura=$('#factura').val();
+
+	   arreglo.push(seleeccion);
+	   console.log(arreglo[0],arreglo[1]);
+
+
+	  
 
 });
