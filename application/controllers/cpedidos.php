@@ -34,7 +34,7 @@ class Cpedidos extends CI_Controller
 
 
 	 		
-	 		//$param ['idpedido']=null;
+	 		$param ['idpedido']=null;
 	 		$param ['factura']=$this->input->post('factura');
 	 		$param ['facultad']=$this->input->post('facultad');
 	 		$param ['cantidad']=$this->input->post('cantidad');
@@ -47,8 +47,8 @@ class Cpedidos extends CI_Controller
 	
 
 	 	$resp=$this->Mpedidos->insertpedido($param);
-	 	echo "Pedido registrado correctamente";
-	 	//echo $hoy = date("Y/m/d");
+	 	//echo "Pedido registrado correctamente";
+	 	
 
 
 

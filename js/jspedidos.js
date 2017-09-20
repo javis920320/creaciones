@@ -3,6 +3,7 @@
 $('#btnbuscar').on('click',function(){
 	$('#alerta').addClass('hide');
 
+
 	txtide=$('#idcliente').val();
 
 
@@ -256,12 +257,33 @@ $('#cambioestado').submit(function(){
 
 $('#agregarprod').on('click',function(){
 
-	  var seleeccion =$('#seltp').val();
-	   var arreglo = new Array();
-	   var factura=$('#factura').val();
+	var cedula=$('#idpersona').val();
 
-	   arreglo.push(seleeccion);
-	   console.log(arreglo[0],arreglo[1]);
+	var factura=$('#factura').val();
+		//alert(factura);
+	var facultad=$('#facultad').val();
+	var tipoprod =$('#seltp').val();
+	var cantidad =$('#cantidad').val();
+	var descripcion =$('#descripcion').val();
+	var talla =$('#talla').val();
+	//var descripcion =$('#descripcion').val();
+
+	$.post(baseurl+'cpedidos/insertpedido',
+		//{idcliente:cedula,factura:factura,facultad:facultad,cantidad:cantidad,descripcion:descripcion,talla:talla,seltp:tipoprod},
+		{idpersona:cedula,factura:factura,facultad:facultad,cantidad:cantidad,talla:talla,descripcion:descripcion,seltp:tipoprod},
+		function(data){
+			alert(data);
+
+
+		});
+
+	   //var arreglo = new Array();
+	  // var factura=$('#factura').val();
+
+	   //arreglo.push(seleeccion);
+	   //alert(seleeccion);
+	   //console.log(arreglo[0],arreglo[1]);
+
 
 
 	  
