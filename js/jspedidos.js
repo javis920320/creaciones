@@ -4,7 +4,13 @@ $('#btnbuscar').on('click',function(){
 	$('#alerta').addClass('hide');
 
 
+
 	txtide=$('#idcliente').val();
+	if(txtide==''){
+
+	}else{
+
+	
 
 
 
@@ -21,10 +27,13 @@ $('#btnbuscar').on('click',function(){
 			console.log(data);
 			$('#alerta').removeClass('hide');
 			$('.contenedor_json').addClass('hide');
+
 			
 
 
 		}else{
+
+			$('#factura').removeClass('hide');
 			cargarproductos();
 			$('#ingpedido').removeClass('hide');
 		
@@ -47,6 +56,7 @@ $('#btnbuscar').on('click',function(){
 		}
 
 });
+	}
 
 
 });
@@ -277,15 +287,8 @@ $('#agregarprod').on('click',function(){
 
 		});
 
-	   //var arreglo = new Array();
-	  // var factura=$('#factura').val();
-
-	   //arreglo.push(seleeccion);
-	   //alert(seleeccion);
-	   //console.log(arreglo[0],arreglo[1]);
-
-
-
-	  
+$('#seltp').empty();	 
+$('#cantidad').empty();
+$('#descripcion').empty();	 	  
 
 });

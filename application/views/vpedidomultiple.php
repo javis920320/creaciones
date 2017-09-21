@@ -10,9 +10,7 @@
 
 <div class="box-body">
 
-			<div class="col-sm-4">
-			</div>
-			<div class="col-sm-4">
+			<div class="col-sm-6">
 				<div class="form-group">
 					<label for="cedula">cedula:</label>
 
@@ -24,10 +22,19 @@
 
 			</div>
 
-			<div class="col-sm-4">
+
+			
+
+			<div class=' col-sm-4 '>
 
 			</div>
+			<blockquote >
+			<div class=' col-sm-12 jumbotron'>
+				<strong class='text text-primary'>Para Ingresar un nuevo Pedido  el cliente debe estar registrado, si no se encuentra registrado por favor presione <a href="<?php echo base_url()?>Cpedidoscliente/buscarcliente"><span class='text text-danger'>Aqui</span></a></strong>
+			</div>
+		</blockquote >
 
+			
 
 			<div class="col-sm-12">
 				<div class="contenedor_json" align='center'>
@@ -37,11 +44,11 @@
 			</div>
 
 
-			<div class="col-sm-6">
-				<div class="form-group">
+			<div class="col-sm-6 " >
+				<div class="form-group ">
 					<label for="factura">Factura:</label>
 
-				 <input type="text" placeholder="N Factura" id="factura" class="form-control">
+				 <input type="text" placeholder="N Factura" id="factura" class="  form-control">
 
 			</div>
 
@@ -49,10 +56,10 @@
 
 
 			<div class="col-sm-6">
-				<div class="form-group">
-					<label for="facultad">Facultad:</label>
+				<div class="form-group ">
+					<label for="facultad" class=''>Facultad:</label>
 
-				 <input type="text" placeholder="Ingresar facultad" id="facultad" class="form-control">
+				 <input type="text" placeholder="Ingresar facultad" id="facultad" class="form-control ">
 
 				</div>
 
@@ -62,18 +69,24 @@
 			
 
 			<div class="col-sm-4">
-				<div class="form-group">
-					<label for="tpprod">Tipo Producto:</label>
-					<div id='tpprod'></div>
+				<div class="form-group ">
+					<label for="tpprod" >Tipo Producto:</label>
+					<div id='tpprod' ></div>
 
 			
 
 
 				</div>
 					<input type="hidden" class="idpersona" id='idpersona' name="idpersona">
+				
 
-				<label for="talla">Talla</label>
-				<select name="talla" id="talla" class="form-control">
+			</div>
+
+
+			<div class="col-sm-4">
+				<div class="form-group ">	
+				<label for="talla" >Talla</label>
+				<select name="talla" id="talla" class="form-control ">
 					<option value="0">0</option>
 					<option value="2">2</option>
 					<option value="4">4</option>
@@ -93,9 +106,12 @@
 
 				</select>
 
-			</div>	
+			</div>
+			</div>
+
+
 			<div class="col-sm-4">
-				<div class="form-group">
+				<div class="form-group ">
 					<label for="cantidad">Cantidad</label>
 
 					<input type="number" id="cantidad" class="form-control">	
@@ -115,24 +131,25 @@
 
 
 			<div class="col-sm-12">
-			<label for="descripcion">Descripcion:</label>
+				<div class='form-group '>
+			<label for="descripcion" >Descripcion:</label>
 
-			<div class='form-group'>
+			
 
 				<textarea cols="30" rows="5" class='form-control 'id='descripcion' ></textarea>
 			</div>
 			</div>
 
 			<div class="col-sm-8">
-				<div class="form-group">
+				<div class="form-group ">
 					<div class="col-sm-4">
 					<button  id=''  class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Agregar</button>
 					</div>
 					<div class="col-sm-4">	
-					<button class='btn btn-default'>Limpiar</button>
+					<a class='btn btn-default btn-lg' href='<?php echo base_url()?>Cpedidomultiple'>Limpiar</a>
 					</div>
 					<div>
-					<button class='btn btn-danger'>Cancelar</button>
+					<a class='btn btn-danger' href='<?php echo base_url()?>Cpedidos'>Volver a lista pedidos</a>
 					</div>
 					
 
