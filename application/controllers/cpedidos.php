@@ -47,7 +47,7 @@ class Cpedidos extends CI_Controller
 	
 
 	 	$resp=$this->Mpedidos->insertpedido($param);
-	 	//echo "Pedido registrado correctamente";
+	 	echo "Pedido registrado correctamente";
 	 	
 
 

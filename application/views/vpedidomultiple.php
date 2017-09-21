@@ -159,7 +159,7 @@
 
 
 			      	 <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-			        <button type="button" class="btn btn-primary" id='agregarprod'>Aceptar</button>
+			        <button type="button" class="btn btn-primary" id='agregarprod' data-dismiss="modal">Aceptar</button>
 			        
 			      </div>
 			      <div class="modal-footer">
