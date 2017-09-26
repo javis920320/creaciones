@@ -1,4 +1,5 @@
 //alert();
+//cargarproductos();
 
 $('#btnbuscar').on('click',function(){
 	$('#alerta').addClass('hide');
@@ -8,8 +9,9 @@ $('#btnbuscar').on('click',function(){
 	txtide=$('#idcliente').val();
 	if(txtide==''){
 
+		$('#alerta1').removeClass('hide');
 	}else{
-
+	$('#alerta1').addClass('hide');
 	
 
 
@@ -276,6 +278,18 @@ $('#agregarprod').on('click',function(){
 	var cantidad =$('#cantidad').val();
 	var descripcion =$('#descripcion').val();
 	var talla =$('#talla').val();
+	 if(factura==''){
+	 	$('#alerta2').removeClass('hide');
+
+	 }else if(facultad==''){
+	 	$('#alerta3').removeClass('hide');
+
+	 }else{
+
+	 
+	$('#alerta2').addClass('hide');
+	$('#alerta3').addClass('hide');
+	
 	//var descripcion =$('#descripcion').val();
 
 	$.post(baseurl+'cpedidos/insertpedido',
@@ -289,6 +303,13 @@ $('#agregarprod').on('click',function(){
 
 $('#seltp').empty();	 
 $('#cantidad').empty();
-$('#descripcion').empty();	 	  
+$('#descripcion').empty();	 
+}	  
 
 });
+
+/*function errortrap(msg,url,line){
+    alert(msg);
+    return true;
+}
+onerror=errortrap;*/

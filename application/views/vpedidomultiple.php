@@ -3,6 +3,7 @@
 	<title></title>
 </head>
 <body>
+<br>
 
 <div class="box box-primary">
 	
@@ -17,6 +18,7 @@
 				 <input type="text" placeholder="Buscar cliente" id="idcliente" class="form-control"   required value=1085298221>
 				 <input class="btn btn-primary" type="submit" value="Buscar cliente" id='btnbuscar'>
 				 <div class="text-danger hide" id='alerta'><strong>El Cliente No esta registrado..</strong></div>
+				 <div class="text-danger hide" id='alerta1'><strong>Este dato es requerido.</strong></div>
 
 			</div>
 
@@ -28,11 +30,13 @@
 			<div class=' col-sm-4 '>
 
 			</div>
-			<blockquote >
-			<div class=' col-sm-12 jumbotron'>
-				<strong class='text text-primary'>Para Ingresar un nuevo Pedido  el cliente debe estar registrado, si no se encuentra registrado por favor presione <a href="<?php echo base_url()?>Cpedidoscliente/buscarcliente"><span class='text text-danger'>Aqui</span></a></strong>
+		
+			<div class=' col-sm-12 bg-primary'>
+				<br>
+
+				<strong class=''>Para Ingresar un nuevo Pedido  el cliente debe estar registrado, si no se encuentra registrado por favor presione <a href="<?php echo base_url()?>Cpedidoscliente/buscarcliente"><span class='text text-danger'>Aqui</span></a></strong>
 			</div>
-		</blockquote >
+		
 
 			
 
@@ -48,7 +52,9 @@
 				<div class="form-group ">
 					<label for="factura">Factura:</label>
 
+
 				 <input type="text" placeholder="N Factura" id="factura" class="  form-control">
+				  <div class="text-danger hide" id='alerta2'><strong>Este dato es requerido.</strong></div>
 
 			</div>
 
@@ -60,6 +66,7 @@
 					<label for="facultad" class=''>Facultad:</label>
 
 				 <input type="text" placeholder="Ingresar facultad" id="facultad" class="form-control ">
+				  <div class="text-danger hide" id='alerta3'><strong>Este dato es requerido.</strong></div>
 
 				</div>
 
