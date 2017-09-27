@@ -14,11 +14,12 @@
 			<div class="col-sm-6">
 				<div class="form-group">
 					<label for="cedula">cedula:</label>
+					<div class="text-danger hide" id='alerta'><strong>El Cliente No esta registrado..</strong></div>
+				 <div class="text-danger hide" id='alerta1'><strong>Este dato es requerido.</strong></div>
 
 				 <input type="text" placeholder="Buscar cliente" id="idcliente" class="form-control"   required value=1085298221>
 				 <input class="btn btn-primary" type="submit" value="Buscar cliente" id='btnbuscar'>
-				 <div class="text-danger hide" id='alerta'><strong>El Cliente No esta registrado..</strong></div>
-				 <div class="text-danger hide" id='alerta1'><strong>Este dato es requerido.</strong></div>
+				 
 
 			</div>
 
@@ -51,10 +52,11 @@
 			<div class="col-sm-6 " >
 				<div class="form-group ">
 					<label for="factura">Factura:</label>
+					  <div class="text-danger hide" id='alerta2'><strong>Este dato es requerido.</strong></div>
 
 
 				 <input type="text" placeholder="N Factura" id="factura" class="  form-control">
-				  <div class="text-danger hide" id='alerta2'><strong>Este dato es requerido.</strong></div>
+				
 
 			</div>
 
@@ -193,6 +195,30 @@
 			  </div>
 			</div>
 
+	
+          
+     
+              <table  id='tblresumen' class="table table-hover table-responsive">
+                <thead class="bg-primary">
+                <tr>
+                  <th>Factura</th>
+                  <th>Facultad</th>
+                   <th>Cantidad</th>
+                   <th>Talla</th>
+                   <th>Descripcion</th>
+                   <th>Cliente</th>
+                  <th>Fecha ingreso</th>
+                  <th>Accion</th>
+
+                </tr>
+                </thead>
+                <tbody></tbody>
+                
+              </table>
+         
+            <!-- /.box-body -->
+          
+          <!-- /.box --> 
 	
 		
 </div>

@@ -195,12 +195,12 @@
 </div>
 
 
-<div class="col-xs-10 col-md-10">
+
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title" class='text-primary'>PEDIDOS</h3><br><br>
+              <h3 class="box-title" class='text-primary'>RESUMEN PEDIDOS</h3><br><br>
               
-<button id='pdf' class='btn btn-danger'><span class='glyphicon glyphicon-print'></span>  Crear Pdf</button>
+
             </div>
             <!-- /.box-header -->
              
@@ -226,7 +226,7 @@
             <!-- /.box-body -->
           </div>
           <!-- /.box -->
-        </div>
+     
         <script type="text/javascript">
 	var baseurl = "<?php echo base_url(); ?>";
 </script>

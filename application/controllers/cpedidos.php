@@ -57,7 +57,7 @@ class Cpedidos extends CI_Controller
 
 	 public function lista(){
 
-	 	$param['datos']=$this->input->post('dato');
+	 $param['datos']=$this->input->post('dato');
 	 	$param['estado']=1;
 
 	 	$res=$this->Mpedidos->lista($param);
