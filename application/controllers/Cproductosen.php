@@ -12,7 +12,9 @@ class Cproductosen extends CI_COntroller
 
 	}
 
-
+/*
+autor:´javier lopez
+*/
 	public function index(){
 
 	 	$nombres['nombres']=$this->session->userdata('nombres');
@@ -28,7 +30,7 @@ class Cproductosen extends CI_COntroller
 
 	 public function lista(){
 
-	 	$param['datos']=$this->input->post('dato');
+	 	$param['factura']=$this->input->post('factura');
 	 	$param['estado']=2;
 
 	 	$res=$this->Mpedidos->lista($param);

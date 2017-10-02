@@ -7,7 +7,7 @@ $('#tblproductosen').DataTable({
 			'ajax':{
 
 				"url":baseurl+"Cproductosen/lista",
-
+				'data':{factura:''},
 
 				'type':'POST',
 				dataSrc:''

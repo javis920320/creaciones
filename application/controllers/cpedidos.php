@@ -57,12 +57,29 @@ class Cpedidos extends CI_Controller
 
 	 public function lista(){
 
-	 $param['datos']=$this->input->post('dato');
-	 	$param['estado']=1;
+	 $param['factura']=$this->input->post('factura');
+	  if($param['factura']==''){
+	  	$param['estado']=1;
+	 		
+
 
 	 	$res=$this->Mpedidos->lista($param);
 
 	 	echo json_encode($res);
+
+
+	  }else{
+	  	$param['estado']=1;
+	 		
+
+
+	 	$res=$this->Mpedidos->filtro($param);
+
+	 	echo json_encode($res);
+
+
+	  }
+	 	
 	 }
 
 

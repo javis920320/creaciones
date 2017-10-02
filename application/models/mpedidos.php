@@ -79,18 +79,42 @@ public function updatepedidoid($param){
 
 public  function lista($param){
 
-	$dato = array('estado' => $param['estado'] );
+	$dato = array('estado' => $param['estado'] ,
+					'factura' => $param['factura'] );
 
 	    $this->db->select('p.idpedido,p.factura,p.facultad,p.cantidad,p.talla,p.descripcion,pe.nombres,p.fecha_ingreso');
 		$this->db->from('pedido p');
 		$this->db->join('cliente c','c.idpersona=p.idcliente');
 		$this->db->join('persona pe','pe.idpersona=c.idpersona');
 		$this->db->where('p.estado',$dato['estado']);
+		//$this->db->where('p.factura',$dato['factura']);
 		$this->db->order_by('fecha_ingreso', 'DESC');
 
 		$resul=$this->db->get();
 		return $resul->result();
 }
+
+
+ public  function filtro($param){
+
+	$dato = array('estado' => $param['estado'] ,
+					'factura' => $param['factura'] );
+
+	    $this->db->select('p.idpedido,p.factura,p.facultad,p.cantidad,p.talla,p.descripcion,pe.nombres,p.fecha_ingreso');
+		$this->db->from('pedido p');
+		$this->db->join('cliente c','c.idpersona=p.idcliente');
+		$this->db->join('persona pe','pe.idpersona=c.idpersona');
+		$this->db->where('p.estado',$dato['estado']);
+		$this->db->where('p.factura',$dato['factura']);
+		$this->db->order_by('fecha_ingreso', 'DESC');
+
+		$resul=$this->db->get();
+		return $resul->result();
+}
+
+
+
+ 
 
 }
  ?>
