@@ -54,6 +54,17 @@ public function index(){
 						redirect('Ctaller');		
 						
 						break;
+
+						case 2:
+					
+						redirect('Coperario');		
+						
+						break;
+						case 3:
+					
+						redirect('Cadmin');		
+						
+						break;
 				
 				default:
 					echo'Tipo User no identity';
@@ -75,6 +86,8 @@ public function index(){
 
 
 	}
+
+
 
 
 public function logout(){

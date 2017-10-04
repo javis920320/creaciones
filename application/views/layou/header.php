@@ -271,7 +271,7 @@ if(!$this->session->userdata('id')){
                 <img src="<?php  echo base_url();?>assets/dist/img/avatar5.png" class="img-circle" alt="User Image">
 
                 <p>
-                  Alexander Pierce - Web Developer
+                  <?php echo$nombres;?>
                   <small>Member since Nov. 2012</small>
                 </p>
               </li>
@@ -296,7 +296,7 @@ if(!$this->session->userdata('id')){
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="<?php echo base_url(); ?>Loginuser/logout" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="<?php echo base_url(); ?>Loginuser/logout" class="btn btn-default btn-flat">Cerrar Session</a>
                 </div>
               </li>
             </ul>
