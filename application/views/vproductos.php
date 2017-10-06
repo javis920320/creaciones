@@ -21,8 +21,15 @@
 	         <form class='form' id='formprod'>
 
 	         	 <div class='form-group'>
-	         	 	<label for='nomprod'></label>
-	         	 	<input type=' text' placeholder='Nombre del Producto' name='nomprod' id='nomprod' class="form-control">
+	         	 	<label for='nomprod'>Nombre</label>
+	         	 	<input type=' text' placeholder='Nombre del Producto' name='nomprod' id='nomprod' class="form-control" required>
+	         	 	<label for='precio'>Precio</label>
+
+	         	 	<input type='number' name='precio' id='precio' required class='form-control'>
+	         	 	<label for='subprecio'>Precio para Operario</label>
+
+	         	 	<input type='number' name='subprecio' id='subprecio' required class='form-control'>
+
 
 	         	 </div>
 	         	 <div id='tpprod'></div>

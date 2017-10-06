@@ -206,7 +206,7 @@ console.log(descripcion);
 };
 
 
-$('#formprod').submit(function(){
+/*$('#formprod').submit(function(){
 	alert();
 
 	$.ajax({
@@ -219,11 +219,11 @@ $('#formprod').submit(function(){
 			$('#msn').removeClass('hide');
 		}*/
 
-	}
-	});
+	/*}
+	});*/
 
 
-});
+//});
 $('#form-edit').submit(function(){
 	alert();
 

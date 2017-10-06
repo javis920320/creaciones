@@ -33,6 +33,9 @@ class Cproductos extends CI_Controller
 	    $arreglo['nomprod']=$this->input->post('nomprod');
 	 	
 	 	$arreglo['idtipoprod']=$this->input->post('seltp');
+	 	$arreglo['precio']=$this->input->post('precio');
+	 	$arreglo['subprecio']=$this->input->post('subprecio');
+	 	$arreglo['fecha']=$hoy = date("Y/m/d");
 
 	 	//$arreglo['nomprod']='prueba';
 	 		//$arreglo['idtipoprod']=1;
@@ -40,8 +43,13 @@ class Cproductos extends CI_Controller
 	 	$res=$this->Mproductos->ingresarprd($arreglo);
 
 	 	if($res){
-
-	 		echo'Producto registrado correctamente';
+$arreglo['idprod']=$res;
+	 		
+	 		if($resp=$this->Mproductos->valorprenda($arreglo)){
+	 			echo'Producto registrado correctamente';
+	 		}else{
+	 			echo'error en proceso de precios';
+	 		}
 
 	 	}
 

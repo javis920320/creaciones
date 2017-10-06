@@ -41,3 +41,21 @@ $('#tblproductos').DataTable({
  "order":[[0,"asc"]],
 
 		});	
+
+
+$('#formprod').submit(function(){
+	//alert();
+
+	$.ajax({
+	url:baseurl+'Cproductos/ingresarprd',
+	type:'POST',
+	data:$(this).serialize(),
+	success:function(data){
+		alert(data);
+		/*if(data){
+			$('#msn').removeClass('hide');
+		}*/
+
+	}
+	});
+	});

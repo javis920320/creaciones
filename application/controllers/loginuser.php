@@ -41,11 +41,7 @@ public function index(){
 			
 		switch ($datos) {
 				case 0:
-				        /*$this->load->view('layou/header');
-						$this->load->view('layou/menu',$nombres);
-						$this->load->view('vendedor/vivendedor',$nombres);		
-						$this->load->view('layou/footer');*/
-					//echo'Usuario Ventas';
+				       
 						redirect('Cpedidos');
 					break;
 

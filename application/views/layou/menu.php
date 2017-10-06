@@ -61,7 +61,7 @@
 
         <?php  }?>
 
-         <?php  if($this->session->userdata('tipo')==2) { ?>
+         <?php  if($this->session->userdata('tipo')==3) { ?>
 
         <li class="treeview">
           <a href="#">

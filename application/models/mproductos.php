@@ -30,10 +30,11 @@ class Mproductos extends CI_Model
 
 
 		if($this->db->insert('producto',$datos)){
-		return  true;	
-	}else{
-		return false; 
-		}
+		$insert_id = $this->db->insert_id();
+
+   return  $insert_id;}else{
+   	return false;
+   }
 
 
 
@@ -77,6 +78,25 @@ public  function filtroproductos($param){
 
 
 
+
+}
+
+public  function valorprenda($arreglo){
+
+
+
+		$datos = array(
+			'idprecio'=> null,
+			'estado' => 1,
+			'fecha' =>  $arreglo['fecha'],
+			'valor' =>  $arreglo['precio'],
+			'subvalor' =>  $arreglo['subprecio'],
+			'id_prod'=> $arreglo['idprod']
+			);
+
+
+		$this->db->insert('precio',$datos);
+			return true;
 
 }
 
