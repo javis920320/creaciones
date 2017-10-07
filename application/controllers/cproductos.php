@@ -79,6 +79,71 @@ $arreglo['idprod']=$res;
 
 	 	echo json_encode($res);
 	 }
+
+
+	 public  function editarproducto(){
+	 	if($this->input->post('estado')==1){
+
+	 		$param['id_prod']=$this->input->post('idproductoedit');
+	 		$param['nomprod']=$this->input->post('nomprodedit');
+	 		$param['valor']=$this->input->post('valoredit');
+	 		$param['subvalor']=$this->input->post('subvaloredit');
+	 		$param ['fecha']=$hoy = date("Y/m/d");
+
+	 		/*
+
+	 		1.enviar modificar datos producto
+	 		2.desactivar precio
+	 		3.agregar  nuevo precio
+
+
+	 		*/
+	 		//echo $param['valor'];
+
+	 		$res=$this->Mproductos->editarproductos($param);
+	 		if($res>=1){
+	 			$resp=$this->Mproductos->descativarprecio($param);
+
+	 			if($resp>=1){
+
+				$resp=$this->Mproductos->asignarprecio($param);
+				if($resp>=1){
+					echo "Se a actualizado correctamente";
+
+				}else{
+					echo "No se pudo realizar la actualizacion en asignacion precio";
+				}
+
+	 			}else{
+	 					echo "No se pudo realizar la actualizacion en precio";
+	 			}
+	 			
+
+	 		}else{
+	 			echo "No se pudo realizar la actualizacion en productos";
+	 		}
+
+
+
+
+	 	}else{
+
+	 		$param['id_prod']=$this->input->post('idproductoedit');
+	 		$param['nomprod']=$this->input->post('nomprodedit');
+
+	 		$res=$this->Mproductos->editarproductos($param);
+	 		if($res>=1){
+	 			echo "Se a actualizado correctamente";
+
+	 		}else{
+	 			echo "No se pudo realizar la actualizacion";
+	 		}
+
+	 	}
+
+
+
+	 }
 }
 
 

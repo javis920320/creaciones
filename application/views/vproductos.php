@@ -20,8 +20,10 @@
         <h4 class="modal-title" id="myModalLabel">EDITAR PRECIO</h4>
       </div>
       <div class="modal-body">
-       <form action="">
+       <form action="" id='editarprod'>
        	<div class='form-group'>
+       		<input type='hidden' class='bandera' name='estado' value=0>
+       		<input type='hidden' id='idproductoedit' name='idproductoedit'>
        		<label for="Tipoprode">TIPO DE PRODUCTO</label>
 			<div class="prodtp"></div>
 
@@ -32,24 +34,34 @@
        		
 
        	</div>
+<div class="btn-group" role="group" aria-label="...">
+  <button type="button" id='btnconfirmar' class="btn btn-default">Habilitar</button>
+  <button type="button" id='btnnoconfirmar'class="btn btn-default">Desabilitar</button>
+  
+</div>
+
        	 <div class='form-group'>
        		<label for="valoredit">Precio</label>
-       		<input type="number" id='valoredit' name='valoredit' class="form-control">
+       		<input type="number" id='valoredit' name='valoredit' class="form-control" disabled='true'>
        		
 
        	</div>
+
        	<div class='form-group'>
        		<label for="subvaloredit">Precio para operario</label>
-       		<input type="number" id='subvaloredit' name='subvaloredit' class="form-control">
+       		<input type="number" id='subvaloredit' name='subvaloredit' class="form-control" disabled>
        		
 
        	</div>
+
+
+       	 <input type='submit' value='Editar ' id='btnedit' class='btn btn-'>
 
        </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+     
       </div>
     </div>
   </div>
@@ -83,7 +95,7 @@
 	         	 </div>
 	         	 <div id='tpprod'></div>
 
-	         	  <input type='submit' value='Nuevo Producto' id='btningresar'>
+	         	  <input type='submit' value='Ingresar Producto' id='btningresar'>
 	         </form>
 	      </div>
 	      <div class="modal-footer">
@@ -107,6 +119,7 @@
               <table  id='tblproductos' class="table table-hover table-responsive">
                 <thead class="bg-primary">
                 <tr>
+                  <th>Codigo</th>
                   <th>Tipo Producto</th>
                   <th>Nombre Producto</th>
                    <th>Valor</th>

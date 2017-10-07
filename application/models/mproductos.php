@@ -48,11 +48,11 @@ public  function getproductos($param){
 
 
 
-        $this->db->select('tp.nomtipoprod,p.nomprod,pr.valor,pr.subvalor');
+        $this->db->select('p.id_prod,tp.nomtipoprod,p.nomprod,pr.valor,pr.subvalor');
 		$this->db->from('PRODUCTO  P');
 		$this->db->join('TIPO_PRODUCTO TP ','TP.IDTIPOPROD=P.IDTIPOPROD');
 		$this->db->join('precio pr','pr.id_prod=p.id_prod');
-		//$this->db->WHERE('P.ESTADO', 'DESC');
+		$this->db->WHERE('pr.estado', 1);
 
 		$resul=$this->db->get();
 		return $resul->result();
@@ -97,6 +97,44 @@ public  function valorprenda($arreglo){
 
 		$this->db->insert('precio',$datos);
 			return true;
+
+}
+
+
+public  function editarproductos($param){
+
+ $datos = array('nomprod' => $param['nomprod'] );
+
+	$this->db->where('id_prod',$param['id_prod']);
+	$this->db->update('producto',$datos);
+	$res=$this->db->affected_rows();
+		return$res;
+
+
+
+}
+
+
+public function descativarprecio($param){
+
+ $datos = array('estado' =>0);
+
+	$this->db->where('id_prod',$param['id_prod']);
+	$this->db->update('precio',$datos);
+	$res=$this->db->affected_rows();
+		return$res;
+
+}
+
+
+public function asignarprecio($param){
+
+ $datos = array('idprecio' =>null,'estado' =>1,'fecha'=>$param['fecha'],'valor'=>$param['valor'],'subvalor'=>$param['subvalor'],'id_prod'=>$param['id_prod']);
+
+	//$this->db->where('id_prod',$param['id_prod']);
+	$this->db->insert('precio',$datos);
+	$res=$this->db->affected_rows();
+		return$res;
 
 }
 

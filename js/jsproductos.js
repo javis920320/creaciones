@@ -18,6 +18,7 @@ $('#tblproductos').DataTable({
 			},
 
 			'columns':[
+			{data: 'id_prod'},
 			{data: 'nomtipoprod','sClass':'dt-body-center'},
 			{data:'nomprod'},
 			{data:'valor'},
@@ -31,7 +32,7 @@ $('#tblproductos').DataTable({
 				
 
 					//return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" data-toggle="modal" data-target="#myModal"><i class=" fa fa-edit"></i></a
-					return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" title="Editar informacion" data-toggle="modal" data-target="#editarprecio" onClick="editarprecio(\''+row.nomtipoprod+'\',\''+row.nomprod+'\',\''+row.valor+'\',\''+row.subvalor+'\');"><i class=" fa fa-edit"></i></a>';
+					return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" title="Editar informacion" data-toggle="modal" data-target="#editarprecio" onClick="editarprecio( \''+row.id_prod+'\',\''+row.idtipoprod+'\',\''+row.nomtipoprod+'\',\''+row.nomprod+'\',\''+row.valor+'\',\''+row.subvalor+'\');"><i class=" fa fa-edit"></i></a>';
 					}
 			}
 
@@ -62,19 +63,60 @@ $('#formprod').submit(function(){
 
 //editarprecio(\''+row.nomtipoprod+'\',\''+row.nomprod+'\',\''+row.valor+'\',\''+row.subvalor+'\');
 
-editarprecio = function(nomtipoprod, nomprod,valor,subvalor){
-	$('.prodtp').val(nomtipoprod);
+editarprecio = function(id_prod,idtipoprod,nomtipoprod, nomprod,valor,subvalor){
+	$('#idproductoedit').val(id_prod);
+	$('#seltp').val(idtipoprod);
+	console.log(id_prod);
 	$('#nomprodedit').val(nomprod);
 	$('#valoredit').val(valor);
 	$('#subvaloredit').val(subvalor);
+	$('.bandera').val(0);
 	//$('#idpersonaedit').val(idpedido);
 
 
 	//$('#descripcion_edit').text(descripcion);
-
+$('#valoredit').prop("disabled", true); 
+   $('#subvaloredit').prop("disabled", true); 
 
 
 
 
   
 };
+
+$('#btnconfirmar').on('click',function(){
+
+	 event.preventDefault();
+   $('#valoredit').prop("disabled", false); 
+   $('#subvaloredit').prop("disabled", false); 
+   $('.bandera').val(1);
+
+});
+
+$('#btnnoconfirmar').on('click',function(){
+
+	 event.preventDefault();
+   $('#valoredit').prop("disabled", true); 
+   $('#subvaloredit').prop("disabled", true); 
+   $('.bandera').val(0);
+
+});
+
+
+$('#editarprod').submit(function(){
+	$.ajax({
+
+		url:baseurl+'Cproductos/editarproducto',
+		type:'POST',
+		data:$(this).serialize(),
+		success:function(data){
+			alert(data);
+		/*if(data){
+			$('#msn').removeClass('hide');
+		}*/
+
+	}
+
+	});
+
+});
