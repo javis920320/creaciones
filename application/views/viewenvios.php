@@ -42,12 +42,14 @@
   </div>
 
 
-<div class="col-xs-10 col-md-10">
+<div class="col-xs-12 col-md-12">
           <div class="box">
             <div class="box-header">
               <h3 class="box-title" class='text-primary'>PRODUCTOS EN PROCESO</h3><br><br>
               
 <button id='pdf' class='btn btn-danger'><span class='glyphicon glyphicon-print'></span>  Crear Pdf</button>
+
+<button id='lista' class='btn btn-danger'><span class='glyphicon glyphicon-print'></span> Vista preliminar</button>
             </div>
             <!-- /.box-header -->
              

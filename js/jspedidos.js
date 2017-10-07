@@ -188,6 +188,15 @@ $('#pdf').on('click',function(){
 
 });
 
+$('#lista').on('click',function(){
+
+
+	window.open(baseurl+"Clista/");
+
+
+
+});
+
 selPersona = function(factura, facultad,cantidad,talla,idpedido,descripcion){
 	$('#facturaedit').val(factura);
 	$('#facultadedit').val(facultad);

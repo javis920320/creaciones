@@ -26,7 +26,7 @@
       <ul class="sidebar-menu">
         <li class="header">Menu  de  Navegacion</li>
 
-        <?php  if($this->session->userdata('tipo')==0) { ?>
+        <?php  if($this->session->userdata('tipo')==0 OR $this->session->userdata('tipo')==3 ) { ?>
 
 
         <li class="active treeview">

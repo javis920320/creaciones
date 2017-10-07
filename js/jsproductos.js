@@ -31,7 +31,7 @@ $('#tblproductos').DataTable({
 				
 
 					//return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" data-toggle="modal" data-target="#myModal"><i class=" fa fa-edit"></i></a
-					return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" title="Editar informacion" data-toggle="modal" data-target="#modalEditPersona" onClick="selPersona(\''+row.cedula+'\',\''+row.nombres+'\',\''+row.telefono+'\');"><i class=" fa fa-edit"></i></a>';
+					return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" title="Editar informacion" data-toggle="modal" data-target="#editarprecio" onClick="editarprecio(\''+row.nomtipoprod+'\',\''+row.nomprod+'\',\''+row.valor+'\',\''+row.subvalor+'\');"><i class=" fa fa-edit"></i></a>';
 					}
 			}
 
@@ -59,3 +59,22 @@ $('#formprod').submit(function(){
 	}
 	});
 	});
+
+//editarprecio(\''+row.nomtipoprod+'\',\''+row.nomprod+'\',\''+row.valor+'\',\''+row.subvalor+'\');
+
+editarprecio = function(nomtipoprod, nomprod,valor,subvalor){
+	$('.prodtp').val(nomtipoprod);
+	$('#nomprodedit').val(nomprod);
+	$('#valoredit').val(valor);
+	$('#subvaloredit').val(subvalor);
+	//$('#idpersonaedit').val(idpedido);
+
+
+	//$('#descripcion_edit').text(descripcion);
+
+
+
+
+
+  
+};

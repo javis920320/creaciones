@@ -45,3 +45,11 @@ $('#tblproductosen').DataTable({
 
 
 
+$('#lista').on('click',function(){
+
+
+	window.open(baseurl+"Clista/");
+
+
+
+});

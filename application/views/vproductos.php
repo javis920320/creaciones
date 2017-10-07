@@ -5,6 +5,55 @@
 	
 </head>
 <body>
+
+
+
+		
+
+
+<!-- modal editar precio -->
+<div class="modal fade" id="editarprecio" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">EDITAR PRECIO</h4>
+      </div>
+      <div class="modal-body">
+       <form action="">
+       	<div class='form-group'>
+       		<label for="Tipoprode">TIPO DE PRODUCTO</label>
+			<div class="prodtp"></div>
+
+       	</div>
+       <div class='form-group'>
+       		<label for="nomprodedit">Nombre producto</label>
+       		<input type="text" id='nomprodedit' name='nomprodedit' class="form-control">
+       		
+
+       	</div>
+       	 <div class='form-group'>
+       		<label for="valoredit">Precio</label>
+       		<input type="number" id='valoredit' name='valoredit' class="form-control">
+       		
+
+       	</div>
+       	<div class='form-group'>
+       		<label for="subvaloredit">Precio para operario</label>
+       		<input type="number" id='subvaloredit' name='subvaloredit' class="form-control">
+       		
+
+       	</div>
+
+       </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 	<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" onclick="cargarproductos()">
 	 Ingresar Producto
 	</button>
