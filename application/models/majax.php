@@ -44,10 +44,11 @@ class Majax extends CI_Model
 			'nombres' => $arreglo['nombres'],
 			'telefono' => $arreglo['telefono']
 		);
-		$this->db->where('cedula',$arreglo['cedula']);
+		$this->db->where('idpersona',$arreglo['codigo']);
 		$this->db->update('persona',$campos);
 
-		return true;
+		$res=$this->db->affected_rows();
+		return$res;
     }
 
 

@@ -32,10 +32,17 @@
 
 			</div>
 		
-			<div class=' col-sm-12 bg-primary'>
+			<div class=' col-sm-12 '>
 				<br>
 
-				<strong class=''>Para Ingresar un nuevo Pedido  el cliente debe estar registrado, si no se encuentra registrado por favor presione <a href="<?php echo base_url()?>Cpedidoscliente/buscarcliente"><span class='text text-danger'>Aqui</span></a></strong>
+				
+<div class="alert alert-success" role="alert">
+  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+  <span class="sr-only">Error:</span>
+  Para Ingresar un nuevo Pedido  el cliente debe estar registrado, si no se encuentra registrado por favor presione
+  <a href="<?php echo base_url()?>Cpedidoscliente/buscarcliente">Aqui</a>
+</div>
+
 			</div>
 		
 
@@ -123,7 +130,7 @@
 				<div class="form-group ">
 					<label for="cantidad">Cantidad</label>
 
-					<input type="number" id="cantidad" class="form-control">	
+					<input type="number" id="cantidad" class="form-control" value="1">	
 				
 
 				</div>

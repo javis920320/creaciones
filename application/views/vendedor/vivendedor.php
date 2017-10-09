@@ -26,7 +26,7 @@
 	 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
 	   Ingresar 
 	 </button>
-	 
+	<a href="<?php echo base_url()?>Cpedidomultiple" class='btn btn-danger btn-lg' >Realizar pedido</a>
 	 <!-- Modal -->
 	 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 	   <div class="modal-dialog" role="document">
@@ -122,6 +122,7 @@
               <table  id='tblclientes' class="table table-hover table-responsive table-bordered table-striped">
                 <thead class="bg-primary">
                 <tr>
+                 <th style="width: 10%;background-color: #006699; color: white;" >Codigo</th>
                   <th style="width: 10%;background-color: #006699; color: white;" >Identificacion</th>
                   <th style="width: 10%;background-color: #006699; color: white;">Nombres</th>
                    <th style="width: 10%;background-color: #006699; color: white;">Telefono</th>
@@ -159,6 +160,7 @@
               			<input class="form-control" type="text" id='upidpersona' name='upidpersona' required="">            		
               			</div>
               	</div>
+              	<input type="hidden" name='personaid' id='personaid'>
               
 				<div class="col-xs-8">
 	              	<div class="form-group" >

@@ -18,12 +18,14 @@ class Cajax extends CI_Controller
 	}
 
 	public function ingresarCliente(){
+	
 		
 		$id=$this->input->post('identidad');
 		$nom=$this->input->post('nombres');
 		$celular=$this->input->post('celular');
 		$a='';
 		$arreglo= array(
+
 			'cedula'=>$id,
 			'nombres'=>$nom,
 			'telefono'=>$celular
@@ -39,6 +41,7 @@ class Cajax extends CI_Controller
 
 
 	public function updatecliente(){
+		$codigo=$this->input->post('personaid');
 
         $id=$this->input->post('upidpersona');
 		$nom=$this->input->post('upname');
@@ -47,13 +50,16 @@ class Cajax extends CI_Controller
 
 		
 		$arreglo= array(
+			'codigo'=>$codigo,
 			'cedula'=>$id,
 			'nombres'=>$nom,
 			'telefono'=>$celular
 			);
 		$resp=$this->Majax->updatecliente($arreglo);
-		if($resp){
+		if($resp>=1){
 			echo 'Registro actualizado..';
+		}else{
+			echo 'Ha ocurrido un error';
 		}
 
 	}

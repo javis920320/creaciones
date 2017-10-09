@@ -322,18 +322,20 @@ $('#agregarprod').on('click',function(){
 
  
 $('#cantidad').empty();
-$('#descripcion').empty();	 
+$('#descripcion').empty();
+
 
 $('#tblresumen').DataTable({
 			'paging':true,
 			'info':true,
 			'filter':true,
+			'destroy':true,
 			'stateSave':true,
 
 			'ajax':{
 
 				"url":baseurl+"Cpedidos/lista",
-				'data':{factura:''},
+				'data':{factura:factura},
 
 				'type':'POST',
 				dataSrc:''
@@ -394,7 +396,7 @@ return '<span class="pull-right">' +
 
 
 
-
+/*
 $('#tblresumen').DataTable({
 			'paging':true,
 			'info':true,
@@ -452,7 +454,7 @@ return '<span class="pull-right">' +
 
  "order":[[0,"asc"]],
 
-		});
+		});*/
 
 
 /*function errortrap(msg,url,line){

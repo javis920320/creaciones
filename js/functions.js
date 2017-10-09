@@ -51,6 +51,7 @@ $('#tblclientes').DataTable({
 			},
 
 			'columns':[
+			{data: 'idpersona','sClass':'dt-body-center'},
 			{data: 'cedula','sClass':'dt-body-center'},
 			{data:'nombres'},
 			{data:'telefono'},
@@ -62,7 +63,7 @@ $('#tblclientes').DataTable({
 				
 
 					//return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" data-toggle="modal" data-target="#myModal"><i class=" fa fa-edit"></i></a
-					return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" title="Editar informacion" data-toggle="modal" data-target="#modalEditPersona" onClick="selPersona(\''+row.cedula+'\',\''+row.nombres+'\',\''+row.telefono+'\');"><i class=" fa fa-edit"></i></a>';
+					return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" title="Editar informacion" data-toggle="modal" data-target="#modalEditPersona" onClick="selPersona(\''+row.idpersona+'\',\''+row.cedula+'\',\''+row.nombres+'\',\''+row.telefono+'\');"><i class=" fa fa-edit"></i></a>';
 					}
 			}
 
@@ -77,7 +78,8 @@ $('#tblclientes').DataTable({
 
 
 //con esta funcion pasamos los paremtros a los text del modal.
-selPersona = function(cedula, nombres, telefono){
+selPersona = function(idpersona,cedula, nombres, telefono){
+	$('#personaid').val(idpersona);
 	$('#upidpersona').val(cedula);
 	$('#upname').val(nombres);
 	$('#uptelefono').val(telefono);
@@ -89,6 +91,7 @@ selPersona = function(cedula, nombres, telefono){
 $('#formedit').submit(function(){
 
 	dato=$('#formedit').serialize();
+	alert(dato);
 
 	$.ajax({
 
@@ -108,6 +111,11 @@ $('#formedit').submit(function(){
 
 });
 
+$('#btnpedidos').on('click',function(){
+
+	window.open(baseurl+"Cpedidomultiple/");
+
+});
 
 
 
