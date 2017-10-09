@@ -30,8 +30,9 @@ $('#tblpedidos').DataTable({
 			render:function(data,type,row){
 
 //nomtipoprod
+return'<span>Enviado</span>';
 
-return '<span class="pull-right">' +
+/*return '<span class="pull-right">' +
                       '<div class="dropdown">' +
                       '  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">' +
                       '    Acciones' +
@@ -44,7 +45,7 @@ return '<span class="pull-right">' +
                       //'    <li><a href="#" title="Desaprobar afiliado" onClick="updEstadoAfiliado('+row.idPersona+','+2+')"><i style="color:red;" class="glyphicon glyphicon-remove"></i> Desaprobar</a></li>' +
                       '    </ul>' +
                       '</div>' +
-                      '</span>';
+                      '</span>';*/
 
 
 				
