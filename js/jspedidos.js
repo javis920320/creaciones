@@ -286,6 +286,10 @@ $('#cambioestado').submit(function(){
 });
 
 
+  
+
+
+
 $('#agregarprod').on('click',function(){
 
 	var cedula=$('#idpersona').val();
@@ -315,6 +319,8 @@ $('#agregarprod').on('click',function(){
 		//{idcliente:cedula,factura:factura,facultad:facultad,cantidad:cantidad,descripcion:descripcion,talla:talla,seltp:tipoprod},
 		{idpersona:cedula,factura:factura,facultad:facultad,cantidad:cantidad,talla:talla,descripcion:descripcion,seltp:tipoprod},
 		function(data){
+
+			
 			alert(data);
 
 

@@ -209,7 +209,6 @@
 
 
 
-
 			<!-- Modal -->
 			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 			  <div class="modal-dialog" role="document">
@@ -234,7 +233,8 @@
 			  </div>
 			</div>
 
-	
+<label for='chk'>Enviar lista</label>
+	<input type='checkbox' name='chk' id='chk'>
           
      
               <table  id='tblresumen' class="table table-hover table-responsive">

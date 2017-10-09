@@ -18,6 +18,7 @@ $('#tblpedidos').DataTable({
 
 			'columns':[
 			{data: 'factura','sClass':'dt-body-center'},
+			{data: 'nomtipoprod'},
 			{data:'facultad'},
 			{data:'cantidad'},
 			{data:'talla'},
@@ -28,7 +29,7 @@ $('#tblpedidos').DataTable({
 			{"orderable":true,
 			render:function(data,type,row){
 
-
+//nomtipoprod
 
 return '<span class="pull-right">' +
                       '<div class="dropdown">' +

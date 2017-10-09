@@ -37,14 +37,15 @@
 <table  id='tblpedidos' class="table table-hover table-responsive">
                 <thead class="bg-primary">
                 <tr>
-                  <th style="width: 10%;background-color: #006699; color: white;">Factura</th>
+                  <th style="width: 4%;background-color: #006699; color: white;">Factura</th>
+                  <th style="width: 10%;background-color: #006699; color: white;">Producto</th>
                   <th style="width: 10%;background-color: #006699; color: white;">Facultad</th>
-                   <th style="width: 10%;background-color: #006699; color: white;">Cantidad</th>
+                   <th style="width: 4%;background-color: #006699; color: white;">Cantidad</th>
                    <th style="width: 3%;background-color: #006699; color: white;">Talla</th>
                    <th style="width: 10%;background-color: #006699; color: white;">Descripcion</th>
                    <th style="width: 10%;background-color: #006699; color: white;">Cliente</th>
                   <th style="width: 10%;background-color: #006699; color: white;">Fecha ingreso</th>
-                  <th>Accion</th>
+                  <th style="width: 10%;background-color: #006699; color: white;">Accion</th>
 
                 </tr>
                 </thead>
