@@ -241,6 +241,7 @@
                 <thead class="bg-primary">
                 <tr>
                   <th>Factura</th>
+                  <th>Producto</th>
                   <th>Facultad</th>
                    <th>Cantidad</th>
                    <th>Talla</th>

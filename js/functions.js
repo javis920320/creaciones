@@ -111,11 +111,11 @@ $('#formedit').submit(function(){
 
 });
 
-$('#btnpedidos').on('click',function(){
+/*$('#btnpedidos').on('click',function(){
 
 	window.open(baseurl+"Cpedidomultiple/");
 
-});
+});*/
 
 
 

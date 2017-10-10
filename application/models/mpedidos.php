@@ -101,9 +101,10 @@ public  function lista($param){
 	$dato = array('estado' => $param['estado'] ,
 					'factura' => $param['factura'] );
 
-	    $this->db->select('p.idpedido,p.factura,p.facultad,p.cantidad,p.talla,p.descripcion,pe.nombres,p.fecha_ingreso');
+	    $this->db->select('p.idpedido,tp.nomtipoprod,p.factura,p.facultad,p.cantidad,p.talla,p.descripcion,pe.nombres,p.fecha_ingreso');
 		$this->db->from('pedido p');
 		$this->db->join('cliente c','c.idpersona=p.idcliente');
+		$this->db->join('tipo_producto tp','tp.idtipoprod=p.idtipoprod');
 		$this->db->join('persona pe','pe.idpersona=c.idpersona');
 		$this->db->where('p.estado',$dato['estado']);
 		$this->db->where('p.factura',$dato['factura']);

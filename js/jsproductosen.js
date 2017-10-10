@@ -15,6 +15,7 @@ $('#tblproductosen').DataTable({
 
 			'columns':[
 			{data: 'factura','sClass':'dt-body-center'},
+			{data: 'nomtipoprod'},
 			{data:'facultad'},
 			{data:'cantidad'},
 			{data:'talla'},

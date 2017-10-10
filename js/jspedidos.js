@@ -133,6 +133,7 @@ function cargarproductos(){
 
 			'columns':[
 			{data: 'factura','sClass':'dt-body-center'},
+			{data:'nomtipoprod'},
 			{data:'facultad'},
 			{data:'cantidad'},
 			{data:'talla'},
@@ -234,7 +235,7 @@ console.log(descripcion);
 
 //});
 $('#form-edit').submit(function(){
-	alert();
+	//alert();
 
 	$.ajax({
 	url:baseurl+'Cpedidos/editar',
@@ -349,6 +350,7 @@ $('#tblresumen').DataTable({
 
 			'columns':[
 			{data: 'factura','sClass':'dt-body-center'},
+			{data:'nomtipoprod'},
 			{data:'facultad'},
 			{data:'cantidad'},
 			{data:'talla'},

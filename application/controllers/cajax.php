@@ -63,5 +63,21 @@ class Cajax extends CI_Controller
 		}
 
 	}
+
+	public  function enviarlista(){
+
+
+		$dato['confirm']=1;//$this->input->post('confirm');
+
+		$res=$this->Majax->enviarlista($dato);
+		if($res>=1){
+			echo 'Filas afectadas'.$res;
+
+		}else{
+			echo 'error en envio';
+		}
+
+
+	}
 }
  ?>

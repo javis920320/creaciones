@@ -89,6 +89,23 @@ class Majax extends CI_Model
 	}
 
 
+	 public function enviarlista($dato){
+
+	 	$datos = array('estado' => 2 
+	 		
+	 		);
+
+	 	
+
+	$this->db->where('estado',$dato['confirm']);
+	$this->db->update('pedido',$datos);
+	$res=$this->db->affected_rows();
+		return$res;
+
+
+	 }
+
+
 }
 
 

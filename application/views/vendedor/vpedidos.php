@@ -15,11 +15,14 @@
 
 
 		<!-- Button trigger modal -->
+    <div class='hide'>
 <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">
   <span class='glyphicon glyphicon-plus'></span>Crear pedido
 </button>
+      
+    </div>
 
-<a href="<?php echo base_url()?>Cpedidomultiple">Pedido Multiple</a>
+<a href="<?php echo base_url()?>Cpedidomultiple" class='btn btn-primary'> Agregar Pedido</a>
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -205,10 +208,14 @@
             <!-- /.box-header -->
              
             <div class="box-body table-responsive no-padding">
+            <label for="chk">Enviar lista</label>
+            <input type='checkbox' name='chk' id='chk' value=1>
+            <input type="submit" value='enviarlista'>
               <table  id='tblpedidos' class="table table-hover table-responsive">
                 <thead class="bg-primary">
                 <tr>
                   <th>Factura</th>
+                  <th>Producto</th>
                   <th>Facultad</th>
                    <th>Cantidad</th>
                    <th>Talla</th>
