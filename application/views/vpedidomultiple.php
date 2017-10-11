@@ -17,7 +17,7 @@
 					<div class="text-danger hide" id='alerta'><strong>El Cliente No esta registrado..</strong></div>
 				 <div class="text-danger hide" id='alerta1'><strong>Este dato es requerido.</strong></div>
 
-				 <input type="text" placeholder="Buscar cliente" id="idcliente" class="form-control"   required value=1085298221>
+				 <input type="text" placeholder="Buscar cliente" id="idcliente" class="form-control"   required >
 				 <input class="btn btn-primary" type="submit" value="Buscar cliente" id='btnbuscar'>
 				 
 
