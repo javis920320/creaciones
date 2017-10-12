@@ -50,8 +50,12 @@ public function updatepedido($param){
 	$this->db->update('pedido',$datos);
 
 
-	return true;
+		$res=$this->db->affected_rows();
+		return$res;
 }
+
+
+
 
 public function updatepedidoid($param){
 

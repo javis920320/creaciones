@@ -27,5 +27,30 @@
 
  	}
 
+/*
+autor:Javier lopez
+descricion: este proceso realiza el cambio de estado el pedido
+
+*/
+
+ 	 public function cambioestado(){
+
+
+ 	 	$param['idpedido']=$this->input->post('idpedido');
+ 	 	 $param['estado']=$this->input->post('estado');
+
+ 	 	$res= $this->Mpedidos->updatepedido($param);
+ 	 	if($res>=1){
+ 	 		echo 'Se ha enviado el producto a Confeccion';
+ 	 	}else{
+ 	 		echo'Ha ocurrido un error..';
+ 	 	}
+
+
+
+
+
+ 	 }
+
 
  } ?>

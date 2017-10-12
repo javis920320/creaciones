@@ -1,1 +1,17 @@
 https://www.youtube.com/watch?v=tnA2yc47gxg---- destroy table
+
+
+
+/select idproceso,pd.factura,tp.nomtipoprod,pr.nomprod,p1.cantidad,sysdate(),p1.precio
+ from proceso p1
+inner join producto pr on pr.id_prod=p1.id_prod 
+inner join tipo_producto tp on tp.idtipoprod=pr.idtipoprod
+inner join pedido pd on pd.idpedido=p1.idpedido
+inner join trabajador tr on tr.idtrabajador=p1.idtrabajador
+inner join persona pe on pe.idpersona =tr.idpersona
+where  pe.idpersona=1;
+
+
+
+/*insert into proceso values(null,'10','1',sysdate(),70,59,1,(select(p. subvalor*10) from precio p 
+inner join producto pr on pr.id_prod=p.id_prod where pr.id_prod=70 limit 1) );
