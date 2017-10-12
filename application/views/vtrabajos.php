@@ -66,7 +66,7 @@
             	<label for='cantidad'>Cantidad:</label>
             	<input type='number' name='cantidad' id='cantidad' class='form-control'>
             </div>
-            <input id='trabajador' hidden value="<?php echo$idpersona;?>">
+            <input id='trabajador' name='trabajador' hidden value="<?php echo$idpersona;?>">
 
 
 

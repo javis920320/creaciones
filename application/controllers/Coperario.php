@@ -15,10 +15,11 @@ class Coperario extends CI_Controller
 
 
 	$nombres['nombres']=$this->session->userdata('nombres');
+	$idpersona['idpersona']=$this->session->userdata('idpersona');
 
 	$this->load->view('layou/header',$nombres);
 	$this->load->view('layou/menu',$nombres);
-	$this->load->view('voperario');
+	$this->load->view('voperario',$idpersona);
 
 	$this->load->view('layou/footer',$nombres);
 
@@ -39,10 +40,10 @@ class Coperario extends CI_Controller
 
 	 public function ingresarproceso(){
 
-	 	$param['cantidad']=$this->input->post('cantidad');
-	 	$param['idprod']=$this->input->post('idprod');
-	 	$param['idpedido']=$this->input->post('idpedido');
-	 	$param['idtrabajador']=$this->input->post('idtrabajador');
+	 	$param['cantidad']=10;//$this->input->post('cantidad');
+	 	$param['idprod']=5;//$this->input->post('idprod');
+	 	$param['idpedido']=34;$this->input->post('idpedido');
+	 	$param['idtrabajador']=1;//$this->input->post('idtrabajador');
 
 
 
