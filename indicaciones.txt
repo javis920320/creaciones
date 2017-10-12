@@ -15,3 +15,15 @@ where  pe.idpersona=1;
 
 /*insert into proceso values(null,'10','1',sysdate(),70,59,1,(select(p. subvalor*10) from precio p 
 inner join producto pr on pr.id_prod=p.id_prod where pr.id_prod=70 limit 1) );
+
+
+
+
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `PA_INGRESARPROCES`(IN `cantidad` INT, IN `idtrabajador` INT, IN `idprod` INT, IN `idpedido` INT)
+    NO SQL
+    COMMENT 'procedimiento para ingresar un proceso de operario'
+insert into proceso values(null,cantidad,'1',sysdate(),idprod,idpedido,idtrabajador,(select(p. subvalor*cantidad) from precio p 
+inner join producto pr on pr.id_prod=p.id_prod where pr.id_prod=idprod and p.estado=1 limit 1) )$$
+DELIMITER ;
