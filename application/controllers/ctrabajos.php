@@ -40,7 +40,7 @@ class Ctrabajos extends CI_Controller
 		 
 	}
 
-
+///?tpprod=3&tblresumen_length=10&idpedido=2&productos=undefined&cantidad=15&trabajador=6
 
 
 	public function insertrabajo(){
@@ -52,7 +52,7 @@ class Ctrabajos extends CI_Controller
 
 			'cantidad' => $this->input->post('cantidad'),
 			//nesecitamos el valor del producto  y el subvalor
-			//	'valor' => $this->input->post('valor'),
+			//'valor' => $this->input->post('valor'),
 			'idpedido' => $this->input->post('idpedido'),
 			'idtrabajador' => $this->input->post('idtrabajador'),
 
@@ -65,6 +65,20 @@ class Ctrabajos extends CI_Controller
 		}
 
 
+	}
+
+
+
+	public  function lista(){
+
+		$param['dato']=$this->input->post('dato');
+		$param['fac']=$this->input->post('fac');
+
+
+
+
+		$resp=$this->Mtrabajos->filtrarpedido($param);
+		echo json_encode($resp);
 	}
 
 }

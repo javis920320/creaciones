@@ -99,9 +99,67 @@ $('#formtrabajos').submit(function(){
 
  function filtrar(){
 
- 	alert();
+ 	 var dato=$('#tpprod').val();
+ 	  var fac=$('#nfac').val();
+
+ 	 $('#tblresumen').DataTable({
+			'paging':true,
+			'info':true,
+			'filter':true,
+			'destroy':true,
+			'stateSave':true,
+
+			'ajax':{
+
+				"url":baseurl+"Ctrabajos/lista",
+				'data':{dato:dato,fac:fac},
+
+				'type':'POST',
+				dataSrc:''
+			},
+
+			'columns':[
+			{data: 'idpedido','sClass':'dt-body-center'},
+			{data: 'factura','sClass':'dt-body-center'},
+			{data:'nomtipoprod'},
+			{data:'facultad'},
+			{data:'cantidad'},
+			{data:'talla'},
+			{data:'descripcion'},
+			{data:'nombres'},
+			{data:'fecha_ingreso'},
+
+			{"orderable":true,
+			render:function(data,type,row){
+
+
+
+return '<span class="pull-right">' +
+									'<input type="radio" name="idpedido" value='+row.idpedido+'>'
+                       +
+                      '</span>';
+
+
+
+					//return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" data-toggle="modal" data-target="#myModal"><i class=" fa fa-edit"></i></a
+					//return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" title="Enviar informacion" data-toggle="modal" data-target="#estado" onClick="estadopedido(\''+row.idpedido+'\',\''+row.nombres+'\',\''+row.telefono+'\');"><i class=" glyphicon glyphicon-plane"></i><span> Enviar</span></a>';
+					}
+			}
+
+
+			],
+
+ "order":[[0,"asc"]],
+
+		});	
+
+ 	
  }
 			
+			$('#productos').on('change',function(){
+				alert($(this).val());
+
+			});
 
 
 
