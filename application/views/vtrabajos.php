@@ -1,3 +1,8 @@
+<style>
+    #aumentar{
+      width: 80% !important;
+    }
+  </style>
 <br><br><br>
 	<div class="box box-primary">
 		<div class="box-body">
@@ -37,7 +42,7 @@
     
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-      <div class="modal-dialog" role="document">
+      <div class="modal-dialog" role="document" id="aumentar">
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -56,11 +61,29 @@
             
             <form id='formtrabajos'>
 
+
+
             <label for='tpprod'>Categoria Producto</label>
-              <select id="tpprod" name="tpprod" class=" pr form-control"></select>
+              <select id="tpprod" name="tpprod" class=" pr form-control" onchange='filtrar();'></select>
+     <table id="tblresumen" class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th style="width: 5%;background-color: #006699; color: white;">#</th>
+              <th style="width: 10%;background-color: #006699; color: white;">Nombre</th>
+              <th style="width: 10%;background-color: #006699; color: white;">Paterno</th>
+              <th style="width: 10%;background-color: #006699; color: white;">Materno</th>
+              <th style="width: 10%;background-color: #006699; color: white;">DNI</th>
+              <th style="width: 10%;background-color: #006699; color: white;">Ciudad</th>
+              <th style="width: 10%;background-color: #006699; color: white;">Estado</th>
+              <th style="width: 10%;background-color: #006699; color: white;">Acción</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+
               <label for='productos'>Productos</label>
               <select id="productos" name="productos" class="form-control"></select>
-           
+          
 
             <div class='form-group'>
             	<label for='cantidad'>Cantidad:</label>

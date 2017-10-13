@@ -79,10 +79,28 @@ $('#tpprod').on('change',function(event){
 
 $('#formtrabajos').submit(function(){
 
-	var datos=$(this).serialize();
-	alert(datos);
+	
+	$.ajax({
+		url:baseurl+'Coperario/ingresarproceso',
+		type:'POST',
+		data:$(this).serialize(),
+		success:function(data){
+		alert(data);
+		if(data){
+			alert(data);
+		}
+
+	}
+
+	});
 
 });
+
+
+ function filtrar(){
+
+ 	alert();
+ }
 			
 
 
