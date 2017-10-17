@@ -7,7 +7,7 @@ $('#btnbuscar').on('click',function(){
 		{fac:dato},
 		function(data){
 			if(data==0){
-				$('#res').append('<span class="text-danger"><h3>Por Favor Verifica la Factura!!</h3></span>');
+				$('#res').html('<span class="text-danger"><h3>Por Favor Verifica la Factura!!</h3></span>');
 
 			}else{
 
@@ -48,7 +48,7 @@ $('#tpprod').on('change',function(event){
 
 		
 		var dato= $('#tpprod option:selected').text();
-		alert(dato);
+		//alert(dato);
 
 			$.post(baseurl+"Cproductos/listaproductosf",
 			{dato:dato},
@@ -65,7 +65,7 @@ $('#tpprod').on('change',function(event){
 			html+='<option value="">Seleccione una opcion</option>';
 
 			$.each(obj,function(i,items){
-				html+='<option value="'+items.idtipoprod+'"">'+ items.nomprod+'</option>';
+				html+='<option value="'+items.id_prod+'">'+ items.nomprod+'</option>';
 			});
 
 
@@ -76,8 +76,16 @@ $('#tpprod').on('change',function(event){
 			});
 			});
 
+$('#tblresumen .idpedido').on('change',function(){
+
+	alert();
+
+});
+
 
 $('#formtrabajos').submit(function(){
+	//alert('llamando a ajax');
+
 
 	
 	$.ajax({
@@ -85,7 +93,7 @@ $('#formtrabajos').submit(function(){
 		type:'POST',
 		data:$(this).serialize(),
 		success:function(data){
-		alert(data);
+		//alert(data);
 		if(data){
 			alert(data);
 		}
@@ -135,7 +143,7 @@ $('#formtrabajos').submit(function(){
 
 
 return '<span class="pull-right">' +
-									'<input type="radio" name="idpedido" value='+row.idpedido+'>'
+									'<input type="radio" class="idpedido"name="idpedido" value='+row.idpedido+'>'
                        +
                       '</span>';
 

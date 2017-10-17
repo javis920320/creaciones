@@ -1,6 +1,6 @@
 <?php 
 
-class Moperario extends CI_MOdel
+class Moperario extends CI_Model
 {
 	
 	function __construct()
@@ -13,7 +13,8 @@ class Moperario extends CI_MOdel
 
 	 public  function ingresarproceso($param){
 
-	 	$this->db->query("CALL PA_INGRESARPROCES(".$param['cantidad'].",".$param['idprod'].",".$param['idpedido'].",".$param['idtrabajador'].") " );
+	 	
+	 		$this->db->query("CALL PA_INGRESARPROCES(".$param['cantidad'].",".$param['idtrabajador'].",".$param['idprod'].",".$param['idpedido'].") " );
 
 	 	$res=$this->db->affected_rows();
 		return$res;

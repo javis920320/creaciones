@@ -40,14 +40,15 @@ class Coperario extends CI_Controller
 
 	 public function ingresarproceso(){
 
-	 	$param['cantidad']=10;//$this->input->post('cantidad');
-	 	$param['idprod']=5;//$this->input->post('idprod');
-	 	$param['idpedido']=34;$this->input->post('idpedido');
-	 	$param['idtrabajador']=1;//$this->input->post('idtrabajador');
+	 	$param['cantidad']=$this->input->post('cantidad');
+	 	$param['idprod']=$this->input->post('productos');
+	 	$param['idpedido']=$this->input->post('idpedido');
+	 	$param['idtrabajador']=$this->input->post('trabajador');
+	 	//echo $param['idtrabajador'];
 
 
 
-	 	$res=$this->Moperario->ingresarproceso($param);
+	$res=$this->Moperario->ingresarproceso($param);
 
 	 	 if ($res>=1){
 	 	 	echo 'Registro reportado';

@@ -64,7 +64,7 @@
 
 
             <label for='tpprod'>Categoria Producto</label>
-              <select id="tpprod" name="tpprod" class=" pr form-control" onchange='filtrar();'></select>
+              <select id="tpprod" name="tpprod" class=" pr form-control" onchange='filtrar();' required="true"></select>
      <table id="tblresumen" class="table table-bordered table-striped">
           <thead>
             <tr>
@@ -84,12 +84,13 @@
         </table>
 
               <label for='productos'>Productos</label>
-              <select id="productos" name="productos" class="form-control"></select>
+              <select id="productos" name="productos" class="form-control" required="true"></select>
           
-
+<input type="radio" id='prueba'>
             <div class='form-group'>
+            <span class="text text-danger"> Productos disponibles: </span><br>
             	<label for='cantidad'>Cantidad:</label>
-            	<input type='number' name='cantidad' id='cantidad' class='form-control'>
+            	<input type='number' name='cantidad' id='cantidad' min='1' max='2' class='form-control' required="true">
             </div>
             <input id='trabajador' name='trabajador' hidden value="<?php echo$idpersona;?>">
 
