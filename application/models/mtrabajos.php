@@ -106,6 +106,20 @@ class Mtrabajos extends CI_Model
 	}
 
 
+	public  function productosdisponibles($param){
+
+		
+	 		$resul=$this->db->query("CALL PA_CALCULARDISPONIBLES(".$param['idpedido'].") " );
+
+	 		
+		return $resul->result();
+
+
+
+
+	}
+
+
 
 
 

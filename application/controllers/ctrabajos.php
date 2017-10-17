@@ -81,6 +81,18 @@ class Ctrabajos extends CI_Controller
 		echo json_encode($resp);
 	}
 
+
+	public  function productosdisponibles(){
+
+
+
+		$param['idpedido']=1;//$this->input->post('idpedido');
+
+
+		$res=$this->Mtrabajos->productosdisponibles($param);
+		echo $res;
+	}
+
 }
 
 

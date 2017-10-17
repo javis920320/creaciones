@@ -27,3 +27,12 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `PA_INGRESARPROCES`(IN `cantidad` IN
 insert into proceso values(null,cantidad,'1',sysdate(),idprod,idpedido,idtrabajador,(select(p. subvalor*cantidad) from precio p 
 inner join producto pr on pr.id_prod=p.id_prod where pr.id_prod=idprod and p.estado=1 limit 1) )$$
 DELIMITER ;
+
+
+--->para  calcular los productos  disponibles  en procesos
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `PA_CALCULARDISPONIBLES`(IN `idpedido` INT)
+    NO SQL
+    COMMENT 'para  calcular los productos  disponibles  en procesos'
+select (select p.cantidad  from pedido p where p.idpedido=idpedido )-sum(pr.cantidad)  from proceso pr where pr.idpedido=idpedido$$
+DELIMITER ;

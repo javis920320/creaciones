@@ -143,7 +143,7 @@ $('#formtrabajos').submit(function(){
 
 
 return '<span class="pull-right">' +
-									'<input type="radio" class="idpedido"name="idpedido" value='+row.idpedido+'>'
+									'<input type="radio" class="idpedido" onchange="validarc();"name="idpedido" value='+row.idpedido+'>'
                        +
                       '</span>';
 
@@ -221,4 +221,21 @@ $(“#select5”).load(‘genera-tarjeta.php?id=’+id);*/
 
 //});
 //});*/
+
+
+
+ function validarc(){
+
+
+let idpedido = $('input[name="idpedido"]:checked').val();
+$.ajax({
+type: "POST",
+url:baseurl+"Ctrabajos/productosdisponibles",
+data: { estados :idpedido } 
+}).done(function(data){
+$("#jmr_contacto_estado").html(data);
+});
+
+
+}
 
