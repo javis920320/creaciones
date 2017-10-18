@@ -106,13 +106,47 @@ class Mtrabajos extends CI_Model
 	}
 
 
-	public  function productosdisponibles($param){
+		//$res2=$this->Mtrabajos->pedidoscant($param);
+	public  function procesoscant($param){
 
 		
-	 		$resul=$this->db->query("CALL PA_CALCULARDISPONIBLES(".$param['idpedido'].") " );
+	 		$this->db->select_sum('cantidad');
+	 		$this->db->from('proceso');
+	 		$this->db->where('idpedido',$param['idpedido']);
 
+	 	$resul=$this->db->get();
+		return $res=$resul->row();
+
+
+
+
+	}
+
+		public  function calculo($param){
+
+		
+	 		$this->db->query('select (select p.cantidad  from pedido p where p.idpedido='.$param['idpedido'].' )-sum(pr.cantidad)as numero  from proceso pr where pr.idpedido='.$param['idpedido'].'');
 	 		
-		return $resul->result();
+			
+		return $res=$resul->row();
+
+
+
+
+	}
+
+
+
+
+	public  function pedidoscant($param){
+
+		
+	 		$this->db->select_sum('cantidad');
+	 		$this->db->from('pedido');
+	 		$this->db->where('idpedido',$param['idpedido']);
+
+	 	$resul=$this->db->get();
+		return $re=$resul->result();
 
 
 
