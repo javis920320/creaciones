@@ -86,11 +86,12 @@
               <label for='productos'>Productos</label>
               <select id="productos" name="productos" class="form-control" required="true"></select>
           
-<input type="radio" id='prueba'>
+
             <div class='form-group'>
-            <span class="text text-danger"> Productos disponibles: </span><br>
+            <span class="text text-danger hide" id='mensaje'> Productos disponibles: </span> <span id='numcantidad'></span><br>
+            <input type='text' id='disponibles' name='disponibles' class='hide'>
             	<label for='cantidad'>Cantidad:</label>
-            	<input type='number' name='cantidad' id='cantidad' min='1' max='2' class='form-control' required="true">
+            	<input type='number' name='cantidad' id='cantidad' min='1'  class='form-control' required="true">
             </div>
             <input id='trabajador' name='trabajador' hidden value="<?php echo$idpersona;?>">
 

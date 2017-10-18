@@ -86,17 +86,23 @@ class Ctrabajos extends CI_Controller
 
 
 
-		$param['idpedido']=38;//$this->input->post('idpedido');
+		$param['idpedido']=$this->input->post('idpedido');
 
 
-		$res1=$this->Mtrabajos->procesoscant($param);
-		//$res2=$this->Mtrabajos->pedidoscant($param);
+		//$res1=$this->Mtrabajos->procesoscant($param);
+		
 		$res2=$this->Mtrabajos->calculo($param);
+		 if($res2== null){
+		 	$res2=$this->Mtrabajos->pedidoscant($param);
+		 echo $res2;	
+
+		 }else{
+		 	echo $res2;
+		 }
+
+		
 
 
-		 foreach($res2 as $variable){echo $variable[0]->numero;}
-		// echo json_encode($res1-$res2);
-		//echo $res1;
 	}
 
 }

@@ -122,13 +122,22 @@ class Mtrabajos extends CI_Model
 
 	}
 
-		public  function calculo($param){
+	public  function calculo($param){
 
 		
-	 		$this->db->query('select (select p.cantidad  from pedido p where p.idpedido='.$param['idpedido'].' )-sum(pr.cantidad)as numero  from proceso pr where pr.idpedido='.$param['idpedido'].'');
+	 		$query=$this->db->query('select (select p.cantidad  from pedido p where p.idpedido='.$param['idpedido'].' )-sum(pr.cantidad)as numero from proceso pr where pr.idpedido='.$param['idpedido'].'');
 	 		
 			
-		return $res=$resul->row();
+		foreach ($query->result() as $row)
+		{
+        	return $row->numero;
+        
+		}
+
+	
+
+
+			
 
 
 
@@ -140,13 +149,15 @@ class Mtrabajos extends CI_Model
 
 	public  function pedidoscant($param){
 
+		$query=$this->db->query('select sum(pr.cantidad)as numero from pedido pr where pr.idpedido='.$param['idpedido'].'');
+	 		
 		
-	 		$this->db->select_sum('cantidad');
-	 		$this->db->from('pedido');
-	 		$this->db->where('idpedido',$param['idpedido']);
 
-	 	$resul=$this->db->get();
-		return $re=$resul->result();
+		foreach ($query->result() as $row)
+		{
+        	return $row->numero;
+        
+		}
 
 
 

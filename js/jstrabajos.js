@@ -1,4 +1,4 @@
-﻿
+
 $('#btnbuscar').on('click',function(){
 	dato=$('#nfac').val();
 	//alert();
@@ -84,6 +84,17 @@ $('#tblresumen .idpedido').on('change',function(){
 
 
 $('#formtrabajos').submit(function(){
+
+
+	var diponibles=$('#disponibles').val();
+	var cantidad=$('#cantidad').val();
+	 if(cantidad>diponibles){
+	 	alert('Erro verifica la cantidad disponible');
+	 }else if(cantidad<=0){
+
+	 	alert('No hay productos disponibles');
+
+	 }else{
 	//alert('llamando a ajax');
 
 
@@ -101,6 +112,7 @@ $('#formtrabajos').submit(function(){
 	}
 
 	});
+	}
 
 });
 
@@ -143,7 +155,7 @@ $('#formtrabajos').submit(function(){
 
 
 return '<span class="pull-right">' +
-									'<input type="radio" class="idpedido" onchange="validarc();"name="idpedido" value='+row.idpedido+'>'
+									'<input type="radio" class="idpedido" onchange="validarc();"name="idpedido" value='+row.idpedido+' required="true">'
                        +
                       '</span>';
 
@@ -231,9 +243,12 @@ let idpedido = $('input[name="idpedido"]:checked').val();
 $.ajax({
 type: "POST",
 url:baseurl+"Ctrabajos/productosdisponibles",
-data: { estados :idpedido } 
+data: { idpedido :idpedido } 
 }).done(function(data){
-$("#jmr_contacto_estado").html(data);
+	$('#mensaje').removeClass('hide');
+	$('#numcantidad').text(data);
+	$('#disponibles').val(data);
+//$("#jmr_contacto_estado").html(data);
 });
 
 
