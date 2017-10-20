@@ -18,13 +18,14 @@
 			    <thead>
 				    <tr>
 				      <th style="width: 5%;background-color: #006699; color: white;">#</th>
+				      <th style="width: 10%;background-color: #006699; color: white;">Factura</th>
 				      <th style="width: 10%;background-color: #006699; color: white;">Nombre</th>
-				      <th style="width: 10%;background-color: #006699; color: white;">Paterno</th>
-				      <th style="width: 10%;background-color: #006699; color: white;">Materno</th>
-				      <th style="width: 10%;background-color: #006699; color: white;">DNI</th>
-				      <th style="width: 10%;background-color: #006699; color: white;">Ciudad</th>
-				      <th style="width: 10%;background-color: #006699; color: white;">Estado</th>
-				      <th style="width: 10%;background-color: #006699; color: white;">Acción</th>
+				      <th style="width: 10%;background-color: #006699; color: white;">Descripcion</th>
+				      <th style="width: 10%;background-color: #006699; color: white;">Cantidad</th>
+				      <th style="width: 10%;background-color: #006699; color: white;">Precio</th>
+				      <th style="width: 10%;background-color: #006699; color: white;" id='v'>Precio</th>
+				      <th style="width: 10%;background-color: #006699; color: white;">Fecha</th>
+              <th style="width: 10%;background-color: #006699; color: white;">Acción</th>
 				    </tr>
 			    </thead>
 			    <tbody></tbody>

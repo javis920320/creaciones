@@ -164,6 +164,38 @@ class Mtrabajos extends CI_Model
 
 	}
 
+	public function listaprocesos(){
+
+
+
+		$this->db->select('pr.idproceso,pd.factura,p.nomprod,pd.descripcion,pr.cantidad,pr.precio,pr.precio1,pr.fecha');
+		$this->db->from('proceso pr');
+		$this->db->join('producto p','p.id_prod=pr.id_prod');
+		$this->db->join('pedido pd','pd.idpedido=pr.idpedido');
+
+
+
+
+		$resul=$this->db->get();
+		if($resul->num_rows()>0){
+			//$r=$resultados->row();
+			 //$arreglo = array('nombre' => $r->nombres);
+			//return $r;
+			return $r=$resul->result();
+
+			//return 1;
+
+		}else{
+
+
+			return 0;
+		}
+
+
+
+
+	}
+
 
 
 

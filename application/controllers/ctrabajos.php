@@ -107,6 +107,17 @@ class Ctrabajos extends CI_Controller
 
 	}
 
+
+
+	public  function listaoperario(){
+
+
+		$res=$this->Mtrabajos->listaprocesos();
+
+		echo json_encode($res);
+
+	}
+
 }
 
 

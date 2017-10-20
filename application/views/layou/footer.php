@@ -55,7 +55,8 @@
 
 
 <?php  if($this->uri->segment(1)=='Cpedidoscliente') { ?>
-<script src="<?php echo  base_url();?>js/fpedidos.js"></script>
+
+		<script src="<?php echo  base_url();?>js/fpedidos.js"></script>
 <?php  }?>
 <?php  if($this->uri->segment(1)=='Cproductos') { ?>
 <script src="<?php echo  base_url();?>js/jsproductos.js"></script>
@@ -65,11 +66,13 @@
 <script src="<?php echo  base_url();?>js/jspedidos.js"></script>
 <?php  }?>
 
-<?php  if($this->uri->segment(1)=='Cpedidoscliente'){ ?>
+<?php  if($this->uri->segment(1)=='Cpedidoscliente' ){ ?>
 <script src="<?php echo  base_url();?>js/functions.js"></script>
+
 <?php  }?>
-<?php  if($this->uri->segment(1)=='Ctrabajos'){ ?>
+<?php  if($this->uri->segment(1)=='Ctrabajos' && $this->session->userdata('tipo')==2){ ?>
 <script src="<?php echo  base_url();?>js/jstrabajos.js"></script>
+<script src="<?php echo  base_url();?>js/jsoperario.js"></script>
 
 <?php  }?>
 
