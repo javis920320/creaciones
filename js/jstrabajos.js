@@ -1,4 +1,5 @@
 
+
 $('#btnbuscar').on('click',function(){
 	dato=$('#nfac').val();
 	//alert();

@@ -1,4 +1,8 @@
+user=$('#trabajador').val();
+alert(user);
+lista(user);
 
+ function lista(user){
 $('#tbltrabajos').DataTable({
 			'paging':true,
 			'info':true,
@@ -8,7 +12,7 @@ $('#tbltrabajos').DataTable({
 			'ajax':{
 
 				"url":baseurl+"Ctrabajos/listaoperario",
-				//'data':{fecha:fecha},
+				'data':{user:user},
 
 				'type':'POST',
 				dataSrc:''
@@ -59,3 +63,6 @@ return'<span>Enviado</span>';
  "order":[[0,"asc"]],
 
 		});	
+
+
+}

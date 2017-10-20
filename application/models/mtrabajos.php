@@ -164,7 +164,7 @@ class Mtrabajos extends CI_Model
 
 	}
 
-	public function listaprocesos(){
+	public function listaprocesos($user){
 
 
 
@@ -172,6 +172,11 @@ class Mtrabajos extends CI_Model
 		$this->db->from('proceso pr');
 		$this->db->join('producto p','p.id_prod=pr.id_prod');
 		$this->db->join('pedido pd','pd.idpedido=pr.idpedido');
+		$this->db->join('trabajador t','t.idtrabajador=pr.idtrabajador');
+		$this->db->join('persona pe','pe.idpersona=t.idpersona');	
+		$this->db->where('pe.idpersona',$user['user']);
+		//inner join trabajador  t on t.idtrabajador=t.idtrabajador
+//inner join persona pe on pe.idpersona=t.idpersona;
 
 
 

@@ -112,7 +112,10 @@ class Ctrabajos extends CI_Controller
 	public  function listaoperario(){
 
 
-		$res=$this->Mtrabajos->listaprocesos();
+		$user['user']=$this->input->post('user');
+
+
+		$res=$this->Mtrabajos->listaprocesos($user);
 
 		echo json_encode($res);
 
