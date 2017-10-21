@@ -1,4 +1,6 @@
 user=$('#trabajador').val();
+
+ console.log(user);
 alert(user);
 lista(user);
 
