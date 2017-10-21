@@ -25,6 +25,23 @@ class Moperario extends CI_Model
 	 }
 
 
+	  public  function trabajadorid($param){
+
+	  
+	 		$query=$this->db->query('select  t.idtrabajador  from trabajador t where t.idpersona='.$param['idpersona'].' ');
+	 		
+			
+		foreach ($query->result() as $row)
+		{
+        	return $row->idtrabajador;
+        
+		}
+
+
+
+	  }
+
+
 
 }
 
