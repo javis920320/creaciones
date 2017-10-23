@@ -27,6 +27,32 @@ class Cadmin extends CI_Controller
 
 
 	 }
+
+
+
+
+public  function listprocesos(){
+
+
+	$param['fechaini']=$this->input->post('finicio');
+	$param['fechafin']=$this->input->post('ffin');
+	$param['idpersona']=$this->input->post('idpersona');
+	 $param['idtrabajador']=$this->Moperario->trabajadorid($param);
+	    $param['idtrabajador'];
+
+
+	$res=$this->Madmin->consultafiltropro($param);
+
+	 echo json_encode($res);
+
+
+
+
+
+}
+
+
+
 }
 
 

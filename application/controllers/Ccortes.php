@@ -29,6 +29,27 @@ public  function index(){
 }
 
 
+ public function enviooperarios(){
+
+
+	$param['idpedido']=34;//$this->input->post('idpedido');
+
+	$res=$this->Mcortes->enviooperarios($param);	
+	if($res==1){
+
+	}else{
+	echo"Ha ocurriodo un error";
+		
+}
+
+
+
+
+
+
+}
+
+
 
 
 }
