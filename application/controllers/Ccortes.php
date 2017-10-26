@@ -24,7 +24,11 @@ public  function index(){
 
 	$this->load->view('layou/header',$nombres);
 	$this->load->view('layou/menu',$nombres);
-	$this->load->view('vcortes');
+	if($this->session->userdata('tipo')==2){
+
+	$this->load->view('prueba');}else{
+
+	$this->load->view('vcortes');}
 	$this->load->view('layou/footer',$nombres);
 }
 

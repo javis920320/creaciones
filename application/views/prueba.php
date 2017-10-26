@@ -11,37 +11,13 @@
 }
 	</style>
 
-<div class="col-xs-17"> <strong align='center'>PEDIDOS CREACIONES GORETTI</strong></div>
+<div class="col-xs-17"> <strong align='center'>PEDIDOS CREACIONES </strong></div>
 
 
 
   
   <!-- cambio estado en confeccion -->
-  <div class="modal fade" id="enviar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="myModalLabel">Enviar a Confeccion</h4>
-        </div>
-        <div class="modal-body">
-          <span>Enviar pedido a Confeccion?</span>
-
-
-          <form id='envconfeccion'>
-            <input type='text' id='producto' name='producto'>
-            <input type='text' id='envio' name='envio' value=3>
-            <input type='submit' value='Enviar'> 
-
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div>
+  <span>hghee</span>
 
 
 <div class="col-xs-12 col-md-12">

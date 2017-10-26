@@ -19,7 +19,11 @@ class Coperario extends CI_Controller
 
 	$this->load->view('layou/header',$nombres);
 	$this->load->view('layou/menu',$nombres);
-	$this->load->view('voperario',$idpersona);
+	
+		$this->load->view('voperario',$idpersona);
+	
+	
+	
 
 	$this->load->view('layou/footer',$nombres);
 

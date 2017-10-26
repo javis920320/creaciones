@@ -58,6 +58,10 @@
 
 		<script src="<?php echo  base_url();?>js/fpedidos.js"></script>
 <?php  }?>
+<?php  if($this->uri->segment(1)=='Ctaller') { ?>
+
+    <script src="<?php echo  base_url();?>js/jstaller.js"></script>
+<?php  }?>
 <?php  if($this->uri->segment(1)=='Cproductos') { ?>
 <script src="<?php echo  base_url();?>js/jsproductos.js"></script>
 <?php  }?>

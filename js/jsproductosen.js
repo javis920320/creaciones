@@ -30,7 +30,7 @@ $('#tblproductosen').DataTable({
 				
 
 					//return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" data-toggle="modal" data-target="#myModal"><i class=" fa fa-edit"></i></a
-					return '<a  href="#"  class="btn btn-success  btn-sm" style="width:80%;" title="Enviar informacion" data-toggle="modal" data-target="#enviar" onClick="estadopedido(\''+row.idpedido+'\',\''+row.nombres+'\',\''+row.telefono+'\');"><i class="glyphicon glyphicon-wrench"></i><span> En proceso</span></a>';
+					return '<a  href="#"  class="btn btn-success  btn-sm" style="width:80%;" title="Enviar informacion" data-toggle="modal" data-target="#enviar" onClick="selpedido(\''+row.idpedido+'\');"><i class="glyphicon glyphicon-wrench"></i><span> En proceso</span></a>';
 					}
 
 
@@ -54,3 +54,32 @@ $('#lista').on('click',function(){
 
 
 });
+
+/*
+selpedido = function(idpedido){
+	$('#producto').val(idpedido);
+	
+
+  
+};
+
+
+
+
+$('#envconfeccion').submit(function(){
+	
+$.ajax({
+
+
+	url:baseurl+'Cproductosen/enviarconfeccion',
+
+
+	type:'POST',
+	data:$(this).val(),
+	success:function(data){
+		alert(data);
+		
+
+	}
+	});
+});*/

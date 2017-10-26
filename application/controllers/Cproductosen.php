@@ -1,4 +1,4 @@
-<?php 
+﻿<?php 
 
 
 class Cproductosen extends CI_COntroller
@@ -21,7 +21,7 @@ autor:´javier lopez
 
 	 	$this->load->view('layou/header',$nombres);
 	 	$this->load->view('layou/menu',$nombres);
-	 	$this->load->view('viewenvios');
+	 	$this->load->view('prueba');
 
 
 	 	$this->load->view('layou/footer',$nombres);
@@ -37,6 +37,25 @@ autor:´javier lopez
 
 	 	echo json_encode($res);
 	 }
+
+
+	  public  function enviarconfeccion(){
+
+	  	$param['idpedido']=$this->input->post('producto');
+
+
+
+	 	$param['estado']=$this->input->post('envio');
+		$res=$this->Mpedidos->updatepedido($param);
+
+
+	 	if($res>0){
+	 		echo'Se Actualizo el estado correctamente';
+	 	}else{ echo 'error al enviar pedido';}
+
+
+
+	  }
 
 
 

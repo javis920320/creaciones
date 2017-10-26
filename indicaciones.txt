@@ -66,3 +66,16 @@ c:\xampp\mysql\bin\mysqldump.exe -u root -p --password=123 basedatos > c:\xampp\
 
 
 https://www.youtube.com/watch?v=ZfgwK1ztrDI
+
+
+
+--- codigo  generar listado total proceso
+
+ select pr. idproceso,p.factura,po.nomprod,p.descripcion,pr.cantidad,v.valor,v.subvalor,pr.fecha,pe.nombres
+ from proceso pr
+ inner join pedido p on p.idpedido = pr.idpedido
+ inner join producto po on po.id_prod=pr.id_prod 
+ inner join precio v on v.id_prod = pr.id_prod
+ inner join trabajador t on t.idtrabajador = pr.idtrabajador
+ inner join persona pe on pe.idpersona=t.idpersona 
+ order by pe.nombres

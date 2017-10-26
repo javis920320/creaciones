@@ -18,11 +18,29 @@
 
  	$nombres['nombres']=$this->session->userdata('nombres');
 			$idpersona['idpersona']=$this->session->userdata('idpersona');
+			$tipo['tipo']=$this->session->userdata('tipo');
 
- 						$this->load->view('layou/header',$nombres);
-						$this->load->view('layou/menu',$nombres);
-						$this->load->view('viewenvios');		
-						$this->load->view('layou/footer');
+ 						
+
+						if ($tipo['tipo']==3) {
+							$this->load->view('layou/header',$nombres);
+							$this->load->view('layou/menu',$nombres);
+
+							
+							$this->load->view('prueba');
+							$this->load->view('layou/footer');
+							
+							# code...
+						} else {
+							$this->load->view('layou/header',$nombres);
+							$this->load->view('layou/menu',$nombres);
+							$this->load->view('viewenvios');
+							$this->load->view('layou/footer');
+							
+						}
+						
+								
+						
 						
 
  	}

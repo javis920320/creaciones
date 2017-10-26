@@ -109,10 +109,13 @@ class Cpedidos extends CI_Controller
 	 	$param['estado']=$this->input->post('enviar');
 
 
-	 	if($this->Mpedidos->updatepedido($param)){
-	 		echo'Se Actualizo el estado correctamente';
-	 	}
+	 	$res=$this->Mpedidos->updatepedido($param);
+	 	if($res>0){
+	 		echo 'Producto enviado correctamente';
 
+	 	}else{
+	 		echo 'Error al enviar pedido';
+	 	}
 
 
 
