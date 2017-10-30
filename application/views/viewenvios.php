@@ -25,19 +25,20 @@
           <h4 class="modal-title" id="myModalLabel">Enviar a Confeccion</h4>
         </div>
         <div class="modal-body">
-          <span>Enviar pedido a Confeccion?</span>
+          <span class="text text-success">Enviar pedido a Confeccion?</span>
 
 
           <form id='envconfeccion'>
-            <input type='text' id='producto' name='producto'>
-            <input type='text' id='envio' name='envio' value=3>
-            <input type='submit' value='Enviar'> 
+            <input type='text' id='producto' name='producto' class="hide">
+            <input type='text' id='envio' name='envio' value=3 class="hide">
+            <input type='submit' class="btn btn-default" value='Enviar'> 
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
 
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          
+          
         </div>
       </div>
     </div>

@@ -77,11 +77,30 @@
         </li> 
         <?php  }?>
 
+
+         <?php  if($this->session->userdata('tipo')==1) { ?>
+
+        <li class="treeview">
+          <a href="#">
+            <i class="glyphicon glyphicon-shopping-cart"></i> <span>Lista tareas</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+          <li><a href="<?php echo base_url();?>Ctaller/"><i class="fa fa-circle-o"></i> enviar a confeccion </a></li>
+            <li><a href="<?php echo base_url();?>Cprendascortadas/"><i class="fa fa-circle-o"></i> productos enviados</a></li>
+            
+            
+          </ul>
+        </li> 
+        <?php  }?>
+
          <?php  if($this->session->userdata('tipo')==3 or $this->session->userdata('tipo')==2 ) { ?>
 
         <li class="treeview">
           <a href="#">
-            <i class="glyphicon glyphicon-shopping-cart"></i> <span>Trabajos</span>
+            <i class="glyphicon glyphicon-shopping-cart"></i> <span>Mis trabajos</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>

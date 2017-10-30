@@ -58,6 +58,10 @@
 
 		<script src="<?php echo  base_url();?>js/fpedidos.js"></script>
 <?php  }?>
+<?php  if($this->uri->segment(1)=='Cprendascortadas') { ?>
+
+    <script src="<?php echo  base_url();?>js/jsprendascortadas.js"></script>
+<?php  }?>
 <?php  if($this->uri->segment(1)=='Ctaller') { ?>
 
     <script src="<?php echo  base_url();?>js/jstaller.js"></script>
@@ -74,7 +78,7 @@
 <script src="<?php echo  base_url();?>js/functions.js"></script>
 
 <?php  }?>
-<?php  if($this->uri->segment(1)=='Ctrabajos' && $this->session->userdata('tipo')==2){ ?>
+<?php  if($this->uri->segment(1)=='Ctrabajos' && $this->session->userdata('tipo')==2 or $this->session->userdata('tipo')==3){ ?>
 <script src="<?php echo  base_url();?>js/jstrabajos.js"></script>
 <script src="<?php echo  base_url();?>js/jsoperario.js"></script>
 
