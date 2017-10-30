@@ -38,6 +38,22 @@ class Madmin extends CI_Model
 }
 
 
+ public function listatrabajdores(){
+
+$this->db->select('t.idtrabajador,p.nombres');
+$this->db->from('trabajador t');
+$this->db->join('persona p','p.idpersona = t.idpersona');
+
+$resul=$this->db->get();
+return $resul->result();
+
+
+
+
+
+}
+
+
 
 }
 

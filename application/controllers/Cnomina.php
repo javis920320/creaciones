@@ -9,7 +9,7 @@ class Cnomina extends CI_controller
 	{
 		parent::__construct();
 
-		$this->load->Model('');
+		$this->load->Model('Madmin');
 	}
 
 
@@ -29,7 +29,10 @@ class Cnomina extends CI_controller
 
 	public  function listatrabajadores(){
 
-		echo'ola';
+		$resultado=$this->Madmin->listatrabajdores();
+
+
+		echo json_encode($resultado);
 	}
 }
 

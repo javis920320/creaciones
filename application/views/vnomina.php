@@ -28,10 +28,17 @@
     					<label id='ffin'>Fecha Fin</label>
     					<input type='date' id='ffin' class='form-control'>
     				</div>
-    			</div>
 
+				
+    			</div>
+				<div class="col-xs-8 col-md-8">	
+				<select id='tr' class='form-control' required></select>
+				</div>
     				
     			</div>
+				<br><br>
+
+				<button class='btn btn-danger'>Calcular</button>
 				</fieldset>
 
 
