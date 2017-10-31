@@ -1,7 +1,7 @@
 user=$('#trabajador').val();
 
  console.log(user);
-alert(user);
+//alert(user);
 lista(user);
 
  function lista(user){
