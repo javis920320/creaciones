@@ -44,8 +44,8 @@
 
                 <fieldset>
                 <legend>Resultados:</legend>
-                    N° productos: <input type="text"><br>
-                     Cobro: <input type="text">
+                    N° productos: <input type="text" id='c'><br>
+                     Cobro: <input type="text" id='p'>
                 </fieldset>
 
 

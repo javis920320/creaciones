@@ -34,10 +34,10 @@ class Cadmin extends CI_Controller
 public  function listprocesos(){
 
 
-	$param['fechaini']="2017-09-31";//$this->input->post('finicio');
-	$param['fechafin']= "2017-10-23";//$this->input->post('ffin');
-	//$param['idpersona']=$this->input->post('idpersona');
-	 $param['idtrabajador']=1;//$this->Moperario->trabajadorid($param);
+	$param['fechaini']=$this->input->post('finicio');
+	$param['fechafin']=$this->input->post('ffin');
+	$param['idpersona']=$this->input->post('idpersona');
+	 $param['idtrabajador']=$this->Moperario->trabajadorid($param);
 	    $param['idtrabajador'];
 
 

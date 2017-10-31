@@ -31,7 +31,7 @@
 
         <li class="active treeview">
           <a href="#">
-            <i class="glyphicon glyphicon-list-alt"></i> <span>Pedidos </span>
+            <i class="glyphicon glyphicon-folder-open"></i> <span>Pedidos </span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -65,7 +65,7 @@
 
         <li class="treeview">
           <a href="#">
-            <i class="glyphicon glyphicon-shopping-cart"></i> <span>Productos</span>
+            <i class="glyphicon glyphicon-list-alt"></i> <span>Productos</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>

@@ -39,9 +39,9 @@ class Cnomina extends CI_controller
 
 	 public  function calcular(){
 
-	 	$param['fechai']='2017-09-12';//$this->input->post('fechai');
-	 	$param['fechaf']='2017-10-29';//$this->input->post('fechaf');
-	 	$param['idtrabajador']=1;//$this->input->post('idtrabajador');
+	 	$param['fechai']=$this->input->post('fechai');
+	 	$param['fechaf']=$this->input->post('fechaf');
+	 	$param['idtrabajador']=$this->input->post('idtrabajador');
 
 	 	$res=$this->Madmin->calcular($param);
 	 	echo json_encode($res);

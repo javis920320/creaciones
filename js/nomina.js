@@ -49,7 +49,11 @@ listatrabajadores();
 	  		'type':'POST',
 	  		'data':{fechai:fechai,fechaf:fechaf,idtrabajador:idtrabajador},
 	  		success:function(data){
-	  			alert(data);
+	  			var obj=JSON.parse(data);
+	  			$.each(obj,function(i,items){
+	  				$('#c').val(items.c);
+	  				$('#p').val(items.p);
+	  			});
 
 
 	  		}
