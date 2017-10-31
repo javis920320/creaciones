@@ -19,13 +19,13 @@
     			<div class='row'>
     				<div class="col-xs-4 col-md-4">	
     				<div class='form-group'>
-    					<label for='finicio'>Fecha Inicio</label>
+    					<label for='finicio'>Fecha Inicio</label><span class="f  hide">Las fechas son requridas</span>
     					<input type='date' id='finicio' class='form-control'>
     				</div>
     				</div>
     				<div class="col-xs-4 col-md-4">	
     				<div class='form-group'>
-    					<label id='ffin'>Fecha Fin</label>
+    					<label id='ffin'>Fecha Fin</label><span class="f  hide">Las fechas son requridas</span>
     					<input type='date' id='ffin' class='form-control'>
     				</div>
 
@@ -38,8 +38,15 @@
     			</div>
 				<br><br>
 
-				<button class='btn btn-danger'>Calcular</button>
+				<button class='btn btn-danger' id='calcular' onclick="calcular();">Calcular</button>
 				</fieldset>
+
+
+                <fieldset>
+                <legend>Resultados:</legend>
+                    N° productos: <input type="text"><br>
+                     Cobro: <input type="text">
+                </fieldset>
 
 
             </div>

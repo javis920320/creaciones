@@ -53,6 +53,19 @@ return $resul->result();
 
 }
 
+ public function calcular($param){
+//select sum(cantidad),sum(precio) from proceso where fecha between '2017-09-20' and '2017-10-31' and idtrabajador=1
+
+
+$query=$this->db->query("select sum(cantidad) as c ,sum(precio) as p from proceso
+						where fecha  between ".$param['fechai']." and ".$param['fechaf']."
+	 					");
+
+	return $query->result();
+
+
+ }
+
 
 
 }

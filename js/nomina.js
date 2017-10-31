@@ -33,3 +33,34 @@ listatrabajadores();
 
  	})
  }
+
+
+
+  function calcular(){
+ 
+
+	 var fechai=$('#finicio').val();
+	 var fechaf=$('#ffin').val();
+	 var idtrabajador=$('#tr').val();
+	  	//alert(fechai+'?');
+
+	  	$.ajax({
+	  		'url':baseurl+'Cnomina/calcular',
+	  		'type':'POST',
+	  		'data':{fechai:fechai,fechaf:fechaf,idtrabajador:idtrabajador},
+	  		success:function(data){
+	  			alert(data);
+
+
+	  		}
+
+	  	});
+
+
+	 
+
+
+
+
+
+  }
