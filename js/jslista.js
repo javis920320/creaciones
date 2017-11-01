@@ -62,57 +62,31 @@ return'<span>Enviado</span>';
 
 		});	
 
-/*$('#enviar').on('click',function(){
+imprimir();
 
-			datos=$(this).serialize();
-			fecha=$('#fecha').val();
-			alert(fecha);
+ function imprimir(){
 
+ 	$.ajax({
+ 		'url':baseurl+'Cproductosen/lista',
+ 		'type':'POST',
+ 		'data':'',
+ 		success:function(data){
 
-			$('#tblpedidos').DataTable({
-			'paging':true,
-			'info':true,
-			'filter':true,
-			'stateSave':true,
+ 			var obj=JSON.parse(data);
 
-			'ajax':{
+ 			var html='';
+ 		$.each(obj,function(i,item){
+ 			html+='<div id="l">'+item.factura+'|'+item.nomtipoprod+'</div>';
+ 			
 
-				"url":baseurl+"Clista/lista",
-				'data':{fecha:fecha},
-				'type':'POST',
-				dataSrc:''
-			},
+ 		});
+ 		$('#rsp').html(html);
+ 		}
 
-			'columns':[
-			{data: 'factura','sClass':'dt-body-center'},
-			{data:'facultad'},
-			{data:'cantidad'},
-			{data:'talla'},
-			{data:'descripcion'},
-			{data:'nombres'},
-			{data:'fecha_ingreso'},
-			{"orderable":true,
-			render:function(data,type,row){
+ 	});
 
 
 
-				
-
-					//return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" data-toggle="modal" data-target="#myModal"><i class=" fa fa-edit"></i></a
-					return '<a  href="#"  class="btn btn-success  btn-sm" style="width:80%;" title="Enviar informacion" data-toggle="modal" data-target="#estado" onClick="estadopedido(\''+row.idpedido+'\',\''+row.nombres+'\',\''+row.telefono+'\');"><i class="glyphicon glyphicon-wrench"></i><span> En proceso</span></a>';
-					}
 
 
-					
-			}
-
-
-			],
-
- "order":[[0,"asc"]],
-
-		});	
-
-
-
-		});*/
+ }

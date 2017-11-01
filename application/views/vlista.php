@@ -30,6 +30,14 @@
 
 </head>
 <body>
+	<style type="text/css">
+		#l{
+			
+			float: right;
+		}
+
+
+	</style>
 
 
 
@@ -52,6 +60,8 @@
                 <tbody></tbody>
                 
  </table>
+
+ <div id='rsp'>ss</div>
 
    <script type="text/javascript">
 	var baseurl = "<?php echo base_url(); ?>";

@@ -28,6 +28,7 @@ $('#tbltrabajos').DataTable({
 			{data:'cantidad'},
 			{data:'precio'},
 			{data:'precio1'},
+
 			{data:'fecha'},
 
 			{"orderable":true,
