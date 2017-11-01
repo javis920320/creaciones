@@ -44,7 +44,7 @@ class Mtrabajos extends CI_Model
 		$this->db->join('persona pe','pe.idpersona=c.idpersona');
 		$this->db->join('tipo_producto tp','tp.idtipoprod=p.idtipoprod');
 		$this->db->where('p.factura',$datos['fac']);
-		$this->db->where('p.estado',2);
+		$this->db->where('p.estado',3);
 		$this->db->order_by('fecha_ingreso', 'DESC');
 
 		
@@ -82,7 +82,7 @@ class Mtrabajos extends CI_Model
 		$this->db->where('p.factura',$param['fac']);
 		$this->db->where('tp.idtipoprod',$param['dato']);
 
-		$this->db->where('p.estado',2);
+		$this->db->where('p.estado',3);
 		$this->db->order_by('fecha_ingreso', 'DESC');
 
 		

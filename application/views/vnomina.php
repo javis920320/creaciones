@@ -15,7 +15,7 @@
             <div class="box-body">
 
             	<fieldset class="scheduler-border">
-    			<legend class="scheduler-border">Prueba</legend>
+    			<legend class="scheduler-border"><span class="text text-primary"> <strong>   CREACIONES GORETTI</strong> </span></legend>
     			<div class='row'>
     				<div class="col-xs-4 col-md-4">	
     				<div class='form-group'>
@@ -44,8 +44,8 @@
 
                 <fieldset>
                 <legend>Resultados:</legend>
-                    N° productos: <input type="text" id='c'><br>
-                     Cobro: <input type="text" id='p'>
+                   <span>  N° productos: <strong id='c'>   </strong> </span>  
+                    <span> Cobro       : <strong id='p'>   </strong> </span> 
                 </fieldset>
 
 

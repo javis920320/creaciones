@@ -51,8 +51,8 @@ listatrabajadores();
 	  		success:function(data){
 	  			var obj=JSON.parse(data);
 	  			$.each(obj,function(i,items){
-	  				$('#c').val(items.c);
-	  				$('#p').val(items.p);
+	  				$('#c').text(items.c);
+	  				$('#p').text(items.p);
 	  			});
 
 
