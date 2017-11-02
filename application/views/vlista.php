@@ -31,9 +31,14 @@
 </head>
 <body>
 	<style type="text/css">
-		#l{
-			
-			float: right;
+		
+		.l{
+			width: 200px;
+			height: 160px;
+			margin-right: 2px;		
+			float:left;
+			border-style: solid;
+
 		}
 
 
@@ -42,24 +47,7 @@
 
 
 
-<table  id='tblpedidos' class="table table-hover table-responsive">
-                <thead class="bg-primary">
-                <tr>
-                  <th style="width: 4%;background-color: #006699; color: white;">Factura</th>
-                  <th style="width: 10%;background-color: #006699; color: white;">Producto</th>
-                  <th style="width: 10%;background-color: #006699; color: white;">Facultad</th>
-                   <th style="width: 4%;background-color: #006699; color: white;">Cantidad</th>
-                   <th style="width: 3%;background-color: #006699; color: white;">Talla</th>
-                   <th style="width: 10%;background-color: #006699; color: white;">Descripcion</th>
-                   <th style="width: 10%;background-color: #006699; color: white;">Cliente</th>
-                  <th style="width: 10%;background-color: #006699; color: white;">Fecha ingreso</th>
-                  <th style="width: 10%;background-color: #006699; color: white;">Accion</th>
 
-                </tr>
-                </thead>
-                <tbody></tbody>
-                
- </table>
 
  <div id='rsp'>ss</div>
 

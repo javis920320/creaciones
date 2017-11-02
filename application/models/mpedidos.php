@@ -94,6 +94,7 @@ public  function lista($param){
 		$this->db->where('p.estado',$dato['estado']);
 		//$this->db->where('p.factura',$dato['factura']);
 		$this->db->order_by('fecha_ingreso', 'DESC');
+		$this->db->order_by('factura');
 
 		$resul=$this->db->get();
 		return $resul->result();
