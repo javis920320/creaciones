@@ -58,6 +58,11 @@
 
 		<script src="<?php echo  base_url();?>js/fpedidos.js"></script>
 <?php  }?>
+
+<?php  if($this->uri->segment(1)=='Cresumenprocesos') { ?>
+
+    <script src="<?php echo  base_url();?>js/jsresumen.js"></script>
+<?php  }?>
 <?php  if($this->uri->segment(1)=='Cprendascortadas') { ?>
 
     <script src="<?php echo  base_url();?>js/jsprendascortadas.js"></script>

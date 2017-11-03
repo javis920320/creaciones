@@ -205,6 +205,33 @@ class Mtrabajos extends CI_Model
 
 
 
+	public  function tblresumen($param){
+
+
+
+		$this->db->select('pr.idproceso,pd.factura,p.nomprod,pd.descripcion,pr.cantidad,pr.precio,pr.precio1,pr.fecha,pe.nombres');
+		$this->db->from('proceso pr');
+		$this->db->join('producto p','p.id_prod=pr.id_prod');
+		$this->db->join('pedido pd','pd.idpedido=pr.idpedido');
+		$this->db->join('trabajador t','t.idtrabajador=pr.idtrabajador');
+		$this->db->join('persona pe','pe.idpersona=t.idpersona');
+		$this->db->where('pr.fecha>=',$param['fechai']);
+		$this->db->where('pr.fecha<=',$param['fechaf']);
+
+
+		$res=$this->db->get();	
+
+		return$res->result(); 
+		//$this->db->where('pe.idpersona',$user['user']);
+
+
+
+	}
+
+
+
+
+
 }
 
 
