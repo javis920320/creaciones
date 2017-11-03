@@ -21,10 +21,21 @@ class Ctrabajos extends CI_Controller
 		$idpersona['idpersona']=$this->session->userdata('id');
 
 		$tipo['tipo']=$this->session->userdata('tipo');
+		
+		if($tipo['tipo']==3){
 		$this->load->view('layou/header',$nombres);
 		$this->load->view('layou/menu',$nombres);
-		$this->load->view('vtrabajos',$idpersona);
+		$this->load->view('vtrabajosad',$idpersona);
 		$this->load->view('layou/footer',$tipo);
+
+		}else{
+			$this->load->view('layou/header',$nombres);
+			$this->load->view('layou/menu',$nombres);
+			$this->load->view('vtrabajos',$idpersona);
+			$this->load->view('layou/footer',$tipo);
+
+		}
+		
 
 
 	}

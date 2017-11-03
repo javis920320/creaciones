@@ -79,7 +79,7 @@ $('#tpprod').on('change',function(event){
 
 $('#tblresumen .idpedido').on('change',function(){
 
-	alert();
+	//alert();
 
 });
 
@@ -178,7 +178,7 @@ return '<span class="pull-right">' +
  }
 			
 			$('#productos').on('change',function(){
-				alert($(this).val());
+				//alert($(this).val());
 
 			});
 

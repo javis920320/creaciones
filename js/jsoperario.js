@@ -1,6 +1,6 @@
 user=$('#trabajador').val();
 
- console.log(user);
+ //console.log(user);
 //alert(user);
 lista(user);
 
@@ -27,7 +27,8 @@ $('#tbltrabajos').DataTable({
 			{data:'descripcion'},
 			{data:'cantidad'},
 			{data:'precio'},
-			{data:'precio1'},
+
+			//{data:'precio1'},
 
 			{data:'fecha'},
 
@@ -35,7 +36,7 @@ $('#tbltrabajos').DataTable({
 			render:function(data,type,row){
 
 //nomtipoprod
-return'<span>Enviado</span>';
+return'<span>Elaborado</span>';
 
 /*return '<span class="pull-right">' +
                       '<div class="dropdown">' +
