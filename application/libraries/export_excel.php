@@ -3,7 +3,7 @@
 class export_excel{
 
     function to_excel($array, $filename) {
-        header('Content-Disposition: attachment; filename='.$filename.'.xlsx');
+        header('Content-Disposition: attachment; filename='.$filename.'.xls');
         header('Content-type: application/force-download');
         header('Content-Transfer-Encoding: binary');
         header('Pragma: public');
@@ -19,7 +19,7 @@ class export_excel{
         echo '<table><tr>';
         foreach($h as $key) {
             $key = ucwords($key);
-            echo '<th style="border:1px #888 solid;background-color:#F00;color:white;">'.$key.'</th>';
+            echo '<th style="border:1px #888 solid;background-color:#384c79;color:white;">'.$key.'</th>';
         }
         echo '</tr>';
 

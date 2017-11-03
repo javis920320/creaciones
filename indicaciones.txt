@@ -79,3 +79,14 @@ https://www.youtube.com/watch?v=ZfgwK1ztrDI
  inner join trabajador t on t.idtrabajador = pr.idtrabajador
  inner join persona pe on pe.idpersona=t.idpersona 
  order by pe.nombres
+
+
+ --- decode 
+
+  select pe.cedula,pe.nombres,pe.telefono,
+ case u.tipo
+ when 1 then 'ADMINISTRADOR'
+  when 2 then 'ADMINISTRADOR'
+   when 3 then 'ADMINISTRADOR'
+ END ,u.estado from persona pe
+ inner join usuarios u on pe.idpersona = u.idpersona 

@@ -1,22 +1,27 @@
-$('#btnfl').on('click',function(){
+
+/*$('#btnexportar').on('click',function(){
+var fecha =Array();
+	
+	 fecha['fechai']=$('#fechai').val();
+	 fechai=$('#fechai').val();
+	 
+	fecha['fechaf']=$('#fechaf').val();
+window.open(baseurl+'Cresumenprocesos/resumen');
+	
+	
+	
+});*/
+
+
+
+ function resfiltrar(){
+
+ 	//alert();
+//'pr.idproceso,pd.factura,p.nomprod,pd.descripcion,pr.cantidad,pr.precio,pr.precio1,pr.fecha,pe.nombres
 
 
 	var fechai=$('#fechai').val();
 	var fechaf=$('#fechaf').val();
-	alert();
-
-filtrar(fechai,fechaf);
-	
-
-}) ;
-
-
-
-
- function filtrar(fechai,fechaf){
-
- 	
-//'pr.idproceso,pd.factura,p.nomprod,pd.descripcion,pr.cantidad,pr.precio,pr.precio1,pr.fecha,pe.nombres
 
 $('#tbltrabajos').DataTable({
 			'paging':true,
@@ -61,10 +66,10 @@ $('#tbltrabajos').DataTable({
 		});	
 
 
-
-
-
-
  }
+
+
+
+ 
 
 

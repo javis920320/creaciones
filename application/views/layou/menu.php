@@ -157,6 +157,22 @@
             <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
           </ul>
         </li>-->
+         <?php  if($this->session->userdata('tipo')==3) { ?>
+
+        <li class="treeview">
+          <a href="#">
+            <i class="glyphicon glyphicon-user"></i> <span>Usuarios</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="<?php echo base_url();?>Cusuarios/"><i class="fa fa-circle-o"></i> Ingresar </a></li>
+            
+          </ul>
+        </li> 
+        
+        <?php  }?>
         <li><a href="documentation/index.html"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
         <li class="header">LABELS</li>
         <!--<li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>

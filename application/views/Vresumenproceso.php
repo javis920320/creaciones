@@ -1,4 +1,4 @@
-<html>
+﻿<html>
 <head>
 	<title></title>
 </head>
@@ -21,7 +21,7 @@
             <div class="col-xs-5 col-md-5"><label for="fechai"><strong class="text text-primary">FECHA INICIO</strong></label><input type="date" name="fechai" id='fechai' class="form-control"></div>
 
             <div class="col-xs-5 col-md-5"><label for="fechaf"><strong class="text text-primary">FECHA FIN</strong></label><input type="date" name="fechaf" id='fechaf' class="form-control"></div>
-             <div class="col-xs-2 col-md-2"><button class="btn  btn-danger form-control" id='btnfl'">Filtrar</button></div>
+             <div class="col-xs-2 col-md-2"><button class="btn  btn-danger form-control" id='btnfl' onclick='resfiltrar();'>Filtrar</button><a href='<?php echo base_url();?>Cresumenprocesos/resumen' id='btnexportar'class='btn btn-success form-control'>Exportar Excel</a></div>
             <br><br>
 
                 <table id="tbltrabajos" class="table table-bordered table-striped">

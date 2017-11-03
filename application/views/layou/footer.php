@@ -59,6 +59,11 @@
 		<script src="<?php echo  base_url();?>js/fpedidos.js"></script>
 <?php  }?>
 
+<?php  if($this->uri->segment(1)=='Cusuarios') { ?>
+
+    <script src="<?php echo  base_url();?>js/usuarios.js"></script>
+<?php  }?>
+
 <?php  if($this->uri->segment(1)=='Cresumenprocesos') { ?>
 
     <script src="<?php echo  base_url();?>js/jsresumen.js"></script>

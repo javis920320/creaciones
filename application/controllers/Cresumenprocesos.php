@@ -10,6 +10,8 @@ class Cresumenprocesos extends CI_Controller
 		parent::__construct();
 
 		$this->load->model('Mtrabajos');
+
+		$this->load->library('export_excel');
 	}
 
 
@@ -45,6 +47,19 @@ public  function tblresumen(){
 
 
 }
+
+
+ public function resumen(){
+
+
+//$dato=$this->input->get('fechai');
+
+$res=$this->Mtrabajos->resumen();
+$this->export_excel->to_excel($res,'Resumen creaciones');
+
+
+
+ }
 
 
 
