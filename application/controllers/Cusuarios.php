@@ -41,12 +41,49 @@ class Cusuarios extends CI_Controller
 
 
 
+public  function inser_user(){
+
+
+$param['cedula']=$this->input->post('cedula');
+$param['nombres']=$this->input->post('nombres');
+$param['telefono']=$this->input->post('telefono');
+
+$param['name']=$this->input->post('name');
+$param['pass']=$this->input->post('pass');
+$param['tipo']=$this->input->post('tipo');
+$param['idpersona']=$this->Madmin->insertpersona($param);
+
+$res=$this->Madmin->insertuser($param);
+if($res>0){
+
+	echo'Usuario Registrado Correctamente';
+
+}else{
+	echo'Ha ocurrido un Error';
+}
+
+
+}
+
+public function editarpersona(){
+
+		$param['idpersona']=$this->input->post('eidpersona');
+		$param['cedula']=$this->input->post('ecedula');
+		$param['nombres']=$this->input->post('enombres');
+		$param['telefono']=$this->input->post('etelefono');
+
+		$res=$this->Madmin->editarusuario($param);
+		if($res>0){
+
+	echo'Datos Modificados';
+
+}else{
+	echo'Ha ocurrido un Error';
+}
 
 
 
-
-
-
+}
 
 
 }

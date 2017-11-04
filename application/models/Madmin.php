@@ -1,8 +1,5 @@
 <?php 
 
-/**
-* 
-*/
 class Madmin extends CI_Model
 {
 	
@@ -74,35 +71,70 @@ return $resul->result();
   public  function usuarios(){
 
 
-  	select pe.cedula,pe.nombres,pe.telefono,
- case u.tipo
- when 0 then 'VENDEDOR'
-  when 1 then 'CORTES'
-   when 2 then 'OPERARIO OBRA'
-   when 3 then 'ADMINISTRADOR'
-   when 4 then 'OPERARIO'
- END ,u.estado from persona pe
- inner join usuarios u on pe.idpersona = u.idpersona 
-
- $query=$this->db->query("select pr.idproceso,pd.factura,p.nomprod,pd.descripcion,pr.cantidad,pr.precio,pr.precio1 
-	 					from proceso pr inner join producto p on p.id_prod=pr.id_prod inner join pedido pd on pd.idpedido=pr.idpedido
-						where pr.idtrabajador=".$param['idtrabajador']." and pr.fecha  between ".$param['fechaini']." and ".$param['fechafin']."
-	 					");
+ $query=$this->db->query("select pe.idpersona,pe.cedula,pe.nombres,pe.telefono,
+ 	case u.tipo
+ 	when 0 then 'VENDEDOR'
+  	when 1 then 'CORTES'
+   	when 2 then 'OPERARIO OBRA'
+   	when 3 then 'ADMINISTRADOR'
+   	when 4 then 'OPERARIO'
+ 	END  as tipo, 
+ 	case u.estado
+ 	when 0 then 'INACTIVO'
+ 	when 1 then 'ACTIVO'
+ 	END AS estado
+	from persona pe
+ 	inner join usuarios u on pe.idpersona = u.idpersona");
 
 	return $query->result();
 
-  	// select pe.cedula,pe.nombres,pe.telefono,u.tipo,u.estado from persona pe
- //inner join usuarios u on pe.idpersona = u.idpersona 
 
-  	$this->db->select('pe.cedula,pe.nombres,pe.telefono,u.tipo,u.estado');
-  	$this->db->from('persona pe');
-  	$this->db->join('usuarios u','pe.idpersona = u.idpersona');
-  	$res=$this->db->get();
-
-  	return $res->result();
   }
 
 
+
+ 	public  function insertpersona($param){
+
+		$datos = array(
+			'idpersona'=>NULL,
+			'cedula' =>$param['cedula'],
+			'nombres'=>$param['nombres'],
+			'telefono'=>$param['telefono']
+
+		 );
+
+			$this->db->insert('persona',$datos);
+
+			$insert_id = $this->db->insert_id();
+
+   return  $insert_id;
+}
+
+	public  function insertuser($param){
+
+ $datos = array('idusuarios' =>null,'name' =>$param['name'],'password'=>$param['pass'],'tipo'=>$param['tipo'],'estado'=>1,'idpersona'=>$param['idpersona']);
+
+	//$this->db->where('id_prod',$param['id_prod']);
+	$this->db->insert('usuarios',$datos);
+	$res=$this->db->affected_rows();
+		return$res;
+
+}
+
+public  function editarusuario($param){
+
+	 $datos = array('cedula' => $param['cedula'],'nombres' => $param['nombres'],'telefono' => $param['telefono'] );
+
+
+	$this->db->where('idpersona',$param['idpersona']);
+	$this->db>update('persona',$datos);
+
+
+		 $res=$this->db->affected_rows();
+		return$res;
+
+
+}
 
 }
 
