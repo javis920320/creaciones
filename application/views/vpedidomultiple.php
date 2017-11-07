@@ -18,8 +18,18 @@
 				 <div class="text-danger hide" id='alerta1'><strong>Este dato es requerido.</strong></div>
 
 				 <input type="text" placeholder="Buscar cliente" id="idcliente" class="form-control"   required >
+
+
 				 <input class="btn btn-primary" type="submit" value="Buscar cliente" id='btnbuscar'>
-				 
+				 <br>
+
+				 <br>
+				  <div class="col-sm-6">
+				  <input type='text' name='nombres' placeholder='Nombres'id='nombres' class='form-control'>
+				  </div>
+				  <div class="col-sm-6">
+				  <input type='text' name='telefono' placeholder='Telefono'id='telefono' class='form-control'>
+				  </div>	
 
 			</div>
 
