@@ -90,3 +90,21 @@ https://www.youtube.com/watch?v=ZfgwK1ztrDI
    when 3 then 'ADMINISTRADOR'
  END ,u.estado from persona pe
  inner join usuarios u on pe.idpersona = u.idpersona 
+
+
+
+ ---
+
+
+ DROP TABLE IF EXISTS `bordados` ;
+
+SHOW WARNINGS;
+CREATE TABLE IF NOT EXISTS `bordados` (
+  `idbordado` INT NOT NULL COMMENT '',
+  `nombrebordado` VARCHAR(100) NULL COMMENT '',
+  `precio` INT NULL COMMENT '',
+  `id_prod` INT NOT NULL COMMENT '',
+  PRIMARY KEY (`idbordado`)  COMMENT '')
+ENGINE = InnoDB;
+
+SHOW WARNINGS;
