@@ -53,6 +53,8 @@ $('#btnbuscar').on('click',function(){
 			
 
 			$.each(obj,function(i,items){
+				$('#nombres').val(items.nombres);
+				$('#telefono').val(items.telefono);
 				$(".contenedor_json").html('<span class="text-success"><strong><h1> Cliente:' + items.nombres+ '</h1><strong></span>');
 				$('#idpersona').val(items.idpersona);
 			});
