@@ -46,7 +46,10 @@ class Mproductos extends CI_Model
 
 public  function getproductos($param){
 
-
+		/*$query=$this->db->query("select p.id_prod,tp.nomtipoprod,p.nomprod,pr.valor,pr.subvalor,sum(b.cantidad) from producto p
+						  inner join tipo_producto tp on p.idtipoprod = tp.idtipoprod
+						  inner join precio pr on p.id_prod = pr.id_prod
+						  inner join bordados b on b.id_prod = p.id_prod group by p.id_prod");*/
 
         $this->db->select('p.id_prod,tp.nomtipoprod,p.nomprod,pr.valor,pr.subvalor');
 		$this->db->from('PRODUCTO  P');
@@ -56,6 +59,7 @@ public  function getproductos($param){
 
 		$resul=$this->db->get();
 		return $resul->result();
+		//return $query->result();
 
 
 
