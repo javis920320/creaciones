@@ -24,6 +24,37 @@ class Cproductos extends CI_Controller
 
 
 	}
+	
+	public  function lstbordados(){
+		$res=$this->Mproductos->lstbordados();
+		
+		echo json_encode($res);
+	}
+	
+	public  function asignarbordado(){
+		
+		$param['id_prod']=$this->input->post('id_prod');
+		$param['idbordado']=$this->input->post('idbordado');
+		$param['cantbord']=$this->input->post('cantbord');
+		$res=$this->Mproductos->asignarbordado($param);
+		if($res==1){
+			echo 'Bordado Asignado';
+		}else{
+			echo 'Ocurrio un error';
+		}
+		
+	}
+
+
+	 public  function listabordados(){
+
+	 	$param['id_prod']=$this->input->post('id_prod');
+
+
+	 	$res=$this->Mproductos->listabordados($param);
+	 	 echo json_encode($res);
+
+	 }
 
 
 

@@ -5,9 +5,80 @@
 	
 </head>
 <body>
+  <style>
+    #aumentar{
+      width: 80% !important;
+    }
+  </style>
 
 
 
+
+<!-- Modal -->
+<div class="modal fade" id="asgbordados" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document" id='aumentar'>
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Lista de Bordados</h4>
+      </div>
+
+<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalbor">
+  Asignar bordado
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="modalbor" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Asignar Bordado</h4>
+      </div>
+      <div class="modal-body">
+        <input type='hidden' id='valoridprod'>
+		<div id='lstbord'></div>
+		
+		<label for='cant'>Cantidad</label>
+		<input type='number' value='0' min='0' id='cant' class='form-control'>
+		<br><br>
+		<button id='asginarbordado' onclick='asginarbordado();'>Asignar</button>
+		
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+      <div class="modal-body">
+         <div class="box-body table-responsive no-padding">
+              <table  id='bord-prod' class="table table-hover table-responsive">
+                <thead class="bg-primary">
+                <tr>
+                  <th>Codigo</th>
+                  <th>Bordado</th>
+                  <th>cantidad</th>
+                     
+                  <th>Accion</th>
+                </tr>
+                </thead>
+                <tbody></tbody>
+                
+              </table>
+            </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <!-- modal editar precio -->
@@ -105,7 +176,7 @@
 	  </div>
 	</div>
 
-<div class="col-xs-10 col-md-10">
+<div class="col-xs-11 col-md-11">
           <div class="box">
             <div class="box-header">
               <h3 class="box-title" class='text-primary'>Productos</h3><br><br>
@@ -123,6 +194,8 @@
                   <th>Nombre Producto</th>
                    <th>Valor</th>
                    <th>Subvalor</th>
+		   <th>N bordados</th>
+		   <th>valor bordados</th>		
                   <th>Accion</th>
                 </tr>
                 </thead>

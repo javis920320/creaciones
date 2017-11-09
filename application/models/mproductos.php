@@ -11,6 +11,22 @@ class Mproductos extends CI_Model
 		parent::__construct();
 
 	}
+	
+	
+	public function asignarbordado($param){
+		$datos = array('idbordados' =>$param['idbordados'],'id_prod' =>$param['id_prod'],'cantidad'=>$param['cantidad']);
+
+	//$this->db->where('id_prod',$param['id_prod']);
+	$this->db->insert('bordados-productos',$datos);
+	$res=$this->db->affected_rows();
+		return$res;
+		
+	}
+	
+	public function lstbordados(){
+		$res=$this->db->get('bordados');
+		return$res->result();
+	}
 
 
 	public function ingresarprd($arreglo){
@@ -42,24 +58,42 @@ class Mproductos extends CI_Model
 	}
 
 
+	public  function listabordados($param){
+
+		$query=$this->db->query(" select b.idbordados,b.nombre,pb.cantidad from producto p
+ 				inner join `bordados-productos` pb on pb.id_prod = p.id_prod
+ 				inner join bordados b on b.idbordados = pb.idbordados
+ 				where p.id_prod=".$param['id_prod']."
+ 				");
+
+		return $query->result();
+
+
+
+	}
+
+
 
 
 public  function getproductos($param){
 
-		/*$query=$this->db->query("select p.id_prod,tp.nomtipoprod,p.nomprod,pr.valor,pr.subvalor,sum(b.cantidad) from producto p
-						  inner join tipo_producto tp on p.idtipoprod = tp.idtipoprod
-						  inner join precio pr on p.id_prod = pr.id_prod
-						  inner join bordados b on b.id_prod = p.id_prod group by p.id_prod");*/
+		$query=$this->db->query(" select p.id_prod,tp.nomtipoprod,p.nomprod,pr.valor,pr.subvalor,sum(bp.cantidad)'nbordados',sum(b.precio*bp.cantidad)'vbordado'
+ from producto p
+ inner join tipo_producto tp on p.idtipoprod = tp.idtipoprod
+ inner join precio pr on p.id_prod = pr.id_prod
+ inner join  `bordados-productos` bp on bp.id_prod=p.id_prod
+ inner join  bordados b on b.idbordados = bp.idbordados
+ group by p.id_prod");
 
-        $this->db->select('p.id_prod,tp.nomtipoprod,p.nomprod,pr.valor,pr.subvalor');
+        /*$this->db->select('p.id_prod,tp.nomtipoprod,p.nomprod,pr.valor,pr.subvalor');
 		$this->db->from('PRODUCTO  P');
 		$this->db->join('TIPO_PRODUCTO TP ','TP.IDTIPOPROD=P.IDTIPOPROD');
 		$this->db->join('precio pr','pr.id_prod=p.id_prod');
 		$this->db->WHERE('pr.estado', 1);
 
 		$resul=$this->db->get();
-		return $resul->result();
-		//return $query->result();
+		return $resul->result();*/
+		return $query->result();
 
 
 
