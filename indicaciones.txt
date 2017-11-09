@@ -108,3 +108,46 @@ CREATE TABLE IF NOT EXISTS `bordados` (
 ENGINE = InnoDB;
 
 SHOW WARNINGS;
+
+
+
+
+//// nuevas tablas
+
+
+
+select p.id_prod,tp.nomtipoprod,p.nomprod,pr.valor,pr.valor,sum(b.cantidad) from producto p
+  inner join tipo_producto tp on p.idtipoprod = tp.idtipoprod
+  inner join precio pr on p.id_prod = pr.id_prod
+  inner join bordados b on b.id_prod = p.id_prod group by p.id_prod
+  
+  
+  
+  
+  CREATE TABLE IF NOT EXISTS `creaciones`.`bordados-productos` (
+  `idbordados` INT NOT NULL,
+  `id_prod` INT NOT NULL,
+  `cantidad` INT NULL,
+  PRIMARY KEY (`idbordados`, `id_prod`),
+  INDEX `fk_bordados_has_PRODUCTO_PRODUCTO1_idx` (`id_prod` ASC),
+  INDEX `fk_bordados_has_PRODUCTO_bordados1_idx` (`idbordados` ASC),
+  CONSTRAINT `fk_bordados_has_PRODUCTO_bordados1`
+    FOREIGN KEY (`idbordados`)
+    REFERENCES `creaciones`.`bordados` (`idbordados`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_bordados_has_PRODUCTO_PRODUCTO1`
+    FOREIGN KEY (`id_prod`)
+    REFERENCES `creaciones`.`PRODUCTO` (`id_prod`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+
+
+CREATE TABLE IF NOT EXISTS `creaciones`.`bordados` (
+  `idbordados` INT NOT NULL AUTO_INCREMENT,
+  `nombre` VARCHAR(45) NULL,
+  `precio` INT NULL,
+  PRIMARY KEY (`idbordados`))
+ENGINE = InnoDB
+ 
