@@ -24,6 +24,11 @@ class Cproductos extends CI_Controller
 
 
 	}
+	
+	public  function val(){
+		$arreglo[idprod]=2;
+		$this->Mproductos->asignarb($arreglo);
+	}
 
 
 	public function removerbordado(){
@@ -98,9 +103,11 @@ class Cproductos extends CI_Controller
 	 	$res=$this->Mproductos->ingresarprd($arreglo);
 
 	 	if($res){
-$arreglo['idprod']=$res;
+		$arreglo['idprod']=$res;
+		$this->Mproductos->asignarb($arreglo);
 	 		
 	 		if($resp=$this->Mproductos->valorprenda($arreglo)){
+				
 	 			echo'Producto registrado correctamente';
 	 		}else{
 	 			echo'error en proceso de precios';

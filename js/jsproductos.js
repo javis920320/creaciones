@@ -17,6 +17,14 @@ lstbordados();
 	});
 
  }
+ 
+ otro = function(id_prod,nomtipoprod){
+	 alert();
+	 
+	 $('#nomprodedit').val(id_prod);
+	 
+	 
+ }
 function lstbordados(){
 	$.ajax({
 		'url':baseurl+'Cproductos/lstbordados',
@@ -42,8 +50,7 @@ function lstbordados(){
 	
 	
 
-//
-//alert();
+
 $('#tblproductos').DataTable({
 			'paging':true,
 			'info':true,
@@ -83,7 +90,7 @@ $('#tblproductos').DataTable({
                       '  <span class="caret"></span>' +
                       '  </button>' +
                       '    <ul class="dropdown-menu pull-right" aria-labelledby="dropdownMenu1">' +
-                      '    <li><a href="#" title="Editar informacion" data-toggle="modal" data-target="#editarprecio" onClick="selPersona(\''+row.factura+'\',\''+row.facultad+'\',\''+row.cantidad+'\',\''+row.talla+'\',\''+row.idpedido+'\',\''+row.descripcion+'\');"><i style="color:#555;" class="glyphicon glyphicon-edit"></i> Editar</a></li>' +
+                        '    <li><a href="#" title="Asignar bordados" class="prueba" data-toggle="modal" data='+row.id_prod+' data-target="#editarprecio"  onClick="otro(\''+row.id_prod+'\',\''+row.nomprod+'\')"><i style="color:green;" class="glyphicon glyphicon-paperclip"></i> Asignar bordados</a></li>' +
                       //'    <li><a href="'+baseurl+'cafiliado/descargar/'+row.idPersona+'" title="Imprimir formato"><i class="glyphicon glyphicon-print" style="color:#006699"></i> Imprimir</a></li>' +
                       '    <li><a href="#" title="Ajustar precios"  data-toggle="modal" data-target="#estado"  onClick="estadopedido(\''+row.idpedido+'\',\''+row.nombres+'\',\''+row.telefono+'\')"><i style="color:green;" class="glyphicon glyphicon-usd"></i> Ajustar valores</a></li>' +
                        '    <li><a href="#" title="Asignar bordados" class="prueba" data-toggle="modal" data='+row.id_prod+' data-target="#asgbordados"  onClick="bordprod(\''+row.id_prod+'\')"><i style="color:green;" class="glyphicon glyphicon-paperclip"></i> Asignar bordados</a></li>' +
@@ -183,6 +190,7 @@ $('#editarprod').submit(function(){
 
 
 bordprod= function(id_prod){
+
 	$('#valoridprod').val(id_prod);
 
 

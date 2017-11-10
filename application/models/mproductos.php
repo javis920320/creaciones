@@ -11,6 +11,13 @@ class Mproductos extends CI_Model
 		parent::__construct();
 
 	}
+	
+	
+	public function asignarb($arreglo){
+		
+		$datos=array('idbordados'=>1,'id_prod'=>$arreglo['idprod'],'cantidad'=>null);
+		$this->db->insert('bordadosproductos',$datos);
+	}
 	 public  function removerbordado($param){
  //"DELETE FROM `bordados-productos` WHERE `bordados-productos`.`idbordados` = 4 AND `bordados-productos`.`id_prod` = 1"
 
