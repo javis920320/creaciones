@@ -11,13 +11,27 @@ class Mproductos extends CI_Model
 		parent::__construct();
 
 	}
-	
+	 public  function removerbordado($param){
+ //"DELETE FROM `bordados-productos` WHERE `bordados-productos`.`idbordados` = 4 AND `bordados-productos`.`id_prod` = 1"
+
+
+$query=$this->db->query("DELETE FROM bordadosproductos WHERE idbordados =".$param['idbordados']."  AND id_prod =".$param['id_prod']." ");
+ 		/*$this->db->where('idbordados',$param['idbordados']);
+ 		$this->db->where('id_prod',$param['id_prod']);
+	 	$this->db->delete(`bordados-productos`);
+	 	$res=$this->db->affected_rows();
+		return$res;*/
+	$res=$this->db->affected_rows();
+		return$res;		
+
+
+	 }
 	
 	public function asignarbordado($param){
 		$datos = array('idbordados' =>$param['idbordados'],'id_prod' =>$param['id_prod'],'cantidad'=>$param['cantidad']);
 
 	//$this->db->where('id_prod',$param['id_prod']);
-	$this->db->insert('bordados-productos',$datos);
+	$this->db->insert('bordadosproductos',$datos);
 	$res=$this->db->affected_rows();
 		return$res;
 		
@@ -61,7 +75,7 @@ class Mproductos extends CI_Model
 	public  function listabordados($param){
 
 		$query=$this->db->query(" select b.idbordados,b.nombre,pb.cantidad from producto p
- 				inner join `bordados-productos` pb on pb.id_prod = p.id_prod
+ 				inner join `bordadosproductos` pb on pb.id_prod = p.id_prod
  				inner join bordados b on b.idbordados = pb.idbordados
  				where p.id_prod=".$param['id_prod']."
  				");
@@ -81,7 +95,7 @@ public  function getproductos($param){
  from producto p
  inner join tipo_producto tp on p.idtipoprod = tp.idtipoprod
  inner join precio pr on p.id_prod = pr.id_prod
- inner join  `bordados-productos` bp on bp.id_prod=p.id_prod
+ inner join  `bordadosproductos` bp on bp.id_prod=p.id_prod
  inner join  bordados b on b.idbordados = bp.idbordados
  group by p.id_prod");
 

@@ -24,6 +24,30 @@ class Cproductos extends CI_Controller
 
 
 	}
+
+
+	public function removerbordado(){
+
+
+
+		$param['idbordados']=$this->input->post('idbordados');
+		$param['id_prod']=$this->input->post('id_prod');
+		 if($param['idbordados']==1){
+		 	echo'ESTE REGISTRO NO SE PUEDE BORRAR';
+		 }else{
+
+		 	$res=$this->Mproductos->removerbordado($param);
+		if($res==1){
+			echo 'Bordado Removido';
+		}else{
+			echo 'Ocurrio un error';
+		}
+
+		 }
+
+		
+
+	}
 	
 	public  function lstbordados(){
 		$res=$this->Mproductos->lstbordados();
@@ -34,8 +58,8 @@ class Cproductos extends CI_Controller
 	public  function asignarbordado(){
 		
 		$param['id_prod']=$this->input->post('id_prod');
-		$param['idbordado']=$this->input->post('idbordado');
-		$param['cantbord']=$this->input->post('cantbord');
+		$param['idbordados']=$this->input->post('idbordado');
+		$param['cantidad']=$this->input->post('cantbord');
 		$res=$this->Mproductos->asignarbordado($param);
 		if($res==1){
 			echo 'Bordado Asignado';

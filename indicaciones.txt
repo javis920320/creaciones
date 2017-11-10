@@ -124,7 +124,7 @@ select p.id_prod,tp.nomtipoprod,p.nomprod,pr.valor,pr.valor,sum(b.cantidad) from
   
   
   
-  CREATE TABLE IF NOT EXISTS `creaciones`.`bordados-productos` (
+  CREATE TABLE IF NOT EXISTS `creaciones`.`bordadosproductos` (
   `idbordados` INT NOT NULL,
   `id_prod` INT NOT NULL,
   `cantidad` INT NULL,

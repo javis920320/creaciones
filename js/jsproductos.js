@@ -2,7 +2,20 @@ lstbordados();
 
  function asginarbordado(){
 	 
-	 alert();
+	  var id_prod =$('#valoridprod').val();
+	var idbordado =$('#lstb').val();
+	var cantbord =$('#cant').val();
+	$.ajax({
+		'url':baseurl+'Cproductos/asignarbordado',
+		'type':'POST',
+		'data':{id_prod:id_prod,idbordado:idbordado,cantbord:cantbord},
+		success:function(data){
+			alert(data);
+			$("#modalbor .close").click()
+
+		}
+	});
+
  }
 function lstbordados(){
 	$.ajax({
@@ -73,7 +86,7 @@ $('#tblproductos').DataTable({
                       '    <li><a href="#" title="Editar informacion" data-toggle="modal" data-target="#editarprecio" onClick="selPersona(\''+row.factura+'\',\''+row.facultad+'\',\''+row.cantidad+'\',\''+row.talla+'\',\''+row.idpedido+'\',\''+row.descripcion+'\');"><i style="color:#555;" class="glyphicon glyphicon-edit"></i> Editar</a></li>' +
                       //'    <li><a href="'+baseurl+'cafiliado/descargar/'+row.idPersona+'" title="Imprimir formato"><i class="glyphicon glyphicon-print" style="color:#006699"></i> Imprimir</a></li>' +
                       '    <li><a href="#" title="Ajustar precios"  data-toggle="modal" data-target="#estado"  onClick="estadopedido(\''+row.idpedido+'\',\''+row.nombres+'\',\''+row.telefono+'\')"><i style="color:green;" class="glyphicon glyphicon-usd"></i> Ajustar valores</a></li>' +
-                       '    <li><a href="#" title="Asignar bordados"  data-toggle="modal" data-target="#asgbordados"  onClick="bordprod(\''+row.id_prod+'\')"><i style="color:green;" class="glyphicon glyphicon-paperclip"></i> Asignar bordados</a></li>' +
+                       '    <li><a href="#" title="Asignar bordados" class="prueba" data-toggle="modal" data='+row.id_prod+' data-target="#asgbordados"  onClick="bordprod(\''+row.id_prod+'\')"><i style="color:green;" class="glyphicon glyphicon-paperclip"></i> Asignar bordados</a></li>' +
                       //'    <li><a href="#" title="Desaprobar afiliado" onClick="updEstadoAfiliado('+row.idPersona+','+2+')"><i style="color:red;" class="glyphicon glyphicon-remove"></i> Desaprobar</a></li>' +
                       '    </ul>' +
                       '</div>' +
@@ -172,6 +185,7 @@ $('#editarprod').submit(function(){
 bordprod= function(id_prod){
 	$('#valoridprod').val(id_prod);
 
+
 $('#bord-prod').DataTable({
 			'paging':true,
 			'info':true,
@@ -197,21 +211,7 @@ $('#bord-prod').DataTable({
 
 				
 
-					return '<span class="pull-right">' +
-                      '<div class="dropdown">' +
-                      '  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">' +
-                      '    Acciones' +
-                      '  <span class="caret"></span>' +
-                      '  </button>' +
-                      '    <ul class="dropdown-menu pull-right" aria-labelledby="dropdownMenu1">' +
-                      '    <li><a href="#" title="Editar informacion" data-toggle="modal" data-target="#editarprecio" onClick="selPersona(\''+row.factura+'\',\''+row.facultad+'\',\''+row.cantidad+'\',\''+row.talla+'\',\''+row.idpedido+'\',\''+row.descripcion+'\');"><i style="color:#555;" class="glyphicon glyphicon-edit"></i> Editar</a></li>' +
-                      //'    <li><a href="'+baseurl+'cafiliado/descargar/'+row.idPersona+'" title="Imprimir formato"><i class="glyphicon glyphicon-print" style="color:#006699"></i> Imprimir</a></li>' +
-                      '    <li><a href="#" title="Ajustar precios"  data-toggle="modal" data-target="#estado"  onClick="estadopedido(\''+row.idpedido+'\',\''+row.nombres+'\',\''+row.telefono+'\')"><i style="color:green;" class="glyphicon glyphicon-usd"></i> Ajustar valores</a></li>' +
-                       '    <li><a href="#" title="Asignar bordados"  data-toggle="modal" data-target="#asgbordados"  onClick="bordprod(\''+row.id_prod+'\')"><i style="color:green;" class="glyphicon glyphicon-paperclip"></i> Asignar bordados</a></li>' +
-                      //'    <li><a href="#" title="Desaprobar afiliado" onClick="updEstadoAfiliado('+row.idPersona+','+2+')"><i style="color:red;" class="glyphicon glyphicon-remove"></i> Desaprobar</a></li>' +
-                      '    </ul>' +
-                      '</div>' +
-                      '</span>';
+					return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" title="Editar informacion" data-toggle="modal" data-target="#modalEditPersona" onClick="quitarbordado(\''+row.idbordados+'\',\''+id_prod+'\');"><i class=" glyphicon glyphicon-trash"></i></a>';
 
 					//return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" title="Editar informacion" data-toggle="modal" data-target="#editarprecio" onClick="editarprecio( \''+row.id_prod+'\',\''+row.idtipoprod+'\',\''+row.nomtipoprod+'\',\''+row.nomprod+'\',\''+row.valor+'\',\''+row.subvalor+'\');"><i class=" fa fa-edit"></i></a>';
 					}
@@ -223,6 +223,27 @@ $('#bord-prod').DataTable({
  "order":[[0,"asc"]],
 
 		});	
+
+
+}
+
+
+quitarbordado=function(idbordados,id_prod){
+	//
+	
+
+//alert(id_prod);
+$.ajax({
+	'url':baseurl+'Cproductos/removerbordado',
+	'type':'POST',
+	'data':{idbordados:idbordados,id_prod:id_prod},
+	success:function(data){
+		alert(data);
+
+		bordprod(id_prod);
+
+	}
+});
 
 
 }
