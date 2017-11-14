@@ -1,4 +1,4 @@
-alert('Soy el Operario');
+
 
 user=$('#trabajador').val();
 
@@ -28,9 +28,9 @@ $('#tbltrabajos').DataTable({
 			{data:'nomprod'},
 			{data:'descripcion'},
 			{data:'cantidad'},
-			{data:'precio'},
+			//{data:'precio'},
 
-			//{data:'precio1'},
+			{data:'precio1'},
 
 			{data:'fecha'},
 

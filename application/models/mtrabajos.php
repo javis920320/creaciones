@@ -209,19 +209,38 @@ class Mtrabajos extends CI_Model
 
 
 
-		$this->db->select('pr.idproceso,pd.factura,p.nomprod,pd.descripcion,pr.cantidad,pr.precio,pr.precio1,pr.fecha,pe.nombres');
+		$this->db->select('pr.idproceso,pd.factura,p.nomprod,pd.descripcion,pr.cantidad,pr.precio,pr.precio1,(sum(bp.cantidad)*pr.cantidad) as nbordados,(sum(b.precio)*pr.cantidad)"valor bordado",pr.fecha,pe.nombres');
 		$this->db->from('proceso pr');
 		$this->db->join('producto p','p.id_prod=pr.id_prod');
+		$this->db->join ('bordadosproductos bp','p.id_prod = bp.id_prod');
+		$this->db->join(' bordados b ', 'b.idbordados = bp.idbordados');
 		$this->db->join('pedido pd','pd.idpedido=pr.idpedido');
 		$this->db->join('trabajador t','t.idtrabajador=pr.idtrabajador');
 		$this->db->join('persona pe','pe.idpersona=t.idpersona');
 		$this->db->where('pr.fecha>=',$param['fechai']);
 		$this->db->where('pr.fecha<=',$param['fechaf']);
+		$this->db->group_by('pr.idproceso,bp.id_prod');
 
 
 		$res=$this->db->get();	
 
 		return$res->result(); 
+
+/*		$query=$this->db->query("select pr.idproceso,pd.factura,p.nomprod,pd.descripcion,pr.cantidad,pr.precio,pr.precio1,(sum(bp.cantidad)*pr.cantidad) as nbordados,(sum(b.precio)*pr.cantidad)'valor bordado',pr.fecha,pe.nombres
+			from proceso pr
+			inner join producto p on p.id_prod=pr.id_prod
+			inner join  bordadosproductos bp on p.id_prod = bp.id_prod
+			inner join bordados b on b.idbordados = bp.idbordados
+			inner join pedido pd on pd.idpedido=pr.idpedido
+			inner join trabajador t on t.idtrabajador=pr.idtrabajador
+			inner join persona pe on pe.idpersona=t.idpersona
+			where pr.fecha>=".$param['fechai']." and  pr.fecha<=".$param['fechaf']."
+			group by pr.idproceso,bp.id_prod
+		");
+
+		return $query->result();*/
+
+
 		//$this->db->where('pe.idpersona',$user['user']);
 
 

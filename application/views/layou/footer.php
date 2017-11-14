@@ -92,9 +92,15 @@
 <script src="<?php echo  base_url();?>js/functions.js"></script>
 
 <?php  }?>
-<?php  if($this->uri->segment(1)=='Ctrabajos' && $this->session->userdata('tipo')==2 or $this->session->userdata('tipo')==3){ ?>
+
+<?php  if($this->uri->segment(1)=='Ctrabajos' && $this->session->userdata('tipo')==2 ){ ?>
 <script src="<?php echo  base_url();?>js/jstrabajos.js"></script>
 <script src="<?php echo  base_url();?>js/jsoperario.js"></script>
+
+<?php  }?>
+<?php  if($this->uri->segment(1)=='Ctrabajos' && $this->session->userdata('tipo')==3 ){ ?>
+<script src="<?php echo  base_url();?>js/jstrabajos.js"></script>
+<script src="<?php echo  base_url();?>js/jsadmin.js"></script>
 
 <?php  }?>
 

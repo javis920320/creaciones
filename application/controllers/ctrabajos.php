@@ -22,7 +22,7 @@ class Ctrabajos extends CI_Controller
 
 		$tipo['tipo']=$this->session->userdata('tipo');
 		
-		if($tipo['tipo']==3){
+		/*if($tipo['tipo']==3){
 		$this->load->view('layou/header',$nombres);
 		$this->load->view('layou/menu',$nombres);
 		$this->load->view('vtrabajosad',$idpersona);
@@ -35,7 +35,11 @@ class Ctrabajos extends CI_Controller
 			$this->load->view('layou/footer',$tipo);
 
 		}
-		
+		*/
+		$this->load->view('layou/header',$nombres);
+		$this->load->view('layou/menu',$nombres);
+		$this->load->view('vtrabajosad',$idpersona);
+		$this->load->view('layou/footer',$tipo);
 
 
 	}

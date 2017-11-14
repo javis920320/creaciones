@@ -13,7 +13,41 @@
 
 
 
+    <!-- Button trigger modal -->
 
+
+<!-- Modal -->
+<div class="modal fade" id="precios" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Ajustar Precios</h4>
+      </div>
+      <div class="modal-body">
+      <form action="" id='ajustpre'>
+         <input type="hidden"  name='idprodprecios' id='idprodprecios'>
+      <label for="precioj">Precio</label>
+         <input type="text"  name='precioj' id='precioj' class="form-control">
+
+         <br>
+         <label for="precioob">Precio obrero</label>
+         <input type="text" id='precioob' name="precioob" class="form-control">
+
+         <br><br>
+
+         <input type="submit" value="Ajustar" class="btn btn-danger">
+
+
+      </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
 <!-- Modal -->
 <div class="modal fade" id="asgbordados" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document" id='aumentar'>
@@ -95,7 +129,7 @@
        		<input type='hidden' class='bandera' name='estado' value=0>
        		<input type='hidden' id='idproductoedit' name='idproductoedit'>
        		<label for="Tipoprode">TIPO DE PRODUCTO</label>
-			<div class="prodtp"></div>
+			<!--<div class="prodtp"></div>-->
 
        	</div>
        <div class='form-group'>
@@ -104,28 +138,11 @@
        		
 
        	</div>
-<div class="btn-group" role="group" aria-label="...">
-  <button type="button" id='btnconfirmar' class="btn btn-default">Habilitar</button>
-  <button type="button" id='btnnoconfirmar'class="btn btn-default">Desabilitar</button>
-  
-</div>
-
-       	 <div class='form-group'>
-       		<label for="valoredit">Precio</label>
-       		<input type="number" id='valoredit' name='valoredit' class="form-control" disabled='true'>
-       		
-
-       	</div>
-
-       	<div class='form-group'>
-       		<label for="subvaloredit">Precio para operario</label>
-       		<input type="number" id='subvaloredit' name='subvaloredit' class="form-control" disabled>
-       		
-
-       	</div>
 
 
-       	 <input type='submit' value='Editar ' id='btnedit' class='btn btn-'>
+
+
+       	 <input type='submit' value='Editar ' id='btnedit' class='btn btn-success'>
 
        </form>
       </div>
@@ -136,6 +153,8 @@
     </div>
   </div>
 </div>
+
+
 	<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" onclick="cargarproductos()">
 	 Ingresar Producto
 	</button>

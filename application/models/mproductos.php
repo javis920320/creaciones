@@ -104,6 +104,7 @@ public  function getproductos($param){
  inner join precio pr on p.id_prod = pr.id_prod
  inner join  `bordadosproductos` bp on bp.id_prod=p.id_prod
  inner join  bordados b on b.idbordados = bp.idbordados
+ where pr.estado=1
  group by p.id_prod");
 
         /*$this->db->select('p.id_prod,tp.nomtipoprod,p.nomprod,pr.valor,pr.subvalor');

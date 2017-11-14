@@ -18,11 +18,11 @@ lstbordados();
 
  }
  
- otro = function(id_prod,nomtipoprod){
-	 alert();
+ otro = function(id_prod,nomprod){
 	 
-	 $('#nomprodedit').val(id_prod);
 	 
+	 $('#nomprodedit').val(nomprod);
+	  $('#idproductoedit').val(id_prod);
 	 
  }
 function lstbordados(){
@@ -90,9 +90,9 @@ $('#tblproductos').DataTable({
                       '  <span class="caret"></span>' +
                       '  </button>' +
                       '    <ul class="dropdown-menu pull-right" aria-labelledby="dropdownMenu1">' +
-                        '    <li><a href="#" title="Asignar bordados" class="prueba" data-toggle="modal" data='+row.id_prod+' data-target="#editarprecio"  onClick="otro(\''+row.id_prod+'\',\''+row.nomprod+'\')"><i style="color:green;" class="glyphicon glyphicon-paperclip"></i> Asignar bordados</a></li>' +
+                        '    <li><a href="#" title="Asignar bordados" class="prueba" data-toggle="modal" data='+row.id_prod+' data-target="#editarprecio"  onClick="otro(\''+row.id_prod+'\',\''+row.nomprod+'\')"><i style="color:green;" class="glyphicon glyphicon-pencil"></i> Editar</a></li>' +
                       //'    <li><a href="'+baseurl+'cafiliado/descargar/'+row.idPersona+'" title="Imprimir formato"><i class="glyphicon glyphicon-print" style="color:#006699"></i> Imprimir</a></li>' +
-                      '    <li><a href="#" title="Ajustar precios"  data-toggle="modal" data-target="#estado"  onClick="estadopedido(\''+row.idpedido+'\',\''+row.nombres+'\',\''+row.telefono+'\')"><i style="color:green;" class="glyphicon glyphicon-usd"></i> Ajustar valores</a></li>' +
+                      '    <li><a href="#" title="Ajustar precios"  data-toggle="modal" data-target="#precios"  onClick="ajustarprecios(\''+row.id_prod+'\',\''+row.valor+'\',\''+row.subvalor+'\')"><i style="color:green;" class="glyphicon glyphicon-usd"></i> Ajustar valores</a></li>' +
                        '    <li><a href="#" title="Asignar bordados" class="prueba" data-toggle="modal" data='+row.id_prod+' data-target="#asgbordados"  onClick="bordprod(\''+row.id_prod+'\')"><i style="color:green;" class="glyphicon glyphicon-paperclip"></i> Asignar bordados</a></li>' +
                       //'    <li><a href="#" title="Desaprobar afiliado" onClick="updEstadoAfiliado('+row.idPersona+','+2+')"><i style="color:red;" class="glyphicon glyphicon-remove"></i> Desaprobar</a></li>' +
                       '    </ul>' +
@@ -109,6 +109,17 @@ $('#tblproductos').DataTable({
  "order":[[0,"asc"]],
 
 		});	
+
+
+
+ajustarprecios=function(id_prod,valor,subvalor){
+
+	$('#idprodprecios').val(id_prod);
+		$('#precioj').val(valor);
+			$('#precioob').val(subvalor);
+
+
+}
 
 
 $('#formprod').submit(function(){
@@ -235,7 +246,7 @@ $('#bord-prod').DataTable({
 
 }
 
-
+/*elimina los bordados asignados*/
 quitarbordado=function(idbordados,id_prod){
 	//
 	
@@ -255,3 +266,25 @@ $.ajax({
 
 
 }
+
+
+$('#ajustpre').submit(function(){
+
+
+	$.ajax({
+
+		'url':baseurl+'Cproductos/ajustarprecios',
+		'type':'POST',
+		'data':$(this).serialize(),
+		success:function(data){
+			alert(data);
+
+		}
+
+
+
+
+	});
+
+
+});
