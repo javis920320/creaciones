@@ -163,4 +163,43 @@ inner join pedido pd on pd.idpedido=pr.idpedido
 inner join trabajador t on t.idtrabajador=pr.idtrabajador
 inner join persona pe on pe.idpersona=t.idpersona
  where pr.fecha>='2017-10-11' and pr.fecha<='2017-11-11'
+
+
+
+
+
+
+#select * from producto
+#select * from precio where id_prod = 28
+#select * from bordados
+#select * from bordadosproductos where id_prod = 28
+/* select sum(p.precio1) 
+ from proceso p 
+ inner join producto pd on pd.id_prod = p.id_prod
+ inner join  bordadosproductos bp on p.id_prod = bp.id_prod
+ where p.fecha>='2017-10-11' and p.fecha<='2017-11-14'
+ and p.id_prod=28
+ group by p.idproceso
+*/
+
+/*select producto.nomprod,b.nombre as "tipo bordado",b.precio as "valor bordado c/u",bp.cantidad,bp.cantidad*b.precio as total 
+from bordadosproductos bp
+inner join producto ON bp.id_prod = producto.id_prod
+inner join bordados b on b.idbordados = bp.idbordados*/
+
+
+select sum(bp.cantidad*b.precio) as total 
+from bordadosproductos bp
+inner join producto ON bp.id_prod = producto.id_prod
+inner join bordados b on b.idbordados = bp.idbordados
+
+
+/*select * from proceso*/
+
+
+/*select * from proceso p 
+ inner join producto pd on pd.id_prod = p.id_prod
+ inner join  bordadosproductos bp on p.id_prod = bp.id_prod
+ where p.fecha>='2017-10-11' and p.fecha<='2017-11-14'
+group by p.idproceso*/
 group by pr.idproceso,bp.id_prod
