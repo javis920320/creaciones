@@ -49,6 +49,8 @@ class Coperario extends CI_Controller
 	 	$param['idpedido']=$this->input->post('idpedido');
 	 	$param['idpersona']=$this->input->post('trabajador');
 	 	//echo $param['idtrabajador'];
+	 	$preciob=$this->Moperario->presiobordados($param);
+	 	$param['preciob']=$preciob*$param['cantidad'];
 	 	$param['idtrabajador']=$this->Moperario->trabajadorid($param);
 	    $param['idtrabajador'];
 

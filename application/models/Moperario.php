@@ -8,13 +8,30 @@ class Moperario extends CI_Model
 	parent::__construct();
 
 	}
+  
 
+
+  public function presiobordados($param){
+
+
+ $query= $this->db->query("select  sum(b.precio) as preciob from bordadosproductos bp 
+inner join producto p on bp.id_prod = p.id_prod
+inner join bordados b on bp.idbordados = b.idbordados
+where bp.id_prod=".$param['idprod']."");
+
+ foreach ($query->result() as $row)
+		{
+        	return $row->preciob;
+        
+		}
+
+  }
 
 
 	 public  function ingresarproceso($param){
 
 	 	
-	 		$this->db->query("CALL PA_INGRESARPROCES(".$param['cantidad'].",".$param['idtrabajador'].",".$param['idprod'].",".$param['idpedido'].") " );
+	 		$this->db->query("CALL PA_INGRESARPROCES(".$param['cantidad'].",".$param['idtrabajador'].",".$param['idprod'].",".$param['idpedido'].",".$param['preciob'].") " );
 
 	 	$res=$this->db->affected_rows();
 		return$res;

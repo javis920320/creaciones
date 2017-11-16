@@ -164,3 +164,6 @@ inner join trabajador t on t.idtrabajador=pr.idtrabajador
 inner join persona pe on pe.idpersona=t.idpersona
  where pr.fecha>='2017-10-11' and pr.fecha<='2017-11-11'
 group by pr.idproceso,bp.id_prod
+
+
+ AUMENTAR PREBORDADO EN PROCESOS
