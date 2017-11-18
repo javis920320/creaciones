@@ -38,6 +38,7 @@ public  function tblresumen(){
 	$param['fechaf']=$this->input->post('fechaf');	
 	
 	 $res=$this->Mtrabajos->tblresumen($param);
+	 
 	   
 
 	 echo json_encode($res);

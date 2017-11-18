@@ -72,9 +72,12 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="<?php echo base_url();?>Cproductos/"><i class="fa fa-circle-o"></i> Ingresar </a></li>
+            <li><a href="<?php echo base_url();?>Cbordados/"><i class="fa fa-circle-o"></i> Bordados </a></li>
             
           </ul>
         </li> 
+
+       
         <li class="treeview">
           <a href="#">
             <i class="glyphicon glyphicon-stats"></i> <span>Calculo nomina</span>
