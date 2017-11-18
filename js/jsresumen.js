@@ -16,12 +16,25 @@ window.open(baseurl+'Cresumenprocesos/resumen');
 
  function resfiltrar(){
 
- 	//alert();
-//'pr.idproceso,pd.factura,p.nomprod,pd.descripcion,pr.cantidad,pr.precio,pr.precio1,pr.fecha,pe.nombres
 
 
 	var fechai=$('#fechai').val();
 	var fechaf=$('#fechaf').val();
+	 $.ajax({
+	'url':baseurl+'Cresumenprocesos/resumentotal', 
+	'type':'POST',
+	'data':{fechai:fechai,fechaf:fechaf},
+	success:function(data){
+		var obj=JSON.parse(data);
+		$.each(obj,function(i,item){
+			$('#prep').text(item.prep);
+			$('#preb').text(item.preb);
+			$('#pret').text(item.pret);
+			
+		});
+	}
+ });
+
 
 $('#tbltrabajos').DataTable({
 			'paging':true,

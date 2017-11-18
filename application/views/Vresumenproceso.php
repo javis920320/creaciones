@@ -28,9 +28,9 @@
              <div class="panel-body">
 
 
-             <span class='text text-success'><strong>PRECIO PRODUCTOS:</strong></span><br><br>
-             <span class='text text-success'><strong>PRECIO BORDADOS:</strong></span><br><br>
-             <span class='text text-success'><strong>PRODUCCION TOTAL:</strong></span><br><br>
+             <span class='text text-success'><strong>PRECIO PRODUCTOS:<div id='prep'></div></strong></span><br><br>
+             <span class='text text-success'><strong>PRECIO BORDADOS:<div id='preb'></div></strong></span><br><br>
+             <span class='text text-success'><strong>PRODUCCION TOTAL:<div style='color:black'id='pret'></div></strong></span><br><br>
                
             </div>
             </div>

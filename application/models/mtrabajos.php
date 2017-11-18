@@ -271,6 +271,21 @@ class Mtrabajos extends CI_Model
 
 
 	}
+	
+	
+	public function resumentotal($param){
+		
+		$query=$this->db->query("select sum(precio1)as prep ,sum(prebordado)as preb,sum(precio1+prebordado) as pret from proceso 
+  where fecha>='".$param['fechai']."' and  fecha<='".$param['fechaf']."'");
+	return $query->result();
+	/*$this->db->select("sum(precio1)as prep ,sum(prebordado)as preb,sum(precio1+prebordado) as pret");
+	$this->db->from("proceso");
+	$this->db->where('fecha>=',$param['fechai']);
+	$this->db->where('fecha<=',$param['fechaf']);
+	$res=$this->db->get();	
+
+		return$res;*/
+	}
 
 
 
