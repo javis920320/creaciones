@@ -10,8 +10,80 @@
 		<div class="col-sm-8">
 		<label for=""><h2><strong>Lista Confecciones</strong></h2></label>
 		</div>
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="eliminar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Bordado</h4>
+          </div>
+          <div class="modal-body">
+
+            <form id='eliminarb'>
+
+              <span class='text text-success'>Estas Seguro de eliminar este registro ?</span>
+              <input type='hidden' name='delb' id='delb' >
+              <br>
+              <input type='submit' value='Eliminar' class='btn btn-default'>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>  
+
+            </form>
+                  
+
+
+          <div class="modal-footer">
+            
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="editarbordados" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Editar datos Bordado</h4>
+          </div>
+          <div class="modal-body">
+
+           <form id='editbordados'>
+            <div class='form-group'>
+              <input  type='hidden' name='eidbordaos' id='eidbordaos'>
+              <label for='editbordados'>Nombre</label>
+            <input type='text' id='enombre' name='enombre' class='form-control'>
+            </div>
+
+            <div class='form-group'>
+                <label for='eprecio'>Precio</label>
+                <input type='text' id='eprecio' name='eprecio' class='form-control'>
+            </div>
+             
+
+            <br>
+            <input type='submit' value='Editar' class="btn btn-default">
+
+
+             <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+           </form>
+
+           
+          </div>
+          <div class="modal-footer">
+            
+            
+          </div>
+        </div>
+      </div>
+    </div>
 		<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-      	Agregar producto
+      	Agregar Bordados
     	</button>
 	    	<!-- <div class="box box-primary"> -->
 	    	<table id="tblbordados" class="table table-bordered table-striped">
@@ -42,58 +114,29 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel"><strong>Agregar Producto</strong></h4>
+            <h4 class="modal-title" id="myModalLabel"><strong>Agregar Bordados</strong></h4>
           </div>
           <div class="modal-body">
-          	<div class="form-group">
-          		<input type="text" placeholder="N# Factura"  name='nfac' id='nfac' class="form-control">
+          	<form id='frmbordados'>
 
-          	</div>
-          	<div class="form-group">
-          		<button class="btn" id='btnbuscar'>Buscar factura</button>
-          	</div>
-
-			<div id="res"></div>
-            
-            <form id='formtrabajos'>
+              <div class='form-group'>
+                <label for='nombre'>Nombre bordado:</label>
+                 <input type='text' name='nombre' id='nombre' class='form-control'>
 
 
-
-            <label for='tpprod'>Categoria Producto</label>
-              <select id="tpprod" name="tpprod" class=" pr form-control" onchange='filtrar();' required="true"></select>
-     <table id="" class="table table-bordered table-striped">
-          <thead>
-            <tr>
-              <th style="width: 5%;background-color: #006699; color: white;">#</th>
-              <th style="width: 10%;background-color: #006699; color: white;">Nombre</th>
-              <th style="width: 10%;background-color: #006699; color: white;">Presio</th>
-              <th style="width: 10%;background-color: #006699; color: white;">Acción</th>
-            </tr>
-          </thead>
-          <tbody></tbody>
-        </table>
-
-              <label for='productos'>Productos</label>
-              <select id="productos" name="productos" class="form-control" required="true"></select>
-          
-
-            <div class='form-group'>
-            <span class="text text-danger hide" id='mensaje'> Productos disponibles: </span> <span id='numcantidad'></span><br>
-            <input type='text' id='disponibles' name='disponibles' class='hide'>
-            	<label for='cantidad'>Cantidad:</label>
-            	<input type='number' name='cantidad' id='cantidad' min='1'  class='form-control' required="true">
-            </div>
-            <input id='trabajador' name='trabajador' hidden value="<?php echo$idpersona;?>">
+              </div>
+              <div class='form-group'>
+                <label for='precio'>Precio</label>
+                 <input type='text' name='precio' id='precio' class='form-control'>
 
 
-
-            <input type='submit' value='Guardar'title='Presiona para Guardar' class='btn btn-primary'>	
-
+              </div>
+               <input type='submit' value='Guardar' class="btn btn-default">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
             </form>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+            
           </div>
         </div>
       </div>
