@@ -52,7 +52,7 @@ $param['name']=$this->input->post('name');
 $param['pass']=$this->input->post('pass');
 $param['tipo']=$this->input->post('tipo');
 $param['idpersona']=$this->Madmin->insertpersona($param);
-
+$this->Madmin->creartrabajador($param);
 $res=$this->Madmin->insertuser($param);
 if($res>0){
 

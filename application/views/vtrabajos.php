@@ -90,7 +90,7 @@
 
             <div class='form-group'>
             <span class="text text-danger hide" id='mensaje'> Productos disponibles: </span> <span id='numcantidad'></span><br>
-            <input type='text' id='disponibles' name='disponibles' class='hide'>
+            <input type='text' id='disponibles' name='disponibles' class=''>44
             	<label for='cantidad'>Cantidad:</label>
             	<input type='number' name='cantidad' id='cantidad' min='1'  class='form-control' required="true">
             </div>

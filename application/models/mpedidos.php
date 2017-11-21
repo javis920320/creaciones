@@ -92,6 +92,7 @@ public  function lista($param){
 		$this->db->join('tipo_producto tp','tp.idtipoprod=p.idtipoprod');
 		$this->db->join('persona pe','pe.idpersona=c.idpersona');
 		$this->db->where('p.estado',$dato['estado']);
+		//$this->db->or_where('p.estado',$dato['estado2']);
 		//$this->db->where('p.factura',$dato['factura']);
 		$this->db->order_by('fecha_ingreso', 'DESC');
 		$this->db->order_by('factura');

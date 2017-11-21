@@ -1,4 +1,4 @@
-alert('Soy el Operario');
+//alert('Soy el Operario');
 
 user=$('#trabajador').val();
 

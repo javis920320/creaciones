@@ -136,6 +136,15 @@ public  function editarusuario($param){
 
 }
 
+
+public  function creartrabajador($param){
+	
+		 $datos = array('idtrabajador' => null,'idpersona' => $param['idpersona']);
+	
+	$this->db->insert('trabajador',$datos);
+	
+}
+
 }
 
 

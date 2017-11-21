@@ -89,14 +89,16 @@ $('#formtrabajos').submit(function(){
 
 	var diponibles=$('#disponibles').val();
 	var cantidad=$('#cantidad').val();
+	
+	//alert('CANTIDAD '+cantidad+' DISPONIBLE '+diponibles);
 	 if(cantidad>diponibles){
 	 	alert('Erro verifica la cantidad disponible');
-	 }else if(cantidad<=0){
+	 }else if(diponibles==0){
 
 	 	alert('No hay productos disponibles');
 
 	 }else{
-	//alert('llamando a ajax');
+	//alert($(this).serialize());
 
 
 	

@@ -210,3 +210,8 @@ inner join bordados b on b.idbordados = bp.idbordados
 group by p.idproceso*/
 group by pr.idproceso,bp.id_prod
 >>>>>>> 1e18f34e7664ea19a80c254353adba7479204175
+
+
+
+
+http://www.codedrinks.com/crear-un-reporte-en-excel-con-php-y-mysql/

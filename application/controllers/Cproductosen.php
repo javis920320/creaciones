@@ -32,6 +32,7 @@ autor:´javier lopez
 
 	 	$param['factura']=$this->input->post('factura');
 	 	$param['estado']=2;
+		//$param['estado2']=3;
 
 	 	$res=$this->Mpedidos->lista($param);
 
