@@ -42,11 +42,22 @@
 				</fieldset>
 
 
-                <fieldset>
-                <legend>Resultados:</legend>
-                   <span>  N° productos: <strong id='c'>   </strong> </span>  
-                    <span> Cobro       : <strong id='p'>   </strong> </span> 
-                </fieldset>
+<br>
+                
+                <div class="col-xs-10 col-md-10">
+            <div class="panel panel-default">
+              <div class="panel-heading">RESUMEN VALORES</div>
+             <div class="panel-body">
+
+
+             <span class='text text-success'><strong>N° PRODUCTOS:<div id='c'></div></strong></span><br><br>
+             <span class='text text-success'><strong>COBRO:<div id='p'></div></strong></span><br><br>
+            
+               
+            </div>
+            </div>
+            </div>
+               
 
 
             </div>

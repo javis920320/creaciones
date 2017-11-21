@@ -22,7 +22,7 @@
 
                     <form id='editper'>
 
-                        <input type='text' id='eidpersona'name='eidpersona'>
+                        <input type='hidden' id='eidpersona'name='eidpersona'>
                         <label id='ecedula'>Cedula</label>
                         <input type='text' id='ecedula' name='ecedula' class='form-control'required>
                         <label id='enombres'>Nombres</label>
