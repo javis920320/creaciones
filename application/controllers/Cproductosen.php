@@ -60,6 +60,17 @@ autor:´javier lopez
 
 
 
+	  public function estados(){
+
+
+
+	  	$res=$this->Mpedidos->estados();
+
+	  	echo json_encode($res);
+	  }
+
+
+
 
 
 }

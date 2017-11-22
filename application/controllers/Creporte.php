@@ -1,13 +1,17 @@
 <?php 
 
-require_once APPPATH."/third_party/PHPExcel.php";
 class Creporte extends PHPExcel
 {
 	
-	function __construct()
-	{
+	public  function index(){
 
-	parent::__construct();
+
+	$this->load->library('Excelfile');
+
+	$file="./uploads/Book1.xlsx";
+	$obj=PHPExcel_IOFactory::load($file);
+	$cell=$obj->getActiveSheet()->getCellCollection();
+
 	}
 
 

@@ -134,6 +134,33 @@ $this->db->select('p.idpedido,tp.nomtipoprod,p.factura,p.facultad,p.cantidad,p.t
 
  }
 
+  public  function estados(){
+
+
+  /*	{data: 'factura','sClass':'dt-body-center'},
+			{data: 'nomtipoprod'},
+			{data:'facultad'},
+			{data:'cantidad'},
+			{data:'talla'},
+			{data:'descripcion'},
+			{data:'nombres'},
+			{data:'fecha_ingreso'},*/
+
+
+			$query=$this->db->query("select p.idpedido,tp.nomtipoprod,p.factura,p.facultad,p.cantidad,p.talla,p.descripcion,pe.nombres,p.fecha_ingreso ,p.estado
+						from pedido p
+						inner join cliente c on c.idpersona=p.idcliente
+						inner join tipo_producto tp on tp.idtipoprod=p.idtipoprod
+						inner join persona pe on pe.idpersona=c.idpersona
+						where p.estado=3 or p.estado=2
+						order by p.fecha_ingreso desc
+
+				");
+
+
+			return $query->result();
+  }
+
 
  
 
