@@ -39,6 +39,30 @@ class Cajax extends CI_Controller
 		}
 	}
 
+	
+	 public  function crearcliente(){
+		 
+		 $id=$this->input->post('identidad');
+		$nom=$this->input->post('nombres');
+		$celular=$this->input->post('celular');
+		$a='';
+		$arreglo= array(
+
+			'cedula'=>$id,
+			'nombres'=>$nom,
+			'telefono'=>$celular
+			);
+		$resp=$this->Majax->insertarcliente($arreglo);
+		//echo $resp;
+		if($resp){
+			$arreglo['foranea']=$resp;
+			$this->Majax->clienteinsert($arreglo);
+			echo$resp;
+		}
+		 
+		 
+		 
+	 }
 
 	public function updatecliente(){
 		$codigo=$this->input->post('personaid');
@@ -79,5 +103,6 @@ class Cajax extends CI_Controller
 
 
 	}
+	
 }
  ?>

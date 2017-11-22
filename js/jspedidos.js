@@ -6,7 +6,9 @@ let factura='';
 $('#btnbuscar').on('click',function(){
 	$('#alerta').addClass('hide');
 
-
+$('#nombres').val('');
+$('#telefono').val('');
+//$('#telefono').val('');
 
 	txtide=$('#idcliente').val();
 	if(txtide==''){
@@ -20,9 +22,7 @@ $('#btnbuscar').on('click',function(){
 
 
 	$.post(baseurl+"Cajax/buscarcliente",
-
-
-	{id : txtide},
+		{id : txtide},
        function(data){
 
        	
@@ -31,12 +31,14 @@ $('#btnbuscar').on('click',function(){
 			console.log(data);
 			$('#alerta').removeClass('hide');
 			$('.contenedor_json').addClass('hide');
+			$('#formingc').removeClass('hide');
+			//alert('error');
 
 			
 
 
 		}else{
-
+			$('#formularioacceso').removeClass('hide');
 			$('#factura').removeClass('hide');
 
 			//este funcion sera anulada  ya que cargaremos  cuando cargue el archivo
@@ -287,6 +289,43 @@ $('#cambioestado').submit(function(){
 
 
 });
+
+
+ function agregarcliente(){
+	var identificacion=$('#idcliente').val();
+	var nombre=$('#nombres').val();
+	var telefono=$('#telefono').val();
+	if(nombre==''){
+		$('#spnnombre').text('Este Campo es requerido');
+	}else if(telefono==''){
+		$('#spntel').text('Este Campo es requerido');
+	} else{
+		$('#spnnombre').addClass('hide');
+		$('#spntel').addClass('hide');
+		
+		$.ajax({
+			'url':baseurl+'Cajax/crearcliente',
+			'type':'POST',
+			'data':{nombres:nombre,celular:telefono,identidad:identificacion},
+			success:function(data){
+				if(data){
+					alert(data);
+					$(".contenedor_json").html('<span class="text-success"><strong><h1> Cliente:' + nombres+ '</h1><strong></span>');
+				$('#idpersona').val(data);
+					$('#formularioacceso').removeClass('hide');
+					$('#pr').addClass('hide');
+				}else{
+					
+					alert('Error');
+				}
+			}
+			
+			
+		});
+		
+	}
+	 
+ }
 
 
   

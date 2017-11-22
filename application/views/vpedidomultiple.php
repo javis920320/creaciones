@@ -5,16 +5,19 @@
 <body>
 <br>
 
+
+
+
 <div class="box box-primary">
 	
 
 
 <div class="box-body">
-
+<div id='pr'></div>
 			<div class="col-sm-6">
 				<div class="form-group">
 					<label for="cedula">cedula:</label>
-					<div class="text-danger hide" id='alerta'><strong>El Cliente No esta registrado..</strong></div>
+					<div class="text-danger hide" id='alerta'><strong>El Cliente No esta registrado.completa los campos .</strong></div>
 				 <div class="text-danger hide" id='alerta1'><strong>Este dato es requerido.</strong></div>
 
 				 <input type="text" placeholder="Buscar cliente" id="idcliente" class="form-control"   required >
@@ -24,16 +27,32 @@
 				 <br>
 
 				 <br>
-				  <div class="col-sm-6">
+				 <div class='hide' id='formingc'>
+				 <div class="col-sm-5">
+				  <label for='nombres'>Nombres:</label>
 				  <input type='text' name='nombres' placeholder='Nombres'id='nombres' class='form-control'>
+				  <span id='spnnombre'></span>
 				  </div>
-				  <div class="col-sm-6">
+				  <div class="col-sm-5">
+				  <label for='telefono'>Telefono</label>
 				  <input type='text' name='telefono' placeholder='Telefono'id='telefono' class='form-control'>
+				  <span id='spntel'></span>
 				  </div>	
+				  
+				  <div class="col-sm-2">
+				  <label>(*)</label>
+				   <button id='btncrearcliente' class='btn btn-default' onclick='agregarcliente();';>Agregar Cliente</button>
+				  </div>
+				 
+				 </div>
+				  
 
 			</div>
 
 			</div>
+
+<div class='hide'id='formularioacceso'>
+
 
 
 			
@@ -46,7 +65,7 @@
 				<br>
 
 				
-<div class="alert alert-success" role="alert">
+			<div class="alert alert-success" role="alert">
   <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
   <span class="sr-only">Error:</span>
   Para Ingresar un nuevo Pedido  el cliente debe estar registrado, si no se encuentra registrado por favor presione
@@ -153,9 +172,6 @@
 
 
 
-
-
-
 			<div class="col-sm-12">
 				<div class='form-group '>
 			<label for="descripcion" >Descripcion:</label>
@@ -175,7 +191,7 @@
 					<a class='btn btn-default btn-lg' href='<?php echo base_url()?>Cpedidomultiple'>Limpiar</a>
 					</div>
 					<div>
-					<a class='btn btn-danger' href='<?php echo base_url()?>Cpedidos'>Volver a lista pedidos</a>
+					<a class='btn btn-danger btn-lg' href='<?php echo base_url()?>Cpedidos'>Volver a lista pedidos</a>
 					</div>
 					
 
@@ -243,8 +259,8 @@
 			  </div>
 			</div>
 
-<label for='chk'>Enviar lista</label>
-	<input type='checkbox' name='chk' id='chk'>
+
+	
           
      
               <table  id='tblresumen' class="table table-hover table-responsive">
@@ -271,6 +287,7 @@
           <!-- /.box --> 
 	
 		
+</div>
 </div>
 </div>
         <script type="text/javascript">

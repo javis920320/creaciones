@@ -22,7 +22,7 @@
       
     </div>
 
-<a href="<?php echo base_url()?>Cpedidomultiple" class='btn btn-primary'> Agregar Pedido</a>
+
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -160,7 +160,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+       
       </div>
     </div>
   </div>
@@ -203,7 +203,7 @@
             <div class="box-header">
               <h3 class="box-title" class='text-primary'>RESUMEN PEDIDOS</h3><br><br>
               
-
+<a href="<?php echo base_url()?>Cpedidomultiple" class='btn btn-primary'> Agregar Pedido</a>
             </div>
             <!-- /.box-header -->
              
