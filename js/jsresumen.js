@@ -34,6 +34,14 @@ window.open(baseurl+'Cresumenprocesos/resumen');
 		});
 	}
  });
+  $.ajax({
+	'url':baseurl+'Creporte/', 
+	'type':'POST',
+	'data':{fechai:fechai,fechaf:fechaf},
+	success:function(data){
+		
+	}
+ });
 
 
 $('#tbltrabajos').DataTable({

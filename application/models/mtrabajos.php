@@ -291,7 +291,67 @@ class Mtrabajos extends CI_Model
 
 
 
-}
+
+
+
+
+public  function tblexcel($param){
+
+
+
+		$this->db->select('pr.idproceso as PROCESO,pd.factura AS FACTURA,p.nomprod AS PRODUCTO,pd.descripcion AS DESCRIPCION,pr.cantidad AS CANTIDAD,pr.precio1 AS PRECIO,(sum(bp.cantidad)*pr.cantidad) as nbordados,prebordado AS PREBORDADO,pr.fecha AS FECHA,pe.nombres AS OPERARIO');
+		$this->db->from('proceso pr');
+		$this->db->join('producto p','p.id_prod=pr.id_prod');
+		$this->db->join ('bordadosproductos bp','p.id_prod = bp.id_prod');
+		$this->db->join(' bordados b ', 'b.idbordados = bp.idbordados');
+		$this->db->join('pedido pd','pd.idpedido=pr.idpedido');
+		$this->db->join('trabajador t','t.idtrabajador=pr.idtrabajador');
+		$this->db->join('persona pe','pe.idpersona=t.idpersona');
+		$this->db->where('pr.fecha>=',$param['fechai']);
+		$this->db->where('pr.fecha<=',$param['fechaf']);
+		$this->db->group_by('pr.idproceso,bp.id_prod');
+
+
+		$res=$this->db->get();	
+
+		return$res->result(); 
+		//return$res;
+
+
+
+
+
+	}
+	public  function tbltitle($param){
+
+
+
+		$this->db->select('pr.idproceso as PROCESO,pd.factura AS FACTURA,p.nomprod AS PRODUCTO,pd.descripcion AS DESCRIPCION,pr.cantidad AS CANTIDAD,pr.precio1 AS PRECIO,(sum(bp.cantidad)*pr.cantidad) as nbordados,prebordado AS PREBORDADO,pr.fecha AS FECHA,pe.nombres AS OPERARIO');
+		$this->db->from('proceso pr');
+		$this->db->join('producto p','p.id_prod=pr.id_prod');
+		$this->db->join ('bordadosproductos bp','p.id_prod = bp.id_prod');
+		$this->db->join(' bordados b ', 'b.idbordados = bp.idbordados');
+		$this->db->join('pedido pd','pd.idpedido=pr.idpedido');
+		$this->db->join('trabajador t','t.idtrabajador=pr.idtrabajador');
+		$this->db->join('persona pe','pe.idpersona=t.idpersona');
+		$this->db->where('pr.fecha>=',$param['fechai']);
+		$this->db->where('pr.fecha<=',$param['fechaf']);
+		$this->db->group_by('pr.idproceso,bp.id_prod');
+
+
+		$res=$this->db->get();	
+
+		return$res->list_fields(); 
+		//return$res;
+
+
+
+
+
+	}
+
+	}
+
 
 
 
