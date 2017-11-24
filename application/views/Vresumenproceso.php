@@ -36,7 +36,11 @@
             </div>
             </div>
 
-                       <div class="col-xs-2 col-md-2"><button class="btn  btn-danger form-control" id='btnfl' onclick='resfiltrar();'>Filtrar</button><a href='<?php echo base_url();?>Cresumenprocesos/resumen' id='btnexportar'class='btn btn-success form-control'>Exportar Excel</a></div>
+                       <div class="col-xs-2 col-md-2"><button class="btn  btn-danger form-control" id='btnfl' onclick='resfiltrar();'>Filtrar</button>
+                       <!--<a href='<?php echo base_url();?>Cresumenprocesos/resumen' id='btnexportar'class='btn btn-success form-control'>Exportar Excel</a>-->
+
+                      <a href='<?php echo base_url();?>Creporte/?fechai="2017-10-20"&fechaf="2017-11-21"?>' id='o'class='btn btn-success form-control'>Exportar Excel</a>
+                       </div>
             <br><br>
 
                 <table id="tbltrabajos" class="table table-bordered table-striped">

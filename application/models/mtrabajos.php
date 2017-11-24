@@ -307,8 +307,8 @@ public  function tblexcel($param){
 		$this->db->join('pedido pd','pd.idpedido=pr.idpedido');
 		$this->db->join('trabajador t','t.idtrabajador=pr.idtrabajador');
 		$this->db->join('persona pe','pe.idpersona=t.idpersona');
-		$this->db->where('pr.fecha>=',$param['fechai']);
-		$this->db->where('pr.fecha<=',$param['fechaf']);
+		//$this->db->where('pr.fecha>=',$param['fechai']);
+		//$this->db->where('pr.fecha<=',$param['fechaf']);
 		$this->db->group_by('pr.idproceso,bp.id_prod');
 
 
@@ -334,8 +334,8 @@ public  function tblexcel($param){
 		$this->db->join('pedido pd','pd.idpedido=pr.idpedido');
 		$this->db->join('trabajador t','t.idtrabajador=pr.idtrabajador');
 		$this->db->join('persona pe','pe.idpersona=t.idpersona');
-		$this->db->where('pr.fecha>=',$param['fechai']);
-		$this->db->where('pr.fecha<=',$param['fechaf']);
+		//$this->db->where('pr.fecha>=',$param['fechai']);
+		//$this->db->where('pr.fecha<=',$param['fechaf']);
 		$this->db->group_by('pr.idproceso,bp.id_prod');
 
 

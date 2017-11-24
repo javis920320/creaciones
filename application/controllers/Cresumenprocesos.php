@@ -64,8 +64,8 @@ $this->export_excel->to_excel($res,'Resumen creaciones');
  
  public  function resumentotal(){
 	 
-	 $param['fechai']='2017-11-01';//$this->input->post('fechai');
-	 $param['fechaf']='2017-11-16';//$this->input->post('fechaf');
+	 $param['fechai']=$this->input->post('fechai');
+	 $param['fechaf']=$this->input->post('fechaf');
 	 
 	 $res= $this->Mtrabajos->resumentotal($param);
 	 

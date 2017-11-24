@@ -16,12 +16,12 @@ class Creporte  extends CI_Controller
 
 $this->load->library('Excel');
 //activate worksheet number 1
-$param['fechai']=$this->input->post('fechai');
-$param['fechaf']=$this->input->post('fechaf');
+$param['fechai']=$this->input->get('fechai');
+$param['fechaf']=$this->input->get('fechaf');
 $res=$this->Mtrabajos->tblexcel($param);
 $title=$this->Mtrabajos->tbltitle($param);
 
-echo 
+
 
 $this->excel->setActiveSheetIndex(0);
 //name the worksheet
