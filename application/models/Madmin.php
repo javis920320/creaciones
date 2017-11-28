@@ -145,6 +145,19 @@ public  function creartrabajador($param){
 	
 }
 
+
+public  function eliminaruser($param){
+
+	$this->db->where('idpersona',$param['idpersona']);
+	$this->db->delete('usuarios');
+
+	$res=$this->db->affected_rows();
+		return$res;
+
+
+
+}
+
 }
 
 
