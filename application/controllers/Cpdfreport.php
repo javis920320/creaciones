@@ -22,7 +22,7 @@ class Cpdfreport extends CI_Controller {
 
 	$this->load->library('pdf');
 
-  	$this->pdf->load_view('mypdf');
+  	$this->pdf->load_view('vlista');
   	$this->pdf->render();
 
   	$this->pdf->stream("Cpdfreport.pdf");

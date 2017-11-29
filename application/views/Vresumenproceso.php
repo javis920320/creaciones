@@ -27,7 +27,18 @@
               <div class="panel-heading">RESUMEN VALORES</div>
              <div class="panel-body">
 
-
+			 <table id="tblperiodo" class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                      <th style="width: 5%;background-color: #006699; color: white;">#</th>
+                      <th style="width: 10%;background-color: #006699; color: white;">Fecha Inicio</th>
+                      <th style="width: 10%;background-color: #006699; color: white;">Fecha FIn</th>
+					   <th style="width: 10%;background-color: #006699; color: white;">Accion</th>
+   
+                    </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
              <span class='text text-success'><strong>PRECIO PRODUCTOS:<div id='prep'></div></strong></span><br><br>
              <span class='text text-success'><strong>PRECIO BORDADOS:<div id='preb'></div></strong></span><br><br>
              <span class='text text-success'><strong>PRODUCCION TOTAL:<div style='color:black'id='pret'></div></strong></span><br><br>
