@@ -34,10 +34,10 @@ class Cresumenprocesos extends CI_Controller
 
 public  function tblresumen(){
 
-	$param['fechai']=$this->input->post('fechai');	
-	$param['fechaf']=$this->input->post('fechaf');	
+	//$param['fechai']=$this->input->post('fechai');	
+	//$param['fechaf']=$this->input->post('fechaf');	
 	
-	 $res=$this->Mtrabajos->tblresumen($param);
+	 $res=$this->Mtrabajos->tblresumen();
 	 
 	   
 
@@ -64,12 +64,38 @@ $this->export_excel->to_excel($res,'Resumen creaciones');
  
  public  function resumentotal(){
 	 
-	 $param['fechai']=$this->input->post('fechai');
-	 $param['fechaf']=$this->input->post('fechaf');
+	 //$param['fechai']=$this->input->post('fechai');
+	 //$param['fechaf']=$this->input->post('fechaf');
 	 
-	 $res= $this->Mtrabajos->resumentotal($param);
+	 $res= $this->Mtrabajos->resumentotal();
 	 
 	 echo json_encode($res);
+	 
+ }
+ 
+ public  function tblperiodo(){
+	 
+	 
+	 $res=$this->Mtrabajos->tblperiodo();
+	 
+	 echo json_encode($res);
+	 
+ }
+ 
+ public  function updateperiodo(){
+	 
+	 $param['idperiodo']=$this->input->post('modper');
+	 	 $param['fechai']=$this->input->post('fechaie');
+		 	 $param['fechaf']=$this->input->post('fechafe');
+			 
+			 $res=$this->Mtrabajos->updateperiodo($param);
+			 
+			 if($res>=1){
+				 echo 'Periodo Actualizado';
+				 
+			 }else{
+				  echo 'Ocurrio un inconveniente';
+			 }
 	 
  }
 

@@ -3,6 +3,35 @@
 	<title></title>
 </head>
 <body>
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="ediper" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Editar periodo</h4>
+        </div>
+        <div class="modal-body">
+         <form  id='editarper'>
+          <label for=''>Fecha inicio</label>
+          <input type='hidden' id='modper' name='modper' class='form-comtrol'>
+		  
+          <input type='date' id='fechaie' name='fechaie' class='form-comtrol' >
+          <label for='fechafe'>Fecha Final</label>
+           <input type='date' id='fechafe' name='fechafe' class='form-comtrol' >
+		   <input type='submit' value='Actualizar'>
+
+         </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+         
+        </div>
+      </div>
+    </div>
+  </div>
 <div class="col-xs-12 col-md-12">
           <div class="box">
             <div class="box-header box-primary">
@@ -18,9 +47,10 @@
     			<legend class="scheduler-border"><span class="text text-primary"> <strong>   CREACIONES GORETTI</strong> </span></legend>
     			
 				
-            <div class="col-xs-5 col-md-5"><label for="fechai"><strong class="text text-primary">FECHA INICIO</strong></label><input type="date" name="fechai" id='fechai' class="form-control"></div>
+            <div class='hide'><div class="col-xs-5 col-md-5"><label for="fechai"><strong class="text text-primary">FECHA INICIO</strong></label><input type="date" name="fechai" id='fechai' class="form-control"></div>
 
             <div class="col-xs-5 col-md-5"><label for="fechaf"><strong class="text text-primary">FECHA FIN</strong></label><input type="date" name="fechaf" id='fechaf' class="form-control"></div></fieldset>
+			</div>
 <br><br>
              <div class="col-xs-10 col-md-10">
             <div class="panel panel-default">
@@ -47,7 +77,7 @@
             </div>
             </div>
 
-                       <div class="col-xs-2 col-md-2"><button class="btn  btn-danger form-control" id='btnfl' onclick='resfiltrar();'>Filtrar</button>
+                       <div class="col-xs-2 col-md-2"> <div class='hide'><button class="btn  btn-danger form-control" id='btnfl' onclick='resfiltrar();'>Filtrar</button></div>
                        <!--<a href='<?php echo base_url();?>Cresumenprocesos/resumen' id='btnexportar'class='btn btn-success form-control'>Exportar Excel</a>-->
 
                       <a href='<?php echo base_url();?>Creporte/?fechai="2017-10-20"&fechaf="2017-11-21"?>' id='o'class='btn btn-success form-control'>Exportar Excel</a>
