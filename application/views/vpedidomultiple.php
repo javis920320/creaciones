@@ -5,7 +5,62 @@
 <body>
 <br>
 
+		<!-- Button trigger modal -->
 
+
+<!-- Modal -->
+<div class="modal fade" id="editarp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Editar Pedido</h4>
+      </div>
+      <div class="modal-body">
+       <form action="" id="formedp">
+       <input type="text" id='idpedidoed'>
+
+       <div class="form-group">
+       	<label for="faced">Factura</label>
+
+       	<input type="text" id='faced' class="form-control">
+       </div>
+
+
+       <div class="form-group">
+       	<label for="facued">Facultad</label>
+
+       	<input type="text" id='facued' class="form-control">
+       </div>
+
+       <div class="form-group">
+       	<label for="canted">Cantidad</label>
+
+       	<input type="text" id='canted' class="form-control">
+       </div>
+
+       <div class="form-group">
+       	<label for="talled">Talla</label>
+
+       	<input type="text" id='talled' class="form-control">
+       </div>
+
+       <div class="form-group">
+       	<label for="desced">Descripcion</label>
+
+       	<input type="text" id='desced' class="form-control">
+       </div>
+       	
+
+       </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <div class="box box-primary">

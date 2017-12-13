@@ -218,11 +218,3 @@ http://www.codedrinks.com/crear-un-reporte-en-excel-con-php-y-mysql/
 
 
 http://www.ahowto.net/php/easily-integrateload-phpexcel-into-codeigniter-framework/
-
-CREATE TABLE `periodo` (
-  `idperiodo` int(11) NOT NULL AUTO_INCREMENT,
-  `fechai` date NOT NULL,
-  `fechaf` date NOT NULL,
-  PRIMARY KEY (`idperiodo`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-

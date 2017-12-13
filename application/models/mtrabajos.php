@@ -205,20 +205,20 @@ class Mtrabajos extends CI_Model
 
 
 
-	public  function tblresumen(){
+	public  function tblresumen($param){
 
 
 
 		$this->db->select('pr.idproceso,pd.factura,p.nomprod,pd.descripcion,pr.cantidad,pr.precio,pr.precio1,(sum(bp.cantidad)*pr.cantidad) as nbordados,(sum(b.precio)*pr.cantidad)"valor bordado",pr.fecha,pe.nombres');
-		$this->db->from('periodo x,proceso pr');
+		$this->db->from('proceso pr');
 		$this->db->join('producto p','p.id_prod=pr.id_prod');
 		$this->db->join ('bordadosproductos bp','p.id_prod = bp.id_prod');
 		$this->db->join(' bordados b ', 'b.idbordados = bp.idbordados');
 		$this->db->join('pedido pd','pd.idpedido=pr.idpedido');
 		$this->db->join('trabajador t','t.idtrabajador=pr.idtrabajador');
 		$this->db->join('persona pe','pe.idpersona=t.idpersona');
-		$this->db->where('pr.fecha>=x.fechai');
-		$this->db->where('pr.fecha<=x.fechaf');
+		$this->db->where('pr.fecha>=',$param['fechai']);
+		$this->db->where('pr.fecha<=',$param['fechaf']);
 		$this->db->group_by('pr.idproceso,bp.id_prod');
 
 
@@ -273,10 +273,10 @@ class Mtrabajos extends CI_Model
 	}
 	
 	
-	public function resumentotal(){
+	public function resumentotal($param){
 		
-		$query=$this->db->query("select sum(precio1)as prep ,sum(prebordado)as preb,sum(precio1+prebordado) as pret from proceso,periodo
-  where fecha>=fechai and  fecha<=fechaf");
+		$query=$this->db->query("select sum(precio1)as prep ,sum(prebordado)as preb,sum(precio1+prebordado) as pret from proceso 
+  where fecha>='".$param['fechai']."' and  fecha<='".$param['fechaf']."'");
 	return $query->result();
 	/*$this->db->select("sum(precio1)as prep ,sum(prebordado)as preb,sum(precio1+prebordado) as pret");
 	$this->db->from("proceso");
@@ -300,15 +300,15 @@ public  function tblexcel($param){
 
 
 		$this->db->select('pr.idproceso as PROCESO,pd.factura AS FACTURA,p.nomprod AS PRODUCTO,pd.descripcion AS DESCRIPCION,pr.cantidad AS CANTIDAD,pr.precio1 AS PRECIO,(sum(bp.cantidad)*pr.cantidad) as nbordados,prebordado AS PREBORDADO,pr.fecha AS FECHA,pe.nombres AS OPERARIO');
-		$this->db->from('periodo x ,proceso pr');
+		$this->db->from('proceso pr');
 		$this->db->join('producto p','p.id_prod=pr.id_prod');
 		$this->db->join ('bordadosproductos bp','p.id_prod = bp.id_prod');
 		$this->db->join(' bordados b ', 'b.idbordados = bp.idbordados');
 		$this->db->join('pedido pd','pd.idpedido=pr.idpedido');
 		$this->db->join('trabajador t','t.idtrabajador=pr.idtrabajador');
 		$this->db->join('persona pe','pe.idpersona=t.idpersona');
-		$this->db->where('pr.fecha>=x.fechai');
-		$this->db->where('pr.fecha<=x.fechaf');
+		//$this->db->where('pr.fecha>=',$param['fechai']);
+		//$this->db->where('pr.fecha<=',$param['fechaf']);
 		$this->db->group_by('pr.idproceso,bp.id_prod');
 
 
@@ -326,16 +326,16 @@ public  function tblexcel($param){
 
 
 
-		$this->db->select('pr.idproceso as PROCESO,pd.factura AS FACTURA,p.nomprod AS PRODUCTO,pd.descripcion AS DESCRIPCION,pr.cantidad AS CANTIDAD,pr.precio1 AS PRECIO,(sum(bp.cantidad)*pr.cantidad) as NUMBORDADOS,prebordado AS PREBORDADO,pr.fecha AS FECHA,pe.nombres AS OPERARIO');
-		$this->db->from('periodo x,proceso pr');
+		$this->db->select('pr.idproceso as PROCESO,pd.factura AS FACTURA,p.nomprod AS PRODUCTO,pd.descripcion AS DESCRIPCION,pr.cantidad AS CANTIDAD,pr.precio1 AS PRECIO,(sum(bp.cantidad)*pr.cantidad) as nbordados,prebordado AS PREBORDADO,pr.fecha AS FECHA,pe.nombres AS OPERARIO');
+		$this->db->from('proceso pr');
 		$this->db->join('producto p','p.id_prod=pr.id_prod');
 		$this->db->join ('bordadosproductos bp','p.id_prod = bp.id_prod');
 		$this->db->join(' bordados b ', 'b.idbordados = bp.idbordados');
 		$this->db->join('pedido pd','pd.idpedido=pr.idpedido');
 		$this->db->join('trabajador t','t.idtrabajador=pr.idtrabajador');
 		$this->db->join('persona pe','pe.idpersona=t.idpersona');
-		$this->db->where('pr.fecha>=x.fechai');
-		$this->db->where('pr.fecha<=x.fechaf');
+		//$this->db->where('pr.fecha>=',$param['fechai']);
+		//$this->db->where('pr.fecha<=',$param['fechaf']);
 		$this->db->group_by('pr.idproceso,bp.id_prod');
 
 
@@ -349,26 +349,6 @@ public  function tblexcel($param){
 
 
 	}
-	
-	
-	 public  function tblperiodo(){
-		 
-		 $this->db->select('p.idperiodo,p.fechai,p.fechaf');
-		 $this->db->from('periodo p');
-		 $res=$this->db->get();
-		 
-		 return $res->result();
-	 }
-	 
-	 
-	 public  function updateperiodo($param){
-		 $datos = array('fechai' =>$param['fechai'],'fechaf' =>$param['fechaf'] );
-		 
-		 $this->db->where('idperiodo',$param['idperiodo']);
-		 $this->db->update('periodo',$datos);
-		 $res=$this->db->affected_rows();
-		return$res;
-	 }
 
 	}
 
