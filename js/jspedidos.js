@@ -163,7 +163,9 @@ return '<span class="pull-right">' +
                       //'    <li><a href="#" title="Desaprobar afiliado" onClick="updEstadoAfiliado('+row.idPersona+','+2+')"><i style="color:red;" class="glyphicon glyphicon-remove"></i> Desaprobar</a></li>' +
                       '    </ul>' +
                       '</div>' +
-                      '</span>';
+                      '</span>'+
+                      '<input type="checkbox" data='+row.idpedido+' class="x">'	
+                      ;
 
 
 				
@@ -411,7 +413,7 @@ return '<span class="pull-right">' +
                       '  <span class="caret"></span>' +
                       '  </button>' +
                       '    <ul class="dropdown-menu pull-right" aria-labelledby="dropdownMenu1">' +
-                      '    <li><a href="#" title="Editar informacion" data-toggle="modal" data-target="#editarp" onClick="selpedido(\''+row.factura+'\',\''+row.facultad+'\',\''+row.cantidad+'\',\''+row.talla+'\',\''+row.idpedido+'\');"><i style="color:#555;" class="glyphicon glyphicon-edit"></i> Editar</a></li>' +
+                      '    <li><a href="#" title="Editar informacion" data-toggle="modal" data-target="#editarp" onClick="selpedido(\''+row.factura+'\',\''+row.facultad+'\',\''+row.cantidad+'\',\''+row.talla+'\',\''+row.descripcion+'\',\''+row.idpedido+'\');"><i style="color:#555;" class="glyphicon glyphicon-edit"></i> Editar</a></li>' +
                       //'    <li><a href="'+baseurl+'cafiliado/descargar/'+row.idPersona+'" title="Imprimir formato"><i class="glyphicon glyphicon-print" style="color:#006699"></i> Imprimir</a></li>' +
                       '    <li><a href="#" title="Enviar Pedido"  data-toggle="modal" data-target="#estado"  onClick="estadopedido(\''+row.idpedido+'\',\''+row.nombres+'\',\''+row.telefono+'\')"><i style="color:green;" class="glyphicon glyphicon-plane"></i> Enviar Pedido</a></li>' +
                       //'    <li><a href="#" title="Desaprobar afiliado" onClick="updEstadoAfiliado('+row.idPersona+','+2+')"><i style="color:red;" class="glyphicon glyphicon-remove"></i> Desaprobar</a></li>' +
@@ -455,69 +457,34 @@ $('#idpedidoed').val(idpedido);
   	
  }
 
-/*
-$('#tblresumen').DataTable({
-			'paging':true,
-			'info':true,
-			'filter':true,
-			'stateSave':true,
 
-			'ajax':{
-
-				"url":baseurl+"Cpedidos/lista",
-				'data':{factura:''},
-
-				'type':'POST',
-				dataSrc:''
-			},
-
-			'columns':[
-			{data: 'factura','sClass':'dt-body-center'},
-			{data:'facultad'},
-			{data:'cantidad'},
-			{data:'talla'},
-			{data:'descripcion'},
-			{data:'nombres'},
-			{data:'fecha_ingreso'},
-
-			{"orderable":true,
-			render:function(data,type,row){
+ function editarpedido(){
 
 
+ 	 var factura =$('#faced').val();
+ 	 var facultad =$('#facued').val();
+ 	 var cantidad =$('#canted').val();
+ 	 var talla =$('#talled').val();
+ 	 var descripcion =$('#desced').val();
+ 	 var idpedido =$('#idpedidoed').val();
 
-return '<span class="pull-right">' +
-                      '<div class="dropdown">' +
-                      '  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">' +
-                      '    Acciones' +
-                      '  <span class="caret"></span>' +
-                      '  </button>' +
-                      '    <ul class="dropdown-menu pull-right" aria-labelledby="dropdownMenu1">' +
-                      '    <li><a href="#" title="Editar informacion" data-toggle="modal" data-target="#modalEditPersona" onClick="selPersona(\''+row.factura+'\',\''+row.facultad+'\',\''+row.cantidad+'\',\''+row.talla+'\',\''+row.idpedido+'\');"><i style="color:#555;" class="glyphicon glyphicon-edit"></i> Editar</a></li>' +
-                      //'    <li><a href="'+baseurl+'cafiliado/descargar/'+row.idPersona+'" title="Imprimir formato"><i class="glyphicon glyphicon-print" style="color:#006699"></i> Imprimir</a></li>' +
-                      '    <li><a href="#" title="Enviar Pedido"  data-toggle="modal" data-target="#estado"  onClick="estadopedido(\''+row.idpedido+'\',\''+row.nombres+'\',\''+row.telefono+'\')"><i style="color:green;" class="glyphicon glyphicon-plane"></i> Enviar Pedido</a></li>' +
-                      //'    <li><a href="#" title="Desaprobar afiliado" onClick="updEstadoAfiliado('+row.idPersona+','+2+')"><i style="color:red;" class="glyphicon glyphicon-remove"></i> Desaprobar</a></li>' +
-                      '    </ul>' +
-                      '</div>' +
-                      '</span>';
+ 	 $.ajax({
+'url':baseurl+'Cpedidos/editar',
+'type':'POST',
+'data':{facturaedit:factura,facultadedit:facultad,editcantidad:cantidad,tallaedit:talla,descripcion_edit:descripcion,idpersonaedit:idpedido},
+success:function(data){
+	$('#tblresumen').DataTable().ajax.reload();
+	alert(data);
 
-
-				
-
-					//return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" data-toggle="modal" data-target="#myModal"><i class=" fa fa-edit"></i></a
-					//return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" title="Enviar informacion" data-toggle="modal" data-target="#estado" onClick="estadopedido(\''+row.idpedido+'\',\''+row.nombres+'\',\''+row.telefono+'\');"><i class=" glyphicon glyphicon-plane"></i><span> Enviar</span></a>';
-					}
-			}
-
-
-			],
-
- "order":[[0,"asc"]],
-
-		});*/
-
-
-/*function errortrap(msg,url,line){
-    alert(msg);
-    return true;
 }
-onerror=errortrap;*/
+ 	 });
+
+
+
+
+ }
+
+$('#camestado').submit(function(){
+
+	alert($('.x').attr('data'));
+});

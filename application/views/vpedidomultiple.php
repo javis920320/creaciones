@@ -18,40 +18,44 @@
       </div>
       <div class="modal-body">
        <form action="" id="formedp">
-       <input type="text" id='idpedidoed'>
+       <input type="hidden" id='idpedidoed'>
 
        <div class="form-group">
        	<label for="faced">Factura</label>
 
-       	<input type="text" id='faced' class="form-control">
+       	<input type="text" id='faced' class="form-control"  required="true">
        </div>
 
 
        <div class="form-group">
        	<label for="facued">Facultad</label>
 
-       	<input type="text" id='facued' class="form-control">
+       	<input type="text" id='facued' class="form-control" required="true">
        </div>
 
        <div class="form-group">
        	<label for="canted">Cantidad</label>
 
-       	<input type="text" id='canted' class="form-control">
+       	<input type="number" id='canted' class="form-control" required="true">
        </div>
 
        <div class="form-group">
        	<label for="talled">Talla</label>
 
-       	<input type="text" id='talled' class="form-control">
+       	<input type="text" id='talled' class="form-control" required="true">
        </div>
 
        <div class="form-group">
        	<label for="desced">Descripcion</label>
 
-       	<input type="text" id='desced' class="form-control">
+       	<!--<input type="text" id='desced' class="form-control">-->
+
+       	<textarea id='desced' class="form-control" rows="10" cols="120">
+       		
+       	</textarea>
        </div>
        	
-
+		<input  type='button' value='EDITAR'  data-dismiss="modal" id='btneditarp' onclick="editarpedido();">
        </form>
       </div>
       <div class="modal-footer">

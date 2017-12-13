@@ -210,7 +210,8 @@
             <div class="box-body table-responsive no-padding">
             <label for="chk">Enviar lista</label>
             <input type='checkbox' name='chk' id='chk' value=1>
-            <input type="submit" value='enviarlista'>
+            
+            <form action="" id='camestado'>
               <table  id='tblpedidos' class="table table-hover table-responsive">
                 <thead class="bg-primary">
                 <tr>
@@ -229,6 +230,8 @@
                 <tbody></tbody>
                 
               </table>
+              <input type="submit" value='enviarlista'>
+              </form>
             </div>
             <!-- /.box-body -->
           </div>
