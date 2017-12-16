@@ -9,7 +9,7 @@ selpedido = function(idpedido){
 
 
 $('#envconfeccion').submit(function(){
-alert('enviando');
+//alert('enviando');
 	
 $.ajax({
 
