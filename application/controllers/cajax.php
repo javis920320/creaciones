@@ -103,6 +103,21 @@ class Cajax extends CI_Controller
 
 
 	}
+
+
+
+	public  function eliminarp(){
+
+		$param['idpedido']=$this->input->post('idpedido');
+		$res=$this->Majax->eliminarp($param);
+
+		if($res>0){
+			echo "Se a eliminado este pedido";
+
+		}else{
+			echo "Error en el proceso";
+		}
+	}
 	
 }
  ?>

@@ -8,6 +8,31 @@
 		<!-- Button trigger modal -->
 
 
+		<div class="modal fade" id="eliminar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">CREACIONES</h4>
+        </div>
+        <div class="modal-body">
+          <form>
+
+            <label for='idpedidod'>Deseas eliminar este registro</label>
+            <input type='hidden' id='idpedidod'>
+            <input type='button' class='btn btn-primary' data-dismiss="modal" value='Eliminar' onclick='eliminarp();'> <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+
+          </form>
+        </div>
+        <div class="modal-footer">
+         
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 <!-- Modal -->
 <div class="modal fade" id="editarp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
@@ -276,7 +301,7 @@
       	<input type="hidden" id='idpedido' name="idpedido">  
       		<input type="hidden" id='enviar' name="enviar">
       	<div class="form-group">
-      	<input type="submit" title="Presionar" value="Enviar" class="btn btn-success">
+      	<input type="button" title="Presionar" value="Enviar" data-dismiss="modal" class="btn btn-success" onclick='cambioestado();'>
       	<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
       		
       	</div>

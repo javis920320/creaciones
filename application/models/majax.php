@@ -105,6 +105,16 @@ class Majax extends CI_Model
 
 	 }
 
+	  public  function eliminarp($param){
+
+	  	$this->db->where('idpedido',$param['idpedido']);
+	  	$this->db->delete('pedido');
+
+	  	$res=$this->db->affected_rows();
+		return$res;
+
+	 }
+
 
 }
 
