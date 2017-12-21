@@ -2,6 +2,30 @@
 
 user=$('#trabajador').val();
 
+cargarvalor(user);
+ function cargarvalor(user){
+
+  var  use=user;
+ 	$.ajax({
+ 		'url':baseurl+'Ctrabajos/pago',
+ 		'type':'POST',
+ 		'data':{use:use},
+ 		success:function(data){
+ 			//alert(data);
+
+
+ 				var obj=JSON.parse(data);
+	  			$.each(obj,function(i,items){
+	  				$('#valor').text(items.valor);
+	  				//$('#p').text(items.p);
+	  			});
+
+
+ 		}
+
+ 	});
+
+ }
  //console.log(user);
 //alert(user);
 lista(user);

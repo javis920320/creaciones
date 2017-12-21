@@ -136,6 +136,25 @@ class Ctrabajos extends CI_Controller
 
 	}
 
+	 public  function pago(){
+
+
+
+	 	$param['idtrabajador']=$this->input->post('use');
+
+
+
+	 	$res=$this->Mtrabajos->calcular($param);
+
+
+	 	echo json_encode($res);
+
+
+
+
+
+	 }
+
 }
 
 

@@ -10,9 +10,21 @@
 		<div class="col-sm-8">
 		<label for=""><h2><strong>Lista Confecciones</strong></h2></label>
 		</div>
+    <br><br><br>
+    <div class="col-sm-10">
+      <div class="col-sm-2">
 		<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
       	Agregar producto
     	</button>
+    </div>
+    <div class="col-sm-8" align='center'>
+      <div class="col-sm-6"><span><h3>VALORE ACUMULADO:  </h3> </span></div>
+      <div class="col-sm-6"> <strong><h3>$<span id='valor'></span></h3></strong></div>
+     
+    </div>
+      
+    </div>
+    <br><br>
 	    	<!-- <div class="box box-primary"> -->
 	    	<table id="tbltrabajos" class="table table-bordered table-striped">
 			    <thead>
