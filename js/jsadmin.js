@@ -37,6 +37,7 @@ $('#tbltrabajos').DataTable({
 			'info':true,
 			'filter':true,
 			'stateSave':true,
+			'destroy':true,
 
 			'ajax':{
 

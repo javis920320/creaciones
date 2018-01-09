@@ -110,7 +110,7 @@
 
 
 
-            <input type='submit' value='Guardar'title='Presiona para Guardar' class='btn btn-primary'>	
+            <input type='button' value='Guardar'title='Presiona para Guardar' class='btn btn-primary' onclick="registroproceso();">	
 
             </form>
           </div>
