@@ -351,29 +351,18 @@ public  function tblexcel($param){
 	}
 
 
-	 public function calcular($param){
+		  public function calcular($param){
 //select sum(cantidad),sum(precio) from proceso where fecha between '2017-09-20' and '2017-10-31' and idtrabajador=1
-/*
-	$this->db->select('sum(cantidad) as c,sum(precio) as p');
-	$this->db->from('proceso');
-	$this->db->where('idtrabajador',$param['idtrabajador']);
-	$this->db->where('fecha >=',$param['fechai']);
-	$this->db->or_where('fecha<=',$param['fechaf']);
+
+	$this->db->select('sum(p.precio1) as valor,sum(p.precio) as valoro');
+	$this->db->from('proceso p,periodo pr');
+	$this->db->where('p.idtrabajador',$param['idtrabajador']);
+	$this->db->where('p.fecha >=',' pr.fechai');
+	$this->db->or_where('p.fecha<=','pr.fechaf');
 	
 
 	$resul=$this->db->get();
-	return $resul->result();*/
-
-
-	$resul=$this->db->query("select sum(p.precio1) as valor from proceso p,periodo pr
- where p.idtrabajador=".$param['idtrabajador']." and  p.fecha between pr.fechai and pr.fechaf");
 	return $resul->result();
-
-
-
-
-
- }
 
 	}
 
