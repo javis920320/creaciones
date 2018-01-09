@@ -34,6 +34,48 @@ class Mtrabajos extends CI_Model
 	}
 
 
+
+ public  function lsttipoprod($param){
+
+ /*$query=$this->db->query("select distinct(t.nomtipoprod) from pedido p
+     inner join tipo_producto t on p.idtipoprod = t.idtipoprod 
+     where p.factura ="+$param['fac']+" and p.estado=3");
+
+ if($query->num_rows()>0){
+ 	 return$query->result();
+
+ }else{
+  return 0;
+
+ }*/
+
+ $this->db->select('distinct(t.nomtipoprod),t.idtipoprod');
+ $this->db->from('pedido p');
+ $this->db->join('tipo_producto t','p.idtipoprod = t.idtipoprod');
+ $this->db->where('p.factura',$param['fac']);
+$this->db->where('p.estado',3);
+
+
+
+	$resul=$this->db->get();
+		if($resul->num_rows()>0){
+			//$r=$resultados->row();
+			 //$arreglo = array('nombre' => $r->nombres);
+			//return $r;
+			return $r=$resul->result();
+
+			//return 1;
+
+		}else{
+
+
+			return 0;
+		}
+
+
+
+ } 
+
 	public  function buscarpedido($dato){
 		$datos = array('fac' =>$dato['fac'] );
 

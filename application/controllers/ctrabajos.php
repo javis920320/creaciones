@@ -45,6 +45,18 @@ class Ctrabajos extends CI_Controller
 	}
 
 
+
+ public  function lsttipoprod(){
+
+ 	 $param['fac']=$this->input->post('fac');
+
+		 $res=$this->Mtrabajos->lsttipoprod($param);
+
+		 echo json_encode($res);
+
+
+ }
+
 	public function buscarpedido(){
 
 
