@@ -26,6 +26,9 @@ autor:´javier lopez
 
 	 	$this->load->view('layou/footer',$nombres);
 	}
+	
+	
+	
 
 
 	 public function lista(){
@@ -68,6 +71,20 @@ autor:´javier lopez
 
 	  	echo json_encode($res);
 	  }
+	  
+	  
+	   public  function arreglo(){
+		   
+		   $d=count($_POST['array']);
+		 
+		/* for($i=0;$i<$_POST[])
+		 $data['id'] = json_decode($_POST['array']);
+//echo var_dump($data);
+
+
+print_r($data);*/
+echo $d;
+	 }
 
 
 

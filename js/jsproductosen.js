@@ -28,6 +28,7 @@ $('#tblproductosen').DataTable({
 
 
 				return '<span class="pull-right">' +
+					  '<input type="checkbox" class="chk" name="chk" value='+row.idpedido+'>'+	
                       '<div class="dropdown">' +
                       '  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">' +
                       '    Acciones' +
@@ -57,6 +58,9 @@ $('#tblproductosen').DataTable({
  "order":[[0,"asc"]],
 
 		});	
+		
+		
+		
 
 
 
@@ -69,6 +73,72 @@ $('#lista').on('click',function(){
 
 });
 
+
+
+$('.chk').click(function(){
+		alert($('input[name="chk"]:checked').val());
+		//alert();
+	});
+	
+	    
+	
+	
+	 function generarenvio(){
+		/* var selected = '';    
+        $('.chk input[type=checkbox]').each(function(){
+            if (this.checked) {
+                selected += $(this).val()+', ';
+            }
+        }); 
+
+        if (selected != '') 
+            alert('Has seleccionado: '+selected);  
+        else
+            alert('Debes seleccionar al menos una opción.');
+
+        return false;*/
+		
+		
+		$('.chk').each(function(){
+    var chk = $(this);
+    if(chk.prop('checked')){
+     //alert(chk.val());
+	  selecciones =  new Array();
+	  selecciones+=chk.val();
+	  
+	 /* prueba= new Array();
+	  prueba=[1,2,3];*/
+	  
+	 // console.log(JSON.stringify(selecciones)); 
+	 
+	 
+	  //print_r selecciones;
+	  
+	  
+	  
+	  
+	 /* var con=0;
+	  for(con;con<selecciones.length;con++){
+		  console.log('seleccion numero'+con+'= '+selecciones);
+	  }*/
+  }
+  
+  
+  
+});
+
+console.log(selecciones);
+$.ajax({
+          type: "POST",
+          url: baseurl+'Cproductosen/arreglo',
+          data: {'array':JSON.stringify(selecciones)},//capturo array     
+          success: function(objView){
+			  alert(objView);
+
+        }
+});
+  
+	 }
 /*
 selpedido = function(idpedido){
 	$('#producto').val(idpedido);
