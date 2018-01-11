@@ -123,6 +123,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="<?php echo base_url();?>Ctrabajos/"><i class="fa fa-circle-o"></i> Ingresar </a></li>
+			<li><a href="<?php echo base_url();?>Csatelite/"><i class="fa fa-circle-o"></i> Proceso Satelite </a></li>
             
           </ul>
         </li> 
@@ -171,6 +172,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="<?php echo base_url();?>Cusuarios/"><i class="fa fa-circle-o"></i> Ingresar </a></li>
+			
             
           </ul>
         </li> 
