@@ -323,12 +323,11 @@ estadopedido = function(idpedido, nombres, telefono){
 
 function cambioestado(){
 	var idpedido=$('#idpedido').val();
-	var enviar=$('#enviar').val();
 
 	$.ajax({
 	url:baseurl+'Cpedidos/enviarpedido',
 	type:'POST',
-	data:{idpedido:idpedido,enviar:enviar},
+	data:{idpedido:idpedido},
 	success:function(data){
 		alert(data);
 

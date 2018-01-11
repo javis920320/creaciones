@@ -4,21 +4,17 @@ $('#btnbuscar').on('click',function(){
 	dato=$('#nfac').val();
 	//alert();
 
-	//$.post(baseurl+"Ctrabajos/buscarpedido",
-	$.post(baseurl+"Ctrabajos/lsttipoprod",
+	$.post(baseurl+"Ctrabajos/buscarpedido",
 		{fac:dato},
 		function(data){
-			//alert(data);
 			if(data==0){
-				$('#res').removeClass('hide');
 				$('#res').html('<span class="text-danger"><h3>Por Favor Verifica la Factura!!</h3></span>');
 
 			}else{
-				$('#res').addClass('hide');
 
 			var obj=JSON.parse(data);
 
-			// console.log(obj[0].nombres);
+			 console.log(obj[0].nombres);
 
 
 			//html='<select id="tpprod" name="tpprod" class=" pr form-control">';
@@ -88,14 +84,7 @@ $('#tblresumen .idpedido').on('change',function(){
 });
 
 
- function registroproceso(){
-
-
-
-
- 
-
-//$('#formtrabajos').submit(function(){
+$('#formtrabajos').submit(function(){
 
 
 	var diponibles=$('#disponibles').val();
@@ -112,36 +101,15 @@ $('#tblresumen .idpedido').on('change',function(){
 	//alert($(this).serialize());
 
 
-	/*
-VARIABLES
-	$param['cantidad']=$this->input->post('cantidad');
-	 	$param['idprod']=$this->input->post('productos');
-	 	$param['idpedido']=$this->input->post('idpedido');
-	 	$param['idpersona']=$this->input->post('trabajador');
-	 	//echo $param['idtrabajador'];
-	 	$preciob=$this->Moperario->presiobordados($param);
-	 	$param['preciob']=$preciob*$param['cantidad'];
-	 	$param['idtrabajador']=$this->Moperario->trabajadorid($param);
-	    $param['idtrabajador'];*/
-	    var productos=$('#productos').val();
-	    //var idpedido=$('#tblresumen .idpedido').data();
-
-	    var idpedido=$('input:radio[name=idpedido]:checked').val();
-	    var trabajador=$('#trabajador').val();
-
-
 	
 	$.ajax({
 		url:baseurl+'Coperario/ingresarproceso',
 		type:'POST',
-		data:{cantidad:cantidad,productos:productos,idpedido:idpedido,trabajador:trabajador},
+		data:$(this).serialize(),
 		success:function(data){
 		//alert(data);
 		if(data){
-			//$('#tbltrabajos').data.reload();
-			validarc();
 			alert(data);
-
 		}
 
 	}
@@ -149,8 +117,7 @@ VARIABLES
 	});
 	}
 
-//});
-}
+});
 
 
  function filtrar(){
