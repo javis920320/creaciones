@@ -77,6 +77,9 @@ autor:´javier lopez
 		   
 
 		   $data = json_decode(stripslashes($_POST['array']));
+
+		  	$res=$this->Mpedidos->arreglo($data);
+
 		  /* $d=count($_POST['array']);
 		 
 		for($i=0;$i<$_POST[])
@@ -84,8 +87,8 @@ autor:´javier lopez
 
 
 
-print_r($data);
-//echo $d;
+//print_r($data);
+echo $res;
 
 //echo var_dump($data);
 	 }

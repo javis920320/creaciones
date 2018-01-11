@@ -11,7 +11,31 @@ class Mpedidos extends CI_Model
 		parent::__construct();
 	}
 
+public function arreglo($array){
 
+
+	$d=count($array);
+
+
+	$datos= array(
+	 			
+	 			  'estado'=>3
+
+	 					);
+
+
+	for ($i=0; $i <$d ; $i++) { 
+
+
+		$this->db->where('idpedido',$array[$i]);
+	$this->db->update('pedido',$datos);
+	}
+
+	return $d;
+
+
+
+}
 
 public function insertpedido($param){
 
