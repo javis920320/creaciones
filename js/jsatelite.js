@@ -49,3 +49,104 @@ $.post(baseurl+"Ctrabajos/lsttipoprod",
 }
 
 
+
+$('#tpprod').on('change',function(event){
+
+		
+		var dato= $('#tpprod option:selected').text();
+		//alert(dato);
+
+			$.post(baseurl+"Cproductos/listaproductosf",
+			{dato:dato},
+			function(data){
+				if(data==0){
+				$('#res').append('<span class="text-danger"><h3>no hay productos de este tipo</h3></span>');
+
+			}else{
+
+			var obj=JSON.parse(data);
+
+			
+			html='';
+			html+='<option value="">Seleccione una opcion</option>';
+
+			$.each(obj,function(i,items){
+				html+='<option value="'+items.id_prod+'">'+ items.nomprod+'</option>';
+			});
+
+
+			//html+='</select>';
+			$("#productos").html(html);
+			}
+			
+			});
+			});
+
+$('#tblresumen .idpedido').on('change',function(){
+
+	//alert();
+
+});
+
+
+
+function filtrar(){
+
+ 	 var dato=$('#tpprod').val();
+ 	  var fac=$('#nfac').val();
+
+ 	 $('#tblresumen').DataTable({
+			'paging':true,
+			'info':true,
+			'filter':true,
+			'destroy':true,
+			'stateSave':true,
+
+			'ajax':{
+
+				"url":baseurl+"Ctrabajos/lista",
+				'data':{dato:dato,fac:fac},
+
+				'type':'POST',
+				dataSrc:''
+			},
+
+			'columns':[
+			{data: 'idpedido','sClass':'dt-body-center'},
+			{data: 'factura','sClass':'dt-body-center'},
+			{data:'nomtipoprod'},
+			{data:'facultad'},
+			{data:'cantidad'},
+			{data:'talla'},
+			{data:'descripcion'},
+			{data:'nombres'},
+			{data:'fecha_ingreso'},
+
+			{"orderable":true,
+			render:function(data,type,row){
+
+
+
+return '<span class="pull-right">' +
+									'<input type="radio" class="idpedido" onchange="validarc();"name="idpedido" value='+row.idpedido+' required="true">'
+                       +
+                      '</span>';
+
+
+
+					//return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" data-toggle="modal" data-target="#myModal"><i class=" fa fa-edit"></i></a
+					//return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" title="Enviar informacion" data-toggle="modal" data-target="#estado" onClick="estadopedido(\''+row.idpedido+'\',\''+row.nombres+'\',\''+row.telefono+'\');"><i class=" glyphicon glyphicon-plane"></i><span> Enviar</span></a>';
+					}
+			}
+
+
+			],
+
+ "order":[[0,"asc"]],
+
+		});	
+
+ 	
+ }
+		
+

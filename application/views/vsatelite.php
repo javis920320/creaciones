@@ -32,7 +32,37 @@
          </div>
 
          <div id="res"></div>
-         <div id="tpprod"></div>
+
+  <label for='tpprod'>Categoria Producto</label>
+              <select id="tpprod" name="tpprod" class=" pr form-control" onchange='filtrar();' required="true"></select>
+          <table id="tblresumen" class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th style="width: 5%;background-color: #006699; color: white;">#</th>
+              <th style="width: 10%;background-color: #006699; color: white;">Factura</th>
+              <th style="width: 10%;background-color: #006699; color: white;">Tipo producto</th>
+              <th style="width: 10%;background-color: #006699; color: white;">Facultad</th>
+              <th style="width: 10%;background-color: #006699; color: white;">Cantidad</th>
+              <th style="width: 10%;background-color: #006699; color: white;">Talla</th>
+              <th style="width: 10%;background-color: #006699; color: white;">Descripcion</th>
+              <th style="width: 10%;background-color: #006699; color: white;">Cliente</th>
+              <th style="width: 10%;background-color: #006699; color: white;">Fecha Ingreso</th>
+              <th style="width: 10%;background-color: #006699; color: white;">Acción</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+         
+
+
+       
+
+
+
+
+
+         <label for='productos'>Productos</label>
+              <select id="productos" name="productos" class="form-control" required="true"></select>
        </div>
        <div class="modal-footer">
          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
