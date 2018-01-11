@@ -32,6 +32,8 @@ class Mtrabajos extends CI_Model
 
 		return true;
 	}
+<<<<<<< HEAD
+=======
 
 
 
@@ -76,6 +78,7 @@ $this->db->where('p.estado',3);
 
  } 
 
+>>>>>>> parent of 537cced... Revert "cambios"
 	public  function buscarpedido($dato){
 		$datos = array('fac' =>$dato['fac'] );
 

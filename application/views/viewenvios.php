@@ -58,8 +58,7 @@
 <button id='pdf' class='btn btn-danger'><span class='glyphicon glyphicon-print'></span>  Crear Pdf</button>
 
 <button id='lista' class='btn btn-danger'><span class='glyphicon glyphicon-print'></span> Vista preliminar</button>
-<button id='btnenv' class='btn btn-primary'  onclick='generarenvio();'><span class='glyphicon glyphicon-resize-small'></span> Enviar seleccion</button>
-<label for='mtodo'>Seleccionar todo    </label><input type='checkbox' id='mtodo' name='mtodo' class='' value='true' >
+<button id='btnenv' class='btn btn-danger'  onclick='generarenvio();'><span class='glyphicon glyphicon-print'></span> Enviar seleccion</button>
             </div>
             <!-- /.box-header -->
              
