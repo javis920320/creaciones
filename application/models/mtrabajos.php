@@ -32,8 +32,6 @@ class Mtrabajos extends CI_Model
 
 		return true;
 	}
-
-
 	public  function buscarpedido($dato){
 		$datos = array('fac' =>$dato['fac'] );
 
