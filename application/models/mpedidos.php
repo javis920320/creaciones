@@ -22,7 +22,6 @@ public function arreglo($array){
 	 			  'estado'=>3
 
 	 					);
-						$res=0;
 
 
 	for ($i=0; $i <$d ; $i++) { 
@@ -30,10 +29,9 @@ public function arreglo($array){
 
 		$this->db->where('idpedido',$array[$i]);
 	$this->db->update('pedido',$datos);
-	$res=$res+$this->db->affected_rows();
 	}
 
-	return $res;
+	return $d;
 
 
 

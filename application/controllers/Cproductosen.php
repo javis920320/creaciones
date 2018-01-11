@@ -88,7 +88,7 @@ autor:´javier lopez
 
 
 //print_r($data);
-echo 'Registros Enviados ('.$res.')';
+echo $res;
 
 //echo var_dump($data);
 	 }
