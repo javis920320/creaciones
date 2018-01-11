@@ -79,48 +79,50 @@ $('.chk').click(function(){
 		alert($('input[name="chk"]:checked').val());
 		//alert();
 	});
+
+
+/*$('.chk').click(function()
+       {
+        var selectedItems= new Array();
+                var indice=0;
+      $('[name=chk]').each(function()
+        {
+            if( $(this).attr('checked') )
+            {                           
+                selectedItems[indice] = $(this).val();//El indice inicial cera 0
+                    indice++; //paso a incrementar el indice en 1
+            }
+        });
+        alert(selectedItems);
+    });*/
 	
 	    
-	
-	
-	 function generarenvio(){
-		/* var selected = '';    
-        $('.chk input[type=checkbox]').each(function(){
-            if (this.checked) {
-                selected += $(this).val()+', ';
+	/*   var selectedItems= new Array();
+                var indice=0;
+      $('[name=chk]').each(function()
+        {
+            if( $(this).attr('checked') )
+            {                           
+                selectedItems[indice] = $(this).val();//El indice inicial cera 0
+                    indice++; //paso a incrementar el indice en 1
             }
-        }); 
-
-        if (selected != '') 
-            alert('Has seleccionado: '+selected);  
-        else
-            alert('Debes seleccionar al menos una opción.');
-
-        return false;*/
+        });*/
+	
+	function generarenvio(){
 		
 		
+        //console.log(selectedItems);//
+		 var i=0;
+		  selecciones =  new Array();
 		$('.chk').each(function(){
     var chk = $(this);
     if(chk.prop('checked')){
      //alert(chk.val());
-	  selecciones =  new Array();
-	  selecciones+=chk.val();
-	  
-	 /* prueba= new Array();
-	  prueba=[1,2,3];*/
-	  
-	 // console.log(JSON.stringify(selecciones)); 
 	 
-	 
-	  //print_r selecciones;
+	  selecciones[i]=chk.val();
+
+	  i++;
 	  
-	  
-	  
-	  
-	 /* var con=0;
-	  for(con;con<selecciones.length;con++){
-		  console.log('seleccion numero'+con+'= '+selecciones);
-	  }*/
   }
   
   

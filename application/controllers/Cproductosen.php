@@ -75,15 +75,19 @@ autor:´javier lopez
 	  
 	   public  function arreglo(){
 		   
-		   $d=count($_POST['array']);
+
+		   $data = json_decode(stripslashes($_POST['array']));
+		  /* $d=count($_POST['array']);
 		 
-		/* for($i=0;$i<$_POST[])
-		 $data['id'] = json_decode($_POST['array']);
+		for($i=0;$i<$_POST[])
+		 $data['id'] = json_decode($_POST['array']);*/
+
+
+
+print_r($data);
+//echo $d;
+
 //echo var_dump($data);
-
-
-print_r($data);*/
-echo $d;
 	 }
 
 
