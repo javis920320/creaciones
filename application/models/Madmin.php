@@ -9,7 +9,67 @@ class Madmin extends CI_Model
 	}
 
 
+public  function asignarsatelite($param){
 
+
+	 $datos= array(
+	 	'idproceso' => null, 
+	 	'cantidad' => $param['cantidad'],
+	 	'estado' => 1,
+	 	'fecha' => $param['fecha'],
+	 	'id_prod' => $param['idprod'],
+	 	'idpedido' =>  $param['idpedido'],
+	 	'idtrabajador' =>$param['idtrabajador'],
+	 	'precio' => 0,
+	 	'precio1' => 0,
+	 	'prebordado'=>$param['preciob']
+
+
+	 	);
+
+	$this->db->insert('proceso',$datos);
+	 $res=$this->db->affected_rows();
+		return$res;
+
+
+
+
+ }
+
+public function presiobordados($param){
+
+
+ $query= $this->db->query("select  sum(b.precio) as preciob from bordadosproductos bp 
+inner join producto p on bp.id_prod = p.id_prod
+inner join bordados b on bp.idbordados = b.idbordados
+where bp.id_prod=".$param['idprod']."");
+
+ foreach ($query->result() as $row)
+		{
+        	return $row->preciob;
+        
+		}
+
+  }
+
+
+
+public  function listasatelites(){
+
+
+	
+
+	$query=$this->db->query("select *from trabajador t
+inner join persona p on t.idpersona = p.idpersona
+inner join usuarios  u on u.idpersona = t.idpersona
+where u.tipo=4 and u.estado=1");
+	return $query->result();
+
+
+
+
+
+}
 
 
  public  function consultafiltropro($param){
@@ -77,7 +137,7 @@ return $resul->result();
   	when 1 then 'CORTES'
    	when 2 then 'OPERARIO OBRA'
    	when 3 then 'ADMINISTRADOR'
-   	when 4 then 'OPERARIO'
+   	when 4 then 'SATELITE'
  	END  as tipo, 
  	case u.estado
  	when 0 then 'INACTIVO'

@@ -9,6 +9,11 @@
 	.responsive-input{
   width: 100%;
 }
+
+
+ #aumentar{
+      width: 80% !important;
+    }
 	</style>
 
 <div class="col-xs-17"> <strong align='center'>Creaciones Goretti</strong></div>
@@ -19,7 +24,7 @@
   
  <!-- Modal -->
  <div class="modal fade" id="asignar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-   <div class="modal-dialog" role="document">
+   <div class="modal-dialog" role="document" id="aumentar">
      <div class="modal-content">
        <div class="modal-header">
          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -63,7 +68,29 @@
 
          <label for='productos'>Productos</label>
               <select id="productos" name="productos" class="form-control" required="true"></select>
+
+
+              <div class='form-group'>
+            <span class="text text-danger hide" id='mensaje'> Productos disponibles: </span> <span id='numcantidad'></span><br>
+            <input type='text' id='disponibles' name='disponibles' class='hide'>
+              <label for='cantidad'>Cantidad:</label>
+              <input type='number' name='cantidad' id='cantidad' min='1'  class='form-control' required="true">
+            </div>
+
+
+            <label for='trabajador'>Asignar a:</label>
+            <select id="trabajador" name="trabajador" class=" pr form-control" onchange='listatrabajador();' required="true">
+
+            </select>
+
+<br><br>
+
+            <input type='button' value='Asisgnar' class='btn btn-alert' onclick='registroproceso();'>
        </div>
+
+
+
+
        <div class="modal-footer">
          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
          

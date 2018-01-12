@@ -29,20 +29,46 @@ class Csatelite extends CI_Controller
 
 
 
-public  function listprocesos(){
+public  function listasatelites(){
 
 
-	$param['fechaini']=$this->input->post('finicio');
-	$param['fechafin']=$this->input->post('ffin');
-	$param['idpersona']=$this->input->post('idpersona');
-	 $param['idtrabajador']=$this->Moperario->trabajadorid($param);
-	    $param['idtrabajador'];
+	
 
-
-	$res=$this->Madmin->consultafiltropro($param);
+	$res=$this->Madmin->listasatelites();
 
 	 echo json_encode($res);
 
+
+
+
+
+}
+
+
+public  function asignarsatelite(){
+
+
+		$param['cantidad']=$this->input->post('cantidad');
+	 	$param['idprod']=$this->input->post('productos');
+	 	$param['idpedido']=$this->input->post('idpedido');
+	 	$param['idtrabajador']=$this->input->post('trabajador');
+	 	//echo $param['idtrabajador'];
+	 	$param['fecha']=date ("Y-m-d");
+
+	 	$preciob=$this->Madmin->presiobordados($param);
+	 	$param['preciob']=$preciob*$param['cantidad'];
+
+		$res=$this->Madmin->asignarsatelite($param);
+
+
+		if ($res>=1) {
+
+			echo'Registro Asignado';
+			# code...
+		}else{
+			echo'No se a podido Asisgnar el producto';
+		}
+	 	
 
 
 

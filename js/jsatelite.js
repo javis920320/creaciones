@@ -1,3 +1,5 @@
+lstsatelites();
+
 function buscar(){
 
 	var fac=$('#fac').val();
@@ -93,7 +95,7 @@ $('#tblresumen .idpedido').on('change',function(){
 function filtrar(){
 
  	 var dato=$('#tpprod').val();
- 	  var fac=$('#nfac').val();
+ 	  var fac=$('#fac').val();
 
  	 $('#tblresumen').DataTable({
 			'paging':true,
@@ -148,5 +150,122 @@ return '<span class="pull-right">' +
 
  	
  }
-		
+
+
+
+  function validarc(){
+
+
+let idpedido = $('input[name="idpedido"]:checked').val();
+$.ajax({
+type: "POST",
+url:baseurl+"Ctrabajos/productosdisponibles",
+data: { idpedido :idpedido } 
+}).done(function(data){
+	$('#mensaje').removeClass('hide');
+	$('#numcantidad').text(data);
+	$('#disponibles').val(data);
+//$("#jmr_contacto_estado").html(data);
+});
+
+
+}
+function lstsatelites(){
+
+
+	$.ajax({
+		url:baseurl+'Csatelite/listasatelites',
+		type:'POST',
+		success:function(data){
+			var obj=JSON.parse(data);
+
+			// console.log(obj[0].nombres);
+
+
+			//html='<select id="tpprod" name="tpprod" class=" pr form-control">';
+			html='';
+			html+='<option value="">Seleccione una opcion</option>';
+
+
+			$.each(obj,function(i,items){
+				html+='<option value="'+items.idtrabajador+'"">' + items.nombres+ '</option>';
+			});
+
+
+
+			//html+='</select>';
+			$("#trabajador").html(html);
+
+		}
+
+	});
+}
+
+
+
+
+function registroproceso(){
+
+
+
+
+ 
+
+//$('#formtrabajos').submit(function(){
+
+
+	var diponibles=$('#disponibles').val();
+	var cantidad=$('#cantidad').val();
+	
+	//alert('CANTIDAD '+cantidad+' DISPONIBLE '+diponibles);
+	 if(cantidad>diponibles){
+	 	alert('Erro verifica la cantidad disponible');
+	 }else if(diponibles==0){
+
+	 	alert('No hay productos disponibles');
+
+	 }else{
+	//alert($(this).serialize());
+
+
+	/*
+VARIABLES
+	$param['cantidad']=$this->input->post('cantidad');
+	 	$param['idprod']=$this->input->post('productos');
+	 	$param['idpedido']=$this->input->post('idpedido');
+	 	$param['idpersona']=$this->input->post('trabajador');
+	 	//echo $param['idtrabajador'];
+	 	$preciob=$this->Moperario->presiobordados($param);
+	 	$param['preciob']=$preciob*$param['cantidad'];
+	 	$param['idtrabajador']=$this->Moperario->trabajadorid($param);
+	    $param['idtrabajador'];*/
+	    var productos=$('#productos').val();
+	    //var idpedido=$('#tblresumen .idpedido').data();
+
+	    var idpedido=$('input:radio[name=idpedido]:checked').val();
+	    var trabajador=$('#trabajador').val();
+
+
+	
+	$.ajax({
+		url:baseurl+'Csatelite/asignarsatelite',
+		type:'POST',
+		data:{cantidad:cantidad,productos:productos,idpedido:idpedido,trabajador:trabajador},
+		success:function(data){
+		//alert(data);
+		if(data){
+			//$('#tbltrabajos').data.reload();
+			validarc();
+			alert(data);
+
+		}
+
+	}
+
+	});
+	}
+
+//});
+}
+
 

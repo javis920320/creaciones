@@ -72,7 +72,7 @@
                           <option value='1'>CORTES</option>
                             <option value='2'>OPERARIO OBRA</option>
                               <option value='3'>ADMINISTRADOR</option>
-                                <option value='4'>OPERARIO</option>
+                                <option value='4'>SATELITE</option>
 
                       </select>
                       <br><br>
