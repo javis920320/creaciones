@@ -35,10 +35,17 @@ $this->excel->getActiveSheet()->setCellValue('D1', 'Cantidad');
 $this->excel->getActiveSheet()->setCellValue('E1', 'Precio');*/
 
   //$fields = $query->list_fields();
+
+
+//$border_style= array('borders' => array('right' => array('style' => 
+//PHPExcel_Style_Border::BORDER_THICK,'color' => array('argb' => '766f6e'),)));
     $col = 0;
     foreach ($title as $field)
     {
+       // $this->excel->getActiveSheet()->getStyle($col)->applyFromArray($border_style);
+        $this->excel->getActiveSheet()->getStyle($col)->getFont()->setSize(15);
        $this->excel->getActiveSheet()->setCellValueByColumnAndRow($col, 1, $field);
+
         $col++;
     }
 

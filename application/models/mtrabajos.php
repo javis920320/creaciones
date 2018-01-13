@@ -338,7 +338,7 @@ public  function tblexcel($param){
 
 
 
-		$this->db->select('pr.idproceso as PROCESO,pd.factura AS FACTURA,p.nomprod AS PRODUCTO,pd.descripcion AS DESCRIPCION,pr.cantidad AS CANTIDAD,pr.precio1 AS PRECIO,(sum(bp.cantidad)*pr.cantidad) as nbordados,prebordado AS PREBORDADO,pr.fecha AS FECHA,pe.nombres AS OPERARIO');
+		$this->db->select('pr.idproceso as PROCESO,pd.factura AS FACTURA,p.nomprod AS PRODUCTO,pd.descripcion AS DESCRIPCION,pr.cantidad AS CANTIDAD,pr.precio1 AS PRECIO,(sum(bp.cantidad)*pr.cantidad) as BORDADOS,prebordado AS PREBORDADO,pr.fecha AS FECHA,pe.nombres AS OPERARIO');
 		$this->db->from('periodo x ,proceso pr');
 		$this->db->join('producto p','p.id_prod=pr.id_prod');
 		$this->db->join ('bordadosproductos bp','p.id_prod = bp.id_prod');
@@ -365,7 +365,7 @@ public  function tblexcel($param){
 
 
 
-		$this->db->select('pr.idproceso as PROCESO,pd.factura AS FACTURA,p.nomprod AS PRODUCTO,pd.descripcion AS DESCRIPCION,pr.cantidad AS CANTIDAD,pr.precio1 AS PRECIO,(sum(bp.cantidad)*pr.cantidad) as nbordados,prebordado AS PREBORDADO,pr.fecha AS FECHA,pe.nombres AS OPERARIO');
+		$this->db->select('pr.idproceso as PROCESO,pd.factura AS FACTURA,p.nomprod AS PRODUCTO,pd.descripcion AS DESCRIPCION,pr.cantidad AS CANTIDAD,pr.precio1 AS PRECIO,(sum(bp.cantidad)*pr.cantidad) as BORDADOS,prebordado AS PREBORDADO,pr.fecha AS FECHA,pe.nombres AS OPERARIO');
 		$this->db->from('periodo x,proceso pr');
 		$this->db->join('producto p','p.id_prod=pr.id_prod');
 		$this->db->join ('bordadosproductos bp','p.id_prod = bp.id_prod');
