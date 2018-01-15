@@ -81,11 +81,15 @@
 
 <button id='lista' class='btn btn-danger'><span class='glyphicon glyphicon-print'></span> Vista preliminar</button>
 <button id='btnenv' class='btn btn-primary'  onclick='generarenvio();'><span class='glyphicon glyphicon-resize-small'></span> Enviar seleccion</button>
+<button id='' class='btn btn-primary'  onclick='pdf();'><span class='glyphicon glyphicon-resize-small'></span> imprimir</button>
 <label for='mtodo'>Seleccionar todo    </label><input type='checkbox' id='mtodo' name='mtodo' class='' value='true' >
             </div>
             <!-- /.box-header -->
              
             <div class="box-body table-responsive no-padding">
+              <form action='<?php echo base_url()?>coptura' method='POST'>
+
+
               <table  id='tblproductosen' class="table table-hover table-responsive">
                 <thead class="bg-success">
                 <tr>
@@ -103,6 +107,8 @@
                 <tbody></tbody>
                 
               </table>
+              <input type='submit' value='Crear lista' >
+              </form>
             </div>
             <!-- /.box-body -->
           </div>
