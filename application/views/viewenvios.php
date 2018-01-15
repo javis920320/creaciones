@@ -19,7 +19,29 @@
 <div class="col-xs-17"> <strong align='center'>PEDIDOS CREACIONES GORETTI</strong></div>
 
 
+  <div class="modal fade" id="eliminar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">CREACIONES</h4>
+        </div>
+        <div class="modal-body">
+          <form>
 
+            <label for='idpedidod'>Deseas eliminar este registro</label>
+            <input type='hidden' id='idpedidod'>
+            <input type='button' class='btn btn-primary' data-dismiss="modal" value='Eliminar' onclick='eliminarp();'> <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+
+          </form>
+        </div>
+        <div class="modal-footer">
+         
+          
+        </div>
+      </div>
+    </div>
+  </div>
   
   <!-- cambio estado en confeccion -->
   <div class="modal fade" id="enviar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

@@ -93,6 +93,26 @@ echo 'Registros Enviados ('.$res.')';
 //echo var_dump($data);
 	 }
 
+	   public  function arreglo2(){
+		   
+
+		   $data = json_decode(stripslashes($_POST['array']));
+
+		  	$res=$this->Mpedidos->arreglo2($data);
+
+		  /* $d=count($_POST['array']);
+		 
+		for($i=0;$i<$_POST[])
+		 $data['id'] = json_decode($_POST['array']);*/
+
+
+
+//print_r($data);
+echo 'Registros Enviados ('.$res.')';
+
+//echo var_dump($data);
+	 }
+
 
 
 

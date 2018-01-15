@@ -19,6 +19,8 @@
 <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">
   <span class='glyphicon glyphicon-plus'></span>Crear pedido
 </button>
+
+
       
     </div>
  <!-- Modal -->
@@ -227,12 +229,13 @@
               <h3 class="box-title" class='text-primary'>RESUMEN PEDIDOS</h3><br><br>
               
 <a href="<?php echo base_url()?>Cpedidomultiple" class='btn btn-primary'> Agregar Pedido</a>
+<button id='btnenv' class='btn btn-info'  onclick='generarenvio();'><span class='glyphicon glyphicon-resize-small'></span> Enviar seleccion</button>
+<label for='mtodo'>Seleccionar todo    </label><input type='checkbox' id='mtodo' name='mtodo' class='' value='true' >
             </div>
             <!-- /.box-header -->
              
             <div class="box-body table-responsive no-padding">
-            <label for="chk">Enviar lista</label>
-            <input type='checkbox' name='chk' id='chk' value=1>
+            
             
             <form action="" id='camestado'>
               <table  id='tblpedidos' class="table table-hover table-responsive">
@@ -253,7 +256,7 @@
                 <tbody></tbody>
                 
               </table>
-              <input type="submit" value='enviarlista'>
+             
               </form>
             </div>
             <!-- /.box-body -->

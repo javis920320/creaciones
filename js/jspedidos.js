@@ -125,6 +125,7 @@ function cargarproductos(){
 			'info':true,
 			'filter':true,
 			'stateSave':true,
+			'destroy':true,
 
 			'ajax':{
 
@@ -151,6 +152,7 @@ function cargarproductos(){
 
 
 return '<span class="pull-right">' +
+
                       '<div class="dropdown">' +
                       '  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">' +
                       '    Acciones' +
@@ -164,7 +166,7 @@ return '<span class="pull-right">' +
                       '    </ul>' +
                       '</div>' +
                       '</span>'+
-                      '<input type="checkbox" data='+row.idpedido+' class="x">'	
+                      '<input type="checkbox" class="chk" name="chk"  value='+row.idpedido+'>'	
                       ;
 
 
@@ -202,6 +204,7 @@ eliminar = function(idpedido){
  			alert(data);
  			$('#tblpedidos').DataTable().ajax.reload();
  			$('#tblresumen').DataTable().ajax.reload();
+
  			
 
 
@@ -460,6 +463,7 @@ $('#tblresumen').DataTable({
 
 
 return '<span class="pull-right">' +
+					  '<input type="checkbox" class="chk" name="chk"  value='+row.idpedido+'>'+	
                       '<div class="dropdown">' +
                       '  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">' +
                       '    Acciones' +
@@ -541,3 +545,48 @@ $('#camestado').submit(function(){
 
 	alert($('.x').attr('data'));
 });
+
+
+function generarenvio(){
+		
+		
+        //console.log(selectedItems);//
+		 var i=0;
+		  selecciones =  new Array();
+		$('.chk').each(function(){
+    var chk = $(this);
+    if(chk.prop('checked')){
+     //alert(chk.val());
+	 
+	  selecciones[i]=chk.val();
+
+	  i++;
+	  
+  }
+  
+  
+  
+});
+
+console.log(selecciones);
+$.ajax({
+          type: "POST",
+          url: baseurl+'Cproductosen/arreglo2',
+          data: {'array':JSON.stringify(selecciones)},//capturo array     
+          success: function(objView){
+			  alert(objView);
+			  $('#tblresumen').DataTable().ajax.reload();
+
+        }
+});
+  
+	 }
+
+
+	  $('input[name="mtodo"]').on('change',function(){
+		if ($('#mtodo').prop('checked') ) {
+    $('.chk').prop('checked',true);
+		}else{
+			 $('.chk').prop('checked',false);
+		}
+	 });

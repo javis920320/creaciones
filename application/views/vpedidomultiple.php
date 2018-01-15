@@ -266,7 +266,7 @@
 			</div>
 			</div>
 
-			<div class="col-sm-8">
+			<!--<div class="col-sm-8">
 				<div class="form-group ">
 					<div class="col-sm-4">
 					<button  id=''  class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Agregar</button>
@@ -284,7 +284,27 @@
 
 				</div>
 
-			</div>	
+			</div>	-->
+			<div class="form-control">
+				<label class="col-md-3 control-label" for="button1id">Accion</label>
+				  <div class="col-md-8">
+				  	<button  id=''  class="btn btn-primary " data-toggle="modal" data-target="#myModal">Agregar</button>
+				  	<a class='btn btn-default ' href='<?php echo base_url()?>Cpedidomultiple'>Limpiar</a>
+				  	<a class='btn btn-danger ' href='<?php echo base_url()?>Cpedidos'>Volver a lista pedidos</a>
+				  	<button id='btnenv' class='btn btn-primary'  onclick='generarenvio();'><span class='glyphicon glyphicon-resize-small'></span> Enviar seleccion</button>
+<label for='mtodo'>Seleccionar todo    </label><input type='checkbox' id='mtodo' name='mtodo' class='' value='true' >
+
+
+				  </div>
+
+
+			</div>
+
+		<br><br><br>
+
+
+
+
 
 
 			<div class="modal fade" id="estado" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -345,7 +365,7 @@
 
 
 	
-          
+          <br><br><br>
      
               <table  id='tblresumen' class="table table-hover table-responsive">
                 <thead class="bg-primary">

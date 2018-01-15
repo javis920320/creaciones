@@ -39,6 +39,35 @@ public function arreglo($array){
 
 }
 
+public function arreglo2($array){
+
+
+	$d=count($array);
+
+
+	$datos= array(
+	 			
+	 			  'estado'=>2
+
+	 					);
+						$res=0;
+
+
+	for ($i=0; $i <$d ; $i++) { 
+
+
+		$this->db->where('idpedido',$array[$i]);
+	$this->db->update('pedido',$datos);
+	$res=$res+$this->db->affected_rows();
+	}
+
+	return $res;
+
+
+
+}
+
+
 public function insertpedido($param){
 
 
