@@ -99,7 +99,10 @@ $('#tblresumen .idpedido').on('change',function(){
 
 
 	var diponibles=$('#disponibles').val();
+
+	
 	var cantidad=$('#cantidad').val();
+	
 	
 	//alert('CANTIDAD '+cantidad+' DISPONIBLE '+diponibles);
 	 if(cantidad>diponibles){
@@ -129,6 +132,8 @@ VARIABLES
 	    var idpedido=$('input:radio[name=idpedido]:checked').val();
 	    var trabajador=$('#trabajador').val();
 
+	    //alert(idpedido);
+
 
 	
 	$.ajax({
@@ -147,6 +152,7 @@ VARIABLES
 	}
 
 	});
+
 	}
 
 //});
@@ -220,55 +226,6 @@ return '<span class="pull-right">' +
 
 
 
-/*// Obtener estados
-$.ajax({
-type: "POST",
-url: "procesar-estados.php",
-data: { estados : "Mexico" } 
-}).done(function(data){
-$("#jmr_contacto_estado").html(data);
-});
-
-
-
-// Obtener municipios
-$("#jmr_contacto_estado").change(function(){
-var estado = $("#jmr_contacto_estado option:selected").val();
-$.ajax({
-type: "POST",
-url: "procesar-estados.php",
-data: { municipios : estado } 
-}).done(function(data){
-$("#jmr_contacto_municipio").html(data);
-});
-});
- Obtener estados
-$.ajax({
-type: "POST",
-url: "procesar-estados.php",
-data: { estados : "Mexico" } 
-}).done(function(data){
-$("#jmr_contacto_estado").html(data);
-});
-// Obtener municipios
-$("#jmr_contacto_estado").change(function(){
-var estado = $("#jmr_contacto_estado option:selected").val();
-$.ajax({
-type: "POST",
-url: "procesar-estados.php",
-data: { municipios : estado } 
-}).done(function(data){
-$("#jmr_contacto_municipio").html(data);
-});
-});
-
-/*$(document).ready(function(){
-$(“#select4”).change(function(event){
-var id = $(“#select4”).find(‘:selected’).val();
-$(“#select5”).load(‘genera-tarjeta.php?id=’+id);*/
-
-//});
-//});*/
 
 
 
