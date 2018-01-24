@@ -3,7 +3,7 @@
 user=$('#trabajador').val();
 
  //console.log(user);
-//alert(user);
+alert(user);
 
 cargarvalor(user);
  function cargarvalor(user){

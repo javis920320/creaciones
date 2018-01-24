@@ -205,9 +205,19 @@ $this->db->where('p.estado',3);
 
 	public function listaprocesos($user){
 
+$query=$this->db->query("select pr.idproceso,pd.factura,p.nomprod,pd.descripcion,pr.cantidad,pr.precio,pr.precio1,pr.fecha 
+     from periodo x ,proceso pr
+      inner join producto p  on p.id_prod=pr.id_prod
+       inner join pedido pd on pd.idpedido = pr.idpedido
+       inner join trabajador t on t.idtrabajador=pr.idtrabajador
+       inner join persona pe on pe.idpersona = t.idpersona
+       where pe.idpersona=".$user['user']." and  pr.fecha between  x.fechai and x.fechaf
+ 				");
+
+		return $query->result();
 
 
-		$this->db->select('pr.idproceso,pd.factura,p.nomprod,pd.descripcion,pr.cantidad,pr.precio,pr.precio1,pr.fecha');
+		/*$this->db->select('pr.idproceso,pd.factura,p.nomprod,pd.descripcion,pr.cantidad,pr.precio,pr.precio1,pr.fecha');
 		$this->db->from('periodo x,proceso pr');
 		$this->db->join('producto p','p.id_prod=pr.id_prod');
 		$this->db->join('pedido pd','pd.idpedido=pr.idpedido');
@@ -235,7 +245,7 @@ $this->db->where('p.estado',3);
 
 
 			return 0;
-		}
+		}*/
 
 
 

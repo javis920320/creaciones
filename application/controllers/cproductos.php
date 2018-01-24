@@ -95,6 +95,7 @@ class Cproductos extends CI_Controller
 	 	$arreglo['idtipoprod']=$this->input->post('seltp');
 	 	$arreglo['precio']=$this->input->post('precio');
 	 	$arreglo['subprecio']=$this->input->post('subprecio');
+	 	$arreglo['preciosatel']=$this->input->post('preciosatel');
 	 	$arreglo['fecha']=$hoy = date("Y/m/d");
 
 	 	//$arreglo['nomprod']='prueba';
@@ -173,6 +174,9 @@ class Cproductos extends CI_Controller
 	 		$param['valor']=$this->input->post('precioj');
 	 		$param['subvalor']=$this->input->post('precioob');
 	 		$param ['fecha']=$hoy = date("Y/m/d");
+	 		$param['epreciosatel']=$this->input->post('epreciosatel');
+
+	 		
 
 
 
