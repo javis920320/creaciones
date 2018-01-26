@@ -404,6 +404,7 @@ $('#agregarprod').on('click',function(){
 	var descripcion =$('#descripcion').val();
 	var talla =$('#talla').val();
 	var fentrega=$('#fentrega').val();
+	//alert(fentrega);
 	 if(factura==''){
 	 	$('#alerta2').removeClass('hide');
 

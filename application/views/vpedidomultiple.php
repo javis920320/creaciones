@@ -388,6 +388,7 @@
                    <th>Descripcion</th>
                    <th>Cliente</th>
                   <th>Fecha ingreso</th>
+                  <th>Fecha entrega</th>
                   <th>Accion</th>
 
                 </tr>
