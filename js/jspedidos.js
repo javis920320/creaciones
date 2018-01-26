@@ -145,6 +145,8 @@ function cargarproductos(){
 			{data:'descripcion'},
 			{data:'nombres'},
 			{data:'fecha_ingreso'},
+			{data:'fentrega'},
+
 
 			{"orderable":true,
 			render:function(data,type,row){
@@ -401,6 +403,7 @@ $('#agregarprod').on('click',function(){
 	var cantidad =$('#cantidad').val();
 	var descripcion =$('#descripcion').val();
 	var talla =$('#talla').val();
+	var fentrega=$('#fentrega').val();
 	 if(factura==''){
 	 	$('#alerta2').removeClass('hide');
 
@@ -417,7 +420,7 @@ $('#agregarprod').on('click',function(){
 
 	$.post(baseurl+'cpedidos/insertpedido',
 		//{idcliente:cedula,factura:factura,facultad:facultad,cantidad:cantidad,descripcion:descripcion,talla:talla,seltp:tipoprod},
-		{idpersona:cedula,factura:factura,facultad:facultad,cantidad:cantidad,talla:talla,descripcion:descripcion,seltp:tipoprod},
+		{idpersona:cedula,factura:factura,facultad:facultad,cantidad:cantidad,talla:talla,descripcion:descripcion,seltp:tipoprod,fentrega:fentrega},
 		function(data){
 
 			
@@ -456,6 +459,7 @@ $('#tblresumen').DataTable({
 			{data:'descripcion'},
 			{data:'nombres'},
 			{data:'fecha_ingreso'},
+			{data:'fentrega'},
 
 			{"orderable":true,
 			render:function(data,type,row){

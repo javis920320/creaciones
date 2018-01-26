@@ -42,6 +42,7 @@ class Cpedidos extends CI_Controller
 	 		$param ['fecha_ingreso']=$hoy = date("Y/m/d");
 	 		$param ['idcliente']=$this->input->post('idpersona');
 	 		$param ['idtipoprod']=$this->input->post('seltp');
+	 		$param ['fentrega']=$this->input->post('fentrega');
 
 	
 
