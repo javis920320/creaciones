@@ -35,12 +35,6 @@
          <input type="text" id='precioob' name="precioob" class="form-control">
 
          <br><br>
-         <div class="form-group">
-            <label for="epreciosatel">Precio Satelite:</label>
-           <input type="number" id='epreciosatel' name='epreciosatel' class='form-control'>
-         </div>
-    
-         
 
          <input type="submit" value="Ajustar" class="btn btn-danger">
 
@@ -177,6 +171,8 @@
 	         <form class='form' id='formprod'>
 
 	         	 <div class='form-group'>
+              <!--<label id='id_prod'>Codigo</label>
+              <input type='number' id='id_prod' name='id_prod' class='form-control'>-->
 	         	 	<label for='nomprod'>Nombre</label>
 	         	 	<input type=' text' placeholder='Nombre del Producto' name='nomprod' id='nomprod' class="form-control" required>
 	         	 	<label for='precio'>Precio</label>
@@ -185,10 +181,6 @@
 	         	 	<label for='subprecio'>Precio para Operario</label>
 
 	         	 	<input type='number' name='subprecio' id='subprecio' required class='form-control'>
-              <div class="form-group">
-            <label for="preciosatel">Precio Satelite:</label>
-           <input type="number" id='preciosatel' name='preciosatel' class='form-control'>
-         </div>
 
 
 	         	 </div>
@@ -199,7 +191,7 @@
 	      </div>
 	      <div class="modal-footer">
 	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	        
+	        <button type="button" class="btn btn-primary">Save changes</button>
 	      </div>
 	    </div>
 	  </div>
@@ -223,10 +215,9 @@
                   <th>Nombre Producto</th>
                    <th>Valor</th>
                    <th>Subvalor</th>
-            		   <th>N bordados</th>
-            		   <th>valor bordados</th>	
-                   <th>Valor Satelite</th>  	
-                              <th>Accion</th>
+		   <th>N bordados</th>
+		   <th>valor bordados</th>		
+                  <th>Accion</th>
                 </tr>
                 </thead>
                 <tbody></tbody>

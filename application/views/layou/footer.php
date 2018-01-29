@@ -63,10 +63,6 @@
 
     <script src="<?php echo  base_url();?>js/usuarios.js"></script>
 <?php  }?>
-<?php  if($this->uri->segment(1)=='Csatelite') { ?>
-
-    <script src="<?php echo  base_url();?>js/jsatelite.js"></script>
-<?php  }?>
 <?php  if($this->uri->segment(1)=='Cbordados') { ?>
 
     <script src="<?php echo  base_url();?>js/jsbordados.js"></script>
@@ -122,6 +118,11 @@
 <?php  if( $this->uri->segment(1)=='Cproductosen' ){ ?>
 <script src="<?php echo  base_url();?>js/jsestados.js"></script>
 
+<?php  }?>
+
+<?php  if($this->uri->segment(1)=='Csatelite') { ?>
+
+    <script src="<?php echo  base_url();?>js/jsatelite.js"></script>
 <?php  }?>
 
 </body>

@@ -145,8 +145,6 @@ function cargarproductos(){
 			{data:'descripcion'},
 			{data:'nombres'},
 			{data:'fecha_ingreso'},
-			{data:'fentrega'},
-
 
 			{"orderable":true,
 			render:function(data,type,row){
@@ -154,7 +152,6 @@ function cargarproductos(){
 
 
 return '<span class="pull-right">' +
-
                       '<div class="dropdown">' +
                       '  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">' +
                       '    Acciones' +
@@ -168,7 +165,8 @@ return '<span class="pull-right">' +
                       '    </ul>' +
                       '</div>' +
                       '</span>'+
-                      '<input type="checkbox" class="chk" name="chk"  value='+row.idpedido+'>'	
+                      '<input type="checkbox" class="chk" name="chk"  value='+row.idpedido+'>'
+                     	
                       ;
 
 
@@ -206,7 +204,6 @@ eliminar = function(idpedido){
  			alert(data);
  			$('#tblpedidos').DataTable().ajax.reload();
  			$('#tblresumen').DataTable().ajax.reload();
-
  			
 
 
@@ -295,7 +292,8 @@ $('#form-edit').submit(function(){
 
 
 //con esta funcion pasamos los paremtros a los text del modal.
-estadopedido = function(idpedido, nombres, telefono){
+//estadopedido = function(idpedido, nombres, telefono){
+    estadopedido = function(idpedido, nombres, telefono){
 	$('#idpedido').val(idpedido);
 	$('#enviar').val(2);
 	
@@ -326,9 +324,11 @@ estadopedido = function(idpedido, nombres, telefono){
 });*/
 
 
+
 function cambioestado(){
 	var idpedido=$('#idpedido').val();
 	var enviar=$('#enviar').val();
+	//alert(enviar);
 
 	$.ajax({
 	url:baseurl+'Cpedidos/enviarpedido',
@@ -403,8 +403,6 @@ $('#agregarprod').on('click',function(){
 	var cantidad =$('#cantidad').val();
 	var descripcion =$('#descripcion').val();
 	var talla =$('#talla').val();
-	var fentrega=$('#fentrega').val();
-	//alert(fentrega);
 	 if(factura==''){
 	 	$('#alerta2').removeClass('hide');
 
@@ -421,7 +419,7 @@ $('#agregarprod').on('click',function(){
 
 	$.post(baseurl+'cpedidos/insertpedido',
 		//{idcliente:cedula,factura:factura,facultad:facultad,cantidad:cantidad,descripcion:descripcion,talla:talla,seltp:tipoprod},
-		{idpersona:cedula,factura:factura,facultad:facultad,cantidad:cantidad,talla:talla,descripcion:descripcion,seltp:tipoprod,fentrega:fentrega},
+		{idpersona:cedula,factura:factura,facultad:facultad,cantidad:cantidad,talla:talla,descripcion:descripcion,seltp:tipoprod},
 		function(data){
 
 			
@@ -460,7 +458,6 @@ $('#tblresumen').DataTable({
 			{data:'descripcion'},
 			{data:'nombres'},
 			{data:'fecha_ingreso'},
-			{data:'fentrega'},
 
 			{"orderable":true,
 			render:function(data,type,row){
@@ -468,7 +465,6 @@ $('#tblresumen').DataTable({
 
 
 return '<span class="pull-right">' +
-					  '<input type="checkbox" class="chk" name="chk"  value='+row.idpedido+'>'+	
                       '<div class="dropdown">' +
                       '  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">' +
                       '    Acciones' +
@@ -481,6 +477,7 @@ return '<span class="pull-right">' +
                       //'    <li><a href="#" title="Desaprobar afiliado" onClick="updEstadoAfiliado('+row.idPersona+','+2+')"><i style="color:red;" class="glyphicon glyphicon-remove"></i> Desaprobar</a></li>' +
                       '    </ul>' +
                       '</div>' +
+                       '<input type="checkbox" class="chk" name="chk"  value='+row.idpedido+'>'+	
                       '</span>';
 
 
@@ -550,6 +547,8 @@ $('#camestado').submit(function(){
 
 	alert($('.x').attr('data'));
 });
+
+
 
 
 function generarenvio(){

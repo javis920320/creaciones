@@ -15,8 +15,10 @@ class Mproductos extends CI_Model
 	
 	public function asignarb($arreglo){
 		
-		$datos=array('idbordados'=>1,'id_prod'=>$arreglo['idprod'],'cantidad'=>null);
+		$datos=array('idbordados'=>1,'id_prod'=>$arreglo['id_prod'],'cantidad'=>null);
 		$this->db->insert('bordadosproductos',$datos);
+		
+		return $arreglo['id_prod'];
 	}
 	 public  function removerbordado($param){
  //"DELETE FROM `bordados-productos` WHERE `bordados-productos`.`idbordados` = 4 AND `bordados-productos`.`id_prod` = 1"
@@ -34,8 +36,8 @@ $query=$this->db->query("DELETE FROM bordadosproductos WHERE idbordados =".$para
 
 	 }
 	
-	public function asignarbordado($param){
-		$datos = array('idbordados' =>$param['idbordados'],'id_prod' =>$param['id_prod'],'cantidad'=>$param['cantidad']);
+	public function asignarbordado($arreglo){
+		$datos = array('idbordados' =>$arreglo['idbordados'],'id_prod' =>$arreglo['id_prod'],'cantidad'=>$arreglo['cantidad']);
 
 	//$this->db->where('id_prod',$param['id_prod']);
 	$this->db->insert('bordadosproductos',$datos);
@@ -66,12 +68,13 @@ $query=$this->db->query("DELETE FROM bordadosproductos WHERE idbordados =".$para
 			);
 
 
-		if($this->db->insert('producto',$datos)){
-		$insert_id = $this->db->insert_id();
+		$this->db->insert('producto',$datos);
+		return $insert_id = $this->db->insert_id();
+		 
+	
+		 
 
-   return  $insert_id;}else{
-   	return false;
-   }
+  
 
 
 
@@ -98,7 +101,7 @@ $query=$this->db->query("DELETE FROM bordadosproductos WHERE idbordados =".$para
 
 public  function getproductos($param){
 
-		$query=$this->db->query(" select p.id_prod,tp.nomtipoprod,p.nomprod,pr.valor,pr.subvalor,pr.valorsatelite,sum(bp.cantidad)'nbordados',sum(b.precio*bp.cantidad)'vbordado'
+		$query=$this->db->query("select p.id_prod,tp.nomtipoprod,p.nomprod,pr.valor,pr.subvalor,sum(bp.cantidad)'nbordados',sum(b.precio*bp.cantidad)'vbordado'
  from producto p
  inner join tipo_producto tp on p.idtipoprod = tp.idtipoprod
  inner join precio pr on p.id_prod = pr.id_prod
@@ -148,11 +151,10 @@ public  function valorprenda($arreglo){
 		$datos = array(
 			'idprecio'=> null,
 			'estado' => 1,
-			'fecha' =>  $arreglo['fecha'],
-			'valor' =>  $arreglo['precio'],
-			'subvalor' =>  $arreglo['subprecio'],
-			'valorsatelite'=>$arreglo['preciosatel'],
-			'id_prod'=> $arreglo['idprod']
+			'fecha' =>$arreglo['fecha'],
+			'valor' =>$arreglo['precio'],
+			'subvalor' =>$arreglo['subprecio'],
+			'id_prod'=>$arreglo['id_prod']
 			);
 
 
@@ -190,7 +192,7 @@ public function descativarprecio($param){
 
 public function asignarprecio($param){
 
- $datos = array('idprecio' =>null,'estado' =>1,'fecha'=>$param['fecha'],'valor'=>$param['valor'],'subvalor'=>$param['subvalor'],'valorsatelite'=>$param['epreciosatel'],'id_prod'=>$param['id_prod']);
+ $datos = array('idprecio' =>null,'estado' =>1,'fecha'=>$param['fecha'],'valor'=>$param['valor'],'subvalor'=>$param['subvalor'],'id_prod'=>$param['id_prod']);
 
 	//$this->db->where('id_prod',$param['id_prod']);
 	$this->db->insert('precio',$datos);

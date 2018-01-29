@@ -1,4 +1,4 @@
-﻿<?php 
+<?php 
 
 
 class Cproductosen extends CI_COntroller
@@ -26,9 +26,6 @@ autor:´javier lopez
 
 	 	$this->load->view('layou/footer',$nombres);
 	}
-	
-	
-	
 
 
 	 public function lista(){
@@ -73,7 +70,7 @@ autor:´javier lopez
 	  }
 	  
 	  
-	   public  function arreglo(){
+	  public  function arreglo(){
 		   
 
 		   $data = json_decode(stripslashes($_POST['array']));
@@ -92,8 +89,9 @@ echo 'Registros Enviados ('.$res.')';
 
 //echo var_dump($data);
 	 }
-
-	   public  function arreglo2(){
+	 
+	 
+	    public  function arreglo2(){
 		   
 
 		   $data = json_decode(stripslashes($_POST['array']));

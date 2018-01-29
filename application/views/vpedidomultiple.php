@@ -169,7 +169,7 @@
 			</div>
 
 
-			<div class="col-sm-4 " >
+			<div class="col-sm-6 " >
 				<div class="form-group ">
 					<label for="factura">Factura:</label>
 					  <div class="text-danger hide" id='alerta2'><strong>Este dato es requerido.</strong></div>
@@ -183,7 +183,7 @@
 			</div>	
 
 
-			<div class="col-sm-4">
+			<div class="col-sm-6">
 				<div class="form-group ">
 					<label for="facultad" class=''>Facultad:</label>
 
@@ -193,16 +193,6 @@
 				</div>
 
 			</div>	
-			<div class="col-sm-4">
-				<div class="form-group ">
-					<label for="fentrega" class=''>Fecha Entrega:</label>
-
-				 <input type="date" placeholder="Ingresar facultad" id="fentrega" class="form-control ">
-				  <div class="text-danger hide" id='alerta4'><strong>Este dato es requerido.</strong></div>
-
-				</div>
-
-			</div>
 
 
 			
@@ -276,26 +266,7 @@
 			</div>
 			</div>
 
-			<!--<div class="col-sm-8">
-				<div class="form-group ">
-					<div class="col-sm-4">
-					<button  id=''  class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Agregar</button>
-					</div>
-					<div class="col-sm-4">	
-					<a class='btn btn-default btn-lg' href='<?php echo base_url()?>Cpedidomultiple'>Limpiar</a>
-					</div>
-					<div>
-					<a class='btn btn-danger btn-lg' href='<?php echo base_url()?>Cpedidos'>Volver a lista pedidos</a>
-					</div>
-					
-
-				
-
-
-				</div>
-
-			</div>	-->
-			<div class="form-control">
+		<div class="form-control">
 				<label class="col-md-3 control-label" for="button1id">Accion</label>
 				  <div class="col-md-8">
 				  	<button  id=''  class="btn btn-primary " data-toggle="modal" data-target="#myModal">Agregar</button>
@@ -310,11 +281,7 @@
 
 			</div>
 
-		<br><br><br>
-
-
-
-
+		<br><br><br>	
 
 
 			<div class="modal fade" id="estado" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -375,7 +342,7 @@
 
 
 	
-          <br><br><br>
+          
      
               <table  id='tblresumen' class="table table-hover table-responsive">
                 <thead class="bg-primary">
@@ -388,7 +355,6 @@
                    <th>Descripcion</th>
                    <th>Cliente</th>
                   <th>Fecha ingreso</th>
-                  <th>Fecha entrega</th>
                   <th>Accion</th>
 
                 </tr>

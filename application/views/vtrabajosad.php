@@ -19,7 +19,7 @@
     </div>
     <div class="col-sm-8" align='center'>
       <div class="col-sm-6"><span><h3>VALORE ACUMULADO:  </h3> </span></div>
-      <div class="col-sm-6"> <strong><h3>$<span id='valor'></span></h3></strong></div>
+      <div class="col-sm-6"> <strong><h3>$<span class='hide' id='valor'></span></h3></strong></div>
      
     </div>
       
@@ -102,7 +102,7 @@
 
             <div class='form-group'>
             <span class="text text-danger hide" id='mensaje'> Productos disponibles: </span> <span id='numcantidad'></span><br>
-            <input type='text' id='disponibles' name='disponibles' class=''>
+            <input type='text' id='disponibles' name='disponibles' class='hide'>
             	<label for='cantidad'>Cantidad:</label>
             	<input type='number' name='cantidad' id='cantidad' min='1'  class='form-control' required="true">
             </div>
@@ -110,7 +110,7 @@
 
 
 
-            <input type='button' value='Guardar'title='Presiona para Guardar' class='btn btn-primary' onclick="registroproceso();">	
+           <input type='button' value='Guardar'title='Presiona para Guardar' class='btn btn-primary' onclick="registroproceso();">		
 
             </form>
           </div>

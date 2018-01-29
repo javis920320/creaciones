@@ -60,6 +60,6 @@ return'<span>Producto cortado</span>';
 
 			],
 
- "order":[[0,"asc"]],
+ "order":[[0,"desc"]],
 
 		});	

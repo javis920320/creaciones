@@ -202,6 +202,11 @@ $this->db->where('p.estado',3);
 
 
 	}
+	
+	public function procesos(){
+	    
+	}
+	
 
 	public function listaprocesos($user){
 
@@ -216,18 +221,17 @@ $query=$this->db->query("select pr.idproceso,pd.factura,p.nomprod,pd.descripcion
 
 		return $query->result();
 
-
-		/*$this->db->select('pr.idproceso,pd.factura,p.nomprod,pd.descripcion,pr.cantidad,pr.precio,pr.precio1,pr.fecha');
+		
+		/*	$this->db->select('pr.idproceso,pd.factura,p.nomprod,pd.descripcion,pr.cantidad,pr.precio,pr.precio1,pr.fecha');
 		$this->db->from('periodo x,proceso pr');
 		$this->db->join('producto p','p.id_prod=pr.id_prod');
 		$this->db->join('pedido pd','pd.idpedido=pr.idpedido');
 		$this->db->join('trabajador t','t.idtrabajador=pr.idtrabajador');
 		$this->db->join('persona pe','pe.idpersona=t.idpersona');	
-		$this->db->where('pe.idpersona',$user['user']);
+		$this->db->where('pr.idtrabajador',$user['user']);
 		$this->db->where('pr.fecha>=x.fechai');
 		$this->db->or_where('pr.fecha>=x.fechaf');
-		//inner join trabajador  t on t.idtrabajador=t.idtrabajador
-//inner join persona pe on pe.idpersona=t.idpersona;
+
 
 
 
@@ -245,7 +249,10 @@ $query=$this->db->query("select pr.idproceso,pd.factura,p.nomprod,pd.descripcion
 
 
 			return 0;
-		}*/
+		}
+		*/
+		
+	
 
 
 
@@ -345,7 +352,6 @@ $query=$this->db->query("select pr.idproceso,pd.factura,p.nomprod,pd.descripcion
 
 
 
-
 public  function tblexcel($param){
 
 
@@ -431,11 +437,23 @@ public  function tblexcel($param){
 	  public function calcular($param){
 //select sum(cantidad),sum(precio) from proceso where fecha between '2017-09-20' and '2017-10-31' and idtrabajador=1
 
+
+/*
+select sum(p.precio1) as valor,sum(p.precio) as valoro 
+from periodo pr ,proceso p 
+inner join trabajador t on t.idtrabajador = p.idtrabajador
+where t.idtrabajador=6 and p.fecha between pr.fechai and pr.fechaf
+
+*/
+
 	$this->db->select('sum(p.precio1) as valor,sum(p.precio) as valoro');
 	$this->db->from('periodo pr,proceso p');
-	$this->db->where('p.idtrabajador',$param['idtrabajador']);
+	$this->db->join('trabajador t','t.idtrabajador = p.idtrabajador');
+	$this->db->where('t.idtrabajador',$param['idtrabajador']);
 	$this->db->where('p.fecha >=',' pr.fechai');
-	$this->db->or_where('p.fecha<=','pr.fechaf');
+	$this->db->where('p.fecha<=','pr.fechaf');
+	
+	//$this->db->or_where('p.fecha<=','pr.fechaf');
 	
 
 	$resul=$this->db->get();

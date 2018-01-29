@@ -19,8 +19,6 @@
 <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">
   <span class='glyphicon glyphicon-plus'></span>Crear pedido
 </button>
-
-
       
     </div>
  <!-- Modal -->
@@ -249,7 +247,6 @@
                    <th>Descripcion</th>
                    <th>Cliente</th>
                   <th>Fecha ingreso</th>
-                  <th>Fecha entrega</th>
                   <th>Accion</th>
 
                 </tr>

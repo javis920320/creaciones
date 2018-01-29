@@ -1,8 +1,5 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-
-
-
 class Pdfci extends CI_Controller
 {
 
@@ -10,9 +7,9 @@ class Pdfci extends CI_Controller
     {
         parent::__construct();
         //cargamos la libreria html2pdf
-        $this->load->library('html2pdf');
+        $this->load->library('Html2pdf');
         //cargamos el modelo pdf_model
-        $this->load->model('pdf_model');
+        $this->load->model('Pdf_model');
     }
 
     private function createFolder()
@@ -44,7 +41,7 @@ class Pdfci extends CI_Controller
         //datos que queremos enviar a la vista, lo mismo de siempre
         $data = array(
             'title' => 'REPORTE PEDIDOS CREACIONES GORETTI',
-            'provincias' => $this->pdf_model->getProvincias()
+            'provincias' => $this->Pdf_model->getProvincias()
         );
 
         //hacemos que coja la vista como datos a imprimir

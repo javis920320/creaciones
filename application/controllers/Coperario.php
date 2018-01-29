@@ -42,7 +42,7 @@ class Coperario extends CI_Controller
 
 	}
 
-	 public function ingresarproceso(){
+ public function ingresarproceso(){
 
 
 	 	$param['cantidad']=$this->input->post('cantidad');

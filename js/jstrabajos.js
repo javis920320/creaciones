@@ -1,5 +1,4 @@
 
-
 $('#btnbuscar').on('click',function(){
 	dato=$('#nfac').val();
 	//alert();
@@ -9,8 +8,8 @@ $('#btnbuscar').on('click',function(){
 		{fac:dato},
 		function(data){
 			//alert(data);
-			if(data==0){
-				$('#res').removeClass('hide');
+			if(data<=0){
+				//$('#res').removeClass('hide');
 				$('#res').html('<span class="text-danger"><h3>Por Favor Verifica la Factura!!</h3></span>');
 
 			}else{
@@ -18,7 +17,7 @@ $('#btnbuscar').on('click',function(){
 
 			var obj=JSON.parse(data);
 
-			// console.log(obj[0].nombres);
+			 //console.log(obj[0].nombres);
 
 
 			//html='<select id="tpprod" name="tpprod" class=" pr form-control">';
@@ -44,50 +43,12 @@ $('#btnbuscar').on('click',function(){
 		});
 
 		});
-
-
-
-
-
-$('#tpprod').on('change',function(event){
-
 		
-		var dato= $('#tpprod option:selected').text();
-		//alert(dato);
-
-			$.post(baseurl+"Cproductos/listaproductosf",
-			{dato:dato},
-			function(data){
-				if(data==0){
-				$('#res').append('<span class="text-danger"><h3>no hay productos de este tipo</h3></span>');
-
-			}else{
-
-			var obj=JSON.parse(data);
-
-			
-			html='';
-			html+='<option value="">Seleccione una opcion</option>';
-
-			$.each(obj,function(i,items){
-				html+='<option value="'+items.id_prod+'">'+ items.nomprod+'</option>';
-			});
-
-
-			//html+='</select>';
-			$("#productos").html(html);
-			}
-			
-			});
-			});
-
-$('#tblresumen .idpedido').on('change',function(){
-
-	//alert();
-
-});
-
-
+		
+		
+		
+		
+		
  function registroproceso(){
 
 
@@ -99,10 +60,7 @@ $('#tblresumen .idpedido').on('change',function(){
 
 
 	var diponibles=$('#disponibles').val();
-
-	
 	var cantidad=$('#cantidad').val();
-	
 	
 	//alert('CANTIDAD '+cantidad+' DISPONIBLE '+diponibles);
 	 if(cantidad>diponibles){
@@ -132,8 +90,6 @@ VARIABLES
 	    var idpedido=$('input:radio[name=idpedido]:checked').val();
 	    var trabajador=$('#trabajador').val();
 
-	    //alert(idpedido);
-
 
 	
 	$.ajax({
@@ -152,11 +108,89 @@ VARIABLES
 	}
 
 	});
-
 	}
 
 //});
 }
+
+
+
+
+
+
+$('#tpprod').on('change',function(event){
+
+		
+		var dato= $('#tpprod option:selected').text();
+		//alert(dato);
+
+			$.post(baseurl+"Cproductos/listaproductosf",
+			{dato:dato},
+			function(data){
+				if(data===0){
+				$('#res').append('<span class="text-danger"><h3>no hay productos de este tipo</h3></span>');
+
+			}else{
+
+			var obj=JSON.parse(data);
+
+			
+			html='';
+			html+='<option value="">Seleccione una opcion</option>';
+
+			$.each(obj,function(i,items){
+				html+='<option value="'+items.id_prod+'">'+ items.nomprod+'</option>';
+			});
+
+
+			//html+='</select>';
+			$("#productos").html(html);
+			}
+			
+			});
+			});
+
+$('#tblresumen .idpedido').on('change',function(){
+
+	//alert();
+
+});
+
+
+$('#formtrabajos').submit(function(){
+
+
+	var diponibles=$('#disponibles').val();
+	var cantidad=$('#cantidad').val();
+	
+	//alert('CANTIDAD '+cantidad+' DISPONIBLE '+diponibles);
+	 if(cantidad>diponibles){
+	 	alert('Erro verifica la cantidad disponible');
+	 }else if(diponibles===0){
+
+	 	alert('No hay productos disponibles');
+
+	 }else{
+	//alert($(this).serialize());
+
+
+	
+	$.ajax({
+		url:baseurl+'Coperario/ingresarproceso',
+		type:'POST',
+		data:$(this).serialize(),
+		success:function(data){
+		//alert(data);
+		if(data){
+			alert(data);
+		}
+
+	}
+
+	});
+	}
+
+});
 
 
  function filtrar(){
@@ -226,6 +260,55 @@ return '<span class="pull-right">' +
 
 
 
+/*// Obtener estados
+$.ajax({
+type: "POST",
+url: "procesar-estados.php",
+data: { estados : "Mexico" } 
+}).done(function(data){
+$("#jmr_contacto_estado").html(data);
+});
+
+
+
+// Obtener municipios
+$("#jmr_contacto_estado").change(function(){
+var estado = $("#jmr_contacto_estado option:selected").val();
+$.ajax({
+type: "POST",
+url: "procesar-estados.php",
+data: { municipios : estado } 
+}).done(function(data){
+$("#jmr_contacto_municipio").html(data);
+});
+});
+ Obtener estados
+$.ajax({
+type: "POST",
+url: "procesar-estados.php",
+data: { estados : "Mexico" } 
+}).done(function(data){
+$("#jmr_contacto_estado").html(data);
+});
+// Obtener municipios
+$("#jmr_contacto_estado").change(function(){
+var estado = $("#jmr_contacto_estado option:selected").val();
+$.ajax({
+type: "POST",
+url: "procesar-estados.php",
+data: { municipios : estado } 
+}).done(function(data){
+$("#jmr_contacto_municipio").html(data);
+});
+});
+
+/*$(document).ready(function(){
+$(“#select4”).change(function(event){
+var id = $(“#select4”).find(‘:selected’).val();
+$(“#select5”).load(‘genera-tarjeta.php?id=’+id);*/
+
+//});
+//});*/
 
 
 

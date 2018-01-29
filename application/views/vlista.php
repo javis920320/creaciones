@@ -33,8 +33,8 @@
 	<style type="text/css">
 		
 		.l{
-			width: 200px;
-			height: 160px;
+			width: 300px;
+			height: 170px;
 			margin-right: 2px;		
 			float:left;
 			border-style: solid;

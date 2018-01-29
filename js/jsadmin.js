@@ -3,7 +3,7 @@
 user=$('#trabajador').val();
 
  //console.log(user);
-alert(user);
+//alert(user);
 
 cargarvalor(user);
  function cargarvalor(user){
@@ -37,7 +37,6 @@ $('#tbltrabajos').DataTable({
 			'info':true,
 			'filter':true,
 			'stateSave':true,
-			'destroy':true,
 
 			'ajax':{
 

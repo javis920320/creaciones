@@ -15,15 +15,10 @@ class Csatelite extends CI_Controller
 	 public function index(){
 
 	 	$nombres['nombres']=$this->session->userdata('nombres');
-	 	$tipo=$this->session->userdata('tipo');
 
 	 	$this->load->view('layou/header',$nombres);
 	 	$this->load->view('layou/menu',$nombres);
-	 	if($tipo==4){$this->load->view('vsatel');
-	 }else{
 	 	$this->load->view('vsatelite');
-	 	
-	 }
 	 	$this->load->view('layou/footer',$nombres);
 
 

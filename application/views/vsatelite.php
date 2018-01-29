@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
+<head><meta http-equiv="Content-Type" content="text/html; charset=gb18030">
+	
 	
 </head>
 <body>
@@ -113,7 +113,7 @@
             <!-- /.box-header -->
              
             <div class="box-body table-responsive no-padding">
-              <table  id='tblproductosen' class="table table-hover table-responsive">
+             <!-- <table  id='tblproductosen' class="table table-hover table-responsive">
                 <thead class="bg-success">
                 <tr>
                   <th>Factura</th>
@@ -130,7 +130,7 @@
                 </thead>
                 <tbody></tbody>
                 
-              </table>
+              </table>-->
             </div>
             <!-- /.box-body -->
           </div>

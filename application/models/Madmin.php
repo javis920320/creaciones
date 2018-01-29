@@ -7,9 +7,10 @@ class Madmin extends CI_Model
 	{
 		parent::__construct();
 	}
-
-
-public  function asignarsatelite($param){
+	
+	
+	
+	public  function asignarsatelite($param){
 
 
 	 $datos= array(
@@ -70,6 +71,11 @@ where u.tipo=4 and u.estado=1");
 
 
 }
+
+
+
+
+
 
 
  public  function consultafiltropro($param){
@@ -203,6 +209,19 @@ public  function creartrabajador($param){
 	
 	$this->db->insert('trabajador',$datos);
 	
+}
+
+
+public  function eliminaruser($param){
+
+	$this->db->where('idpersona',$param['idpersona']);
+	$this->db->delete('usuarios');
+
+	$res=$this->db->affected_rows();
+		return$res;
+
+
+
 }
 
 }

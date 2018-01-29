@@ -95,8 +95,8 @@ class Cproductos extends CI_Controller
 	 	$arreglo['idtipoprod']=$this->input->post('seltp');
 	 	$arreglo['precio']=$this->input->post('precio');
 	 	$arreglo['subprecio']=$this->input->post('subprecio');
-	 	$arreglo['preciosatel']=$this->input->post('preciosatel');
 	 	$arreglo['fecha']=$hoy = date("Y/m/d");
+	 	//$arreglo['id_prod']=$this->input->post('id_prod');
 
 	 	//$arreglo['nomprod']='prueba';
 	 		//$arreglo['idtipoprod']=1;
@@ -104,7 +104,7 @@ class Cproductos extends CI_Controller
 	 	$res=$this->Mproductos->ingresarprd($arreglo);
 
 	 	if($res){
-		$arreglo['idprod']=$res;
+		$arreglo['id_prod']=$res;
 		$this->Mproductos->asignarb($arreglo);
 	 		
 	 		if($resp=$this->Mproductos->valorprenda($arreglo)){
@@ -115,8 +115,6 @@ class Cproductos extends CI_Controller
 	 		}
 
 	 	}
-
-
 	 	
 
 
@@ -174,9 +172,6 @@ class Cproductos extends CI_Controller
 	 		$param['valor']=$this->input->post('precioj');
 	 		$param['subvalor']=$this->input->post('precioob');
 	 		$param ['fecha']=$hoy = date("Y/m/d");
-	 		$param['epreciosatel']=$this->input->post('epreciosatel');
-
-	 		
 
 
 

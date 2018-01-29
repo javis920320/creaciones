@@ -10,8 +10,9 @@ class Mpedidos extends CI_Model
 	{
 		parent::__construct();
 	}
-
-public function arreglo($array){
+	
+	
+	public function arreglo($array){
 
 
 	$d=count($array);
@@ -39,33 +40,6 @@ public function arreglo($array){
 
 }
 
-public function arreglo2($array){
-
-
-	$d=count($array);
-
-
-	$datos= array(
-	 			
-	 			  'estado'=>2
-
-	 					);
-						$res=0;
-
-
-	for ($i=0; $i <$d ; $i++) { 
-
-
-		$this->db->where('idpedido',$array[$i]);
-	$this->db->update('pedido',$datos);
-	$res=$res+$this->db->affected_rows();
-	}
-
-	return $res;
-
-
-
-}
 
 
 public function insertpedido($param){
@@ -79,7 +53,6 @@ public function insertpedido($param){
 	 			 'talla'=>$param ['talla'],
 	 			 'descripcion'=>$param ['descripcion'],
 	 			 'fecha_ingreso'=>$param ['fecha_ingreso'],
-	 			 'fentrega'=>$param ['fentrega'],
 	 			 'idcliente'=>$param ['idcliente'],
 	 			  'idtipoprod'=>$param ['idtipoprod'],
 	 			  'estado'=>1
@@ -142,7 +115,7 @@ public  function lista($param){
 	$dato = array('estado' => $param['estado'] ,
 					'factura' => $param['factura'] );
 
-	    $this->db->select('p.idpedido,tp.nomtipoprod,p.factura,p.facultad,p.cantidad,p.talla,p.descripcion,pe.nombres,p.fecha_ingreso,p.fentrega');
+	    $this->db->select('p.idpedido,tp.nomtipoprod,p.factura,p.facultad,p.cantidad,p.talla,p.descripcion,pe.nombres,p.fecha_ingreso');
 		$this->db->from('pedido p');
 		$this->db->join('cliente c','c.idpersona=p.idcliente');
 		$this->db->join('tipo_producto tp','tp.idtipoprod=p.idtipoprod');
@@ -163,7 +136,7 @@ public  function lista($param){
 	$dato = array('estado' => $param['estado'] ,
 					'factura' => $param['factura'] );
 
-	    $this->db->select('p.idpedido,tp.nomtipoprod,p.factura,p.facultad,p.cantidad,p.talla,p.descripcion,pe.nombres,p.fecha_ingresop.fentrega');
+	    $this->db->select('p.idpedido,tp.nomtipoprod,p.factura,p.facultad,p.cantidad,p.talla,p.descripcion,pe.nombres,p.fecha_ingreso');
 		$this->db->from('pedido p');
 		$this->db->join('cliente c','c.idpersona=p.idcliente');
 		$this->db->join('tipo_producto tp','tp.idtipoprod=p.idtipoprod');
@@ -216,6 +189,36 @@ $this->db->select('p.idpedido,tp.nomtipoprod,p.factura,p.facultad,p.cantidad,p.t
 
 			return $query->result();
   }
+  
+  
+  
+  public function arreglo2($array){
+
+
+	$d=count($array);
+
+
+	$datos= array(
+	 			
+	 			  'estado'=>2
+
+	 					);
+						$res=0;
+
+
+	for ($i=0; $i <$d ; $i++) { 
+
+
+		$this->db->where('idpedido',$array[$i]);
+	$this->db->update('pedido',$datos);
+	$res=$res+$this->db->affected_rows();
+	}
+
+	return $res;
+
+
+
+}
 
 
  

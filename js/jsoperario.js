@@ -1,6 +1,7 @@
 //alert('Soy el Operario');
 
 user=$('#trabajador').val();
+//alert(user);
 
 cargarvalor(user);
  function cargarvalor(user){
@@ -16,7 +17,7 @@ cargarvalor(user);
 
  				var obj=JSON.parse(data);
 	  			$.each(obj,function(i,items){
-	  				$('#valor').text(items.valor);
+	  				$('#valor').text(items.valoro);
 	  				//$('#p').text(items.p);
 	  			});
 
@@ -31,6 +32,7 @@ cargarvalor(user);
 lista(user);
 
  function lista(user){
+     
 $('#tbltrabajos').DataTable({
 			'paging':true,
 			'info':true,
@@ -90,7 +92,7 @@ return'<span>Elaborado</span>';
 
 			],
 
- "order":[[0,"asc"]],
+ "order":[[0,"desc"]],
 
 		});	
 

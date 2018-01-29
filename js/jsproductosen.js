@@ -30,8 +30,8 @@ $('#tblproductosen').DataTable({
 
 				return '<span class="pull-right">' +
 					  '<input type="checkbox" class="chk" name="chk"  value='+row.idpedido+'>'+	
-					  //'<a  href="#"  class="btn btn-default  btn-sm" style="width:80%;" title="Enviar informacion" data-toggle="modal" data-target="#enviar" onClick="selpedido(\''+row.idpedido+'\');"><i class="glyphicon glyphicon-wrench"></i><span> En proceso</span></a>'+
-                      '<div class="dropdown">' +
+					  /*'<a  href="#"  class="btn btn-default  btn-sm" style="width:80%;" title="Enviar informacion" data-toggle="modal" data-target="#enviar" onClick="selpedido(\''+row.idpedido+'\');"><i class="glyphicon glyphicon-wrench"></i><span> En proceso</span></a>'+*/
+					    '<div class="dropdown">' +
                       '  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">' +
                       '    Acciones' +
                       '  <span class="caret"></span>' +
@@ -45,6 +45,7 @@ $('#tblproductosen').DataTable({
                       //'    <li><a href="#" title="Desaprobar afiliado" onClick="updEstadoAfiliado('+row.idPersona+','+2+')"><i style="color:red;" class="glyphicon glyphicon-remove"></i> Desaprobar</a></li>' +
                       '    </ul>' +
                       '</div>' +
+                     
                       '</span>';
 
 					
@@ -155,10 +156,10 @@ $.ajax({
 			 $('.chk').prop('checked',false);
 		}
 	 });
-
-
-
-	 eliminar = function(idpedido){
+	 
+	 
+	 
+	  eliminar = function(idpedido){
 	$('#idpedidod').val(idpedido);
 
 	
@@ -213,32 +214,3 @@ $.ajax({
 	}
 	});
 });*/
-
-function pdf(){
-		
-		
-        //console.log(selectedItems);//
-		 var i=0;
-		  selecciones =  new Array();
-		$('.chk').each(function(){
-    var chk = $(this);
-    if(chk.prop('checked')){
-     //alert(chk.val());
-	 
-	  selecciones[i]=chk.val();
-
-	  i++;
-	  
-  }
-  
-  
-  
-});
-
-console.log(selecciones);
-
-
-
-
-  
-	 }

@@ -86,6 +86,21 @@ public function editarpersona(){
 }
 
 
+public  function eliminaruser(){
+
+	$param['idpersona']=$this->input->post('eliminarc');
+	$res=$this->Madmin->eliminaruser($param);
+
+	if($res>=1){
+
+		echo 'Usuario Eliminado';
+
+	}else{
+		echo'No se a podido eliminar este usuario';
+	}
+}
+
+
 }
 
 

@@ -45,18 +45,6 @@ class Ctrabajos extends CI_Controller
 	}
 
 
-
- public  function lsttipoprod(){
-
- 	 $param['fac']=$this->input->post('fac');
-
-		 $res=$this->Mtrabajos->lsttipoprod($param);
-
-		 echo json_encode($res);
-
-
- }
-
 	public function buscarpedido(){
 
 
@@ -69,6 +57,17 @@ class Ctrabajos extends CI_Controller
 		 
 	}
 
+
+ public  function lsttipoprod(){
+
+ 	 $param['fac']=$this->input->post('fac');
+
+		 $res=$this->Mtrabajos->lsttipoprod($param);
+
+		 echo json_encode($res);
+
+
+ }
 ///?tpprod=3&tblresumen_length=10&idpedido=2&productos=undefined&cantidad=15&trabajador=6
 
 
@@ -138,34 +137,54 @@ class Ctrabajos extends CI_Controller
 
 	public  function listaoperario(){
 
-
-		$user['user']=$this->input->post('user');
+$user['user']=$this->input->post('user');
 
 
 		$res=$this->Mtrabajos->listaprocesos($user);
 
 		echo json_encode($res);
 
+		
+		
+	
+
+	}
+	
+	public  function  validarf(){
+	    
+	    $param['idpersona']=19;
+	   $res=$this->Mtrabajos->trabajadorid($param);
+	   echo $res;
+	   
 	}
 
 	 public  function pago(){
 
 
 
-	 	$param['idtrabajador']=$this->input->post('use');
+	 	$param['idpersona']=$this->input->post('use');
+	 	
+	 	
+	 	$param['idtrabajador']=$this->Mtrabajos->trabajadorid($param);
+	    $param['idtrabajador'];
 
 
 
 	 	$res=$this->Mtrabajos->calcular($param);
 
 
-	 	echo json_encode($res);
+	 echo json_encode($res);
+	 	
+	 	 //echo $param['idtrabajador'];
 
 
 
 
 
 	 }
+	 
+	 
+	 
 
 }
 
