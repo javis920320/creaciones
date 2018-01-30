@@ -22,6 +22,7 @@ $('#tblproductosen').DataTable({
 			{data:'descripcion'},
 			{data:'nombres'},
 			{data:'fecha_ingreso'},
+			{data:'fentrega'},
 			{data:'estado'},
 
 			{"orderable":true,
@@ -44,7 +45,7 @@ $('#tblproductosen').DataTable({
 
 			"columnDefs": [
         {
-          "targets": [8], 
+          "targets": [9], 
           "data": "estado", 
           "render": function(data, type, row) {
             

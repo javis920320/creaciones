@@ -125,7 +125,7 @@ public  function lista($param){
 		$this->db->where('p.estado',$dato['estado']);
 		//$this->db->or_where('p.estado',$dato['estado2']);
 		//$this->db->where('p.factura',$dato['factura']);
-		$this->db->order_by('fecha_ingreso', 'DESC');
+		$this->db->order_by('fentrega', 'ASC');
 		$this->db->order_by('factura');
 
 		$resul=$this->db->get();
@@ -178,7 +178,7 @@ $this->db->select('p.idpedido,tp.nomtipoprod,p.factura,p.facultad,p.cantidad,p.t
 			{data:'fecha_ingreso'},*/
 
 
-			$query=$this->db->query("select p.idpedido,tp.nomtipoprod,p.factura,p.facultad,p.cantidad,p.talla,p.descripcion,pe.nombres,p.fecha_ingreso ,p.estado
+			$query=$this->db->query("select p.idpedido,tp.nomtipoprod,p.factura,p.facultad,p.cantidad,p.talla,p.descripcion,pe.nombres,p.fecha_ingreso,p.fentrega ,p.estado
 						from pedido p
 						inner join cliente c on c.idpersona=p.idcliente
 						inner join tipo_producto tp on tp.idtipoprod=p.idtipoprod

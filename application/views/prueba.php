@@ -43,6 +43,7 @@
                    <th>Descripcion</th>
                    <th>Cliente</th>
                   <th>Fecha ingreso</th>
+				  <th>Fecha Entrega</th>
                   <th ">Estados</th>
                   <th>Accion</th>
                 </tr>

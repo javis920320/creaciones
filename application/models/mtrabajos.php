@@ -216,7 +216,7 @@ $query=$this->db->query("select pr.idproceso,pd.factura,p.nomprod,pd.descripcion
        inner join pedido pd on pd.idpedido = pr.idpedido
        inner join trabajador t on t.idtrabajador=pr.idtrabajador
        inner join persona pe on pe.idpersona = t.idpersona
-       where pe.idpersona=".$user['user']." and  pr.fecha between  x.fechai and x.fechaf
+       where pr.estado=1 and pe.idpersona=".$user['user']." and  pr.fecha between  x.fechai and x.fechaf
  				");
 
 		return $query->result();

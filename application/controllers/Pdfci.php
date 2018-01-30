@@ -1,4 +1,4 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+﻿<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Pdfci extends CI_Controller
 {
@@ -36,7 +36,8 @@ class Pdfci extends CI_Controller
         $this->html2pdf->filename('test.pdf');
 
         //establecemos el tipo de papel
-        $this->html2pdf->paper('a4', 'portrait');
+        //$this->html2pdf->paper('a4', 'portrait');
+       $this->html2pdf->paper('a4', 'landscape');
 
         //datos que queremos enviar a la vista, lo mismo de siempre
         $data = array(
