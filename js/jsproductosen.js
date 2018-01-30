@@ -23,6 +23,7 @@ $('#tblproductosen').DataTable({
 			{data:'descripcion'},
 			{data:'nombres'},
 			{data:'fecha_ingreso'},
+			{data:'fentrega'},
 			{"orderable":true,
 			render:function(data,type,row){
 

@@ -36,6 +36,7 @@ class Cpedidos extends CI_Controller
 	 		$param ['idpedido']=null;
 	 		$param ['factura']=$this->input->post('factura');
 	 		$param ['facultad']=$this->input->post('facultad');
+	 		$param ['fentrega']=$this->input->post('fentrega');
 	 		$param ['cantidad']=$this->input->post('cantidad');
 	 		$param ['talla']=$this->input->post('talla');
 	 		$param ['descripcion']=$this->input->post('descripcion');
@@ -90,6 +91,7 @@ class Cpedidos extends CI_Controller
 	 	$param['talla']=$this->input->post('tallaedit');
 	 	$param['descripcion']=$this->input->post('descripcion_edit');
 	 	$param['idpedido']=$this->input->post('idpersonaedit');
+	 		$param['fentregae']=$this->input->post('fentregae');
 	 	
 
 	 	if($this->Mpedidos->updatepedidoid($param)){

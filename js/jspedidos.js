@@ -145,6 +145,7 @@ function cargarproductos(){
 			{data:'descripcion'},
 			{data:'nombres'},
 			{data:'fecha_ingreso'},
+			{data:'fentrega'},
 
 			{"orderable":true,
 			render:function(data,type,row){
@@ -158,7 +159,7 @@ return '<span class="pull-right">' +
                       '  <span class="caret"></span>' +
                       '  </button>' +
                       '    <ul class="dropdown-menu pull-right" aria-labelledby="dropdownMenu1">' +
-                      '    <li><a href="#" title="Editar informacion" data-toggle="modal" data-target="#modalEditPersona" onClick="selPersona(\''+row.factura+'\',\''+row.facultad+'\',\''+row.cantidad+'\',\''+row.talla+'\',\''+row.idpedido+'\',\''+row.descripcion+'\');"><i style="color:#555;" class="glyphicon glyphicon-edit"></i> Editar</a></li>' +
+                      '    <li><a href="#" title="Editar informacion" data-toggle="modal" data-target="#modalEditPersona" onClick="selPersona(\''+row.factura+'\',\''+row.facultad+'\',\''+row.cantidad+'\',\''+row.talla+'\',\''+row.idpedido+'\',\''+row.descripcion+'\',\''+row.fentrega+'\');"><i style="color:#555;" class="glyphicon glyphicon-edit"></i> Editar</a></li>' +
                       //'    <li><a href="'+baseurl+'cafiliado/descargar/'+row.idPersona+'" title="Imprimir formato"><i class="glyphicon glyphicon-print" style="color:#006699"></i> Imprimir</a></li>' +
                       '    <li><a href="#" title="Enviar Pedido"  data-toggle="modal" data-target="#estado"  onClick="estadopedido(\''+row.idpedido+'\',\''+row.nombres+'\',\''+row.telefono+'\')"><i style="color:green;" class="glyphicon glyphicon-plane"></i> Enviar Pedido</a></li>' +
                       '    <li><a href="#" title="Eliminar"  data-toggle="modal" data-target="#eliminar" onClick="eliminar('+row.idpedido+')"><i style="color:red;" class="glyphicon glyphicon-remove"></i> Eliminar</a></li>' +
@@ -234,9 +235,11 @@ $('#lista').on('click',function(){
 
 });
 
-selPersona = function(factura, facultad,cantidad,talla,idpedido,descripcion){
+selPersona = function(factura, facultad,cantidad,talla,idpedido,descripcion,fentregae){
+
 	$('#facturaedit').val(factura);
 	$('#facultadedit').val(facultad);
+	$('#fentregae').val(fentregae);
 	$('#editcantidad').val(cantidad);
 	$('#tallaedit').val(talla);
 	$('#idpersonaedit').val(idpedido);
@@ -271,7 +274,7 @@ console.log(descripcion);
 
 //});
 $('#form-edit').submit(function(){
-	//alert();
+	//alert($(this).serialize());
 
 	$.ajax({
 	url:baseurl+'Cpedidos/editar',
@@ -403,6 +406,8 @@ $('#agregarprod').on('click',function(){
 	var cantidad =$('#cantidad').val();
 	var descripcion =$('#descripcion').val();
 	var talla =$('#talla').val();
+
+	var fentrega =$('#fentrega').val();
 	 if(factura==''){
 	 	$('#alerta2').removeClass('hide');
 
@@ -417,9 +422,9 @@ $('#agregarprod').on('click',function(){
 	
 	//var descripcion =$('#descripcion').val();
 
-	$.post(baseurl+'cpedidos/insertpedido',
+	$.post(baseurl+'Cpedidos/insertpedido',
 		//{idcliente:cedula,factura:factura,facultad:facultad,cantidad:cantidad,descripcion:descripcion,talla:talla,seltp:tipoprod},
-		{idpersona:cedula,factura:factura,facultad:facultad,cantidad:cantidad,talla:talla,descripcion:descripcion,seltp:tipoprod},
+		{idpersona:cedula,factura:factura,facultad:facultad,cantidad:cantidad,talla:talla,descripcion:descripcion,seltp:tipoprod,fentrega:fentrega},
 		function(data){
 
 			
@@ -458,6 +463,7 @@ $('#tblresumen').DataTable({
 			{data:'descripcion'},
 			{data:'nombres'},
 			{data:'fecha_ingreso'},
+			{data:'fentrega'},
 
 			{"orderable":true,
 			render:function(data,type,row){
@@ -471,7 +477,7 @@ return '<span class="pull-right">' +
                       '  <span class="caret"></span>' +
                       '  </button>' +
                       '    <ul class="dropdown-menu pull-right" aria-labelledby="dropdownMenu1">' +
-                      '    <li><a href="#" title="Editar informacion" data-toggle="modal" data-target="#editarp" onClick="selpedido(\''+row.factura+'\',\''+row.facultad+'\',\''+row.cantidad+'\',\''+row.talla+'\',\''+row.descripcion+'\',\''+row.idpedido+'\');"><i style="color:#555;" class="glyphicon glyphicon-edit"></i> Editar</a></li>' +
+                      '    <li><a href="#" title="Editar informacion" data-toggle="modal" data-target="#editarp" onClick="selpedido(\''+row.factura+'\',\''+row.facultad+'\',\''+row.cantidad+'\',\''+row.talla+'\',\''+row.descripcion+'\',\''+row.idpedido+'\',\''+row.fentrega+'\');"><i style="color:#555;" class="glyphicon glyphicon-edit"></i> Editar</a></li>' +
                        '    <li><a href="#" title="Eliminar"  data-toggle="modal" data-target="#eliminar" onClick="eliminar('+row.idpedido+')"><i style="color:red;" class="glyphicon glyphicon-remove"></i> Eliminar</a></li>' +
                       '    <li><a href="#" title="Enviar Pedido"  data-toggle="modal" data-target="#estado"  onClick="estadopedido(\''+row.idpedido+'\',\''+row.nombres+'\',\''+row.telefono+'\')"><i style="color:green;" class="glyphicon glyphicon-plane"></i> Enviar Pedido</a></li>' +
                       //'    <li><a href="#" title="Desaprobar afiliado" onClick="updEstadoAfiliado('+row.idPersona+','+2+')"><i style="color:red;" class="glyphicon glyphicon-remove"></i> Desaprobar</a></li>' +
@@ -504,13 +510,15 @@ return '<span class="pull-right">' +
 });
 
 
- selpedido= function(factura,facultad,cantidad,talla,descripcion,idpedido){
+ selpedido= function(factura,facultad,cantidad,talla,descripcion,idpedido,fentrega){
 $('#faced').val(factura);
 $('#facued').val(facultad);
 $('#canted').val(cantidad);
 $('#talled').val(talla);
 $('#desced').val(descripcion);
 $('#idpedidoed').val(idpedido);
+$('#fentregax').val(fentrega);
+
 
 
   	
@@ -526,11 +534,12 @@ $('#idpedidoed').val(idpedido);
  	 var talla =$('#talled').val();
  	 var descripcion =$('#desced').val();
  	 var idpedido =$('#idpedidoed').val();
+ 	  var fentregax =$('#fentregax').val();
 
  	 $.ajax({
 'url':baseurl+'Cpedidos/editar',
 'type':'POST',
-'data':{facturaedit:factura,facultadedit:facultad,editcantidad:cantidad,tallaedit:talla,descripcion_edit:descripcion,idpersonaedit:idpedido},
+'data':{facturaedit:factura,facultadedit:facultad,editcantidad:cantidad,tallaedit:talla,descripcion_edit:descripcion,idpersonaedit:idpedido,fentregae:fentregax},
 success:function(data){
 	$('#tblresumen').DataTable().ajax.reload();
 	alert(data);

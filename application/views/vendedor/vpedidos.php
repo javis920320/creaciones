@@ -153,6 +153,12 @@
             <input type='text' placeholder='Facturaedit' id='facultadedit' name='facultadedit' class='form-control' required>
           </div>
 
+
+           <div class='form-group'>
+            <label for='fentregae'>Fecha Entrega</label>
+            <input type='date' placeholder='fentregae' id='fentregae' name='fentregae' class='form-control' required>
+          </div>
+
         <div class='form-group'>
           <label for='editcantidad'>Cantidad</label>
           <input type='number' placeholder='' id='editcantidad' name='editcantidad' class='form-control'required>
@@ -162,6 +168,8 @@
           <label for='tallaedit'>Talla</label>
           <input type='text' placeholder='talla' id='tallaedit' name='tallaedit' class='form-control' required>
         </div>
+
+
 
 
         <label for="descripcion:">Descripcion:</label>
@@ -247,6 +255,7 @@
                    <th>Descripcion</th>
                    <th>Cliente</th>
                   <th>Fecha ingreso</th>
+                     <th>Fecha entrega</th>
                   <th>Accion</th>
 
                 </tr>

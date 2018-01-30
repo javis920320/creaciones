@@ -102,6 +102,7 @@
                    <th>Descripcion</th>
                    <th>Cliente</th>
                   <th>Fecha ingreso</th>
+                  <th>Fecha Entrega</th>
                   <th>Accion</th>
                 </tr>
                 </thead>

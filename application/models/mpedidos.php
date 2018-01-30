@@ -53,6 +53,7 @@ public function insertpedido($param){
 	 			 'talla'=>$param ['talla'],
 	 			 'descripcion'=>$param ['descripcion'],
 	 			 'fecha_ingreso'=>$param ['fecha_ingreso'],
+	 			 'fentrega'=>$param ['fentrega'],
 	 			 'idcliente'=>$param ['idcliente'],
 	 			  'idtipoprod'=>$param ['idtipoprod'],
 	 			  'estado'=>1
@@ -95,7 +96,8 @@ public function updatepedidoid($param){
 		'facultad'=>$param['facultad'],
 		'cantidad'=>$param['cantidad'],
 		'talla'=>$param['talla'],
-		'descripcion'=>$param['descripcion']
+		'descripcion'=>$param['descripcion'],
+		'fentrega'=>$param['fentregae']
 
 
 
@@ -115,7 +117,7 @@ public  function lista($param){
 	$dato = array('estado' => $param['estado'] ,
 					'factura' => $param['factura'] );
 
-	    $this->db->select('p.idpedido,tp.nomtipoprod,p.factura,p.facultad,p.cantidad,p.talla,p.descripcion,pe.nombres,p.fecha_ingreso');
+	    $this->db->select('p.idpedido,tp.nomtipoprod,p.factura,p.facultad,p.cantidad,p.talla,p.descripcion,pe.nombres,p.fecha_ingreso,p.fentrega');
 		$this->db->from('pedido p');
 		$this->db->join('cliente c','c.idpersona=p.idcliente');
 		$this->db->join('tipo_producto tp','tp.idtipoprod=p.idtipoprod');
@@ -136,7 +138,7 @@ public  function lista($param){
 	$dato = array('estado' => $param['estado'] ,
 					'factura' => $param['factura'] );
 
-	    $this->db->select('p.idpedido,tp.nomtipoprod,p.factura,p.facultad,p.cantidad,p.talla,p.descripcion,pe.nombres,p.fecha_ingreso');
+	    $this->db->select('p.idpedido,tp.nomtipoprod,p.factura,p.facultad,p.cantidad,p.talla,p.descripcion,pe.nombres,p.fecha_ingreso,p.fentrega');
 		$this->db->from('pedido p');
 		$this->db->join('cliente c','c.idpersona=p.idcliente');
 		$this->db->join('tipo_producto tp','tp.idtipoprod=p.idtipoprod');

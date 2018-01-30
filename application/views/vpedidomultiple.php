@@ -57,6 +57,11 @@
 
        	<input type="text" id='facued' class="form-control" required="true">
        </div>
+         <div class="form-group">
+       	<label for="fentregax">Fecha entrega</label>
+
+       	<input type="date" id='fentregax' class="form-control" required="true">
+       </div>
 
        <div class="form-group">
        	<label for="canted">Cantidad</label>
@@ -169,7 +174,7 @@
 			</div>
 
 
-			<div class="col-sm-6 " >
+			<div class="col-sm-4 " >
 				<div class="form-group ">
 					<label for="factura">Factura:</label>
 					  <div class="text-danger hide" id='alerta2'><strong>Este dato es requerido.</strong></div>
@@ -183,7 +188,7 @@
 			</div>	
 
 
-			<div class="col-sm-6">
+			<div class="col-sm-4">
 				<div class="form-group ">
 					<label for="facultad" class=''>Facultad:</label>
 
@@ -193,6 +198,18 @@
 				</div>
 
 			</div>	
+
+
+			<div class="col-sm-4">
+				<div class="form-group ">
+					<label for="fentrega" class=''>Fecha entrega:</label>
+
+				 <input type="date" placeholder="" id="fentrega" class="form-control ">
+				  <div class="text-danger hide" id='alerta4'><strong>Este dato es requerido.</strong></div>
+
+				</div>
+
+			</div>
 
 
 			
@@ -355,6 +372,7 @@
                    <th>Descripcion</th>
                    <th>Cliente</th>
                   <th>Fecha ingreso</th>
+                  <th>Fecha Entrega</th>
                   <th>Accion</th>
 
                 </tr>
