@@ -104,7 +104,7 @@
             <span class="text text-danger hide" id='mensaje'> Productos disponibles: </span> <span id='numcantidad'></span><br>
             <input type='text' id='disponibles' name='disponibles' class='hide'>
             	<label for='cantidad'>Cantidad:</label>
-            	<input type='number' name='cantidad' id='cantidad' min='1'  class='form-control' required="true">
+            	<input type='number' name='cantidad' id='cantidad'  class='form-control' required="true">
             </div>
             <input id='trabajador' name='trabajador' hidden value="<?php echo$idpersona;?>">
 

@@ -59,8 +59,9 @@ $('#btnbuscar').on('click',function(){
 //$('#formtrabajos').submit(function(){
 
 
-	var diponibles=$('#disponibles').val();
+		var diponibles=parseInt($('#disponibles').val());
 	var cantidad=$('#cantidad').val();
+	//alert(cantidad);
 	
 	//alert('CANTIDAD '+cantidad+' DISPONIBLE '+diponibles);
 	 if(cantidad>diponibles){
