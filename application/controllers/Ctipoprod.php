@@ -32,7 +32,7 @@ class Ctipoprod extends Ci_Controller
 
 public function inserttprod(){
 
-$datos['tipo_prod']='PANTALONES';
+$datos['tipo_prod']=$this->input->post('tipo_prod');
 $datos['estado']=1;
 
 
@@ -45,7 +45,13 @@ $datos['estado']=1;
 
 
 
-	$this->Mtipoprod->inertartprod($param);
+	$resp=$this->Mtipoprod->inertartprod($param);
+	if($resp>=1){
+		echo'Registro registrado';
+		
+	}else{
+		echo'A ocurrido un error';
+	}
 }
 
 
@@ -58,6 +64,15 @@ echo json_encode($res);
 
 
 
+}
+
+public function listatpoprod(){
+	
+	
+	$res=$this->Mtipoprod->listatpoprod();
+	
+	
+	echo json_encode($res);
 }
 
 

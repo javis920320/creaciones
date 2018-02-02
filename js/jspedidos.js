@@ -603,3 +603,23 @@ $.ajax({
 			 $('.chk').prop('checked',false);
 		}
 	 });
+	 
+	 
+	
+	
+	 $('#frmtp').submit(function(){
+		 $.ajax({
+			 
+		 
+		 url:baseurl+'Ctipoprod/inserttprod',
+		 type:'POST',
+		 data:$(this).serialize(),
+		 success:function(data){
+			 alert(data);
+			
+			 
+		 }
+		 
+		  });
+		 
+	 } );

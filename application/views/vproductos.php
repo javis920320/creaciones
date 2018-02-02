@@ -13,8 +13,32 @@
 
 
 
-    <!-- Button trigger modal -->
 
+<!-- Modal -->
+<div class="modal fade" id="tpprodv" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">TIPO PRODUCTO</h4>
+      </div>
+      <div class="modal-body">
+      <form id='frmtp'>
+	  <div class='form-group'>
+	  <label for='tipo_prod'>Tipo Producto</label>
+	  <input type='text' name='tipo_prod' id='tipo_prod' placeholder='tipo producto' class='form-control'/>	
+	  <input type='submit' value='Crear'/>
+	  
+		</div>
+	  </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Modal -->
 <div class="modal fade" id="precios" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -155,9 +179,7 @@
 </div>
 
 
-	<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" onclick="cargarproductos()">
-	 Ingresar Producto
-	</button>
+	
 	
 	<!-- Modal -->
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -201,8 +223,18 @@
           <div class="box">
             <div class="box-header">
               <h3 class="box-title" class='text-primary'>Productos</h3><br><br>
+			  <div class='form-group'>
+			  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tpprodv">
+			Agregar tipo producto
+			</button>
+			
+			<button type="button" class="btn btn-primary " data-toggle="modal" data-target="#myModal" onclick="cargarproductos()">
+	 Ingresar Producto
+	</button>
+	<button id='pdf' class='btn btn-danger'><span class='glyphicon glyphicon-print'></span>  Productos</button>
+			  </div>
               
-<button id='pdf' class='btn btn-danger'><span class='glyphicon glyphicon-print'></span>  Productos</button>
+
             </div>
             <!-- /.box-header -->
              
