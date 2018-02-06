@@ -12,7 +12,65 @@
 	</style>
 
 
+
  
+ <!-- Modal -->
+ <div class="modal fade" id="editarcorte" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+   <div class="modal-dialog" role="document">
+     <div class="modal-content">
+       <div class="modal-header bg-success">
+         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+         <h4 class="modal-title" id="myModalLabel">EDITAR PEDIDO</h4>
+       </div>
+       <div class="modal-body">
+	
+	 	
+	 	
+	   <form id='form-edit'>
+	   <label for='editarfac'>Factura</label>
+		<input type='number' class='form-control' name='facturaedit'id='editarfac'>
+		<label for='editarfacul'>Facultad</label>
+		<input type='text' class='form-control' name='facultadedit'id='editarfacul'>
+		<label for='editarcant'>Cantidad</label>
+
+		
+		<input type='number' class='form-control' name='editcantidad'id='editarcant'>
+		<label for='editartalla'>Talla</label>
+				<select name="tallaedit" id="editartalla" class="form-control ">
+					<option value="0">0</option>
+					<option value="2">2</option>
+					<option value="4">4</option>
+					<option value="6">6</option>
+					<option value="8">8</option>
+					<option value="10">10</option>
+					<option value="12">12</option>
+					<option value="14">14</option>
+					<option value="16">16</option>
+					<option value="S">S</option>
+					<option value="XS">XS</option>
+					<option value="M">M</option>
+					<option value="L">L</option>
+					<option value="XL">XL</option>
+					<option value="XXL">XXL</option>
+					
+
+				</select>
+		<label for='editardesc'>Descripcion</label>
+		<textarea class='form-control' name='descripcion_edit'id='editardesc' rows='10' cols='20'></textarea>
+		<label for='editarfentrega'>Fecha entrega</label>
+		<input type='date' name='fentregae'id='editarfentrega' class='form-control'>
+		<input name='idpersonaedit' id='editarpedido' type='hidden'>
+		<input type='submit' value='Editar' class='btn btn-default'>
+		</form>
+		
+       </div>
+       <div class="modal-footer">
+         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+         
+       </div>
+     </div>
+   </div>
+ </div>
   
  
 
@@ -94,6 +152,7 @@
               <table  id='tblproductosen' class="table table-hover table-responsive">
                 <thead class="bg-success">
                 <tr>
+				 <th>Codigo</th>
                   <th>Factura</th>
                   <th>Producto</th>
                   <th>Facultad</th>

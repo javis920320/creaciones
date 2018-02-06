@@ -15,6 +15,7 @@ $('#tblproductosen').DataTable({
 			},
 
 			'columns':[
+			{data: 'idpedido'},
 			{data: 'factura','sClass':'dt-body-center'},
 			{data: 'nomtipoprod'},
 			{data:'facultad'},
@@ -40,8 +41,8 @@ $('#tblproductosen').DataTable({
                       '    <ul class="dropdown-menu pull-right" aria-labelledby="dropdownMenu1">' +
                         '    <li><a  href="#"  class="btn btn-default  btn-sm" style="width:80%;" title="Enviar informacion" data-toggle="modal" data-target="#enviar" onClick="selpedido(\''+row.idpedido+'\');"><i class="glyphicon glyphicon-wrench"></i><span> En proceso</span></a></li>' +
                         '    <li><a href="#" title="Eliminar"  data-toggle="modal" data-target="#eliminar" onClick="eliminar('+row.idpedido+')"><i style="color:red;" class="glyphicon glyphicon-remove"></i> Eliminar</a></li>' +
-                      //'    <li><a href="'+baseurl+'cafiliado/descargar/'+row.idPersona+'" title="Imprimir formato"><i class="glyphicon glyphicon-print" style="color:#006699"></i> Imprimir</a></li>' +
-                     // '    <li><a href="#" title="Ajustar precios"  data-toggle="modal" data-target="#precios"  onClick="ajustarprecios(\''+row.id_prod+'\',\''+row.valor+'\',\''+row.subvalor+'\')"><i style="color:green;" class="glyphicon glyphicon-usd"></i> Ajustar valores</a></li>' +
+                     // '    <li><a href="'+baseurl+'cafiliado/descargar/'+row.idPersona+'" title="Editar formato"><i class="glyphicon glyphicon-print" style="color:#006699"></i> Editar</a></li>' +
+                    '    <li><a href="#" title="Ajustar pedido"  data-toggle="modal" data-target="#editarcorte"  onClick="ajustarpedido(\''+row.factura+'\',\''+row.facultad+'\',\''+row.cantidad+'\',\''+row.talla+'\',\''+row.descripcion+'\',\''+row.fentrega+'\',\''+row.idpedido+'\')"><i style="color:green;" class="glyphicon glyphicon-pencil"></i> Editar Pedido</a></li>' +
                        //'    <li><a href="#" title="Asignar bordados" class="prueba" data-toggle="modal" data='+row.id_prod+' data-target="#asgbordados"  onClick="bordprod(\''+row.id_prod+'\')"><i style="color:green;" class="glyphicon glyphicon-paperclip"></i> Asignar bordados</a></li>' +
                       //'    <li><a href="#" title="Desaprobar afiliado" onClick="updEstadoAfiliado('+row.idPersona+','+2+')"><i style="color:red;" class="glyphicon glyphicon-remove"></i> Desaprobar</a></li>' +
                       '    </ul>' +
@@ -187,6 +188,46 @@ $.ajax({
 
  	});
  }
+ 
+ 
+ 
+ 
+ 
+  ajustarpedido= function(factura,facultad,cantidad,talla,descripcion,fentrega,idpedido){
+	  $('#editarfac').val(factura);
+	   $('#editarfacul').val(facultad);
+	    $('#editarcant').val(cantidad);
+		 $('#editartalla').val(talla);
+		 $('#editardesc').val(descripcion);
+		  $('#editarfentrega').val(fentrega);
+		  
+		   $('#editarpedido').val(idpedido);
+		  // alert(idpedido);
+	  
+	  
+	  
+	  
+  }
+  
+  
+  $('#form-edit').submit(function(){
+	//alert($(this).serialize());
+
+	$.ajax({
+	url:baseurl+'Cpedidos/editar',
+	type:'POST',
+	data:$(this).serialize(),
+	success:function(data){
+		alert(data);
+		/*if(data){
+			$('#msn').removeClass('hide');
+		}*/
+
+	}
+	});
+
+
+});
 /*
 selpedido = function(idpedido){
 	$('#producto').val(idpedido);
