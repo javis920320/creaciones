@@ -1,5 +1,3 @@
-
-
 user=$('#trabajador').val();
 
  //console.log(user);

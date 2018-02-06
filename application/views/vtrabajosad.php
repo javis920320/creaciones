@@ -29,8 +29,9 @@
 	    	<table id="tbltrabajos" class="table table-bordered table-striped">
 			    <thead>
 				    <tr>
-				      <th style="width: 5%;background-color: #006699; color: white;">#</th>
+				      <th style="width: 5%;background-color: #006699; color: white;">Codigo</th>
 				      <th style="width: 10%;background-color: #006699; color: white;">Factura</th>
+               <th style="width: 10%;background-color: #006699; color: white;">Facultad</th>
 				      <th style="width: 10%;background-color: #006699; color: white;">Nombre</th>
 				      <th style="width: 10%;background-color: #006699; color: white;">Descripcion</th>
 				      <th style="width: 10%;background-color: #006699; color: white;">Cantidad</th>

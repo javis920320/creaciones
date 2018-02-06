@@ -1,4 +1,3 @@
-
 $('#btnbuscar').on('click',function(){
 	dato=$('#nfac').val();
 	//alert();
@@ -59,13 +58,13 @@ $('#btnbuscar').on('click',function(){
 //$('#formtrabajos').submit(function(){
 
 
-		var diponibles=parseInt($('#disponibles').val());
+	var diponibles=parseInt($('#disponibles').val());
 	var cantidad=$('#cantidad').val();
-	//alert(cantidad);
+//	alert(cantidad+'-'+diponibles);
 	
 	//alert('CANTIDAD '+cantidad+' DISPONIBLE '+diponibles);
 	 if(cantidad>diponibles){
-	 	alert('Erro verifica la cantidad disponible');
+	 	alert('Erro verifica la cantidad disponible'+cantidad+'-'+diponibles);
 	 }else if(diponibles==0){
 
 	 	alert('No hay productos disponibles');
@@ -330,4 +329,3 @@ data: { idpedido :idpedido }
 
 
 }
-
