@@ -101,7 +101,7 @@ $query=$this->db->query("DELETE FROM bordadosproductos WHERE idbordados =".$para
 
 public  function getproductos($param){
 
-		$query=$this->db->query("select p.id_prod,tp.nomtipoprod,p.nomprod,pr.valor,pr.subvalor,sum(bp.cantidad)'nbordados',sum(b.precio*bp.cantidad)'vbordado'
+		$query=$this->db->query("select p.id_prod,tp.nomtipoprod,p.nomprod,pr.valor,pr.subvalor,pr.valorsatelite,sum(bp.cantidad)'nbordados',sum(b.precio*bp.cantidad)'vbordado'
  from producto p
  inner join tipo_producto tp on p.idtipoprod = tp.idtipoprod
  inner join precio pr on p.id_prod = pr.id_prod
@@ -154,6 +154,7 @@ public  function valorprenda($arreglo){
 			'fecha' =>$arreglo['fecha'],
 			'valor' =>$arreglo['precio'],
 			'subvalor' =>$arreglo['subprecio'],
+			'valorsatelite' =>$arreglo['valorsatelite'],
 			'id_prod'=>$arreglo['id_prod']
 			);
 
@@ -192,7 +193,7 @@ public function descativarprecio($param){
 
 public function asignarprecio($param){
 
- $datos = array('idprecio' =>null,'estado' =>1,'fecha'=>$param['fecha'],'valor'=>$param['valor'],'subvalor'=>$param['subvalor'],'id_prod'=>$param['id_prod']);
+ $datos = array('idprecio' =>null,'estado' =>1,'fecha'=>$param['fecha'],'valor'=>$param['valor'],'subvalor'=>$param['subvalor'],'valorsatelite'=>$param['valorsatelite'],'id_prod'=>$param['id_prod']);
 
 	//$this->db->where('id_prod',$param['id_prod']);
 	$this->db->insert('precio',$datos);

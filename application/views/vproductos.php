@@ -201,8 +201,10 @@
 
 	         	 	<input type='number' name='precio' id='precio' required class='form-control'>
 	         	 	<label for='subprecio'>Precio para Operario</label>
+                <input type='number' name='precio' id='precio' required class='form-control'>
+              <label for='preciosatelite'>Precio para satelite</label>
 
-	         	 	<input type='number' name='subprecio' id='subprecio' required class='form-control'>
+	         	 	<input type='number' name='preciosatelite' id='preciosatelite' required class='form-control'>
 
 
 	         	 </div>
@@ -213,7 +215,7 @@
 	      </div>
 	      <div class="modal-footer">
 	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	        <button type="button" class="btn btn-primary">Save changes</button>
+	        
 	      </div>
 	    </div>
 	  </div>
@@ -247,8 +249,10 @@
                   <th>Nombre Producto</th>
                    <th>Valor</th>
                    <th>Subvalor</th>
+                    <th>valor satelite</th>
 		   <th>N bordados</th>
-		   <th>valor bordados</th>		
+		   <th>valor bordados</th>
+
                   <th>Accion</th>
                 </tr>
                 </thead>

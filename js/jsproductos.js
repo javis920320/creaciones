@@ -73,6 +73,7 @@ $('#tblproductos').DataTable({
 			{data:'nomprod'},
 			{data:'valor'},
 			{data:'subvalor'},
+			{data:'valorsatelite'},
 			{data:'nbordados'},
 			{data:'vbordado'},
 			
