@@ -34,7 +34,33 @@ listatrabajadores();
  	})
  }
 
+vistanomina();
 
+
+ function vistanomina(){
+	 
+	 
+	 
+	$.ajax({
+	  		'url':baseurl+'Cnomina/vistaconsutaldo',
+			'type':'POST',
+	  		'data':{d:1},
+	  		success:function(data){
+	  			var obj=JSON.parse(data);
+				
+				
+				 
+	  			$.each(obj,function(i,items){
+	  				$('#tbody').append('<tr class=""><td>'+items.nombres+'</td><td>'+items.cantidad+'</td><td>'+items.saldo+'</td><tr>');
+					$('#periodo').html('<tr class=""><td>'+items.fechai+'</td><td>'+items.fechaf+'</td><tr>');
+	  				//$('#p').text(items.p);
+	  			});
+
+
+	  		}
+
+	  	});
+ }
 
   function calcular(){
  

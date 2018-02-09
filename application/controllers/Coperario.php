@@ -58,7 +58,7 @@ class Coperario extends CI_Controller
 
 
 
-	$res=$this->Moperario->ingresarproceso($param);
+$res=$this->Moperario->ingresarproceso($param);
 
 	 	 if ($res>=1){
 	 	 	echo 'Registro reportado';

@@ -9,6 +9,13 @@ class Madmin extends CI_Model
 	}
 	
 	
+	 public  function vistaconsutaldo(){
+		 
+	$query=$this->db->query("SELECT * FROM consultasaldo");	 
+	return $query->result();
+		 
+	 }
+	
 	
 	public  function asignarsatelite($param){
 

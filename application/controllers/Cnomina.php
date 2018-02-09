@@ -51,6 +51,18 @@ class Cnomina extends CI_controller
 
 
 	 }
+	 
+	 
+	  public function vistaconsutaldo(){
+		  
+		  $this->input->post('d');
+		  
+		  $res=$this->Madmin->vistaconsutaldo();
+		  echo json_encode($res);
+		  
+		  
+		  
+	  }
 }
 
  ?>

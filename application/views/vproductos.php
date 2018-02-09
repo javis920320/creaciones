@@ -55,8 +55,10 @@
          <input type="text"  name='precioj' id='precioj' class="form-control">
 
          <br>
-         <label for="precioob">Precio obrero</label>
+         <label for="precioob">Precio Operario</label>
          <input type="text" id='precioob' name="precioob" class="form-control">
+		   <label for="vsatelite">Precio Satelite</label>
+         <input type="text" id='vsatelite' name="vsatelite" class="form-control">
 
          <br><br>
 
@@ -201,7 +203,7 @@
 
 	         	 	<input type='number' name='precio' id='precio' required class='form-control'>
 	         	 	<label for='subprecio'>Precio para Operario</label>
-                <input type='number' name='precio' id='precio' required class='form-control'>
+                <input type='number' name='subprecio' id='subprecio' required class='form-control'>
               <label for='preciosatelite'>Precio para satelite</label>
 
 	         	 	<input type='number' name='preciosatelite' id='preciosatelite' required class='form-control'>
