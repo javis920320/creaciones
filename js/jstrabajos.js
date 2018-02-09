@@ -1,3 +1,5 @@
+
+
 $('#btnbuscar').on('click',function(){
 	dato=$('#nfac').val();
 	//alert();
@@ -95,14 +97,16 @@ VARIABLES
 	$.ajax({
 		url:baseurl+'Coperario/ingresarproceso',
 		type:'POST',
-		data:{cantidad:cantidad,productos:productos,idpedido:idpedido,trabajador:trabajador},
+		data:{cantidad:cantidad,productos:productos,idpedido:idpedido,trabajador:trabajador,disp:diponibles},
 		success:function(data){
 		//alert(data);
-		if(data){
+		if(data==0){
 			//$('#tbltrabajos').data.reload();
+			alert('A ocurrido un error verifica la cantidad Disponible');
+
+		}else{
 			validarc();
 			alert(data);
-
 		}
 
 	}

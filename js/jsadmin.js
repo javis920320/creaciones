@@ -4,7 +4,10 @@ user=$('#trabajador').val();
 //alert(user);
 
 cargarvalor(user);
+
  function cargarvalor(user){
+	 
+	 
 
   var  use=user;
  	$.ajax({
@@ -48,6 +51,7 @@ $('#tbltrabajos').DataTable({
 			'columns':[
 			{data: 'idproceso','sClass':'dt-body-center'},
 			{data: 'factura'},
+			{data: 'facultad'},
 			{data:'nomprod'},
 			{data:'descripcion'},
 			{data:'cantidad'},

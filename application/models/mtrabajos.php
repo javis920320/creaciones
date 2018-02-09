@@ -210,7 +210,7 @@ $this->db->where('p.estado',3);
 
 	public function listaprocesos($user){
 
-$query=$this->db->query("select pr.idproceso,pd.factura,p.nomprod,pd.descripcion,pr.cantidad,pr.precio,pr.precio1,pr.fecha 
+$query=$this->db->query("select pr.idproceso,pd.factura,pd.facultad,p.nomprod,pd.descripcion,pr.cantidad,pr.precio,pr.precio1,pr.fecha 
      from periodo x ,proceso pr
       inner join producto p  on p.id_prod=pr.id_prod
        inner join pedido pd on pd.idpedido = pr.idpedido
@@ -446,23 +446,23 @@ where t.idtrabajador=6 and p.fecha between pr.fechai and pr.fechaf
 
 */
 
-	$this->db->select('sum(p.precio1) as valor,sum(p.precio) as valoro');
+	/*$this->db->select('sum(p.precio1) as valor,sum(p.precio) as valoro');
 	$this->db->from('periodo pr,proceso p');
 	$this->db->join('trabajador t','t.idtrabajador = p.idtrabajador');
 	$this->db->where('t.idtrabajador',$param['idtrabajador']);
 	$this->db->where('p.fecha >=',' pr.fechai');
 	$this->db->where('p.fecha<=','pr.fechaf');
 	
-	//$this->db->or_where('p.fecha<=','pr.fechaf');
+	//$this->db->or_where('p.fecha<=','pr.fechaf');*/
 	
 
-	$resul=$this->db->get();
-	return $resul->result();
-
-
-	/*$resul=$this->db->query("select sum(p.precio1) as valor from proceso p,periodo pr
- where p.idtrabajador=".$param['idtrabajador']." and  p.fecha between pr.fechai and pr.fechaf");
+	/*$resul=$this->db->get();
 	return $resul->result();*/
+
+
+	$resul=$this->db->query("select sum(p.precio) as 'valor' from periodo pr,proceso p
+ where p.idtrabajador=".$param['idtrabajador']." and  p.fecha between pr.fechai and pr.fechaf");
+	return $resul->result();
 
 
 

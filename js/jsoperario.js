@@ -17,7 +17,7 @@ cargarvalor(user);
 
  				var obj=JSON.parse(data);
 	  			$.each(obj,function(i,items){
-	  				$('#valor').text(items.valoro);
+	  				$('#valor').text(items.valor);
 	  				//$('#p').text(items.p);
 	  			});
 
@@ -51,6 +51,7 @@ $('#tbltrabajos').DataTable({
 			'columns':[
 			{data: 'idproceso','sClass':'dt-body-center'},
 			{data: 'factura'},
+			{data: 'facultad'},
 			{data:'nomprod'},
 			{data:'descripcion'},
 			{data:'cantidad'},

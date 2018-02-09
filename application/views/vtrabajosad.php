@@ -6,22 +6,35 @@
 <br><br><br>
 	<div class="box box-primary">
 		<div class="box-body">
-		<div class="col-sm-10">
+		<div class="col-sm-12">
 		<div class="col-sm-8">
 		<label for=""><h2><strong>Lista Confecciones</strong></h2></label>
 		</div>
     <br><br><br>
     <div class="col-sm-10">
       <div class="col-sm-2">
-		<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
       	Agregar producto
     	</button>
     </div>
-    <div class="col-sm-8" align='center'>
-      <div class="col-sm-6"><span><h3>VALORE ACUMULADO:  </h3> </span></div>
-      <div class="col-sm-6"> <strong><h3>$<span class='hide' id='valor'></span></h3></strong></div>
+	
+    
+      <div class="col-sm-10">
+	  <!--<span><h3>VALORE ACUMULADO:  $ <span  id='valor'></span>  </h3> </span>-->
+	  <div class="col-sm-8"></div>
+	  <div class="col-sm-3">
+	  <table class='table table-striped'>
+		<thead ><tr class='success' ><th>VALOR ACUMULADO</th></tr></thead>
+		<tbody>
+		<tr><td id='valor'></td><tr>
+		</tbody>
+	  </table>
+	  </div>
+	  
+	  </div>
+      
      
-    </div>
+
       
     </div>
     <br><br>
