@@ -124,9 +124,9 @@ class Ctrabajos extends CI_Controller
 		 	$res2=$this->Mtrabajos->pedidoscant($param);
 		 echo $res2;	
 
-		 }else{
-		 	echo $res2;
-		 }
+		}else{
+		 echo $res2;
+		}
 
 		
 

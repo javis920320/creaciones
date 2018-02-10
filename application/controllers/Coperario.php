@@ -49,7 +49,22 @@ class Coperario extends CI_Controller
 			$param['cantidad']=$this->input->post('cantidad');
 			
 			
-			$disp=$this->Moperario->calculo($param);
+			$comp=$this->Moperario->calculo($param);
+
+			 if($comp== null){
+		 	$comp=$this->Moperario->pedidoscant($param);
+		 	$disp=$comp;
+		
+
+		}else{
+
+			$disp=$comp;
+
+		}
+
+		//echo $disp;
+
+			
 			
 		if($disp<$param['cantidad']){
 				return 0;
@@ -58,7 +73,7 @@ class Coperario extends CI_Controller
 				
 		
 	 	$param['idprod']=$this->input->post('productos');
-	 	$param['idpedido']=$this->input->post('idpedido');
+	 	//$param['idpedido']=$this->input->post('idpedido');
 	 	$param['idpersona']=$this->input->post('trabajador');
 	 	//echo $param['idpedido'];
 	 	//echo $param['idtrabajador'];
@@ -81,12 +96,12 @@ $res=$this->Moperario->ingresarproceso($param);
 				
 				
 			}	
-				
+			
 				
 			
 		
 		
-
+// fin de este ciclo
 
 
 
