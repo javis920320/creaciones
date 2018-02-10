@@ -41,8 +41,8 @@ class Pdfci extends CI_Controller
 
         //datos que queremos enviar a la vista, lo mismo de siempre
         $data = array(
-            'title' => 'REPORTE PEDIDOS CREACIONES GORETTI',
-            'provincias' => $this->Pdf_model->getProvincias()
+            'title' => 'REPORTE PROCESOS CREACIONES GORETTI',
+            'provincias' => $this->Pdf_model->procesos()
         );
 
         //hacemos que coja la vista como datos a imprimir

@@ -224,3 +224,8 @@ http://www.anerbarrena.com/jquery-post-5064/
 
 ---VISTA CONSULTASALDO
 select `pe`.`nombres` AS `nombres`,sum(`pro`.`cantidad`) AS `sum(pro.cantidad)`,sum(`pro`.`precio`) AS `sum(pro.precio)` from `creacion_goretti`.`periodo` `pr` join ((`creacion_goretti`.`proceso` `pro` join `creacion_goretti`.`trabajador` `t` on((`t`.`idtrabajador` = `pro`.`idtrabajador`))) join `creacion_goretti`.`persona` `pe` on((`pe`.`idpersona` = `t`.`idpersona`))) where (`pro`.`fecha` between `pr`.`fechai` and `pr`.`fechaf`) group by `t`.`idtrabajador`
+
+
+--generacion pdf dompdf
+
+https://huguidugui.wordpress.com/2017/04/25/generar-pdf-con-dompdf-en-codeigniter/

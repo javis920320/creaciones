@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="utf-8">
-    <title>REPORTE PEDIDOS</title>
+    <title>REPORTE PROCESOS CREACIONES GORETTY</title>
     <style type="text/css">
         body {
          background-color: #fff;
@@ -78,11 +78,20 @@
         <!--aqui se muestra el numero de la pagina en numeros romanos-->
         <p class="page"></p>
     </div>
-    <h2>Listado Pedidos Creaciones Goretti</h2>
+    <h2> Creaciones Goretti</h2>
     <table border='2'>
         <thead>
             <tr>
-                <th width="10">Factura</th>
+                <th width="10">CODIGO</th>
+                <th width="10">FACTURA</th>
+                <th width="10">FACULTAD</th>
+                <th width="10">TALLA</th>
+                <th width="10">DESCRIPCION</th>
+                <th width="10">PRODUCTO</th>
+                <th width="10">CANTIDAD</th>
+                <th width="10">PRECIO</th>
+                <th width="10">FECHA</th>
+                <th width="10">OPERARIO</th>
                <!-- <th width="50">Facultad</th>
                 <th width="50">descripcion</th>
                  <th width="100">Cliente</th>-->
@@ -91,7 +100,8 @@
         <tbody>
             <?php foreach($provincias as $provincia) { ?>
             <tr>
-                <td width="10"><?php echo $provincia->factura.'|'.$provincia->facultad.'|'.$provincia->descripcion?></td>
+               
+                <td width="10"><?php echo $provincia->idproceso?></td><td width="10"><?php echo $provincia->factura?></td><td width="10"><?php echo $provincia->facultad?></td><td width="10"><?php echo $provincia->talla?></td><td width="10"><?php echo $provincia->descripcion?></td><td width="10"><?php echo $provincia->nomprod?></td><td width="10"><?php echo $provincia->cantidad?></td><td width="10"><?php echo $provincia->precio1?></td><td width="10"><?php echo $provincia->fecha?></td><td width="10"><?php echo $provincia->nombres?></td>
                 
             </tr>
             <?php } ?>
