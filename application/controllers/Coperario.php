@@ -45,15 +45,18 @@ class Coperario extends CI_Controller
  public function ingresarproceso(){
 
 
-	 	
-			$dis=$this->input->post('disp');
-			$can=$this->input->post('cantidad');
-			if($dis<$can){
+	 		$param['idpedido']=$this->input->post('idpedido');
+			$param['cantidad']=$this->input->post('cantidad');
+			
+			
+			$disp=$this->Moperario->calculo($param);
+			
+		if($disp<$param['cantidad']){
 				return 0;
 				
 			}else{
 				
-				$param['cantidad']=$this->input->post('cantidad');
+		
 	 	$param['idprod']=$this->input->post('productos');
 	 	$param['idpedido']=$this->input->post('idpedido');
 	 	$param['idpersona']=$this->input->post('trabajador');
@@ -77,10 +80,10 @@ $res=$this->Moperario->ingresarproceso($param);
 	 	 }
 				
 				
+			}	
 				
 				
-				
-			}
+			
 		
 		
 

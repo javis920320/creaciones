@@ -97,7 +97,7 @@ VARIABLES
 	$.ajax({
 		url:baseurl+'Coperario/ingresarproceso',
 		type:'POST',
-		data:{cantidad:cantidad,productos:productos,idpedido:idpedido,trabajador:trabajador,disp:diponibles},
+		data:{cantidad:cantidad,productos:productos,idpedido:idpedido,trabajador:trabajador},
 		success:function(data){
 		//alert(data);
 		if(data==0){
@@ -167,7 +167,7 @@ $('#formtrabajos').submit(function(){
 	var diponibles=$('#disponibles').val();
 	var cantidad=$('#cantidad').val();
 	
-	//alert('CANTIDAD '+cantidad+' DISPONIBLE '+diponibles);
+	
 	 if(cantidad>diponibles){
 	 	alert('Erro verifica la cantidad disponible');
 	 }else if(diponibles===0){

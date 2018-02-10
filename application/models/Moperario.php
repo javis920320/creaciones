@@ -8,7 +8,39 @@ class Moperario extends CI_Model
 	parent::__construct();
 
 	}
+	
+	
+  public  function calculo($param){
+
+		
+	 		$query=$this->db->query('select (select p.cantidad  from pedido p where p.idpedido='.$param['idpedido'].' )-sum(pr.cantidad)as numero from proceso pr where pr.idpedido='.$param['idpedido'].'');
+	 		
+			
+		foreach ($query->result() as $row)
+		{
+        	return $row->numero;
+        
+		}
+  }
   
+  
+  
+  	public  function pedidoscant($param){
+
+		$query=$this->db->query('select sum(pr.cantidad)as numero from pedido pr where pr.idpedido='.$param['idpedido'].'');
+	 		
+		
+
+		foreach ($query->result() as $row)
+		{
+        	return $row->numero;
+        
+		}
+
+
+
+
+	}
 
 
   public function presiobordados($param){
