@@ -44,7 +44,14 @@
 						
 
  	}
+ public function imp(){
 
+ 	$datos['datos']=$this->input->get('selecciones');
+ 	echo print_r($datos);
+
+ 	
+
+ }
 /*
 autor:Javier lopez
 descricion: este proceso realiza el cambio de estado el pedido

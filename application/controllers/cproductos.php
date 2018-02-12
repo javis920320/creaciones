@@ -13,6 +13,7 @@ class Cproductos extends CI_Controller
 
 
 
+
 	public  function index(){
 
 		$nombres['nombres']=$this->session->userdata('nombres');
