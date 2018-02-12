@@ -158,6 +158,8 @@ switch ( $sapi ) {
     $orientation = $opts["o"];
   else
     $orientation = "portrait";
+    //$orientation = "landscape";
+    
 
   if ( isset($opts["b"]) )
     $base_path = $opts["b"];

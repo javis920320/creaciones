@@ -24,7 +24,7 @@ class Pdf_model extends CI_Model
 
 
         $query=$this->db->query("
-select DISTINCT(p.idproceso),pe.factura,pe.facultad,pe.talla,pe.descripcion,pro.nomprod,p.cantidad,precio1,p.fecha,per.nombres 
+select DISTINCT(p.idproceso),pe.factura,pe.facultad,pe.talla,pe.descripcion,pro.nomprod,p.cantidad,p.precio1,p.prebordado,p.fecha,per.nombres 
 from periodo x,proceso p
 inner join pedido pe on p.idpedido = pe.idpedido 
 inner join tipo_producto tp on pe.idtipoprod = tp.idtipoprod 
@@ -37,6 +37,22 @@ where p.fecha between x.fechai and x.fechaf order by per.nombres");
 
 
 return $query->result();
+    }
+
+
+    public  function valores(){
+
+        $query=$this->db->query("
+select sum(p.precio1) as'vc',sum(p.prebordado) as 'vb',sum(p.precio1+p.prebordado) as'vt'
+from periodo x ,proceso p
+where p.fecha between x.fechai and x.fechaf");
+
+
+
+return $query->result();
+
+
+
     }
 
 

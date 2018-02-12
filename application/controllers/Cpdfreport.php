@@ -61,7 +61,9 @@ function datos_bd(){
     $this->load->model('Pdf_model');
     $this->load->library('mydompdf');
     $data['usuarios'] = $this->Pdf_model->procesos();
+    $data['valores'] = $this->Pdf_model->valores();
     $html= $this->load->view('pdf/datos_db', $data, true);
+     $this->mydompdf->set_paper("A4", "landscape");
     $this->mydompdf->load_html($html);
     $this->mydompdf->render();
     $this->mydompdf->set_base_path('./assets/css/style.css'); //agregar de nuevo el css

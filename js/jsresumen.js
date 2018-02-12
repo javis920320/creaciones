@@ -12,6 +12,12 @@ window.open(baseurl+'Cresumenprocesos/resumen');
 	
 });*/
 
+$('#pdfreport').on('click',function(){
+	
+
+	window.open(baseurl+'/Cpdfreport/datos_bd');
+});
+
 resfiltrar();
 
  function resfiltrar(){

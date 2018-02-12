@@ -81,6 +81,7 @@
                        <!--<a href='<?php echo base_url();?>Cresumenprocesos/resumen' id='btnexportar'class='btn btn-success form-control'>Exportar Excel</a>-->
 
                       <a href='<?php echo base_url();?>Creporte/?fechai="2017-10-20"&fechaf="2017-11-21"?>' id='o'class='btn btn-success form-control'>Exportar Excel</a>
+                      <button  id='pdfreport'class='btn bnt-danger btn-lg form-control'><span class='glyphicon glyphicon-download-alt'></span>  Generar Pdf</button>
                        </div>
             <br><br>
 
