@@ -21,14 +21,17 @@ class Pdf_model extends CI_Model
 
     public function imp($y){
 		
-		/*for ($i=0; $i<count($y) ; $i++){
+		for ($i=0; $i<count($y) ; $i++){
 			
-			$query=$this->db->query("select * from pedido where idpedido=".$y[$i]."");
+			$query[$i]=$this->db->query("select * from pedido where idpedido=".$y[$i]."");
+             return $query[$i]->result();
+
 		
-		}*/
+		}
+         return $query->result();
 	
-		$query=$this->db->query("select * from pedido where idpedido=".$y."");
-		return $query->result();
+		/*$query=$this->db->query("select * from pedido where idpedido=".$y."");
+		return $query->result();*/
 		
 
     }

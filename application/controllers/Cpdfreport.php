@@ -82,25 +82,30 @@ function datos_bd(){
 	
 
     
- for ($i=0; $i<count($y) ; $i++) { 
+/* for ($i=0; $i<count($y) ; $i++) { 
  
 $data[$i] = $this->Pdf_model->imp($y[$i]);
- 
- }
- 
 
+ $data[$i]['string']=$data[$i];
  
+ }*/
+ 
+//var_dump($data);
+
+ $data['string'] = $this->Pdf_model->imp($y);
+
+ var_dump( $data['string']);
 
 
  
  
     
-    $html= $this->load->view('pdf/datos_db', $data, true);
+  /*  $html= $this->load->view('pdf/lista', $data, true);
      $this->mydompdf->set_paper("A4", "landscape");
     $this->mydompdf->load_html($html);
     $this->mydompdf->render();
     $this->mydompdf->set_base_path('./assets/css/style.css'); //agregar de nuevo el css
-    $this->mydompdf->stream("welcome.pdf", array("Attachment" => false));
+    $this->mydompdf->stream("welcome.pdf", array("Attachment" => false));/*
  }
 
 }
