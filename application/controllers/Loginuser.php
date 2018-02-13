@@ -61,6 +61,12 @@ public function index(){
 						redirect('Cadmin');		
 						
 						break;
+						case 4:
+					
+						redirect('Csatelite');		
+						
+						break;
+						
 				
 				default:
 					echo'Tipo User no identity';

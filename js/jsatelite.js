@@ -1,4 +1,4 @@
-lstsatelites();
+//lstsatelites();
 
 function buscar(){
 
