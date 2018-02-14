@@ -44,6 +44,23 @@ public  function listasatelites(){
 
 }
 
+public  function lstsatelite(){
+
+
+	
+
+	$res=$this->Madmin->lstsatelite(1);
+
+	 echo json_encode($res);
+
+
+
+
+
+}
+
+
+
 
 public  function asignarsatelite(){
 

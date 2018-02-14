@@ -15,6 +15,21 @@ class Madmin extends CI_Model
 	return $query->result();
 		 
 	 }
+
+
+
+	 public  function lstsatelite($idtrabajador){
+
+
+	 	$query=$this->db->query("select idproceso,pe.factura,pe.facultad,pe.talla,pr.cantidad,pr.precio,pr.fecha,pr.estado,pr.idtrabajador
+			from proceso pr
+			inner join pedido pe  on pe.idpedido = pr.idpedido
+			inner join producto pd on pd.id_prod = pr.id_prod
+			where pr.estado=2 and pr.idtrabajador=".$idtrabajador."");
+
+
+	 	return $query->result();
+	 }
 	
 	
 	public  function asignarsatelite($param){
