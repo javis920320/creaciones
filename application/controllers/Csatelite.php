@@ -15,10 +15,11 @@ class Csatelite extends CI_Controller
 	 public function index(){
 
 	 	$nombres['nombres']=$this->session->userdata('nombres');
+	 		$idpersona['idpersona']=$this->session->userdata('id');
 
 	 	$this->load->view('layou/header',$nombres);
 	 	$this->load->view('layou/menu',$nombres);
-	 	$this->load->view('vsatelite');
+	 	$this->load->view('vsatelite',$idpersona);
 	 	$this->load->view('layou/footer',$nombres);
 
 
@@ -68,12 +69,18 @@ public  function asignarsatelite(){
 		$param['cantidad']=$this->input->post('cantidad');
 	 	$param['idprod']=$this->input->post('productos');
 	 	$param['idpedido']=$this->input->post('idpedido');
-	 	$param['idtrabajador']=$this->input->post('trabajador');
+	 	$param['idpersona']=$this->input->post('trabajador');
+
+	 	$param['idtrabajador']=$this->Madmin->idtrabajador($param);
 	 	//echo $param['idtrabajador'];
 	 	$param['fecha']=date ("Y-m-d");
 
 	 	$preciob=$this->Madmin->presiobordados($param);
+
 	 	$param['preciob']=$preciob*$param['cantidad'];
+
+	 	$presate=$this->Madmin->preciosatelite($param);
+	 	$preciosatelite['preciosatelite']=$presate*$param['cantidad'];
 
 		$res=$this->Madmin->asignarsatelite($param);
 

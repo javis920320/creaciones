@@ -1,4 +1,5 @@
 //lstsatelites();
+//alert($('#trabajador').val());
 
 function buscar(){
 

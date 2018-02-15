@@ -14,8 +14,22 @@ class Madmin extends CI_Model
 	$query=$this->db->query("SELECT * FROM consultasaldo");	 
 	return $query->result();
 		 
+
 	 }
 
+
+public  function preciosatelite($param){
+
+	$query=$this->db->query("select pr.valorsatelite from precio pr
+inner join producto p on pr.id_prod = p.id_prod
+where  pr.id_prod=".$param['id_prod']."");
+
+
+	$query->result();
+
+
+
+}
 
 
 	 public  function lstsatelite($idtrabajador){
@@ -43,8 +57,9 @@ class Madmin extends CI_Model
 	 	'id_prod' => $param['idprod'],
 	 	'idpedido' =>  $param['idpedido'],
 	 	'idtrabajador' =>$param['idtrabajador'],
-	 	'precio' => 0,
+	 	'precio'  =>$param['preciosatelite'],
 	 	'precio1' => 0,
+
 	 	'prebordado'=>$param['preciob']
 
 
@@ -245,6 +260,26 @@ public  function eliminaruser($param){
 
 
 }
+
+
+
+
+
+public  function idtrabajador($param){
+
+	  
+	 		$query=$this->db->query('select  t.idtrabajador  from trabajador t where t.idpersona='.$param['idpersona'].' ');
+	 		
+			
+		foreach ($query->result() as $row)
+		{
+        	return $row->idtrabajador;
+        
+		}
+
+
+
+	  }
 
 }
 

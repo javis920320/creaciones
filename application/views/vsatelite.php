@@ -76,12 +76,7 @@
               <label for='cantidad'>Cantidad:</label>
               <input type='number' name='cantidad' id='cantidad' min='1'  class='form-control' required="true">
             </div>
-
-
-            <label for='trabajador'>Asignar a:</label>
-            <select id="trabajador" name="trabajador" class=" pr form-control" onchange='listatrabajador();' required="true">
-
-            </select>
+               <input id='trabajador' name='trabajador' hidden value="<?php echo$idpersona;?>">
 
 <br><br>
 
