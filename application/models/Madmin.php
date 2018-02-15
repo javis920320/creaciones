@@ -22,10 +22,24 @@ public  function preciosatelite($param){
 
 	$query=$this->db->query("select pr.valorsatelite from precio pr
 inner join producto p on pr.id_prod = p.id_prod
-where  pr.id_prod=".$param['id_prod']."");
+where pr.estado=1 and  p.id_prod=".$param['idprod']."");
+
+foreach ($query->result() as $row)
+		{
+        	return $row->valorsatelite;
+        
+		}
+
+/*$this->db->select(" pr.valorsatelite");
+$this->db->from("precio pr");
+$this->db->join('producto p ','pr.id_prod = p.id_prod');
+$this->db->where('pr.estado=',1);
+$this->db->where('p.id_prod=',$param['idprod']); 
+$resul=$this->db->get();
+		return $res=$resul->row();*/
 
 
-	$query->result();
+	//$query->result();
 
 
 
@@ -35,7 +49,7 @@ where  pr.id_prod=".$param['id_prod']."");
 	 public  function lstsatelite($idtrabajador){
 
 
-	 	$query=$this->db->query("select idproceso,pe.factura,pe.facultad,pe.talla,pr.cantidad,pr.precio,pr.fecha,pr.estado,pr.idtrabajador
+	 	$query=$this->db->query("select idproceso,pd.nomprod,pe.factura,pe.facultad,pe.talla,pr.cantidad,pr.precio,pr.fecha,pr.estado,pr.idtrabajador,pe.descripcion,pe.fecha_ingreso
 			from proceso pr
 			inner join pedido pe  on pe.idpedido = pr.idpedido
 			inner join producto pd on pd.id_prod = pr.id_prod
@@ -52,7 +66,7 @@ where  pr.id_prod=".$param['id_prod']."");
 	 $datos= array(
 	 	'idproceso' => null, 
 	 	'cantidad' => $param['cantidad'],
-	 	'estado' => 1,
+	 	'estado' => 2,
 	 	'fecha' => $param['fecha'],
 	 	'id_prod' => $param['idprod'],
 	 	'idpedido' =>  $param['idpedido'],

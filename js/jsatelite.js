@@ -1,5 +1,90 @@
 //lstsatelites();
 //alert($('#trabajador').val());
+  var persona=$('#trabajador').val();
+
+
+lstprocesosatelite(persona);
+
+
+function lstprocesosatelite(persona){
+	
+	//alert(persona);
+	
+	
+	
+	 $('#tblsatelite').DataTable({
+			'paging':true,
+			'info':true,
+			'filter':true,
+			'destroy':true,
+			'stateSave':true,
+
+			'ajax':{
+
+				"url":baseurl+"Csatelite/lstsatelite",
+				'data':{idpersona:persona},
+				'type':'POST',
+				dataSrc:''
+			},
+
+			'columns':[
+			//{data: 'idpedido','sClass':'dt-body-center'},
+			{data: 'factura','sClass':'dt-body-center'},
+			//{data:'nomtipoprod'},
+			{data:'nomprod'},
+			{data:'facultad'},
+			{data:'cantidad'},
+			{data:'talla'},
+			{data:'descripcion'},
+			//{data:'nombres'},
+			{data:'fecha_ingreso'},
+			{data:'estado'},
+
+			{"orderable":true,
+			render:function(data,type,row){
+
+
+
+return '<span class="pull-right"> $ ' +
+									//'<input type="radio" class="idpedido" onchange="validarc();"name="idpedido" value='+row.idpedido+' required="true">'
+									row.precio
+									
+									
+                       +
+                      '</span>';
+
+
+
+					//return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" data-toggle="modal" data-target="#myModal"><i class=" fa fa-edit"></i></a
+					//return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" title="Enviar informacion" data-toggle="modal" data-target="#estado" onClick="estadopedido(\''+row.idpedido+'\',\''+row.nombres+'\',\''+row.telefono+'\');"><i class=" glyphicon glyphicon-plane"></i><span> Enviar</span></a>';
+					}
+			}
+
+
+			],
+			"columnDefs": [
+        {
+          "targets": [7], 
+          "data": "estado", 
+          "render": function(data, type, row) {
+            
+            if (data == 2) {
+              return "<span class='label label-warning'>Pendiente Pago</span>";
+            }else if (data == 3) {
+              return "<span class='label label-success'>En confeccion</span>";
+            }else if (data == 2) {
+              return "<span class='label label-danger'>En cortes</span>";
+            }
+              
+          }
+        }
+         ],
+
+ "order":[[0,"asc"]],
+
+		});	
+	
+}
 
 function buscar(){
 
@@ -93,11 +178,11 @@ $('#tblresumen .idpedido').on('change',function(){
 
 
 
-function filtrar(){
+ function filtrar(){
 
  	 var dato=$('#tpprod').val();
  	  var fac=$('#fac').val();
-
+//alert(fac);
  	 $('#tblresumen').DataTable({
 			'paging':true,
 			'info':true,
@@ -215,8 +300,10 @@ function registroproceso(){
 //$('#formtrabajos').submit(function(){
 
 
-	var diponibles=$('#disponibles').val();
+	var dis=$('#disponibles').val();
 	var cantidad=$('#cantidad').val();
+	
+	diponibles=parseInt(dis);
 	
 	//alert('CANTIDAD '+cantidad+' DISPONIBLE '+diponibles);
 	 if(cantidad>diponibles){

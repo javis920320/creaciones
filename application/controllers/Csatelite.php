@@ -48,9 +48,11 @@ public  function listasatelites(){
 public  function lstsatelite(){
 
 
+	$param['idpersona']=$this->input->post('idpersona');
 	
+	$param['idtrabajador']=$this->Madmin->idtrabajador($param);
 
-	$res=$this->Madmin->lstsatelite(1);
+	$res=$this->Madmin->lstsatelite($param['idtrabajador']);
 
 	 echo json_encode($res);
 
@@ -80,7 +82,7 @@ public  function asignarsatelite(){
 	 	$param['preciob']=$preciob*$param['cantidad'];
 
 	 	$presate=$this->Madmin->preciosatelite($param);
-	 	$preciosatelite['preciosatelite']=$presate*$param['cantidad'];
+	 	$param['preciosatelite']=$presate*$param['cantidad'];
 
 		$res=$this->Madmin->asignarsatelite($param);
 
@@ -97,6 +99,16 @@ public  function asignarsatelite(){
 
 
 
+}
+
+public  function pruebaf(){
+	
+	$param['idprod']=66;
+	
+	$presate['que']=$this->Madmin->preciosatelite($param);
+	echo $presate['que'];
+	
+	
 }
 
 

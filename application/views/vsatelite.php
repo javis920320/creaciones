@@ -108,8 +108,8 @@
             <!-- /.box-header -->
              
             <div class="box-body table-responsive no-padding">
-             <!-- <table  id='tblproductosen' class="table table-hover table-responsive">
-                <thead class="bg-success">
+             <table  id='tblsatelite' class="table table-hover table-responsive table-bordered">
+                <thead class="bg-info">
                 <tr>
                   <th>Factura</th>
                   <th>Producto</th>
@@ -117,15 +117,15 @@
                    <th>Cantidad</th>
                    <th>Talla</th>
                    <th>Descripcion</th>
-                   <th>Cliente</th>
+                  
                   <th>Fecha ingreso</th>
                   <th>Estados</th>
-                  <th>Accion</th>
+                  <th>Saldo</th>
                 </tr>
                 </thead>
                 <tbody></tbody>
                 
-              </table>-->
+              </table>
             </div>
             <!-- /.box-body -->
           </div>
