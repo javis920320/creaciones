@@ -71,7 +71,7 @@ return '<span class="pull-right"> $ ' +
             if (data == 2) {
               return "<span class='label label-warning'>Pendiente Pago</span>";
             }else if (data == 3) {
-              return "<span class='label label-success'>En confeccion</span>";
+              return "<span class='label label-success'>Producto Entregado</span>";
             }else if (data == 2) {
               return "<span class='label label-danger'>En cortes</span>";
             }

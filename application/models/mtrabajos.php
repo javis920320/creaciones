@@ -277,6 +277,7 @@ $query=$this->db->query("select pr.idproceso,pd.factura,pd.facultad,p.nomprod,pd
 		$this->db->join('persona pe','pe.idpersona=t.idpersona');
 		$this->db->where('pr.fecha>=x.fechai');
 		$this->db->where('pr.fecha<=x.fechaf');
+		$this->db->where('pr.estado=1');
 		$this->db->group_by('pr.idproceso,bp.id_prod');
 
 

@@ -53,7 +53,7 @@ $resul=$this->db->get();
 			from proceso pr
 			inner join pedido pe  on pe.idpedido = pr.idpedido
 			inner join producto pd on pd.id_prod = pr.id_prod
-			where pr.estado=2 and pr.idtrabajador=".$idtrabajador."");
+			where pr.estado in(2,3) and pr.idtrabajador=".$idtrabajador."");
 
 
 	 	return $query->result();
