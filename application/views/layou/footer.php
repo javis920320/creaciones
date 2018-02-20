@@ -84,6 +84,10 @@
 
     <script src="<?php echo  base_url();?>js/nomina.js"></script>
 <?php  }?>
+<?php  if($this->uri->segment(1)=='Clistasatel') { ?>
+
+    <script src="<?php echo  base_url();?>js/jslistasatelites.js"></script>
+<?php  }?>
 <?php  if($this->uri->segment(1)=='Cproductos') { ?>
 <script src="<?php echo  base_url();?>js/jsproductos.js"></script>
 <?php  }?>
