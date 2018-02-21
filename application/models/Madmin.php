@@ -16,6 +16,14 @@ class Madmin extends CI_Model
 		 
 
 	 }
+	 
+	 
+	 public function SaldoPendiente($param){
+		 
+		 $query=$this->db->query("select sum(precio) as precio from proceso where idtrabajador=".$param['idtrabajador']." and estado=2");
+		 
+		 return $query->result();
+	 }
 
 
 public  function preciosatelite($param){

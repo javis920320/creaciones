@@ -101,6 +101,19 @@ public  function asignarsatelite(){
 
 }
 
+public function SaldoPendiente(){
+	
+	$param['idpersona']=$this->input->post('persona');
+	
+		$param['idtrabajador']=$this->Madmin->idtrabajador($param);
+		
+		$res=$this->Madmin->SaldoPendiente($param);
+		echo json_encode($res);
+		
+		
+	
+}
+
 public  function pruebaf(){
 	
 	$param['idprod']=66;

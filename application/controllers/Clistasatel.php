@@ -24,6 +24,26 @@ class Clistasatel extends CI_Controller
 
 
 	 }
+	 
+	 
+	 public function lstgeneral(){
+		 
+		$param['idpersona']=$this->input->post('persona');
+		
+		if($param['idpersona']==null){
+			
+			
+			
+		}else{
+			$param['idtrabajador']=$this->Madmin->idtrabajador($param);
+			
+			
+		}
+		
+		 
+		 
+		 
+	 }
 }
 
 
