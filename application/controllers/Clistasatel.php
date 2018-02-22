@@ -28,17 +28,12 @@ class Clistasatel extends CI_Controller
 	 
 	 public function lstgeneral(){
 		 
-		$param['idpersona']=$this->input->post('persona');
+		$param['idtrabajador']=$this->input->post('trabajador');
+		$idtrabajador=$param['idtrabajador'];
 		
-		if($param['idpersona']==null){
-			
-			
-			
-		}else{
-			$param['idtrabajador']=$this->Madmin->idtrabajador($param);
-			
-			
-		}
+		$res=$this->Madmin->lstsatelite($idtrabajador);
+		
+		echo json_encode($res);
 		
 		 
 		 
