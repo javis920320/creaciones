@@ -30,3 +30,23 @@ function lstsatelites(){
 
 	});
 }
+
+
+$('#trabajador').on('change',function(){
+
+
+ var param=$('#trabajador').val();
+resumenproductos(param);
+
+	
+
+});
+
+
+ function resumenproductos(param){
+
+
+
+
+
+ }
