@@ -1,6 +1,7 @@
 //lstsatelites();
 //alert($('#trabajador').val());
   var persona=$('#trabajador').val();
+ // alert(persona);
 
 
 lstprocesosatelite(persona);
@@ -355,5 +356,45 @@ VARIABLES
 
 //});
 }
+SaldoPendiente(persona);
+
+
+ function SaldoPendiente(persona){
+
+$.ajax({
+
+	url:baseurl+'Csatelite/SaldoPendiente',
+		type:'POST',
+		data:{persona:persona},
+		success:function(data){
+			//alert(data);
+			
+				var obj=JSON.parse(data);
+
+	
+			div='';
+
+
+
+			$.each(obj,function(i,items){
+				div+='<div>Saldo Pendiente:<strong> $  ' + items.precio+ '</strong></vid>';
+			});
+
+
+
+			
+			$("#saldo").html(div);
+
+
+
+			
+		}
+
+
+});
+
+
+
+ }
 
 

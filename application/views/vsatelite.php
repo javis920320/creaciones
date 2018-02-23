@@ -99,8 +99,11 @@
           <div class="box">
             <div class="box-header">
               <h3 class="box-title" class='text-primary'> SATELITES CREACIONES </h3><br><br>
+			  
+			  <div id='saldo'>33</div>
               
 <button id='pdf' class='btn '  data-toggle="modal" data-target="#asignar"><span class='glyphicon glyphicon-sum'></span>  Asignar proceso</button>
+
 
 
 

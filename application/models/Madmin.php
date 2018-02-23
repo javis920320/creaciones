@@ -16,6 +16,14 @@ class Madmin extends CI_Model
 		 
 
 	 }
+	 
+	 
+	 public function SaldoPendiente($param){
+		 
+		 $query=$this->db->query("select sum(precio) as precio from proceso where idtrabajador=".$param['idtrabajador']." and estado=2");
+		 
+		 return $query->result();
+	 }
 
 
 public  function preciosatelite($param){
@@ -47,17 +55,37 @@ $resul=$this->db->get();
 
 
 	 public  function lstsatelite($idtrabajador){
-
-
-	 	$query=$this->db->query("select idproceso,pd.nomprod,pe.factura,pe.facultad,pe.talla,pr.cantidad,pr.precio,pr.fecha,pr.estado,pr.idtrabajador,pe.descripcion,pe.fecha_ingreso
+		 if($idtrabajador==0){
+			 $query=$this->db->query("select idproceso,pd.nomprod,pe.factura,pe.facultad,pe.talla,pr.cantidad,pr.precio,pr.fecha,pr.estado,pr.idtrabajador,pe.descripcion,pe.fecha_ingreso,p.nombres
 			from proceso pr
 			inner join pedido pe  on pe.idpedido = pr.idpedido
 			inner join producto pd on pd.id_prod = pr.id_prod
+			inner join trabajador tr on tr.idtrabajador=pr.idtrabajador
+			inner join persona p on p.idpersona=tr.idpersona
+			where pr.estado in(2,3)");
+			 
+		 }else{
+		 
+		
+
+
+	 	$query=$this->db->query("select idproceso,pd.nomprod,pe.factura,pe.facultad,pe.talla,pr.cantidad,pr.precio,pr.fecha,pr.estado,pr.idtrabajador,pe.descripcion,pe.fecha_ingreso,p.nombres
+			from proceso pr
+			inner join pedido pe  on pe.idpedido = pr.idpedido
+			inner join producto pd on pd.id_prod = pr.id_prod
+			inner join trabajador tr on tr.idtrabajador=pr.idtrabajador
+			inner join persona p on p.idpersona=tr.idpersona
 			where pr.estado in(2,3) and pr.idtrabajador=".$idtrabajador."");
+			}
 
 
 	 	return $query->result();
 	 }
+	 
+	 
+	 
+	 
+	
 	
 	
 	public  function asignarsatelite($param){

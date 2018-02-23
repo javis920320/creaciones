@@ -18,8 +18,7 @@
 
 <div class="col-xs-17"> <strong align='center'>Creaciones Goretti</strong></div>
 
-
-
+			  
   
   
  <!-- Modal -->
@@ -30,9 +29,11 @@
           <div class="box">
             <div class="box-header">
               <h3 class="box-title" class='text-primary'> SATELITES CREACIONES </h3><br><br>
+
+			  
               
 
-<select name="trabajador" id="trabajador" class="form-control"></select>
+<div class='btn-group-group'><select name="trabajador" id="trabajador" class="form-control"></select></div><div class='btn-group'><button class='btn btn-success' onclick='cambioestado();'>Pasar a Entregados</button>
 
 
             </div>
@@ -51,7 +52,9 @@
                   
                   <th>Fecha ingreso</th>
                   <th>Estados</th>
+				  <th>Satelite</th>
                   <th>Saldo</th>
+				  
                 </tr>
                 </thead>
                 <tbody></tbody>

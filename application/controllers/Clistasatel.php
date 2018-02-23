@@ -24,6 +24,21 @@ class Clistasatel extends CI_Controller
 
 
 	 }
+	 
+	 
+	 public function lstgeneral(){
+		 
+		$param['idtrabajador']=$this->input->post('trabajador');
+		$idtrabajador=$param['idtrabajador'];
+		
+		$res=$this->Madmin->lstsatelite($idtrabajador);
+		
+		echo json_encode($res);
+		
+		 
+		 
+		 
+	 }
 }
 
 
