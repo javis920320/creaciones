@@ -32,26 +32,8 @@ function lstsatelites(){
 }
 
 
-<<<<<<< HEAD
-$('#trabajador').on('change',function(){
 
 
- var param=$('#trabajador').val();
-resumenproductos(param);
-
-	
-
-});
-
-
- function resumenproductos(param){
-
-
-
-
-
- }
-=======
 
 
 
@@ -153,4 +135,4 @@ function cambioestado(){
 }
 
 
->>>>>>> b48b9842c33f306258fa4f6b2263e2c5fdd9716d
+
