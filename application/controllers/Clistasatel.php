@@ -39,6 +39,23 @@ class Clistasatel extends CI_Controller
 		 
 		 
 	 }
+	 
+	 
+	 public function cambiarestado(){
+		 
+		 
+		 $idtrabajador=$this->input->post('idtrabajador');
+		 
+		$res= $this->Madmin->cambiarestado($idtrabajador);
+		
+		if($res>=1){
+			echo 'Tarea realizada con exito';
+			
+		}else{
+			echo 'Tarea no realizada';
+		}
+	 }
+	 
 }
 
 

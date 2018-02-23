@@ -9,6 +9,21 @@ class Madmin extends CI_Model
 	}
 	
 	
+	public  function cambiarestado($idtrabajador){
+		
+		$datos= array('estado'=>3);
+		
+		$this->db->where('idtrabajador',$idtrabajador);
+		$this->db->where('estado',2);
+		$this->db->update('proceso',$datos);
+		
+		
+		$res=$this->db->affected_rows();
+		return$res;
+
+	}
+	
+	
 	 public  function vistaconsutaldo(){
 		 
 	$query=$this->db->query("SELECT * FROM consultasaldo");	 
@@ -75,7 +90,7 @@ $resul=$this->db->get();
 			inner join producto pd on pd.id_prod = pr.id_prod
 			inner join trabajador tr on tr.idtrabajador=pr.idtrabajador
 			inner join persona p on p.idpersona=tr.idpersona
-			where pr.estado in(2,3) and pr.idtrabajador=".$idtrabajador."");
+			where pr.estado in(2) and pr.idtrabajador=".$idtrabajador."");
 			}
 
 

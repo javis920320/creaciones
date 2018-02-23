@@ -25,13 +25,30 @@ function lstsatelites(){
 
 			//html+='</select>';
 			$("#trabajador").html(html);
+			$("#ctra").html(html);
 
 		}
 
 	});
 }
 
+ function cambiolista(){
+	 
+	 var idtrabajador=$('#ctra').val();
+	 //alert(idtrabajador);
+	 
+	 $.ajax({
+		 url:baseurl+'Clistasatel/cambiarestado',
+		 data:{idtrabajador:idtrabajador},
+		type:'POST',
+		success:function(data){
+			alert(data);
+			
 
+		}
+		 
+	 });
+ }
 
 
 
