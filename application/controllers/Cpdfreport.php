@@ -115,6 +115,9 @@ $data[$i] = $this->Pdf_model->imp($y[$i]);
     $this->load->model('Pdf_model');
     $this->load->library('mydompdf');
     $data['string'] = $this->Pdf_model->satelite($s);
+	 $data['saldos'] = $this->Pdf_model->saldosatelite($s);
+	
+	//saldosatelite();
    // $data['valores'] = $this->Pdf_model->valores();
     $html= $this->load->view('pdf/vsatelites', $data, true);
      $this->mydompdf->set_paper("A4", "landscape");
@@ -123,6 +126,17 @@ $data[$i] = $this->Pdf_model->imp($y[$i]);
     $this->mydompdf->set_base_path('./assets/css/style.css'); //agregar de nuevo el css
     $this->mydompdf->stream("satelite".date('d-m-Y').".pdf", array("Attachment" => false));
  }
+ 
+ 
+ public  function prueba(){
+	  $this->load->model('Pdf_model');
+	 
+	 $res=$this->Pdf_model->saldosatelite(1);
+	 echo json_encode($res);
+	 
+ }
+ 
+ 
 
 
 }

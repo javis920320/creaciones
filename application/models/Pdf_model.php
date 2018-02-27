@@ -96,11 +96,24 @@ return $query->result();
 			inner join producto pd on pd.id_prod = pr.id_prod
 			inner join trabajador tr on tr.idtrabajador=pr.idtrabajador
 			inner join persona p on p.idpersona=tr.idpersona
-			where pr.estado in(2,3) and pr.idtrabajador=".$s."");
+			where pr.estado in(2) and pr.idtrabajador=".$s."");
 			}
 
 
 	 	return $query->result();
+		
+		
+	}
+	
+	
+	public  function saldosatelite($s){
+		
+		$query=$this->db->query("select sum(precio)pre,sum(prebordado)preb
+				from proceso 
+				where idtrabajador=".$s." and estado=2 ");
+				
+				
+				return $query->result();
 		
 		
 	}
@@ -112,5 +125,4 @@ return $query->result();
 
 
 }
-/* End of file pdf_model.php */
-/* Location: ./application/models/pdf_model.php */
+

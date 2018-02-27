@@ -33,7 +33,7 @@
 			  
               
 
-<div class='btn-group-group'><select name="trabajador" id="trabajador" class="form-control"></select></div><div class='btn-group'><button class='btn btn-success' onclick='cambioestado();'>Ver reporte</button>
+<div class='btn-group-group'><select name="trabajador" id="trabajador" class="form-control" required></select></div><div class='btn-group'><button class='btn btn-success' onclick='cambioestado();'>Ver reporte</button>
 
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
   Cambio lista

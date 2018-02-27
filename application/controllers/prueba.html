@@ -1,0 +1,178 @@
+<?php  
+
+if(!isset($_POST)){
+$mensaje['mensaje']='';
+}else{
+$webb=$_POST['dominio'];  
+//echo '$webb';
+$dominios[1]='.com';  
+$dominios[2]='.net';  
+$dominios[3]='.org';  
+$dominios[4]='.biz';
+$dominios[5]='.gov.co';
+$dominios[6]='.es';
+$dominios[7]='.com.co';
+
+$ini=1;  
+
+while($ini<=7){  
+ 
+ $pagina='http://www.'.$webb.$dominios[$ini];  
+ if(@fopen($pagina,"r")){  
+
+  //echo' la pagina con el dominio '.$pagina.' esta ocupado<br>';  
+     $mensaje['mensaje']='la pagina con el dominio '.$pagina.' esta ocupado<br>';
+
+  }else{  
+
+   echo'El Dominio '.$pagina.'  esta disponible<br>';  
+
+  }  
+ $ini++;  
+ }
+ 
+ 
+} ?>
+
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US"><head><!-- Created by Artisteer v4.1.0.59861 -->
+    <meta charset="utf-8">
+    <title>Inicio</title>
+    <meta name="viewport" content="initial-scale = 1.0, maximum-scale = 1.0, user-scalable = no, width = device-width">
+
+    <!--[if lt IE 9]><script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <link rel="stylesheet" href="style.css" media="screen">
+    <!--[if lte IE 7]><link rel="stylesheet" href="style.ie7.css" media="screen" /><![endif]-->
+    <link rel="stylesheet" href="style.responsive.css" media="all">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css" media="all">
+
+
+    <script src="jquery.js"></script>
+    <script src="script.js"></script>
+    <script src="script.responsive.js"></script>
+<meta name="description" content="Description">
+<meta name="keywords" content="Keywords">
+
+
+
+<style>.art-content .art-postcontent-0 .layout-item-0 {  border-collapse: separate;  }
+.art-content .art-postcontent-0 .layout-item-1 { border-top-width:2px;border-top-style:solid;border-top-color:#B1B8C3;margin-top: 5px;margin-bottom: 5px;  }
+.art-content .art-postcontent-0 .layout-item-2 { color: #1F1F1F; background: #B1B8C3; padding-right: 5px;padding-left: 5px;  }
+.art-content .art-postcontent-0 .layout-item-3 { padding-right: 5px;padding-left: 5px;  }
+.art-content .art-postcontent-0 .layout-item-4 { border-top-width:2px;border-top-style:solid;border-top-color:#B1B8C3;margin-top: 0px;margin-bottom: 0px;  }
+.ie7 .art-post .art-layout-cell {border:none !important; padding:0 !important; }
+.ie6 .art-post .art-layout-cell {border:none !important; padding:0 !important; }
+
+</style></head>
+<body>
+<div id="art-main">
+<header class="art-header">
+
+
+    <div class="art-shapes">
+<div class="art-textblock art-object554312304" data-left="0%">
+        <div class="art-object554312304-text-container">
+        <div class="art-object554312304-text"></div>
+    </div>
+    
+</div>
+            </div>
+<h1 class="art-headline" data-left="2.18%">
+    <a href="#">servicom colombia</a>
+</h1>
+<h2 class="art-slogan" data-left="3.22%">Al servicio de la comunidad</h2>
+
+
+
+
+<nav class="art-nav">
+    <div class="art-nav-inner">
+        <ul class="art-hmenu"><li><a href="registroservicom.php" class="active">REGISTRO</a></li><li><a href="loginservicom.php">INICIAR SESION</a></ul> 
+        </div>
+    </nav>
+
+                    
+</header>
+<div class="art-sheet clearfix">
+            <div class="art-layout-wrapper">
+                <div class="art-content-layout">
+                    <div class="art-content-layout-row">
+                        <div class="art-layout-cell art-sidebar1"><div class="art-block clearfix">
+        <div class="art-blockheader">
+            <h3 class="t">Services</h3>
+        </div>
+        <div class="art-blockcontent"><p>Diseño de paginas web.&nbsp;<a href="#"><img width="8" height="6" alt="" src="images/5.png"></a></p><p>Diseño de paginas web.&nbsp;<a href="#"><img width="8" height="6" alt="" src="images/5.png"></a></p><p>Diseño de software.&nbsp;<a href="#"><img width="8" height="6" alt="" src="images/5.png"></a></p><p>Administracion de sitios.&nbsp;<a href="#"><img width="8" height="6" alt="" src="images/5.png"></a></p><p>Sistemas de salud.&nbsp;<a href="#"><img width="8" height="6" alt="" src="images/5.png"></a></p><p>Auditoria de sistemas.&nbsp;<a href="#"><img width="8" height="6" alt="" src="images/5.png"></a></p><p>Gestion de calidad de software&nbsp;<a href="#"><img width="8" height="6" alt="" src="images/5.png"></a></p><p>Gerencia en desarrollo de software.&nbsp;<a href="#"><img width="8" height="6" alt="" src="images/5.png"></a></p><p><a href="directorio.html">Directorio.</a>&nbsp;<a href="#"><img width="8" height="6" alt="" src="images/5.png"></a><br></p><p><a href="Blog%20Posts/putumayo.html">Departamentos.</a>&nbsp;<a href="#"><img width="8" height="6" alt="" src="images/5.png"></a></p><p><br></p><p><br></p><p><br></p><p><br></p><p><a href="#" class="art-button">Leer mas..</a></p></div>
+</div><div class="art-block clearfix">
+        <div class="art-blockheader">
+            <h3 class="t">Redes sociales</h3>
+        </div>
+        <div class="art-blockcontent"><p style="text-align: center;"><img width="50" height="50" alt="" src="images/1305276470_social_facebook_box_white.png" class=""><img width="50" height="50" alt="" src="images/1305276480_social_twitter_box_white.png" class=""><img width="50" height="50" alt="" src="images/1305276487_social_rss_box_white.png" class=""></p></div>
+</div><div class="art-block clearfix">
+        <div class="art-blockheader">
+            <h3 class="t">Noticias</h3>
+        </div>
+        <div class="art-blockcontent"><p style="border-bottom: 1px solid #374865">Noticias</p><p style="border-bottom: 1px solid #374865"><br></p></div>
+</div></div>
+                        <div class="art-layout-cell art-content"><article class="art-post art-article">
+                                
+                                                
+                <div class="art-postcontent art-postcontent-0 clearfix"><div class="art-content-layout layout-item-0">
+    <div class="art-content-layout-row">
+    <div class="art-layout-cell layout-item-2" style="width: 100%" >
+        <h3 style="color:#4C5057; float: left; margin-left: 30px; padding-top: 10px"><span style="font-size: 16px;">VERIFICACION DE DOMINIO</span></h3><p style="float: right; margin-right: 40px"></p>
+    </div>
+    </div>
+</div>
+<div class="art-content-layout-br layout-item-1">
+</div>
+                    
+<!--Inicio de registro login -->
+
+        <div class="container">
+            <div class="row jumbotron">
+                <div class="col-md-10">
+                   
+
+                    <form role="form" name="dominio" action="dominios.php" method="post">
+                        <div class="form-group">
+                            <label for="username"> <h3> DIGITE EL DOMINIO  <h3></label>                          
+                            <input style="WIDTH: 500px"  type="text" class="form-control" id="dominio" name="dominio" placeholder="Dominio">   
+								<?php  echo $mensaje['mensaje'];?>
+                         </div>
+                        <button type="submit" class="btn btn-default">CONSULTAR</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+<!--Fin de registro login -->
+                    
+
+</div>
+
+
+</article></div>
+                    </div>
+                </div>
+            </div>
+    </div>
+<footer class="art-footer">
+  <div class="art-footer-inner">
+<div class="art-content-layout">
+    <div class="art-content-layout-row">
+    <div class="art-layout-cell layout-item-0" style="width: 50%">
+        <p style="float: left; padding-left: 20px; text-align: left;"><a href="#">Inicio</a>|<a href="#">Contactos</a>|<a href="#">Soporte</a>|<a href="#"></a></p>
+    </div><div class="art-layout-cell layout-item-0" style="width: 50%">
+        <p style="padding-right: 20px; text-align: left;">email : servicioalcliente@servicomcolombia.com</p>
+    </div>
+    </div>
+</div>
+
+    <p class="art-page-footer">
+        <span id="art-footnote-links"><a href="" target="_blank"></a> </span>
+    </p>
+  </div>
+</footer>
+
+</div>
+</body></html>

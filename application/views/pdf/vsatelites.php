@@ -54,6 +54,31 @@
           <?php  }?>
        </tbody>
    </table>
+   
+   
+   
+     <table border="0.01" id="table_info">
+       <thead>
+           <tr>
+               
+               <th>V CONFECCION</th>
+               <th>V BORDADOS</th>
+			   
+            
+           </tr>
+       </thead>
+       <tbody>
+          <?php foreach ($saldos as $saldo) { ?>
+            <tr>
+			<!--select idproceso,pd.nomprod,pe.factura,pe.facultad,pe.talla,pr.cantidad,pr.precio,pr.fecha,pr.estado,pr.idtrabajador,pe.descripcion,pe.fecha_ingreso,p.nombres-->
+                <td><?php echo $saldo->pre;?></td>
+				<td><?php echo $saldo->preb;?></td>
+				
+              
+            </tr>
+          <?php  }?>
+       </tbody>
+   </table>
    <br><br><br>
 
   </body>
