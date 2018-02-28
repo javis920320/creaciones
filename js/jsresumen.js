@@ -1,16 +1,4 @@
 
-/*$('#btnexportar').on('click',function(){
-var fecha =Array();
-	
-	 fecha['fechai']=$('#fechai').val();
-	 fechai=$('#fechai').val();
-	 
-	fecha['fechaf']=$('#fechaf').val();
-window.open(baseurl+'Cresumenprocesos/resumen');
-	
-	
-	
-});*/
 
 $('#pdfreport').on('click',function(){
 	
@@ -110,6 +98,8 @@ resfiltrar();
 			'columns':[
 			{data: 'idproceso','sClass':'dt-body-center'},
 			{data: 'factura','sClass':'dt-body-center'},
+			{data: 'facultad'},
+			{data: 'talla'},
 			{data:'nomprod'},
 			{data:'descripcion'},
 			{data:'cantidad'},

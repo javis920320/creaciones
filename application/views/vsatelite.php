@@ -114,6 +114,7 @@
              <table  id='tblsatelite' class="table table-hover table-responsive table-bordered">
                 <thead class="bg-info">
                 <tr>
+				 <th>Codigo</th>
                   <th>Factura</th>
                   <th>Producto</th>
                   <th>Facultad</th>

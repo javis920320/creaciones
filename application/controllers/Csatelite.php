@@ -1,6 +1,4 @@
 <?php 
-
-
 class Csatelite extends CI_Controller
 {
 	
@@ -68,19 +66,37 @@ public  function lstsatelite(){
 public  function asignarsatelite(){
 
 
-		$param['cantidad']=$this->input->post('cantidad');
+
+
+	$param['idpedido']=$this->input->post('idpedido');
+	$param['cantidad']=$this->input->post('cantidad');
+	
+	
+	
+	$comp=$this->Madmin->calculo($param);
+	if($comp==null){
+		$comp=$this->Madmin->consultadis($param);
+		$disp=$comp;
+		
+	}else{
+		
+		$disp=$comp;
+		
+	}
+	
+	
+		if($disp<$param['cantidad']){
+				return 0;
+				
+			}else{
+		
+		
 	 	$param['idprod']=$this->input->post('productos');
-	 	$param['idpedido']=$this->input->post('idpedido');
 	 	$param['idpersona']=$this->input->post('trabajador');
-
-	 	$param['idtrabajador']=$this->Madmin->idtrabajador($param);
-	 	//echo $param['idtrabajador'];
+	 	$param['idtrabajador']=$this->Madmin->idtrabajador($param);	 	
 	 	$param['fecha']=date ("Y-m-d");
-
 	 	$preciob=$this->Madmin->presiobordados($param);
-
 	 	$param['preciob']=$preciob*$param['cantidad'];
-
 	 	$presate=$this->Madmin->preciosatelite($param);
 	 	$param['preciosatelite']=$presate*$param['cantidad'];
 
@@ -95,7 +111,7 @@ public  function asignarsatelite(){
 			echo'No se a podido Asisgnar el producto';
 		}
 	 	
-
+		}
 
 
 
@@ -116,10 +132,10 @@ public function SaldoPendiente(){
 
 public  function pruebaf(){
 	
-	$param['idprod']=66;
+	$param['idpedido']=747;
 	
-	$presate['que']=$this->Madmin->preciosatelite($param);
-	echo $presate['que'];
+	$presate['que']=$this->Madmin->consultadis($param);
+	echo json_encode ($presate['que']);
 	
 	
 }

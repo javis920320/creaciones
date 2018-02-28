@@ -84,7 +84,7 @@ function listageneral(dato){
 			},
 
 			'columns':[
-			//{data: 'idpedido','sClass':'dt-body-center'},
+			{data: 'idproceso','sClass':'dt-body-center'},
 			{data: 'factura','sClass':'dt-body-center'},
 			//{data:'nomtipoprod'},
 			{data:'nomprod'},
@@ -96,7 +96,7 @@ function listageneral(dato){
 			{data:'fecha_ingreso'},
 			{data:'estado'},
 			{data:'nombres'},
-
+			{data:'prebordado'},
 			{"orderable":true,
 			render:function(data,type,row){
 
@@ -121,7 +121,7 @@ return '<span class="pull-right"> $ ' +
 			],
 			"columnDefs": [
         {
-          "targets": [7], 
+          "targets": [8], 
           "data": "estado", 
           "render": function(data, type, row) {
             
@@ -137,7 +137,7 @@ return '<span class="pull-right"> $ ' +
         }
          ],
 
- "order":[[0,"asc"]],
+ "order":[[0,"desc"]],
 
 		});	
 }

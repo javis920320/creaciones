@@ -90,6 +90,8 @@
                     <tr>
                       <th style="width: 5%;background-color: #006699; color: white;">#</th>
                       <th style="width: 10%;background-color: #006699; color: white;">Factura</th>
+					   <th style="width: 10%;background-color: #006699; color: white;">Facultad</th>
+					      <th style="width: 10%;background-color: #006699; color: white;">Talla</th>
                       <th style="width: 10%;background-color: #006699; color: white;">Producto</th>
                       <th style="width: 10%;background-color: #006699; color: white;">Descripcion</th>
                       <th style="width: 10%;background-color: #006699; color: white;">Cantidad</th>

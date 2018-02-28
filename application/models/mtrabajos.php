@@ -267,7 +267,7 @@ $query=$this->db->query("select pr.idproceso,pd.factura,pd.facultad,p.nomprod,pd
 
 
 
-		$this->db->select('pr.idproceso,pd.factura,p.nomprod,pd.descripcion,pr.cantidad,pr.precio,pr.precio1,(sum(bp.cantidad)*pr.cantidad) as nbordados,prebordado as valor bordado,pr.fecha,pe.nombres');
+		$this->db->select('pr.idproceso,pd.factura,pd.facultad,pd.talla,p.nomprod,pd.descripcion,pr.cantidad,pr.precio,pr.precio1,(sum(bp.cantidad)*pr.cantidad) as nbordados,prebordado as valor bordado,pr.fecha,pe.nombres');
 		$this->db->from('periodo x,proceso pr');
 		$this->db->join('producto p','p.id_prod=pr.id_prod');
 		$this->db->join ('bordadosproductos bp','p.id_prod = bp.id_prod');

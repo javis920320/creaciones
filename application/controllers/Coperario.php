@@ -62,7 +62,6 @@ class Coperario extends CI_Controller
 
 		}
 
-		//echo $disp;
 
 			
 			

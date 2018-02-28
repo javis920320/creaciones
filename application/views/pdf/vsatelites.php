@@ -19,7 +19,7 @@
   <footer>
       <!--<div id="footer_texto">Aquí habrá algo relevante para el footer del documento, tiene border top 3px, fontsize de 9px y texto centrado</div>-->
   </footer>
-  <table border="0.01" id="table_info">
+  <table border="0.01" id="table_info" class='tablaprueba'>
        <thead>
            <tr>
                <th>COD</th>

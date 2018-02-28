@@ -9,6 +9,27 @@ class Madmin extends CI_Model
 	}
 	
 	
+	
+	  public  function calculo($param){
+
+		
+	 		$query=$this->db->query('select (select p.cantidad  from pedido p where p.idpedido='.$param['idpedido'].' )-sum(pr.cantidad)as numero from proceso pr where pr.idpedido='.$param['idpedido'].'');
+	 		
+			
+		foreach ($query->result() as $row)
+		{
+        	return $row->numero;
+        
+		}
+  }
+	
+	public  function consultadis($param){
+		
+		$query=$this->db->query("select cantidad from pedido where idpedido=".$param['idpedido']."");
+		return $query->result();
+	}
+	
+	
 	public  function cambiarestado($idtrabajador){
 		
 		$datos= array('estado'=>3);
@@ -71,7 +92,7 @@ $resul=$this->db->get();
 
 	 public  function lstsatelite($idtrabajador){
 		 if($idtrabajador==0){
-			 $query=$this->db->query("select idproceso,pd.nomprod,pe.factura,pe.facultad,pe.talla,pr.cantidad,pr.precio,pr.fecha,pr.estado,pr.idtrabajador,pe.descripcion,pe.fecha_ingreso,p.nombres
+			 $query=$this->db->query("select idproceso,pd.nomprod,pe.factura,pe.facultad,pe.talla,pr.cantidad,pr.precio,pr.fecha,pr.estado,pr.idtrabajador,pe.descripcion,pe.fecha_ingreso,p.nombres,pr.prebordado
 			from proceso pr
 			inner join pedido pe  on pe.idpedido = pr.idpedido
 			inner join producto pd on pd.id_prod = pr.id_prod
@@ -84,13 +105,13 @@ $resul=$this->db->get();
 		
 
 
-	 	$query=$this->db->query("select idproceso,pd.nomprod,pe.factura,pe.facultad,pe.talla,pr.cantidad,pr.precio,pr.fecha,pr.estado,pr.idtrabajador,pe.descripcion,pe.fecha_ingreso,p.nombres
+	 	$query=$this->db->query("select idproceso,pd.nomprod,pe.factura,pe.facultad,pe.talla,pr.cantidad,pr.precio,pr.fecha,pr.estado,pr.idtrabajador,pe.descripcion,pe.fecha_ingreso,p.nombres,pr.prebordado
 			from proceso pr
 			inner join pedido pe  on pe.idpedido = pr.idpedido
 			inner join producto pd on pd.id_prod = pr.id_prod
 			inner join trabajador tr on tr.idtrabajador=pr.idtrabajador
 			inner join persona p on p.idpersona=tr.idpersona
-			where pr.estado in(2) and pr.idtrabajador=".$idtrabajador."");
+			where pr.estado in(2,3) and pr.idtrabajador=".$idtrabajador."");
 			}
 
 

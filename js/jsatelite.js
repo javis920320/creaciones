@@ -29,7 +29,7 @@ function lstprocesosatelite(persona){
 			},
 
 			'columns':[
-			//{data: 'idpedido','sClass':'dt-body-center'},
+			{data: 'idproceso','sClass':'dt-body-center'},
 			{data: 'factura','sClass':'dt-body-center'},
 			//{data:'nomtipoprod'},
 			{data:'nomprod'},
@@ -65,7 +65,7 @@ return '<span class="pull-right"> $ ' +
 			],
 			"columnDefs": [
         {
-          "targets": [7], 
+          "targets": [8], 
           "data": "estado", 
           "render": function(data, type, row) {
             
@@ -81,7 +81,7 @@ return '<span class="pull-right"> $ ' +
         }
          ],
 
- "order":[[0,"asc"]],
+ "order":[[8]],
 
 		});	
 	
@@ -293,20 +293,12 @@ function lstsatelites(){
 
 function registroproceso(){
 
-
-
-
- 
-
-//$('#formtrabajos').submit(function(){
-
-
 	var dis=$('#disponibles').val();
 	var cantidad=$('#cantidad').val();
 	
 	diponibles=parseInt(dis);
 	
-	//alert('CANTIDAD '+cantidad+' DISPONIBLE '+diponibles);
+	
 	 if(cantidad>diponibles){
 	 	alert('Erro verifica la cantidad disponible');
 	 }else if(diponibles==0){
@@ -314,23 +306,8 @@ function registroproceso(){
 	 	alert('No hay productos disponibles');
 
 	 }else{
-	//alert($(this).serialize());
-
-
-	/*
-VARIABLES
-	$param['cantidad']=$this->input->post('cantidad');
-	 	$param['idprod']=$this->input->post('productos');
-	 	$param['idpedido']=$this->input->post('idpedido');
-	 	$param['idpersona']=$this->input->post('trabajador');
-	 	//echo $param['idtrabajador'];
-	 	$preciob=$this->Moperario->presiobordados($param);
-	 	$param['preciob']=$preciob*$param['cantidad'];
-	 	$param['idtrabajador']=$this->Moperario->trabajadorid($param);
-	    $param['idtrabajador'];*/
+	
 	    var productos=$('#productos').val();
-	    //var idpedido=$('#tblresumen .idpedido').data();
-
 	    var idpedido=$('input:radio[name=idpedido]:checked').val();
 	    var trabajador=$('#trabajador').val();
 
@@ -341,12 +318,16 @@ VARIABLES
 		type:'POST',
 		data:{cantidad:cantidad,productos:productos,idpedido:idpedido,trabajador:trabajador},
 		success:function(data){
-		//alert(data);
-		if(data){
-			//$('#tbltrabajos').data.reload();
+		
+		if(data==0){
+			
+		alert("Verifica los productos Disponibles");
+		}else{
+			$('#tblsatelite').data.reload();
 			validarc();
 			alert(data);
-
+			
+			
 		}
 
 	}

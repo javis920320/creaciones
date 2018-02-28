@@ -54,7 +54,7 @@
           </a>
           <ul class="treeview-menu">
             <li class="active"><a href="<?php echo base_url();?>Clistasatel"><i class="fa fa-circle-o"></i> Lista Satelites</a></li>
-             <li class="active"><a href="<?php echo base_url();?>Cproductosen"><i class="fa fa-circle-o"></i> Productos enviados</a></li>
+           
             
             <!--<li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>-->
           </ul>
@@ -139,7 +139,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="<?php echo base_url();?>Ctrabajos/"><i class="fa fa-circle-o"></i> Ingresar </a></li>
-            <li><a href="<?php echo base_url();?>Csatelite/"><i class="fa fa-circle-o"></i> Proceso Satelite </a></li>
+            <!--<li><a href="<?php echo base_url();?>Csatelite/"><i class="fa fa-circle-o"></i> Proceso Satelite </a></li>-->
             
           </ul>
         </li> 

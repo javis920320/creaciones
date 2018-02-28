@@ -1,7 +1,7 @@
 body, select {
   color: #7d7a7a;
   font-family: 'trebuchet ms', verdana, sans-serif;
-	font-size: 13px;
+	font-size: 10px;
 }
 
 a:link, a:visited, a:active { 
@@ -184,13 +184,13 @@ h2 {
 }
 
 table.setup {
-	border: 1px solid #ccc;
+	border: 0.5px solid #ccc;
 	border-collapse: collapse;
 }
 
 table.setup td,
 table.setup th {
-  border: 1px solid #ccc;
+  border:  0.5px solid #ccc;
 }
 
 table.setup th {
