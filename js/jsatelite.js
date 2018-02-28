@@ -316,10 +316,16 @@ function registroproceso(){
 	$.ajax({
 		url:baseurl+'Csatelite/asignarsatelite',
 		type:'POST',
+		async:false,
 		data:{cantidad:cantidad,productos:productos,idpedido:idpedido,trabajador:trabajador},
 		success:function(data){
+				alert(data);
+			//$('#tblsatelite').data.reload();
+			$('#tblsatelite').DataTable().ajax.reload();
+			validarc();
 		
-		if(data==0){
+		
+		/*if(data==0){
 			
 		alert("Verifica los productos Disponibles");
 		}else{
@@ -328,7 +334,7 @@ function registroproceso(){
 			alert(data);
 			
 			
-		}
+		}*/
 
 	}
 

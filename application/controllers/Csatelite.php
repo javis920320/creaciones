@@ -83,13 +83,14 @@ public  function asignarsatelite(){
 		$disp=$comp;
 		
 	}
-	
+	 //echo$disp;
 	
 		if($disp<$param['cantidad']){
-				return 0;
+				//return 0;
+				echo'Verifica la cantidad disponible';
 				
 			}else{
-		
+		//echo'sise puesde';
 		
 	 	$param['idprod']=$this->input->post('productos');
 	 	$param['idpersona']=$this->input->post('trabajador');

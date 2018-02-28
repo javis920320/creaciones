@@ -106,6 +106,7 @@ VARIABLES
 
 		}else{
 			validarc();
+			$('#tbltrabajos').DataTable().ajax.reload();
 			alert(data);
 		}
 
