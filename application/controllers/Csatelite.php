@@ -99,6 +99,8 @@ public  function asignarsatelite(){
 	 	$preciob=$this->Madmin->presiobordados($param);
 	 	$param['preciob']=$preciob*$param['cantidad'];
 	 	$presate=$this->Madmin->preciosatelite($param);
+	 	$preadmin=$this->Madmin->preadmin($param);
+	 	$param['preadmin']= $preadmin*$param['cantidad'];
 	 	$param['preciosatelite']=$presate*$param['cantidad'];
 
 		$res=$this->Madmin->asignarsatelite($param);

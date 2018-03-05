@@ -74,17 +74,19 @@ foreach ($query->result() as $row)
         
 		}
 
-/*$this->db->select(" pr.valorsatelite");
-$this->db->from("precio pr");
-$this->db->join('producto p ','pr.id_prod = p.id_prod');
-$this->db->where('pr.estado=',1);
-$this->db->where('p.id_prod=',$param['idprod']); 
-$resul=$this->db->get();
-		return $res=$resul->row();*/
 
+}
+public  function preadmin($param){
 
-	//$query->result();
+	$query=$this->db->query("select pr.valor from precio pr
+inner join producto p on pr.id_prod = p.id_prod
+where pr.estado=1 and  p.id_prod=".$param['idprod']."");
 
+foreach ($query->result() as $row)
+		{
+        	return $row->valor;
+        
+		}
 
 
 }
@@ -136,7 +138,7 @@ $resul=$this->db->get();
 	 	'idpedido' =>  $param['idpedido'],
 	 	'idtrabajador' =>$param['idtrabajador'],
 	 	'precio'  =>$param['preciosatelite'],
-	 	'precio1' => 0,
+	 	'precio1' => $param['preadmin'],
 
 	 	'prebordado'=>$param['preciob']
 
