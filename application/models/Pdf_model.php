@@ -77,7 +77,7 @@ return $query->result();
 		
 		
 		 if($s==0){
-			 $query=$this->db->query("select idproceso,pd.nomprod,pe.factura,pe.facultad,pe.talla,pr.cantidad,pr.precio,pr.fecha,pr.estado,pr.idtrabajador,pe.descripcion,pe.fecha_ingreso,p.nombres,pr.prebordado
+			 $query=$this->db->query("select idproceso,pd.nomprod,pe.factura,pe.facultad,pe.talla,pr.cantidad,pr.precio1,pr.fecha,pr.estado,pr.idtrabajador,pe.descripcion,pe.fecha_ingreso,p.nombres,pr.prebordado
 			from proceso pr
 			inner join pedido pe  on pe.idpedido = pr.idpedido
 			inner join producto pd on pd.id_prod = pr.id_prod
@@ -90,7 +90,7 @@ return $query->result();
 		
 
 
-	 	$query=$this->db->query("select idproceso,pd.nomprod,pe.factura,pe.facultad,pe.talla,pr.cantidad,pr.precio,pr.fecha,pr.estado,pr.idtrabajador,pe.descripcion,pe.fecha_ingreso,p.nombres,pr.prebordado
+	 	$query=$this->db->query("select idproceso,pd.nomprod,pe.factura,pe.facultad,pe.talla,pr.cantidad,pr.precio1,pr.fecha,pr.estado,pr.idtrabajador,pe.descripcion,pe.fecha_ingreso,p.nombres,pr.prebordado
 			from proceso pr
 			inner join pedido pe  on pe.idpedido = pr.idpedido
 			inner join producto pd on pd.id_prod = pr.id_prod
@@ -108,7 +108,7 @@ return $query->result();
 	
 	public  function saldosatelite($s){
 		
-		$query=$this->db->query("select sum(precio)pre,sum(prebordado)preb
+		$query=$this->db->query("select sum(precio1)pre,sum(prebordado)preb
 				from proceso 
 				where idtrabajador=".$s." and estado=2 ");
 				

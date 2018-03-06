@@ -44,7 +44,7 @@
 				<td><?php echo $usuario->factura;?></td>
                 <td><?php echo $usuario->talla;?></td>
                 <td><?php echo $usuario->cantidad;?></td>
-				 <td><?php echo '$' .$usuario->precio;?></td>
+				 <td><?php echo '$' .$usuario->precio1;?></td>
 				  <td><?php echo '$' .$usuario->prebordado;?></td>
                 <td><?php echo $usuario->fecha;?></td>
 				 <td><?php echo $usuario->descripcion;?></td>
