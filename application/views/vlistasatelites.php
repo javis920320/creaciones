@@ -60,6 +60,23 @@
 </div>
             </div>
             <!-- /.box-header -->
+
+
+              <table  id='tblsaldos' class="table table-hover table-responsive table-bordered">
+                <thead class="bg-info">
+                <tr>
+                  <th>Nombres</th>
+                  <th>Cantidad</th>
+                  <th>Valor</th>
+                  
+                  
+         
+          
+                </tr>
+                </thead>
+                <tbody id='bstl'></tbody>
+                
+              </table>
              
             <div class="box-body table-responsive no-padding">
              <table  id='tblsatelite' class="table table-hover table-responsive table-bordered">

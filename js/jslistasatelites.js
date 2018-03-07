@@ -1,5 +1,38 @@
 lstsatelites();
 
+cargarvalores();
+
+ function cargarvalores(){
+
+$.ajax({
+	'url':baseurl+'Clistasatel/lstvalores',
+	'type':'POST',
+	success:function(data){
+
+		 var datos=JSON.parse(data);
+		  var html='';
+
+		  $.each(datos,function(i,items){
+
+		  	html+="<tr><td>"+items.nombres+"</td> <td>"+items.cantidad+"</td> <td>"+items.vsatel+"</td></tr>";
+
+
+		  });
+
+
+		  $('#bstl').html(html);
+
+	}
+
+
+
+
+
+		});
+
+
+ }
+
 function lstsatelites(){
 
 

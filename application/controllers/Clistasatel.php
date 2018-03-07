@@ -25,6 +25,14 @@ class Clistasatel extends CI_Controller
 
 	 }
 	 
+
+	 public  function lstvalores(){
+
+
+	 	$res=$this->Madmin->lstvalores();
+		echo json_encode($res);
+	 }
+
 	 
 	 public function lstgeneral(){
 		 

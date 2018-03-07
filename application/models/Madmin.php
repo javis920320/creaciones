@@ -22,6 +22,21 @@ class Madmin extends CI_Model
         
 		}
   }
+
+
+
+  public function lstvalores(){
+
+  	$query=$this->db->query("select sum(pr.cantidad) as cantidad,sum(precio) as vsatel,nombres
+ from proceso pr 
+ inner join trabajador t on t.idtrabajador = pr.idtrabajador
+ inner join persona pe on pe.idpersona = t.idpersona
+ where pr.estado=2");
+
+  	return$query->result();
+
+
+  }
 	
 	public  function consultadis($param){
 		
