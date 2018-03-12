@@ -12,7 +12,7 @@ class Madmin extends CI_Model
 	public  function listaprendas($param){
 		
 		
-		$query=$this->db->query();
+		$query=$this->db->query("");
 		return $query->result();
 		
 		
