@@ -1,0 +1,31 @@
+CREATE TABLE IF NOT EXISTS `mydb`.`prendas` (
+  `idprendas` INT NOT NULL AUTO_INCREMENT COMMENT '',
+  `factura` INT NULL COMMENT '',
+  `cantidad` INT NULL COMMENT '',
+  `fecha` DATETIME NULL COMMENT '',
+  `descripcion` VARCHAR(45) NULL COMMENT '',
+  `estado` VARCHAR(45) NULL COMMENT '',
+  PRIMARY KEY (`idprendas`)  COMMENT '')
+ENGINE = InnoDB
+
+
+
+CREATE TABLE IF NOT EXISTS `mydb`.`bordadosprendas` (
+  `prendas_idprendas` INT NOT NULL COMMENT '',
+  `bordados_idbordados` INT NOT NULL COMMENT '',
+  `cantidad` VARCHAR(45) NULL COMMENT '',
+  `precio` VARCHAR(45) NULL COMMENT '',
+  PRIMARY KEY (`prendas_idprendas`, `bordados_idbordados`)  COMMENT '',
+  INDEX `fk_prendas_has_bordados_bordados1_idx` (`bordados_idbordados` ASC)  COMMENT '',
+  INDEX `fk_prendas_has_bordados_prendas1_idx` (`prendas_idprendas` ASC)  COMMENT '',
+  CONSTRAINT `fk_prendas_has_bordados_prendas1`
+    FOREIGN KEY (`prendas_idprendas`)
+    REFERENCES `mydb`.`prendas` (`idprendas`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_prendas_has_bordados_bordados1`
+    FOREIGN KEY (`bordados_idbordados`)
+    REFERENCES `mydb`.`bordados` (`idbordados`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB

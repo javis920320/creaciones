@@ -39,6 +39,7 @@
           <ul class="treeview-menu">
             <li class="active"><a href="<?php echo base_url();?>Cpedidos"><i class="fa fa-circle-o"></i> Ingreso  Registro</a></li>
              <li class="active"><a href="<?php echo base_url();?>Cproductosen"><i class="fa fa-circle-o"></i> Productos enviados</a></li>
+			 <li class="active"><a href="<?php echo base_url();?>Cprendas"><i class="fa fa-circle-o"></i> Envio bordados</a></li>
             
             <!--<li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>-->
           </ul>
