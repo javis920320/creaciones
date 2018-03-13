@@ -42,6 +42,28 @@ public  function listaprendas(){
 }
 
 
+public function ingresarP(){
+//fac:factura,cant:cantidad,desc:descripcion
+
+
+
+
+$param['fac']=$this->input->post('fac');
+$param['cant']=$this->input->post('cant');
+$param['desc']=$this->input->post('desc');
+
+$res=$this->Madmin->ingresarP($param);
+
+
+echo $res;
+
+
+
+
+}
+
+
+
 
 }
 

@@ -8,6 +8,32 @@ class Madmin extends CI_Model
 		parent::__construct();
 	}
 	
+
+
+
+	public function ingresarP($param){
+
+
+		$datos = array(
+
+			'idprendas' => null, 
+			'factura' => $param['fac'],
+			'cantidad' => $param['cant'],
+			'fecha' =>date("Y-m-d H:i:s"),
+			'descripcion' => $param['desc'],
+			'estado' =>0
+
+			);
+
+		$this->db->insert('prendas',$datos);
+
+		$res=$this->db->affected_rows();
+		return$res;
+
+
+
+
+	}
 	
 	public  function listaprendas($param){
 		
