@@ -38,7 +38,7 @@ class Madmin extends CI_Model
 	public  function listaprendas($param){
 		
 		
-		$query=$this->db->query("");
+		$query=$this->db->query(" select idprendas,factura ,descripcion,cantidad,fecha,estado from prendas");
 		return $query->result();
 		
 		

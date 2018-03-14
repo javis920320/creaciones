@@ -26,6 +26,22 @@ class Cprendas extends CI_Controller
 
 
 
+	 public function cargarbordados(){
+
+	 	$nombres['nombres']=$this->session->userdata('nombres');
+
+	 	$this->load->view('layou/header',$nombres);
+	 	$this->load->view('layou/menu',$nombres);
+	 	$this->load->view('vcargueb');
+	 	$this->load->view('layou/footer',$nombres);
+
+
+
+
+	 }
+
+
+
 
 public  function listaprendas(){
 
@@ -54,12 +70,29 @@ $param['desc']=$this->input->post('desc');
 
 $res=$this->Madmin->ingresarP($param);
 
+if($res>=1){
+ echo'Registro exitoso';
 
-echo $res;
+}else{
+
+echo' A ocurrido una excepcion';
+}
 
 
 
 
+}
+
+
+
+
+public  function prendas (){
+
+
+
+	$res=$this->Madmin->listaprendas(1);
+
+	echo json_encode($res);
 }
 
 
