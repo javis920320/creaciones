@@ -25,6 +25,15 @@ class Cprendas extends CI_Controller
 	 }
 
 
+public  function rsmbordados(){
+
+	$param['id']=$this->input->post('id');
+
+	$res=$this->Madmin->rsmbordados($param);
+
+	echo json_encode($res);
+}
+
 
 	 public function cargarbordados(){
 
@@ -95,6 +104,15 @@ public  function prendas (){
 	echo json_encode($res);
 }
 
+
+ public  function rsmprendas(){
+
+ 	$res=$this->Madmin->resumenb(1);
+
+	echo json_encode($res);
+
+
+ }
 
 
 

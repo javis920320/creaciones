@@ -133,6 +133,7 @@
 <?php  if($this->uri->segment(1)=='Cprendas') { ?>
 
     <script src="<?php echo  base_url();?>js/jsprendas.js"></script>
+    
 <?php  }?>
 
 </body>

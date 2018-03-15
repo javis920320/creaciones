@@ -10,6 +10,50 @@ class Madmin extends CI_Model
 	
 
 
+	public  function rsmbordados($param){
+
+		$query=$this->db->query("select b.idbordados,b.nombre
+FROM prendas p 
+inner  JOIN bordadosprendas bp on bp.idprendas=p.idprendas
+inner join bordados b on  b.idbordados=bp.idbordados
+where p.idprendas=".$param['id']."");
+
+
+		return $query->result();
+
+
+	}
+
+	public  function valorcero($param){
+
+
+	$datos = array(
+
+		'idproceso' =>null,
+		'estado' => 1,
+		'cantidad' => $param['cantidad'],
+		'fecha' => $param['fecha'],
+		'id_prod' => $param['idprod'],
+		'idpedido' => $param['idpedido'],
+		'idtrabajador' => $param['idtrabajador'],
+		'precio' => 0,
+		'precio1' => 0,
+		'prebordado' => $param['preciob'],
+
+		 );
+
+	$this->db->insert('proceso',$datos);
+		$res=$this->db->affected_rows();
+		return$res;
+
+
+
+
+
+}
+
+
+
 
 	public function ingresarP($param){
 
@@ -30,6 +74,22 @@ class Madmin extends CI_Model
 		$res=$this->db->affected_rows();
 		return$res;
 
+
+
+
+	}
+
+
+	public  function resumenb(){
+
+	$query=$this->db->query("select  p.idprendas,p.factura,p.descripcion,p.cantidad,p.fecha,sum(bp.precio)as preciob,sum(bp.cantidad)as cantb,p.estado from prendas p 
+left join bordadosprendas bp on bp.idprendas=p.idprendas GROUP by p.idprendas");
+
+
+//$query=$this->db->query("");
+
+
+	return $query->result();
 
 
 
