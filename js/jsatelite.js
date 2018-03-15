@@ -1,4 +1,4 @@
-//lstsatelites();
+lstsatelites();
 //alert($('#trabajador').val());
   var persona=$('#trabajador').val();
  // alert(persona);
@@ -314,7 +314,7 @@ function registroproceso(){
 
 	
 	$.ajax({
-		url:baseurl+'Csatelite/asignarsatelite',
+		url:baseurl+'Csatelite/aplicarvalorcero',
 		type:'POST',
 		async:false,
 		data:{cantidad:cantidad,productos:productos,idpedido:idpedido,trabajador:trabajador},

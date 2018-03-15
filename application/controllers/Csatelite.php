@@ -26,6 +26,20 @@ class Csatelite extends CI_Controller
 	 }
 
 
+	   public function valorcero(){
+
+$nombres['nombres']=$this->session->userdata('nombres');
+	 		$idpersona['idpersona']=$this->session->userdata('id');
+
+	 	$this->load->view('layou/header',$nombres);
+	 	$this->load->view('layou/menu',$nombres);
+	 	$this->load->view('vasignar',$idpersona);
+	 	$this->load->view('layou/footer',$nombres);
+
+
+	  }
+
+
 
 
 public  function listasatelites(){
@@ -117,6 +131,61 @@ public  function asignarsatelite(){
 		}
 
 
+
+}
+
+
+
+public function aplicarvalorcero(){
+
+
+	$param['idpedido']=$this->input->post('idpedido');
+	$param['cantidad']=$this->input->post('cantidad');
+	
+	
+	
+	$comp=$this->Madmin->calculo($param);
+	if($comp==null){
+		$comp=$this->Madmin->consultadis($param);
+		$disp=$comp;
+		
+	}else{
+		
+		$disp=$comp;
+		
+	}
+	 //echo$disp;
+	
+		if($disp<$param['cantidad']){
+				//return 0;
+				echo'Verifica la cantidad disponible';
+				
+			}else{
+		//echo'sise puesde';
+		
+	 	$param['idprod']=$this->input->post('productos');
+	 	//$param['idpersona']=$this->input->post('trabajador');
+	 	$param['idtrabajador']=$this->input->post('trabajador');//$this->Madmin->idtrabajador($param);	 	
+	 	$param['fecha']=date ("Y-m-d");
+	 	$preciob=$this->Madmin->presiobordados($param);
+	 	$param['preciob']=$preciob*$param['cantidad'];
+	 	$presate=$this->Madmin->preciosatelite($param);
+	 	$preadmin=$this->Madmin->preadmin($param);
+	 	$param['preadmin']= 0;//$preadmin*$param['cantidad'];
+	 	$param['preciosatelite']=0;//$presate*$param['cantidad'];
+
+		$res=$this->Madmin->valorcero($param);
+
+
+		if ($res>=1) {
+
+			echo'Registro Asignado';
+			# code...
+		}else{
+			echo'No se a podido Asisgnar el producto';
+		}
+	 	
+		}
 
 }
 
