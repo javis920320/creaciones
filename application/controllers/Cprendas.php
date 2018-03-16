@@ -23,6 +23,26 @@ class Cprendas extends CI_Controller
 
 
 	 }
+	 
+	 public  function cargarb(){
+		$param['idprendas']= $this->input->post('id');
+		$param['idbordados']= $this->input->post('idbordados');
+		 $param['cant']=$this->input->post('cant');
+		 
+		 $res=$this->Madmin->consultaprecio($param);
+		 $param['precio']=$res*$param['cant'];
+		 
+		 $resp=$this->Madmin->cargarb($param);
+		 if($resp>=1){
+			 echo'Bordado Cargado';
+		 }else{
+			 
+			 echo 'No se a podido cargar';
+		 }
+		 
+
+		 
+	 }
 
 
 public  function rsmbordados(){

@@ -1,6 +1,28 @@
  
 listabordados();
 
+
+
+ function cargarb(){
+	 
+	 var id=$('#idoculto').val();
+	 	 var idbordados=$('#lstbd').val();
+		  var cant=$('#nmbc').val();
+		  $.ajax({
+			  'url':baseurl+'Cprendas/cargarb',
+			  'type':'POST',
+			  'data':{id:id,idbordados:idbordados,cant:cant},
+			  success:function(data){
+				  alert(data);
+				  $('#resb').DataTable().ajax.reload();
+				  
+			  }
+		  });
+		  
+		  
+		  
+	 
+ }
  function listabordados(){
 
  	$.ajax({
@@ -10,11 +32,15 @@ listabordados();
 success:function(data){
 	//alert(data);
 	var obj=JSON.parse(data);
+	
+	 var html='<option value="">Selecciona Una opcion</option>';
 
 	$.each(obj,function(i,items){
+		html+="<option value="+items.idbordados+">"+items.nombre+"</option>";
 
 	});
-
+	
+$("#lstbd").html(html);
 }
  	});
  }
@@ -52,6 +78,7 @@ $('#tblprendas').DataTable({
 			'info':true,
 			'filter':true,
 			'stateSave':true,
+			'destroy':true,
 
 			'ajax':{
 
@@ -161,7 +188,7 @@ detallesb =function (idprendas,nombre,precio){
 
 //alert(idprendas);
 
-
+$("#idoculto").val(idprendas);
 
 
 $('#resb').DataTable({
@@ -182,6 +209,7 @@ $('#resb').DataTable({
 			'columns':[
 			{data: 'idbordados','sClass':'dt-body-center'},
 			{data: 'nombre'},
+			{data: 'cantidad'},
 			
 			
 			

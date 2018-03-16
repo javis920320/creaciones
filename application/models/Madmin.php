@@ -8,11 +8,34 @@ class Madmin extends CI_Model
 		parent::__construct();
 	}
 	
+	public  function cargarb($param){
+		
+		
+		$datos = array(
+
+			'idprendas' => $param['idprendas'],
+			'idbordados' => $param['idbordados'],
+			'cantidad' => $param['cant'],
+			'precio' => $param['precio']
+			
+
+			);
+
+		
+		$this->db->insert('bordadosprendas',$datos);
+		$res=$this->db->affected_rows();
+		return$res;
+		
+		
+		
+		
+	}
+	
 
 
 	public  function rsmbordados($param){
 
-		$query=$this->db->query("select b.idbordados,b.nombre
+		$query=$this->db->query("select b.idbordados,b.nombre,bp.cantidad
 FROM prendas p 
 inner  JOIN bordadosprendas bp on bp.idprendas=p.idprendas
 inner join bordados b on  b.idbordados=bp.idbordados
@@ -23,6 +46,23 @@ where p.idprendas=".$param['id']."");
 
 
 	}
+	
+	public  function consultaprecio($param){
+	
+$query=$this->db->query("select precio from bordados where idbordados=".$param['idbordados']."");
+
+
+foreach ($query->result() as $row)
+		{
+        	return $row->precio;
+        
+		}
+
+	
+	}
+	
+	
+	
 
 	public  function valorcero($param){
 
