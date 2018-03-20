@@ -3,6 +3,23 @@ listabordados();
 
 
 
+
+
+
+ function camlistacobro(){
+
+ 	var id=$('#idoculto').val();
+ 	$.ajax({
+ 		'url':baseurl+'Cprendas/camlistacobro',
+ 		'type':'POST',
+ 		'data':{id:id},
+ 		success:function(data){
+
+ 			alert(data);
+ 		}
+ 	});
+ }
+
  function cargarb(){
 	 
 	 var id=$('#idoculto').val();
@@ -108,6 +125,11 @@ if(row.estado==0){
 
 	return '<span>Enviado</span>';
 
+} else if(row.estado==1){
+
+
+	return '<span class="text-danger">Aplicando bordados</span>';
+
 }
 					}
 			}
@@ -156,6 +178,14 @@ if(row.estado==0){
 	
 
 }
+if(row.estado==1){
+
+ return '<span class="text-danger">Proceso Pendiente</span>';
+	//return '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mdlcargar" onClick="detallesb(\''+row.idprendas+'\',\''+row.nombre+'\',\''+row.precio+'\')">cargar</button>';
+	 
+	
+
+}
 					}
 			}
 
@@ -169,8 +199,8 @@ if(row.estado==0){
             
             if (data == 0) {
               return "<span class='label label-warning'>Pendiente Bordado</span>";
-            }else if (data == 3) {
-              return "<span class='label label-success'>En confeccion</span>";
+            }else if (data == 1) {
+              return "<span class='label label-success'>En lista de cobro</span>";
             }else if (data == 2) {
               return "<span class='label label-danger'>En cortes</span>";
             }
@@ -209,7 +239,9 @@ $('#resb').DataTable({
 			'columns':[
 			{data: 'idbordados','sClass':'dt-body-center'},
 			{data: 'nombre'},
+
 			{data: 'cantidad'},
+			{data: 'precio'},
 			
 			
 			
@@ -221,7 +253,7 @@ $('#resb').DataTable({
 //if(row.estado==0){
 
 
-	return '<span>Enviado</span>';
+	return '<button class=" btn-primary" onClick="fneliminar(\''+row.idbordados+'\',\''+row.idprendas+'\')"><span class="glyphicon glyphicon-trash"></span>Eliminar</button>';
 
 //}
 					}
@@ -236,3 +268,24 @@ $('#resb').DataTable({
 
 
 }
+
+
+ fneliminar= function(idbordados,idprendas){
+
+
+ 	$.ajax({
+
+ 		'url':baseurl+'Cprendas/fneliminar',
+ 		'type':'POST',
+ 		'data':{idprendas:idprendas,idbordados:idbordados},
+ 		success:function(data){
+ 			alert(data);
+
+
+ 		}
+ 	});
+
+
+
+
+ }

@@ -7,6 +7,31 @@ class Madmin extends CI_Model
 	{
 		parent::__construct();
 	}
+
+	 public  function fneliminar($param){
+
+		$this->db->where('idprendas',$param['idprendas']);
+
+		$this->db->where('idbordados',$param['idbordados']);
+
+	 	$this->db->delete('bordadosprendas');
+
+	 	$res=$this->db->affected_rows();
+		return$res;
+
+	 }
+
+	public function camlistacobro($param){
+
+		$datos = array('estado' => 1);
+
+
+		$this->db->where('idprendas',$param['idprendas']);
+		$this->db->update('prendas',$datos);
+		$res=$this->db->affected_rows();
+		return$res;
+
+	}
 	
 	public  function cargarb($param){
 		
@@ -35,7 +60,7 @@ class Madmin extends CI_Model
 
 	public  function rsmbordados($param){
 
-		$query=$this->db->query("select b.idbordados,b.nombre,bp.cantidad
+		$query=$this->db->query("select b.idbordados,b.nombre,b.precio,bp.cantidad,p.idprendas
 FROM prendas p 
 inner  JOIN bordadosprendas bp on bp.idprendas=p.idprendas
 inner join bordados b on  b.idbordados=bp.idbordados
@@ -122,7 +147,7 @@ foreach ($query->result() as $row)
 
 	public  function resumenb(){
 
-	$query=$this->db->query("select  p.idprendas,p.factura,p.descripcion,p.cantidad,p.fecha,sum(bp.precio)as preciob,sum(bp.cantidad)as cantb,p.estado from prendas p 
+	$query=$this->db->query("select  p.idprendas,p.factura,p.descripcion,p.cantidad,p.fecha,sum(bp.precio*p.cantidad)as preciob,sum(bp.cantidad)as cantb,p.estado from prendas p 
 left join bordadosprendas bp on bp.idprendas=p.idprendas GROUP by p.idprendas");
 
 

@@ -23,6 +23,24 @@ class Cprendas extends CI_Controller
 
 
 	 }
+
+	  public  function fneliminar(){
+
+
+	  $param['idprendas']=$this->input->post('idprendas');
+	  	$param['idbordados']=$this->input->post('idbordados');
+
+
+	  	$res=$this->Madmin->fneliminar($param);
+	  	if($res>=1){
+
+	  		echo'Bordado eliminado';
+
+	  	}else{
+	  		echo'No se a podido realizar  la tarea';
+
+	  	}
+	  }
 	 
 	 public  function cargarb(){
 		$param['idprendas']= $this->input->post('id');
@@ -133,6 +151,24 @@ public  function prendas (){
 
 
  }
+
+  public function camlistacobro(){
+
+  	$param['idprendas']=$this->input->post('id');
+
+
+
+  	$res=$this->Madmin->camlistacobro($param);
+
+  	if($res>=1){
+echo 'Prenda En lista de cobro';
+
+  	}else{
+
+  		echo 'no se a podido realizar el cambio';
+
+  	}
+  }
 
 
 
