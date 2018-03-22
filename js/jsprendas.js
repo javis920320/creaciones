@@ -3,7 +3,26 @@ listabordados();
 
 
 
+ function finproceso(){
 
+
+window.open(baseurl+'Cpdfreport/reportebordados');
+$.ajax({
+'url':baseurl+'Cprendas/fnbordadosf',
+'type':'POST',
+success:function(data){
+	alert(data);
+
+
+}
+});
+
+
+
+
+
+
+ }
 
 
  function camlistacobro(){

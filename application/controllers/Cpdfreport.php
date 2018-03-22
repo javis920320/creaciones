@@ -135,6 +135,26 @@ $data[$i] = $this->Pdf_model->imp($y[$i]);
 	 echo json_encode($res);
 	 
  }
+
+
+
+  public  function reportebordados(){
+     //$s=$this->input->get('satel');
+    $this->load->model('Pdf_model');
+    $this->load->library('mydompdf');
+    $data['usuarios'] = $this->Pdf_model->bordados();
+     $data['saldos'] = $this->Pdf_model->saldo();
+    
+    //saldosatelite();
+   // $data['valores'] = $this->Pdf_model->valores();
+    $html= $this->load->view('pdf/vbordados', $data, true);
+     $this->mydompdf->set_paper("A4", "landscape");
+    $this->mydompdf->load_html($html);
+    $this->mydompdf->render();
+    $this->mydompdf->set_base_path('./assets/css/style.css'); //agregar de nuevo el css
+    $this->mydompdf->stream("satelite".date('d-m-Y').".pdf", array("Attachment" => false));
+     
+ }
  
  
 

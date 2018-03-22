@@ -19,6 +19,33 @@ class Pdf_model extends CI_Model
 
     }*/
 
+
+     public  function bordados(){
+
+
+     	$query=$this->db->query('select pr.idprendas,pr.factura ,pr.descripcion,pr.cantidad,pr.fecha,pr.estado,bp.precio*pr.cantidad as precio
+from prendas pr
+inner join bordadosprendas bp on bp.idprendas = pr.idprendas
+where pr.estado=1');
+
+     	return$query->result();
+     }
+
+
+ public  function saldo(){
+
+
+     	$query=$this->db->query('select sum(bp.precio*pr.cantidad)as saldot,sum(bp.cantidad) as cb
+from prendas pr
+inner join bordadosprendas bp on bp.idprendas = pr.idprendas
+where pr.estado=1');
+
+     	return$query->result();
+     }
+
+
+
+
     public function imp($y){
 		
 		for ($i=0; $i<count($y) ; $i++){

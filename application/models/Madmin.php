@@ -206,6 +206,17 @@ left join bordadosprendas bp on bp.idprendas=p.idprendas GROUP by p.idprendas");
 		return $query->result();
 	}
 	
+	public  function fnbordadosf(){
+
+
+$datos = array('estado' => 2);
+
+
+		$this->db->where('estado',1);
+		$this->db->update('prendas',$datos);
+		$res=$this->db->affected_rows();
+		return$res;
+	}
 	
 	public  function cambiarestado($idtrabajador){
 		

@@ -88,6 +88,24 @@ public  function rsmbordados(){
 	 }
 
 
+	 public  function fnbordadosf(){
+
+
+	 	$res=$this->Madmin->fnbordadosf();
+
+
+	 	 if($res>=1){
+
+	 	 	echo "Proceso finalizado";
+
+	 	 }
+	 	 	else{
+
+echo "NO se a podido  terminar el Proceso";
+	 	 	}
+	 }
+
+
 
 
 public  function listaprendas(){
