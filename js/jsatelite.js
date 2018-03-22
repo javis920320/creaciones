@@ -346,7 +346,7 @@ function registroproceso(){
 SaldoPendiente(persona);
 
 
- function SaldoPendiente(persona){
+function SaldoPendiente(persona){
 
 $.ajax({
 
@@ -383,5 +383,7 @@ $.ajax({
 
 
  }
+
+
 
 

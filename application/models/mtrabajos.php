@@ -11,6 +11,25 @@ class Mtrabajos extends CI_Model
 
 	}
 
+
+public  function listavalorcero(){
+
+
+	$query=$this->db->query(" select p.idproceso,pe.factura,pe.facultad,pe.talla,pro.nomprod,pe.descripcion,p.cantidad,p.prebordado,p.precio,p.fecha,pr.nombres
+ from  periodo per,proceso p
+ inner join  pedido pe on pe.idpedido = p.idpedido
+ inner join tipo_producto tp on tp.idtipoprod = pe.idtipoprod
+ inner join producto pro  on p.id_prod=pro.id_prod
+ inner join trabajador t on t.idtrabajador = p.idtrabajador
+ inner join persona  pr on pr.idpersona = t.idpersona
+ inner join usuarios u on u.idpersona = pr.idpersona
+ where u.tipo=4 and p.estado=1 and p.fecha between per.fechai and per.fechaf");
+
+
+	return $query->result();
+
+}
+
 public  function lsttipoprod($param){
 
  /*$query=$this->db->query("select distinct(t.nomtipoprod) from pedido p

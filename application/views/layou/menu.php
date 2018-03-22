@@ -40,16 +40,22 @@
             <li class="active"><a href="<?php echo base_url();?>Cpedidos"><i class="fa fa-circle-o"></i> Ingreso  Registro</a></li>
              <li class="active"><a href="<?php echo base_url();?>Cproductosen"><i class="fa fa-circle-o"></i> Productos enviados</a></li>
 			 <li class="active"><a href="<?php echo base_url();?>Cprendas"><i class="fa fa-circle-o"></i> Envio bordados</a></li>
+        <?php  if( $this->session->userdata('tipo')==3 ) { ?>
         <li class="active"><a href="<?php echo base_url();?>Cprendas/cargarbordados"><i class="fa fa-circle-o"></i> Cargar bordados</a>
+          <li class="active"><a href="<?php echo base_url();?>Csatelite/valorcero"><i class="fa fa-circle-o"></i> Cargar Valor cero</a></li>
+
+
+          <?php  }?>
 
 
         </li>
-        <li class="active"><a href="<?php echo base_url();?>Csatelite/valorcero"><i class="fa fa-circle-o"></i> Cargar Valor cero</a></li>
+      
+        
             
             <!--<li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>-->
           </ul>
         </li>
-
+<?php  if( $this->session->userdata('tipo')==3 ) { ?>
 
          <li class="active treeview">
           <a href="#">
@@ -65,7 +71,9 @@
             <!--<li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>-->
           </ul>
         </li>
+         <?php  }?>
         <?php  }?>
+
          <?php  if($this->session->userdata('tipo')==0) { ?>
 
         <li class="treeview">

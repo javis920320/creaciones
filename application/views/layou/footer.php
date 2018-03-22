@@ -119,6 +119,10 @@
 <script src="<?php echo  base_url();?>js/jsproductosen.js"></script>
 
 <?php  }?>
+<?php  if( $this->uri->segment(2)=='valorcero' ){ ?>
+<script src="<?php echo  base_url();?>js/jsvalorcero.js"></script>
+
+<?php  }?>
 <?php  if( $this->uri->segment(1)=='Cproductosen' ){ ?>
 <script src="<?php echo  base_url();?>js/jsestados.js"></script>
 

@@ -152,7 +152,7 @@ $data[$i] = $this->Pdf_model->imp($y[$i]);
     $this->mydompdf->load_html($html);
     $this->mydompdf->render();
     $this->mydompdf->set_base_path('./assets/css/style.css'); //agregar de nuevo el css
-    $this->mydompdf->stream("satelite".date('d-m-Y').".pdf", array("Attachment" => false));
+    $this->mydompdf->stream("Bordados".date('d-m-Y').".pdf", array("Attachment" => false));
      
  }
  

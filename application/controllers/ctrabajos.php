@@ -45,6 +45,14 @@ class Ctrabajos extends CI_Controller
 	}
 
 
+	public  function listavalorcero(){
+
+
+		$res=$this->Mtrabajos->listavalorcero();
+		echo json_encode($res);
+	}
+
+
 	public function buscarpedido(){
 
 

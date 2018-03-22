@@ -5,9 +5,24 @@ listabordados();
 
  function finproceso(){
 
+permiso =false;
+if(permiso==false){
 
 window.open(baseurl+'Cpdfreport/reportebordados');
-$.ajax({
+
+window.setTimeout("llamarproceso();50000")
+
+
+}
+
+	
+
+ }
+
+
+ function llamarproceso(){
+
+ 	$.ajax({
 'url':baseurl+'Cprendas/fnbordadosf',
 'type':'POST',
 success:function(data){
@@ -16,12 +31,6 @@ success:function(data){
 
 }
 });
-
-
-
-
-
-
  }
 
 
@@ -149,6 +158,9 @@ if(row.estado==0){
 
 	return '<span class="text-danger">Aplicando bordados</span>';
 
+}else{
+	return '<span class="text-danger">Terminado</span>';
+
 }
 					}
 			}
@@ -204,6 +216,13 @@ if(row.estado==1){
 	 
 	
 
+}if(row.estado==2){
+
+ return '<span class="text-danger">terminado</span>';
+	//return '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mdlcargar" onClick="detallesb(\''+row.idprendas+'\',\''+row.nombre+'\',\''+row.precio+'\')">cargar</button>';
+	 
+	
+
 }
 					}
 			}
@@ -221,7 +240,7 @@ if(row.estado==1){
             }else if (data == 1) {
               return "<span class='label label-success'>En lista de cobro</span>";
             }else if (data == 2) {
-              return "<span class='label label-danger'>En cortes</span>";
+              return "<span class='label label-danger'>Proceso Finalizado</span>";
             }
               
           }

@@ -116,20 +116,21 @@
             <!-- /.box-header -->
              
             <div class="box-body table-responsive no-padding">
-             <table  id='tblsatelite' class="table table-hover table-responsive table-bordered">
+             <table  id='tblvalor' class="table table-hover table-responsive table-bordered">
                 <thead class="bg-info">
                 <tr>
          <th>Codigo</th>
                   <th>Factura</th>
-                  <th>Producto</th>
                   <th>Facultad</th>
-                   <th>Cantidad</th>
-                   <th>Talla</th>
+                  <th>Talla</th>
+                   <th>Producto</th>
                    <th>Descripcion</th>
+                   <th>Cantidad</th>
                   
-                  <th>Fecha ingreso</th>
-                  <th>Estados</th>
-                  <th>Saldo</th>
+                  <th>Precio Bor</th>
+                   <th>Precio confe</th>
+                  <th>fecha</th>
+                  <th>Satelite</th>
                 </tr>
                 </thead>
                 <tbody></tbody>

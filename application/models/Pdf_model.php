@@ -23,10 +23,10 @@ class Pdf_model extends CI_Model
      public  function bordados(){
 
 
-     	$query=$this->db->query('select pr.idprendas,pr.factura ,pr.descripcion,pr.cantidad,pr.fecha,pr.estado,bp.precio*pr.cantidad as precio
+     	$query=$this->db->query('select pr.idprendas,pr.factura ,pr.descripcion,pr.cantidad,pr.fecha,pr.estado,sum(bp.precio*pr.cantidad) as precio
 from prendas pr
 inner join bordadosprendas bp on bp.idprendas = pr.idprendas
-where pr.estado=1');
+where pr.estado=1 group by  pr.idprendas');
 
      	return$query->result();
      }
