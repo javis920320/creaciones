@@ -25,6 +25,7 @@ $('#tblproductosen').DataTable({
 			{data:'nombres'},
 			{data:'fecha_ingreso'},
 			{data:'fentrega'},
+			{data:'print'},
 			{"orderable":true,
 			render:function(data,type,row){
 
@@ -60,6 +61,23 @@ $('#tblproductosen').DataTable({
 
 
 			],
+				"columnDefs": [
+        {
+          "targets": [10], 
+          "data": "print", 
+          "render": function(data, type, row) {
+            
+            if (data == 0) {
+              return "<span class='label label-warning'>Activo</span>";
+            }else if (data == 1) {
+              return "<span class='label label-success'>No activo</span>";
+            }else if (data == 2) {
+              return "<span class='label label-danger'>En cortes</span>";
+            }
+              
+          }
+        }
+         ],
 
  "order":[[0,"asc"]],
 

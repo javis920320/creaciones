@@ -290,6 +290,62 @@ function lstsatelites(){
 
 
 
+function registroprocesos(){
+
+	var dis=$('#disponibles').val();
+	var cantidad=$('#cantidad').val();
+	
+	diponibles=parseInt(dis);
+	
+	
+	 if(cantidad>diponibles){
+	 	alert('Erro verifica la cantidad disponible');
+	 }else if(diponibles==0){
+
+	 	alert('No hay productos disponibles');
+
+	 }else{
+	
+	    var productos=$('#productos').val();
+	    var idpedido=$('input:radio[name=idpedido]:checked').val();
+	    var trabajador=$('#trabajador').val();
+
+
+	
+	$.ajax({
+		url:baseurl+'Csatelite/asignarsatelite',
+		type:'POST',
+		async:false,
+		data:{cantidad:cantidad,productos:productos,idpedido:idpedido,trabajador:trabajador},
+		success:function(data){
+				alert(data);
+			//$('#tblsatelite').data.reload();
+			$('#tblsatelite').DataTable().ajax.reload();
+			validarc();
+		
+		
+		/*if(data==0){
+			
+		alert("Verifica los productos Disponibles");
+		}else{
+			$('#tblsatelite').data.reload();
+			validarc();
+			alert(data);
+			
+			
+		}*/
+
+	}
+
+	});
+	}
+
+//});
+}
+
+
+
+
 
 function registroproceso(){
 

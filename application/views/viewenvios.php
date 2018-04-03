@@ -139,6 +139,7 @@
               <h3 class="box-title" class='text-primary'>PRODUCTOS EN PROCESO</h3><br><br>
               
 <button id='pdf' class='btn btn-danger' onclick='crearfichas();'><span class='glyphicon glyphicon-print'></span>  Crear Pdf</button>
+<button id='pdf' class='btn btn-primary' onclick='imprimirsel();'><span class='glyphicon glyphicon-print'></span>  Imprimir sel</button>
 
 <button id='lista' class='btn btn-danger'><span class='glyphicon glyphicon-print'></span> Vista preliminar</button>
 <button id='btnenv' class='btn btn-primary'  onclick='generarenvio();'><span class='glyphicon glyphicon-resize-small'></span> Enviar seleccion</button>
@@ -162,6 +163,7 @@
                    <th>Cliente</th>
                   <th>Fecha ingreso</th>
                   <th>Fecha Entrega</th>
+                  <th>Impresion</th>
                   <th>Accion</th>
                 </tr>
                 </thead>

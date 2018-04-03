@@ -80,7 +80,7 @@
 
 <br><br>
 
-            <input type='button' value='Asisgnar' class='btn btn-alert' onclick='registroproceso();'>
+            <input type='button' value='Asisgnar' class='btn btn-alert' onclick='registroprocesos();'>
        </div>
 
 

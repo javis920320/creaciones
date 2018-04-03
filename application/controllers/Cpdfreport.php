@@ -77,30 +77,24 @@ function datos_bd(){
 	
 		$datos['datos']=$this->input->get('selecciones');
  	$y=json_decode($datos['datos']);
+     //print_r( $y[0]);
 	
 	
-	
+	// $string['string'] = $this->Pdf_model->imp($y);
+    $string['string']=json_encode($this->Pdf_model->imp($y));
 
+    // json_decode($string);
+
+    // print_r( $string);
+    //echo $string['string'];
+   
+
+
+
+ 
+ echo $string['string'];
     
-/* for ($i=0; $i<count($y) ; $i++) { 
- 
-$data[$i] = $this->Pdf_model->imp($y[$i]);
-
- $data[$i]['string']=$data[$i];
- 
- }*/
- 
-//var_dump($data);
-
- $data['string'] = $this->Pdf_model->imp($y);
-
- var_dump( $data['string']);
-
-
- 
- 
-    
-  /*  $html= $this->load->view('pdf/lista', $data, true);
+   /*$html= $this->load->view('pdf/lista', $string, true);
      $this->mydompdf->set_paper("A4", "landscape");
     $this->mydompdf->load_html($html);
     $this->mydompdf->render();
@@ -131,7 +125,7 @@ $data[$i] = $this->Pdf_model->imp($y[$i]);
  public  function prueba(){
 	  $this->load->model('Pdf_model');
 	 
-	 $res=$this->Pdf_model->saldosatelite(1);
+	 $res=$this->Pdf_model->procesos();
 	 echo json_encode($res);
 	 
  }

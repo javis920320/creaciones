@@ -47,15 +47,20 @@ where pr.estado=1');
 
 
     public function imp($y){
+    	$query='';
+    	
 		
 		for ($i=0; $i<count($y) ; $i++){
 			
 			$query[$i]=$this->db->query("select * from pedido where idpedido=".$y[$i]."");
-             return $query[$i]->result();
+             $n[$i]=$query[$i]->result();
 
 		
 		}
-         return $query->result();
+         //return $query->result();
+		
+		$result = array_reduce($n, 'array_merge', array());
+		return $result;
 	
 		/*$query=$this->db->query("select * from pedido where idpedido=".$y."");
 		return $query->result();*/

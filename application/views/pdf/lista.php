@@ -29,14 +29,11 @@
            </tr>
        </thead>
        <tbody>
-          <?php foreach ($string as $usuario) { ?>
-            <tr>
-                <td><?php echo $usuario->idpedido;?></td>
-                <td><?php echo $usuario->factura;?></td>
-                <td><?php echo $usuario->facultad;?></td>
-              
-            </tr>
-          <?php  }?>
+         <?php foreach ($string as $item){?>
+            <td><?php echo $item['string']?></td>
+        
+        
+         <?php } ?>
        </tbody>
    </table>
    <br><br><br>
