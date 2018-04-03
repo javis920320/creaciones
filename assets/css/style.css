@@ -4,6 +4,15 @@ body, select {
 	font-size: 10px;
 }
 
+.l{
+			width: 300px !important;
+			height: 170px !important;
+			margin-right: 2px !important;		
+			float:left !important;
+			border-style: solid !important;
+
+		}
+
 a:link, a:visited, a:active { 
   color: #5F83BA; 
   text-decoration: none;

@@ -62,7 +62,9 @@ function datos_bd(){
     $this->load->library('mydompdf');
     $data['usuarios'] = $this->Pdf_model->procesos();
     $data['valores'] = $this->Pdf_model->valores();
-    $html= $this->load->view('pdf/datos_db', $data, true);
+	//print_r( $data['valores']);
+	
+   $html= $this->load->view('pdf/datos_db', $data, true);
      $this->mydompdf->set_paper("A4", "landscape");
     $this->mydompdf->load_html($html);
     $this->mydompdf->render();
@@ -81,25 +83,26 @@ function datos_bd(){
 	
 	
 	// $string['string'] = $this->Pdf_model->imp($y);
-    $string['string']=json_encode($this->Pdf_model->imp($y));
+	  $string['string'] = json_decode(json_encode($this->Pdf_model->imp($y), True));
+  
 
     // json_decode($string);
 
     // print_r( $string);
-    //echo $string['string'];
+   // print_r( $string['string']);
    
 
 
 
  
- echo $string['string'];
+ //echo $string['string'];
     
-   /*$html= $this->load->view('pdf/lista', $string, true);
+   $html= $this->load->view('pdf/lista', $string, true);
      $this->mydompdf->set_paper("A4", "landscape");
     $this->mydompdf->load_html($html);
     $this->mydompdf->render();
     $this->mydompdf->set_base_path('./assets/css/style.css'); //agregar de nuevo el css
-    $this->mydompdf->stream("welcome.pdf", array("Attachment" => false));*/
+    $this->mydompdf->stream("welcome.pdf", array("Attachment" => false));
  }
  
  
