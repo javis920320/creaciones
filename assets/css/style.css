@@ -8,7 +8,7 @@ body, select {
 			width: 300px !important;
 			height: 170px !important;
 			margin-right: 2px !important;		
-			float:left !important;
+			float:right !important;
 			border-style: solid !important;
 
 		}
