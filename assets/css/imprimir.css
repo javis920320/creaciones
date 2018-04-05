@@ -1,7 +1,8 @@
 .l{
 	 
-		    width: 41.9em ;
-			height: 170px;
+		   width: 41.9em ;
+			/*height: 170px;*/
+		
 			margin-right: 2px ;		
 			border-style: solid;
 			/*padding-right:0.5px;*/
@@ -14,11 +15,15 @@
 			font-size: 8px;
 			word-wrap: break-word;
 
+position:relative; 
 			
 
 		}
 		
-		.ll{overflow:scroll;}
+		p.ll{box-sizing : border-box;
+position:relative; 
+
+		}
 		/*.l{display:inline-block;}*/
 		
 		/*p.ll {

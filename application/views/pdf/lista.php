@@ -22,7 +22,7 @@
  
   <?php foreach ($string as $item){?>
    <div class="l">
-              <p class="ll" ><?php echo$item->factura.'|<br>'.'|<br>'.$item->descripcion.'|<br>'.$item->descripcion.'|<br>'.$item->facultad .'|'.$item->talla .'|'.$item->fecha_ingreso.'|'.$item->fentrega;?></p>
+              <p class="ll"  ><?php echo$item->factura.'|<br>'.'|<br>'.$item->descripcion.'|<br>'.$item->descripcion.'|<br>'.$item->facultad .'|'.$item->talla .'|'.$item->fecha_ingreso.'|'.$item->fentrega;?></p>
         
         </div>
          <?php } ?>
