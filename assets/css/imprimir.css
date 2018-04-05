@@ -1,11 +1,11 @@
-.l{
+/*.l{
 	 
 		   width: 41.9em ;
-			/*height: 170px;*/
+		float:left;
 		
 			margin-right: 2px ;		
 			border-style: solid;
-			/*padding-right:0.5px;*/
+			
 			
 			
 			display:inline-block;
@@ -16,27 +16,89 @@
 			word-wrap: break-word;
 
 position:relative; 
+word-break: break-all;
 			
 
 		}
 		
 		p.ll{box-sizing : border-box;
 position:relative; 
+word-break: break-all;
 
 		}
+		*/
+		
+		/*.preview p { 
+		
+		
+		
+			display:inline-block;
+			float:left;
+			box-sizing : border-box;
+		  
+  white-space: nowrap;
+  font-family: "lucida console", monospace; 
+  font-size: 0.8em;
+  word-wrap: break-word;
+  word-break: break-all;
+
+}
+
+.preview p {
+	  white-space: nowrap;
+	border: 0.5px solid #ccc;
+	border-collapse: collapse;
+	  /*display:inline-block;*/
+	  
+	 /*  word-wrap: break-word;
+	   word-break: break-all;
+	   box-sizing : border-box;
+	   overflow: auto;
+	  position: relative;
+}
 		/*.l{display:inline-block;}*/
 		
 		/*p.ll {
-    width: 11em; 
+    width: 30em; 
     border: 1px solid #000000;
-	float:right;
+	float:left;
     word-wrap: break-word;
+	box-sizing : border-box;
+	word-break: break-all;
 	
 }
 */
+
+.l{
+	left: 1em;
+    display: inline-block;
+	
+    width: 250;
+    
+    margin: 10px;
+	clear: left;
+	page-break-after:always;
+    /*border: 3px solid #73AD21;  */
+	//*box-sizing : border-box;*/
+}
+.ll{
+	
+	 
+	text-align:right;
+	font-size:10px;
+	white-space: pre-line; 
+    width: 350px; 
+    overflow: hidden;
+    text-overflow: "----"; 
+    border: 1px solid #000000;
+	text-transform: uppercase;
+	
+}
 		
 		
 		
 		
 		/*.l{ width:300px; height:300px; background-color:#CCCCCC; position:relative; display:inline-block;}
 .ll{ width:100px; height:100px; background-color:#666666; position:absolute; bottom:0%; right:0%; margin:0 5px 5px 0}*/
+
+

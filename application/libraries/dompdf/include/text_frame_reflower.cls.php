@@ -83,7 +83,9 @@ class Text_Frame_Reflower extends Frame_Reflower {
       return false;
 
     // split the text into words
-    $words = preg_split('/([\s-]+)/u', $text, -1, PREG_SPLIT_DELIM_CAPTURE);
+    ///$words = preg_split('/([\s-]+)/u', $text, -1, PREG_SPLIT_DELIM_CAPTURE);
+	//modificado por javier lopezl
+	$words = preg_split('/([\s-\?\&\/]+)/u', $text, -1, PREG_SPLIT_DELIM_CAPTURE);
     $wc = count($words);
 
     // Determine the split point
@@ -368,7 +370,12 @@ class Text_Frame_Reflower extends Frame_Reflower {
       // This technique (using arrays & an anonymous function) is actually
       // faster than doing a single-pass character by character scan.  Heh,
       // yes I took the time to bench it ;)
-      $words = array_flip(preg_split("/[\s-]+/u",$str, -1, PREG_SPLIT_DELIM_CAPTURE));
+	  
+     // $words = array_flip(preg_split("/[\s-]+/u",$str, -1, PREG_SPLIT_DELIM_CAPTURE));
+	 $words = array_flip(preg_split('/([\s-\?\&\/]+)/u', $str, -1, PREG_SPLIT_DELIM_CAPTURE));
+	  
+	  
+	  
       /*foreach($words as &$word) {
         $word = Font_Metrics::get_text_width($word, $font, $size, $word_spacing, $char_spacing);
       }*/

@@ -86,22 +86,16 @@ function datos_bd(){
 	  $string['string'] = json_decode(json_encode($this->Pdf_model->imp($y), True));
   
 
-    // json_decode($string);
-
-    // print_r( $string);
-   // print_r( $string['string']);
-   
-
-
-
- 
- //echo $string['string'];
+    
     
    $html= $this->load->view('pdf/lista', $string, true);
-     $this->mydompdf->set_paper("A4", "landscape");
+ 
+    $this->mydompdf->set_paper("A4", "landscape");
     $this->mydompdf->load_html($html);
     $this->mydompdf->render();
-    $this->mydompdf->set_base_path('./assets/css/imprimir.css'); //agregar de nuevo el css
+   $this->mydompdf->set_base_path('./assets/css/imprimir.css'); //agregar de nuevo el css
+
+    
     $this->mydompdf->stream("welcome.pdf", array("Attachment" => false));
  }
  
