@@ -123,6 +123,7 @@ public  function lista($param){
 		$this->db->join('tipo_producto tp','tp.idtipoprod=p.idtipoprod');
 		$this->db->join('persona pe','pe.idpersona=c.idpersona');
 		$this->db->where('p.estado',$dato['estado']);
+		//$this->db->where('p.print',1);
 		//$this->db->or_where('p.estado',$dato['estado2']);
 		//$this->db->where('p.factura',$dato['factura']);
 		$this->db->order_by('fentrega', 'ASC');
@@ -132,6 +133,27 @@ public  function lista($param){
 		return $resul->result();
 }
 
+
+public  function printdisponible($param){
+
+	$dato = array('estado' => $param['estado'] ,
+					'factura' => $param['factura'] );
+
+	    $this->db->select('p.idpedido,tp.nomtipoprod,p.factura,p.facultad,p.cantidad,p.talla,p.descripcion,pe.nombres,p.fecha_ingreso,p.fentrega,p.print');
+		$this->db->from('pedido p');
+		$this->db->join('cliente c','c.idpersona=p.idcliente');
+		$this->db->join('tipo_producto tp','tp.idtipoprod=p.idtipoprod');
+		$this->db->join('persona pe','pe.idpersona=c.idpersona');
+		$this->db->where('p.estado',$dato['estado']);
+		$this->db->where('p.print',1);
+		//$this->db->or_where('p.estado',$dato['estado2']);
+		//$this->db->where('p.factura',$dato['factura']);
+		$this->db->order_by('fentrega', 'ASC');
+		$this->db->order_by('factura');
+
+		$resul=$this->db->get();
+		return $resul->result();
+}
 
  public  function filtro($param){
 
@@ -203,6 +225,35 @@ $this->db->select('p.idpedido,tp.nomtipoprod,p.factura,p.facultad,p.cantidad,p.t
 	$datos= array(
 	 			
 	 			  'estado'=>2
+
+	 					);
+						$res=0;
+
+
+	for ($i=0; $i <$d ; $i++) { 
+
+
+		$this->db->where('idpedido',$array[$i]);
+	$this->db->update('pedido',$datos);
+	$res=$res+$this->db->affected_rows();
+	}
+
+	return $res;
+
+
+
+}
+
+
+  public function activarprint($array){
+
+
+	$d=count($array);
+
+
+	$datos= array(
+	 			
+	 			  'print'=>1
 
 	 					);
 						$res=0;

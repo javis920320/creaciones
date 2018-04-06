@@ -5,7 +5,9 @@ imprimir();
  function imprimir(){
 
  	$.ajax({
- 		'url':baseurl+'Cproductosen/lista',
+		
+ 		//'url':baseurl+'Cproductosen/lista',
+		'url':baseurl+'Cproductosen/printdisponible',
  		'type':'POST',
  		'data':'',
  		success:function(data){

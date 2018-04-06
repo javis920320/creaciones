@@ -25,6 +25,7 @@ class Mlista extends CI_Model
 		$this->db->join('persona pe','pe.idpersona=c.idpersona');
 		$this->db->join('tipo_producto tp','tp.idtipoprod=p.idtipoprod');
 		$this->db->where('p.estado',$dato['estado']);
+		//$this->db->where('p.print',1);
 		$this->db->where('p.fecha_ingreso',$dato['fecha']);
 		$this->db->order_by('fecha_ingreso', 'DESC');
 
@@ -34,6 +35,21 @@ class Mlista extends CI_Model
 
 
 	}
+	
+	
+	/*public  function pasar(){
+		$dato = array(
+			'print' => 3
+			
+			);
+		
+		$this->db->where('print',2);
+		$this->db->update('pedido',$datos);
+		
+		
+		
+		
+	}*/
 
 
 

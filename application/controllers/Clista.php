@@ -17,10 +17,12 @@ class Clista extends CI_Controller
 
 
 	 	$nombres['nombres']=$this->session->userdata('nombres');
-		//$this->load->view('layou/header',$nombres);
-
 		$this->load->view('vlista');
-		//$this->load->view('layou/footer');
+		//sleep(5);
+		//$this->Mlista->pasar();
+		
+		
+		
 	}
 
 

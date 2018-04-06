@@ -68,11 +68,11 @@ $('#tblproductosen').DataTable({
           "render": function(data, type, row) {
             
             if (data == 0) {
-              return "<span class='label label-warning'>Activo</span>";
+              return "<span class='label label-warning'>Desactivado</span>";
             }else if (data == 1) {
-              return "<span class='label label-success'>No activo</span>";
+              return "<span class='label label-success'>Activado</span>";
             }else if (data == 2) {
-              return "<span class='label label-danger'>En cortes</span>";
+              return "<span class='label label-danger'>Ficha creada</span>";
             }
               
           }

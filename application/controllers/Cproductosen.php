@@ -39,6 +39,17 @@ autor:´javier lopez
 	 	echo json_encode($res);
 	 }
 
+	 
+	 public function printdisponible(){
+
+	 	$param['factura']=$this->input->post('factura');
+	 	$param['estado']=2;
+		//$param['estado2']=3;
+
+	 	$res=$this->Mpedidos->printdisponible($param);
+
+	 	echo json_encode($res);
+	 } 
 
 	  public  function enviarconfeccion(){
 
@@ -88,6 +99,24 @@ autor:´javier lopez
 echo 'Registros Enviados ('.$res.')';
 
 //echo var_dump($data);
+	 }
+	 
+	 
+	 
+	 	  
+	  public  function activarprint(){
+		   
+
+		   $data = json_decode(stripslashes($_POST['array']));
+
+		  	$res=$this->Mpedidos->activarprint($data);
+
+		
+
+
+
+
+echo 'Permisos activados ('.$res.')';
 	 }
 	 
 	 
