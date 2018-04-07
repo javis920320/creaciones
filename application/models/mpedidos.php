@@ -139,20 +139,29 @@ public  function printdisponible($param){
 	$dato = array('estado' => $param['estado'] ,
 					'factura' => $param['factura'] );
 
-	    $this->db->select('p.idpedido,tp.nomtipoprod,p.factura,p.facultad,p.cantidad,p.talla,p.descripcion,pe.nombres,p.fecha_ingreso,p.fentrega,p.print');
+	    /*$this->db->select('p.idpedido,tp.nomtipoprod,p.factura,p.facultad,p.cantidad,p.talla,p.descripcion,pe.nombres,p.fecha_ingreso,p.fentrega,p.print');
 		$this->db->from('pedido p');
 		$this->db->join('cliente c','c.idpersona=p.idcliente');
 		$this->db->join('tipo_producto tp','tp.idtipoprod=p.idtipoprod');
 		$this->db->join('persona pe','pe.idpersona=c.idpersona');
 		$this->db->where('p.estado',$dato['estado']);
 		$this->db->where('p.print',1);
-		//$this->db->or_where('p.estado',$dato['estado2']);
-		//$this->db->where('p.factura',$dato['factura']);
+	
 		$this->db->order_by('fentrega', 'ASC');
 		$this->db->order_by('factura');
 
 		$resul=$this->db->get();
-		return $resul->result();
+		return $resul->result();*/
+
+		$query=$this->db->query('select p.idpedido,tp.nomtipoprod,p.factura,p.facultad,p.cantidad,p.talla,p.descripcion,pe.nombres,p.fecha_ingreso,p.fentrega,p.print
+     from pedido p
+     
+     inner join cliente c on c.idpersona=p.idcliente
+		 inner join tipo_producto tp on tp.idtipoprod=p.idtipoprod
+		 inner join persona pe on pe.idpersona=c.idpersona
+		where p.estado='.$dato['estado'].' and p.print=1 order by p.fentrega,p.factura');
+
+		return $query->result();
 }
 
  public  function filtro($param){
