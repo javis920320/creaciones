@@ -97,7 +97,7 @@ window.open(baseurl+'Cpdfreport/imp?selecciones='+selecciones);
 
 
 function activarprint(){
-	alert();
+	
 	
 	//console.log(selectedItems);//
 		 var i=0;

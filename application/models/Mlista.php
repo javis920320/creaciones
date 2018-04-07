@@ -37,19 +37,21 @@ class Mlista extends CI_Model
 	}
 	
 	
-	/*public  function pasar(){
+	public  function pasar(){
 		$dato = array(
-			'print' => 3
+			'print' => 2
 			
 			);
 		
-		$this->db->where('print',2);
-		$this->db->update('pedido',$datos);
+		$this->db->where('print',1);
+		$this->db->update('pedido',$dato);
+
+		return$this->db->affected_rows();
 		
 		
 		
 		
-	}*/
+	}
 
 
 

@@ -68,11 +68,11 @@ $('#tblproductosen').DataTable({
           "render": function(data, type, row) {
             
             if (data == 0) {
-              return "<span class='label label-warning'>Desactivado</span>";
+              return "<span class='label label-warning'><label class='glyphicon glyphicon-lock'></label>  Desactivado</span>";
             }else if (data == 1) {
-              return "<span class='label label-success'>Activado</span>";
+              return "<span class='label label-success'> <label class='glyphicon glyphicon-print'></label>  Activado</span>";
             }else if (data == 2) {
-              return "<span class='label label-danger'>Ficha creada</span>";
+              return "<span class='label label-danger'> <label class='glyphicon glyphicon-lock'></label>  Ficha creada</span>";
             }
               
           }
@@ -93,9 +93,28 @@ $('#lista').on('click',function(){
 
 	window.open(baseurl+"Clista/");
 
-
-
+window.setTimeout("pasar();50000")
+	
 });
+
+ function pasar(){
+ 	window.setTimeout("50000")
+$.ajax({
+'url':baseurl+'Clista/pasar',
+'type':'POST',
+'data':'',
+success:function(data){
+
+alert(data+'Filas Afectadas');
+$('#tblproductosen').DataTable().ajax.reload();
+
+}
+
+	});
+
+
+ }
+
 
 
 

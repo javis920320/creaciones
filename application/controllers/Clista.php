@@ -18,11 +18,21 @@ class Clista extends CI_Controller
 
 	 	$nombres['nombres']=$this->session->userdata('nombres');
 		$this->load->view('vlista');
-		//sleep(5);
-		//$this->Mlista->pasar();
 		
 		
 		
+		
+		
+	}
+
+
+	public  function pasar(){
+		sleep(5);
+
+$re=$this->Mlista->pasar();
+echo $re;
+
+
 	}
 
 

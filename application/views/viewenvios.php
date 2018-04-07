@@ -143,7 +143,7 @@
 
 <button id='lista' class='btn btn-danger'><span class='glyphicon glyphicon-print'></span> Vista preliminar</button>
 <button id='btnenv' class='btn btn-primary'  onclick='generarenvio();'><span class='glyphicon glyphicon-resize-small'></span> Enviar seleccion</button>
-<button id='activarprint' class='btn btn-primary'  onclick='activarprint();'><span class='glyphicon glyphicon-resize-small'></span> Activar impresion</button>
+<button id='activarprint' class='btn btn-success'  onclick='activarprint();'><span class='glyphicon glyphicon-ok-circle'></span> Activar impresion</button>
 
 <label for='mtodo'>Seleccionar todo    </label><input type='checkbox' id='mtodo' name='mtodo' class='' value='true' >
 
