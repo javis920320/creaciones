@@ -34,10 +34,13 @@
 		
 		.l{
 			width: 300px;
-			height: 170px;
-			margin-right: 2px;		
+			/*height: 170px;*/
+			position: relative;
+			/*margin-right: 2px;	*/
+			margin:auto;	
 			float:left;
 			border-style: solid;
+			page-break-before:always;
 
 		}
 
@@ -49,7 +52,7 @@
 
 
 
- <div id='rsp'>ss</div>
+ <div id='rsp'>Creando Fichas......</div>
 
    <script type="text/javascript">
 	var baseurl = "<?php echo base_url(); ?>";
