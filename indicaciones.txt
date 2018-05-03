@@ -229,3 +229,20 @@ select `pe`.`nombres` AS `nombres`,sum(`pro`.`cantidad`) AS `sum(pro.cantidad)`,
 --generacion pdf dompdf
 
 https://huguidugui.wordpress.com/2017/04/25/generar-pdf-con-dompdf-en-codeigniter/
+
+
+
+https://github.com/javis920320/TecnoSmartTools
+
+
+
+*** proceso  para  lista  cliente - trabajador
+
+select p.idproceso, pe. idpedido,pe.idpedido, pe.factura,per.nombres,(select px.nombres from trabajador t   inner join persona px on px.idpersona = t.idpersona  where t.idtrabajador=tr.idtrabajador )persona
+from proceso p
+inner join pedido pe on pe.idpedido = p.idpedido
+inner join cliente c on c.idcliente = pe.idcliente
+inner join persona per on per.idpersona = c.idpersona
+inner join trabajador tr on tr.idtrabajador=p.idtrabajador
+inner join tipo_producto tp on tp.idtipoprod = pe.idtipoprod
+inner join producto pro on pro.id_prod = p.id_prod
