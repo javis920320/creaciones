@@ -189,11 +189,11 @@ left join bordadosprendas bp on bp.idprendas=p.idprendas GROUP by p.idprendas");
 
   public function lstvalores(){
 
-  	$query=$this->db->query("select sum(pr.cantidad) as cantidad,sum(precio) as vsatel,nombres
+  	$query=$this->db->query("select sum(pr.cantidad) as cantidad,sum(pr.precio) as vsatel,nombres
  from proceso pr 
  inner join trabajador t on t.idtrabajador = pr.idtrabajador
  inner join persona pe on pe.idpersona = t.idpersona
- where pr.estado=2");
+ where pr.estado=2 group by pr.idtrabajador;");
 
   	return$query->result();
 

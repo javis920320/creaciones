@@ -354,7 +354,7 @@ $query=$this->db->query("select pr.idproceso,pd.factura,pd.facultad,p.nomprod,pd
 	public function resumentotal(){
 		
 		$query=$this->db->query("select sum(precio1)as prep ,sum(prebordado)as preb,sum(precio1+prebordado) as pret from proceso,periodo
-  where fecha>=fechai and  fecha<=fechaf");
+  where fecha>=fechai and  fecha<=fechaf and estado=1");
 	return $query->result();
 	/*$this->db->select("sum(precio1)as prep ,sum(prebordado)as preb,sum(precio1+prebordado) as pret");
 	$this->db->from("proceso");
