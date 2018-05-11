@@ -11,12 +11,14 @@
 	<title>Creaciones</title>
 </head>
 <body>
-<div class="container">
+
+<!--<div class="container">
 	<br>
 
 
 
-	<div class="col-md-12">
+	<div class="col-lg-12">
+	<div>
 		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 
 			<ol class="carousel-indicators">
@@ -29,13 +31,20 @@
 
 			<div class="carousel-inner" role="listbox">
 				<div class="item active">
-      <img src="https://admin.kienyke.com/wp-content/uploads/2017/10/tecnologia.png" alt="...">
+					<img src="<?php  echo base_url();?>assets/img/slide_4.png" alt="..."  >
+						<div class="carousel-caption">
+							...
+					</div>
+    </div>
+	
+    <div class="item">
+      <img  class='imagenes' src="<?php  echo base_url();?>assets/img/slide_1.jpg" alt="Inovacion">
       <div class="carousel-caption">
         ...
       </div>
     </div>
-    <div class="item">
-      <img src="..." alt="...">
+	 <div class="item">
+      <img  class='imagenes' src="<?php  echo base_url();?>assets/img/slide_3.jpg" alt="" >
       <div class="carousel-caption">
         ...
       </div>
@@ -48,6 +57,99 @@
 		</div>
 
 	</div>
+	</div>
+</div>-->
+
+  <div class="navbar-wrapper">
+      <div class="">
+
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="https://getbootstrap.com/docs/3.3/examples/carousel/#">Project name</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="https://getbootstrap.com/docs/3.3/examples/carousel/#">Home</a></li>
+                <li><a href="https://getbootstrap.com/docs/3.3/examples/carousel/#about">About</a></li>
+                <li><a href="https://getbootstrap.com/docs/3.3/examples/carousel/#contact">Contact</a></li>
+                <li class="dropdown">
+                  <a href="https://getbootstrap.com/docs/3.3/examples/carousel/#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="https://getbootstrap.com/docs/3.3/examples/carousel/#">Action</a></li>
+                    <li><a href="https://getbootstrap.com/docs/3.3/examples/carousel/#">Another action</a></li>
+                    <li><a href="https://getbootstrap.com/docs/3.3/examples/carousel/#">Something else here</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li class="dropdown-header">Nav header</li>
+                    <li><a href="https://getbootstrap.com/docs/3.3/examples/carousel/#">Separated link</a></li>
+                    <li><a href="https://getbootstrap.com/docs/3.3/examples/carousel/#">One more separated link</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+      </div>
+    </div>
+
+
+
+    <div class="col-lg-12">  
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img class="first-slide" src="<?php  echo base_url();?>assets/img/slide_4.png" alt="First slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Example headline.</h1>
+              <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
+              <p><a class="btn btn-lg btn-primary" href="https://getbootstrap.com/docs/3.3/examples/carousel/#" role="button">Sign up today</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img class="second-slide" src="<?php  echo base_url();?>assets/img/slide_1.jpg" alt="Second slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Another example headline.</h1>
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <p><a class="btn btn-lg btn-primary" href="https://getbootstrap.com/docs/3.3/examples/carousel/#" role="button">Learn more</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img class="third-slide" src="<?php  echo base_url();?>assets/img/slide_3.jpg" alt="Third slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>One more for good measure.</h1>
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <p><a class="btn btn-lg btn-primary" href="https://getbootstrap.com/docs/3.3/examples/carousel/#" role="button">Browse gallery</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="https://getbootstrap.com/docs/3.3/examples/carousel/#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="https://getbootstrap.com/docs/3.3/examples/carousel/#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
 </div>
 
 

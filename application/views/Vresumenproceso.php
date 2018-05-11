@@ -64,6 +64,7 @@
                       <th style="width: 10%;background-color: #006699; color: white;">Fecha Inicio</th>
                       <th style="width: 10%;background-color: #006699; color: white;">Fecha FIn</th>
 					   <th style="width: 10%;background-color: #006699; color: white;">Accion</th>
+					   
    
                     </tr>
                 </thead>
