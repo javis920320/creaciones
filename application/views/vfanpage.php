@@ -124,8 +124,9 @@
           <img class="second-slide" src="<?php  echo base_url();?>assets/img/slide_1.jpg" alt="Second slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Another example headline.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <h1>NOSOTROS.</h1>
+              <p>Tranquilidad, seguridad, diseño, calidad, comodidad, 
+				funcionalidad y la experiencia de más de 20 años en la industria, aquí encontrarás más que calidad.</p>
               <p><a class="btn btn-lg btn-primary" href="https://getbootstrap.com/docs/3.3/examples/carousel/#" role="button">Learn more</a></p>
             </div>
           </div>
@@ -150,6 +151,40 @@
         <span class="sr-only">Next</span>
       </a>
     </div>
+</div>
+
+
+
+<div class="container">
+	
+	<div class="row">
+
+
+		<div class="col-lg-12">
+			
+
+
+		</div>
+		
+
+	</div>
+</div>
+
+
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="<?php  echo base_url();?>assets/img/slide_5.jpg" alt="...">
+      <div class="caption">
+        <h3><strong>CREACIONES GORETTI</strong></h3>
+        <p>es una compañía especializada en soluciones de dotación para medianas y grandes empresas con calidad, diseño y distinción.
+		   Fortalecemos la identidad de marca a través de nuestras prendas, al tiempo que brindamos comodidad y protección a todo el equipo de trabajo. <br>
+         En <strong>CREACIONES GORETTI</strong>® hemos desarrollado un modelo logístico de entrega oportuna que nos permite entregar nuestros servicios donde más los necesitas.
+		 Con nuestro servicio de acompañamiento guiamos durante el proceso de toma de decisiones para que los materiales, diseños y estilos sean los más adecuados a las necesidades de cada sector de la industria.</p>
+        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+      </div>
+    </div>
+  </div>
 </div>
 
 
