@@ -11,17 +11,17 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="myModalLabel">Editar periodo</h4>
+          <h4 class="modal-title" id="myModalLabel">Nuevo Periodo</h4>
         </div>
         <div class="modal-body">
-         <form  id='editarper'>
+         <form  id='nuevoper'>
           <label for=''>Fecha inicio</label>
           <input type='hidden' id='modper' name='modper' class='form-comtrol'>
 		  
           <input type='date' id='fechaie' name='fechaie' class='form-comtrol' >
           <label for='fechafe'>Fecha Final</label>
            <input type='date' id='fechafe' name='fechafe' class='form-comtrol' >
-		   <input type='submit' value='Actualizar'>
+		   <input type='submit' value='Nuevo Periodo'>
 
          </form>
         </div>

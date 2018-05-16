@@ -296,6 +296,7 @@ $query=$this->db->query("select pr.idproceso,pd.factura,pd.facultad,p.nomprod,pd
 		$this->db->join('persona pe','pe.idpersona=t.idpersona');
 		$this->db->where('pr.fecha>=x.fechai');
 		$this->db->where('pr.fecha<=x.fechaf');
+		$this->db->where('x.estado',1);
 		$this->db->where('pr.estado=1');
 		$this->db->group_by('pr.idproceso,bp.id_prod');
 
@@ -304,22 +305,25 @@ $query=$this->db->query("select pr.idproceso,pd.factura,pd.facultad,p.nomprod,pd
 
 		return$res->result(); 
 
-/*		$query=$this->db->query("select pr.idproceso,pd.factura,p.nomprod,pd.descripcion,pr.cantidad,pr.precio,pr.precio1,(sum(bp.cantidad)*pr.cantidad) as nbordados,(sum(b.precio)*pr.cantidad)'valor bordado',pr.fecha,pe.nombres
-			from proceso pr
-			inner join producto p on p.id_prod=pr.id_prod
-			inner join  bordadosproductos bp on p.id_prod = bp.id_prod
-			inner join bordados b on b.idbordados = bp.idbordados
-			inner join pedido pd on pd.idpedido=pr.idpedido
-			inner join trabajador t on t.idtrabajador=pr.idtrabajador
-			inner join persona pe on pe.idpersona=t.idpersona
-			where pr.fecha>=".$param['fechai']." and  pr.fecha<=".$param['fechaf']."
-			group by pr.idproceso,bp.id_prod
-		");
 
-		return $query->result();*/
+		/*$this->db->select('pr.idproceso,pd.factura,pd.facultad,pd.talla,p.nomprod,pd.descripcion,pr.cantidad,pr.precio,pr.precio1,(sum(bp.cantidad)*pr.cantidad) as nbordados,prebordado as valor bordado,pr.fecha,pe.nombres');
+		$this->db->from('periodo x,proceso pr');
+		$this->db->join('producto p','p.id_prod=pr.id_prod');
+		$this->db->join ('bordadosproductos bp','p.id_prod = bp.id_prod');
+		$this->db->join(' bordados b ', 'b.idbordados = bp.idbordados');
+		$this->db->join('pedido pd','pd.idpedido=pr.idpedido');
+		$this->db->join('trabajador t','t.idtrabajador=pr.idtrabajador');
+		$this->db->join('persona pe','pe.idpersona=t.idpersona');
+		$this->db->where('pr.fecha>=x.fechai');
+		$this->db->where('pr.fecha<=x.fechaf');
+		$this->db->where('x,estado=',1);
+		$this->db->where('pr.estado=1');
+		$this->db->group_by('pr.idproceso,bp.id_prod');
 
 
-		//$this->db->where('pe.idpersona',$user['user']);
+		$res=$this->db->get();	
+
+		return$res->result();*/
 
 
 
@@ -353,16 +357,18 @@ $query=$this->db->query("select pr.idproceso,pd.factura,pd.facultad,p.nomprod,pd
 	
 	public function resumentotal(){
 		
+
+
+		/* se actuliza  esta consulta por que se debio modificar los alias de  la consulta
 		$query=$this->db->query("select sum(precio1)as prep ,sum(prebordado)as preb,sum(precio1+prebordado) as pret from proceso,periodo
   where fecha>=fechai and  fecha<=fechaf and estado=1");
-	return $query->result();
-	/*$this->db->select("sum(precio1)as prep ,sum(prebordado)as preb,sum(precio1+prebordado) as pret");
-	$this->db->from("proceso");
-	$this->db->where('fecha>=',$param['fechai']);
-	$this->db->where('fecha<=',$param['fechaf']);
-	$res=$this->db->get();	
+	return $query->result();*/
 
-		return$res;*/
+
+	$query=$this->db->query("select sum(pr.precio1)as prep ,sum(pr.prebordado)as preb,sum(pr.precio1+pr.prebordado) as pret from proceso pr,periodo per
+  where pr.fecha>=per.fechai and  pr.fecha<=per.fechaf and pr.estado=1 and per.estado=1");
+	return $query->result();
+	
 	}
 
 
@@ -437,6 +443,7 @@ public  function tblexcel($param){
 		 
 		 $this->db->select('p.idperiodo,p.fechai,p.fechaf');
 		 $this->db->from('periodo p');
+		 $this->db->where('estado=',1);
 		 $res=$this->db->get();
 		 
 		 return $res->result();
@@ -450,6 +457,30 @@ public  function tblexcel($param){
 		 $this->db->update('periodo',$datos);
 		 $res=$this->db->affected_rows();
 		return$res;
+	 }
+
+
+	 	 public  function Nuevoperiodo($param){
+		 $datos = array('idperiodo'=>null,'fechai' =>$param['fechai'],'fechaf' =>$param['fechaf'] ,'estado'=>true);
+		 
+		 $this->db->insert('periodo',$datos);
+		 $res=$this->db->affected_rows();
+		return$res;
+	 }
+	 
+	 public  function desctivarperiodo(){
+
+		 	$datos = array('estado' => false );
+		 $this->db->update('periodo',$datos);
+		 $res=$this->db->affected_rows();
+
+if($res>0){
+
+	return true;
+}
+
+		
+
 	 }
 	 
 	 

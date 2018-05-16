@@ -100,6 +100,55 @@ $this->export_excel->to_excel($res,'Resumen creaciones');
 	 
  }
 
+  public  function nuevoperiodo(){
+	 
+	 //$param['idperiodo']=//$this->input->post('modper');
+	 	 $param['fechai']=$this->input->post('fechaie');
+		 	 $param['fechaf']=$this->input->post('fechafe');
+
+
+		 	 if($this->Mtrabajos->desctivarperiodo()){
+
+
+		 	 		 $res=$this->Mtrabajos->Nuevoperiodo($param);
+			 
+			 			if($res>=1){
+				 					echo 'Nuevo periodo Creado';
+				 
+					    }else{
+				 				 echo 'EL PERIODO NO SE CREADO';
+						
+						 }
+
+		 	 }else{
+
+
+		 	 	echo'No se logro Desactivar el periodo anterior';
+		 	 }
+			 
+			
+	 
+ }
+
+
+  public  function almacenarsaldos(){
+
+
+
+
+$arreglo['finicio']=$this->input->post('finicio');
+
+$arreglo['fechaf']=$this->input->post('fechaf');
+
+$arreglo['finicio']=$this->input->post('finicio');
+
+$arreglo['finicio']=$this->input->post('finicio');
+  }
+
+
+
+
+
 
 
 }

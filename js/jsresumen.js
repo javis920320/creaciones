@@ -115,7 +115,7 @@ resfiltrar();
 				//return'<span class="glyphicon glyphicon-check"></span>';
 
 					//return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" data-toggle="modal" data-target="#ediper"><i class=" fa fa-edit"></i></a>';
-					return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" title="Editar informacion" data-toggle="modal" data-target="#ediper" onClick="periodo(\''+row.idperiodo+'\',\''+row.fechai+'\',\''+row.fechaf+'\');"><i class=" fa fa-edit"></i></a>'+'<a href="" class="btn btn-primary  btn-sm" style="width:80%;">Almacenar Saldos</a>';
+					return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" title="Editar informacion" data-toggle="modal" data-target="#ediper" onClick="periodo(\''+row.idperiodo+'\',\''+row.fechai+'\',\''+row.fechaf+'\');"><i class=" fa fa-edit"></i></a>';
 					}
 					
 					
@@ -140,10 +140,10 @@ resfiltrar();
 
  }
  
- $('#editarper').submit(function(){
+ $('#nuevoper').submit(function(){
 	 
 	 $.ajax({
-		'url':baseurl+'Cresumenprocesos/updateperiodo',
+		'url':baseurl+'Cresumenprocesos/nuevoperiodo',
 		'type':'POST',
 		'data':$(this).serialize(),
 success:function(data){
