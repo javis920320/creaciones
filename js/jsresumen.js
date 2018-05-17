@@ -128,6 +128,9 @@ resfiltrar();
 
 		});	
 
+ 
+
+
 
  periodo= function(idperiodo,fechai,fechaf){
 

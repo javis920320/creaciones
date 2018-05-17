@@ -139,6 +139,11 @@
     <script src="<?php echo  base_url();?>js/jsprendas.js"></script>
     
 <?php  }?>
+<?php  if($this->uri->segment(2)=='listaperiodos') { ?>
+
+    <script src="<?php echo  base_url();?>js/jsperiodos.js"></script>
+    
+<?php  }?>
 
 </body>
 </html>

@@ -51,6 +51,19 @@ public  function tblresumen(){
 }
 
 
+
+public  function listaperiodos(){
+
+$nombres['nombres']=$this->session->userdata('nombres');
+
+	 	$this->load->view('layou/header',$nombres);
+	 	$this->load->view('layou/menu',$nombres);
+	 	$this->load->view('vlistaperiodos');
+	 	$this->load->view('layou/footer',$nombres);
+
+}
+
+
  public function resumen(){
 
 

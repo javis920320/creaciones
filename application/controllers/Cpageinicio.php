@@ -17,6 +17,8 @@ class Cpageinicio extends CI_Controller
 
 	 	$this->load->view('vfanpage');
 
+	 	//$this->load->view('vpruebatabla');
+
 	 }
 
 
