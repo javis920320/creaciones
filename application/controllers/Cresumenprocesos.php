@@ -31,6 +31,33 @@ class Cresumenprocesos extends CI_Controller
 	 }
 
 
+	 public function periodosaldo (){
+
+	 	$param['idperiodo']=3;//$this->input->post('idperiodo');
+
+
+	 	$res=$this->Mtrabajos->periodosaldo($param);
+
+	 	echo json_encode($res);
+
+
+
+	 }
+
+
+	public function saldoalmacen(){
+
+		$param['idperiodo']=3;//$this->input->post('idperiodo');
+
+
+	 	$res=$this->Mtrabajos->saldoalmacen($param);
+
+	 	echo json_encode($res);
+
+
+	}
+
+
 
 
 public  function tblresumen(){
@@ -64,6 +91,9 @@ $nombres['nombres']=$this->session->userdata('nombres');
 }
 
 
+
+
+
  public function resumen(){
 
 
@@ -91,6 +121,15 @@ $this->export_excel->to_excel($res,'Resumen creaciones');
 	 
 	 
 	 $res=$this->Mtrabajos->tblperiodo();
+	 
+	 echo json_encode($res);
+	 
+ }
+
+ public  function tblperiodoc(){
+	 
+	 
+	 $res=$this->Mtrabajos->tblperiodoc();
 	 
 	 echo json_encode($res);
 	 

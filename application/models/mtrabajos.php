@@ -11,6 +11,39 @@ class Mtrabajos extends CI_Model
 
 	}
 
+	/* EN ESTA  PARTE  GENERAMOS LOS RESUMENES DE LOS  ANTERIORES PERIODOS  DE SALDOS CANCELADOS  */
+	  public  function  periodosaldo ($param){
+
+	$query=$this->db->query("select pe.nombres as nombres,sum(pr.cantidad)as 		cantidad,sum(pr.precio)as saldo,x.fechai as fechai,x.fechaf as fechaf
+  from periodo x,proceso pr
+  inner join trabajador tr on tr.idtrabajador = pr.idtrabajador
+  inner join persona pe on pe.idpersona = tr.idpersona
+  where x. idperiodo=".$param['idperiodo']." and  pr.fecha between x.fechai and x.fechaf group by tr.idtrabajador");
+
+       
+		return $query->result();
+
+
+
+	  }
+
+	    public  function  saldoalmacen ($param){
+
+	$query=$this->db->query("select sum(pr.precio1)as prep ,sum(pr.prebordado)as preb,sum(pr.precio1+pr.prebordado) as pret from proceso pr,periodo per
+  where pr.fecha between per.fechai and per.fechaf and pr.estado=1 and per.idperiodo=".$param['idperiodo']);
+
+       
+		return $query->result();
+
+
+
+	  }
+
+	  
+
+
+	  /****fin cambios**/
+
 
 public  function listavalorcero(){
 
@@ -441,13 +474,23 @@ public  function tblexcel($param){
 	
 	 public  function tblperiodo(){
 		 
-		 $this->db->select('p.idperiodo,p.fechai,p.fechaf');
+		 $this->db->select('p.idperiodo,p.fechai,p.fechaf,p.estado');
 		 $this->db->from('periodo p');
 		 $this->db->where('estado=',1);
 		 $res=$this->db->get();
 		 
 		 return $res->result();
 	 }
+	  public  function tblperiodoc(){
+		 
+		 $this->db->select('p.idperiodo,p.fechai,p.fechaf,p.estado');
+		 $this->db->from('periodo p');
+		 //$this->db->where('estado=',1);
+		 $res=$this->db->get();
+		 
+		 return $res->result();
+	 }
+	 
 	 
 	 
 	 public  function updateperiodo($param){

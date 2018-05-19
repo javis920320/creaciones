@@ -92,6 +92,7 @@ where bp.id_prod=".$param['idprod']."");
 
 
 
+
 }
 
 

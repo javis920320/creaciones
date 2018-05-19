@@ -246,3 +246,15 @@ inner join persona per on per.idpersona = c.idpersona
 inner join trabajador tr on tr.idtrabajador=p.idtrabajador
 inner join tipo_producto tp on tp.idtipoprod = pe.idtipoprod
 inner join producto pro on pro.id_prod = p.id_prod
+
+
+
+
+/**VISTA PARA VER SALDOS ANTERIORES**//
+
+
+select pe.nombres as nombres,sum(pr.cantidad)as cantidad,sum(pr.precio)as saldo,x.fechai as fechai,x.fechaf as fechaf
+  from periodo x,proceso pr
+  inner join trabajador tr on tr.idtrabajador = pr.idtrabajador
+  inner join persona pe on pe.idpersona = tr.idpersona
+  where x. estado=1 and  pr.fecha between x.fechai and x.fechaf group by tr.idtrabajador
