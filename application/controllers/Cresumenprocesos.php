@@ -91,6 +91,17 @@ $nombres['nombres']=$this->session->userdata('nombres');
 }
 
 
+public  function vistarecumenperiodos(){
+
+$nombres['nombres']=$this->session->userdata('nombres');
+
+	 	$this->load->view('layou/header',$nombres);
+	 	$this->load->view('layou/menu',$nombres);
+	 	$this->load->view('vresperiodos');
+	 	$this->load->view('layou/footer',$nombres);
+
+}
+
 
 
 
