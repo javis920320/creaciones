@@ -33,7 +33,7 @@ class Cresumenprocesos extends CI_Controller
 
 	 public function periodosaldo (){
 
-	 	$param['idperiodo']=3;//$this->input->post('idperiodo');
+	 	$param['idperiodo']=$this->input->post('idperiodo');
 
 
 	 	$res=$this->Mtrabajos->periodosaldo($param);
@@ -47,7 +47,7 @@ class Cresumenprocesos extends CI_Controller
 
 	public function saldoalmacen(){
 
-		$param['idperiodo']=3;//$this->input->post('idperiodo');
+		$param['idperiodo']=1;//$this->input->post('idperiodo');
 
 
 	 	$res=$this->Mtrabajos->saldoalmacen($param);

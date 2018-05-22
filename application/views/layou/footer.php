@@ -144,6 +144,11 @@
     <script src="<?php echo  base_url();?>js/jsperiodos.js"></script>
     
 <?php  }?>
+<?php  if($this->uri->segment(2)=='vistarecumenperiodos') { ?>
+
+    <script src="<?php echo  base_url();?>js/jsressaldos.js"></script>
+    
+<?php  }?>
 
 </body>
 </html>
