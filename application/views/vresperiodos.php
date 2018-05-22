@@ -13,7 +13,7 @@
 		<div class="container">
 				<div class="row">
 					<div class="col-lg-4">
-						<span>Saldos Anteriores</span>
+						<span class='text-primary'><strong>SALDOS CANCELADOS A OPERARIOS</strong></span>
 
 
 						<div id="datos">
