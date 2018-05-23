@@ -81,7 +81,7 @@ inner join producto pro on pro.id_prod = p.id_prod
 inner join precio pre on pre.id_prod = p.id_prod
 inner join trabajador t on t.idtrabajador = p.idtrabajador 
 inner join persona per on per.idpersona = t.idpersona 
-where p.fecha between x.fechai and x.fechaf  and x.estado=1 order by per.nombres");
+where p.fecha between x.fechai and x.fechaf  and x.estado=1 and p.estado=1 order by per.nombres");
 
 
 
@@ -93,7 +93,7 @@ return $query->result();
 
         $query=$this->db->query("select sum(p.precio1) as'vc',sum(p.prebordado) as 'vb',sum(p.precio1+p.prebordado) as'vt'
 from periodo x ,proceso p
-where p.fecha between x.fechai and x.fechaf and x.estado=1");
+where p.fecha between x.fechai and x.fechaf and x.estado=1 and p.estado=1");
 
 
 
