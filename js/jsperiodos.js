@@ -32,12 +32,12 @@
                       '    <ul class="dropdown-menu pull-right" aria-labelledby="dropdownMenu1">' +
                       '    <li><a href="#" title="Editar informacion" data-toggle="modal" data-target="#modalEditPersona" onClick="selPersona(\''+row.factura+'\',\''+row.facultad+'\',\''+row.cantidad+'\',\''+row.talla+'\',\''+row.idpedido+'\',\''+row.descripcion+'\',\''+row.fentrega+'\');"><i style="color:#555;" class="glyphicon glyphicon-edit"></i> Editar</a></li>' +
                       //'    <li><a href="'+baseurl+'cafiliado/descargar/'+row.idPersona+'" title="Imprimir formato"><i class="glyphicon glyphicon-print" style="color:#006699"></i> Imprimir</a></li>' +
-                      '    <li><a href="#" title="Enviar Pedido"  data-toggle="modal" data-target="#estado"  onClick="estadopedido(\''+row.idpedido+'\',\''+row.nombres+'\',\''+row.telefono+'\')"><i style="color:green;" class="glyphicon glyphicon-plane"></i> Enviar Pedido</a></li>' +
+                      '    <li><a href="#" title="Enviar Pedido"  data-toggle="modal" data-target="#estado"  onClick="verdetalles(\''+row.idperiodo+'\')"><i style="color:green;" class="glyphicon glyphicon-eyes"></i> Ver detalles</a></li>' +
                       '    <li><a href="#" title="Eliminar"  data-toggle="modal" data-target="#eliminar" onClick="eliminar('+row.idpedido+')"><i style="color:red;" class="glyphicon glyphicon-remove"></i> Eliminar</a></li>' +
                       '    </ul>' +
                       '</div>' +
-                      '</span>'+
-                      '<input type="checkbox" class="chk" name="chk"  value='+row.idpedido+'>'
+                      '</span>'
+                  
                      	
                       ;
 
@@ -54,3 +54,16 @@
  "order":[[0,"asc"]],
 
 		});	
+
+
+
+ verdetalles=function(idperiodo){
+
+
+
+ 	window.open(baseurl+'Cresumenprocesos/vistarecumenperiodos/'+idperiodo);
+
+
+
+
+ }

@@ -7,18 +7,23 @@
 
 	<div class="box">
 
-		<h4>HISTORIAL </h4>
 
-
+<input type='hidden' value='<?php echo $idperiodo?>' id='id'>
 		<div class="container">
 				<div class="row">
-					<div class="col-lg-4">
+					<div class="col-lg-12">
 						<span class='text-primary'><strong>SALDOS CANCELADOS A OPERARIOS</strong></span>
 
 
-						<div id="datos">
+						<div id="datos" class="">
 							
 						</div>
+
+						<span class='text-primary'><strong>CUENTA DE COBRO ALMACEN</strong></span>
+						<div id="saldoalmacen" class="">
+							
+						</div>
+						
 						
 					</div>
 					

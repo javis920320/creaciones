@@ -47,7 +47,7 @@ class Cresumenprocesos extends CI_Controller
 
 	public function saldoalmacen(){
 
-		$param['idperiodo']=1;//$this->input->post('idperiodo');
+		$param['idperiodo']=$this->input->post('idperiodo');
 
 
 	 	$res=$this->Mtrabajos->saldoalmacen($param);
@@ -91,13 +91,14 @@ $nombres['nombres']=$this->session->userdata('nombres');
 }
 
 
-public  function vistarecumenperiodos(){
+public  function vistarecumenperiodos($idperiodo){
 
 $nombres['nombres']=$this->session->userdata('nombres');
+$nombres['idperiodo']=$idperiodo;
 
 	 	$this->load->view('layou/header',$nombres);
 	 	$this->load->view('layou/menu',$nombres);
-	 	$this->load->view('vresperiodos');
+	 	$this->load->view('vresperiodos',$nombres);
 	 	$this->load->view('layou/footer',$nombres);
 
 }
