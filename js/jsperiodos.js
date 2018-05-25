@@ -33,7 +33,6 @@
                       '    <li><a href="#" title="Editar informacion" data-toggle="modal" data-target="#editar" onClick="editarperiodo(\''+row.idperiodo+'\',\''+row.fechai+'\',\''+row.fechaf+'\');"><i style="color:#555;" class="glyphicon glyphicon-edit"></i> Editar</a></li>' +
                       //'    <li><a href="'+baseurl+'cafiliado/descargar/'+row.idPersona+'" title="Imprimir formato"><i class="glyphicon glyphicon-print" style="color:#006699"></i> Imprimir</a></li>' +
                       '    <li><a href="#" title="Enviar Pedido"  data-toggle="modal" data-target="#estado"  onClick="verdetalles(\''+row.idperiodo+'\')"><i style="color:green;" class="glyphicon glyphicon-eyes"></i> Ver detalles</a></li>' +
-                      '    <li><a href="#" title="Eliminar"  data-toggle="modal" data-target="#eliminar" onClick="eliminar('+row.idpedido+')"><i style="color:red;" class="glyphicon glyphicon-remove"></i> Eliminar</a></li>' +
                       '    </ul>' +
                       '</div>' +
                       '</span>'

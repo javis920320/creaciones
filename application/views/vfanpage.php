@@ -72,14 +72,14 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="https://getbootstrap.com/docs/3.3/examples/carousel/#">Project name</a>
+              <a class="navbar-brand" href="">Creaciones Crea</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="https://getbootstrap.com/docs/3.3/examples/carousel/#">Home</a></li>
-                <li><a href="https://getbootstrap.com/docs/3.3/examples/carousel/#about">About</a></li>
-                <li><a href="https://getbootstrap.com/docs/3.3/examples/carousel/#contact">Contact</a></li>
-                <li class="dropdown">
+                <li class="active"><a href="">Home</a></li>
+               <!-- <li><a href="">About</a></li>-->
+                <li><a href="">Contact</a></li>
+               <!-- <li class="dropdown">
                   <a href="https://getbootstrap.com/docs/3.3/examples/carousel/#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
                   <ul class="dropdown-menu">
                     <li><a href="https://getbootstrap.com/docs/3.3/examples/carousel/#">Action</a></li>
@@ -90,7 +90,7 @@
                     <li><a href="https://getbootstrap.com/docs/3.3/examples/carousel/#">Separated link</a></li>
                     <li><a href="https://getbootstrap.com/docs/3.3/examples/carousel/#">One more separated link</a></li>
                   </ul>
-                </li>
+                </li>-->
               </ul>
             </div>
           </div>
@@ -111,33 +111,49 @@
       </ol>
       <div class="carousel-inner" role="listbox">
         <div class="item active">
-          <img class="first-slide" src="<?php  echo base_url();?>assets/img/slide_4.png" alt="First slide">
+          <img class="first-slide" src="<?php  echo base_url();?>assets/img/slide_12.png" alt="First slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Example headline.</h1>
-              <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
-              <p><a class="btn btn-lg btn-primary" href="https://getbootstrap.com/docs/3.3/examples/carousel/#" role="button">Sign up today</a></p>
+              <h1>CONFECCION.</h1>
+
+              <p><h3>Confeccionamos Tus Diseños Con Acabados Profesionales</h3></p>
+              <!--<p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
+              <p><a class="btn btn-lg btn-primary" href="https://getbootstrap.com/docs/3.3/examples/carousel/#" role="button">Sign up today</a></p>-->
             </div>
           </div>
         </div>
+        
+        <div class="item">
+          <img class="third-slide" src="<?php  echo base_url();?>assets/img/slide_7.png" alt="Third slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>DISEÑO.</h1>
+              <P><h2><code>Te asesoramos y diseñamos tus Colecciones</code></h2></P>
+              <!--<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <p><a class="btn btn-lg btn-primary" href="https://getbootstrap.com/docs/3.3/examples/carousel/#" role="button">Browse gallery</a></p>-->
+            </div>
+          </div>
+        </div>
+         <div class="item">
+          <img class="third-slide" src="<?php  echo base_url();?>assets/img/slide_13.png" alt="Third slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>PATRONAJE:</h1>
+              <P><h2>Digitalizamos Y Escalamos  Tus Patrones</h2></P>
+              <!--<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <p><a class="btn btn-lg btn-primary" href="https://getbootstrap.com/docs/3.3/examples/carousel/#" role="button">Browse gallery</a></p>-->
+            </div>
+          </div>
+        </div>
+
         <div class="item">
           <img class="second-slide" src="<?php  echo base_url();?>assets/img/slide_1.jpg" alt="Second slide">
           <div class="container">
             <div class="carousel-caption">
               <h1>NOSOTROS.</h1>
-              <p>Tranquilidad, seguridad, diseño, calidad, comodidad, 
-				funcionalidad y la experiencia de más de 20 años en la industria, aquí encontrarás más que calidad.</p>
+              <p><h3>Tranquilidad, seguridad, diseño, calidad, comodidad, 
+        funcionalidad y la experiencia de más de 7 años en la industria, aquí encontrarás más que calidad.</h3></p>
               <p><a class="btn btn-lg btn-primary" href="https://getbootstrap.com/docs/3.3/examples/carousel/#" role="button">Learn more</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <img class="third-slide" src="<?php  echo base_url();?>assets/img/slide_7.jpg" alt="Third slide">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>One more for good measure.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="https://getbootstrap.com/docs/3.3/examples/carousel/#" role="button">Browse gallery</a></p>
             </div>
           </div>
         </div>
@@ -155,7 +171,7 @@
 
 <br><br><br>
 
-<div class="container">
+<!--<div class="container">
 	
 <div class="row featurette">
           <div class="col-md-7">
@@ -171,7 +187,7 @@
         </div>
 		
 
-	</div>
+	</div>-->
 </div>
 
 

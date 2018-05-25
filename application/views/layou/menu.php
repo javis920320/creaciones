@@ -29,7 +29,7 @@
         <?php  if($this->session->userdata('tipo')==0 OR $this->session->userdata('tipo')==3 ) { ?>
 
 
-        <li class="active treeview">
+        <li class=" treeview">
           <a href="#">
             <i class="glyphicon glyphicon-folder-open"></i> <span>Pedidos </span>
             <span class="pull-right-container">
@@ -37,12 +37,12 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="<?php echo base_url();?>Cpedidos"><i class="fa fa-circle-o"></i> Ingreso  Registro</a></li>
-             <li class="active"><a href="<?php echo base_url();?>Cproductosen"><i class="fa fa-circle-o"></i> Productos enviados</a></li>
-			 <li class="active"><a href="<?php echo base_url();?>Cprendas"><i class="fa fa-circle-o"></i> Envio bordados</a></li>
+            <li class=""><a href="<?php echo base_url();?>Cpedidos"><i class="fa fa-circle-o"></i> Ingreso  Registro</a></li>
+             <li class=""><a href="<?php echo base_url();?>Cproductosen"><i class="fa fa-circle-o"></i> Productos enviados</a></li>
+			 <li class=""><a href="<?php echo base_url();?>Cprendas"><i class="fa fa-circle-o"></i> Envio bordados</a></li>
         <?php  if( $this->session->userdata('tipo')==3 ) { ?>
-        <li class="active"><a href="<?php echo base_url();?>Cprendas/cargarbordados"><i class="fa fa-circle-o"></i> Cargar bordados</a>
-          <li class="active"><a href="<?php echo base_url();?>Csatelite/valorcero"><i class="fa fa-circle-o"></i> Cargar Valor cero</a></li>
+        <li class=""><a href="<?php echo base_url();?>Cprendas/cargarbordados"><i class="fa fa-circle-o"></i> Cargar bordados</a>
+          <li class=""><a href="<?php echo base_url();?>Csatelite/valorcero"><i class="fa fa-circle-o"></i> Cargar Valor cero</a></li>
 
 
           <?php  }?>
@@ -57,7 +57,7 @@
         </li>
 <?php  if( $this->session->userdata('tipo')==3 ) { ?>
 
-         <li class="active treeview">
+         <li class=" treeview">
           <a href="#">
             <i class="glyphicon glyphicon-globe"></i> <span>Satelites </span>
             <span class="pull-right-container">
@@ -65,7 +65,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="<?php echo base_url();?>Clistasatel"><i class="fa fa-circle-o"></i> Lista Satelites</a></li>
+            <li class=""><a href="<?php echo base_url();?>Clistasatel"><i class="fa fa-circle-o"></i> Lista Satelites</a></li>
            
             
             <!--<li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>-->
@@ -118,6 +118,7 @@
           <ul class="treeview-menu">
             <li><a href="<?php echo base_url();?>Cnomina/"><i class="fa fa-circle-o"></i> Calcular Pago </a></li>
             <li><a href="<?php echo base_url();?>Cresumenprocesos/"><i class="fa fa-circle-o"></i> Resumen trabajos</a></li>
+            <li><a href="<?php echo base_url();?>Cresumenprocesos/listaperiodos/"><i class="fa fa-circle-o"></i> Periodos Anteriores</a></li>
             
           </ul>
         </li> 

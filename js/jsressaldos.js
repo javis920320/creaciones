@@ -1,6 +1,6 @@
 
 var idperiodo=$('#id').val();
-alert(idperiodo);
+///alert(idperiodo);
 
 $.ajax({
 
