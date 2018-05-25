@@ -78,19 +78,18 @@
               <ul class="nav navbar-nav">
                 <li class="active"><a href="">Home</a></li>
                <!-- <li><a href="">About</a></li>-->
-                <li><a href="">Contact</a></li>
-               <!-- <li class="dropdown">
-                  <a href="https://getbootstrap.com/docs/3.3/examples/carousel/#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                <li><a href="">Contact</a></li><li><img src="<?php  echo base_url();?>assets/img/wp.png"></li><span style="color: white;">31266666666-7232202</span>
+               <li class="dropdown">
+                  <a href="https://getbootstrap.com/docs/3.3/examples/carousel/#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login <span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                    <li><a href="https://getbootstrap.com/docs/3.3/examples/carousel/#">Action</a></li>
-                    <li><a href="https://getbootstrap.com/docs/3.3/examples/carousel/#">Another action</a></li>
-                    <li><a href="https://getbootstrap.com/docs/3.3/examples/carousel/#">Something else here</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li class="dropdown-header">Nav header</li>
-                    <li><a href="https://getbootstrap.com/docs/3.3/examples/carousel/#">Separated link</a></li>
-                    <li><a href="https://getbootstrap.com/docs/3.3/examples/carousel/#">One more separated link</a></li>
+                    <li><form>
+                      
+                      <input placeholder="Usuario" type="" name="" class="form-control"  style="padding: 2px 2px">
+                    </form></li>
                   </ul>
-                </li>-->
+                </li>
+
+
               </ul>
             </div>
           </div>
@@ -171,39 +170,68 @@
 
 <br><br><br>
 
-<!--<div class="container">
-	
-<div class="row featurette">
-          <div class="col-md-7">
-            <h2 class="featurette-heading">CREACIONES GORETTI <span class="text-muted">It'll blow your mind.</span></h2>
-            <p class="lead">es una compañía especializada en soluciones de dotación para medianas y grandes empresas con calidad, diseño y distinción.
-       Fortalecemos la identidad de marca a través de nuestras prendas, al tiempo que brindamos comodidad y protección a todo el equipo de trabajo. <br>
-         En <strong>CREACIONES GORETTI</strong>® hemos desarrollado un modelo logístico de entrega oportuna que nos permite entregar nuestros servicios donde más los necesitas.
-     Con nuestro servicio de acompañamiento guiamos durante el proceso de toma de decisiones para que los materiales, diseños y estilos sean los más adecuados a las necesidades de cada sector de la industria.</p>
-          </div>
-          <div class="col-md-5">
-            <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="500x500" style="width: 500px; height: 500px;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22500%22%20height%3D%22500%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20500%20500%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_163669bdeff%20text%20%7B%20fill%3A%23AAAAAA%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A25pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_163669bdeff%22%3E%3Crect%20width%3D%22500%22%20height%3D%22500%22%20fill%3D%22%23EEEEEE%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22185.125%22%20y%3D%22261.1%22%3E500x500%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true">
-          </div>
-        </div>
-		
 
-	</div>-->
 </div>
 
 
-<div class="row">
-  <div class="col-sm-6 col-md-4">
+
+
+
+<nav class="navbar navbar-dark bg-default">
+  <!-- Navbar content -->
+</nav>
+  </div>
+
+<div class="row jumbotron">
+  <div class="col-sm-4 col-md-4">
     <div class="thumbnail">
-      <img src="<?php  echo base_url();?>assets/img/slide_5.jpg" alt="...">
+      <img src="<?php  echo base_url();?>assets/img/slide_13.jpg" alt="...">
+      <p style="font-family:fantasy"><h3 class="" style="color: #F94D00;"><strong>CreacionesCrea</strong></h3>Es una compañía especializada en soluciones de dotación para medianas y grandes empresas con calidad, diseño y distinción.
+       Fortalecemos la identidad de marca a través de nuestras prendas, al tiempo que brindamos comodidad y protección a todo el equipo de trabajo.</p>
+      
       <div class="caption">
         
-        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+        <!--<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>-->
       </div>
     </div>
   </div>
-</div>
+
+  <div class="col-sm-4 col-md-4">
+    <div class="thumbnail">
+      <img src="<?php  echo base_url();?>assets/img/slide_18.jpeg" alt="...">
+      <p style="font-family:fantasy"><h3 class="" style="color: #0BC47E;"><strong>LOGISTICA</strong></h3>Hemos desarrollado un modelo logístico de entrega oportuna que nos permite entregar nuestros servicios donde más los necesitas.</p>
+      
+      <div class="caption">
+        
+        <!--<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>-->
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4 col-md-4">
+    <div class="thumbnail">
+      <img src="<?php  echo base_url();?>assets/img/slide_17.jpg" alt="PRUEBA">
+      <p style="font-family:fantasy"><h3 class="" style="color: #563d7c;"><strong>CreacionesCrea</strong></h3>Con nuestro servicio de acompañamiento guiamos durante el proceso de toma de decisiones para que los materiales, diseños y estilos sean los más adecuados a las necesidades de cada sector de la industria.</p>
+      
+      <div class="caption">
+        
+        <!--<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>-->
+      </div>
+    </div>
+  </div>
+  </div>
+
+    <div class="col-sm-12 col-md-12">
+    <div class="thumbnail">
+      <h1 align="center">!!    PAGINA EN CONSRTUCCION ¡¡¡¡</h1>
+    </div>
+  </div>
 
 
+<footer id='pie' style="color: white;" align='center'  class="navbar-fixed-bottom  navbar-inverse">
+          Powered by Javier  Alexander  Lopez || 2018  <a href="">javis9203@gmail.com</a>
+          <br>
+          
+    </footer>
 
 
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
