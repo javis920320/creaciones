@@ -48,9 +48,25 @@
 			}
 
 
-			],
+			],	"columnDefs": [
+        {
+          "targets": [3], 
+          "data": "estado", 
+          "render": function(data, type, row) {
+            
+            if (data == 0) {
+              return "<span class='label label-warning'>Inactivo</span>";
+            }else if (data == 1) {
+              return "<span class='label label-success'>Activo</span>";
+            }else if (data == 2) {
+              return "<span class='label label-danger'>En cortes</span>";
+            }
+              
+          }
+        }
+         ],
 
- "order":[[0,"asc"]],
+ "order":[[0,"desc"]],
 
 		});	
 

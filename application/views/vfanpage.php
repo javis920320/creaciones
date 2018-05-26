@@ -78,21 +78,43 @@
               <ul class="nav navbar-nav">
                 <li class="active"><a href="">Home</a></li>
                <!-- <li><a href="">About</a></li>-->
-                <li><a href="">Contact</a></li><li><img src="<?php  echo base_url();?>assets/img/wp.png"></li><span style="color: white;">31266666666-7232202</span>
-               <li class="dropdown">
+                <li><a href="">Contact</a></li><li><img src="<?php  echo base_url();?>assets/img/wp.png"><span style="color: white; padding-bottom: 2px;" aling='center'>31266666666-7232202</span></li>
+
+               <li class="dropdown"  style="margin-left: 450px;">
                   <a href="https://getbootstrap.com/docs/3.3/examples/carousel/#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login <span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                    <li><form>
-                      
-                      <input placeholder="Usuario" type="" name="" class="form-control"  style="padding: 2px 2px">
-                    </form></li>
+                    <li  style=" width: 400px; height: 300px;"><form action="<?php echo base_url();?>index.php/loginuser/logueo" method="POST">
+      <div class="form-group has-feedback">
+        <input type="text" class="form-control"  name="txtUsuario" placeholder="Usuario" required>
+        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback">
+        <input type="password" class="form-control" name="txtPass" placeholder="Password" required>
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+      </div>
+      <div class="row">
+        <div class="col-xs-8">
+          <div class="checkbox icheck">
+            <label>
+              <input type="checkbox"> Recuerdame
+            </label>
+          </div>
+        </div>
+        <!-- /.col -->
+        <div class="col-xs-4">
+          <button type="submit" class="btn btn-primary btn-block btn-flat">Ingresar</button>
+        </div>
+        <!-- /.col -->
+      </div>
+    </form></li>
                   </ul>
                 </li>
 
 
               </ul>
             </div>
-          </div>
+
+              
         </nav>
 
       </div>
@@ -210,7 +232,7 @@
   <div class="col-sm-4 col-md-4">
     <div class="thumbnail">
       <img src="<?php  echo base_url();?>assets/img/slide_17.jpg" alt="PRUEBA">
-      <p style="font-family:fantasy"><h3 class="" style="color: #563d7c;"><strong>CreacionesCrea</strong></h3>Con nuestro servicio de acompañamiento guiamos durante el proceso de toma de decisiones para que los materiales, diseños y estilos sean los más adecuados a las necesidades de cada sector de la industria.</p>
+      <p style="font-family:fantasy"><h3 class="" style="color: #563d7c;"><strong>SERVICIOS</strong></h3>Con nuestro servicio de acompañamiento guiamos durante el proceso de toma de decisiones para que los materiales, diseños y estilos sean los más adecuados a las necesidades de cada sector de la industria.</p>
       
       <div class="caption">
         
@@ -223,6 +245,7 @@
     <div class="col-sm-12 col-md-12">
     <div class="thumbnail">
       <h1 align="center">!!    PAGINA EN CONSRTUCCION ¡¡¡¡</h1>
+          <img src="<?php  echo base_url();?>assets/img/slide_0.jpg" alt="PRUEBA">
     </div>
   </div>
 
