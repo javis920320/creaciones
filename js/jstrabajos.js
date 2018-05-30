@@ -249,23 +249,6 @@ return '<span class="pull-right">' +
 
 
 			],
-				"columnDefs": [
-        {
-          "targets": [7], 
-          "data": "estado", 
-          "render": function(data, type, row) {
-            
-            if (data == 2) {
-              return "<span class='label label-warning'>Pendiente</span>";
-            }else if (data == 3) {
-              return "<span class='label label-success'>En confeccion</span>";
-            }else if (data == 2) {
-              return "<span class='label label-danger'>En cortes</span>";
-            }
-              
-          }
-        }
-         ],
 
  "order":[[0,"asc"]],
 

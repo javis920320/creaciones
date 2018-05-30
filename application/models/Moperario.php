@@ -8,6 +8,19 @@ class Moperario extends CI_Model
 	parent::__construct();
 
 	}
+
+
+	public  function seguimiento($param){
+$dato = array('accion' => 1 );
+
+		$this->db->where('idpedido',$param['idpedido']);
+		$this->db->update('pedido',$dato);
+
+	 	$res=$this->db->affected_rows();
+		return$res;
+
+
+	}
 	
 	
   public  function calculo($param){

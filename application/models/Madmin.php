@@ -21,6 +21,19 @@ class Madmin extends CI_Model
 
 	 }
 
+
+	 public  function seguimiento($param){
+$dato = array('accion' => 1 );
+
+		$this->db->where('idpedido',$param['idpedido']);
+		$this->db->update('pedido',$dato);
+
+	 	$res=$this->db->affected_rows();
+		return$res;
+
+
+	}
+
 	public function camlistacobro($param){
 
 		$datos = array('estado' => 1);

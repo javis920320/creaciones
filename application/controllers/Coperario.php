@@ -47,6 +47,8 @@ class Coperario extends CI_Controller
 
 	 		$param['idpedido']=$this->input->post('idpedido');
 			$param['cantidad']=$this->input->post('cantidad');
+
+
 			
 			
 			$comp=$this->Moperario->calculo($param);
@@ -86,7 +88,9 @@ class Coperario extends CI_Controller
 $res=$this->Moperario->ingresarproceso($param);
 
 	 	 if ($res>=1){
+	 	 	$o=$this->Moperario->seguimiento($param);
 	 	 	echo 'Registro reportado';
+
 	 	 }else{
 
 	 	 	echo 'Error en proceso';

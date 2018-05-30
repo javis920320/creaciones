@@ -121,7 +121,7 @@ public  function asignarsatelite(){
 
 
 		if ($res>=1) {
-
+	$o=$this->Madmin->seguimiento($param);
 			echo'Registro Asignado';
 			# code...
 		}else{
