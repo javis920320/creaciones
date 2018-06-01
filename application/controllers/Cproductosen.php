@@ -70,6 +70,16 @@ autor:´javier lopez
 	  }
 
 
+	  public function consultaseguimiento(){
+	  	$param['estado']=3;
+	  		$param['accion']=0;
+
+	$res=$this->Mpedidos->consultaseguimiento($param);
+	echo json_encode($res);
+
+	  }
+
+
 
 	  public function estados(){
 

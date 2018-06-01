@@ -45,32 +45,35 @@
               </ul>
 
               <ul class="nav pull-right">
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user icon-white"></i> Login <b class="caret"></b></a>
-  <ul class="dropdown-menu login-form">
-      <li>
-        <form method="post" action="" id="formLogin" name="formLogin">
-          <fieldset id="datosAcceso">
-            <label class="control-label usuario" for="usr_email">Correo Electrónico</label>
-            <span></span>
-            <input type="text" id="usr_email" name="usr_email" required placeholder="correo@electronico.com" class="{required:true,email:true}"/>
-            <label class="control-label usuario" for="usr_pass">Clave de acceso</label>
-            <span></span>
-            <input type="password" id="usr_pass" name="usr_pass" required class="{required:true,rangelength: [10, 10]}"/>
-          </fieldset>
-          <fieldset id="responseAjax" style="text-align:center;">
-            <img alt="" src="images/ajax-loader.gif" id="ajaxLoader" class="hide">
-            <div class="alert alert-error font-small hide" id="loginError"><strong>Usuario o clave incorrectos</strong></div>
-          </fieldset>
-          <fieldset id="botonera">
-            <button class="btn btn-small btn-info" type="submit" id="btnLogin">Iniciar sesión</button>
-          </fieldset>
-          <div class="divider"></div>
-          <a href="" class="btn btn-link" id="recPass">¿Olvidaste tu contraseña?</a><br>
-        </form>
-      </li>
-    </ul>
-</li>
+<li class="dropdown"  style="margin-left: 450px;">  
+-                  <a href="https://getbootstrap.com/docs/3.3/examples/carousel/#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login <span class="caret"></span></a>  
+-                  <ul class="dropdown-menu"> 
+-                    <li  style=" width: 400px; height: 300px;"><form action="<?php echo base_url();?>index.php/loginuser/logueo" method="POST">  
+-      <div class="form-group has-feedback">  
+-        <input type="text" class="form-control"  name="txtUsuario" placeholder="Usuario" required> 
+-        <span class="glyphicon glyphicon-envelope form-control-feedback"></span> 
+-      </div> 
+-      <div class="form-group has-feedback">  
+-        <input type="password" class="form-control" name="txtPass" placeholder="Password" required>  
+-        <span class="glyphicon glyphicon-lock form-control-feedback"></span> 
+-      </div> 
+-      <div class="row">  
+-        <div class="col-xs-8"> 
+-          <div class="checkbox icheck">  
+-            <label>  
+-              <input type="checkbox"> Recuerdame 
+-            </label> 
+-          </div> 
+-        </div> 
+-        <!-- /.col --> 
+-        <div class="col-xs-4"> 
+-          <button type="submit" class="btn btn-primary btn-block btn-flat">Ingresar</button> 
+-        </div> 
+-        <!-- /.col --> 
+-      </div> 
+-    </form></li> 
+-                  </ul>  
+-                </li>
 </ul>
             </div>
 
