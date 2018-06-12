@@ -258,3 +258,13 @@ select pe.nombres as nombres,sum(pr.cantidad)as cantidad,sum(pr.precio)as saldo,
   inner join trabajador tr on tr.idtrabajador = pr.idtrabajador
   inner join persona pe on pe.idpersona = tr.idpersona
   where x. estado=1 and  pr.fecha between x.fechai and x.fechaf group by tr.idtrabajador
+
+
+
+  /*VISTA  VERINCOMPLETOS*/
+  
+select pr.idpedido AS idpedido ,pe.facultad,pe.fecha_ingreso,count(pr.idpedido), count(pr.idpedido),pe.factura AS factura,sum(pr.cantidad) AS procesado,pe.cantidad AS cantidad,pe.descripcion AS descripcion
+from proceso pr
+inner join pedido pe on pe.idpedido = pr.idpedido
+
+group by pr.idpedido order by 1 asc

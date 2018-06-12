@@ -52,6 +52,14 @@ public  function listprocesos(){
 }
 
 
+public  function verincompletos(){
+	
+	$res=$this->Madmin->verincompletos();
+	echo json_encode($res);
+}
+
+
+
 
 }
 

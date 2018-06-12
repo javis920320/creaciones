@@ -8,6 +8,14 @@ class Madmin extends CI_Model
 		parent::__construct();
 	}
 
+	public  function verincompletos (){
+		
+		$res=$this->db->query('select idpedido ,facultad,factura,cantidad,procesado,descripcion,fecha_ingreso from verincompletos where procesado-cantidad<>0');
+		
+		return $res->result();
+		
+	}
+	
 	 public  function fneliminar($param){
 
 		$this->db->where('idprendas',$param['idprendas']);

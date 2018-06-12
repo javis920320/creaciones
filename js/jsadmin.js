@@ -99,15 +99,11 @@ return'<span>Elaborado</span>';
 
 
 }
-$('#pi').on('click',function(){
-	
-		$('#p1').addClass('active');
-	$('#p2').removeClass('active');
-});
 
-$('#pii').on('click',function(){
-	
-	$('#p2').addClass('active');
-	$('#p1').removeClass('active');
-}
-);
+
+
+
+
+
+
+

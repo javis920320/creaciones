@@ -152,7 +152,7 @@
 
 <?php  if($this->uri->segment(1)=='Cadmin') { ?>
 
-    <script src="<?php echo  base_url();?>js/jsadmin.js"></script>
+    <script src="<?php echo  base_url();?>js/jsseguimiento.js"></script>
     
 <?php  }?>
 
