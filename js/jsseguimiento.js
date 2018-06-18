@@ -1,10 +1,13 @@
 
+$('#a2').addClass('hide');
 $('#pi').on('click',function(){
 	
-		$('#p1').addClass('active');
+	$('#p1').addClass('active');
 	$('#p2').removeClass('active');
 	
 	$('#a1').removeClass('hide');
+	$('#a2').addClass('hide');
+	
 });
 
 $('#pii').on('click',function(){
@@ -12,6 +15,7 @@ $('#pii').on('click',function(){
 	
 	$('#p2').addClass('active');
 	$('#p1').removeClass('active');
+	$('#a2').removeClass('hide');
 }
 );
 
@@ -58,18 +62,12 @@ function lstprocesosatelite(persona){
 
 
 
-return '<span class="pull-right"> $ ' +
-									//'<input type="radio" class="idpedido" onchange="validarc();"name="idpedido" value='+row.idpedido+' required="true">'
-									row.precio
-									
-									
-                       +
-                      '</span>';
+return '<span class="pull-right"> Incompleto</span>';
 
 
 
-					//return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" data-toggle="modal" data-target="#myModal"><i class=" fa fa-edit"></i></a
-					//return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" title="Enviar informacion" data-toggle="modal" data-target="#estado" onClick="estadopedido(\''+row.idpedido+'\',\''+row.nombres+'\',\''+row.telefono+'\');"><i class=" glyphicon glyphicon-plane"></i><span> Enviar</span></a>';
+					
+					
 					}
 			}
 
@@ -176,10 +174,9 @@ return '<span ></span>'
 
 
 				
-					//return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" data-toggle="modal" data-target="#myModal"><i class=" fa fa-edit"></i></a
-					return '<span class="text-success">'+row.nombres+'<span>';
-					//return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" data-toggle="modal" data-target="#myModal"><i class=" fa fa-edit"></i></a
-					//return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" title="Editar informacion" data-toggle="modal" data-target="#modalEditPersona" onClick="selPersona(\''+row.idpersona+'\',\''+row.cedula+'\',\''+row.nombres+'\',\''+row.telefono+'\');"><i class=" fa fa-edit"></i></a>';
+					
+					return '<span class="text-success">Inactivo</span>';
+					
 					}
 			}
 
