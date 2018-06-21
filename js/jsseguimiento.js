@@ -1,9 +1,25 @@
 
 $('#a2').addClass('hide');
-$('#pi').on('click',function(){
+$('#a1').addClass('hide');
+
+
+
+$('#p00').on('click',function(){
 	
+	$('#p0').addClass('active');
+	$('#p2').removeClass('active');
+	$('#p1').removeClass('active');
+	
+	$('#a0').removeClass('hide');
+	$('#a1').addClass('hide');
+	$('#a2').addClass('hide');
+	
+});
+$('#pi').on('click',function(){
+	$('#a0').addClass('hide');
 	$('#p1').addClass('active');
 	$('#p2').removeClass('active');
+	$('#p0').removeClass('active');
 	
 	$('#a1').removeClass('hide');
 	$('#a2').addClass('hide');
@@ -12,9 +28,11 @@ $('#pi').on('click',function(){
 
 $('#pii').on('click',function(){
 	$('#a1').addClass('hide');
+	$('#a0').addClass('hide');
 	
 	$('#p2').addClass('active');
 	$('#p1').removeClass('active');
+	$('#p0').removeClass('active');
 	$('#a2').removeClass('hide');
 }
 );
@@ -184,6 +202,54 @@ return '<span ></span>'
 			],
 
  "order":[[0,"asc"]],
+
+		});
+		
+		//pr.idproceso, pe.factura,tp.nomtipoprod,pro. nomprod,pe. talla,pe. facultad, pr.cantidad,pr.cantidad as procesado,per.nombres as cliente,pr.fecha,trabajador
+		$('#tblconsulta').DataTable({
+			'paging':true,
+			'info':true,
+			'filter':true,
+			'stateSave':true,
+			'destroy':true,
+
+			'ajax':{
+
+				"url":baseurl+"Cadmin/consulta",
+				'type':'POST',
+				'data':'',
+				dataSrc:''
+			},
+
+			'columns':[
+			{data: 'idproceso','sClass':'dt-body-center'},
+			{data: 'factura','sClass':'dt-body-center'},
+			{data:'nomtipoprod'},
+			{data:'nomprod'},
+			{data:'talla'},
+			{data:'facultad'},
+			{data:'cantidad'},
+			{data:'procesado'},
+			{data:'cliente'},
+			{data:'trabajador'},
+			
+			
+			{"orderable":true,
+			render:function(data,type,row){
+
+
+
+				
+					
+					return '<span class="text-success"><strong>'+row.descripcion+'</strong></span>';
+					
+					}
+			}
+
+
+			],
+
+ "order":[[0,"desc"]],
 
 		});
 

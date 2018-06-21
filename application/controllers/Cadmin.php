@@ -27,6 +27,14 @@ class Cadmin extends CI_Controller
 
 
 	 }
+public function consulta(){
+
+$res=$this->Madmin->listaconsulta();
+
+echo json_encode($res);
+
+}
+
 
 
 

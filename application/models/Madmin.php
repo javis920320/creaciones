@@ -16,6 +16,24 @@ class Madmin extends CI_Model
 		
 	}
 	
+	
+	public  function listaconsulta(){
+	
+	$query=$this->db->query("select pr.idproceso, pe.factura,tp.nomtipoprod,pro. nomprod,pe. talla,pe. facultad, pr.cantidad,pr.cantidad as procesado,per.nombres as cliente,pr.fecha,(select p2.nombres from persona p2 inner join trabajador t2 on t2.idpersona=p2. idpersona where t2.idtrabajador=pr.idtrabajador )as trabajador,pe.descripcion
+from proceso pr
+inner join pedido pe on pe.idpedido = pr.idpedido
+inner join cliente c on c.idcliente = pe.idcliente
+inner join tipo_producto tp on tp.idtipoprod = pe.idtipoprod
+inner join producto pro  on pro.id_prod = pr.id_prod 
+inner join persona per on per.idpersona = c.idpersona");
+
+
+
+return $query->result();
+	}
+	
+	
+	
 	 public  function fneliminar($param){
 
 		$this->db->where('idprendas',$param['idprendas']);
