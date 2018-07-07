@@ -1,0 +1,36 @@
+CREATE TABLE IF NOT EXISTS `mydb`.`distribucion` (
+  `idgrupo` INT NOT NULL,
+  `idtrabajador` INT NOT NULL,
+  `idperiodo` INT NOT NULL,
+  `saldo` INT NULL,
+  PRIMARY KEY (`idgrupo`, `idtrabajador`, `idperiodo`),
+  INDEX `fk_distribucion_trabajador1_idx` (`idtrabajador` ASC),
+  INDEX `fk_distribucion_periodo1_idx` (`idperiodo` ASC),
+  CONSTRAINT `fk_distribucion_trabajador1`
+    FOREIGN KEY (`idtrabajador`)
+    REFERENCES `mydb`.`trabajador` (`idtrabajador`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_distribucion_periodo1`
+    FOREIGN KEY (`idperiodo`)
+    REFERENCES `mydb`.`periodo` (`idperiodo`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+
+
+
+
+
+CREATE TABLE IF NOT EXISTS `mydb`.`participante` (
+  `idgrupo` INT NOT NULL,
+  `idtrabajador` INT NOT NULL,
+  `idperiodo` INT NOT NULL,
+  `porcentaje` INT NULL,
+  INDEX `fk_participante_distribucion1_idx` (`idgrupo` ASC, `idtrabajador` ASC, `idperiodo` ASC),
+  CONSTRAINT `fk_participante_distribucion1`
+    FOREIGN KEY (`idgrupo` , `idtrabajador` , `idperiodo`)
+    REFERENCES `mydb`.`distribucion` (`idgrupo` , `idtrabajador` , `idperiodo`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB

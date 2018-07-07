@@ -1,0 +1,15 @@
+select 
+(
+select  x.nombres
+from persona x where x.idpersona=d.idpersona
+)as participante,d.porcentaje,(select y2.nombres from trabajador z inner join persona y2 on y2.idpersona=z.idpersona where z.idtrabajador=d.idtrabajador)as grupo,sum(pro.precio),(round(sum(precio)*d.porcentaje/100))as v
+from periodo w,distribucion d 
+inner join persona pe on pe.idpersona = d.idpersona
+inner join proceso pro on pro.idtrabajador = d.idtrabajador
+
+where d.idtrabajador=15  and w.estado=1  and pro.fecha between w.fechai and w.fechaf group by  d.idpersona
+
+
+select sum(p.precio) from periodo x ,proceso p
+
+where p.idtrabajador=15 and x.estado=1 and p.fecha between x.fechai and x.fechaf ;

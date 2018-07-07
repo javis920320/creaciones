@@ -155,6 +155,6 @@
     <script src="<?php echo  base_url();?>js/jsseguimiento.js"></script>
     
 <?php  }?>
-
+    <script src="<?php echo  base_url();?>js/jscontrolleran.js"></script>
 </body>
 </html>
