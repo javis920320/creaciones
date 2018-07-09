@@ -304,27 +304,7 @@ $('#form-edit').submit(function(){
   
 };
 
-/*$('#cambioestado').submit(function(){
 
-
-
-	$.ajax({
-	url:baseurl+'Cpedidos/enviarpedido',
-	type:'POST',
-	data:$(this).serialize(),
-	success:function(data){
-		alert(data);
-		if(data){
-			$('#msn').removeClass('hide');
-		}
-
-	}
-
-	});
-
-
-
-});*/
 
 
 
@@ -623,3 +603,42 @@ $.ajax({
 		  });
 		 
 	 } );
+
+
+
+/*DESC:cambios  en panel de envios*/
+
+$('#idcliente').on('keyup',function(){
+
+	var txtide=$('#idcliente').val();
+
+
+	$.post(baseurl+"Cajax/buscarcliente",
+		{id : txtide},
+       function(data){
+      if(data==0){
+      	$('#msj').text("Realizando Busqueda.....");
+
+      }else if(data!=0){
+      	$('#msj').text("Cliente registrado..");
+
+      	var x=JSON.parse(data);
+      	$.each(x,function(i,items){
+				$('#nomcli').val(items.nombres);
+				$('#telcli').val(items.telefono);
+				
+			});
+			
+
+      	$('#btnnuevocli').prop( "disabled", true );
+
+
+
+      }
+
+
+       });
+
+
+});
+
