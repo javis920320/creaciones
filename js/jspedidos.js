@@ -255,24 +255,7 @@ console.log(descripcion);
 };
 
 
-/*$('#formprod').submit(function(){
-	alert();
 
-	$.ajax({
-	url:baseurl+'Cproductos/ingresarprd',
-	type:'POST',
-	data:$(this).serialize(),
-	success:function(data){
-		alert(data);
-		/*if(data){
-			$('#msn').removeClass('hide');
-		}*/
-
-	/*}
-	});*/
-
-
-//});
 $('#form-edit').submit(function(){
 	//alert($(this).serialize());
 
@@ -675,13 +658,102 @@ alert('este dato es requerido');
 
 
  $(".radiov").on('click',function(){
-
-alert();
  var tpentidad=$('input:radio[name=tpentidad]:checked').val();
- console.log('fff'+tpentidad);
+ console.log('tipo entidad:'+tpentidad);
+   if(tpentidad=='P'){
+ 	html="<span class='text-success'><strong>ENTIDAD  SIN DESCRIPCION</strong></span>";
+ 	$('#cont_tpcli').html(html);
+     }else{
+ 	 $.post(baseurl+"Cpedidomultiple/tipoentidad",
+		{tipoentidad : tpentidad},
+      function(data){
+      	var x=JSON.parse(data);
+      	html="<option value='0'>Seleccione una opcion</option>";
+      	$.each(x,function(i,items){
+		html+="<option value="+items.identidad+">"+items.nomentidad+"</option>";		
+		});
+      	//html+="</option>";
 
 
- });
+      	$('.cont_tpcli').html(html);
+      });
+ 	  }
+       });
+$('.cont_tpcli').on('change',function(){
+	var f=$('.cont_tpcli').val();
+
+
+	$.post(baseurl+"Cpedidomultiple/dependencia",
+		{dep : f},
+      function(data){
+      	///alert(data);
+
+      	var x=JSON.parse(data);
+      	html="<option value='0'>Seleccione una opcion</option>";
+      	$.each(x,function(i,items){
+		html+="<option value="+items.iddependencia+">"+items.nombredep+"</option>";		
+		});
+      	//html+="</option>";
+
+
+      	$('.dep').html(html);
+      }
+
+      );
+
+});
+
+
+
+ function creapedido(){
+
+//alert();
+
+ 	var idPersona=$('#idcliente').val();
+
+ 	console.log(idPersona);
+ 	// realizamos la  busqueda de la persona  si  fue registrada dos  veces  generar error
+
+//https://www.alvarolara.com/2015/06/23/como-crear-objetos-json-en-javascript/
+
+
+var miObjeto = new Object();
+
+//miObjeto.edad = 12;
+//miObjeto.mascota = "Gato";
+
+
+datos=  new Array();
+
+	$.post(baseurl+"Cajax/buscarcliente",
+		{id : idPersona},
+       function(data){
+
+  	
+  		var x=JSON.parse(data);
+  		 $.each(x,function(i,items){
+ 		datos[i]=items.idpersona;
+ 		console.log(datos[i]);
+ 		miObjeto.idPersona = datos[i];
+
+  		 });
+       
+	
+
+		});
+ 	
+//arrayProperties.push(miObjeto);
+console.log(miObjeto);
+
+
+ }
+
+
+
+
+
+
+
 
 
 

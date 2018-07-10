@@ -11,6 +11,48 @@ class Mpedidos extends CI_Model
 		parent::__construct();
 	}
 
+public function nwdependencia($dato){
+
+
+	$arreglo = array(
+		'iddependencia' =>null ,
+		'identidad' =>$dato['identidad'] ,
+		'nombredep' =>$dato['nombredep'] ,
+		'estado' =>1
+
+
+		 );
+
+	$this->db->insert('dependencia',$arreglo);
+		//return $insert_id = $this->db->insert_id();
+	return $this->db->affected_rows();
+}
+
+
+public function nuevaentidad($dato){
+
+
+	$arreglo = array(
+		'identidad' =>null ,
+		'nomentidad' =>$dato['nomentidad'] ,
+		'tipo' =>$dato['tipo'] ,
+		'estado' =>1
+
+
+		 );
+
+	$this->db->insert('entidad',$arreglo);
+		//return $insert_id = $this->db->insert_id();
+	return $this->db->affected_rows();
+}
+
+	public function dependencia($idpendencia){
+
+		$res=$this->db->query("select * from dependencia where identidad=".$idpendencia."");
+
+		return $res->result();
+	}
+
 
 
 	public  function tipoentidad($tipoentidad){
@@ -22,7 +64,7 @@ C= colegio
 
 */
 
-		$res=$this->db->query("select * from entidad where  tipo='".$tipoentidad."'");
+		$res=$this->db->query("select * from entidad where  tipo='".$tipoentidad."' order by nomentidad");
 
 
 		return$res->result();

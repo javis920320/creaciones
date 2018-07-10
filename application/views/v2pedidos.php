@@ -44,20 +44,58 @@
 				<div class="panel panel-success">
 					<div class="panel-heading"><strong>Tipo cliente</strong></div>
 				  <div class="panel-body">
-				      <label>PARTICULAR</label><input class="form-check-input" name='tpentidad' type="radio" id="pa"class="radiov" value="P">
-				      <label>EMPRESA</label><input class="form-check-input" name='tpentidad'type="radio" id="em"class="radiov" value="E">
-				      <label>UNIVERSIDAD</label><input class="form-check-input" name='tpentidad'type="radio" id="un"class="radiov" value="U">
-				      <label>COLEGIO</label><input class="form-check-input" name='tpentidad'type="radio" id="co"class="radiov" value="C">
+				  	<div class="row">
+				  		
+				  		<div class="col-md-4">
+				  			<label>PARTICULAR</label><input class="form-check-input radiov" name='tpentidad' type="radio" id="pa"  value="P">
+				      <label>EMPRESA</label><input class="form-check-input radiov" name='tpentidad'type="radio" id="em"  value="E">
+				      <label>UNIVERSIDAD</label><input class="form-check-input radiov" name='tpentidad'type="radio" id="un"  value="U">
+				      <label>COLEGIO</label><input class="form-check-input radiov" name='tpentidad'type="radio" id="co"  value="C">
+				  		</div>
+				  		<div class="col-md-4">
+				  			
+				  		</div>
+				  		<div class="col-md-4">
+				  			<!-- Single button -->
+<div class="btn-group">
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+   <strong> Mas configuraciones</strong> <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><a href="#">Empresas</a></li>
+    <li><a href="#">Colegios</a></li>
+    <li><a href="#">Universidades</a></li>
+    <li role="separator" class="divider"></li>
+    <li><a href="#">Separated link</a></li>
+  </ul>
+</div>
+				  		</div>
+				  	</div>
+				      
+
 				      <br> <br>
 
-				      <div id="cont_tpcli"></div>
+
+				      <div id="cont_tpcli">
+				      	<select class="cont_tpcli form-control"></select> 
+
+
+				      </div>
+				      <br><label>Mas</label>
+				        <div id="contendep">
+				      	<select class="dep form-control"></select> 
+
+
+				      </div>
+
+				      
 				   
 				  </div>
 				  <div class="panel-footer"></div>
 				</div>
 
 				<div class="panel panel-success">
-					<div class="panel-heading"><strong>Detalles</strong></div>
+					<div class="panel-heading"><strong>Detalles de pedido</strong></div>
 				  <div class="panel-body">
 				      <label><strong>Factura</strong></label><input class="form-control" type="number" >
 				      <label><strong>Fecha Entrega</strong></label><input class="form-control" type="date" >
@@ -90,7 +128,10 @@
 			<label for="lbldesc"><strong>Descripcion</strong></label> <textarea cols="30" rows="5" class='form-control 'id='lbldesc' ></textarea>
 				   
 				  </div>
-				  <div class="panel-footer"></div>
+				  <div class="panel-footer">
+				  	
+				  	<button class="btn btn-primary" onclick="creapedido();"><strong>Crear pedido</strong></button>
+				  </div>
 				</div>
 
 
