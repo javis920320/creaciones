@@ -642,3 +642,46 @@ $('#idcliente').on('keyup',function(){
 
 });
 
+
+ function newcliente(){
+
+var identificacion=$('#idcliente').val();
+ var nombre =$('#nomcli').val();
+ var telefono=$('#telcli').val();
+ if(identificacion==0){
+alert('identificacion requerida');
+ }else if(nombre==""){
+alert('nombre requerido');
+
+ }else if(telefono==0){
+alert('este dato es requerido');
+ }else{
+
+//alert('EN ajax');
+
+ 	$.ajax({
+			'url':baseurl+'Cajax/crearcliente',
+			'type':'POST',
+			'data':{nombres:nombre,celular:telefono,identidad:identificacion},
+			success:function(data){
+				alert('Datos guardados');
+			}
+			
+			
+		});
+}
+ }
+
+
+
+ $(".radiov").on('click',function(){
+
+alert();
+ var tpentidad=$('input:radio[name=tpentidad]:checked').val();
+ console.log('fff'+tpentidad);
+
+
+ });
+
+
+

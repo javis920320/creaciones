@@ -37,6 +37,20 @@ class Cpedidomultiple extends CI_Controller
 		$this->load->view('layou/footer');
 
 	}
+
+
+	public  function tipoentidad(){
+
+	$tipoentidad='U';//$this->input->post('tipoentidad');
+
+
+	$res=$this->Mpedidos->tipoentidad($tipoentidad);
+	echo json_encode($res);
+
+
+
+
+	}
 }
 
 

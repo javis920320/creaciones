@@ -3,6 +3,16 @@
 	<title></title>
 </head>
 <body>
+	<style type="text/css">
+		
+
+.radiov{
+ 
+  margin-right: 150px;
+
+}
+
+	</style>
 <br>
 
 		<!-- Button trigger modal -->
@@ -25,7 +35,7 @@
 				 <label for="idcliente"><strong>Identificacion  :</strong></label><input type="number" name="" class="form-control" id="idcliente">
 				 <label for="nomcli"> <strong>Nombres</strong></label> <input type="text" name="" placeholder="Nombre cliente" class="form-control" id="nomcli">
 				 <label for="telcli">Tel-cel</label> <input type="number" name="" class="form-control"  id="telcli"><br>
-				 <button class="btn btn-primary" id="btnnuevocli" name="btnnuevocli" >Nuevo cliente</button>
+				 <button class="btn btn-primary" id="btnnuevocli" name="btnnuevocli" onclick="newcliente();">Nuevo cliente</button>
 				   
 				  </div>
 				  <div class="panel-footer"></div>
@@ -34,10 +44,13 @@
 				<div class="panel panel-success">
 					<div class="panel-heading"><strong>Tipo cliente</strong></div>
 				  <div class="panel-body">
-				      <label>PARTICULAR</label><input class="form-check-input" type="radio" id="tpcli">
-				      <label>EMPRESA</label><input class="form-check-input" type="radio" id="tpcli">
-				      <label>UNIVERSIDAD</label><input class="form-check-input" type="radio" id="tpcli">
-				      <label>COLEGIO</label><input class="form-check-input" type="radio" id="tpcli">
+				      <label>PARTICULAR</label><input class="form-check-input" name='tpentidad' type="radio" id="pa"class="radiov" value="P">
+				      <label>EMPRESA</label><input class="form-check-input" name='tpentidad'type="radio" id="em"class="radiov" value="E">
+				      <label>UNIVERSIDAD</label><input class="form-check-input" name='tpentidad'type="radio" id="un"class="radiov" value="U">
+				      <label>COLEGIO</label><input class="form-check-input" name='tpentidad'type="radio" id="co"class="radiov" value="C">
+				      <br> <br>
+
+				      <div id="cont_tpcli"></div>
 				   
 				  </div>
 				  <div class="panel-footer"></div>

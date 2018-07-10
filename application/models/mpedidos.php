@@ -10,6 +10,27 @@ class Mpedidos extends CI_Model
 	{
 		parent::__construct();
 	}
+
+
+
+	public  function tipoentidad($tipoentidad){
+/*tipos  entidad
+P= particular
+E=empresa
+U =Universidad
+C= colegio
+
+*/
+
+		$res=$this->db->query("select * from entidad where  tipo='".$tipoentidad."'");
+
+
+		return$res->result();
+
+
+
+
+	}
 	
 	
 	public function arreglo($array){
