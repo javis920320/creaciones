@@ -1,14 +1,28 @@
 <?php 
 
-/**
-* 
-*/
+
 class Mpedidos extends CI_Model
 {
 	
 	function __construct()
 	{
 		parent::__construct();
+	}
+
+
+	public  function tipo_producto($idtipoprod){
+
+    $query= $this->db->query("select nomtipoprod from tipo_producto where idtipoprod=".$idtipoprod."");
+
+
+
+     foreach ($query->result() as $row)
+		{
+        	return $row->nomtipoprod;
+        
+		}
+
+
 	}
 
 public function nwdependencia($dato){

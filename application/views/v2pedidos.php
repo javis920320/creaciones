@@ -77,7 +77,7 @@
 
 
 				      <div id="cont_tpcli">
-				      	<select class="cont_tpcli form-control"></select> 
+				      	
 
 
 				      </div>
@@ -97,10 +97,13 @@
 				<div class="panel panel-success">
 					<div class="panel-heading"><strong>Detalles de pedido</strong></div>
 				  <div class="panel-body">
-				      <label><strong>Factura</strong></label><input class="form-control" type="number" >
-				      <label><strong>Fecha Entrega</strong></label><input class="form-control" type="date" >
+				      <label><strong>Factura</strong></label><input class="form-control" type="number" id='faccli'>
+				      <label><strong>Fecha Entrega</strong></label><input class="form-control" type="date" id="fecentre">
 				      <label for="tpprod" >Tipo Producto:</label>
-					<div id='tpprod' ></div>
+
+					<div id='tpprod'></div>
+
+					
 				      <div class="form-group ">	
 				<label for="talla" >Talla</label>
 				<select name="talla" id="talla" class="form-control ">
@@ -131,12 +134,38 @@
 				  <div class="panel-footer">
 				  	
 				  	<button class="btn btn-primary" onclick="creapedido();"><strong>Crear pedido</strong></button>
-				  </div>
+
+
+				  	
 				</div>
 
 
 
 </div>
+
+
+
+<div class="panel panel-success">
+					<div class="panel-heading"><strong>Detalles de pedido</strong></div>
+				  <div class="panel-body">
+				  		
+				  		<table class=" table table-striped">
+				  			<thead>
+				  			<th>Factura</th><th>Facultad-Entidad</th><th>Fecha Entrega</th><th>Tipo prod</th><th>Talla</th><th>Cantidad</th><th>Descripcion</th>
+				  			</thead>
+				  			<tbody id='resumen'>
+				  				
+				  			</tbody>
+
+				  		</table>
+				  	</div>
+				  <div class="panel-footer">
+				  	
+				  	<button class="btn btn-success" onclick="creapedido();"><strong>Confirmar envio</strong></button>
+
+
+				  	
+				</div>
 </div>
         <script type="text/javascript">
 	var baseurl = "<?php echo base_url(); ?>";

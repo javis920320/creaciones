@@ -24,6 +24,15 @@ class Cpedidomultiple extends CI_Controller
 		$this->load->view('vpedidomultiple');
 		$this->load->view('layou/footer');
 	}
+	public  function tipoprod(){
+
+		$idtipoprod=$this->input->post('id');
+
+		$res=$this->Mpedidos->tipo_producto($idtipoprod);
+		echo $res;
+
+
+	}
 
 
 

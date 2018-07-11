@@ -668,17 +668,18 @@ alert('este dato es requerido');
 		{tipoentidad : tpentidad},
       function(data){
       	var x=JSON.parse(data);
-      	html="<option value='0'>Seleccione una opcion</option>";
+      	html="<select class=' cont_tpcli form-control'><option value='0'>Seleccione una opcion</option>";
       	$.each(x,function(i,items){
 		html+="<option value="+items.identidad+">"+items.nomentidad+"</option>";		
 		});
-      	//html+="</option>";
+      	html+="</select>";
 
 
-      	$('.cont_tpcli').html(html);
+      	$('#cont_tpcli').html(html);
       });
  	  }
        });
+ 
 $('.cont_tpcli').on('change',function(){
 	var f=$('.cont_tpcli').val();
 
@@ -709,7 +710,15 @@ $('.cont_tpcli').on('change',function(){
 
 //alert();
 
+
  	var idPersona=$('#idcliente').val();
+ 	 var  s=$('#faccli').val();
+ 	 alert(s);
+
+
+
+ 	
+
 
  	console.log(idPersona);
  	// realizamos la  busqueda de la persona  si  fue registrada dos  veces  generar error
@@ -719,11 +728,51 @@ $('.cont_tpcli').on('change',function(){
 
 var miObjeto = new Object();
 
+
+
+	 miObjeto.factura=$('#faccli').val();
+ 	 miObjeto.fechaentrega=$('#fecentre').val();
+  	 miObjeto.talla=$('#talla').val();
+  	 miObjeto.cantidad=$('#lblcn').val();
+  	 miObjeto.descripcion=$('#lbldesc').val();
+ miObjeto.descripcion=$('.cont_tpcli').val();
+  	  miObjeto.entidad=$('.cont_tpcli').val();
+  	   miObjeto.dependencia=$('.dep').val();
+
+  	     miObjeto.nomentidad=$('.cont_tpcli').text();
+  	   miObjeto.nomdependencia=$('.dep').text();
+  	  
+  	  
+
+
+  	 //conulta el tipo de producto
+  	 var x= $('#seltp').val();
+
+
+  
+  	 
+miObjeto.tipoprod= $('#seltp option:selected').text();
+
+  	
+
+
+
+  console.log(miObjeto);
+
+  var html;
+
+
+   html="<tr><td>"+miObjeto.factura+"</td><td>1"+miObjeto.nomentidad+"-"+miObjeto.nomdependencia+"</td><td>"+miObjeto.fechaentrega+"</td><td>"+miObjeto.tipoprod+"</td><td>"+miObjeto.talla+"</td><td>"+miObjeto.cantidad+"</td><td>"+miObjeto.descripcion+"</td></tr>";
+  $('#resumen').append(html);
+
+ 
+}
+
 //miObjeto.edad = 12;
 //miObjeto.mascota = "Gato";
 
 
-datos=  new Array();
+/*datos=  new Array();
 
 	$.post(baseurl+"Cajax/buscarcliente",
 		{id : idPersona},
@@ -742,11 +791,10 @@ datos=  new Array();
 
 		});
  	
-//arrayProperties.push(miObjeto);
-console.log(miObjeto);
 
 
- }
+
+ }*/
 
 
 
