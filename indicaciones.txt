@@ -268,3 +268,6 @@ from proceso pr
 inner join pedido pe on pe.idpedido = pr.idpedido
 
 group by pr.idpedido order by 1 asc
+
+ lik para  json
+---//https://www.alvarolara.com/2015/06/23/como-crear-objetos-json-en-javascript/

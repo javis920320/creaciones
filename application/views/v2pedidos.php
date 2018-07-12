@@ -18,6 +18,44 @@
 		<!-- Button trigger modal -->
 
 
+
+
+<!-- Modal -->
+<div class="modal fade" id="modempre" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Configuracion Entidades</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <button id='formentidad' class=" btn btn-default">Nueva entidad</button><button id="formdep" class=" btn btn-default">Agreagar dependencia</button>
+        <br><br>
+
+        <label><strong>Nombre:</strong></label>
+        <div id="contend">
+        <input type="text" name="nentidad" id="nentidad" class="form-control">
+        <button class="btn btn-success">Guardar</button>
+        </div>
+
+        
+        <div id="lstdepe">
+        <input type="text" name="nentidad" id="nentidad" class="form-control">
+        <button class="btn btn-success">Guardar</button>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 	
 
 
@@ -47,7 +85,7 @@
 				  	<div class="row">
 				  		
 				  		<div class="col-md-4">
-				  			<label>PARTICULAR</label><input class="form-check-input radiov" name='tpentidad' type="radio" id="pa"  value="P">
+				  			<label>PARTICULAR</label><input class="form-check-input radiov" name='tpentidad' type="radio" id="pa"  value="P" checked="true">
 				      <label>EMPRESA</label><input class="form-check-input radiov" name='tpentidad'type="radio" id="em"  value="E">
 				      <label>UNIVERSIDAD</label><input class="form-check-input radiov" name='tpentidad'type="radio" id="un"  value="U">
 				      <label>COLEGIO</label><input class="form-check-input radiov" name='tpentidad'type="radio" id="co"  value="C">
@@ -62,7 +100,10 @@
    <strong> Mas configuraciones</strong> <span class="caret"></span>
   </button>
   <ul class="dropdown-menu">
-    <li><a href="#">Empresas</a></li>
+    <li><a href="#"  data-toggle="modal" data-target="#modempre">Empresas</a>
+
+
+    </li>
     <li><a href="#">Colegios</a></li>
     <li><a href="#">Universidades</a></li>
     <li role="separator" class="divider"></li>
@@ -76,14 +117,14 @@
 				      <br> <br>
 
 
-				      <div id="cont_tpcli">
+				      <div id="">
 				      	
-
+				<select id="cont_tpcli" name="cont_tpcli" class=" pr form-control"  required="true"></select>
 
 				      </div>
 				      <br><label>Mas</label>
-				        <div id="contendep">
-				      	<select class="dep form-control"></select> 
+				        <div id="">
+				      	<select  id='dep' class="form-control"></select> 
 
 
 				      </div>

@@ -669,6 +669,7 @@ alert('este dato es requerido');
       function(data){
       	var x=JSON.parse(data);
       	html="<select class=' cont_tpcli form-control'><option value='0'>Seleccione una opcion</option>";
+      	//html='':
       	$.each(x,function(i,items){
 		html+="<option value="+items.identidad+">"+items.nomentidad+"</option>";		
 		});
@@ -679,9 +680,12 @@ alert('este dato es requerido');
       });
  	  }
        });
+
+
  
-$('.cont_tpcli').on('change',function(){
-	var f=$('.cont_tpcli').val();
+$('#cont_tpcli').on('change',function(){
+	var f=$('#cont_tpcli').val();
+	//alert(f);
 
 
 	$.post(baseurl+"Cpedidomultiple/dependencia",
@@ -697,7 +701,7 @@ $('.cont_tpcli').on('change',function(){
       	//html+="</option>";
 
 
-      	$('.dep').html(html);
+      	$('#dep').html(html);
       }
 
       );
@@ -708,25 +712,59 @@ $('.cont_tpcli').on('change',function(){
 
  function creapedido(){
 
-//alert();
+
+ 	 var idPersona=$('#idcliente').val();
+
+  //validacion
+ 	 if(idPersona== ""){
+
+ 	 	alert('identificacion requerida');
+
+ 	  }else if($('#nomcli').val()==""){
+
+ 	 	  alert("El nombre del cliente es requerido");
+
+ 	  }else if($('#telcli').val()==""){
+
+	      alert("Telefono de cliente requerido");
 
 
- 	var idPersona=$('#idcliente').val();
+ 	  }else if($('#faccli').val()==""){
+
+     alert("Ingresa la factura del cliente");
+
+ 	  }else{
+
+
+ 	  	var tpc=$('input:radio[name=tpentidad]:checked').val();
+ 	  	//alert(tpc);
+
+
+
+ 	  	
+
+
+
+ 	 
  	 var  s=$('#faccli').val();
- 	 alert(s);
+ 	 
+ 	 console.log(idPersona);
+ 	  // realizamos la  busqueda de la persona  si  fue registrada dos  veces  generar error
+    var miObjeto = new Object();
 
+    if(tpc=='P'){
+    	miObjeto.tpc="Particular";
+ 	  	
+ 	  }else if(tpc=='E'){
+ 	  	miObjeto.tpc=="Empresa";
 
+ 	  }else if(tpc=='U'){
+ 	  	miObjeto.tpc="Universidad";
 
- 	
+ 	  }else if(tpc=='C'){
+ 	  	miObjeto.tpc="Colegio";
 
-
- 	console.log(idPersona);
- 	// realizamos la  busqueda de la persona  si  fue registrada dos  veces  generar error
-
-//https://www.alvarolara.com/2015/06/23/como-crear-objetos-json-en-javascript/
-
-
-var miObjeto = new Object();
+ 	  }
 
 
 
@@ -735,16 +773,12 @@ var miObjeto = new Object();
   	 miObjeto.talla=$('#talla').val();
   	 miObjeto.cantidad=$('#lblcn').val();
   	 miObjeto.descripcion=$('#lbldesc').val();
- miObjeto.descripcion=$('.cont_tpcli').val();
-  	  miObjeto.entidad=$('.cont_tpcli').val();
-  	   miObjeto.dependencia=$('.dep').val();
-
-  	     miObjeto.nomentidad=$('.cont_tpcli').text();
-  	   miObjeto.nomdependencia=$('.dep').text();
+ 	 miObjeto.descripcion=$('#lbldesc').val();
+  	 miObjeto.entidad=$('#cont_tpcli').val();
+  	 miObjeto.dependencia=$('#dep').val();
+     miObjeto.nomentidad=$('#cont_tpcli option:selected').text();
+  	 miObjeto.nomdependencia=$('#dep option:selected').text();
   	  
-  	  
-
-
   	 //conulta el tipo de producto
   	 var x= $('#seltp').val();
 
@@ -760,45 +794,29 @@ miObjeto.tipoprod= $('#seltp option:selected').text();
   console.log(miObjeto);
 
   var html;
+  if(miObjeto.tpc=='Particular'){
+
+  	html="<tr><td>"+miObjeto.factura+"</td><td>"+miObjeto.tpc+"</td><td>"+miObjeto.fechaentrega+"</td><td>"+miObjeto.tipoprod+"</td><td>"+miObjeto.talla+"</td><td>"+miObjeto.cantidad+"</td><td>"+miObjeto.descripcion+"</td></tr>";
+
+  }else{
 
 
-   html="<tr><td>"+miObjeto.factura+"</td><td>1"+miObjeto.nomentidad+"-"+miObjeto.nomdependencia+"</td><td>"+miObjeto.fechaentrega+"</td><td>"+miObjeto.tipoprod+"</td><td>"+miObjeto.talla+"</td><td>"+miObjeto.cantidad+"</td><td>"+miObjeto.descripcion+"</td></tr>";
+
+
+   html="<tr><td>"+miObjeto.factura+"</td><td>"+miObjeto.nomentidad+"-"+miObjeto.nomdependencia+"</td><td>"+miObjeto.fechaentrega+"</td><td>"+miObjeto.tipoprod+"</td><td>"+miObjeto.talla+"</td><td>"+miObjeto.cantidad+"</td><td>"+miObjeto.descripcion+"</td></tr>";
+
+
+}
+
   $('#resumen').append(html);
+
+  }
+
+
+  
 
  
 }
-
-//miObjeto.edad = 12;
-//miObjeto.mascota = "Gato";
-
-
-/*datos=  new Array();
-
-	$.post(baseurl+"Cajax/buscarcliente",
-		{id : idPersona},
-       function(data){
-
-  	
-  		var x=JSON.parse(data);
-  		 $.each(x,function(i,items){
- 		datos[i]=items.idpersona;
- 		console.log(datos[i]);
- 		miObjeto.idPersona = datos[i];
-
-  		 });
-       
-	
-
-		});
- 	
-
-
-
- }*/
-
-
-
-
 
 
 
