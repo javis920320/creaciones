@@ -10,6 +10,62 @@ class Mpedidos extends CI_Model
 	}
 
 
+
+
+public  function pedi_entidad($data){
+	$datos = array(
+		'idpedido' => $data['idpedido'],
+		'cod_entidad' => $data['entidad'],
+		'cod_dependecia' => $data['dependencia'] );
+
+
+$this->db->insert('pedido_entidad',$datos);
+
+
+return $this->db->affected_rows();
+}
+
+public  function guardar($data){
+
+
+$data = array(
+'idpedido' =>null ,
+'factura'=>$data['factura'],
+'facultad'=>$data['facultad'],
+'cantidad'=>$data['cantidad'],
+'talla'=>$data['talla'],
+'descripcion'=>$data['descripcion'],
+'fecha_ingreso'=> date("Y/m/d"),
+'fentrega'=>$data['fentrega'],
+'idcliente'=>$data['idpersona'],
+'idtipoprod'=>$data['codtipoprod'],
+'estado'=>2,
+'print'=>0,
+'accion'=>false
+
+
+ );
+
+$this->db->insert('pedido',$data);
+return $insert_id = $this->db->insert_id();
+
+
+}
+
+	public function idPersona($data){
+
+		$query=$this->db->query("select idpersona from persona where cedula=".$data['cc']."");
+		 foreach ($query->result() as $row)
+		{
+        	return $row->idpersona;
+        
+		}
+
+
+
+	}
+
+
 	public  function tipo_producto($idtipoprod){
 
     $query= $this->db->query("select nomtipoprod from tipo_producto where idtipoprod=".$idtipoprod."");

@@ -34,16 +34,22 @@
         <button id='formentidad' class=" btn btn-default">Nueva entidad</button><button id="formdep" class=" btn btn-default">Agreagar dependencia</button>
         <br><br>
 
-        <label><strong>Nombre:</strong></label>
-        <div id="contend">
+       
+        <div id="contend" class="hide">
+        	 <label><strong>Nombre:</strong></label>
         <input type="text" name="nentidad" id="nentidad" class="form-control">
-        <button class="btn btn-success">Guardar</button>
+        <input type="hidden" name="tipoent" id="tipoent">
+        <button class="btn btn-success" onclick="creaentidad();">Guardar</button>
         </div>
 
         
-        <div id="lstdepe">
-        <input type="text" name="nentidad" id="nentidad" class="form-control">
-        <button class="btn btn-success">Guardar</button>
+        <div id="lstdepe" class="hide">
+        	<label>Entidad</label>
+        	<div id='x1'></div>
+        <label>Nombre:</label>	
+        <input type="text" name="ndepe" id="ndepe" class="form-control">
+        <br>
+        <button class="btn btn-success" onclick="creadependencia();">Guardar</button>
         </div>
 
       </div>
@@ -100,12 +106,12 @@
    <strong> Mas configuraciones</strong> <span class="caret"></span>
   </button>
   <ul class="dropdown-menu">
-    <li><a href="#"  data-toggle="modal" data-target="#modempre">Empresas</a>
+    <li><a href="#"  data-toggle="modal" data-target="#modempre" onclick="parametros('E');">Empresas</a>
 
 
     </li>
-    <li><a href="#">Colegios</a></li>
-    <li><a href="#">Universidades</a></li>
+    <li><a href="#" data-toggle="modal" data-target="#modempre"onclick="parametros('C');">Colegios</a></li>
+    <li><a href="#" data-toggle="modal" data-target="#modempre"onclick="parametros('U');">Universidades</a></li>
     <li role="separator" class="divider"></li>
     <li><a href="#">Separated link</a></li>
   </ul>
@@ -192,7 +198,7 @@
 				  		
 				  		<table class=" table table-striped">
 				  			<thead>
-				  			<th>Factura</th><th>Facultad-Entidad</th><th>Fecha Entrega</th><th>Tipo prod</th><th>Talla</th><th>Cantidad</th><th>Descripcion</th>
+				  			<th>Factura</th><th class=''>codent</th><th class=''>codep</th><th>Facultad-Entidad</th><th>Fecha Entrega</th><th>#</th><th>Tipo prod</th><th>Talla</th><th>Cantidad</th><th>Descripcion</th><th>Acciones</th>
 				  			</thead>
 				  			<tbody id='resumen'>
 				  				
@@ -202,8 +208,7 @@
 				  	</div>
 				  <div class="panel-footer">
 				  	
-				  	<button class="btn btn-success" onclick="creapedido();"><strong>Confirmar envio</strong></button>
-
+				  	<button class="btn btn-success" onclick="realizarpedido();"><strong>Confirmar envio</strong></button>
 
 				  	
 				</div>

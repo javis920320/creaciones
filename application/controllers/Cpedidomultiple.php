@@ -75,8 +75,8 @@ class Cpedidomultiple extends CI_Controller
 
  public function nwdependencia(){
 
- 	$dato['identidad']=1;//$this->input->post('identidad');
- 	$dato['nombredep']='ADMINISTRACION DE EMPRESAS';//$this->input->post('nombredep');
+ 	$dato['identidad']=$this->input->post('identidad');
+ 	$dato['nombredep']=$this->input->post('nombredep');
 
 
  	$resp=$this->Mpedidos->nwdependencia($dato);
@@ -91,8 +91,8 @@ class Cpedidomultiple extends CI_Controller
 
 	public  function nuevaentidad(){
 
-		$dato['nomentidad']="SAN MARTIN";//$this->input->post('nomentidad');
-		$dato['tipo']="U";//$this->input->post('tipo');
+		$dato['nomentidad']=$this->input->post('nomentidad');
+		$dato['tipo']=$this->input->post('tipo');
 		$resp=$this->Mpedidos->nuevaentidad($dato);
 		if($resp>0){
 			echo "Entidad creada con exito";
@@ -107,7 +107,53 @@ class Cpedidomultiple extends CI_Controller
 	}
 
 
-	public  function nuevadependencia(){
+	public  function pedidonuevo(){
+
+
+
+		/*fac:fac,entidad:entidad,dependencia:dependencia,facultad:facultad,fentrega:fentrega,codtipoprod:nomtipoprod,talla:talla,cantidad:cantidad,descripcion:descripcion,idPersona:idPersona*/
+
+
+		$data['cc']=$this->input->post('idPersona');
+
+		$data['idpersona']=$this->Mpedidos->idPersona($data);
+		if($data['idpersona']==''){
+
+			echo -1;
+
+		}else{
+
+
+		
+		$data['factura']=$this->input->post('fac');
+		
+		$data['entidad']=0;//$this->input->post('entidad');
+		$data['dependencia']=0;//$this->input->post('dependencia');
+		$data['facultad']=$this->input->post('facultad');
+		$data['fentrega']=$this->input->post('fentrega');
+		$data['codtipoprod']=$this->input->post('codtipoprod');
+		$data['talla']=$this->input->post('talla');
+		$data['cantidad']=$this->input->post('cantidad');
+		$data['descripcion']=$this->input->post('descripcion');
+		$data['cc']=$this->input->post('idPersona');
+
+		
+
+		$data['idpedido']=$this->Mpedidos->guardar($data);
+		//echo $data['idpedido'];
+
+
+		$res=$this->Mpedidos->pedi_entidad($data);
+		echo $res;
+		/*if ($res>1) {
+			echo 1;
+			# code...
+		}else{
+			echo 0;
+		}*/
+
+
+		}
 
 	}
 }

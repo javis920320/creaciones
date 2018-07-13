@@ -786,6 +786,7 @@ $('#cont_tpcli').on('change',function(){
   
   	 
 miObjeto.tipoprod= $('#seltp option:selected').text();
+miObjeto.nomtipoprod= $('#seltp option:selected').val();
 
   	
 
@@ -796,14 +797,14 @@ miObjeto.tipoprod= $('#seltp option:selected').text();
   var html;
   if(miObjeto.tpc=='Particular'){
 
-  	html="<tr><td>"+miObjeto.factura+"</td><td>"+miObjeto.tpc+"</td><td>"+miObjeto.fechaentrega+"</td><td>"+miObjeto.tipoprod+"</td><td>"+miObjeto.talla+"</td><td>"+miObjeto.cantidad+"</td><td>"+miObjeto.descripcion+"</td></tr>";
+  	html="<tr><td >"+miObjeto.factura+"</td><td>0</td><td>0</td><td>"+miObjeto.tpc+"</td><td>"+miObjeto.fechaentrega+"</td><td>"+miObjeto.nomtipoprod+"</td><td>"+miObjeto.tipoprod+"</td><td>"+miObjeto.talla+"</td><td>"+miObjeto.cantidad+"</td><td>"+miObjeto.descripcion+"</td><td><button class='borrar'><span class=' glyphicon glyphicon-remove'></span>Descartar</button></td><td><button class='enviar' data="+idPersona+"><span class=' glyphicon  glyphicon-share-alt'></span>Enviar</button></td></tr>";
 
   }else{
 
 
 
 
-   html="<tr><td>"+miObjeto.factura+"</td><td>"+miObjeto.nomentidad+"-"+miObjeto.nomdependencia+"</td><td>"+miObjeto.fechaentrega+"</td><td>"+miObjeto.tipoprod+"</td><td>"+miObjeto.talla+"</td><td>"+miObjeto.cantidad+"</td><td>"+miObjeto.descripcion+"</td></tr>";
+   html="<tr><td>"+miObjeto.factura+"</td><td class=''>"+miObjeto.entidad+"</td><td class=''>"+miObjeto.dependencia+"</td><td>"+miObjeto.nomentidad+"-"+miObjeto.nomdependencia+"</td><td>"+miObjeto.fechaentrega+"</td><td>"+miObjeto.nomtipoprod+"</td><td>"+miObjeto.tipoprod+"</td><td>"+miObjeto.talla+"</td><td>"+miObjeto.cantidad+"</td><td>"+miObjeto.descripcion+"</td><td><button class='borrar'><span class=' glyphicon glyphicon-remove'></span>Descartar</button></td><td><button class='enviar'><span class=' glyphicon  glyphicon-share-alt'></span>Enviar</button></td></tr>";
 
 
 }
@@ -818,8 +819,137 @@ miObjeto.tipoprod= $('#seltp option:selected').text();
  
 }
 
+function creaentidad(){
+
+  
+
+   var nomentidad=$("#nentidad").val();
+   var tipo=$("#tipoent").val();
+   $.ajax({
+
+   	'url':baseurl+'Cpedidomultiple/nuevaentidad',
+   	'type':'POST',
+   	'data':{nomentidad:nomentidad,tipo:tipo},
+   	success:function(data){
+   		alert(data);
+
+   	}
+
+      });
 
 
 
+  
+}
+
+
+function parametros(x){
+	//alert(x);
+	$('#tipoent').val(x);
+	$('#contend').addClass('hide');
+$('#lstdepe').addClass('hide');
+
+
+
+	 $.post(baseurl+"Cpedidomultiple/tipoentidad",
+		{tipoentidad : x},
+      function(data){
+      	var x=JSON.parse(data);
+      	html="<select class=' x1 form-control'><option value='0'>Seleccione una opcion</option>";
+      	//html='':
+      	$.each(x,function(i,items){
+		html+="<option value="+items.identidad+">"+items.nomentidad+"</option>";		
+		});
+      	html+="</select>";
+
+
+      	$('#x1').html(html);
+      });
+
+
+}
+
+$('#formentidad').on('click',function(){
+
+$('#contend').removeClass('hide');
+$('#lstdepe').addClass('hide');
+
+});
+
+$('#formdep').on('click',function(){
+
+$('#lstdepe').removeClass('hide');
+$('#contend').addClass('hide');
+
+});
+
+function creadependencia(){
+var identidad =$('#x1 option:selected').val();
+var nombredep=$('#ndepe').val();
+ $.ajax({
+
+   	'url':baseurl+'Cpedidomultiple/nwdependencia',
+   	'type':'POST',
+   	'data':{identidad:identidad,nombredep:nombredep},
+   	success:function(data){
+   		alert(data);
+
+   	}
+
+      });
+
+
+}
+
+
+
+$(document).on('click', '.borrar', function (event) {
+    event.preventDefault();
+    $(this).closest('tr').remove();
+});
+
+
+$('body').on('click','.table .enviar',function(event){
+      event.preventDefault();
+    
+      var fac =$(this).parent().parent().children('td:eq(0)').text();
+       var entidad =$(this).parent().parent().children('td:eq(1)').text();
+        var dependencia =$(this).parent().parent().children('td:eq(2)').text();
+         var facultad =$(this).parent().parent().children('td:eq(3)').text();
+          var fentrega =$(this).parent().parent().children('td:eq(4)').text();
+          var nomtipoprod=$(this).parent().parent().children('td:eq(5)').text();
+           var tipoprod =$(this).parent().parent().children('td:eq(6)').text();
+            var talla =$(this).parent().parent().children('td:eq(7)').text();
+             var cantidad =$(this).parent().parent().children('td:eq(8)').text();
+              var descripcion=$(this).parent().parent().children('td:eq(9)').text();
+              var idPersona=$('#idcliente').val();
+
+               
+      //console.log('Factura recibida'+fac);
+
+      //envio de pedido
+
+      $.ajax({
+		
+		'url':baseurl+'Cpedidomultiple/pedidonuevo',
+		'type':'POST',
+		'data':{fac:fac,entidad:entidad,dependencia:dependencia,facultad:facultad,fentrega:fentrega,codtipoprod:nomtipoprod,talla:talla,cantidad:cantidad,descripcion:descripcion,idPersona:idPersona},
+		success:function(data){
+			alert(data);
+
+
+		}
+
+
+
+
+
+      });
+
+
+
+});
+
+  
 
 
