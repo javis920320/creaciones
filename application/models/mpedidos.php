@@ -16,7 +16,7 @@ public  function pedi_entidad($data){
 	$datos = array(
 		'idpedido' => $data['idpedido'],
 		'cod_entidad' => $data['entidad'],
-		'cod_dependecia' => $data['dependencia'] );
+		'cod_dependencia' => $data['dependencia'] );
 
 
 $this->db->insert('pedido_entidad',$datos);
@@ -28,14 +28,14 @@ return $this->db->affected_rows();
 public  function guardar($data){
 
 
-$data = array(
+$datos = array(
 'idpedido' =>null ,
 'factura'=>$data['factura'],
 'facultad'=>$data['facultad'],
 'cantidad'=>$data['cantidad'],
 'talla'=>$data['talla'],
 'descripcion'=>$data['descripcion'],
-'fecha_ingreso'=> date("Y/m/d"),
+'fecha_ingreso'=>$data['fecha_ingreso'],
 'fentrega'=>$data['fentrega'],
 'idcliente'=>$data['idpersona'],
 'idtipoprod'=>$data['codtipoprod'],
@@ -46,7 +46,7 @@ $data = array(
 
  );
 
-$this->db->insert('pedido',$data);
+$this->db->insert('pedido',$datos);
 return $insert_id = $this->db->insert_id();
 
 

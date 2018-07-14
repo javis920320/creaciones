@@ -127,15 +127,16 @@ class Cpedidomultiple extends CI_Controller
 		
 		$data['factura']=$this->input->post('fac');
 		
-		$data['entidad']=0;//$this->input->post('entidad');
-		$data['dependencia']=0;//$this->input->post('dependencia');
+		$data['entidad']=$this->input->post('entidad');
+		$data['dependencia']=$this->input->post('dependencia');
 		$data['facultad']=$this->input->post('facultad');
 		$data['fentrega']=$this->input->post('fentrega');
 		$data['codtipoprod']=$this->input->post('codtipoprod');
 		$data['talla']=$this->input->post('talla');
 		$data['cantidad']=$this->input->post('cantidad');
 		$data['descripcion']=$this->input->post('descripcion');
-		$data['cc']=$this->input->post('idPersona');
+		$data['fecha_ingreso']=$hoy= date("Y/m/d");
+		
 
 		
 
@@ -144,13 +145,13 @@ class Cpedidomultiple extends CI_Controller
 
 
 		$res=$this->Mpedidos->pedi_entidad($data);
-		echo $res;
-		/*if ($res>1) {
+		//echo $res;
+		if ($res>=1) {
 			echo 1;
 			# code...
 		}else{
 			echo 0;
-		}*/
+		}
 
 
 		}
