@@ -13,7 +13,7 @@ class Majax extends CI_Model
 
 		
 
-		$this->db->select('p.nombres,p.idpersona,p.telefono');
+		$this->db->select('p.nombres,p.idpersona,p.telefono,c.idcliente');
 		$this->db->from('persona p');
 		$this->db->join('cliente c','c.idpersona=p.idpersona');
 		$this->db->where('p.cedula=',$cc['identificacion']);
