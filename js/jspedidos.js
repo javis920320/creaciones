@@ -1,4 +1,7 @@
 //setTimeout('document.location=document.location',);
+
+
+
 cargarproductos();
 let factura='';
 
