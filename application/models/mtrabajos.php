@@ -193,9 +193,22 @@ $this->db->where('p.estado',3);
 			return 0;
 		}*/
 		
-	$res=$this->db->query(" select p.idpedido,p.factura,p.facultad,p.cantidad,p.talla,p.descripcion,pe.nombres,p.fecha_ingreso,tp.idtipoprod,tp.nomtipoprod
+//cambios  en modificacion persona
+
+		/*$res=$this->db->query(" select p.idpedido,p.factura,p.facultad,p.cantidad,p.talla,p.descripcion,pe.nombres,p.fecha_ingreso,tp.idtipoprod,tp.nomtipoprod
 		from pedido p 
 		inner join cliente c on c.idpersona=p.idcliente
+		inner join persona pe on pe.idpersona=c.idpersona
+		inner join tipo_producto  tp on tp.idtipoprod=p.idtipoprod
+		where p.factura=".$param['fac']." and tp.idtipoprod=".$param['dato']." and p.estado=3 and 
+    p.idpedido not in(select pr.idpedido from proceso pr
+    inner join pedido pd on pd.idpedido = pr.idpedido
+    where pr.cantidad-pd.cantidad=0
+     ) order by p.fecha_ingreso desc");*/
+
+	$res=$this->db->query(" select p.idpedido,p.factura,p.facultad,p.cantidad,p.talla,p.descripcion,pe.nombres,p.fecha_ingreso,tp.idtipoprod,tp.nomtipoprod
+		from pedido p 
+		inner join cliente c on c.idcliente=p.idcliente
 		inner join persona pe on pe.idpersona=c.idpersona
 		inner join tipo_producto  tp on tp.idtipoprod=p.idtipoprod
 		where p.factura=".$param['fac']." and tp.idtipoprod=".$param['dato']." and p.estado=3 and 

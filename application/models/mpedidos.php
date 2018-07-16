@@ -54,10 +54,15 @@ return $insert_id = $this->db->insert_id();
 
 	public function idPersona($data){
 
-		$query=$this->db->query("select idpersona from persona where cedula=".$data['cc']."");
+		$query=$this->db->query("
+select pe.idpersona,c.idcliente from persona pe
+inner join cliente c on c.idpersona=pe.idpersona
+where pe.cedula=".$data['cc']."");
+
+
 		 foreach ($query->result() as $row)
 		{
-        	return $row->idpersona;
+        	return $row->idcliente;
         
 		}
 
@@ -252,7 +257,9 @@ public  function lista($param){
 
 	    $this->db->select('p.idpedido,tp.nomtipoprod,p.factura,p.facultad,p.cantidad,p.talla,p.descripcion,pe.nombres,p.fecha_ingreso,p.fentrega,p.print');
 		$this->db->from('pedido p');
-		$this->db->join('cliente c','c.idcliente=p.idcliente');
+		
+			//$this->db->join('cliente c','c.idpersona=p.idcliente');
+		$this->db->join('cliente c','c.idcliente=p.idcliente');// ->solo reemplazar por esta linea para ver el orden correcto
 		$this->db->join('tipo_producto tp','tp.idtipoprod=p.idtipoprod');
 		$this->db->join('persona pe','pe.idpersona=c.idpersona');
 		$this->db->where('p.estado',$dato['estado']);
@@ -306,10 +313,18 @@ public  function printdisponible($param){
 		$resul=$this->db->get();
 		return $resul->result();*/
 
-		$query=$this->db->query('select p.idpedido,tp.nomtipoprod,p.factura,p.facultad,p.cantidad,p.talla,p.descripcion,pe.nombres,p.fecha_ingreso,p.fentrega,p.print
+		/*$query=$this->db->query('select p.idpedido,tp.nomtipoprod,p.factura,p.facultad,p.cantidad,p.talla,p.descripcion,pe.nombres,p.fecha_ingreso,p.fentrega,p.print
      from pedido p
      
      inner join cliente c on c.idpersona=p.idcliente
+		 inner join tipo_producto tp on tp.idtipoprod=p.idtipoprod
+		 inner join persona pe on pe.idpersona=c.idpersona
+		where p.estado='.$dato['estado'].' and p.print=1 order by p.fentrega,p.factura');*/
+
+			$query=$this->db->query('select p.idpedido,tp.nomtipoprod,p.factura,p.facultad,p.cantidad,p.talla,p.descripcion,pe.nombres,p.fecha_ingreso,p.fentrega,p.print
+     from pedido p
+     
+     inner join cliente c on c.idcliente=p.idcliente
 		 inner join tipo_producto tp on tp.idtipoprod=p.idtipoprod
 		 inner join persona pe on pe.idpersona=c.idpersona
 		where p.estado='.$dato['estado'].' and p.print=1 order by p.fentrega,p.factura');
@@ -338,7 +353,8 @@ public  function printdisponible($param){
 
 $this->db->select('p.idpedido,tp.nomtipoprod,p.factura,p.facultad,p.cantidad,p.talla,p.descripcion,pe.nombres,p.fecha_ingreso');
 		$this->db->from('pedido p');
-		$this->db->join('cliente c','c.idpersona=p.idcliente');
+		//$this->db->join('cliente c','c.idpersona=p.idcliente');--cambios anteriores
+		$this->db->join('cliente c','c.idcliente=p.idcliente');
 		$this->db->join('tipo_producto tp','tp.idtipoprod=p.idtipoprod');
 		$this->db->join('persona pe','pe.idpersona=c.idpersona');
 		$this->db->where('p.estado',3);
@@ -362,7 +378,18 @@ $this->db->select('p.idpedido,tp.nomtipoprod,p.factura,p.facultad,p.cantidad,p.t
 			{data:'fecha_ingreso'},*/
 
 
-			$query=$this->db->query("select p.idpedido,tp.nomtipoprod,p.factura,p.facultad,p.cantidad,p.talla,p.descripcion,pe.nombres,p.fecha_ingreso,p.fentrega ,p.estado
+			/*$query=$this->db->query("select p.idpedido,tp.nomtipoprod,p.factura,p.facultad,p.cantidad,p.talla,p.descripcion,pe.nombres,p.fecha_ingreso,p.fentrega ,p.estado
+						from pedido p
+						inner join cliente c on c.idpersona=p.idcliente
+						inner join tipo_producto tp on tp.idtipoprod=p.idtipoprod
+						inner join persona pe on pe.idpersona=c.idpersona
+						where p.estado=3 or p.estado=2
+						order by p.fecha_ingreso desc
+
+				");*/
+
+
+					$query=$this->db->query("select p.idpedido,tp.nomtipoprod,p.factura,p.facultad,p.cantidad,p.talla,p.descripcion,pe.nombres,p.fecha_ingreso,p.fentrega ,p.estado
 						from pedido p
 						inner join cliente c on c.idcliente=p.idcliente
 						inner join tipo_producto tp on tp.idtipoprod=p.idtipoprod
@@ -371,6 +398,7 @@ $this->db->select('p.idpedido,tp.nomtipoprod,p.factura,p.facultad,p.cantidad,p.t
 						order by p.fecha_ingreso desc
 
 				");
+
 
 
 			return $query->result();

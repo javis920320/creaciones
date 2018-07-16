@@ -1,0 +1,4 @@
+select CONCAT("UPDATE pedido set idcliente=" , idcliente," WHERE idcliente=",idpersona,";"),idpersona from cliente where  idpersona in(select idcliente from pedido)
+select count(*) ,idcliente from pedido group by idcliente
+
+select count(*) from cliente
