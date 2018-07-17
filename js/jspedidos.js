@@ -715,8 +715,39 @@ $('#cont_tpcli').on('change',function(){
 
  function creapedido(){
 
+ var idPersona=$('#idcliente').val();
+ 	 ///alert(idPersona);
 
- 	 var idPersona=$('#idcliente').val();
+
+
+	$.post(baseurl+"Cajax/buscarcliente",
+		{id : idPersona},
+       function(data){
+      if(data==0){
+      alert('EL cliente debe ser registrado');
+
+      }else if(data!=0){
+      	$('#msj').text("Cliente registrado..");
+
+      	var x=JSON.parse(data);
+      	$.each(x,function(i,items){
+				$('#nomcli').val(items.nombres);
+				$('#telcli').val(items.telefono);
+				
+			});
+			
+
+      	$('#btnnuevocli').prop( "disabled", true );
+
+
+
+      }
+
+
+       });
+
+
+ 	
 
   //validacion
  	 if(idPersona== ""){

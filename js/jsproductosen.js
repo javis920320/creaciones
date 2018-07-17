@@ -93,12 +93,12 @@ $('#lista').on('click',function(){
 
 	window.open(baseurl+"Clista/");
 
-window.setTimeout("pasar();90000")
+window.setTimeout("pasar();100000")
 	
 });
 
  function pasar(){
- 	window.setTimeout("90000")
+ 	window.setTimeout("100000")
 $.ajax({
 'url':baseurl+'Clista/pasar',
 'type':'POST',

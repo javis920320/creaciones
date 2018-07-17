@@ -27,7 +27,7 @@ class Clista extends CI_Controller
 
 
 	public  function pasar(){
-		sleep(5);
+		sleep(10);
 
 $re=$this->Mlista->pasar();
 echo $re;
