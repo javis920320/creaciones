@@ -30,8 +30,9 @@ class Cnomina extends CI_controller
 public  function agregardescuento(){
 
 
-$datos['concepto']=" esto es una prueba";//$this->input->post('concepto');
-$datos['idtrabajador']=1;//$this->input->post('idtrabajador');
+$datos['concepto']=$this->input->post('concepto');
+$datos['idtrabajador']=$this->input->post('idtrabajador');
+$datos['valor']=$this->input->post('valor');
 
  $res=$this->Madmin->addDesc($datos);
  if($res>=1){

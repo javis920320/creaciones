@@ -42,7 +42,7 @@ public function index(){
 		switch ($datos) {
 				case 0:
 				       
-						redirect('Cpedidos');
+						redirect('Cpedidomultiple/realizarpedidos');
 					break;
 
 					case 1:

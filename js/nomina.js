@@ -13,7 +13,7 @@ listatrabajadores();
 			var obj=JSON.parse(data);
 
 			html='';
-			html+='<option value="">Seleccione una opcion</option>';
+			html+='<option value="1">Seleccione una opcion</option>';
 
 
 			$.each(obj,function(i,items){
@@ -94,3 +94,43 @@ vistanomina();
 
 
   }
+
+
+
+
+  function cargardesc(){
+
+  	idtrabajador=$("#tr").val();
+  	concepto=$("#concepto").val();
+  	v=$("#valor").val();
+
+  	//alert(valor);
+  	p=',';
+  	l='';
+  	valor=v.replace(p,l);
+  	alert(valor);
+
+
+	$.post(baseurl+"Cnomina/agregardescuento",
+		{idtrabajador : idtrabajador,concepto:concepto,valor:valor},
+       		function(data){
+       				alert(data);
+       	
+      			}
+      );
+
+
+  }
+
+
+  $("#valor").on({
+  "focus": function(event) {
+    $(event.target).select();
+  },
+  "keyup": function(event) {
+    $(event.target).val(function(index, value) {
+      return value.replace(/\D/g, "")
+        .replace(/\B(?=(\d{3})+(?!\d)\.?)/g, ",");
+    });
+  }
+});

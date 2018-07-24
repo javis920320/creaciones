@@ -18,6 +18,7 @@ public  function addDesc($datos){
 		'iddescuento'=>null,
 		'fecha'=>date("Y-m-d,H:i:s"),
 		'concepto' => $datos['concepto'], 
+		'valor'=> $datos['valor'], 
 		'estado'=>1,
 		'idtrabajador' =>  $datos['idtrabajador']
 
