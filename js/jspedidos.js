@@ -717,38 +717,7 @@ $('#cont_tpcli').on('change',function(){
 
  var idPersona=$('#idcliente').val();
  	 ///alert(idPersona);
-
-
-
-	$.post(baseurl+"Cajax/buscarcliente",
-		{id : idPersona},
-       function(data){
-      if(data==0){
-      alert('EL cliente debe ser registrado');
-
-      }else if(data!=0){
-      	$('#msj').text("Cliente registrado..");
-
-      	var x=JSON.parse(data);
-      	$.each(x,function(i,items){
-				$('#nomcli').val(items.nombres);
-				$('#telcli').val(items.telefono);
-				
-			});
-			
-
-      	$('#btnnuevocli').prop( "disabled", true );
-
-
-
-      }
-
-
-       });
-
-
- 	
-
+ 	 console.log(idPersona);
   //validacion
  	 if(idPersona== ""){
 
@@ -957,6 +926,7 @@ $('body').on('click','.table .enviar',function(event){
              var cantidad =$(this).parent().parent().children('td:eq(8)').text();
               var descripcion=$(this).parent().parent().children('td:eq(9)').text();
               var idPersona=$('#idcliente').val();
+              $(this).closest('tr').remove();
 
                
       //console.log('Factura recibida'+fac);
@@ -969,7 +939,15 @@ $('body').on('click','.table .enviar',function(event){
 		'type':'POST',
 		'data':{fac:fac,entidad:entidad,dependencia:dependencia,facultad:facultad,fentrega:fentrega,codtipoprod:nomtipoprod,talla:talla,cantidad:cantidad,descripcion:descripcion,idPersona:idPersona},
 		success:function(data){
-			alert(data);
+			if(data==-1){
+				alert('Los datos del cliente se deben ser guardados');
+			}else if(data==0){
+
+				alert('No se guardado los datos');
+			}else{
+				alert('Producto enviado correctamente');
+			}
+
 
 
 		}
@@ -985,5 +963,6 @@ $('body').on('click','.table .enviar',function(event){
 });
 
   
+
 
 

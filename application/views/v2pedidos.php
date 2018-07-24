@@ -234,7 +234,7 @@
 				  	</div>
 				  <div class="panel-footer">
 				  	
-				  	<button class="btn btn-success" onclick="realizarpedido();"><strong>Confirmar envio</strong></button>
+				  	<a href="<?php echo base_url(); ?>/Cproductosen">Productos enviados</a>
 
 				  	
 				</div>

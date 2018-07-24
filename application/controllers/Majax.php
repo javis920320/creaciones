@@ -9,6 +9,9 @@ class Majax extends CI_Model
 		parent::__construct();
 	}
 
+
+	
+
 	public  function buscarcliente($cc){
 
 		

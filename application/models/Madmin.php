@@ -8,6 +8,30 @@ class Madmin extends CI_Model
 		parent::__construct();
 	}
 
+
+public  function addDesc($datos){
+
+
+
+
+	$data = array(
+		'iddescuento'=>null,
+		'fecha'=>date("Y-m-d,H:i:s"),
+		'concepto' => $datos['concepto'], 
+		'estado'=>1,
+		'idtrabajador' =>  $datos['idtrabajador']
+
+
+	);
+
+	$this->db->insert('descuento',$data);
+		$res=$this->db->affected_rows();
+		return$res;
+
+
+}
+
+
 	public  function verincompletos (){
 		
 		$res=$this->db->query('select idpedido ,facultad,factura,cantidad,procesado,descripcion,fecha_ingreso from verincompletos where procesado-cantidad<>0');
