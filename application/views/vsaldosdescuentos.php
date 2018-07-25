@@ -57,6 +57,23 @@
 		  		<div class="panel-body">
 		  			<button class=" btn btn-primary" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-plus"></span> Descuento</button>
 
+ 			<table  id='tbldec' class="table table-hover table-responsive">
+                <thead class="bg-primary">
+                <tr>
+              <th style="width: 5%;background-color: #006699; color: white;">Nombres</th>
+              <th style="width: 10%;background-color: #006699; color: white;">Concepto</th>
+              <th style="width: 10%;background-color: #006699; color: white;">Valor</th>
+              <th style="width: 10%;background-color: #006699; color: white;">Fecha</th>
+              <th style="width: 10%;background-color: #006699; color: white;">Accion</th>
+             
+                    
+
+                </tr>
+                </thead>
+                <tbody></tbody>
+                
+              </table>
+
 
 		  		</div>
 			</div>

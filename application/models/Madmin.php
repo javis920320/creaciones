@@ -9,6 +9,43 @@ class Madmin extends CI_Model
 	}
 
 
+	public function addadelanto($dato)
+	{
+		$data = array(
+			'idadelanto' =>null ,
+			'valor' =>$dato['valor'] ,
+			'estado' =>1,
+			'fecha' =>$dato['fecha'] ,
+			'idtrabajador' => $dato['idtrabajador']
+			 );
+
+
+		$this->db->insert('trabajador_adelanto',$data);
+
+		$res=$this->db->affected_rows();
+		return$res;
+	}
+
+
+	public function lstdesc($data)
+	{
+		
+
+
+		$res=$this->db->query("select dc.iddescuento,pe.nombres,dc.concepto,dc.valor,dc.fecha from persona pe
+						inner join trabajador tr on tr.idpersona = pe.idpersona
+						inner join descuento dc on dc.idtrabajador = tr.idtrabajador
+						where dc.estado=".$data['estado']." ");
+
+
+		return $res->result();
+
+
+
+
+	}
+
+
 public  function addDesc($datos){
 
 

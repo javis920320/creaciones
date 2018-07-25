@@ -27,6 +27,18 @@ class Cnomina extends CI_controller
 
 
 
+public function lstdesc()
+{
+
+$data['estado']=$this->input->post('estado');
+$res=$this->Madmin->lstdesc($data);
+echo json_encode($res);
+
+
+}	
+
+
+
 public  function agregardescuento(){
 
 
