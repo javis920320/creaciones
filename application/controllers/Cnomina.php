@@ -11,6 +11,38 @@ class Cnomina extends CI_controller
 
 		$this->load->Model('Madmin');
 	}
+public function lstadelantos()
+{
+	$res=$this->Madmin->lstadel();
+
+	echo json_encode($res);
+}
+
+
+	public function adelanto()
+	{
+
+		$dato['valor']=$this->input->post('valor');
+		
+		$dato['idtrabajador']=$this->input->post('idtrabajador');
+
+		
+		$resp=$this->Madmin->periodovigente();
+		///echo $datos['idperiodo'];
+		$dato['idperiodo']=$resp;
+		
+		$res=$this->Madmin->addadelanto($dato);
+
+		if($res>=1){
+
+			echo 1;
+		}else{
+
+			echo 0;
+		}
+
+
+	}
 
 
  public function saldos_desc(){

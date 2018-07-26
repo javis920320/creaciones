@@ -9,14 +9,44 @@ class Madmin extends CI_Model
 	}
 
 
+	public function lstadel()
+	{
+		
+
+		$res=$this->db->query("select ad.idadelanto,pe.nombres,ad.valor ,ad.fecha from trabajador_adelanto ad
+inner join trabajador t on t.idtrabajador = ad.idtrabajador
+inner join persona pe on pe.idpersona = t.idpersona
+inner join periodo pr on pr.idperiodo = ad.idperiodo
+ where pr.estado=1");
+
+		return $res->result();
+	}
+
+public function periodovigente()
+{
+
+	$query=$this->db->query("select idperiodo from periodo where estado=1");
+
+	
+foreach ($query->result() as $row)
+		{
+        	return $row->idperiodo;
+        
+		}
+
+	
+
+}
+
 	public function addadelanto($dato)
 	{
 		$data = array(
 			'idadelanto' =>null ,
 			'valor' =>$dato['valor'] ,
 			'estado' =>1,
-			'fecha' =>$dato['fecha'] ,
-			'idtrabajador' => $dato['idtrabajador']
+			'fecha' =>date("Y-m-d,H:i:s"),
+			'idtrabajador' => $dato['idtrabajador'],
+			'idperiodo'=>$dato['idperiodo']
 			 );
 
 
