@@ -22,20 +22,7 @@ class Ctrabajos extends CI_Controller
 
 		$tipo['tipo']=$this->session->userdata('tipo');
 		
-		/*if($tipo['tipo']==3){
-		$this->load->view('layou/header',$nombres);
-		$this->load->view('layou/menu',$nombres);
-		$this->load->view('vtrabajosad',$idpersona);
-		$this->load->view('layou/footer',$tipo);
-
-		}else{
-			$this->load->view('layou/header',$nombres);
-			$this->load->view('layou/menu',$nombres);
-			$this->load->view('vtrabajos',$idpersona);
-			$this->load->view('layou/footer',$tipo);
-
-		}
-		*/
+		
 		$this->load->view('layou/header',$nombres);
 		$this->load->view('layou/menu',$nombres);
 		$this->load->view('vtrabajosad',$idpersona);
@@ -43,7 +30,27 @@ class Ctrabajos extends CI_Controller
 
 
 	}
+	
+	public  function reporteperiodos(){
+		
+		$nombres['nombres']=$this->session->userdata('nombres');
+		$idpersona['idpersona']=$this->session->userdata('id');
 
+		$tipo['tipo']=$this->session->userdata('tipo');
+		
+		
+		$this->load->view('layou/header',$nombres);
+		$this->load->view('layou/menu',$nombres);
+		$this->load->view('vreporteperiodos',$idpersona);
+		$this->load->view('layou/footer',$tipo);
+		
+		
+	}
+public  function lstperiodo(){
+	
+	$res=$this->Mtrabajos->tblperiodoc();
+	echo json_encode($res);
+}
 
 	public  function listavalorcero(){
 
@@ -51,6 +58,18 @@ class Ctrabajos extends CI_Controller
 		$res=$this->Mtrabajos->listavalorcero();
 		echo json_encode($res);
 	}
+	
+	
+	public  function resu_per(){
+		
+	$data['idtrabajador']=$this->input->post('idtrabajador');
+	$data['idperiodo']=$this->input->post('idperiodo');
+	$res=$this->Mtrabajos->res_per($data);
+	echo json_encode($res);
+	
+	
+	}
+	
 
 
 	public function buscarpedido(){
