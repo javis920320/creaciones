@@ -1,5 +1,5 @@
 $('#tblproductosen').DataTable({
-			'paging':true,
+			'paging':false,
 			'info':true,
 			'filter':true,
 			'stateSave':true,
