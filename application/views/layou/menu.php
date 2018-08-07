@@ -43,6 +43,7 @@
         <?php  if( $this->session->userdata('tipo')==3 ) { ?>
         <li class=""><a href="<?php echo base_url();?>Cprendas/cargarbordados"><i class="fa fa-circle-o"></i> Cargar bordados</a>
           <li class=""><a href="<?php echo base_url();?>Csatelite/valorcero"><i class="fa fa-circle-o"></i> Cargar Valor cero</a></li>
+          <li><a href="<?php echo base_url();?>Cadmin/"><i class="fa fa-circle-o"></i> Seguimiento pedidos </a></li>
 
 
           <?php  }?>
@@ -135,6 +136,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
+              <li><a href="<?php echo base_url();?>Cadmin/"><i class="fa fa-circle-o"></i> Seguimiento pedidos </a></li>
           <li><a href="<?php echo base_url();?>Ctaller/"><i class="fa fa-circle-o"></i> enviar a confeccion </a></li>
             <li><a href="<?php echo base_url();?>Cprendascortadas/"><i class="fa fa-circle-o"></i> productos enviados</a></li>
             

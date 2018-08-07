@@ -127,7 +127,7 @@ vistanomina();
   }
 
 
-  $("#valor").on({
+  /*$("#valor").on({
   "focus": function(event) {
     $(event.target).select();
   },
@@ -150,7 +150,7 @@ vistanomina();
         .replace(/\B(?=(\d{3})+(?!\d)\.?)/g, ",");
     });
   }
-});
+});*/
 
 
   function listadesc(){
@@ -271,7 +271,7 @@ return '<span class="pull-right">' +
   	//alert(valor);
   	p=',';
   	l='';
-  	valor=v.replace(p,l);
+  	valor=v.replace(/./g,l);
 
 
 	$.post(baseurl+"Cnomina/adelanto",

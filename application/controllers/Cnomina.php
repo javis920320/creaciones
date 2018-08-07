@@ -44,6 +44,11 @@ public function lstadelantos()
 
 	}
 
+	
+
+
+
+
 
  public function saldos_desc(){
 
