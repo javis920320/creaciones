@@ -9,6 +9,20 @@ class Mpedidos extends CI_Model
 		parent::__construct();
 	}
 
+	public function cantidadpedidos(){
+
+	$query=$this->db->query("SELECT count(*) as cantidad FROM pedido  p WHERE p.fecha_ingreso = CURDATE() ORDER BY p.idpedido");
+
+ foreach ($query->result() as $row)
+		{
+        	return $row->cantidad;
+        
+		}
+
+
+
+	}
+
 
 
 

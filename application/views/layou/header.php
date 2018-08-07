@@ -66,7 +66,7 @@ if(!$this->session->userdata('id')){
 
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
-          <!-- Messages: style can be found in dropdown.less-->
+          <!-- Messages: style can be found in dropdown.less
           <li class="dropdown messages-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-envelope-o"></i>
@@ -74,16 +74,16 @@ if(!$this->session->userdata('id')){
             </a>
             
           </li>
-          <!-- Notifications: style can be found in dropdown.less -->
+           Notifications: style can be found in dropdown.less -->
           
           <!-- Tasks: style can be found in dropdown.less -->
           <li class="dropdown tasks-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-flag-o"></i>
-              <span class="label label-danger">9</span>
+              <span class="label label-danger"> <div id="pedidosdia" onclick="modalcarg();"></div></span>
             </a>
             <ul class="dropdown-menu">
-              <li class="header">You have 9 tasks</li>
+              <li class="header">pedidos ingresados</li>
               
               <li class="footer">
                 <a href="#">View all tasks</a>

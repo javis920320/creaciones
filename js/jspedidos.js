@@ -962,6 +962,26 @@ $('body').on('click','.table .enviar',function(event){
 
 });
 
+
+pedidosdia();
+ function pedidosdia(){
+
+
+ 	$.get(baseurl+"Cpedidomultiple/cantidadpedidos", function( data ) {
+ var c=JSON.parse(data);
+
+$("#pedidosdia").text(data);
+
+});
+ }
+
+$('#midial').dialog();
+
+ function modalcarg(){
+
+ 	$('#midial').dialog();
+ }
+
   
 
 

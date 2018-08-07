@@ -24,6 +24,22 @@ class Cpedidomultiple extends CI_Controller
 		$this->load->view('vpedidomultiple');
 		$this->load->view('layou/footer');
 	}
+
+
+
+
+	public  function cantidadpedidos(){
+
+		$res=$this->Mpedidos->cantidadpedidos();
+		echo json_encode($res);
+
+
+	}
+
+	 public  function lstpedidosdia(){
+
+
+	 }
 	public  function tipoprod(){
 
 		$idtipoprod=$this->input->post('id');

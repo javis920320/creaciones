@@ -30,6 +30,15 @@ class Coperario extends CI_Controller
 	}
 
 
+	public function FunctionName()
+	{
+		
+
+
+		
+	}
+
+
 
 
 
