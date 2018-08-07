@@ -37,6 +37,9 @@
             </span>
           </a>
           <ul class="treeview-menu">
+
+           
+             <li class=""><a href="<?php echo base_url();?>Cadmin"><i class="fa fa-circle-o"></i> Seguimiento</a></li>
             <li class=""><a href="<?php echo base_url();?>Cpedidomultiple/realizarpedidos"><i class="fa fa-circle-o"></i> Ingreso  Registro</a></li>
              <li class=""><a href="<?php echo base_url();?>Cproductosen"><i class="fa fa-circle-o"></i> Productos enviados</a></li>
 			 <li class=""><a href="<?php echo base_url();?>Cprendas"><i class="fa fa-circle-o"></i> Envio bordados</a></li>
@@ -136,9 +139,14 @@
             </span>
           </a>
           <ul class="treeview-menu">
+<<<<<<< HEAD
               <li><a href="<?php echo base_url();?>Cadmin/"><i class="fa fa-circle-o"></i> Seguimiento pedidos </a></li>
+=======
+
+>>>>>>> d2b824b02ce4234aa1d4519efd9213c211ca793e
           <li><a href="<?php echo base_url();?>Ctaller/"><i class="fa fa-circle-o"></i> enviar a confeccion </a></li>
             <li><a href="<?php echo base_url();?>Cprendascortadas/"><i class="fa fa-circle-o"></i> productos enviados</a></li>
+             <li class=""><a href="<?php echo base_url();?>Cadmin"><i class="fa fa-circle-o"></i> Seguimiento</a></li>
             
             
           </ul>
@@ -156,6 +164,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="<?php echo base_url();?>Ctrabajos/"><i class="fa fa-circle-o"></i> Ingresar </a></li>
+                 <li><a href="<?php echo base_url();?>Ctrabajos/reporteperiodos"><i class="fa fa-circle-o"></i> Resumen periodos </a></li>
             <!--<li><a href="<?php echo base_url();?>Csatelite/"><i class="fa fa-circle-o"></i> Proceso Satelite </a></li>-->
             
           </ul>

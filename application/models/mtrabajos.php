@@ -10,6 +10,27 @@ class Mtrabajos extends CI_Model
 
 
 	}
+	
+	public  function res_per($data){
+		
+		
+		$res=$this->db->query("select pr.idproceso,pd.factura,pd.facultad,p.nomprod,pd.descripcion,pr.cantidad,pr.precio,pr.fecha 
+     from periodo x ,proceso pr
+      inner join producto p  on p.id_prod=pr.id_prod
+       inner join pedido pd on pd.idpedido = pr.idpedido
+       inner join trabajador t on t.idtrabajador=pr.idtrabajador
+       inner join persona pe on pe.idpersona = t.idpersona
+       where pr.estado=1 and pe.idpersona=".$data['idtrabajador']." and x.idperiodo=".$data['idperiodo']." and pr.fecha between  x.fechai and x.fechaf");
+	   
+	   return $res->result();
+	   
+	   
+	   
+		
+	}
+	
+	
+
 
 	/* EN ESTA  PARTE  GENERAMOS LOS RESUMENES DE LOS  ANTERIORES PERIODOS  DE SALDOS CANCELADOS  */
 	  public  function  periodosaldo ($param){

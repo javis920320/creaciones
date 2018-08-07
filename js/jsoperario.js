@@ -2,6 +2,7 @@
 
 user=$('#trabajador').val();
 //alert(user);
+lstperiodos();
 
 cargarvalor(user);
  function cargarvalor(user){
@@ -99,3 +100,134 @@ return'<span>Elaborado</span>';
 
 
 }
+
+
+
+
+  
+
+
+
+function lstperiodos(){
+$.get( baseurl+"Ctrabajos/lstperiodo", function( data ) {
+	//alert(data);
+var html='<option value="">Seleccione El periodo</option>';//='<select id="periodo">';
+    var obj=JSON.parse(data);
+	
+
+
+	$.each(obj,function(i,items){
+		html+='<option value='+items.idperiodo+'><strong>Inicio: '+items.fechai+'</strong> | Fin: <strong>'+items.fechaf+'</strong></option>';
+		
+		console.log(items.idperiodo);
+	});
+	//html+='</select>';
+	$('.per').html(html);
+	
+	
+});
+
+	
+}
+
+
+
+
+
+$('#periodo').on('change',function(){
+		 var idper=$('#periodo').val();
+		 user=$('#trabajador').val();
+		 //alert(user);
+		 
+		 
+		 
+		 
+		 $('#tblresperiodos').DataTable({
+			'paging':false,
+			'info':true,
+			'filter':true,
+			'stateSave':true,
+			'destroy':true,
+			
+			'ajax':{
+
+				"url":baseurl+"Ctrabajos/resu_per",
+				'data':{idtrabajador:user,idperiodo:idper},
+
+				'type':'POST',
+				dataSrc:''
+			},
+
+			'columns':[
+			{data: 'idproceso','sClass':'dt-body-center'},
+			{data: 'factura'},
+			{data: 'facultad'},
+			{data:'nomprod'},
+			{data:'descripcion'},
+			{data:'cantidad'},
+			{data:'precio'},
+
+			//{data:'precio1'},
+
+			{data:'fecha'},
+
+			{"orderable":true,
+			render:function(data,type,row){
+
+
+return'<span>Elaborado</span>';
+
+
+					}
+			}
+
+
+			],
+			
+			/*"footerCallback": function ( row, data, start, end, display ) {
+            var api = this.api();
+            // Remove the formatting to get integer data for summation
+            var intVal = function ( i ) {
+                return typeof i === 'string' ?
+                    i.replace(/[\$,]/g, '')*1 :
+                    typeof i === 'number' ?
+                        i : 0;
+            };
+ 
+            // Total over all pages
+            var total = api
+                .column( 7 )
+                .data()
+                .reduce( function (a, b) {
+                    return intVal(a) + intVal(b);
+                } );
+ 
+            // Total over this page
+            var pageTotal = api
+                .column( 7, { page: 'current'} )
+                .data()
+                .reduce( function (a, b) {
+                    return intVal(a) + intVal(b);
+                } );
+ 
+            // Update footer
+            $( api.column( 7 ).footer() ).html(
+                '$'+pageTotal +' ( $'+ total +' total)'
+            );
+        },*/
+
+ "order":[[0,"asc"]],
+
+		});	
+});
+
+
+
+
+
+
+
+
+
+
+
