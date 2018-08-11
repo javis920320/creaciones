@@ -1,5 +1,5 @@
 <?php 
-
+ini_set('date.timezone','America/Bogota');
 
 class Cpedidomultiple extends CI_Controller
 {
@@ -151,7 +151,8 @@ class Cpedidomultiple extends CI_Controller
 		$data['talla']=$this->input->post('talla');
 		$data['cantidad']=$this->input->post('cantidad');
 		$data['descripcion']=$this->input->post('descripcion');
-		$data['fecha_ingreso']=$hoy= date("Y/m/d");
+		$data['fecha_ingreso']=$hoy= date("Y/m/d,H:i:s");
+		
 		
 
 		

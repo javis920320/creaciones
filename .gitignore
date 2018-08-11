@@ -27,3 +27,5 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 *.sublime-project
 application/controllers/Welcome.php
 js/functions.js
+application/views/layou/menu.php
+*.php

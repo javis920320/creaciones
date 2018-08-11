@@ -53,6 +53,7 @@ vistanomina();
 				
 				
 				 
+	  			 
 	  			$.each(obj,function(i,items){
 	  				$('#tbody').append('<tr class=""><td>'+items.nombres+'</td><td>'+items.cantidad+'</td><td>'+items.saldo+'</td><tr>');
 					$('#periodo').html('<tr class=""><td>'+items.fechai+'</td><td>'+items.fechaf+'</td><tr>');

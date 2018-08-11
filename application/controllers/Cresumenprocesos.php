@@ -166,9 +166,14 @@ $this->export_excel->to_excel($res,'Resumen creaciones');
 
   public  function nuevoperiodo(){
 	 
-	 //$param['idperiodo']=//$this->input->post('modper');
+	
+
+
 	 	 $param['fechai']=$this->input->post('fechaie');
 		 	 $param['fechaf']=$this->input->post('fechafe');
+
+
+		 	 if($this->Mtrabajos->generanomina()){
 
 
 		 	 if($this->Mtrabajos->desctivarperiodo()){
@@ -190,7 +195,7 @@ $this->export_excel->to_excel($res,'Resumen creaciones');
 		 	 	echo'No se logro Desactivar el periodo anterior';
 		 	 }
 			 
-			
+			}
 	 
  }
 

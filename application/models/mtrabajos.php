@@ -10,6 +10,29 @@ class Mtrabajos extends CI_Model
 
 
 	}
+
+
+
+	 public  function generanomina(){
+
+	 	$this->db->query("insert into saldo_trabajador(fecha,estado,valor,valoradelanto,idtrabajador,idperiodo)
+select now(),1, sum(pr.precio),sum(ad.valor),t.idtrabajador,per.idperiodo
+from periodo per,trabajador t
+inner join persona p on p.idpersona = t.idpersona
+inner join usuarios u on u.idpersona = p.idpersona
+inner join proceso pr on pr.idtrabajador = t.idtrabajador
+left join trabajador_adelanto ad  on ad.idtrabajador = pr.idtrabajador
+where u.tipo=2 and per.estado=1 group by t.idtrabajador,ad.idadelanto;");
+
+
+
+	 	$res=$this->db->affected_rows();
+		return true;
+
+
+
+	 }
+
 	
 	public  function res_per($data){
 		
