@@ -634,9 +634,20 @@ $('#idcliente').on('keyup',function(){
 var identificacion=$('#idcliente').val();
  var nombre =$('#nomcli').val();
  var telefono=$('#telcli').val();
+ var longmax=10;
+ var longmin=5;
+ var logitud=identificacion.length;
+
+
  if(identificacion==0){
 alert('identificacion requerida');
- }else if(nombre==""){
+ }else if(logitud>longmax){
+ 	alert('identificacion no valida');
+
+ }else if(logitud<longmin){
+
+ 	alert('la identificacion debe contener  mas de 5 digitos');
+}else if(nombre==""){
 alert('nombre requerido');
 
  }else if(telefono==0){

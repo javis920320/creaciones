@@ -16,7 +16,7 @@ class Cpedidomultiple extends CI_Controller
 
 
 	public  function index(){
-
+		$this->output->cache($n);
 
 		$nombres['nombres']=$this->session->userdata('nombres');
 		$this->load->view('layou/header',$nombres);
