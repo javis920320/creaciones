@@ -9,6 +9,19 @@ class Majax extends CI_Model
 		parent::__construct();
 	}
 
+
+
+
+public  function validacedula($id){
+
+
+	$query=$this->db->query("select validacedula(".$id.")");
+	return $query->result();
+
+
+}
+
+
 	public  function buscarcliente($cc){
 
 		

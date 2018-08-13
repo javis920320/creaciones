@@ -45,6 +45,11 @@ class Cajax extends CI_Controller
 		 $id=$this->input->post('identidad');
 		$nom=$this->input->post('nombres');
 		$celular=$this->input->post('celular');
+
+		/*$res=$this->Majax->validacedula($id);
+		echo json_encode($res);*/
+
+
 		$a='';
 		$arreglo= array(
 
@@ -52,6 +57,7 @@ class Cajax extends CI_Controller
 			'nombres'=>$nom,
 			'telefono'=>$celular
 			);
+
 		$resp=$this->Majax->insertarcliente($arreglo);
 		//echo $resp;
 		if($resp){

@@ -44,6 +44,21 @@ public function lstadelantos()
 
 	}
 
+
+	public function guardarnominatotal(){
+
+
+/*idsaldo
+fecha
+estado
+valor
+idtrabajador
+idperiodo*/
+
+
+
+	}
+
 	
 
 
