@@ -593,8 +593,10 @@ $.ajax({
 
 
 /*DESC:cambios  en panel de envios*/
+$('#nomcli').prop( "disabled", true );
+				$('#telcli').prop( "disabled", true );
 
-$('#idcliente').on('keyup',function(){
+$('#btnvalcc').on('click',function(){
 
 	var txtide=$('#idcliente').val();
 
@@ -603,7 +605,13 @@ $('#idcliente').on('keyup',function(){
 		{id : txtide},
        function(data){
       if(data==0){
-      	$('#msj').text("Realizando Busqueda.....");
+      	$('#msj').text("dato no encontrado,debes registrar al cliente");
+      		$('#btnnuevocli').prop( "disabled", false );
+      		$('#nomcli').prop( "disabled", false );
+				$('#telcli').prop( "disabled", false );
+				$('#nomcli').val("");
+				$('#telcli').val("");
+
 
       }else if(data!=0){
       	$('#msj').text("Cliente registrado..");
@@ -614,6 +622,7 @@ $('#idcliente').on('keyup',function(){
 				$('#telcli').val(items.telefono);
 				
 			});
+      
 			
 
       	$('#btnnuevocli').prop( "disabled", true );
@@ -662,6 +671,8 @@ alert('este dato es requerido');
 			'data':{nombres:nombre,celular:telefono,identidad:identificacion},
 			success:function(data){
 				alert('Datos guardados');
+					$('#nomcli').prop( "disabled",true);
+				$('#telcli').prop( "disabled",true);
 			}
 			
 			

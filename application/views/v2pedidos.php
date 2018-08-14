@@ -102,7 +102,10 @@
 					<div class="panel-heading"><strong>Datos de Cliente</strong></div>
 				  <div class="panel-body">
 				  	<strong class="bg bg-danger" id='msj'></strong><br>
-				 <label for="idcliente"><strong>Identificacion  :</strong></label><input type="number" name="" class="form-control" id="idcliente">
+					
+				 <label for="idcliente"><strong>Identificacion  :</strong></label><input type="number" name="" class="form-control" id="idcliente"><br><button  id='btnvalcc'class=" btn btn-primary form-control"> <span class="glyphicon glyphicon-search"></span>  Validar cedula</button>
+
+
 				 <label for="nomcli"> <strong>Nombres</strong></label> <input type="text" name="" placeholder="Nombre cliente" class="form-control" id="nomcli">
 				 <label for="telcli">Tel-cel</label> <input type="number" name="" class="form-control"  id="telcli"><br>
 				 <button class="btn btn-primary" id="btnnuevocli" name="btnnuevocli" onclick="newcliente();">Nuevo cliente</button>
