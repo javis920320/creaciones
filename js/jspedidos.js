@@ -921,7 +921,7 @@ $(document).on('click', '.borrar', function (event) {
     event.preventDefault();
     $(this).closest('tr').remove();
 });
-
+console.log($('#idcliente').val());
 
 $('body').on('click','.table .enviar',function(event){
       event.preventDefault();
