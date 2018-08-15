@@ -264,15 +264,15 @@ return '<span class="pull-right">' +
    function cargaradelanto(){
 
 	var idtrabajador=$('#tr1').val();
-	var v=$('#valadd').val();
+	var valor=$('#valadd').val();
 
 
 
 
   	//alert(valor);
-  	p=',';
+ /* 	p=',';
   	l='';
-  	valor=v.replace(/./g,l);
+  	valor=v.replace(/./g,l);*/
 
 
 	$.post(baseurl+"Cnomina/adelanto",
