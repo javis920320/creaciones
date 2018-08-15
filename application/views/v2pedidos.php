@@ -224,8 +224,8 @@
 <div class="panel panel-success">
 					<div class="panel-heading"><strong>Detalles de pedido</strong></div>
 				  <div class="panel-body">
-				  		
-				  		<table class=" table table-striped">
+				  		<button class=" btn btn-info"onclick='enviart()';>Enviar todo</button>
+				  		<table  id='tblped'class=" table table-striped">
 				  			<thead>
 				  			<th>Factura</th><th class=''>codent</th><th class=''>codep</th><th>Facultad-Entidad</th><th>Fecha Entrega</th><th>#</th><th>Tipo prod</th><th>Talla</th><th>Cantidad</th><th>Descripcion</th><th>Acciones</th>
 				  			</thead>

@@ -1005,6 +1005,24 @@ $('#midial').dialog();
  }
 
   
+  function enviart(){
+
+ 
+ var c=confirm("Deseas enviar todos los registros");
+
+
+  if(c){
+
+
+
+    var nFilas = $("#tblped tr").length;
+      var nColumnas = $("#tblped tr:last td").length;
+
+      alert('FIlas:'+nFilas+'colum'+nColumnas);
+
+  }
+
+  }
 
 
 
