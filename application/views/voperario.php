@@ -5,46 +5,66 @@
 <body ng-controller="scontroller">
 <h1></h1>
 
+<div class="box">
+	<div class="box-header box-primary">
 
-		<div class="box box-primary">
-	
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="3"></li>
+  </ol>
 
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="<?php  echo base_url();?>assets/img/img2.jpeg"  alt="Chania">
+      <div class="carousel-caption">
+        <h3>Chania</h3>
+        <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
+      </div>
+    </div>
 
-		<div class="box-body">
-			{{"Hola"+nombre}}
+    <div class="item">
+      <img src="<?php  echo base_url();?>assets/img/Edicion.jpg" alt="Chania">
+      <div class="carousel-caption">
+        <h3>Chania</h3>
+        <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
+      </div>
+    </div>
 
-			<input type="text" name="" ng-model="nombre">
-		<!--<h1 align='center'>**********************************************************</h1>
-		
-		<h1 align='center'>BIENVENIDOS A CREACIONES GORETTI  </h1>
-		<h2 class='text-success' align='center'><?php echo$nombres;?></h2>
-		<h1 align='center'>**********************************************************</h1>-->
-		<!--<div ng-controller="scontroller">-->
-		<h3>PRUEBA COMENTARIOS</h3>
-		<ul>
-			<li ng-repeat="comentario in comentarios">
-				{{comentario.comentario}}<strong>{{" "+comentario.autor}}</strong>
-			</li>
-			
-		</ul>
+    <div class="item">
+      <img src="img_flower.jpg" alt="Flower">
+      <div class="carousel-caption">
+        <h3>Flowers</h3>
+        <p>Beautiful flowers in Kolymbari, Crete.</p>
+      </div>
+    </div>
 
-		<input type="" name="" ng-model="nuevoComentario.autor"><br>
-		<input type="" name="" ng-model="nuevoComentario.comentario"><br>
-		<button ng-click="newitem()">Nuevo Item</button>
-		
+    <div class="item">
+      <img src="img_flower2.jpg" alt="Flower">
+      <div class="carousel-caption">
+        <h3>Flowers</h3>
+        <p>Beautiful flowers in Kolymbari, Crete.</p>
+      </div>
+    </div>
+  </div>
 
-
-		<table>
-			<thead>
-				<th ng-repeat="post in posts">{{post.title}}</th>
-			</thead>
-			
-		</table>
-		
-		</div>
-		
-		</div>
-
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</div>
+</div>
+ 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
 
 </body>
