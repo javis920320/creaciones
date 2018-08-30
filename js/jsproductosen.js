@@ -93,7 +93,7 @@ $('#lista').on('click',function(){
 
 	window.open(baseurl+"Clista/");
 
-window.setTimeout("pasar();100000")
+//window.setTimeout("pasar();100000")
 	
 });
 
