@@ -17,7 +17,7 @@
 
   
   <!-- cambio estado en confeccion -->
-  <span>hghee</span>
+  <span></span>
 
 
 <div class="col-xs-12 col-md-12">
