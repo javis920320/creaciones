@@ -12,6 +12,11 @@
 
 }
 
+#pnl{
+	width: 700px;
+	height: 600px;
+}
+
 	</style>
 <br>
 
@@ -97,8 +102,9 @@
 
 <div class="box-body">
 
-
-				<div class="panel panel-success">
+<div class="row">
+	<div class="col-lg-6">
+		<div class="panel panel-primary">
 					<div class="panel-heading"><strong>Datos de Cliente</strong></div>
 				  <div class="panel-body">
 				  	<strong class="bg bg-danger" id='msj'></strong><br>
@@ -109,20 +115,26 @@
 				 <label for="nomcli"> <strong>Nombres</strong></label> <input type="text" name="" placeholder="Nombre cliente" class="form-control" id="nomcli">
 				 <label for="telcli">Tel-cel</label> <input type="number" name="" class="form-control"  id="telcli"><br>
 				 <button class="btn btn-primary" id="btnnuevocli" name="btnnuevocli" onclick="newcliente();">Nuevo cliente</button>
+
+
 				   
 				  </div>
 				  <div class="panel-footer"></div>
 				</div>
+		
+	</div>
 
-				<div class="panel panel-success">
+	<div class="col-lg-6" id="pnl">
+
+		<div class="panel panel-primary">
 					<div class="panel-heading"><strong>Tipo cliente</strong></div>
 				  <div class="panel-body">
-				  	<div class="row">
+				  
 				  		
 				  		<div class="col-md-4">
-				  			<label>PARTICULAR</label><input class="form-check-input radiov" name='tpentidad' type="radio" id="pa"  value="P" checked="true">
-				      <label>EMPRESA</label><input class="form-check-input radiov" name='tpentidad'type="radio" id="em"  value="E">
-				      <label>UNIVERSIDAD</label><input class="form-check-input radiov" name='tpentidad'type="radio" id="un"  value="U">
+				  			<label>PARTICULAR</label><input class="form-check-input radiov" name='tpentidad' type="radio" id="pa"  value="P" checked="true"><br>
+				      <label>EMPRESA</label><input class="form-check-input radiov" name='tpentidad'type="radio" id="em"  value="E"><br>
+				      <label>UNIVERSIDAD</label><input class="form-check-input radiov" name='tpentidad'type="radio" id="un"  value="U"><br>
 				      <label>COLEGIO</label><input class="form-check-input radiov" name='tpentidad'type="radio" id="co"  value="C">
 				  		</div>
 				  		<div class="col-md-4">
@@ -130,6 +142,7 @@
 				  		</div>
 				  		<div class="col-md-4">
 				  			<!-- Single button -->
+
 <div class="btn-group">
   <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
    <strong> Mas configuraciones</strong> <span class="caret"></span>
@@ -145,7 +158,7 @@
     <li><a href="#">Separated link</a></li>
   </ul>
 </div>
-				  		</div>
+				  		
 				  	</div>
 				      
 
@@ -169,8 +182,16 @@
 				  </div>
 				  <div class="panel-footer"></div>
 				</div>
+		
+	</div>
+	
 
-				<div class="panel panel-success">
+</div>
+				
+
+				
+
+				<div class="panel panel-primary">
 					<div class="panel-heading"><strong>Detalles de pedido</strong></div>
 				  <div class="panel-body">
 				      <label><strong>Factura</strong></label><input class="form-control" type="number" id='faccli'>

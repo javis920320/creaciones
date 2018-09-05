@@ -822,14 +822,14 @@ miObjeto.nomtipoprod= $('#seltp option:selected').val();
   var html;
   if(miObjeto.tpc=='Particular'){
 
-  	html="<tr><td >"+miObjeto.factura+"</td><td>0</td><td>0</td><td>"+miObjeto.tpc+"</td><td>"+miObjeto.fechaentrega+"</td><td>"+miObjeto.nomtipoprod+"</td><td>"+miObjeto.tipoprod+"</td><td>"+miObjeto.talla+"</td><td>"+miObjeto.cantidad+"</td><td>"+miObjeto.descripcion+"</td><td><button class='borrar'><span class=' glyphicon glyphicon-remove'></span>Descartar</button></td><td><button class='enviar' data="+idPersona+"><span class=' glyphicon  glyphicon-share-alt'></span>Enviar</button></td></tr>";
+  	html="<tr><td >"+miObjeto.factura+"</td><td>0</td><td>0</td><td>"+miObjeto.tpc+"</td><td>"+miObjeto.fechaentrega+"</td><td>"+miObjeto.nomtipoprod+"</td><td>"+miObjeto.tipoprod+"</td><td>"+miObjeto.talla+"</td><td>"+miObjeto.cantidad+"</td><td>"+miObjeto.descripcion+"</td><td><button class='borrar'><span class=' glyphicon glyphicon-remove'></span>Descartar</button></td><td><button class='enviar' data="+idPersona+"><span class=' glyphicon  glyphicon-share-alt'></span>Enviar</button><input type='checkbox' name='Psel'></td></tr>";
 
   }else{
 
 
 
 
-   html="<tr><td>"+miObjeto.factura+"</td><td class=''>"+miObjeto.entidad+"</td><td class=''>"+miObjeto.dependencia+"</td><td>"+miObjeto.nomentidad+"-"+miObjeto.nomdependencia+"</td><td>"+miObjeto.fechaentrega+"</td><td>"+miObjeto.nomtipoprod+"</td><td>"+miObjeto.tipoprod+"</td><td>"+miObjeto.talla+"</td><td>"+miObjeto.cantidad+"</td><td>"+miObjeto.descripcion+"</td><td><button class='borrar'><span class=' glyphicon glyphicon-remove'></span>Descartar</button></td><td><button class='enviar'><span class=' glyphicon  glyphicon-share-alt'></span>Enviar</button></td></tr>";
+   html="<tr><td>"+miObjeto.factura+"</td><td class=''>"+miObjeto.entidad+"</td><td class=''>"+miObjeto.dependencia+"</td><td>"+miObjeto.nomentidad+"-"+miObjeto.nomdependencia+"</td><td>"+miObjeto.fechaentrega+"</td><td>"+miObjeto.nomtipoprod+"</td><td>"+miObjeto.tipoprod+"</td><td>"+miObjeto.talla+"</td><td>"+miObjeto.cantidad+"</td><td>"+miObjeto.descripcion+"</td><td><button class='borrar'><span class=' glyphicon glyphicon-remove'></span>Descartar</button></td><td><button class='enviar'><span class=' glyphicon  glyphicon-share-alt'></span>Enviar</button><input type='checkbox' name='Psel'></td></tr>";
 
 
 }
