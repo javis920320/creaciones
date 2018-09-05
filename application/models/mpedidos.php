@@ -61,7 +61,14 @@ $datos = array(
  );
 
 $this->db->insert('pedido',$datos);
-return $insert_id = $this->db->insert_id();
+$array = array();
+
+$array[0] = $this->db->insert_id();
+$array[1]=$this->db->affected_rows();
+
+
+return $array;
+
 
 
 }

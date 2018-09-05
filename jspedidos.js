@@ -634,20 +634,9 @@ $('#idcliente').on('keyup',function(){
 var identificacion=$('#idcliente').val();
  var nombre =$('#nomcli').val();
  var telefono=$('#telcli').val();
- var longmax=10;
- var longmin=5;
- var logitud=identificacion.length;
-
-
  if(identificacion==0){
 alert('identificacion requerida');
- }else if(logitud>longmax){
- 	alert('identificacion no valida');
-
- }else if(logitud<longmin){
-
- 	alert('la identificacion debe contener  mas de 5 digitos');
-}else if(nombre==""){
+ }else if(nombre==""){
 alert('nombre requerido');
 
  }else if(telefono==0){
@@ -921,11 +910,10 @@ $(document).on('click', '.borrar', function (event) {
     event.preventDefault();
     $(this).closest('tr').remove();
 });
-console.log($('#idcliente').val());
+
 
 $('body').on('click','.table .enviar',function(event){
       event.preventDefault();
-      console.log('EL ID DEL  CLIENTE  ES '+$('#idcliente').val());
     
       var fac =$(this).parent().parent().children('td:eq(0)').text();
        var entidad =$(this).parent().parent().children('td:eq(1)').text();
@@ -951,13 +939,11 @@ $('body').on('click','.table .enviar',function(event){
 		'type':'POST',
 		'data':{fac:fac,entidad:entidad,dependencia:dependencia,facultad:facultad,fentrega:fentrega,codtipoprod:nomtipoprod,talla:talla,cantidad:cantidad,descripcion:descripcion,idPersona:idPersona},
 		success:function(data){
-			alert('respuesta->'+data);
-
 			if(data==-1){
-				alert('Los datos del cliente deben ser guardados');
+				alert('Los datos del cliente se deben ser guardados');
 			}else if(data==0){
 
-				alert('ERROR NO SE A PODIDO REGISTRAR LOS DATOS');
+				alert('No se guardado los datos');
 			}else{
 				alert('Producto enviado correctamente');
 			}
@@ -975,26 +961,6 @@ $('body').on('click','.table .enviar',function(event){
 
 
 });
-
-
-pedidosdia();
- function pedidosdia(){
-
-
- 	$.get(baseurl+"Cpedidomultiple/cantidadpedidos", function( data ) {
- var c=JSON.parse(data);
-
-$("#pedidosdia").text(data);
-
-});
- }
-
-$('#midial').dialog();
-
- function modalcarg(){
-
- 	$('#midial').dialog();
- }
 
   
 

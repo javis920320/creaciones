@@ -127,10 +127,12 @@ class Cpedidomultiple extends CI_Controller
 
 
 
-		/*fac:fac,entidad:entidad,dependencia:dependencia,facultad:facultad,fentrega:fentrega,codtipoprod:nomtipoprod,talla:talla,cantidad:cantidad,descripcion:descripcion,idPersona:idPersona*/
+if(!empty($_POST['idPersona'])){
 
-
+   	
 		$data['cc']=$this->input->post('idPersona');
+
+		
 
 		$data['idpersona']=$this->Mpedidos->idPersona($data);
 		if($data['idpersona']==''){
@@ -154,16 +156,16 @@ class Cpedidomultiple extends CI_Controller
 		$data['fecha_ingreso']=$hoy= date("Y/m/d,H:i:s");
 		
 		
-
-		
-
-		$data['idpedido']=$this->Mpedidos->guardar($data);
-		//echo $data['idpedido'];
+		$retorno = array();
+		$retorno=$this->Mpedidos->guardar($data);
+		if($retorno[1]>0){
+			//print_r($retorno[0]);aqui retorna el id del ultimo registro
+			$data['idpedido']=	$retorno[0];
 
 
 		$res=$this->Mpedidos->pedi_entidad($data);
-		//echo $res;
-		if ($res>=1) {
+		
+	if ($res>=1) {
 			echo 1;
 			# code...
 		}else{
@@ -171,7 +173,27 @@ class Cpedidomultiple extends CI_Controller
 		}
 
 
+
+		}else{
+			echo 0;
 		}
+
+		
+
+		
+
+
+	
+
+		}
+
+
+}else{
+
+	echo 0;
+}
+
+
 
 	}
 }
