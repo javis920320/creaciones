@@ -245,7 +245,11 @@
 <div class="panel panel-success">
 					<div class="panel-heading"><strong>Detalles de pedido</strong></div>
 				  <div class="panel-body">
-				  		<button class=" btn btn-info"onclick='enviart()';>Enviar todo</button>
+				  		<button class=" btn btn-info"onclick='enviart()';>Enviar Seleccion</button>
+				  		<label>
+        <input type="checkbox" class="filled-in"  />
+        <span>Selecciona todo</span>
+      </label>
 				  		<table  id='tblped'class=" table table-striped">
 				  			<thead>
 				  			<th>Factura</th><th class=''>codent</th><th class=''>codep</th><th>Facultad-Entidad</th><th>Fecha Entrega</th><th>#</th><th>Tipo prod</th><th>Talla</th><th>Cantidad</th><th>Descripcion</th><th>Acciones</th>
@@ -263,6 +267,13 @@
 				  	
 				</div>
 </div>
+
+ <!-- Compiled and minified CSS 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">-->
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
         <script type="text/javascript">
 	var baseurl = "<?php echo base_url(); ?>";
 </script>

@@ -1021,21 +1021,10 @@ $('#midial').dialog();
       alert('FIlas:'+nFilas+'colum'+nColumnas);
 
 
-     
- 
-    /* Por cada columna */
-    $('#ltblped tr').each(function(){
- 
-        /* Obtener todas las celdas */
-        var celdas = $(this).find('td');
- 
-        /* Mostrar el valor de cada celda */
-        celdas.each(function(){ alert($(this).html()); });
- 
-        /* Mostrar el valor de la celda 2 */
-        alert( $(celdas[1]).html() );
- 
-    });
+ $( "td" ).each(function( index,i ) {
+  console.log( index + ": " + $( index ).text() );
+});
+
 
 
 
@@ -1044,6 +1033,21 @@ $('#midial').dialog();
   }
 
   }
+
+
+  $('.filled-in').change(function(){
+
+  	 if(this.checked){
+
+  	 	$('input[type="checkbox"][name="Psel"]').prop("checked", true);
+
+
+  	 }else {
+  	 	
+  	 	 	$('input[type="checkbox"][name="Psel"]').prop("checked", false);
+  	 }
+
+  });
 
 
 
