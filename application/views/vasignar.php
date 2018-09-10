@@ -83,6 +83,16 @@
   <option value="0">seleccionar una opcion</option>
 </select>
 
+<div class="radio-inline">
+  <label><input type="radio" value="0" name="optradio" checked>Valor cero</label>
+</div>
+<div class="radio-inline">
+  <label><input type="radio"  value="1" name="optradio">Precio normal</label>
+</div>
+<div class="radio-inline">
+  <label><input type="radio"  value="2" name="optradio" disabled>Presio nocturno</label>
+</div>
+
 <br><br>
 
             <input type='button' value='Asisgnar' class='btn btn-alert' onclick='registroproceso();'>

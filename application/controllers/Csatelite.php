@@ -57,6 +57,24 @@ public  function listasatelites(){
 
 }
 
+public  function lstoptaller(){
+
+
+	
+
+	$res=$this->Madmin->listaoperarios();
+
+	 echo json_encode($res);
+
+
+
+
+
+}
+
+
+
+
 public  function lstsatelite(){
 
 
@@ -188,6 +206,71 @@ public function aplicarvalorcero(){
 		}
 
 }
+
+
+public function ingresoproceso(){
+
+
+	$param['idpedido']=$this->input->post('idpedido');
+	$param['cantidad']=$this->input->post('cantidad');
+	
+	
+	
+	$comp=$this->Madmin->calculo($param);
+	if($comp==null){
+		$comp=$this->Madmin->consultadis($param);
+		$disp=$comp;
+		
+	}else{
+		
+		$disp=$comp;
+		
+	}
+	 //echo$disp;
+	
+		if($disp<$param['cantidad']){
+				//return 0;
+				echo'Verifica la cantidad disponible';
+				
+			}else{
+
+		if($this->input->post('tpv')==2){
+			$precioop=$this->Madmin->precionocturno($param);
+		}else{
+
+		$precioop=$this->Madmin->precionormal($param);
+
+		}
+		
+	 	$param['idprod']=$this->input->post('productos');
+	 	$param['idpersona']=$this->input->post('trabajador');
+	 	$param['idtrabajador']=$this->input->post('trabajador');//$this->Madmin->idtrabajador($param);	 	
+	 	$param['fecha']=date ("Y-m-d");
+	 	$preciob=$this->Madmin->presiobordados($param);
+	 	$param['preciob']=$preciob*$param['cantidad'];
+	 	$preadmin=$this->Madmin->preadmin($param);
+	 	$param['preadmin']= $preadmin*$param['cantidad'];
+	 	$param['precioop']=$precioop*$param['cantidad'];
+
+		$res=$this->Madmin->ingoperario($param);
+
+
+		if ($res>=1) {
+			$o=$this->Madmin->seguimiento($param);
+			echo'Registro Asignado';
+			# code...
+		}else{
+			echo'No se a podido Asisgnar el producto';
+		}
+	 	
+		}
+
+}
+
+
+
+
+
 
 public function SaldoPendiente(){
 	
