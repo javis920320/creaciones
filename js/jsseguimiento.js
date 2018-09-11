@@ -1,3 +1,6 @@
+	Push.create("jjj");
+
+
 
 $('#a2').addClass('hide');
 $('#a1').addClass('hide');

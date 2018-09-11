@@ -156,5 +156,7 @@
     
 <?php  }?>
     <script src="<?php echo  base_url();?>js/jscontrolleran.js"></script>
+
+    <script src="<?php echo  base_url();?>js/push.min.js"></script>
 </body>
 </html>
