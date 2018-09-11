@@ -14,6 +14,8 @@
 
 
 
+
+
 <!-- Modal -->
 <div class="modal fade" id="tpprodv" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
@@ -60,6 +62,9 @@
 		   <label for="vsatelite">Precio Satelite</label>
          <input type="text" id='vsatelite' name="vsatelite" class="form-control">
 
+         <br><br>
+         <label for="vsatelite">Precio Satelite</label>
+         <input type="text" id='precionoc' name="precionoc" class="form-control">
          <br><br>
 
          <input type="submit" value="Ajustar" class="btn btn-danger">
@@ -207,10 +212,14 @@
               <label for='preciosatelite'>Precio para satelite</label>
 
 	         	 	<input type='number' name='preciosatelite' id='preciosatelite' required class='form-control'>
+              <label for="precionocturno">Precio nocturno</label>
+              <input type="number" name="precionocturno" id="precionocturno" required class=" form-control">
 
 
 	         	 </div>
+             <label for="tpprod">Tipo Producto</label>
 	         	 <div id='tpprod'></div>
+             <br>
 
 	         	  <input type='submit' value='Ingresar Producto' id='btningresar'>
 	         </form>
@@ -252,6 +261,7 @@
                    <th>Valor</th>
                    <th>Subvalor</th>
                     <th>valor satelite</th>
+                    <th>Precio Nocturno</th>
 		   <th>N bordados</th>
 		   <th>valor bordados</th>
 
