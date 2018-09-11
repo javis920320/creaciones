@@ -155,6 +155,11 @@
     <script src="<?php echo  base_url();?>js/jsseguimiento.js"></script>
     
 <?php  }?>
+<?php  if($this->uri->segment(2)=='ing') { ?>
+
+    <script src="<?php echo  base_url();?>js/jsatelite.js"></script>
+    
+<?php  }?>
     <script src="<?php echo  base_url();?>js/jscontrolleran.js"></script>
 
     <script src="<?php echo  base_url();?>js/push.min.js"></script>

@@ -67,6 +67,17 @@ public  function verincompletos(){
 }
 
 
+public  function ing(){
+	 	$nombres['nombres']=$this->session->userdata('nombres');
+
+	 	$this->load->view('layou/header',$nombres);
+	 	$this->load->view('layou/menu',$nombres);
+	 	$this->load->view('vingresosp');
+	 	$this->load->view('layou/footer',$nombres);
+
+}
+
+
 
 
 }

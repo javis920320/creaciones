@@ -287,6 +287,38 @@ function lstsatelites(){
 
 	});
 }
+lstoptaller();
+
+function lstoptaller(){
+
+
+	$.ajax({
+		url:baseurl+'Csatelite/lstoptaller',
+		type:'POST',
+		success:function(data){
+			var obj=JSON.parse(data);
+
+			// console.log(obj[0].nombres);
+
+
+			//html='<select id="tpprod" name="tpprod" class=" pr form-control">';
+			html='';
+			html+='<option value="">Seleccione una opcion</option>';
+
+
+			$.each(obj,function(i,items){
+				html+='<option value="'+items.idtrabajador+'"">' + items.nombres+ '</option>';
+			});
+
+
+
+			//html+='</select>';
+			$("#operarios").html(html);
+
+		}
+
+	});
+}
 
 
 
@@ -439,6 +471,63 @@ $.ajax({
 
 
  }
+
+
+
+  function registrooperario(){
+  	
+
+  	//alert($('input:radio[name=optradio]:checked').val());
+
+	var dis=$('#disponibles').val();
+	var cantidad=$('#cantidad').val();
+	var tpv=$('input:radio[name=optradio]:checked').val();
+	diponibles=parseInt(dis);
+	
+	
+	 if(cantidad>diponibles){
+	 	alert('Erro verifica la cantidad disponible');
+	 }else if(diponibles==0){
+
+	 	alert('No hay productos disponibles');
+
+	 }else{
+	
+	    var productos=$('#productos').val();
+	    var idpedido=$('input:radio[name=idpedido]:checked').val();
+	    var trabajador=$('#operarios').val();
+
+
+	
+	$.ajax({
+		url:baseurl+'Csatelite/ingresoproceso',
+		type:'POST',
+		async:false,
+		data:{cantidad:cantidad,productos:productos,idpedido:idpedido,trabajador:trabajador,tpv:tpv},
+		success:function(data){
+				alert(data);
+			//$('#tblsatelite').data.reload();
+			$('#tblsatelite').DataTable().ajax.reload();
+			validarc();
+		
+		
+		/*if(data==0){
+			
+		alert("Verifica los productos Disponibles");
+		}else{
+			$('#tblsatelite').data.reload();
+			validarc();
+			alert(data);
+			
+			
+		}*/
+
+	}
+
+	});
+	}
+
+  }
 
 
 

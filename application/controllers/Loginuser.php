@@ -66,6 +66,11 @@ public function index(){
 						redirect('Csatelite');		
 						
 						break;
+							case 5:
+					
+						redirect('Cadmin/ing');		
+						
+						break;
 						
 				
 				default:

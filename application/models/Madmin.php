@@ -257,6 +257,36 @@ foreach ($query->result() as $row)
 
 
 
+	public  function ingoperario($param){
+
+
+	$datos = array(
+
+		'idproceso' =>null,
+		'estado' => 1,
+		'cantidad' => $param['cantidad'],
+		'fecha' => $param['fecha'],
+		'id_prod' => $param['idprod'],
+		'idpedido' => $param['idpedido'],
+		'idtrabajador' => $param['idtrabajador'],
+		'precio' => $param['precioop'],
+		'precio1' => $param['preadmin'],
+		'prebordado' => $param['preciob'],
+
+		 );
+
+	$this->db->insert('proceso',$datos);
+		$res=$this->db->affected_rows();
+		return$res;
+
+
+
+
+
+}
+
+
+
 
 	public function ingresarP($param){
 
@@ -402,6 +432,40 @@ foreach ($query->result() as $row)
 
 
 }
+
+public  function precionocturno($param){
+
+	$query=$this->db->query("select pr.precionocturno from precio pr
+inner join producto p on pr.id_prod = p.id_prod
+where pr.estado=1 and  p.id_prod=".$param['idprod']."");
+
+foreach ($query->result() as $row)
+		{
+        	return $row->precionocturno;
+        
+		}
+
+
+}
+public  function precionormal($param){
+
+	$query=$this->db->query("select pr.subvalor from precio pr
+inner join producto p on pr.id_prod = p.id_prod
+where pr.estado=1 and  p.id_prod=".$param['idprod']."");
+
+foreach ($query->result() as $row)
+		{
+        	return $row->subvalor;
+        
+		}
+
+
+}
+
+
+
+
+
 public  function preadmin($param){
 
 	$query=$this->db->query("select pr.valor from precio pr
@@ -507,6 +571,23 @@ public  function listasatelites(){
 inner join persona p on t.idpersona = p.idpersona
 inner join usuarios  u on u.idpersona = t.idpersona
 where u.tipo=4 and u.estado=1");
+	return $query->result();
+
+
+
+
+
+}
+
+public  function listaoperarios(){
+
+
+	
+
+	$query=$this->db->query("select *from trabajador t
+inner join persona p on t.idpersona = p.idpersona
+inner join usuarios  u on u.idpersona = t.idpersona
+where u.tipo=2 and u.estado=1");
 	return $query->result();
 
 
