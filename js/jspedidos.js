@@ -959,16 +959,30 @@ $('body').on('click','.table .enviar',function(event){
 		
 		'url':baseurl+'Cpedidomultiple/pedidonuevo',
 		'type':'POST',
+		'async':false,
 		'data':{fac:fac,entidad:entidad,dependencia:dependencia,facultad:facultad,fentrega:fentrega,codtipoprod:nomtipoprod,talla:talla,cantidad:cantidad,descripcion:descripcion,idPersona:idPersona},
 		success:function(data){
-			if(data==-1){
-				alert('Los datos del cliente se deben ser guardados');
-			}else if(data==0){
 
-				alert('No se guardado los datos');
+
+			if(data==-1){
+				//alert('Los datos del cliente se deben ser guardados');
+				$('#msj').addClass('text-danger');
+				$("#msj").text('Los datos del cliente se deben ser guardados');
+			}else if(data==0){
+								$('#msj').addClass('text-danger');
+				//alert('No se guardado los datos');
+				$("#msj").text('No se guardado los datos');
 			}else{
-				alert('Producto enviado correctamente');
+								$('#msj').addClass('text-success');
+
+					$("#msj").text('Producto enviado correctamente');
+					
+				//alert('Producto enviado correctamente');
 			}
+
+
+$('#ventana').modal('show');
+
 
 
 
@@ -1048,6 +1062,5 @@ $('#midial').dialog();
   	 }
 
   });
-
 
 

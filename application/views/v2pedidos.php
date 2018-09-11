@@ -1,6 +1,7 @@
 <html>
 <head>
 	<title></title>
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
 	<style type="text/css">
@@ -12,15 +13,29 @@
 
 }
 
-#pnl{
-	width: 700px;
-	height: 600px;
-}
+
 
 	</style>
 <br>
 
 
+
+<!-- Modal -->
+<div class="modal fade" id="ventana" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"></h4>
+      </div>
+      <div class="modal-body">
+        <i class="material-icons" align='center'style="font-size:60px;color:yellow;text-shadow:2px 2px 4px #000000;">sentiment_very_satisfied
+</i><h2 class="" id="msj"><strong></strong></h2>
+      </div>
+      
+    </div>
+  </div>
+</div>
 
 
 <!-- Modal -->
@@ -185,8 +200,8 @@
 		
 	</div>
 	
-
 </div>
+
 				
 
 				
