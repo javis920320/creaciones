@@ -959,7 +959,8 @@ $('body').on('click','.table .enviar',function(event){
 
 				alert('ERROR NO SE A PODIDO REGISTRAR LOS DATOS');
 			}else{
-				alert('Producto enviado correctamente');
+				//alert('Producto enviado correctamente');
+				$('#ejemplo').modal("show");
 			}
 
 
@@ -993,10 +994,9 @@ $('#midial').dialog();
 
  function modalcarg(){
 
- 	$('#midial').dialog();
+ 	
  }
 
-  
 
 
 

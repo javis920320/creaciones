@@ -63,7 +63,7 @@
          <input type="text" id='vsatelite' name="vsatelite" class="form-control">
 
          <br><br>
-         <label for="vsatelite">Precio Satelite</label>
+         <label for="vsatelite">Precio Nocturno</label>
          <input type="text" id='precionoc' name="precionoc" class="form-control">
          <br><br>
 

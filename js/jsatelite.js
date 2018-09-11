@@ -476,8 +476,10 @@ $.ajax({
 
   function registrooperario(){
   	
+//alert();
+  	alert($('#productos').val());
 
-  	//alert($('input:radio[name=optradio]:checked').val());
+
 
 	var dis=$('#disponibles').val();
 	var cantidad=$('#cantidad').val();

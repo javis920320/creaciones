@@ -211,6 +211,15 @@ public function aplicarvalorcero(){
 public function ingresoproceso(){
 
 
+		/*if($this->input->post('tpv')==2){
+			$precioop=$this->Madmin->precionocturno($param);
+		}else{
+
+		$precioop=$this->Madmin->precionormal($param);
+
+		}*/
+
+
 	$param['idpedido']=$this->input->post('idpedido');
 	$param['cantidad']=$this->input->post('cantidad');
 	
@@ -234,23 +243,32 @@ public function ingresoproceso(){
 				
 			}else{
 
-		if($this->input->post('tpv')==2){
-			$precioop=$this->Madmin->precionocturno($param);
-		}else{
 
-		$precioop=$this->Madmin->precionormal($param);
+		$tpv=$this->input->post('tpv');
 
-		}
-		
-	 	$param['idprod']=$this->input->post('productos');
-	 	$param['idpersona']=$this->input->post('trabajador');
+			$param['idprod']=$this->input->post('productos');
+	 	//$param['idpersona']=$this->input->post('trabajador');
 	 	$param['idtrabajador']=$this->input->post('trabajador');//$this->Madmin->idtrabajador($param);	 	
 	 	$param['fecha']=date ("Y-m-d");
 	 	$preciob=$this->Madmin->presiobordados($param);
 	 	$param['preciob']=$preciob*$param['cantidad'];
 	 	$preadmin=$this->Madmin->preadmin($param);
+
+		if ($tpv==2) {
+			$precioop=$this->Madmin->precionocturno($param);
+		}else{
+
+			$precioop=$this->Madmin->precionormal($param);
+
+		}
+
+	 	
 	 	$param['preadmin']= $preadmin*$param['cantidad'];
 	 	$param['precioop']=$precioop*$param['cantidad'];
+
+
+		
+	 
 
 		$res=$this->Madmin->ingoperario($param);
 
