@@ -26,7 +26,7 @@
       <ul class="sidebar-menu">
         <li class="header">Menu  de  Navegacion</li>
 
-        <?php  if($this->session->userdata('tipo')==0 OR $this->session->userdata('tipo')==3 ) { ?>
+        <?php  if($this->session->userdata('tipo')==0 OR $this->session->userdata('tipo')==3 or $this->session->userdata('tipo')==5 ) { ?>
 
 
         <li class=" treeview">
@@ -59,7 +59,7 @@
             <!--<li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>-->
           </ul>
         </li>
-<?php  if( $this->session->userdata('tipo')==3 ) { ?>
+<?php  if( $this->session->userdata('tipo')==3 or  $this->session->userdata('tipo')==5 ) { ?>
 
          <li class=" treeview">
           <a href="#">
@@ -95,7 +95,7 @@
 
         <?php  }?>
 
-         <?php  if($this->session->userdata('tipo')==3) { ?>
+         <?php  if($this->session->userdata('tipo')==3 ) { ?>
 
         <li class="treeview">
           <a href="#">
@@ -139,11 +139,11 @@
             </span>
           </a>
           <ul class="treeview-menu">
-<<<<<<< HEAD
-              <li><a href="<?php echo base_url();?>Cadmin/"><i class="fa fa-circle-o"></i> Seguimiento pedidos </a></li>
-=======
 
->>>>>>> d2b824b02ce4234aa1d4519efd9213c211ca793e
+              <li><a href="<?php echo base_url();?>Cadmin/"><i class="fa fa-circle-o"></i> Seguimiento pedidos </a></li>
+
+
+
           <li><a href="<?php echo base_url();?>Ctaller/"><i class="fa fa-circle-o"></i> enviar a confeccion </a></li>
             <li><a href="<?php echo base_url();?>Cprendascortadas/"><i class="fa fa-circle-o"></i> productos enviados</a></li>
              <li class=""><a href="<?php echo base_url();?>Cadmin"><i class="fa fa-circle-o"></i> Seguimiento</a></li>

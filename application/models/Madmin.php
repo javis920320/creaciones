@@ -668,6 +668,7 @@ return $resul->result();
    	when 2 then 'OPERARIO OBRA'
    	when 3 then 'ADMINISTRADOR'
    	when 4 then 'SATELITE'
+   	when 5 then 'ADM PROCESOS'
  	END  as tipo, 
  	case u.estado
  	when 0 then 'INACTIVO'
