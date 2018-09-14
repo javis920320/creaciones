@@ -32,9 +32,13 @@
 		<label for='editarfacul'>Facultad</label>
 		<input type='text' class='form-control' name='facultadedit'id='editarfacul'>
 		<label for='editarcant'>Cantidad</label>
-
-		
+	
 		<input type='number' class='form-control' name='editcantidad'id='editarcant'>
+
+<label for="etprod">Tipo Producto</label>
+    <br>
+     <select name="etprod" id="etprod" required="" class="form-control"></select>
+
 		<label for='editartalla'>Talla</label>
 				<select name="tallaedit" id="editartalla" class="form-control ">
 					<option value="0">0</option>
