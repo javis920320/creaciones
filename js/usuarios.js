@@ -59,7 +59,6 @@ $('#formusr').submit(function(){
 	$.ajax({
 			'url':baseurl+'Cusuarios/inser_user',
 			'type':'POST',
-			'async':false,
 			'data':$(this).serialize(),
 			success:function(data){
 				alert(data);

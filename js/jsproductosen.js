@@ -43,7 +43,7 @@ $('#tblproductosen').DataTable({
                         '    <li><a  href="#"  class="btn btn-default  btn-sm" style="width:80%;" title="Enviar informacion" data-toggle="modal" data-target="#enviar" onClick="selpedido(\''+row.idpedido+'\');"><i class="glyphicon glyphicon-wrench"></i><span> En proceso</span></a></li>' +
                         '    <li><a href="#" title="Eliminar"  data-toggle="modal" data-target="#eliminar" onClick="eliminar('+row.idpedido+')"><i style="color:red;" class="glyphicon glyphicon-remove"></i> Eliminar</a></li>' +
                      // '    <li><a href="'+baseurl+'cafiliado/descargar/'+row.idPersona+'" title="Editar formato"><i class="glyphicon glyphicon-print" style="color:#006699"></i> Editar</a></li>' +
-                    '    <li><a href="#" title="Ajustar pedido"  data-toggle="modal" data-target="#editarcorte"  onClick="ajustarpedido(\''+row.factura+'\',\''+row.facultad+'\',\''+row.cantidad+'\',\''+row.talla+'\',\''+row.descripcion+'\',\''+row.fentrega+'\',\''+row.idpedido+'\')"><i style="color:green;" class="glyphicon glyphicon-pencil"></i> Editar Pedido</a></li>' +
+                    '    <li><a href="#" title="Ajustar pedido"  data-toggle="modal" data-target="#editarcorte"  onClick="ajustarpedido(\''+row.factura+'\',\''+row.facultad+'\',\''+row.cantidad+'\',\''+row.talla+'\',\''+row.descripcion+'\',\''+row.fentrega+'\',\''+row.idpedido+'\',\''+row.idtipoprod+'\',\''+row.nomtipoprod+'\')"><i style="color:green;" class="glyphicon glyphicon-pencil"></i> Editar Pedido</a></li>' +
                        //'    <li><a href="#" title="Asignar bordados" class="prueba" data-toggle="modal" data='+row.id_prod+' data-target="#asgbordados"  onClick="bordprod(\''+row.id_prod+'\')"><i style="color:green;" class="glyphicon glyphicon-paperclip"></i> Asignar bordados</a></li>' +
                       //'    <li><a href="#" title="Desaprobar afiliado" onClick="updEstadoAfiliado('+row.idPersona+','+2+')"><i style="color:red;" class="glyphicon glyphicon-remove"></i> Desaprobar</a></li>' +
                       '    </ul>' +
@@ -230,7 +230,7 @@ $.ajax({
  
  
  
-  ajustarpedido= function(factura,facultad,cantidad,talla,descripcion,fentrega,idpedido){
+  ajustarpedido= function(factura,facultad,cantidad,talla,descripcion,fentrega,idpedido,idtipoprod,nomtipoprod){
 	  $('#editarfac').val(factura);
 	   $('#editarfacul').val(facultad);
 	    $('#editarcant').val(cantidad);
@@ -240,11 +240,46 @@ $.ajax({
 		  
 		   $('#editarpedido').val(idpedido);
 		  // alert(idpedido);
+		  $("#etprod").val(idtipoprod);
 	  
 	  
 	  
 	  
   }
+
+
+   cargartipo();
+    function cargartipo(){
+    
+$.post(baseurl+"Ctipoprod/gettipoprod",
+
+
+	{id : 1},
+       function(data){
+       //	alert(data);
+       	 var obj=JSON.parse(data);
+
+		console.log(obj[0].nomtipoprod);
+		html='<option  value="">Selecciona una opcion</option>';
+		$.each(obj,function(i,items){
+			html+='<option value="'+items.idtipoprod+'">' + items.nomtipoprod+ '</option>';
+
+		//$(".prodtp").append('<option value="'+items.idtipoprod+'">' + items.nomtipoprod+ '</option>');
+
+       });
+
+
+		html+='</option>';
+		//$(".prodtp").append(html);
+		$("#etprod").html(html);
+
+
+});
+
+
+    }
+
+
   
   
   $('#form-edit').submit(function(){

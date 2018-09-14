@@ -276,7 +276,7 @@ public  function lista($param){
 	$dato = array('estado' => $param['estado'] ,
 					'factura' => $param['factura'] );
 
-	    $this->db->select('p.idpedido,tp.nomtipoprod,p.factura,p.facultad,p.cantidad,p.talla,p.descripcion,pe.nombres,p.fecha_ingreso,p.fentrega,p.print');
+	    $this->db->select('p.idpedido,tp.nomtipoprod,tp.idtipoprod,p.factura,p.facultad,p.cantidad,p.talla,p.descripcion,pe.nombres,p.fecha_ingreso,p.fentrega,p.print');
 		$this->db->from('pedido p');
 		
 			//$this->db->join('cliente c','c.idpersona=p.idcliente');

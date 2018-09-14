@@ -26,7 +26,7 @@
       <ul class="sidebar-menu">
         <li class="header">Menu  de  Navegacion</li>
 
-        <?php  if($this->session->userdata('tipo')==0 OR $this->session->userdata('tipo')==3 or $this->session->userdata('tipo')==5 ) { ?>
+        <?php  if($this->session->userdata('tipo')==0 OR $this->session->userdata('tipo')==3 ) { ?>
 
 
         <li class=" treeview">
@@ -59,7 +59,7 @@
             <!--<li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>-->
           </ul>
         </li>
-<?php  if( $this->session->userdata('tipo')==3 or  $this->session->userdata('tipo')==5 ) { ?>
+<?php  if( $this->session->userdata('tipo')==3 ) { ?>
 
          <li class=" treeview">
           <a href="#">
@@ -76,6 +76,8 @@
           </ul>
         </li>
          <?php  }?>
+
+
         <?php  }?>
 
          <?php  if($this->session->userdata('tipo')==0) { ?>
@@ -95,7 +97,7 @@
 
         <?php  }?>
 
-         <?php  if($this->session->userdata('tipo')==3 ) { ?>
+         <?php  if($this->session->userdata('tipo')==3) { ?>
 
         <li class="treeview">
           <a href="#">
@@ -139,11 +141,11 @@
             </span>
           </a>
           <ul class="treeview-menu">
-
+<<<<<<< HEAD
               <li><a href="<?php echo base_url();?>Cadmin/"><i class="fa fa-circle-o"></i> Seguimiento pedidos </a></li>
+=======
 
-
-
+>>>>>>> d2b824b02ce4234aa1d4519efd9213c211ca793e
           <li><a href="<?php echo base_url();?>Ctaller/"><i class="fa fa-circle-o"></i> enviar a confeccion </a></li>
             <li><a href="<?php echo base_url();?>Cprendascortadas/"><i class="fa fa-circle-o"></i> productos enviados</a></li>
              <li class=""><a href="<?php echo base_url();?>Cadmin"><i class="fa fa-circle-o"></i> Seguimiento</a></li>
@@ -219,6 +221,35 @@
         </li> 
         
         <?php  }?>
+
+
+        <?php  if( $this->session->userdata('tipo')==5 ) { ?>
+
+         <li class=" treeview">
+          <a href="#">
+             <i class="glyphicon glyphicon-globe"></i> <span>PROCESOS </span>
+               <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li class=""><a href="<?php echo base_url();?>Clistasatel"><i class="fa fa-circle-o"></i> Lista Satelites</a></li>
+             <li class=""><a href="<?php echo base_url();?>Cadmin"><i class="fa fa-circle-o"></i> Seguimiento</a></li>
+            <li class=""><a href="<?php echo base_url();?>Cpedidomultiple/realizarpedidos"><i class="fa fa-circle-o"></i> Ingreso  Registro</a></li>
+             <li class=""><a href="<?php echo base_url();?>Cproductosen"><i class="fa fa-circle-o"></i> Productos enviados</a></li>
+              <li><a href="<?php echo base_url();?>Ctaller/"><i class="fa fa-circle-o"></i> enviar a confeccion </a></li>
+            
+       <li class=""><a href="<?php echo base_url();?>Cprendas"><i class="fa fa-circle-o"></i> Envio bordados</a></li>
+      
+        <li class=""><a href="<?php echo base_url();?>Cprendas/cargarbordados"><i class="fa fa-circle-o"></i> Cargar bordados</a>
+          <li class=""><a href="<?php echo base_url();?>Csatelite/valorcero"><i class="fa fa-circle-o"></i> Cargar Valor cero</a></li>
+          <li><a href="<?php echo base_url();?>Cadmin/"><i class="fa fa-circle-o"></i> Seguimiento pedidos </a></li>
+           
+            
+            <!--<li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>-->
+          </ul>
+        </li>
+         <?php  }?>
         <li><a href="documentation/index.html"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
         <li class="header">LABELS</li>
         <!--<li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>

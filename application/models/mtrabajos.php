@@ -377,16 +377,7 @@ $query=$this->db->query("select pr.idproceso,pd.factura,pd.facultad,p.nomprod,pd
 		return$res->result(); 
 
 
-		
-
-
-
-	}
-	public  function tblresumeno(){
-
-
-
-		$this->db->select('pr.idproceso,pd.factura,pd.facultad,pd.talla,p.nomprod,pd.descripcion,pr.cantidad,pr.precio,pr.precio1,(sum(bp.cantidad)*pr.cantidad) as nbordados,prebordado as valor bordado,pr.fecha,pe.nombres');
+		/*$this->db->select('pr.idproceso,pd.factura,pd.facultad,pd.talla,p.nomprod,pd.descripcion,pr.cantidad,pr.precio,pr.precio1,(sum(bp.cantidad)*pr.cantidad) as nbordados,prebordado as valor bordado,pr.fecha,pe.nombres');
 		$this->db->from('periodo x,proceso pr');
 		$this->db->join('producto p','p.id_prod=pr.id_prod');
 		$this->db->join ('bordadosproductos bp','p.id_prod = bp.id_prod');
@@ -396,17 +387,14 @@ $query=$this->db->query("select pr.idproceso,pd.factura,pd.facultad,p.nomprod,pd
 		$this->db->join('persona pe','pe.idpersona=t.idpersona');
 		$this->db->where('pr.fecha>=x.fechai');
 		$this->db->where('pr.fecha<=x.fechaf');
-		$this->db->where('x.estado',1);
+		$this->db->where('x,estado=',1);
 		$this->db->where('pr.estado=1');
 		$this->db->group_by('pr.idproceso,bp.id_prod');
 
 
 		$res=$this->db->get();	
 
-		return$res->result(); 
-
-
-		
+		return$res->result();*/
 
 
 

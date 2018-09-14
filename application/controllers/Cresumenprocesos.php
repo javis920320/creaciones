@@ -76,22 +76,6 @@ public  function tblresumen(){
 
 
 }
-public  function tblresumeno(){
-
-	//$param['fechai']=$this->input->post('fechai');	
-	//$param['fechaf']=$this->input->post('fechaf');	
-	
-	 $res=$this->Mtrabajos->tblresumeno();
-	 
-	   
-
-	 echo json_encode($res);
-
-
-
-
-
-}
 
 
 

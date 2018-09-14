@@ -477,7 +477,7 @@ $.ajax({
   function registrooperario(){
   	
 //alert();
-  	//alert($('#productos').val());
+  	alert($('#productos').val());
 
 
 
@@ -509,7 +509,7 @@ $.ajax({
 		success:function(data){
 				alert(data);
 			//$('#tblsatelite').data.reload();
-			$('#tbltrabajos').DataTable().ajax.reload();
+			$('#tblsatelite').DataTable().ajax.reload();
 			validarc();
 		
 		
@@ -530,55 +530,6 @@ $.ajax({
 	}
 
   }
-
-
-  $('#tbltrabajos').DataTable({
-			'paging':true,
-			'info':true,
-			'filter':true,
-			'stateSave':true,
-			'destroy':true,
-
-			'ajax':{
-
-				"url":baseurl+"Cresumenprocesos/tblresumeno",
-				'type':'POST',
-				//'data':{fechai:fechai,fechaf:fechaf},
-				dataSrc:''
-			},
-
-			'columns':[
-			{data: 'idproceso','sClass':'dt-body-center'},
-			{data: 'factura','sClass':'dt-body-center'},
-			{data: 'facultad'},
-			{data: 'talla'},
-			{data:'nomprod'},
-			{data:'descripcion'},
-			{data:'cantidad'},
-			{data:'precio'},
-			{data:'nbordados'},
-			{data:'valor bordado'},
-			{data:'fecha'},
-			{data:'nombres'},
-			{"orderable":true,
-			render:function(data,type,row){
-
-
-
-				return'<span class="glyphicon glyphicon-check"></span>';
-
-					//return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" data-toggle="modal" data-target="#myModal"><i class=" fa fa-edit"></i></a
-					//return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" title="Editar informacion" data-toggle="modal" data-target="#modalEditPersona" onClick="selPersona(\''+row.idpersona+'\',\''+row.cedula+'\',\''+row.nombres+'\',\''+row.telefono+'\');"><i class=" fa fa-edit"></i></a>';
-					}
-			}
-
-
-			],
-
- "order":[[0,"desc"]],
-
-		});	
-
 
 
 
