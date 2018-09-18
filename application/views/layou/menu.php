@@ -141,11 +141,10 @@
             </span>
           </a>
           <ul class="treeview-menu">
-<<<<<<< HEAD
-              <li><a href="<?php echo base_url();?>Cadmin/"><i class="fa fa-circle-o"></i> Seguimiento pedidos </a></li>
-=======
 
->>>>>>> d2b824b02ce4234aa1d4519efd9213c211ca793e
+              <li><a href="<?php echo base_url();?>Cadmin/"><i class="fa fa-circle-o"></i> Seguimiento pedidos </a></li>
+
+
           <li><a href="<?php echo base_url();?>Ctaller/"><i class="fa fa-circle-o"></i> enviar a confeccion </a></li>
             <li><a href="<?php echo base_url();?>Cprendascortadas/"><i class="fa fa-circle-o"></i> productos enviados</a></li>
              <li class=""><a href="<?php echo base_url();?>Cadmin"><i class="fa fa-circle-o"></i> Seguimiento</a></li>
@@ -216,6 +215,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="<?php echo base_url();?>Cusuarios/"><i class="fa fa-circle-o"></i> Ingresar </a></li>
+
             
           </ul>
         </li> 
@@ -225,25 +225,24 @@
 
         <?php  if( $this->session->userdata('tipo')==5 ) { ?>
 
-         <li class=" treeview">
+         <li class=" treeview active">
           <a href="#">
-             <i class="glyphicon glyphicon-globe"></i> <span>PROCESOS </span>
+             <i class="glyphicon glyphicon-globe"></i> <span> ADM PROCESOS </span>
                <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
-          <ul class="treeview-menu">
-            <li class=""><a href="<?php echo base_url();?>Clistasatel"><i class="fa fa-circle-o"></i> Lista Satelites</a></li>
-             <li class=""><a href="<?php echo base_url();?>Cadmin"><i class="fa fa-circle-o"></i> Seguimiento</a></li>
+          <ul class="treeview-menu ">
+            <li><a href="<?php echo base_url();?>Cadmin/"><i class="fa fa-circle-o"></i> Seguimiento pedidos </a></li>
             <li class=""><a href="<?php echo base_url();?>Cpedidomultiple/realizarpedidos"><i class="fa fa-circle-o"></i> Ingreso  Registro</a></li>
-             <li class=""><a href="<?php echo base_url();?>Cproductosen"><i class="fa fa-circle-o"></i> Productos enviados</a></li>
-              <li><a href="<?php echo base_url();?>Ctaller/"><i class="fa fa-circle-o"></i> enviar a confeccion </a></li>
-            
-       <li class=""><a href="<?php echo base_url();?>Cprendas"><i class="fa fa-circle-o"></i> Envio bordados</a></li>
-      
+            <li><a href="<?php echo base_url();?>Cadmin/ing"><i class="fa fa-circle-o"></i> Cargar Procesos </a></li>
+         <li><a href="<?php echo base_url();?>Cprendascortadas/"><i class="fa fa-circle-o"></i> productos enviados</a></li>
+
+          <li class=""><a href="<?php echo base_url();?>Cprendas"><i class="fa fa-circle-o"></i> Envio bordados</a></li>
         <li class=""><a href="<?php echo base_url();?>Cprendas/cargarbordados"><i class="fa fa-circle-o"></i> Cargar bordados</a>
-          <li class=""><a href="<?php echo base_url();?>Csatelite/valorcero"><i class="fa fa-circle-o"></i> Cargar Valor cero</a></li>
-          <li><a href="<?php echo base_url();?>Cadmin/"><i class="fa fa-circle-o"></i> Seguimiento pedidos </a></li>
+          <li class=""><a href="<?php echo base_url();?>Csatelite/valorcero"><i class="fa fa-circle-o"></i> Cargar Valor cero</a>
+            
+          
            
             
             <!--<li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>-->
