@@ -31,10 +31,10 @@ public function lstadelantos()
 
 		if($res>=1){
 
-			echo 1;
+			echo "Registro exitoso";
 		}else{
 
-			echo 0;
+			echo "Error";
 		}
 
 
@@ -96,9 +96,9 @@ $datos['valor']=$this->input->post('valor');
 
  $res=$this->Madmin->addDesc($datos);
  if($res>=1){
- echo 1;
+ echo "Registro exitoso";
  }else{
- 	echo 0;
+ 	echo "Error  al registrar";
  }
 
 }
