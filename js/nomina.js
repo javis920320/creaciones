@@ -241,18 +241,14 @@ return '<span class="pull-right">' +
 									'<input type="radio" class="idpedido" onchange="validarc();"name="idpedido" value='+row.iddescuento+' required="true">'
                        +
                       '</span>';
-
-
-
-					//return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" data-toggle="modal" data-target="#myModal"><i class=" fa fa-edit"></i></a
-					//return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" title="Enviar informacion" data-toggle="modal" data-target="#estado" onClick="estadopedido(\''+row.idpedido+'\',\''+row.nombres+'\',\''+row.telefono+'\');"><i class=" glyphicon glyphicon-plane"></i><span> Enviar</span></a>';
+					
 					}
 			}
 
 
 			],
 
- "order":[[0,"asc"]],
+ "order":[[2,"desc"]],
 
 		});	
 
@@ -264,15 +260,7 @@ return '<span class="pull-right">' +
    function cargaradelanto(){
 
 	var idtrabajador=$('#tr1').val();
-	var v=$('#valadd').val();
-
-
-
-
-  	//alert(valor);
-  	p=',';
-  	l='';
-  	valor=v.replace(/./g,l);
+	var valor=$('#valadd').val();
 
 
 	$.post(baseurl+"Cnomina/adelanto",

@@ -23,12 +23,8 @@ public function lstadelantos()
 	{
 
 		$dato['valor']=$this->input->post('valor');
-		
 		$dato['idtrabajador']=$this->input->post('idtrabajador');
-
-		
 		$resp=$this->Madmin->periodovigente();
-		///echo $datos['idperiodo'];
 		$dato['idperiodo']=$resp;
 		
 		$res=$this->Madmin->addadelanto($dato);
