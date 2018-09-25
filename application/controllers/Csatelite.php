@@ -271,6 +271,7 @@ public function ingresoproceso(){
 	 
 
 		$res=$this->Madmin->ingoperario($param);
+		$this->Madmin->tipoprecio($res,$tpv);
 
 
 		if ($res>=1) {

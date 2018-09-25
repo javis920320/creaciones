@@ -9,6 +9,15 @@ class Madmin extends CI_Model
 	}
 
 
+
+public function tipoprecio($res,$tpv){
+
+	$datos = array('id_proceso' =>$res ,'tipo_precio'=>$tpv);
+	$this->db->insert('tipo_precio',$datos);
+
+
+}
+
 	public function lstadel()
 	{
 		
@@ -276,8 +285,10 @@ foreach ($query->result() as $row)
 		 );
 
 	$this->db->insert('proceso',$datos);
-		$res=$this->db->affected_rows();
-		return$res;
+		
+			$insert_id = $this->db->insert_id();
+
+   return  $insert_id;
 
 
 

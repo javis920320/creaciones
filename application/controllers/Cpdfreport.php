@@ -58,10 +58,13 @@ class Cpdfreport extends CI_Controller
 
 
 function datos_bd(){
+   ini_set('max_execution_time', 0); 
+ini_set('memory_limit','2048M');
     $this->load->model('Pdf_model');
     $this->load->library('mydompdf');
     $data['usuarios'] = $this->Pdf_model->procesos();
     $data['valores'] = $this->Pdf_model->valores();
+    $data['lstbordados']=$this->Pdf_model->bordados();
 	//print_r( $data['valores']);
 	
    $html= $this->load->view('pdf/datos_db', $data, true);

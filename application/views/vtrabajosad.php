@@ -124,7 +124,7 @@
 
 
 
-           <input type='button' value='Guardar'title='Presiona para Guardar' class='btn btn-primary' onclick="registroproceso();">		
+           <input type='button' value='Guardar' disabled="true" title='Presiona para Guardar' class='btn btn-primary' onclick="registroproceso();">		
 
             </form>
           </div>

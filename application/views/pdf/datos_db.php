@@ -71,6 +71,41 @@
             </tr>
           <?php  }?>
        </tbody>
+
+   </table>
+   
+
+   <label>LISTA DE BORDADOS</label>
+   <table>
+     <thead>
+           <tr>
+               <th>COD</th>
+               <th>FACTURA</th>
+               <th>DESCRIPCION</th>
+         <th>CANTIDAD</th>
+         <th>FECHA</th>
+         <th>PRECIO</th>
+         <th>ESTADO</th>
+         
+            
+           </tr>
+       </thead>
+       <tbody>
+          <?php foreach ($usuarios as $usuario) { ?>
+            <tr>
+      <!--select idproceso,pd.nomprod,pe.factura,pe.facultad,pe.talla,pr.cantidad,pr.precio,pr.fecha,pr.estado,pr.idtrabajador,pe.descripcion,pe.fecha_ingreso,p.nombres-->
+                <td><?php echo $usuario->idprendas;?></td>
+        <td><?php echo $usuario->factura;?></td>
+        <td><?php echo $usuario->descripcion;?></td>
+                <td><?php echo $usuario->cantidad;?></td>
+                <td><?php echo $usuario->fecha;?></td>
+         <td><?php echo '$' .$usuario->precio;?></td>
+          <td><?php echo '$' .$usuario->estado;?></td>
+          
+              
+            </tr>
+          <?php  }?>
+       </tbody>
    </table>
   </body>
 </html>
