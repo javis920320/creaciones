@@ -32,7 +32,7 @@ $('#tblusuarios').DataTable({
                       '  <span class="caret"></span>' +
                       '  </button>' +
                       '    <ul class="dropdown-menu pull-right" aria-labelledby="dropdownMenu1">' +
-                      '    <li><a href="#" title="Editar informacion" data-toggle="modal" data-target="#modalEditPersona" onClick="selPersona(\''+row.cedula+'\',\''+row.nombres+'\',\''+row.telefono+'\')"><i style="color:#555;" class="glyphicon glyphicon-edit"></i> Editar</a></li>' +
+                      '    <li><a href="#" title="Editar informacion" data-toggle="modal" data-target="#modalEditPersona" onClick="selPersona(\''+row.idpersona+'\',\''+row.cedula+'\',\''+row.nombres+'\',\''+row.telefono+'\')"><i style="color:#555;" class="glyphicon glyphicon-edit"></i> Editar</a></li>' +
                       //'    <li><a href="'+baseurl+'cafiliado/descargar/'+row.idPersona+'" title="Imprimir formato"><i class="glyphicon glyphicon-print" style="color:#006699"></i> Imprimir</a></li>' +
                      // '    <li><a href="#" title="Editar informacion" data-toggle="modal" data-target="#modalEditPersona" onClick="selPersona(\''+row.cedula+'\',\''+row.nombres+'\',\''+row.telefono+'\')"><i style="color:#555;" class="glyphicon glyphicon-edit"></i> Editar</a></li>' +
                       '    <li><a href="#" title="Enviar Pedido"  data-toggle="modal" data-target="#modaleli"  onClick="eliminar(\''+row.idpersona+'\')"><i style="color:green;" class="glyphicon glyphicon-ban-circle"></i> Eliminar </a></li>' +
@@ -72,13 +72,13 @@ $('#formusr').submit(function(){
 });
 
 
-selPersona= function(cedula,nombres,telefono){
+selPersona= function(idpersona,cedula,nombres,telefono){
+	document.getElementById("eidpersona").value = idpersona;
+	document.getElementById("ecedula").value = cedula;
+	document.getElementById("enombres").value = nombres;
+	document.getElementById("etelefono").value = telefono;
 
-	//$('#eidpersona').val(idpersona);
-	$('#ecedula').val(cedula);
-	//alert(cedula);
-	$('#enombres').val(nombres);
-	$('#etelefono').val(telefono);
+	
 
 
 }

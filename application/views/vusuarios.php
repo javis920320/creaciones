@@ -45,12 +45,12 @@
 
                     <form id='editper'>
 
-                        <input type='text' id='eidpersona'name='eidpersona'>
-                        <label id='ecedula'>Cedula</label>
+                        <input type='text' id='eidpersona' name='eidpersona'>
+                        <label for='ecedula'>Cedula</label>
                         <input type='text' id='ecedula' name='ecedula' class='form-control'required>
-                        <label id='enombres'>Nombres</label>
+                        <label for='enombres'>Nombres</label>
                         <input type='text' id='enombres' name='enombres' class='form-control'required>
-                        <label id='etelefono'>Telefono</label>
+                        <label for='etelefono'>Telefono</label>
                          <input type='text' id='etelefono' name='etelefono' class='form-control'required>
                          <br><br>
                          <input type='submit' value='Guardar' class='btn btn-success'> 
