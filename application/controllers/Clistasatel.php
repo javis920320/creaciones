@@ -58,14 +58,10 @@ class Clistasatel extends CI_Controller
 
 		 $res=$this->Madmin->ressatelite($idtrabajador);
 
-		   while ($row = $res->fetch_row()) {
-          echo "<tr>";
-          echo "<td>".$row[0]."</td>";
-          echo "<td>".$row[1]."</td>";
-          echo "<td>".$row[2]."</td>";
-          echo "<td>".$row[3]."</td>";
-          echo "</tr>";
-          }
+		 foreach ($variable as  $value) {
+		 	 
+		 
+		 }
 
 		 
 		/*$res= $this->Madmin->cambiarestado($idtrabajador);
