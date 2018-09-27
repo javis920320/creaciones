@@ -17,12 +17,12 @@
                </div>
 
                <div class="modal-body">
-                <span class='text text-danger'>Deseaas elimnar este registro ?</span>
+                <span class='text text-danger'>Deseaas desactivar este registro ?</span>
                 <form id='frmdusr'>
                     <input type ='text' name='eliminarc' id='eliminarc'class='hide'>
 
                       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                 <button type="submit" class="btn btn-primary" disabled>Eliminar</button>
+                 <button type="submit" class="btn btn-primary" >Desactivar</button>
                 </form>
                
                </div>
@@ -43,9 +43,9 @@
                   </div>
                   <div class="modal-body">
 
-                    <form id='editper'>
+                    <form id='editper' method="POST">
 
-                        <input type='text' id='eidpersona' name='eidpersona'>
+                        <input type='hidden' id='eidpersona' name='eidpersona'>
                         <label for='ecedula'>Cedula</label>
                         <input type='text' id='ecedula' name='ecedula' class='form-control'required>
                         <label for='enombres'>Nombres</label>
@@ -53,7 +53,7 @@
                         <label for='etelefono'>Telefono</label>
                          <input type='text' id='etelefono' name='etelefono' class='form-control'required>
                          <br><br>
-                         <input type='submit' value='Guardar' class='btn btn-success'> 
+                         <input type='submit' value='Guardar' id="btnEditar" class='btn btn-success'> 
 
 
 
