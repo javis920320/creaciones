@@ -780,6 +780,30 @@ public  function idtrabajador($param){
 
 	  }
 
+
+
+	  public  function ressatelite($idtrabajador){
+
+	  	$query=$this->db->query("select idproceso,idtrabajador from proceso where estado=2 and idtrabajador=".$idtrabajador);
+
+
+	  	return $query->result();
+
+
+
+
+	  }
+
+
+	  public  function addres($idproceso,$idtrabajador){
+
+
+	  	$this->db->query("INSERT INTO historialsatelite VALUES($idproceso,$idtrabajador,sysdate())");
+
+
+	  }
+
+
 }
 
 
