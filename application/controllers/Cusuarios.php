@@ -93,10 +93,10 @@ public  function eliminaruser(){
 
 	if($res>=1){
 
-		echo 'Usuario Desactivado';
+		echo 'Usuario Eliminado';
 
 	}else{
-		echo'No se a podido Desactivar este usuario';
+		echo'No se a podido eliminar este usuario';
 	}
 }
 
