@@ -35,7 +35,7 @@ $('#tblusuarios').DataTable({
                       '    <li><a href="#" title="Editar informacion" data-toggle="modal" data-target="#modalEditPersona" onClick="selPersona(\''+row.idpersona+'\',\''+row.cedula+'\',\''+row.nombres+'\',\''+row.telefono+'\')"><i style="color:#555;" class="glyphicon glyphicon-edit"></i> Editar</a></li>' +
                       //'    <li><a href="'+baseurl+'cafiliado/descargar/'+row.idPersona+'" title="Imprimir formato"><i class="glyphicon glyphicon-print" style="color:#006699"></i> Imprimir</a></li>' +
                      // '    <li><a href="#" title="Editar informacion" data-toggle="modal" data-target="#modalEditPersona" onClick="selPersona(\''+row.cedula+'\',\''+row.nombres+'\',\''+row.telefono+'\')"><i style="color:#555;" class="glyphicon glyphicon-edit"></i> Editar</a></li>' +
-                      '    <li><a href="#" title="Enviar Pedido"  data-toggle="modal" data-target="#modaleli"  onClick="eliminar(\''+row.idpersona+'\')"><i style="color:green;" class="glyphicon glyphicon-ban-circle"></i> Eliminar </a></li>' +
+                      '    <li><a href="#" title="Enviar Pedido"  data-toggle="modal" data-target="#modaleli"  onClick="eliminar(\''+row.idpersona+'\')"><i style="color:green;" class="glyphicon glyphicon-ban-circle"></i> Desactivar </a></li>' +
                       //'    <li><a href="#" title="Desaprobar afiliado" onClick="updEstadoAfiliado('+row.idPersona+','+2+')"><i style="color:red;" class="glyphicon glyphicon-remove"></i> Desaprobar</a></li>' +
                       '    </ul>' +
                       '</div>' +
@@ -92,13 +92,23 @@ eliminar =function(cedula){
 
 
 
+$('#btnEditar').on('click',function(){
 
-$('#editper').submit(function(){
-//alert();
+
+
+		var eidpersona=$('#eidpersona').val();
+		//alert(eidpersona);
+		var ecedula=$('#ecedula').val();
+		var enombres=$('#enombres').val();
+		var etelefono=$('#etelefono').val();
+
+
+
 	$.ajax({
-			'url':baseurl+'Cusuarios/editarpersona',
+			'url':baseurl+'Cajax/updatecliente',
 			'type':'POST',
-			'data':$(this).serialize(),
+			'async':false,
+			'data':{personaid:eidpersona,upidpersona:ecedula,upname:enombres,uptelefono:etelefono},
 			success:function(data){
 				alert(data);
 

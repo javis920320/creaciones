@@ -749,9 +749,10 @@ public  function creartrabajador($param){
 
 
 public  function eliminaruser($param){
+	$datos=array('estado'=>0);
 
 	$this->db->where('idpersona',$param['idpersona']);
-	$this->db->delete('usuarios');
+	$this->db->update('usuarios',$datos);
 
 	$res=$this->db->affected_rows();
 		return$res;
