@@ -105,6 +105,60 @@ where bp.id_prod=".$param['idprod']."");
 
 
 
+	   public function addnewgroup($datos){
+
+	   	$data = array(
+	   					'idtrabajador' => $datos['idtrabajador'],
+	   					'idusuario' => $datos['idusuario'],
+	   					'porcentaje' => $datos['porcentaje'],
+	   					'estado' => 1
+
+
+	   				);
+
+
+
+	   	$this->db->insert('grupo_distribucion',$data);
+
+
+
+	   }
+
+
+
+	  public  function validaporcentaje($datos){
+
+
+	$res=$this->db->query("select sum(porcentaje) as 'valor' from grupo_distribucion where estado=1 and  idtrabajador=".$datos['idtrabajador']);
+
+	 foreach ($res->result() as $row)
+		{
+        	return $row->valor;
+        
+		}
+
+	  }
+
+
+
+	
+
+
+	  public function creagrupo($datos){
+
+
+	  	$res=$this->db->query("select count(*)as 'idtrabajador' from grupo_distribucion where idtrabajador=".$datos['idtrabajador']);
+
+	 foreach ($res->result() as $row)
+		{
+        	return $row->idtrabajador;
+        
+		}
+
+	  }
+
+
+
 
 }
 

@@ -30,9 +30,58 @@ class Coperario extends CI_Controller
 	}
 
 
-	public function FunctionName()
+	public function creargrupo()
 	{
 		
+			$datos['idtrabajador']=1;//$this->input->post('idtrabajador');
+			$datos['idusuario']=1;//$this->input->post('idusuario');
+			$datos['porcentaje']=100;//$this->input->post('porcentaje');
+			$res=$this->Moperario->creagrupo($datos);
+
+			$p=$datos['porcentaje']/100;
+
+
+			if($res==0){
+
+
+				if($p>1){
+
+					echo "es mayor al 100%";
+
+				}else{
+					
+				$this->Moperario->addnewgroup($datos);
+
+				}
+
+
+			}else{
+
+
+				$porcenAcumulado=$this->Moperario->validaporcentaje($datos);
+
+				
+
+				
+				$x=$porcenAcumulado+$datos['porcentaje'];
+
+				if($x>100){
+					echo "el porcentaje es muy alto";
+
+				}else{
+
+					echo "si puedes agregar el valor";
+
+				}
+
+
+
+			}
+
+			/*$this->Moperario->validaporcentaje($datos);
+
+
+			$this->Moperario->asignargrupo();*/
 
 
 		
@@ -109,12 +158,6 @@ $res=$this->Moperario->ingresarproceso($param);
 				
 			}	
 			
-				
-			
-		
-		
-// fin de este ciclo
-
 
 
 	 }
