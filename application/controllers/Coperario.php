@@ -36,20 +36,22 @@ class Coperario extends CI_Controller
 			$datos['idtrabajador']=1;//$this->input->post('idtrabajador');
 			$datos['idusuario']=1;//$this->input->post('idusuario');
 			$datos['porcentaje']=100;//$this->input->post('porcentaje');
-			$res=$this->Moperario->creagrupo($datos);
+			$res=$this->Moperario->creagrupo($datos);//valida  si  existe  un grupo
 
-			$p=$datos['porcentaje']/100;
+			$p=$datos['porcentaje']/100;//obtenemos el  valor decimal
 
 
 			if($res==0){
 
 
 				if($p>1){
+					//validamos  si el porcentaje es mayor al 100%
 
 					echo "es mayor al 100%";
 
 				}else{
-					
+
+					//creamos nuevo  grupo
 				$this->Moperario->addnewgroup($datos);
 
 				}
@@ -57,7 +59,9 @@ class Coperario extends CI_Controller
 
 			}else{
 
+				//aqui se   debe  agregar participante al grupo
 
+				//validamos si el porcentaje ingresado no supera el 100%
 				$porcenAcumulado=$this->Moperario->validaporcentaje($datos);
 
 				
@@ -70,7 +74,10 @@ class Coperario extends CI_Controller
 
 				}else{
 
-					echo "si puedes agregar el valor";
+					//echo "si puedes agregar el valor";
+					$this->Moperario->addnewgroup($datos);
+
+					echo 'Dtos cargados';
 
 				}
 
@@ -78,10 +85,10 @@ class Coperario extends CI_Controller
 
 			}
 
-			/*$this->Moperario->validaporcentaje($datos);
+			//$this->Moperario->validaporcentaje($datos);
 
 
-			$this->Moperario->asignargrupo();*/
+			//$this->Moperario->asignargrupo();
 
 
 		

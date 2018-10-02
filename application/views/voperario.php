@@ -3,6 +3,13 @@
 	<title></title>
 </head>
 <body ng-controller="scontroller">
+  <style type="text/css">
+    
+    #btnregistrar{
+                 position :relative !important; 
+                 left: 40% !important;
+            }
+  </style>
 <h1></h1>
 
 <div class="box">
@@ -63,6 +70,36 @@
   </a>
 </div>
 </div>
+
+
+<button class="btn btn-primary" id="btnregistrar" data-toggle="modal" data-target="#cargagrup">Crea Grupo</button>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="cargagrup" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Adicion Participantes</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p><?php echo$idpersona;?></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
 </div>
  
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
