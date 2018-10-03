@@ -781,6 +781,37 @@ public  function idtrabajador($param){
 
 	  }
 
+
+
+	  public  function ressatelite($idtrabajador){
+
+	  	$query=$this->db->query("select idproceso,idtrabajador from proceso where estado=2 and idtrabajador=".$idtrabajador);
+
+
+	  	return $query->result();
+
+
+
+
+	  }
+
+
+	  public  function addres($d){
+
+
+	  	//return $l=sizeof($idproceso);
+	  	//for ($i=0; $i < sizeof($idproceso); $i++) { 
+	  		$this->db->query($d);
+	  	//}
+
+
+
+	  	
+
+
+	  }
+
+
 }
 
 

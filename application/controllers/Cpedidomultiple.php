@@ -26,6 +26,18 @@ class Cpedidomultiple extends CI_Controller
 	}
 
 
+	   public function RecepcionPed()
+	 {
+	 	//$this->output->cache(15);
+
+		$nombres['nombres']=$this->session->userdata('nombres');
+		$this->load->view('layou/header',$nombres);
+		$this->load->view('layou/menu',$nombres);
+		$this->load->view('vrecepcionped');
+		$this->load->view('layou/footer');
+	 }
+
+
 
 
 	public  function cantidadpedidos(){

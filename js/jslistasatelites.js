@@ -14,7 +14,7 @@ $.ajax({
 
 		  $.each(datos,function(i,items){
 
-		  	html+="<tr><td>"+items.nombres+"</td> <td>"+items.cantidad+"</td> <td>"+items.vsatel+"</td></tr>";
+		  	html+="<tr><td>"+items.nombres+"</td> <td>"+items.cantidad+"</td> <td>"+items.vsatel+"</td><td class='btn btn-primary'>Almacenar saldo</td></tr>";
 
 
 		  });
