@@ -68,6 +68,7 @@
                   <th>Nombres</th>
                   <th>Cantidad</th>
                   <th>Valor</th>
+                  <th>Acciones</th>
                   
                   
          

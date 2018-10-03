@@ -52,16 +52,40 @@ class Clistasatel extends CI_Controller
 	 public function cambiarestado(){
 		 
 		 
-		 $idtrabajador=$this->input->post('idtrabajador');
+		 $idtrabajador=28;//$this->input->post('idtrabajador');
+
+		 $lista = array();
+
+		 $res=$this->Madmin->ressatelite($idtrabajador);
+		  foreach ($res as  $value) {
+
+		  	$lista[]=$value->idproceso;
+		  }
+
+		   for ($i=0; $i < sizeof($lista); $i++) { 
+
+		  $d="insert into historialsatelite(idproceso,fecha) values(".$lista[$i].",sysdate());";
+		  $this->Madmin->addres($d);
+		   }
+		  //	
+
+
+
+		  	
+
+
+		  
+       
+
 		 
-		$res= $this->Madmin->cambiarestado($idtrabajador);
+		/*$res= $this->Madmin->cambiarestado($idtrabajador);
 		
 		if($res>=1){
 			echo 'Tarea realizada con exito';
 			
 		}else{
 			echo 'Tarea no realizada';
-		}
+		}*/
 	 }
 	 
 }
