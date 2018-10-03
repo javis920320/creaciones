@@ -78,4 +78,24 @@ descricion: este proceso realiza el cambio de estado el pedido
  	 }
 
 
+ 	 public function Eliminarpedido(){
+
+ 	 	$datos['idpedido']=$this->input->post('idpedido');
+
+
+ 	 	$res=$this->Mpedidos->EliminaPedido($datos);
+ 	 	if($res>=1){
+ 	 		echo"Pedido Eliminado";
+
+ 	 	}else{
+
+ 	 		echo"No se ha eliminado";
+
+ 	 	}
+
+
+ 	 }
+ 	 
+
+
  } ?>
