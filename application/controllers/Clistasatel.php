@@ -54,14 +54,28 @@ class Clistasatel extends CI_Controller
 		 
 		 $idtrabajador=28;//$this->input->post('idtrabajador');
 
-
+		 $lista = array();
 
 		 $res=$this->Madmin->ressatelite($idtrabajador);
+		  foreach ($res as  $value) {
 
-		 foreach ($variable as  $value) {
-		 	 
-		 
-		 }
+		  	$lista[]=$value->idproceso;
+		  }
+
+		   for ($i=0; $i < sizeof($lista); $i++) { 
+
+		  $d="insert into historialsatelite(idproceso,fecha) values(".$lista[$i].",sysdate());";
+		  $this->Madmin->addres($d);
+		   }
+		  //	
+
+
+
+		  	
+
+
+		  
+       
 
 		 
 		/*$res= $this->Madmin->cambiarestado($idtrabajador);

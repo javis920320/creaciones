@@ -795,10 +795,17 @@ public  function idtrabajador($param){
 	  }
 
 
-	  public  function addres($idproceso,$idtrabajador){
+	  public  function addres($d){
 
 
-	  	$this->db->query("INSERT INTO historialsatelite VALUES($idproceso,$idtrabajador,sysdate())");
+	  	//return $l=sizeof($idproceso);
+	  	//for ($i=0; $i < sizeof($idproceso); $i++) { 
+	  		$this->db->query($d);
+	  	//}
+
+
+
+	  	
 
 
 	  }
