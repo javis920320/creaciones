@@ -300,7 +300,7 @@ public  function consultaseguimiento($param){
 
 	    $this->db->select('p.idpedido,tp.nomtipoprod,p.factura,p.facultad,p.cantidad,p.talla,p.descripcion,pe.nombres,p.fecha_ingreso,p.fentrega,p.print');
 		$this->db->from('pedido p');
-		$this->db->join('cliente c','c.idpersona=p.idcliente');
+		$this->db->join('cliente c','c.idcliente=p.idcliente');
 		$this->db->join('tipo_producto tp','tp.idtipoprod=p.idtipoprod');
 		$this->db->join('persona pe','pe.idpersona=c.idpersona');
 		$this->db->where('p.estado',$dato['estado']);
