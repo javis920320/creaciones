@@ -134,3 +134,24 @@ function activarprint(){
 	
 	
 }
+
+
+ function eliminaPedido(){
+
+ 	 var codpedido= $('#codpedido').val();
+ 	 //alert(codpedido);
+
+
+ 	 $.ajax({
+ 	 	url:baseurl+'Ctaller/Eliminarpedido',
+ 	 	type:'POST',
+ 	 	data:{idpedido:codpedido},
+ 	 	async:false,
+ 	 	success:function(data){
+ 	 		alert(data);
+ 	 		$('#tblproductosen').DataTable().ajax.reload();
+
+ 	 	}
+
+ 	 });
+ }

@@ -34,7 +34,7 @@
 						} else {
 							$this->load->view('layou/header',$nombres);
 							$this->load->view('layou/menu',$nombres);
-							$this->load->view('viewenvios');
+							$this->load->view('viewenvios',$nombres);
 							$this->load->view('layou/footer');
 							
 						}
@@ -98,4 +98,6 @@ descricion: este proceso realiza el cambio de estado el pedido
  	 
 
 
- } ?>
+ } 
+
+ ?>
