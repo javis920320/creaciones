@@ -30,6 +30,16 @@ class Ctrabajos extends CI_Controller
 
 
 	}
+
+
+	public function Sumeprecio(){
+		$datos['idper']=$this->input->post('idper');
+		$datos['user']=$this->input->post('user');
+
+		$res=$this->Mtrabajos->sumavalor($datos);
+	echo json_encode($res);
+}
+	
 	
 	public  function reporteperiodos(){
 		

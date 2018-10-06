@@ -23,6 +23,8 @@
 			</div>
 	
 		</div>
+
+		<label>Total:$ <span id="pre" class="text-primary"></span></label>
 	           <input id='trabajador' name='trabajador' hidden value="<?php echo$idpersona;?>">
 		<br><br><br>
 		<table id="tblresperiodos" class="table table-bordered table-striped">

@@ -11,6 +11,20 @@ class Mtrabajos extends CI_Model
 
 	}
 
+	public function sumavalor($datos){
+
+		$query=$this->db->query("select sum(precio)as precio  from periodo x,proceso pro
+                         inner join trabajador t on t.idtrabajador = pro.idtrabajador
+                         where t.idtrabajador in(select y.idtrabajador from trabajador y   where y.idpersona=".$datos['user'].") and  x.idperiodo=".$datos['idper']."  and pro.fecha between x.fechai and x.fechaf   ");
+
+			foreach ($query->result() as $row)
+		{
+        	return $row->precio;
+        
+		}
+
+	}
+
 
 
 	 public  function generanomina(){

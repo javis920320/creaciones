@@ -138,6 +138,15 @@ $('#periodo').on('change',function(){
 		 var idper=$('#periodo').val();
 		 user=$('#trabajador').val();
 		 //alert(user);
+		 $.ajax({
+		 	url:baseurl+'Ctrabajos/Sumeprecio',
+		 	type:'POST',
+		 	data:{idper:idper,user:user},
+		 	success:function(data){
+		 		$("#pre").html(data)
+
+		 	}
+		 });
 		 
 		 
 		 
