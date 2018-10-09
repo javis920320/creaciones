@@ -99,8 +99,18 @@
           <div class="box">
             <div class="box-header">
               <h3 class="box-title" class='text-primary'> SATELITES CREACIONES </h3><br><br>
+
+
+<div class="panel panel-primary">
+    <div class="panel-heading">Panel de tareas</div>
+    <div class="panel-body">
+      <button class=" btn btn-primary" onclick="cobroseleccion();"><span class="glyphicon glyphicon-exclamation-sign"></span> Cobrar Marcados</button>
+    </div>
+   
+  </div>
+
 			  
-			  <div id='saldo'>33</div>
+			  <div id='saldo'></div>
               
 <button id='pdf' class='btn '  data-toggle="modal" data-target="#asignar"><span class='glyphicon glyphicon-sum'></span>  Asignar proceso</button>
 

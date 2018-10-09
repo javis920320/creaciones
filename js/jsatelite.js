@@ -52,7 +52,7 @@ return '<span class="pull-right"> $ ' +
 									
 									
                        +
-                      '</span>';
+                      '</span><input  type="checkbox" name="chek_sel" id="chek_sel" value="'+row.idproceso+'">';
 
 
 
@@ -578,6 +578,33 @@ $.ajax({
  "order":[[0,"desc"]],
 
 		});	
+
+
+
+  function cobroseleccion(){
+  	var j = [];
+  	 var j=$("input[name*='chek_sel']").val();
+
+  	 var i=0;
+		  selecciones =  new Array();
+		$("input[name*='chek_sel']").each(function(){
+    var chk = $(this);
+    if(chk.prop('checked')){
+     //alert(chk.val());
+	 
+	  selecciones[i]=chk.val();
+
+	  i++;
+	  
+  }
+  
+  
+  
+});
+
+console.log(selecciones);
+  	
+  }
 
 
 
