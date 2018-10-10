@@ -93,6 +93,26 @@ public  function lstsatelite(){
 }
 
 
+public  function consultasatelite(){
+//creamos la  funcion para llamar desde  cualquier lado  cualquier lista de satelites
+	$datos['idpersona']=$this->input->post('idpersona');
+	$datos['estado']=$this->input->post('estado');
+	$res=$this->Madmin->consultasatelite($datos);
+	echo json_encode($res);
+}
+
+
+public  function vistalistacobro(){
+$nombres['nombres']=$this->session->userdata('nombres');
+	 		$idpersona['idpersona']=$this->session->userdata('id');
+
+	 	$this->load->view('layou/header',$nombres);
+	 	$this->load->view('layou/menu',$nombres);
+	 	$this->load->view('vlistacobro',$idpersona);
+	 	$this->load->view('layou/footer',$nombres);
+
+}
+
 
 
 public  function asignarsatelite(){

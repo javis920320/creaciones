@@ -1,7 +1,9 @@
 lstsatelites();
+
 //alert($('#trabajador').val());
   var persona=$('#trabajador').val();
  // alert(persona);
+ cargarlistacobro();
 
 
 lstprocesosatelite(persona);
@@ -610,6 +612,87 @@ $.ajax({
   	
   }
 
+
+
+ function cargarlistacobro(persona ){
+
+	var persona=$('#trabajador').val();
+	alert(persona);
+	
+	
+	
+	 $('#tbllistacobro').DataTable({
+			'paging':true,
+			'info':true,
+			'filter':true,
+			'destroy':true,
+			'stateSave':true,
+
+			'ajax':{
+
+				"url":baseurl+"Csatelite/consultasatelite",
+				'data':{idpersona:persona,estado:4},
+				'type':'POST',
+				dataSrc:''
+			},
+
+			'columns':[
+			{data: 'idproceso','sClass':'dt-body-center'},
+			{data: 'factura','sClass':'dt-body-center'},
+			//{data:'nomtipoprod'},
+			{data:'nomprod'},
+			{data:'facultad'},
+			{data:'cantidad'},
+			{data:'talla'},
+			{data:'descripcion'},
+			//{data:'nombres'},
+			{data:'fecha_ingreso'},
+			{data:'estado'},
+
+			{"orderable":true,
+			render:function(data,type,row){
+
+
+
+return '<span class="pull-right"> $ ' +
+									//'<input type="radio" class="idpedido" onchange="validarc();"name="idpedido" value='+row.idpedido+' required="true">'
+									row.precio
+									
+									
+                       +
+                      '</span><input  type="checkbox" name="chek_sel" id="chek_sel" value="'+row.idproceso+'">';
+
+
+
+					//return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" data-toggle="modal" data-target="#myModal"><i class=" fa fa-edit"></i></a
+					//return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" title="Enviar informacion" data-toggle="modal" data-target="#estado" onClick="estadopedido(\''+row.idpedido+'\',\''+row.nombres+'\',\''+row.telefono+'\');"><i class=" glyphicon glyphicon-plane"></i><span> Enviar</span></a>';
+					}
+			}
+
+
+			],
+			"columnDefs": [
+        {
+          "targets": [8], 
+          "data": "estado", 
+          "render": function(data, type, row) {
+            
+            if (data == 4) {
+              return "<span class='label label-warning'>Pendiente Pago</span>";
+            }else if (data == 3) {
+              return "<span class='label label-success'>Producto Entregado</span>";
+            }else if (data == 2) {
+              return "<span class='label label-danger'>En cortes</span>";
+            }
+              
+          }
+        }
+         ],
+
+ "order":[[8]],
+
+		});	
+ }
 
 
 
