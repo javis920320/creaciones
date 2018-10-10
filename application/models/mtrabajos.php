@@ -69,14 +69,15 @@ where u.tipo=2 and per.estado=1 group by t.idtrabajador,ad.idadelanto;");
 	
 
 
-	/* EN ESTA  PARTE  GENERAMOS LOS RESUMENES DE LOS  ANTERIORES PERIODOS  DE SALDOS CANCELADOS  */
+	/* EN ESTA  PARTE  GENERAMOS LOS RESUMENES DE LOS  ANTERIORES PERIODOS  DE SALDOS CANCELADOS A OPERARIOS DE TALLER */
 	  public  function  periodosaldo ($param){
 
-	$query=$this->db->query("select pe.nombres as nombres,sum(pr.cantidad)as 		cantidad,sum(pr.precio)as saldo,x.fechai as fechai,x.fechaf as fechaf
+	$query=$this->db->query("select pe.nombres as nombres,sum(pr.cantidad)as cantidad,sum(pr.precio)as saldo,x.fechai as fechai,x.fechaf as fechaf
   from periodo x,proceso pr
   inner join trabajador tr on tr.idtrabajador = pr.idtrabajador
   inner join persona pe on pe.idpersona = tr.idpersona
-  where x. idperiodo=".$param['idperiodo']." and  pr.fecha between x.fechai and x.fechaf group by tr.idtrabajador");
+  inner join usuarios u on u.idpersona = pe.idpersona
+  where u.tipo in(3,2) and x. idperiodo=".$param['idperiodo']." and  pr.fecha between x.fechai and x.fechaf group by tr.idtrabajador");
 
        
 		return $query->result();
