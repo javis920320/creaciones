@@ -17,7 +17,7 @@
 
   
   <!-- cambio estado en confeccion -->
-  <span>hghee</span>
+  <span></span>
 
 
 <div class="col-xs-12 col-md-12">
@@ -25,7 +25,7 @@
             <div class="box-header">
               <h3 class="box-title" class='text-primary'>PRODUCTOS EN PROCESO</h3><br><br>
               
-<button id='pdf' class='btn btn-danger'><span class='glyphicon glyphicon-print'></span>  Crear Pdf</button>
+<!--<button id='pdf' class='btn btn-danger'><span class='glyphicon glyphicon-print'></span>  Crear Pdf</button>-->
 
 <button id='lista' class='btn btn-danger'><span class='glyphicon glyphicon-print'></span> Vista preliminar</button>
             </div>

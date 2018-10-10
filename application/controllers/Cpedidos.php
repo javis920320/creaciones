@@ -92,6 +92,8 @@ class Cpedidos extends CI_Controller
 	 	$param['descripcion']=$this->input->post('descripcion_edit');
 	 	$param['idpedido']=$this->input->post('idpersonaedit');
 	 		$param['fentregae']=$this->input->post('fentregae');
+	 		$param['etprod']=$this->input->post('etprod');
+	 		
 	 	
 
 	 	if($this->Mpedidos->updatepedidoid($param)){

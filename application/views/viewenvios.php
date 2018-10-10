@@ -32,9 +32,13 @@
 		<label for='editarfacul'>Facultad</label>
 		<input type='text' class='form-control' name='facultadedit'id='editarfacul'>
 		<label for='editarcant'>Cantidad</label>
-
-		
+	
 		<input type='number' class='form-control' name='editcantidad'id='editarcant'>
+
+<label for="etprod">Tipo Producto</label>
+    <br>
+     <select name="etprod" id="etprod" required="" class="form-control"></select>
+
 		<label for='editartalla'>Talla</label>
 				<select name="tallaedit" id="editartalla" class="form-control ">
 					<option value="0">0</option>
@@ -138,14 +142,26 @@
             <div class="box-header">
               <h3 class="box-title" class='text-primary'>PRODUCTOS EN PROCESO</h3><br><br>
               
-<button id='pdf' class='btn btn-danger' onclick='crearfichas();'><span class='glyphicon glyphicon-print'></span>  Crear Pdf</button>
+<!--<button id='pdf' class='btn btn-danger' onclick='crearfichas();'><span class='glyphicon glyphicon-print'></span>  Crear Pdf</button>-->
 <!--<button id='pdf' class='btn btn-primary' onclick='imprimirsel();'><span class='glyphicon glyphicon-print'></span>  Imprimir sel</button>-->
 
-<button id='lista' class='btn btn-danger'><span class='glyphicon glyphicon-print'></span> Vista preliminar</button>
-<button id='btnenv' class='btn btn-primary'  onclick='generarenvio();'><span class='glyphicon glyphicon-resize-small'></span> Enviar seleccion</button>
-<button id='activarprint' class='btn btn-success'  onclick='activarprint();'><span class='glyphicon glyphicon-ok-circle'></span> Activar impresion</button>
+<div class="panel panel-primary">
+          <div class="panel-heading"><strong>Panel Configuracion</strong></div>
+          <div class="panel-body">
 
-<label for='mtodo'>Seleccionar todo    </label><input type='checkbox' id='mtodo' name='mtodo' class='' value='true' >
+
+
+            <button id='lista' class='btn btn-info'><span class='glyphicon glyphicon-print'></span> Vista preliminar</button>
+              <button id='btnenv' class='btn btn-primary'  onclick='generarenvio();'><span class='glyphicon glyphicon-resize-small'></span> Enviar seleccion</button>
+              <button id='activarprint' class='btn btn-success'  onclick='activarprint();'><span class='glyphicon glyphicon-ok-circle'></span> Activar impresion</button>
+              <button id='desa' class='btn btn-danger'  onclick='pasar();'><span class='glyphicon glyphicon-ok-circle'></span> Desactivar impresion</button>
+
+              <label for='mtodo'>Seleccionar todo    </label><input type='checkbox' id='mtodo' name='mtodo' class='' value='true' >
+            </div>
+          </div>
+      
+
+
 
 
             </div>
