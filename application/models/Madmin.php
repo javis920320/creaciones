@@ -18,6 +18,27 @@ public function tipoprecio($res,$tpv){
 
 }
 
+ public  function cambiolista($array){
+
+
+ 	$d=count($array);
+ 	$x=2;
+	$datos= array('estado'=>4);
+
+	$res=0;
+
+
+		for ($i=0; $i <$d ; $i++) { 
+			$this->db->where('idproceso',$array[$i]);
+			$this->db->where('estado',$x);
+			$this->db->update('proceso',$datos);
+			$res=$res+$this->db->affected_rows();
+		}
+
+	return $res;
+ }
+
+
 	public function lstadel()
 	{
 		

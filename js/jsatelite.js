@@ -582,27 +582,31 @@ $.ajax({
 
 
   function cobroseleccion(){
-  	var j = [];
-  	 var j=$("input[name*='chek_sel']").val();
-
+  
   	 var i=0;
 		  selecciones =  new Array();
 		$("input[name*='chek_sel']").each(function(){
-    var chk = $(this);
-    if(chk.prop('checked')){
-     //alert(chk.val());
-	 
-	  selecciones[i]=chk.val();
-
-	  i++;
+    			var chk = $(this);
+    			if(chk.prop('checked')){
+     				selecciones[i]=chk.val();
+			i++;
 	  
-  }
+  					}
   
   
   
-});
+				});
 
-console.log(selecciones);
+	$.ajax({
+          type: "POST",
+          url: baseurl+'Csatelite/cambiolista',
+          data: {'array':JSON.stringify(selecciones)},//capturo array     
+          success: function(objView){
+			  alert(objView);
+			  $('#tblsatelite').DataTable().ajax.reload();
+
+				}
+			});
   	
   }
 

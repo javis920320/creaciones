@@ -315,6 +315,17 @@ public  function pruebaf(){
 }
 
 
+public  function cambiolista(){
+
+	 $data = json_decode(stripslashes($_POST['array']));
+
+		  	$res=$this->Madmin->cambiolista($data);
+
+		  	echo $res;
+
+}
+
+
 
 }
 
