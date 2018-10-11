@@ -44,30 +44,19 @@ $nombres['nombres']=$this->session->userdata('nombres');
 
 public  function listasatelites(){
 
-
-	
-
 	$res=$this->Madmin->listasatelites();
 
 	 echo json_encode($res);
 
-
-
-
-
 }
+
 
 public  function lstoptaller(){
 
 
-	
-
 	$res=$this->Madmin->listaoperarios();
 
 	 echo json_encode($res);
-
-
-
 
 
 }
@@ -112,6 +101,19 @@ $nombres['nombres']=$this->session->userdata('nombres');
 	 	$this->load->view('layou/footer',$nombres);
 
 }
+
+
+public function vistaprendascobradas(){
+
+	$nombres['nombres']=$this->session->userdata('nombres');
+	 		$idpersona['idpersona']=$this->session->userdata('id');
+
+	 	$this->load->view('layou/header',$nombres);
+	 	$this->load->view('layou/menu',$nombres);
+	 	$this->load->view('vprendaspag',$idpersona);
+	 	$this->load->view('layou/footer',$nombres);
+}
+
 
 
 

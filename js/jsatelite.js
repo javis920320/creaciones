@@ -617,7 +617,8 @@ $.ajax({
  function cargarlistacobro(persona ){
 
 	var persona=$('#trabajador').val();
-	alert(persona);
+	var estado=$('#estado').val();
+	//alert(persona);
 	
 	
 	
@@ -631,7 +632,7 @@ $.ajax({
 			'ajax':{
 
 				"url":baseurl+"Csatelite/consultasatelite",
-				'data':{idpersona:persona,estado:4},
+				'data':{idpersona:persona,estado:estado},
 				'type':'POST',
 				dataSrc:''
 			},
@@ -660,7 +661,7 @@ return '<span class="pull-right"> $ ' +
 									
 									
                        +
-                      '</span><input  type="checkbox" name="chek_sel" id="chek_sel" value="'+row.idproceso+'">';
+                      '</span>';
 
 
 
@@ -678,7 +679,7 @@ return '<span class="pull-right"> $ ' +
           "render": function(data, type, row) {
             
             if (data == 4) {
-              return "<span class='label label-warning'>Pendiente Pago</span>";
+              return "<span class='label label-warning'>En lista de Cobro</span>";
             }else if (data == 3) {
               return "<span class='label label-success'>Producto Entregado</span>";
             }else if (data == 2) {

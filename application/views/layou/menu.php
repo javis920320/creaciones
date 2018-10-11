@@ -224,6 +224,28 @@
         <?php  }?>
 
 
+
+        <?php  if($this->session->userdata('tipo')==4) { ?>
+
+        <li class="treeview">
+          <a href="#">
+            <i class="glyphicon glyphicon-user"></i> <span>Panel</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="<?php echo base_url();?>Csatelite/"><i class="fa fa-circle-o"></i> Ingresar </a></li>
+            <li><a href="<?php echo base_url();?>Csatelite/vistalistacobro/"><i class="fa fa-circle-o"></i> Lista de cobro </a></li>
+            <li><a href="<?php echo base_url();?>Csatelite/vistaprendascobradas/"><i class="fa fa-circle-o"></i> Productos Cobrados </a></li>
+
+            
+          </ul>
+        </li> 
+        
+        <?php  }?>
+
+
         <?php  if( $this->session->userdata('tipo')==5 ) { ?>
 
          <li class=" treeview active">
