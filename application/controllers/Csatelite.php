@@ -119,43 +119,42 @@ public function vistaprendascobradas(){
 
 public  function asignarsatelite(){
 
-
-
-
+	//VARIABLE RECIBIDAS POR METODO POST
 	$param['idpedido']=$this->input->post('idpedido');
 	$param['cantidad']=$this->input->post('cantidad');
 	
 	
-	
-	$comp=$this->Madmin->calculo($param);
-	if($comp==null){
-		$comp=$this->Madmin->consultadis($param);
-		$disp=$comp;
+		// CALCULA  LA CANTIDAD  DISPONIBLE
+		$comp=$this->Madmin->calculo($param);
+
+			if($comp==null)
+			{
+				//SI NO ENCUENTRA NINGUN RESULTADO DEVOLVEMOS EL TOTAL  DE LA CANTIDAD DEL PEDIDO
+				$comp=$this->Madmin->consultadis($param);
+				$disp=$comp;
 		
-	}else{
-		
-		$disp=$comp;
-		
-	}
-	 //echo$disp;
-	
-		if($disp<$param['cantidad']){
-				//return 0;
-				echo'Verifica la cantidad disponible';
-				
 			}else{
-		//echo'sise puesde';
+
+		//SI LA  FUNCION CALCULO ENCUENTRA  RESULTADOS  LOS ALMACENAMOS EN DIS QUE SERA LA  CANTIDAD DISPONIBLE
+				$disp=$comp;
 		
-	 	$param['idprod']=$this->input->post('productos');
-	 	$param['idpersona']=$this->input->post('trabajador');
-	 	$param['idtrabajador']=$this->Madmin->idtrabajador($param);	 	
-	 	$param['fecha']=date ("Y-m-d");
-	 	$preciob=$this->Madmin->presiobordados($param);
-	 	$param['preciob']=$preciob*$param['cantidad'];
-	 	$presate=$this->Madmin->preciosatelite($param);
-	 	$preadmin=$this->Madmin->preadmin($param);
-	 	$param['preadmin']= $preadmin*$param['cantidad'];
-	 	$param['preciosatelite']=$presate*$param['cantidad'];
+			}
+	 
+	
+			if($disp<$param['cantidad']){
+				echo'Verifica la cantidad disponible';
+			}else{		
+		
+			 	$param['idprod']=$this->input->post('productos');
+			 	$param['idpersona']=$this->input->post('trabajador');
+			 	$param['idtrabajador']=$this->Madmin->idtrabajador($param);	 	
+			 	$param['fecha']=date ("Y-m-d");
+			 	$preciob=$this->Madmin->presiobordados($param);
+			 	$param['preciob']=$preciob*$param['cantidad'];
+			 	$presate=$this->Madmin->preciosatelite($param);
+			 	$preadmin=$this->Madmin->preadmin($param);
+			 	$param['preadmin']= $preadmin*$param['cantidad'];
+			 	$param['preciosatelite']=$presate*$param['cantidad'];
 
 		$res=$this->Madmin->asignarsatelite($param);
 
@@ -181,51 +180,59 @@ public function aplicarvalorcero(){
 
 	$param['idpedido']=$this->input->post('idpedido');
 	$param['cantidad']=$this->input->post('cantidad');
+	$param['tipopago']=$this->input->post('tipopago');
 	
-	
-	
-	$comp=$this->Madmin->calculo($param);
-	if($comp==null){
-		$comp=$this->Madmin->consultadis($param);
-		$disp=$comp;
+			$comp=$this->Madmin->calculo($param);
+
+			if($comp==null){
+				$comp=$this->Madmin->consultadis($param);
+				$disp=$comp;
 		
-	}else{
-		
-		$disp=$comp;
-		
-	}
-	 //echo$disp;
-	
-		if($disp<$param['cantidad']){
-				//return 0;
-				echo'Verifica la cantidad disponible';
-				
 			}else{
-		//echo'sise puesde';
 		
-	 	$param['idprod']=$this->input->post('productos');
-	 	//$param['idpersona']=$this->input->post('trabajador');
-	 	$param['idtrabajador']=$this->input->post('trabajador');//$this->Madmin->idtrabajador($param);	 	
-	 	$param['fecha']=date ("Y-m-d");
-	 	$preciob=$this->Madmin->presiobordados($param);
-	 	$param['preciob']=$preciob*$param['cantidad'];
-	 	$presate=$this->Madmin->preciosatelite($param);
-	 	$preadmin=$this->Madmin->preadmin($param);
-	 	$param['preadmin']= 0;//$preadmin*$param['cantidad'];
-	 	$param['preciosatelite']=0;//$presate*$param['cantidad'];
+				$disp=$comp;
+		
+			}
 
-		$res=$this->Madmin->valorcero($param);
-
-
-		if ($res>=1) {
-			$o=$this->Madmin->seguimiento($param);
-			echo'Registro Asignado';
-			# code...
-		}else{
-			echo'No se a podido Asisgnar el producto';
-		}
 	 	
-		}
+			if($disp<$param['cantidad']){
+				echo'Verifica la cantidad disponible';
+			}else{
+		
+			 	$param['idprod']=$this->input->post('productos');
+			 	$param['idtrabajador']=$this->input->post('trabajador'); 	
+			 	$param['fecha']=date ("Y-m-d");
+			 	$preciob=$this->Madmin->presiobordados($param);
+			 	$param['preciob']=$preciob*$param['cantidad'];
+			 	$presate=$this->Madmin->preciosatelite($param);
+			 	$preadmin=$this->Madmin->preadmin($param);
+
+
+			 	 if($param['tipopago']==0){
+
+			 	 	$param['preadmin']= 0;
+			 		$param['preciosatelite']=0;
+					$res=$this->Madmin->valorcero($param);
+
+			 	 }else{
+
+			 	 	$param['preadmin']= $preadmin*$param['cantidad'];
+			 		$param['preciosatelite']=$presate*$param['cantidad'];
+					$res=$this->Madmin->asignarsatelite($param);
+
+			 	 }
+			 	
+
+
+				if ($res>=1) {
+					$o=$this->Madmin->seguimiento($param);
+					echo'Registro Asignado';
+			
+				}else{
+					echo'No se a podido Asisgnar el producto';
+				}
+	 	
+			}
 
 }
 

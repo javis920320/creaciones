@@ -159,11 +159,11 @@ return '<span class="pull-right"> $ ' +
           "render": function(data, type, row) {
             
             if (data == 2) {
-              return "<span class='label label-warning'>Pendiente Pago</span>";
+              return "<span class='label label-warning'>Pendiente Entrega</span>";
             }else if (data == 3) {
               return "<span class='label label-success'>Producto Entregado</span>";
-            }else if (data == 2) {
-              return "<span class='label label-danger'>En cortes</span>";
+            }else if (data == 4) {
+              return "<span class='label label-danger'>En Lista de cobro</span>";
             }
               
           }

@@ -385,7 +385,7 @@ function registroproceso(){
 
 	var dis=$('#disponibles').val();
 	var cantidad=$('#cantidad').val();
-	
+	 var trabajador=$('#trabajador').val();
 	diponibles=parseInt(dis);
 	
 	
@@ -395,11 +395,17 @@ function registroproceso(){
 
 	 	alert('No hay productos disponibles');
 
+	 }else if(trabajador==0){
+	 	alert("SELECCIONA EL SATELITE PARA ASIGNAR");
+
 	 }else{
 	
 	    var productos=$('#productos').val();
 	    var idpedido=$('input:radio[name=idpedido]:checked').val();
-	    var trabajador=$('#trabajador').val();
+	   
+	    var tipopago=$('input:radio[name=optradio]:checked').val();
+
+	  
 
 
 	
@@ -407,28 +413,19 @@ function registroproceso(){
 		url:baseurl+'Csatelite/aplicarvalorcero',
 		type:'POST',
 		async:false,
-		data:{cantidad:cantidad,productos:productos,idpedido:idpedido,trabajador:trabajador},
+		data:{cantidad:cantidad,productos:productos,idpedido:idpedido,trabajador:trabajador,tipopago:tipopago},
 		success:function(data){
 				alert(data);
-			//$('#tblsatelite').data.reload();
+			
 			$('#tblsatelite').DataTable().ajax.reload();
 			validarc();
 		
-		
-		/*if(data==0){
-			
-		alert("Verifica los productos Disponibles");
-		}else{
-			$('#tblsatelite').data.reload();
-			validarc();
-			alert(data);
-			
-			
-		}*/
+	
 
 	}
 
 	});
+
 	}
 
 //});
