@@ -389,7 +389,7 @@ left join bordadosprendas bp on bp.idprendas=p.idprendas GROUP by p.idprendas");
 
   public function lstvalores(){
 
-  	$query=$this->db->query("select sum(pr.cantidad) as cantidad,sum(pr.precio) as vsatel,nombres
+  	$query=$this->db->query("select sum(pr.cantidad) as cantidad,sum(pr.precio) as vsatel,nombres,t.idtrabajador
  from proceso pr 
  inner join trabajador t on t.idtrabajador = pr.idtrabajador
  inner join persona pe on pe.idpersona = t.idpersona
@@ -822,7 +822,7 @@ public  function idtrabajador($param){
 
 	  public  function ressatelite($idtrabajador){
 
-	  	$query=$this->db->query("select idproceso,idtrabajador from proceso where estado=2 and idtrabajador=".$idtrabajador);
+	  	$query=$this->db->query("select idproceso from proceso where estado=4 and idtrabajador=".$idtrabajador);
 
 
 	  	return $query->result();
