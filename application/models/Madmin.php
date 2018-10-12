@@ -635,7 +635,7 @@ public  function listaoperarios(){
 	$query=$this->db->query("select *from trabajador t
 inner join persona p on t.idpersona = p.idpersona
 inner join usuarios  u on u.idpersona = t.idpersona
-where u.tipo=2 and u.estado=1");
+where u.tipo in(2,3) and u.estado=1");
 	return $query->result();
 
 
