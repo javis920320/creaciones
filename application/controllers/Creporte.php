@@ -15,6 +15,9 @@ $param['fechai']=$this->input->get('fechai');
 $param['fechaf']=$this->input->get('fechaf');
 $res=$this->Mtrabajos->tblexcel($param);
 $title=$this->Mtrabajos->tbltitle($param);
+//$titlev=$this->Mtrabajos->titleresumentotal();
+$datosres=$this->Mtrabajos->resumentotal();
+
 
 
 
@@ -58,22 +61,46 @@ $this->excel->getActiveSheet()->setCellValue('E1', 'Precio');*/
      $ancho=$this->excel->getActiveSheet()->getHighestRow();
      $r=$ancho+5;
 
+      $col = 0;
+    foreach ($titlev as $field2)
+    {
+       $this->excel->getActiveSheet()->setCellValueByColumnAndRow($col, $r, $field2);
+      
+        $col++;
+    }
+$rd=$ancho+6;
+
+foreach($datosres as $data)
+    {
+        $col = 0;
+        foreach ($titlev as $field2)
+        {
+            $this->excel->getActiveSheet()->setCellValueByColumnAndRow($col, $rd, $data->$field2);
+
+
+            $col++;
+        }
+
+        $rd++;
+    }
+
+
     // $S->setCellValueExplicit('A'.$r, $row_data['vclaimed']);
 
- $this->excel->getActiveSheet()->setCellValue('A'.$r,"VALOR CONFECCION");
-  $this->excel->getActiveSheet()->setCellValue('B'.$r,"VALOR BORDADO");
-  $this->excel->getActiveSheet()->setCellValue('C'.$r,"VALOR TOTAL");
+ //$this->excel->getActiveSheet()->setCellValue('A'.$r,"VALOR CONFECCION");
+  //$this->excel->getActiveSheet()->setCellValue('B'.$r,"VALOR BORDADO");
+  //$this->excel->getActiveSheet()->setCellValue('C'.$r,"VALOR TOTAL");
 
 
 
 
   //$formula = "=SUM(G2:G".$ancho.")";
-  $x=$ancho+6;
+ /* $x=$ancho+6;
   $resp=$this->Mtrabajos->saldo();
   foreach ($resp as $key ) {
       # code...
     $this->excel->getActiveSheet()->setCellValue("A".$x,$key->prep);
-  }
+  }*/
 
 
 
@@ -88,7 +115,7 @@ $this->excel->getActiveSheet()->getStyle('B1')->getFont()->setSize(8);*/
 //$this->excel->getActiveSheet()->getStyle('A1')->getFont()->setBold(true);
 //$this->excel->getActiveSheet()->getStyle('B1')->getFont()->setBold(true);
 //merge cell A1 until D1
-$this->excel->getActiveSheet()->getStyle('A1:K1')->getFont()->setBold(true);
+$this->excel->getActiveSheet()->getStyle('A1:M1')->getFont()->setBold(true);
 $this->excel->getActiveSheet()->mergeCells('A1:A1');
 //set aligment to center for that merged cell (A1 to D1)
 
@@ -104,9 +131,10 @@ $this->excel->getActiveSheet()->mergeCells('A1:A1');
  $this->excel->getActiveSheet()->getColumnDimension('I')->setWidth(10);
  $this->excel->getActiveSheet()->getColumnDimension('J')->setWidth(10);
  $this->excel->getActiveSheet()->getColumnDimension('K')->setWidth(50);
+ $this->excel->getActiveSheet()->getColumnDimension('L')->setWidth(50);
 
   $this->excel->getActiveSheet()
-        ->getStyle('A1:K1')
+        ->getStyle('A1:L1')
         ->getFill()
         ->setFillType(PHPExcel_Style_Fill::FILL_SOLID)
         ->getStartColor()
