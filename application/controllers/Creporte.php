@@ -4,11 +4,6 @@ class Creporte  extends CI_Controller
 {
 	
 
-
-
- 
-
-
 	public  function index(){
 
 //load our new PHPExcel library
@@ -39,6 +34,7 @@ $this->excel->getActiveSheet()->setCellValue('E1', 'Precio');*/
     foreach ($title as $field)
     {
        $this->excel->getActiveSheet()->setCellValueByColumnAndRow($col, 1, $field);
+      
         $col++;
     }
 
@@ -50,11 +46,39 @@ $this->excel->getActiveSheet()->setCellValue('E1', 'Precio');*/
         foreach ($title as $field)
         {
             $this->excel->getActiveSheet()->setCellValueByColumnAndRow($col, $row, $data->$field);
+
+
             $col++;
         }
 
         $row++;
     }
+   
+
+     $ancho=$this->excel->getActiveSheet()->getHighestRow();
+     $r=$ancho+5;
+
+    // $S->setCellValueExplicit('A'.$r, $row_data['vclaimed']);
+
+ $this->excel->getActiveSheet()->setCellValue('A'.$r,"VALOR CONFECCION");
+  $this->excel->getActiveSheet()->setCellValue('B'.$r,"VALOR BORDADO");
+  $this->excel->getActiveSheet()->setCellValue('C'.$r,"VALOR TOTAL");
+
+
+
+
+  //$formula = "=SUM(G2:G".$ancho.")";
+  $x=$ancho+6;
+  $resp=$this->Mtrabajos->saldo();
+  foreach ($resp as $key ) {
+      # code...
+    $this->excel->getActiveSheet()->setCellValue("A".$x,$key->prep);
+  }
+
+
+
+
+
  
 
 //change the font size
@@ -64,8 +88,32 @@ $this->excel->getActiveSheet()->getStyle('B1')->getFont()->setSize(8);*/
 //$this->excel->getActiveSheet()->getStyle('A1')->getFont()->setBold(true);
 //$this->excel->getActiveSheet()->getStyle('B1')->getFont()->setBold(true);
 //merge cell A1 until D1
+$this->excel->getActiveSheet()->getStyle('A1:K1')->getFont()->setBold(true);
 $this->excel->getActiveSheet()->mergeCells('A1:A1');
 //set aligment to center for that merged cell (A1 to D1)
+
+ $this->excel->getActiveSheet()->getRowDimension('1')->setRowHeight(30);
+ $this->excel->getActiveSheet()->getColumnDimension('A')->setWidth(10);
+ $this->excel->getActiveSheet()->getColumnDimension('B')->setWidth(10);
+ $this->excel->getActiveSheet()->getColumnDimension('C')->setWidth(50);
+ $this->excel->getActiveSheet()->getColumnDimension('D')->setWidth(50);
+ $this->excel->getActiveSheet()->getColumnDimension('E')->setWidth(50);
+ $this->excel->getActiveSheet()->getColumnDimension('F')->setWidth(10);
+ $this->excel->getActiveSheet()->getColumnDimension('G')->setWidth(10);
+ $this->excel->getActiveSheet()->getColumnDimension('H')->setWidth(10);
+ $this->excel->getActiveSheet()->getColumnDimension('I')->setWidth(10);
+ $this->excel->getActiveSheet()->getColumnDimension('J')->setWidth(10);
+ $this->excel->getActiveSheet()->getColumnDimension('K')->setWidth(50);
+
+  $this->excel->getActiveSheet()
+        ->getStyle('A1:K1')
+        ->getFill()
+        ->setFillType(PHPExcel_Style_Fill::FILL_SOLID)
+        ->getStartColor()
+        ->setRGB('#7400dd');
+        //$e=$this->excel->getHighestRow();
+
+
 $this->excel->getActiveSheet()->getStyle('A1')->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
  
 $filename='REPORTE CREACIONES.xls'; //save our workbook as this file name

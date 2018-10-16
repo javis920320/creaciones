@@ -98,6 +98,17 @@ where u.tipo=2 and per.estado=1 group by t.idtrabajador,ad.idadelanto;");
 
 	  }
 
+	  public  function saldo(){
+
+
+     	$query=$this->db->query('select sum(bp.precio*pr.cantidad)as saldot,sum(bp.cantidad) as cb
+from prendas pr
+inner join bordadosprendas bp on bp.idprendas = pr.idprendas
+where pr.estado=1');
+
+     	return$query->result();
+     }
+
 	  
 
 
@@ -439,7 +450,7 @@ public  function tblexcel($param){
 
 
 
-		$this->db->select('pr.idproceso as PROCESO,pd.factura AS FACTURA,pd.facultad  AS FACULTAD,p.nomprod AS PRODUCTO,pd.descripcion AS DESCRIPCION,pr.cantidad AS CANTIDAD,pr.precio1 AS PRECIO,(sum(bp.cantidad)*pr.cantidad) as BORDADOS,prebordado AS PREBORDADO,pr.fecha AS FECHA,pe.nombres AS CLIENTE');
+		/*$this->db->select('pr.idproceso as PROCESO,pd.factura AS FACTURA,pd.facultad  AS FACULTAD,p.nomprod AS PRODUCTO,pd.descripcion AS DESCRIPCION,pr.cantidad AS CANTIDAD,pr.precio1 AS PRECIO,(sum(bp.cantidad)*pr.cantidad) as BORDADOS,prebordado AS PREBORDADO,pr.fecha AS FECHA,pe.nombres AS CLIENTE');
 		$this->db->from('periodo x ,proceso pr');
 		$this->db->join('producto p','p.id_prod=pr.id_prod');
 		$this->db->join ('bordadosproductos bp','p.id_prod = bp.id_prod');
@@ -452,12 +463,22 @@ public  function tblexcel($param){
 		
 		$this->db->where('pr.fecha>=x.fechai');
 		$this->db->where('pr.fecha<=x.fechaf');
-		$this->db->group_by('pr.idproceso,bp.id_prod');
+		$this->db->group_by('pr.idproceso,bp.id_prod');*/
+		$query=$this->db->query("select pr.idproceso as PROCESO,pd.factura AS FACTURA,pd.facultad  AS FACULTAD,p.nomprod AS PRODUCTO,pd.descripcion AS DESCRIPCION,pr.cantidad AS CANTIDAD,pr.precio1 AS PRECIO,(sum(bp.cantidad)*pr.cantidad) as BORDADOS,prebordado AS PREBORDADO,pr.fecha AS FECHA,pe.nombres AS CLIENTE
+			from periodo x ,proceso pr
+			inner  join producto p on p.id_prod=pr.id_prod
+			inner join bordadosproductos bp on p.id_prod = bp.id_prod
+			inner join  bordados b on b.idbordados = bp.idbordados
+			inner join pedido pd on pd.idpedido=pr.idpedido
+			inner  join cliente c on c.idcliente=pd.idcliente
+			inner join persona pe on pe.idpersona=c.idpersona
+			where x.estado=1 and pr.fecha between x.fechai and x.fechaf
+			group by pr.idproceso,bp.id_prod");
 
 
-		$res=$this->db->get();	
+		//$res=$this->db->get();	
 
-		return$res->result(); 
+		return$query->result(); 
 		//return$res;
 
 

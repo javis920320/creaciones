@@ -14,7 +14,7 @@ $.ajax({
 
 		  $.each(datos,function(i,items){
 
-		  	html+="<tr><td>"+items.nombres+"</td> <td>"+items.cantidad+"</td> <td>"+items.vsatel+"</td><td><button class='procesoal btn btn-primary 'data="+items.idtrabajador+">Almacenar saldo</button></td></tr>";
+		  	html+="<tr><td>"+items.nombres+"</td> <td>"+items.cantidad+"</td> <td>"+items.vsatel+"</td><td><input   type='button'name='procesoal' onclick='guardasaldo();'class='btn btn-primary 'data-trabajador="+items.idtrabajador+" value='ALma'></td></tr>";
 
 
 		  });
@@ -184,9 +184,15 @@ function cambioestado(){
 	window.open(baseurl+'Cpdfreport/reportesatelite/?satel='+s);
 }
 
-$('.procesoal').on('click',function(){
-	alert();
 
-});
+
+function guardasaldo(){
+
+
+
+alert($( "input[name~='procesoal']" ).val());
+
+alert($("input[name~='procesoal']").data("trabajador"));
+}
 
 
