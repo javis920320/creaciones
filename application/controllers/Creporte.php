@@ -15,8 +15,8 @@ $param['fechai']=$this->input->get('fechai');
 $param['fechaf']=$this->input->get('fechaf');
 $res=$this->Mtrabajos->tblexcel($param);
 $title=$this->Mtrabajos->tbltitle($param);
-//$titlev=$this->Mtrabajos->titleresumentotal();
-$datosres=$this->Mtrabajos->resumentotal();
+$titlev=$this->Mtrabajos->titleresumentotal();
+$datosres=$this->Mtrabajos->datares();
 
 
 
@@ -61,7 +61,7 @@ $this->excel->getActiveSheet()->setCellValue('E1', 'Precio');*/
      $ancho=$this->excel->getActiveSheet()->getHighestRow();
      $r=$ancho+5;
 
-      $col = 0;
+    $col = 0;
     foreach ($titlev as $field2)
     {
        $this->excel->getActiveSheet()->setCellValueByColumnAndRow($col, $r, $field2);

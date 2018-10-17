@@ -369,10 +369,10 @@ $query=$this->db->query("select pr.idproceso,pd.factura,pd.facultad,p.nomprod,pd
 	}
 
 
-	/*
-	tener en cuenat consultas para  imprimeri resumen
+	
+	
 
-	public function resumentotal(){
+	public function datares(){
 		
 
 
@@ -393,7 +393,7 @@ $query=$this->db->query("select pr.idproceso,pd.factura,pd.facultad,p.nomprod,pd
 	return$query->list_fields(); 
 	
 	}
-	*/
+	
 	public  function tblresumeno(){
 
 
@@ -505,7 +505,7 @@ public  function tblexcel($param){
 
 
 
-			$this->db->select('pr.idproceso,pd.factura,pd.facultad,pd.talla,p.nomprod,pd.descripcion,pr.cantidad,pr.precio1,(sum(bp.cantidad)*pr.cantidad) as nbordados,prebordado as valor bordado,pr.fecha,pe.nombres');
+			$this->db->select('pr.idproceso as CODIGO,pd.factura AS FACTURA,pd.facultad AS FACULTAD,pd.talla AS TALLA,p.nomprod AS PRODUCTO,pd.descripcion AS DESCRIPCION,pr.cantidad AS CANTIDAD,pr.precio1 AS PRECIO,(sum(bp.cantidad)*pr.cantidad) as N_BORDADOS,prebordado as valor bordado,pr.fecha AS FECHA,pe.nombres AS NOM');
 		$this->db->from('periodo x,proceso pr');
 		$this->db->join('producto p','p.id_prod=pr.id_prod');
 		$this->db->join ('bordadosproductos bp','p.id_prod = bp.id_prod');
