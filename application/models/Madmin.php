@@ -423,7 +423,7 @@ $datos = array('estado' => 2);
 		$datos= array('estado'=>3);
 		
 		$this->db->where('idtrabajador',$idtrabajador);
-		$this->db->where('estado',2);
+		$this->db->where('estado',4);
 		$this->db->update('proceso',$datos);
 		
 		

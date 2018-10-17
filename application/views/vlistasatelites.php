@@ -65,6 +65,7 @@
               <table  id='tblsaldos' class="table table-hover table-responsive table-bordered">
                 <thead class="bg-info">
                 <tr>
+                  <th>Codigo</th>
                   <th>Nombres</th>
                   <th>Cantidad</th>
                   <th>Valor</th>

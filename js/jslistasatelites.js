@@ -14,7 +14,7 @@ $.ajax({
 
 		  $.each(datos,function(i,items){
 
-		  	html+="<tr><td>"+items.nombres+"</td> <td>"+items.cantidad+"</td> <td>"+items.vsatel+"</td><td><input   type='button'name='procesoal' onclick='guardasaldo();'class='btn btn-primary 'data-trabajador="+items.idtrabajador+" value='ALma'></td></tr>";
+		  	html+="<tr><td>"+items.idtrabajador+"</td><td>"+items.nombres+"</td> <td>"+items.cantidad+"</td> <td>"+items.vsatel+"</td><td><input   type='button'name='procesoal' class=' procesoal btn btn-primary 'value='ALma'></td></tr>";
 
 
 		  });
@@ -186,13 +186,26 @@ function cambioestado(){
 
 
 
-function guardasaldo(){
+
+$('body').on('click','.table .procesoal',function(event){
+      event.preventDefault();
+	  var codsate =$(this).parent().parent().children('td:eq(0)').text();
+
+	  $.ajax({
+	  	url:baseurl+'Clistasatel/cambiarestado',
+	  	type:'POST',
+	  	data:{idtrabajador:codsate},
+	  	success:function(response){
+	  		alert(response);
+
+	  	}
+
+
+	  });
+
+  });
 
 
 
-alert($( "input[name~='procesoal']" ).val());
-
-alert($("input[name~='procesoal']").data("trabajador"));
-}
 
 
