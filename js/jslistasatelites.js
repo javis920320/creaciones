@@ -1,4 +1,4 @@
-lstsatelites();
+//lstsatelites();
 
 cargarvalores();
 
@@ -14,7 +14,7 @@ $.ajax({
 
 		  $.each(datos,function(i,items){
 
-		  	html+="<tr><td>"+items.idtrabajador+"</td><td>"+items.nombres+"</td> <td>"+items.cantidad+"</td> <td>"+items.vsatel+"</td><td><input   type='button'name='procesoal' class=' procesoal btn btn-primary 'value='ALma'></td></tr>";
+		  	html+="<tr><td>"+items.idtrabajador+"</td><td>"+items.nombres+"</td> <td>"+items.cantidad+"</td> <td>"+items.vsatel+"</td><td><input   type='button'name='procesoal' class=' procesoal btn btn-primary 'value='Guardar Registros'></td></tr>";
 
 
 		  });
@@ -67,7 +67,7 @@ function lstsatelites(){
 
  function cambiolista(){
 	 
-	 var idtrabajador=$('#ctra').val();
+	 //var idtrabajador=$('#ctra').val();
 	 //alert(idtrabajador);
 	 
 	 $.ajax({
@@ -176,10 +176,10 @@ return '<span class="pull-right"> $ ' +
 }
 
 
-function cambioestado(){
+function Generareport(){
 	
 	
-	var s=$('#trabajador').val();
+	var s=1;//=$('#trabajador').val();
 	
 	window.open(baseurl+'Cpdfreport/reportesatelite/?satel='+s);
 }
@@ -197,6 +197,7 @@ $('body').on('click','.table .procesoal',function(event){
 	  	data:{idtrabajador:codsate},
 	  	success:function(response){
 	  		alert(response);
+	  		location.reload();
 
 	  	}
 

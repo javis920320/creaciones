@@ -62,10 +62,13 @@ class Clistasatel extends CI_Controller
 		  	$lista[]=$value->idproceso;
 		  }
 
+
+		  		
 		   for ($i=0; $i < sizeof($lista); $i++) { 
 
-		  $d="insert into historialsatelite(idproceso,fecha) values(".$lista[$i].",sysdate());";
-		  $this->Madmin->addres($d);
+
+		
+		  $this->Madmin->addres("insert into historialsatelite(idproceso,fecha) values(".$lista[$i].",sysdate());");
 		   }
 		  //	
 

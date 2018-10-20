@@ -127,7 +127,7 @@ return $query->result();
 			inner join producto pd on pd.id_prod = pr.id_prod
 			inner join trabajador tr on tr.idtrabajador=pr.idtrabajador
 			inner join persona p on p.idpersona=tr.idpersona
-			where pr.estado in(2) and pr.idtrabajador=".$s."");
+			where pr.estado in(4)");
 			}
 
 
@@ -141,7 +141,7 @@ return $query->result();
 		
 		$query=$this->db->query("select sum(precio1)pre,sum(prebordado)preb
 				from proceso 
-				where idtrabajador=".$s." and estado=2 ");
+				where estado=4");
 				
 				
 				return $query->result();

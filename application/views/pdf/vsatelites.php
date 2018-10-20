@@ -63,6 +63,7 @@
                
                <th>V CONFECCION</th>
                <th>V BORDADOS</th>
+                <th>VALOR TOTAL</th>
 			   
             
            </tr>
@@ -73,6 +74,7 @@
 			<!--select idproceso,pd.nomprod,pe.factura,pe.facultad,pe.talla,pr.cantidad,pr.precio,pr.fecha,pr.estado,pr.idtrabajador,pe.descripcion,pe.fecha_ingreso,p.nombres-->
                 <td><?php echo $saldo->pre;?></td>
 				<td><?php echo $saldo->preb;?></td>
+        <td><?php echo $saldo->preb+$saldo->pre;?></td>
 				
               
             </tr>

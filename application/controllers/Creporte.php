@@ -25,6 +25,11 @@ $this->excel->setActiveSheetIndex(0);
 //name the worksheet
 $this->excel->getActiveSheet()->setTitle('Reporte Creaciones');
 //set cell A1 content with some text
+
+
+
+
+
 /*
 $this->excel->getActiveSheet()->setCellValue('A1', 'Factura');
 $this->excel->getActiveSheet()->setCellValue('B1', 'producto');
