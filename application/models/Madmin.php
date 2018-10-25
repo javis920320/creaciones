@@ -444,7 +444,7 @@ $datos = array('estado' => 2);
 	 
 	 public function SaldoPendiente($param){
 		 
-		 $query=$this->db->query("select sum(precio) as precio from proceso where idtrabajador=".$param['idtrabajador']." and estado=2");
+		 $query=$this->db->query("select sum(precio) as precio from proceso where idtrabajador=".$param['idtrabajador']." and estado=4");
 		 
 		 return $query->result();
 	 }

@@ -1,8 +1,5 @@
 lstsatelites();
-
-//alert($('#trabajador').val());
   var persona=$('#trabajador').val();
- // alert(persona);
  cargarlistacobro();
 
 
@@ -451,7 +448,7 @@ $.ajax({
 
 
 			$.each(obj,function(i,items){
-				div+='<div>Saldo Pendiente:<strong> $  ' + items.precio+ '</strong></vid>';
+				div+='<div>Saldo En Lista de Cobro:<strong> $  ' + items.precio+ '</strong></vid>';
 			});
 
 
