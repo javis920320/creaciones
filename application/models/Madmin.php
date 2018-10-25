@@ -848,6 +848,36 @@ public  function idtrabajador($param){
 
 	  }
 
+	   public function historialSatelite(){
+		   $query=$this->db->query("select p.idtrabajador,pe.nombres,sum(precio)as saldo, s.fecha 
+		   from proceso p
+		   inner join trabajador t on t.idtrabajador= p.idtrabajador
+		   inner join persona pe on pe.idpersona = t.idpersona
+		   inner join historialsatelite s on s.idproceso = p.idproceso
+		   where p.estado=3 group by p.idtrabajador,s.fecha");
+
+		   return $query->result();
+
+
+	   }
+
+
+	    public  function resSAtefecha($arreglo){
+
+			$query=$this->db->query("select idproceso,pd.nomprod,pe.factura,pe.facultad,pe.talla,pr.cantidad,pr.precio,pr.fecha,pr.estado,pr.idtrabajador,pe.descripcion,pe.fecha_ingreso,p.nombres,pr.prebordado
+			from proceso pr 
+			inner join pedido pe  on pe.idpedido = pr.idpedido
+			inner join producto pd on pd.id_prod = pr.id_prod
+			inner join trabajador tr on tr.idtrabajador=pr.idtrabajador
+			inner join persona p on p.idpersona=tr.idpersona
+			where pr.estado in(3) and pr.idtrabajador=".$arreglo['idtrabajador']." and 
+      pr.idproceso in ( select sa.idproceso from historialsatelite sa  where sa.fecha='".$arreglo['fecha']."')");
+
+		   return $query->result();
+
+
+		}
+
 
 }
 

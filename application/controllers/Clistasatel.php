@@ -90,6 +90,25 @@ class Clistasatel extends CI_Controller
 			echo 'Tarea no realizada';
 		}
 	 }
+
+
+	  public function historialSatelite(){
+
+		$resul=$this->Madmin->historialSatelite();
+		echo json_encode($resul);
+	  }
+
+
+	  public  function resSAtefecha(){
+		 $arreglo['idtrabajador']=$this->input->post('idsatelite');
+		 $arreglo['fecha']=$this->input->post('fechareg');
+		 $res=$this->Madmin->resSAtefecha($arreglo);
+		 echo json_encode($res);
+
+
+
+
+	  }
 	 
 }
 
