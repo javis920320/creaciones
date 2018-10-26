@@ -210,3 +210,54 @@ $('body').on('click','.table .procesoal',function(event){
 
 
 
+
+	 $('#tblhistorial').DataTable({
+			'paging':true,
+			'info':true,
+			'filter':true,
+			'destroy':true,
+			'stateSave':true,
+
+			'ajax':{
+
+				"url":baseurl+"Clistasatel/historialSatelite",
+				//p.idtrabajador,pe.nombres,sum(precio)as saldo, s.fecha 
+				'type':'POST',
+				dataSrc:''
+			},
+
+			'columns':[
+			{data: 'idtrabajador'},
+			{data: 'nombres'},
+			{data:'saldo'},
+			{data:'fecha'},
+			{"orderable":true,
+			render:function(data,type,row){
+
+
+
+return '<button class=" report btn btn-success"> <i class="glyphicon glyphicon-download-alt"></i></button>';
+					}
+			}
+
+
+			],
+ "order":[[3,"desc"]],
+
+		});	
+
+
+
+		$('body').on('click','.report',function(){
+
+				 var idsatelite=$(this).parent().parent().children('td:eq(0)').text();
+				 var fecha=$(this).parent().parent().children('td:eq(3)').text();
+
+				 console.log("datos"+idsatelite+" mas fecha "+fecha);
+					
+				 window.open(baseurl+'Clistasatel/resSAtefecha/'+idsatelite+'/'+fecha);
+
+				
+
+
+		});

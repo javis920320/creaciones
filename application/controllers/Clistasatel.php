@@ -92,6 +92,18 @@ class Clistasatel extends CI_Controller
 	 }
 
 
+	 public  function vistasatelitehistorial(){
+
+		$nombres['nombres']=$this->session->userdata('nombres');
+
+		$this->load->view('layou/header',$nombres);
+		$this->load->view('layou/menu',$nombres);
+		$this->load->view('vhistorialsatelite');
+		$this->load->view('layou/footer',$nombres);
+
+
+	 }
+
 	  public function historialSatelite(){
 
 		$resul=$this->Madmin->historialSatelite();
@@ -99,9 +111,9 @@ class Clistasatel extends CI_Controller
 	  }
 
 
-	  public  function resSAtefecha(){
-		 $arreglo['idtrabajador']=$this->input->post('idsatelite');
-		 $arreglo['fecha']=$this->input->post('fechareg');
+	  public  function resSAtefecha($idtrabajador,$fecha){
+		 $arreglo['idtrabajador']=$idtrabajador;//$this->input->post('idsatelite');
+		 $arreglo['fecha']=$fecha;//$this->input->post('fechareg');
 		 $res=$this->Madmin->resSAtefecha($arreglo);
 		 echo json_encode($res);
 
