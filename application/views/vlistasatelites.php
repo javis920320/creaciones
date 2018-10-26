@@ -34,10 +34,9 @@
               
 
 <div class='btn-group-group'><!--<select name="trabajador" id="trabajador" class="form-control" required></select>--></div><div class='btn-group'><button class='btn btn-success' onclick='Generareport();'>Ver reporte</button>
+   
 
-<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-  Cambio lista
-</button>-->
+
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -59,7 +58,7 @@
   </div>
 </div>
             </div>
-            <!-- /.box-header -->
+          <a href="<?php echo base_url()?>/Clistasatel/vistasatelitehistorial">Historial Satelite</a>
 
 
               <table  id='tblsaldos' class="table table-hover table-responsive table-bordered">
