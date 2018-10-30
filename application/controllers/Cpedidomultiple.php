@@ -208,6 +208,35 @@ if(!empty($_POST['idPersona'])){
 
 
 	}
+
+	public function RecibirPedido(){
+		$idpedd=20;//$this->input->post('idpedido');
+		$cantidadReci=$this->input->post('cantidad');
+		//validamos  si  la cantidad  a  ser  registrada es mayor a la  cantidad processada
+		$cantProce=$this->Mpedidos->CantidadProcesada($idpedd);
+		$cantAcumulada=$this->Mpedidos->CantidadAcumulada($idpedd);
+		
+
+
+
+		if($cantidadReci>$cantProce){
+			echo "Error no se puede  registrar consulta  con el administrador";
+
+		}else{
+
+		}
+		
+
+
+
+
+
+
+		//listar  todos los pedidos 
+		//buscar si el pedido ya fue procesado alguna  vez
+		// registrar en  tabla recepcionpedido verificando la cantidad procesada si es  superior  no dejar registrar
+
+	}
 }
 
 
