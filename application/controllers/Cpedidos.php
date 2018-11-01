@@ -1,7 +1,4 @@
 <?php 
-/**
-* 
-*/
 class Cpedidos extends CI_Controller
 {
 	

@@ -499,6 +499,34 @@ $this->db->select('p.idpedido,tp.nomtipoprod,p.factura,p.facultad,p.cantidad,p.t
 
 }
 
+public function CantidadProcesada($idpedd){
+
+
+	$query=$this->db->query("select sum(cantidad)as cantidad  from proceso where idpedido=".$idpedd."");
+
+	foreach ($query->result() as $row)
+	{
+		return $row->cantidad;
+	
+	}
+
+
+
+}
+
+
+public function CantidadAcumulada($idpedd){
+
+	
+	$query=$this->db->query("select sum(cantidad)as cantidad from recpcionpedido where  idpedido=".$idpedd." and estado=1");
+
+	foreach ($query->result() as $row)
+	{
+		return $row->cantidad;
+	
+	}
+}
+
 
  
 
