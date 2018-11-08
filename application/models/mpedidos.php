@@ -528,6 +528,18 @@ public function CantidadAcumulada($idpedd){
 }
 
 
+public function pedidocant($idpedd){
+
+	
+	$query=$this->db->query("select sum(cantidad)as cantidad from pedido where  idpedido=".$idpedd);
+
+	foreach ($query->result() as $row)
+	{
+		return $row->cantidad;
+	
+	}
+}
+
  
 
 }

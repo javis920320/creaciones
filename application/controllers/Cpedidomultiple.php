@@ -220,9 +220,18 @@ if(!empty($_POST['idPersona'])){
 
 
 		if($cantidadReci>$cantProce){
-			echo "Error no se puede  registrar consulta  con el administrador";
+			echo "La cantidad Recibida  no a sido registrada en taller";
 
 		}else{
+
+			$cantdispo=$this->Mpedidos->pedidocant($idpedd);
+			if($cantidadReci>$cantdispo){
+				echo 'El pedido contiene  una cantidad menor';
+
+			}else{
+			echo "Listo";
+			}
+
 
 		}
 		
