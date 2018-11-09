@@ -9,6 +9,21 @@ class Mpedidos extends CI_Model
 		parent::__construct();
 	}
 
+	public  function lstpedidos(){
+
+		$query=$this->db->query("select p.idpedido,tp.nomtipoprod,p.factura,p.facultad,p.cantidad,p.talla,p.descripcion,pe.nombres,p.fecha_ingreso,p.fentrega,p.print
+     from pedido p
+     
+     inner join cliente c on c.idcliente=p.idcliente
+		 inner join tipo_producto tp on tp.idtipoprod=p.idtipoprod
+		 inner join persona pe on pe.idpersona=c.idpersona
+		where p.estado=3 and p.print=1 order by p.fentrega,p.factura");
+
+		return $query->result();
+
+
+	}
+
 
 public  function EliminaPedido($datos){
 
