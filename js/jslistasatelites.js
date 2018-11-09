@@ -198,6 +198,7 @@ $('body').on('click','.table .procesoal',function(event){
 	  	success:function(response){
 	  		alert(response);
 	  		location.reload();
+	  		
 
 	  	}
 
