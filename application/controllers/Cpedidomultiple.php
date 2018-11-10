@@ -209,6 +209,15 @@ if(!empty($_POST['idPersona'])){
 
 	}
 
+
+	public  function pedidoEnvio(){
+
+
+		$res=$this->Mpedidos->lstpedidos();
+		echo  json_encode($res);
+
+	}
+
 	public function RecibirPedido(){
 		$idpedd=20;//$this->input->post('idpedido');
 		$cantidadReci=$this->input->post('cantidad');
