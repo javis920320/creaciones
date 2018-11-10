@@ -30,11 +30,7 @@ class Cpedidomultiple extends CI_Controller
 	 {
 	 	//$this->output->cache(15);
 
-<<<<<<< HEAD
-		$nombres['nombres']=$this->session->userdata('nombres');
-=======
-		//$nombres['nombres']=$this->session->userdata('nombres');
->>>>>>> ba4085bf7f2819c0800318d5d17954cdfbc71b18
+
 		//$this->load->view('layou/headerm',$nombres);
 		//$this->load->view('layou/menum',$nombres);
 		$this->load->view('vrecepcion');
