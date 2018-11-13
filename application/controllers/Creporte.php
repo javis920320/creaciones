@@ -125,26 +125,31 @@ $this->excel->getActiveSheet()->mergeCells('A1:A1');
 //set aligment to center for that merged cell (A1 to D1)
 
  $this->excel->getActiveSheet()->getRowDimension('1')->setRowHeight(30);
- $this->excel->getActiveSheet()->getColumnDimension('A')->setWidth(10);
- $this->excel->getActiveSheet()->getColumnDimension('B')->setWidth(10);
- $this->excel->getActiveSheet()->getColumnDimension('C')->setWidth(50);
- $this->excel->getActiveSheet()->getColumnDimension('D')->setWidth(50);
- $this->excel->getActiveSheet()->getColumnDimension('E')->setWidth(50);
- $this->excel->getActiveSheet()->getColumnDimension('F')->setWidth(10);
- $this->excel->getActiveSheet()->getColumnDimension('G')->setWidth(10);
- $this->excel->getActiveSheet()->getColumnDimension('H')->setWidth(10);
- $this->excel->getActiveSheet()->getColumnDimension('I')->setWidth(10);
- $this->excel->getActiveSheet()->getColumnDimension('J')->setWidth(10);
- $this->excel->getActiveSheet()->getColumnDimension('K')->setWidth(50);
- $this->excel->getActiveSheet()->getColumnDimension('L')->setWidth(50);
+ $this->excel->getActiveSheet()->getColumnDimension('A')->setWidth(6);
+ $this->excel->getActiveSheet()->getColumnDimension('B')->setWidth(6);
+ $this->excel->getActiveSheet()->getColumnDimension('C')->setWidth(30);
+ $this->excel->getActiveSheet()->getColumnDimension('D')->setWidth(5);
+ $this->excel->getActiveSheet()->getColumnDimension('E')->setWidth(30);
+ $this->excel->getActiveSheet()->getColumnDimension('F')->setWidth(50);
+ $this->excel->getActiveSheet()->getColumnDimension('G')->setWidth(5);
+ $this->excel->getActiveSheet()->getColumnDimension('H')->setWidth(6);
+ $this->excel->getActiveSheet()->getColumnDimension('I')->setWidth(6);
+ $this->excel->getActiveSheet()->getColumnDimension('J')->setWidth(6);
+ $this->excel->getActiveSheet()->getColumnDimension('K')->setWidth(10);
+ $this->excel->getActiveSheet()->getColumnDimension('L')->setWidth(30);
 
   $this->excel->getActiveSheet()
         ->getStyle('A1:L1')
         ->getFill()
         ->setFillType(PHPExcel_Style_Fill::FILL_SOLID)
         ->getStartColor()
-        ->setRGB('#7400dd');
+        ->setRGB('#E7EBDA');
         //$e=$this->excel->getHighestRow();
+
+ $this->excel->getActiveSheet()->getDefaultStyle()
+    ->getBorders()
+    ->getTop()
+        ->setBorderStyle(PHPExcel_Style_Border::BORDER_THIN);       
 
 
 $this->excel->getActiveSheet()->getStyle('A1')->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
