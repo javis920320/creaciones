@@ -17,12 +17,23 @@ class Mpedidos extends CI_Model
      inner join cliente c on c.idcliente=p.idcliente
 		 inner join tipo_producto tp on tp.idtipoprod=p.idtipoprod
 		 inner join persona pe on pe.idpersona=c.idpersona
-		where p.estado=3 and p.print=1 order by p.fentrega,p.factura");
+		where p.estado=3 ");
 
 		return $query->result();
 
 
 	}
+
+	public  function cambioAsignacionProceso($datos){
+
+
+		$this->db->query("update proceso set idtrabajador=".$datos['idtrabajador']."  where idproceso=".$datos['idproceso']);
+
+	     return $this->db->affected_rows();
+
+
+	}
+
 
 
 public  function EliminaPedido($datos){

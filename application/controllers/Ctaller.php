@@ -95,6 +95,20 @@ descricion: este proceso realiza el cambio de estado el pedido
 
 
  	 }
+
+ 	   public function cambioAsignacionProceso()
+ 	 {
+
+
+
+ 	 	$datos['idproceso']=$this->input->post('idproceso');
+ 	 	$datos['idtrabajador']=$this->input->post('idtrabajador');
+
+ 	 	$res=$this->Mpedidos->cambioAsignacionProceso($datos);
+
+ 	 	return $res;
+
+ 	 }
  	 
 
 
