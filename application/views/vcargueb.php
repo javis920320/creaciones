@@ -110,8 +110,15 @@
 	  </div>
 	</div>
 	
-	
-	
+	<br><br>
+	<select name="filtrobprendas" id="filtrobprendas" class="form-control">
+	      		<option value=""><strong>Seleccione</strong></option>
+	      				<option value="0">Pendiente Bordados </option>
+	      				<option value="1">Lista de Cobro</option>
+	      				<option value="2">Prendas terminadas</option>
+
+	      	</select>
+	      	<br><br>
 	
 	
 	   <table  id='tblcarprendas' class="table table-hover table-responsive">
