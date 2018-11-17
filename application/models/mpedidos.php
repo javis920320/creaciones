@@ -9,6 +9,23 @@ class Mpedidos extends CI_Model
 		parent::__construct();
 	}
 
+
+	public  function validarec($idpedd){
+		$query=$this->db->query("select sum(cantidad)as  cant from recpcionpedido where idpedido=".$idpedd);
+		 foreach ($query->result() as $row)
+		{
+        	return $row->cant;
+        
+		}
+
+	}
+
+	public  function GuaradRecepcion($idpedd,$cantidadReci){
+
+		$this->db->query("insert into recpcionpedido values(null,".$idpedd.",0,".$cantidadReci.")");
+		 return $this->db->affected_rows();
+	}
+
 	public  function lstpedidos(){
 
 		$query=$this->db->query("select p.idpedido,tp.nomtipoprod,p.factura,p.facultad,p.cantidad,p.talla,p.descripcion,pe.nombres,p.fecha_ingreso,p.fentrega,p.print
