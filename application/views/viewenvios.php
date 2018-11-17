@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myapp">
 <head>
 	<meta charset="UTF-8">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
 	
 </head>
-<body>
+<body ng-controller="fisrtcontroller">
 	<style type="text/css">
 	.responsive-input{
   width: 100%;
@@ -169,9 +170,7 @@
              <?php if ($nombres=="CORTES MIL"){?>
 
 
-             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-              Eliminar pedido
-             </button>
+            
              
              <!-- Modal -->
              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -195,6 +194,59 @@
                    </div>
                  </div>
                </div>
+             </div>
+
+
+         
+             <!-- Modal -->
+             <div class="modal fade" id="Asignacion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+               <div class="modal-dialog" role="document">
+                 <div class="modal-content">
+                   <div class="modal-header">
+                     <h5 class="modal-title" id="exampleModalLabel">Cambio Asignacion </h5>
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                       <span aria-hidden="true">&times;</span>
+                     </button>
+                   </div>
+                   <div class="modal-body">
+                   <label for="idprocc"><strong>Codigo de Proceso:</strong></label>
+                   <input type="number" name="idprocc" id="idprocc" class="form-control">
+                   <label for="trabajadorC">Trabajador</label>
+
+                   <select class="form-control" id="trabajadorC">
+                    <option value="">Seleccione</option>
+                    <option  ng-repeat="dat in dataja" value="{{dat.idtrabajador}}">{{dat.nombres}}</option>
+                     
+                   </select>     
+                   </div>
+                   <div class="modal-footer">
+                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                     <button type="button" class="btn btn-primary" onclick="cambioAsinacion();">Guardar Cambios</button>
+                   </div>
+                 </div>
+               </div>
+             </div>
+             
+             
+
+
+             <div class=" panel panel-primary">
+              <div class="panel-heading">
+                
+              </div>
+              <div class="panel-body">
+                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+              Eliminar pedido
+             </button>
+
+                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Asignacion">
+              Cambiar Asignacion Proceso
+             </button>
+             
+
+                
+              </div>
+               
              </div>
              <?php }?>
              
@@ -227,6 +279,33 @@
         </div>
         <script type="text/javascript">
 	var baseurl = "<?php echo base_url(); ?>";
+
+
+  angular
+.module("myapp",[])
+.controller("fisrtcontroller",function($scope,$http){
+  console.log('success');
+
+  $http.post('http://localhost/creaciones/Cnomina/listatrabajadores/')
+  .then(function(mydata){
+    console.log(mydata);
+    $scope.dataja=mydata.data;
+  
+    $scope.addrecibido= function(i){
+
+      
+
+    }
+
+
+
+  })
+
+});
+
+
+
+
 </script>
 	
 </body>

@@ -300,31 +300,28 @@ $.post(baseurl+"Ctipoprod/gettipoprod",
 
 
 });
-/*
-selpedido = function(idpedido){
-	$('#producto').val(idpedido);
-	
-
-  
-};
 
 
+cambioAsinacion();
+
+  function cambioAsinacion(){
+var idproceso=$('#idprocc').val();
+var idtrabajador=$('#trabajadorC').val();
 
 
-$('#envconfeccion').submit(function(){
-	
-$.ajax({
 
 
-	url:baseurl+'Cproductosen/enviarconfeccion',
+$.post( baseurl+"Ctaller/cambioAsignacionProceso",
+ { idproceso: idproceso, idtrabajador: idtrabajador })
+  .done(function(data) {
+    //alert( "Data Loaded: " + data );
+
+    if(data==0){
+alert("NO se logro los  modificar");
+    }else{
+alert("Cambio de Asignacion  realizada..");
+    }
+  });
 
 
-	type:'POST',
-	data:$(this).val(),
-	success:function(data){
-		alert(data);
-		
-
-	}
-	});
-});*/
+  }

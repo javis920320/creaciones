@@ -106,7 +106,14 @@ descricion: este proceso realiza el cambio de estado el pedido
 
  	 	$res=$this->Mpedidos->cambioAsignacionProceso($datos);
 
- 	 	return $res;
+ 	 	if($res>=1){
+ 	 		echo 1;
+
+ 	 	}else{
+
+ 	 		echo 0 ;
+
+ 	 	}
 
  	 }
  	 
