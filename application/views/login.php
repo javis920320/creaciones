@@ -236,6 +236,8 @@
 </script>
 <script type="text/javascript">
   var baseurl = "<?php echo base_url(); ?>";
+
+  setTimeout(function(){ alert("Hello"); }, 3000);
 </script>
 </body>
 </html>
