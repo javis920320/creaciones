@@ -219,8 +219,8 @@ if(!empty($_POST['idPersona'])){
 	}
 
 	public function RecibirPedido(){
-		$idpedd=20;//$this->input->post('idpedido');
-		$cantidadReci=$this->input->post('cantidad');
+		$idpedd=2709;//$this->input->post('idpedido');
+		$cantidadReci=1;//$this->input->post('cantidad');
 		//validamos  si  la cantidad  a  ser  registrada es mayor a la  cantidad processada
 		$cantProce=$this->Mpedidos->CantidadProcesada($idpedd);
 		$cantAcumulada=$this->Mpedidos->CantidadAcumulada($idpedd);
@@ -238,7 +238,29 @@ if(!empty($_POST['idPersona'])){
 				echo 'El pedido contiene  una cantidad menor';
 
 			}else{
-			echo "Listo";
+
+				$recacumulado=$this->Mpedidos->validarec($idpedd);
+				$comp=$recacumulado+$cantidadReci;
+
+				if($cantdispo<$comp){
+					echo'No se puede  recibir esta cantidad '.$comp.'+'.$cantdispo;
+
+				}else{
+
+
+					$res=$this->Mpedidos->GuaradRecepcion($idpedd,$cantidadReci);
+				if($res>=1){
+					echo"Pedido recibido";
+
+				}else{
+					echo "No se recibio este pedido";
+				}
+
+				}
+
+
+				
+			
 			}
 
 

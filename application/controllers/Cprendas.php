@@ -163,7 +163,9 @@ public  function prendas (){
 
  public  function rsmprendas(){
 
- 	$res=$this->Madmin->resumenb(1);
+ 	$param=$this->input->post('user');
+
+ 	$res=$this->Madmin->resumenb($param);
 
 	echo json_encode($res);
 

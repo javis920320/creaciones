@@ -345,13 +345,29 @@ foreach ($query->result() as $row)
 	}
 
 
-	public  function resumenb(){
-
-	$query=$this->db->query("select  p.idprendas,p.factura,p.descripcion,p.cantidad,p.fecha,sum(bp.precio*p.cantidad)as preciob,sum(bp.cantidad)as cantb,p.estado from prendas p 
-left join bordadosprendas bp on bp.idprendas=p.idprendas GROUP by p.idprendas");
+	public  function resumenb($param){
 
 
-//$query=$this->db->query("");
+		if ($param==2) {
+			$query=$this->db->query("select  p.idprendas,p.factura,p.descripcion,p.cantidad,p.fecha,sum(bp.precio*p.cantidad)as preciob,sum(bp.cantidad)as cantb,p.estado from prendas p 
+left join bordadosprendas bp on bp.idprendas=p.idprendas  where estado=".$param." GROUP by p.idprendas");
+			# code...
+		}else if ($param==1){
+			$query=$this->db->query("select  p.idprendas,p.factura,p.descripcion,p.cantidad,p.fecha,sum(bp.precio*p.cantidad)as preciob,sum(bp.cantidad)as cantb,p.estado from prendas p 
+left join bordadosprendas bp on bp.idprendas=p.idprendas  where estado=".$param." GROUP by p.idprendas");
+			# code...
+
+		}else{
+			$query=$this->db->query("select  p.idprendas,p.factura,p.descripcion,p.cantidad,p.fecha,sum(bp.precio*p.cantidad)as preciob,sum(bp.cantidad)as cantb,p.estado from prendas p 
+left join bordadosprendas bp on bp.idprendas=p.idprendas  where estado=".$param." GROUP by p.idprendas");
+			# code...
+
+		}
+
+	
+
+
+
 
 
 	return $query->result();
@@ -361,9 +377,21 @@ left join bordadosprendas bp on bp.idprendas=p.idprendas GROUP by p.idprendas");
 	}
 	
 	public  function listaprendas($param){
+		/*if( $param==2){
+
+		$query=$this->db->query(" select idprendas,factura ,descripcion,cantidad,fecha,estado from prendas where estado=".$param);
+
+		}else if($param==1){
+
+			$query=$this->db->query(" select idprendas,factura ,descripcion,cantidad,fecha,estado from prendas where estado=".$param);
+		}else{*/
+
+			$query=$this->db->query(" select idprendas,factura ,descripcion,cantidad,fecha,estado from prendas");
+
+		//}
 		
 		
-		$query=$this->db->query(" select idprendas,factura ,descripcion,cantidad,fecha,estado from prendas");
+		
 		return $query->result();
 		
 		
