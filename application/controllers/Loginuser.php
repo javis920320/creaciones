@@ -17,7 +17,8 @@ public function index(){
 
 
 	$msn['msn']=" ";
-	$this->load->view('preolader',$msn);
+	//$this->load->view('preolader',$msn);
+	$this->load->view('login',$msn);
 }
 
 	public  function logueo(){

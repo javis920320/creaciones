@@ -213,17 +213,18 @@ if(!empty($_POST['idPersona'])){
 	public  function pedidoEnvio(){
 
 
-		$res=$this->Mpedidos->lstpedidos();
+		//$res=$this->Mpedidos->lstpedidos();
+		$res=$this->Mpedidos->lstpedidosrec();
 		echo  json_encode($res);
 
 	}
 
 	public function RecibirPedido(){
-		$idpedd=2709;//$this->input->post('idpedido');
-		$cantidadReci=1;//$this->input->post('cantidad');
+		$idpedd=$this->input->post('idpedido');
+		$cantidadReci=$this->input->post('cantidad');
 		//validamos  si  la cantidad  a  ser  registrada es mayor a la  cantidad processada
-		$cantProce=$this->Mpedidos->CantidadProcesada($idpedd);
-		$cantAcumulada=$this->Mpedidos->CantidadAcumulada($idpedd);
+		$cantProce=$this->Mpedidos->CantidadProcesada($idpedd);//58
+		$cantAcumulada=$this->Mpedidos->CantidadAcumulada($idpedd);//0
 		
 
 
@@ -234,7 +235,7 @@ if(!empty($_POST['idPersona'])){
 		}else{
 
 			$cantdispo=$this->Mpedidos->pedidocant($idpedd);
-			if($cantidadReci>$cantdispo){
+			if($cantidadReci>$cantdispo){//58
 				echo 'El pedido contiene  una cantidad menor';
 
 			}else{
@@ -276,6 +277,18 @@ if(!empty($_POST['idPersona'])){
 		//buscar si el pedido ya fue procesado alguna  vez
 		// registrar en  tabla recepcionpedido verificando la cantidad procesada si es  superior  no dejar registrar
 
+	}
+
+
+
+	public function addRecpedido(){
+
+		$datos['idpedido']=$this->input->post('idpedido');
+		$datos['cantidad']=$this->input->post('cantidad');
+
+
+		$res=$this->Mpedidos->addRecpedido($datos);
+		echo $res;
 	}
 }
 

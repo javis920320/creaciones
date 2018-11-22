@@ -10,6 +10,17 @@ class Mpedidos extends CI_Model
 	}
 
 
+	public  function addRecpedido($datos){
+		$data = array(
+			'idpedido' =>$datos['idpedido'] ,
+			'cantidad' =>$datos['cantidad']  );
+
+		$this->db->insert('recpcionpedido',$data);
+		 return $this->db->affected_rows();
+
+	}
+
+
 	public  function validarec($idpedd){
 		$query=$this->db->query("select sum(cantidad)as  cant from recpcionpedido where idpedido=".$idpedd);
 		 foreach ($query->result() as $row)
@@ -22,7 +33,7 @@ class Mpedidos extends CI_Model
 
 	public  function GuaradRecepcion($idpedd,$cantidadReci){
 
-		$this->db->query("insert into recpcionpedido values(null,".$idpedd.",0,".$cantidadReci.")");
+		$this->db->query("insert into recpcionpedido values(null,".$idpedd.",".$cantidadReci.",1)");
 		 return $this->db->affected_rows();
 	}
 
@@ -40,6 +51,22 @@ class Mpedidos extends CI_Model
 
 
 	}
+
+	public  function lstpedidosrec(){
+
+		$query=$this->db->query("select p.idpedido,tp.nomtipoprod,p.factura,p.facultad,p.cantidad,p.talla,p.descripcion,pe.nombres,p.fecha_ingreso,p.fentrega,p.print,(select sum(x.cantidad) from recpcionpedido x where x.idpedido=p.idpedido group by x.idpedido )as c
+     from pedido p
+     
+     inner join cliente c on c.idcliente=p.idcliente
+		 inner join tipo_producto tp on tp.idtipoprod=p.idtipoprod
+		 inner join persona pe on pe.idpersona=c.idpersona
+		where p.estado=3 ");
+
+		return $query->result();
+
+
+	}
+
 
 	public  function cambioAsignacionProceso($datos){
 
