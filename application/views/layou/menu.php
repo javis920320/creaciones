@@ -41,6 +41,7 @@
            
              <li class=""><a href="<?php echo base_url();?>Cadmin"><i class="fa fa-circle-o"></i> Seguimiento</a></li>
             <li class=""><a href="<?php echo base_url();?>Cpedidomultiple/realizarpedidos"><i class="fa fa-circle-o"></i> Ingreso  Registro</a></li>
+              <li class=""><a href="<?php echo base_url();?>/Cpedidomultiple/RecepcionPed"><i class="fa fa-circle-o"></i> Recepcion pedidoss</a></li>
              <li class=""><a href="<?php echo base_url();?>Cproductosen"><i class="fa fa-circle-o"></i> Productos enviados</a></li>
        <li class=""><a href="<?php echo base_url();?>Cprendas"><i class="fa fa-circle-o"></i> Envio bordados</a></li>
         <?php  if( $this->session->userdata('tipo')==3 ) { ?>

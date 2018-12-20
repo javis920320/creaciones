@@ -10,6 +10,18 @@ class Mpedidos extends CI_Model
 	}
 
 
+
+
+public  function procesorecibido($idpedido){
+
+	$i = array('estado' => 2 );
+
+      $this->db->where('idpedido',$idpedido);
+		$this->db->update('recpcionpedido',$i);
+
+
+	}
+
 	public  function addRecpedido($datos){
 		$data = array(
 			'idpedido' =>$datos['idpedido'] ,
@@ -39,13 +51,13 @@ class Mpedidos extends CI_Model
 
 	public  function lstpedidos(){
 
-		$query=$this->db->query("select p.idpedido,tp.nomtipoprod,p.factura,p.facultad,p.cantidad,p.talla,p.descripcion,pe.nombres,p.fecha_ingreso,p.fentrega,p.print
+		$query=$this->db->query("select p.idpedido,tp.nomtipoprod,p.factura,p.facultad,p.cantidad,p.talla,p.descripcion,pe.nombres,p.fecha_ingreso,p.fentrega,p.print,(select sum(x.cantidad) from recpcionpedido x where x.idpedido=p.idpedido group by x.idpedido )as c
      from pedido p
      
      inner join cliente c on c.idcliente=p.idcliente
 		 inner join tipo_producto tp on tp.idtipoprod=p.idtipoprod
 		 inner join persona pe on pe.idpersona=c.idpersona
-		where p.estado=3 ");
+		where p.estado=3  and p.idpedido in (select idpedido from proceso) and p.idpedido not in (select idpedido from recpcionpedido j where j.estado=2)");
 
 		return $query->result();
 
@@ -60,7 +72,7 @@ class Mpedidos extends CI_Model
      inner join cliente c on c.idcliente=p.idcliente
 		 inner join tipo_producto tp on tp.idtipoprod=p.idtipoprod
 		 inner join persona pe on pe.idpersona=c.idpersona
-		where p.estado=3 ");
+		where p.estado=3  and p.idpedido in (select idpedido from proceso) ");
 
 		return $query->result();
 

@@ -250,6 +250,19 @@ if(!empty($_POST['idPersona'])){
 
 
 					$res=$this->Mpedidos->GuaradRecepcion($idpedd,$cantidadReci);
+
+					$rc=$this->Mpedidos->validarec($idpedd);
+
+					$tarea=$cantdispo-$rc;
+					if($tarea==0){
+						$this->Mpedidos->procesorecibido($idpedd);
+
+					}
+
+
+
+
+
 				if($res>=1){
 					echo"Pedido recibido";
 

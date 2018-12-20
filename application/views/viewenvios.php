@@ -286,7 +286,7 @@
 .controller("fisrtcontroller",function($scope,$http){
   console.log('success');
 
-  $http.post('http://localhost/creaciones/Cnomina/listatrabajadores/')
+  $http.post(baseurl+'Cnomina/listatrabajadores/')
   .then(function(mydata){
     console.log(mydata);
     $scope.dataja=mydata.data;
