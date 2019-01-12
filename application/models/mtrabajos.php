@@ -11,6 +11,24 @@ class Mtrabajos extends CI_Model
 
 	}
 
+
+	 public function valorAdelanto($idUsuario){
+
+	 	try {
+	 		$query=$this->db->query("select t1.idtrabajador,t1.valor from periodo pr,trabajador_adelanto t1 where pr.estado=1 and t1.idtrabajador in(select t.idtrabajador from persona pe inner join trabajador t on t.idpersona=pe.idpersona inner join usuarios u on u.idpersona=pe.idpersona where u.idusuarios=1) GROUP by t1.idtrabajador");
+
+	 			foreach ($query->result() as $row)
+		{
+        	return $row->valor;
+        
+		}
+
+	 	} catch (Exception $e) {
+	 		echo $e;
+	 	}
+
+	 }
+
 	public function sumavalor($datos){
 
 		$query=$this->db->query("select sum(precio)as precio  from periodo x,proceso pro

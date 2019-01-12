@@ -23,10 +23,10 @@
 	  <!--<span><h3>VALORE ACUMULADO:  $ <span  id='valor'></span>  </h3> </span>-->
 	  <div class="col-sm-8"></div>
 	  <div class="col-sm-3">
-	  <table class='table table-striped'>
-		<thead ><tr class='success' ><th>VALOR ACUMULADO</th></tr></thead>
+	  <table class='table table-striped' id="mitabla">
+		<thead ><tr class='success' ><th>VALOR ACUMULADO</th><th>ADELANTOS</th><th>TOTAL</th></tr></thead>
 		<tbody>
-		<tr><td id='valor'></td><tr>
+		<tr><td id='valor'></td><td ><div id="adelantos"></div ></td><td id="totalSaldo"></td><tr>
 		</tbody>
 	  </table>
 	  </div>

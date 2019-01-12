@@ -31,6 +31,17 @@ class Ctrabajos extends CI_Controller
 
 	}
 
+	public function valorAdelanto(){
+
+		$idUsuario=$this->input->post('usuario');
+		$res =$this->Mtrabajos->valorAdelanto($idUsuario);
+
+		 echo  json_encode($res);
+		 
+
+
+	}
+
 
 	public function Sumeprecio(){
 		$datos['idper']=$this->input->post('idper');
