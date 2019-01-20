@@ -12,16 +12,41 @@ class Mtrabajos extends CI_Model
 	}
 
 
-	 public function valorAdelanto($idUsuario){
+  public  function valorCompare($param){
+
+try {
+
+		$query=$this->db->query("select sum(p.precio) as valor from periodo pr,proceso p
+inner join trabajador t ON p.idtrabajador = t.idtrabajador
+ where t.idpersona=".$param['idpersona']." and pr.estado=1 and p.fecha between pr.fechai and pr.fechaf");
+	 foreach ($query->result() as $row) {
+	 		 return$row->valor;
+	 	}
+	
+} catch (Exception $e) {
+	return "Ha ocurrido una Exception";
+}
+
+
+
+
+
+  }
+
+	 public function valorAdelanto($param){
 
 	 	try {
-	 		$query=$this->db->query("select t1.idtrabajador,t1.valor from periodo pr,trabajador_adelanto t1 where pr.estado=1 and t1.idtrabajador in(select t.idtrabajador from persona pe inner join trabajador t on t.idpersona=pe.idpersona inner join usuarios u on u.idpersona=pe.idpersona where u.idusuarios=1) GROUP by t1.idtrabajador");
+	 		$query=$this->db->query("
+select sum(t1.valor)as adelanto from periodo p1,trabajador_adelanto t1
+inner join trabajador t2 on t2.idtrabajador = t1.idtrabajador
+inner join usuarios u on u.idpersona = t2.idpersona 
+where  u.idpersona=".$param['idpersona']."  and t1.idperiodo in (select x.idperiodo from periodo x where x.estado=1)");
 
-	 			foreach ($query->result() as $row)
-		{
-        	return $row->valor;
-        
-		}
+	 	
+	 	foreach ($query->result() as $row) {
+	 		 return$row->adelanto;
+	 	}
+	 		
 
 	 	} catch (Exception $e) {
 	 		echo $e;

@@ -43,7 +43,8 @@ verAdelanto(user);
    		'type':'POST',
    		'data':{usuario:user},
    		success: function(data){
-   		$("#adelantos").text(data);
+   			
+   		$("#tblinfo").html(data);
    		
    			
 
@@ -258,22 +259,7 @@ return'<span>Elaborado</span>';
 
 
 
-valorTotal();
-  function valorTotal(){
 
-  	//alert(adelantos=parseInt($("#adelantos").text()));
-  	//alert($("#adelantos").text());
-  	$("table tbody tr td  #adelantos").onload(function() {
-  var total = $(this).find("td:last-child").text();
-  alert(total);
-});
-  	
-  	//valor=parseInt($("#valor").text());
-  	//t=valor-adelantos;
-  //console.log(t);
-
-
-  }
 
 
 

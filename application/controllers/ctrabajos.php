@@ -33,10 +33,22 @@ class Ctrabajos extends CI_Controller
 
 	public function valorAdelanto(){
 
-		$idUsuario=$this->input->post('usuario');
-		$res =$this->Mtrabajos->valorAdelanto($idUsuario);
 
-		 echo  json_encode($res);
+
+		$param['idpersona']=$this->input->post('usuario');
+		$res [0]=$this->Mtrabajos->valorAdelanto($param);
+
+		$res[1]=$this->Mtrabajos->valorCompare($param);
+
+		$total=$res[1]-$res[0];
+
+
+
+
+
+
+	 	//
+		 echo "<td>".$res[1]."</td><td>".$res[0]."</td><td>".$total."</td>";
 		 
 
 

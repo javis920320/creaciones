@@ -26,7 +26,7 @@
 	  <table class='table table-striped' id="mitabla">
 		<thead ><tr class='success' ><th>VALOR ACUMULADO</th><th>ADELANTOS</th><th>TOTAL</th></tr></thead>
 		<tbody>
-		<tr><td id='valor'></td><td ><div id="adelantos"></div ></td><td id="totalSaldo"></td><tr>
+		<tr id="tblinfo"><td id='valor'></td><td ><div id="adelantos"></div ></td><td id="totalSaldo"></td><tr>
 		</tbody>
 	  </table>
 	  </div>
