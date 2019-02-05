@@ -40,8 +40,12 @@
               <th style="width: 10%;background-color: #006699; color: white;">Producto</th>
               <th style="width: 10%;background-color: #006699; color: white;">Talla</th>
               <th style="width: 10%;background-color: #006699; color: white;">Facultad</th>
+              <th style="width: 10%;background-color: #006699; color: white;">Fecha creacion</th>
+              <th style="width: 10%;background-color: #006699; color: white;">Fecha cargue</th>
+              <th style="width: 10%;background-color: #006699; color: white;">Fecha Fecha entrega</th>
               <th style="width: 10%;background-color: #006699; color: white;">Cantidad</th>
                 <th style="width: 10%;background-color: #006699; color: white;">Procesado</th>
+
 				 <th style="width: 10%;background-color: #006699; color: white;">Cliente</th>
 				  <th style="width: 10%;background-color: #006699; color: white;">Trabajador</th>
               <th style="width: 10%;background-color: #006699; color: white;">Descripcion</th>

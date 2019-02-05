@@ -208,7 +208,28 @@ return '<span ></span>'
 
 		});
 		
-		//pr.idproceso, pe.factura,tp.nomtipoprod,pro. nomprod,pe. talla,pe. facultad, pr.cantidad,pr.cantidad as procesado,per.nombres as cliente,pr.fecha,trabajador
+		
+/*
+<th style="width: 5%;background-color: #006699; color: white;">Codigo</th>
+              <th style="width: 10%;background-color: #006699; color: white;">Factura</th>
+              <th style="width: 10%;background-color: #006699; color: white;">Tipo</th>
+              <th style="width: 10%;background-color: #006699; color: white;">Producto</th>
+              <th style="width: 10%;background-color: #006699; color: white;">Talla</th>
+              <th style="width: 10%;background-color: #006699; color: white;">Facultad</th>
+              <th style="width: 10%;background-color: #006699; color: white;">Fecha creacion</th>
+              <th style="width: 10%;background-color: #006699; color: white;">Fecha cargue</th>
+              <th style="width: 10%;background-color: #006699; color: white;">Fecha Fecha entrega</th>
+              <th style="width: 10%;background-color: #006699; color: white;">Cantidad</th>
+                <th style="width: 10%;background-color: #006699; color: white;">Procesado</th>
+
+				 <th style="width: 10%;background-color: #006699; color: white;">Cliente</th>
+				  <th style="width: 10%;background-color: #006699; color: white;">Trabajador</th>
+              <th style="width: 10%;background-color: #006699; color: white;">Descripcion</th>
+
+
+*/
+
+
 		$('#tblconsulta').DataTable({
 			'paging':true,
 			'info':true,
@@ -231,6 +252,9 @@ return '<span ></span>'
 			{data:'nomprod'},
 			{data:'talla'},
 			{data:'facultad'},
+			{data:'fecha_ingreso'},
+			{data:'fecha'},
+			{data:'fentrega'},
 			{data:'cantidad'},
 			{data:'procesado'},
 			{data:'cliente'},

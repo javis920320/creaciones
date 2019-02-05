@@ -44,6 +44,25 @@
 						
 
  	}
+
+ 	public  function pedidosDisponibles(){
+
+ 		//variables de session
+
+ 		$nombres['nombres']=$this->session->userdata('nombres');
+ 		$idpersona['idpersona']=$this->session->userdata('idpersona');
+		$tipo['tipo']=$this->session->userdata('tipo');
+
+
+			                $this->load->view('layou/header',$nombres);
+							$this->load->view('layou/menu',$nombres);
+							$this->load->view('viewDisponibles',$nombres);
+							$this->load->view('layou/footer');
+
+
+
+ 	}
+
  public function imp(){
 
  	$datos['datos']=$this->input->get('selecciones');
@@ -114,6 +133,43 @@ descricion: este proceso realiza el cambio de estado el pedido
  	 		echo 0 ;
 
  	 	}
+
+ 	 }
+
+ 	 public  function registrarDisponibles(){
+
+ 	 	$datos['id_prod']=$this->input->post('id_prod');
+ 	 $datos['talla']=$this->input->post('talla');
+ 	 	$datos['cantidad']=$this->input->post('cantidad');
+
+ 	 	$entidad=$this->input->post('entidad');
+ 	 		$dependecia=$this->input->post('dependecias');
+ 	 		
+ 	 	
+ 	 	$datos['cantidad']=$this->input->post('cantidad');
+
+
+ 	 	$datos['descripcion']=$this->Mpedidos->entidadDepencia($entidad,$dependecia);
+ 	 
+
+ 	 	$res=$this->Mpedidos->registrarDisponibles($datos);
+
+ 	 	if($res>=1){
+ 	 		echo "Producto Disponible registrado";
+
+ 	 	}else{
+echo "error en el registro";
+ 	 	}
+
+
+
+
+ 	 }
+
+ 	 public function listaDisponibles(){
+
+ 	 	$res=$this->Mpedidos->listaDisponibles();
+ 	 	echo json_encode($res);
 
  	 }
  	 

@@ -1,12 +1,81 @@
 <?php 
 
-
+ini_set('date.timezone','America/Bogota');
 class Mpedidos extends CI_Model
 {
 	
 	function __construct()
 	{
 		parent::__construct();
+	}
+
+
+
+	public   function listaDisponibles(){
+		try {
+			
+			$query=$this->db->query("select d.idpedidosDisponibles,d.estado,d.fecha,d.estado,d.descripcion,p.nomprod ,d.cantidad
+				from pedidosdisponibles d 
+				inner join producto p on p.id_prod=d.id_prod");
+
+			return $query->result();
+
+
+		} catch (Exception $e) {
+			return $e;
+			
+		}
+
+	}
+
+	public  function entidadDepencia($entidad,$dependecia){
+		 try {
+		 	
+		 	$query=$this->db->query("select  CONCAT(e.nomentidad,' ',d.nombredep) as d from entidad  e
+             inner join dependencia d on d.identidad= e.identidad
+             where e.identidad=".$entidad." and d.iddependencia=".$dependecia."");
+
+
+		 		 foreach ($query->result() as $row)
+		{
+        	return $row->d;
+        
+		}
+
+
+
+
+		 } catch (Exception $e) {
+		 	return $e;
+		 	
+		 }
+	}
+
+
+	public function registrarDisponibles($datos){
+		try {
+
+			$data = array(
+				'idpedidosDisponibles' =>null ,
+				'fecha'=>date("Y/m/d,H:i:s"),
+				'descripcion'=>$datos['descripcion'],
+				'talla'=>$datos['talla'],
+				'cantidad'=>$datos['cantidad'],
+				'id_prod'=>$datos['id_prod']
+
+				 );
+
+
+			$this->db->insert('pedidosdisponibles',$data);
+		 return $this->db->affected_rows();
+			
+		} catch (Exception $e) {
+
+			return $e;
+			
+		}
+		
+
 	}
 
 
