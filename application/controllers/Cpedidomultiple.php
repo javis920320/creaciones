@@ -30,11 +30,12 @@ class Cpedidomultiple extends CI_Controller
 	 {
 	 	//$this->output->cache(15);
 
-
-		//$this->load->view('layou/headerm',$nombres);
-		//$this->load->view('layou/menum',$nombres);
-		$this->load->view('vrecepcion');
-		//$this->load->view('layou/footerm');
+		$nombres['nombres']=$this->session->userdata('nombres');
+		$this->load->view('layou/header',$nombres);
+		$this->load->view('layou/menu',$nombres);
+		//$this->load->view('vrecepcion');
+		$this->load->view("recepcionpedidos");
+		$this->load->view('layou/footer');
 	 }
 
 
@@ -303,6 +304,123 @@ if(!empty($_POST['idPersona'])){
 		$res=$this->Mpedidos->addRecpedido($datos);
 		echo $res;
 	}
+
+
+	public  function registroRecepcion(){
+
+
+
+		$datos['idproceso']=$this->input->post('idproceso');
+		$datos['cantidad']=$this->input->post('cntrec');
+
+		$cantidadMax=$this->Mpedidos->cantidadMax($datos);
+
+		if($datos['cantidad']>$cantidadMax){
+			echo -1;
+
+		}else{
+		$datos['idpedido']=$this->Mpedidos->pedidoProceso($datos);
+
+
+		$res=$this->Mpedidos->addRecibir($datos);
+		echo $res;	
+		}
+		
+
+	}
+
+
+	 public  function resumenproceso(){
+	 	$idpedido=$this->input->post('idpedido');
+	 	$res=$this->Mpedidos->resumenproceso($idpedido);
+	 	echo json_encode($res);
+
+	 }
+
+
+
+
+	 public function recibirPedidos(){
+
+	 	$datos['idproceso']=$this->input->post('idproceso');
+	 		$cantidad=$this->input->post('cantidad');
+	 		$idpedido=$this->input->post('idpedido');
+
+	 		$bandera=$this->Mpedidos->consultaexist($datos);
+
+	 		if($bandera>=1){
+
+	 			echo 'ESTE PEDIDO YA FUE  RECIBIDO';
+
+	 		}else{
+
+	 		
+
+	 	
+	 	
+	 	
+
+	 	$cnpedido=$this->Mpedidos->cantidadPedido($datos);
+
+
+	 	// ver  cantidad  recibida
+	 	$valor=$this->Mpedidos->cantidadRecibida($datos);
+	 	if($valor== null){
+	 		$cnrecibida=0;
+
+	 	}else{
+	 		$cnrecibida=$valor;
+
+	 	}
+
+	 	if($cnrecibida<$cnpedido){
+	 		
+	 	$issatelite=$this->Mpedidos->validauser($datos);
+	 	 if($issatelite==2 or $issatelite==3 ){
+	 	 	 	$idproceso=$datos['idproceso'];
+	$h=$this->Mpedidos->addrecb($idproceso,$cantidad,$idpedido);
+	if($h>=1){
+echo "Registro recibido";
+	}else{
+echo "Error";
+	}
+	
+	 	
+
+	 	 
+		   
+
+
+
+	 	 }else{
+
+	 		$r=$this->Mpedidos->addrecb($idproceso,$cantidad);
+	 	 		
+
+
+
+	 	 }
+
+
+
+
+
+	 	}else{
+	 		echo"LA  CANTIDAD  A INGRESAR NO PUEDE PROCESARCE";
+	 	}
+
+
+}
+
+
+
+
+	 
+
+
+
+
+	 }
 }
 
 

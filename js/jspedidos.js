@@ -996,6 +996,190 @@ $('#midial').dialog();
 
  	
  }
+cargarlistares();
+
+/*p.idpedido,tp.nomtipoprod,p.factura,p.facultad,p.cantidad,p.talla,p.descripcion,pe.nombres,p.fecha_ingreso,p.fentrega,p.print,(select sum(x.cantidad) from recpcionpedido x where x.idpedido=p.idpedido group by x.idpedido )as c*/
+
+ function cargarlistares(){
+
+
+ 	$('#tblrecepcion').DataTable({
+			'paging':true,
+			'info':true,
+			'filter':true,
+			'destroy':true,
+			'stateSave':true,
+
+			'ajax':{
+
+				"url":baseurl+"Cpedidomultiple/pedidoEnvio",
+				'data':{factura:factura},
+
+				'type':'POST',
+				dataSrc:''
+			},
+
+			'columns':[
+			{data: 'idpedido','sClass':'dt-body-center'},
+			{data:'nomtipoprod'},
+			{data:'factura'},
+			{data:'facultad'},
+			{data:'cantidad'},
+			{data:'talla'},
+			{data:'descripcion'},
+			{data:'nombres'},
+			{data:'fecha_ingreso'},
+			{data:'fentrega'},
+			{data:'c'},
+
+
+			{"orderable":true,
+			render:function(data,type,row){
+
+
+
+return '<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal"  onClick="recped(\''+row.idpedido+'\');"><span class="glyphicon glyphicon-gift"></span> Recibir</button>';/*'<span class="pull-right">' +
+                      '<div class="dropdown">' +
+                      '  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">' +
+                      '    Acciones' +
+                      '  <span class="caret"></span>' +
+                      '  </button>' +
+                      '    <ul class="dropdown-menu pull-right" aria-labelledby="dropdownMenu1">' +
+                      '    <li><a href="#" title="Editar informacion" data-toggle="modal" data-target="#editarp" onClick="selpedido(\''+row.factura+'\',\''+row.facultad+'\',\''+row.cantidad+'\',\''+row.talla+'\',\''+row.descripcion+'\',\''+row.idpedido+'\',\''+row.fentrega+'\');"><i style="color:#555;" class="glyphicon glyphicon-edit"></i> Editar</a></li>' +
+                       '    <li><a href="#" title="Eliminar"  data-toggle="modal" data-target="#eliminar" onClick="eliminar('+row.idpedido+')"><i style="color:red;" class="glyphicon glyphicon-remove"></i> Eliminar</a></li>' +
+                      '    <li><a href="#" title="Enviar Pedido"  data-toggle="modal" data-target="#estado"  onClick="estadopedido(\''+row.idpedido+'\',\''+row.nombres+'\',\''+row.telefono+'\')"><i style="color:green;" class="glyphicon glyphicon-plane"></i> Enviar Pedido</a></li>' +
+                      //'    <li><a href="#" title="Desaprobar afiliado" onClick="updEstadoAfiliado('+row.idPersona+','+2+')"><i style="color:red;" class="glyphicon glyphicon-remove"></i> Desaprobar</a></li>' +
+                      '    </ul>' +
+                      '</div>' +
+                       '<input type="checkbox" class="chk" name="chk"  value='+row.idpedido+'>'+	
+                      '</span>';*/
+
+
+				
+
+					
+					}
+			}
+
+
+			],
+
+ "order":[[0,"asc"]],
+
+		});
+
+ }
+lstsatelites();
+
+function lstsatelites(){
+
+
+	$.ajax({
+		url:baseurl+'Csatelite/listasatelites',
+		type:'POST',
+		success:function(data){
+			var obj=JSON.parse(data);
+
+			// console.log(obj[0].nombres);
+
+
+			//html='<select id="tpprod" name="tpprod" class=" pr form-control">';
+			html='';
+			html+='<option value="">Seleccione una opcion</option>';
+			html+='<option value="0" style="color:white; background:green">TALLER</option>';
+
+
+
+			$.each(obj,function(i,items){
+				html+='<option value="'+items.idtrabajador+'"">' + items.nombres+ '</option>';
+			});
+
+
+
+			//html+='</select>';
+			$("#trabajador").html(html);
+
+		}
+
+	});
+}
+
+
+
+ function recibopedido(){
+
+//obtenemos el  valor de recepcion  y  quien lo recibe
+    
+	       var idproceso= $("#cdproceso").val();
+	        var cantidadRecibida =$("#cdproceso").val();
+
+
+	        $.ajax({
+	        	url:baseurl+'Cpedidomultiple/registroRecepcion',
+	        	type:'POST',
+	        	data:{idproceso:idproceso,cntrec:cantidadRecibida},
+	        	success:function(data){
+
+	        		alert(data);
+
+	        	}
+	        });
+	        
+
+
+
+ }
+ //pr.nombres,pe.factura,p.cantidad ,p.idproceso 
+
+ recped= function(idpedido){
+ 	//alert(idpedido);
+ 	$("#pdcod").val(idpedido);
+
+ 	$.ajax({
+ 		url:baseurl+'Cpedidomultiple/resumenproceso',
+ 		type:'POST',
+ 		data:{idpedido:idpedido},
+ 		success:function(data){
+ 			obj=JSON.parse(data);
+ 			table='<table class="table"><tr><th>Nombre Trabajador</th><th>Factura</th><th>Cantidad Realizada</th><th>Accion</th><tr>';
+ 			$.each(obj,function(i,items){
+				table+='<tr><td>'+items.nombres+'</td><td>' + items.factura+ '</td><td>'+items.cantidad+'</td><td><input onclick="procesorec('+items.idproceso+','+items.cantidad+','+items.idpedido+');" type="button" class="btn" value="Recibir" ></td>';
+			});
+			table+='</table>';
+
+			$("#resumentable").html(table);
+
+ 		}
+ 	})
+
+
+
+
+ 	//console.log(idpedido);
+
+ }
+
+
+
+procesorec= function(idproceso,cantidad,idpedido){
+
+	//alert(idproceso);
+	$.ajax({
+url:baseurl+'Cpedidomultiple/recibirPedidos',
+type:'POST',
+data:{idproceso:idproceso,cantidad:cantidad,idpedido:idpedido},
+success:function(data){
+	
+	alert(data);
+  $('#tblrecepcion').DataTable().ajax.reload();
+	}
+
+	})
+};
+
+
+
+
 
 
 

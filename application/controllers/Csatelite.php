@@ -1,4 +1,5 @@
 <?php 
+ini_set('date.timezone','America/Bogota');
 class Csatelite extends CI_Controller
 {
 	

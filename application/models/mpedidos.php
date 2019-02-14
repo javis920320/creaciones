@@ -7,7 +7,162 @@ class Mpedidos extends CI_Model
 	function __construct()
 	{
 		parent::__construct();
+
+
+
 	}
+
+
+	public  function consultaexist($datos){
+
+
+		$query=$this->db->query("select count(*) as cantidad from recpcionpedido where idproceso= ".$datos['idproceso']);
+
+		foreach ($query->result() as $row) {
+
+			return $row->cantidad;
+		}
+
+	}
+
+	/*CREATE PROCEDURE name (idproceso int)
+BEGIN
+INSERT INTO recpcionpedido SELECT '',p.idpedido,p.idtrabajador,1,p.cantidad FROM proceso p   WHERE p.idproceso= idproceso;
+
+	
+END;*/
+
+	public  function addrecb($idproceso,$cantidad,$idpedido){
+	$datos = array(
+		'idproceso' => $idproceso,
+		'cantidad'=>$cantidad,
+		'idpedido'=>$idpedido,
+		'fechahora'=>date("Y/m/d,H:i:s"),
+
+		'estado'=>1
+
+		 );
+
+	$this->db->insert('recpcionpedido',$datos);
+	 return $this->db->affected_rows();
+
+
+		
+
+	}
+	//select sum(cantidad) from recpcionpedido where idpedido in (select p.idpedido from proceso p where p.idproceso=4)
+
+	public  function cantidadRecibida($datos){
+
+			$query=$this->db->query("select sum(d.cantidad)as cantidad from recpcionpedido d where d.idpedido in (select p.idpedido from proceso p where p.idproceso=".$datos['idproceso'].")");
+	 	foreach ($query->result() as  $value) {
+
+	 		return $value->cantidad;
+	 		# code...
+	 	}
+
+	}
+
+	 public  function cantidadPedido($datos){
+
+	 	$query=$this->db->query("select  p.cantidad from  pedido p inner join proceso pro on pro.idpedido=p.idpedido where pro.idproceso=".$datos['idproceso']);
+	 	foreach ($query->result() as  $value) {
+
+	 		return $value->cantidad;
+	 		# code...
+	 	}
+
+	 }
+
+	public  function valrecepcion($datos){
+		$query=$this->db->query("select pe.cantidad,(select sum(rp.cantidad) from recpcionpedido rp  where rp.idpedido=pro.idpedido)as cantrecibida from pedido pe 
+inner join proceso pro on pro.idpedido=pe.idpedido
+where pro.idproceso=".$datos['idproceso']);
+
+		return $query->result();
+
+	}
+
+
+	public  function validauser ($datos){
+
+		try {
+
+
+			$query=$this->db->query("select u.tipo from  proceso p 
+inner join trabajador  t on t.idtrabajador=p.idtrabajador
+inner join usuarios u on u.idpersona=t.idpersona where p.idproceso=".$datos['idproceso']);
+			foreach ($query->result() as $row) {
+
+				return $row->tipo;
+				# code...
+			}
+
+
+			
+		} catch (Exception $e) {
+
+			return -1;
+		}
+
+	}
+
+	public  function resumenproceso($idpedido){
+
+
+		$query=$this->db->query("select pr.nombres,pe.factura,p.cantidad ,p.idproceso,p.idpedido from proceso p
+ inner join pedido pe on pe.idpedido=p.idpedido
+ inner join trabajador t on t.idtrabajador=p.idtrabajador 
+ inner join  persona pr on pr.idpersona=t.idpersona
+ where pe.idpedido=".$idpedido);
+		return $query->result();
+
+	}
+
+
+	 public function cantidadMax($datos){
+	 		$query=$this->db->query("select cantidad from proceso where idproceso=".$datos['idproceso']);
+
+		foreach ($query->result() as $row) {
+			return $row->cantidad;
+		}
+
+	 }
+
+	public  function pedidoProceso($datos){
+
+		$query=$this->db->query("select idpedido from proceso where idproceso=".$datos['idproceso']);
+
+		foreach ($query->result() as $row) {
+			return $row->idpedido;
+		}
+
+	}
+
+
+
+public  function addRecibir($datos){
+
+		try {
+				$datos = array(
+		'idpedido' => $datos['idpedido'],
+		'cantidad' => $datos['cantidad'],
+		'estado'=>null
+		 );
+
+
+$this->db->insert('recpcionpedido',$datos);
+
+
+return $this->db->affected_rows();
+		} catch (Exception $e) {
+
+			return -1;
+			
+		}}
+
+	
+
 
 
 
@@ -135,7 +290,7 @@ public  function procesorecibido($idpedido){
 
 	public  function lstpedidosrec(){
 
-		$query=$this->db->query("select p.idpedido,tp.nomtipoprod,p.factura,p.facultad,p.cantidad,p.talla,p.descripcion,pe.nombres,p.fecha_ingreso,p.fentrega,p.print,(select sum(x.cantidad) from recpcionpedido x where x.idpedido=p.idpedido group by x.idpedido )as c
+		$query=$this->db->query("select p.idpedido,tp.nomtipoprod,p.factura,p.facultad,p.cantidad,p.talla,p.descripcion,pe.nombres,p.fecha_ingreso,p.fentrega,p.print,(select sum(x.cantidad) as cantidadAl from recpcionpedido x where x.idpedido=p.idpedido group by x.idpedido )as c
      from pedido p
      
      inner join cliente c on c.idcliente=p.idcliente

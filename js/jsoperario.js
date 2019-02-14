@@ -78,6 +78,7 @@ $('#tbltrabajos').DataTable({
 			{data: 'idproceso','sClass':'dt-body-center'},
 			{data: 'factura'},
 			{data: 'facultad'},
+			{data: 'talla'},
 			{data:'nomprod'},
 			{data:'descripcion'},
 			{data:'cantidad'},

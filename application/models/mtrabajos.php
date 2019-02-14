@@ -360,7 +360,7 @@ $this->db->where('p.estado',3);
 
 	public function listaprocesos($user){
 
-$query=$this->db->query("select pr.idproceso,pd.factura,pd.facultad,p.nomprod,pd.descripcion,pr.cantidad,pr.precio,pr.precio1,pr.fecha 
+$query=$this->db->query("select pr.idproceso,pd.factura,pd.talla,pd.facultad,p.nomprod,pd.descripcion,pr.cantidad,pr.precio,pr.precio1,pr.fecha 
      from periodo x ,proceso pr
       inner join producto p  on p.id_prod=pr.id_prod
        inner join pedido pd on pd.idpedido = pr.idpedido
