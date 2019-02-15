@@ -393,8 +393,18 @@ echo "Error";
 
 
 	 	 }else{
+	 	 	$idproceso=$datos['idproceso'];
 
-	 		$r=$this->Mpedidos->addrecb($idproceso,$cantidad);
+	 		$r=$this->Mpedidos->addrecb($idproceso,$cantidad,$idpedido);
+
+	 		if($r>=1){
+	 			$x=$this->Mpedidos->listaCobro($datos);
+echo "Registro recibido".$x;
+
+
+	}else{
+echo "Error";
+	}
 	 	 		
 
 

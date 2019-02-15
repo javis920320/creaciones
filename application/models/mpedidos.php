@@ -13,6 +13,21 @@ class Mpedidos extends CI_Model
 	}
 
 
+	public function listaCobro($datos){
+
+		$cambio = array('estado' => 4 );
+
+		$this->db->where('estado',2);
+		$this->db->where('idproceso',$datos['idproceso']);
+
+	$this->db->update('proceso',$cambio);
+	$res=$this->db->affected_rows();
+
+
+	return $res;
+	}
+
+
 	public  function consultaexist($datos){
 
 
