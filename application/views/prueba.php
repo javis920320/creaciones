@@ -27,10 +27,38 @@
               
 <!--<button id='pdf' class='btn btn-danger'><span class='glyphicon glyphicon-print'></span>  Crear Pdf</button>-->
 
+
+
 <button id='lista' class='btn btn-danger'><span class='glyphicon glyphicon-print'></span> Vista preliminar</button>
             </div>
             <!-- /.box-header -->
-             
+            
+<a href="">Busqueda Avanzada</a>
+<div class=" panel panel-primary">
+  <div class="panel-heading">
+   BUSQUEDA AVANZADA
+    
+  </div>
+  <div class="panel-body">
+
+    <input type="text" id="busfact" placeholder="factura">
+<!--<input type="text" id="busproducto" placeholder="Producto">--> 
+<!--<input type="text" id="busfacultad" placeholder="Facultad"> -->
+<input type="number"  id="buscantidad" placeholder="Cantidad">
+<input type="text" id="bustalla" placeholder="Talla">
+<label for="fingreso">fecha Ingreso</label>
+<input type="date" id="fingreso" placeholder=" fecha Ingreso">
+<label for="fingreso">fecha Entrega</label>
+<input type="date" id="fentrega" placeholder=" fecha Ingreso">
+<!--<input type="text" id="busdescripcion" placeholder="Descripcion">-->
+<!--<input type="text"  id="buscliente" placeholder="Cliente">-->
+ <button  onclick="eventClick();"> Buscar</button>
+    
+  </div>
+  
+</div>
+
+
             <div class="box-body table-responsive no-padding">
               <table  id='tblproductosen' class="table table-hover table-responsive">
                 <thead class="bg-success">

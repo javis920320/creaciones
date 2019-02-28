@@ -92,6 +92,7 @@
                    <th>Descripcion</th>
                   
                   <th>Fecha ingreso</th>
+                  <th>Fecha Asignacion</th>
                   <th>Estados</th>
 				  <th>Satelite</th>
 				   <th>V Bordado</th>

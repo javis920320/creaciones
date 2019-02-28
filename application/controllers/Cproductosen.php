@@ -82,13 +82,40 @@ autor:´javier lopez
 
 
 	  public function estados(){
+	  	$datos['factura']=$this->input->post('factura');
 
 
 
-	  	$res=$this->Mpedidos->estados();
+ if($datos['factura']==null){
+
+ 	$res=$this->Mpedidos->estados();
+ 	
+ 	
+
 
 	  	echo json_encode($res);
-	  }
+
+ 	
+	  
+
+ }else{
+
+
+$datos['factura']=$this->input->post('factura');
+$datos['cantidad']=$this->input->post('cantidad');
+$datos['talla']=$this->input->post('talla');
+$datos['fingreso']=$this->input->post('fingreso');
+$datos['fentrega']=$this->input->post('fentrega');
+
+
+$res=$this->Mpedidos->filestados($datos);
+
+	  	echo json_encode($res);
+	  
+ }
+}
+
+	  	
 	  
 	  
 	  public  function arreglo(){

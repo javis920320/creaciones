@@ -127,6 +127,7 @@ function listageneral(dato){
 			{data:'descripcion'},
 			//{data:'nombres'},
 			{data:'fecha_ingreso'},
+			{data:'fecha'},
 			{data:'estado'},
 			{data:'nombres'},
 			{data:'prebordado'},
@@ -154,7 +155,7 @@ return '<span class="pull-right"> $ ' +
 			],
 			"columnDefs": [
         {
-          "targets": [8], 
+          "targets": [9], 
           "data": "estado", 
           "render": function(data, type, row) {
             

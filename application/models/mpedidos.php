@@ -13,6 +13,23 @@ class Mpedidos extends CI_Model
 	}
 
 
+	public  function filestados($datos){
+
+		$query=$this->db->query("select p.idpedido,tp.nomtipoprod,p.factura,p.facultad,p.cantidad,p.talla,p.descripcion,pe.nombres,p.fecha_ingreso,p.fentrega ,p.estado
+						from pedido p
+						inner join cliente c on c.idcliente=p.idcliente
+						inner join tipo_producto tp on tp.idtipoprod=p.idtipoprod
+						inner join persona pe on pe.idpersona=c.idpersona
+						where   p.factura like '%".$datos['factura']."%' and cantidad like '%".$datos['cantidad']."%'  and talla  like '%".$datos['talla']."%' and p.fecha_ingreso like '%".$datos['fingreso']."%'  and p.fentrega like '%".$datos['fentrega']."%' and p.estado=3 or p.estado=2 
+						order by p.fecha_ingreso desc");
+
+		//\'%2727%\'
+
+		return $query->result();
+
+	}
+
+
 	public function listaCobro($datos){
 
 		$cambio = array('estado' => 4 );

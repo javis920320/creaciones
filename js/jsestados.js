@@ -1,13 +1,39 @@
+
+listaEnvios(null,null,null,null,null);
+
+
+function eventClick(){
+var factura=$('#busfact').val();
+  var producto=$('#busproducto').val();
+   var facultad=$('#busfacultad').val();
+    var cantidad=$('#buscantidad').val();
+     var talla=$('#bustalla').val();
+      var fingreso=$('#fingreso').val();
+        var fentrega=$('#fentrega').val();
+        listaEnvios(factura,talla,cantidad,fingreso,fentrega);
+
+
+}
+
+
+function listaEnvios(factura,talla,cantidad,fingreso,fentrega){
+	//alert(factura);
+
+
+
+
+
 $('#tblproductosen').DataTable({
 			'paging':true,
 			'info':true,
 			'filter':true,
 			'stateSave':true,
+			'destroy':true,
 
 			'ajax':{
 
 				"url":baseurl+"Cproductosen/estados",
-				'data':{factura:''},
+				'data':{factura:factura,talla:talla,cantidad:cantidad,fingreso:fingreso,fentrega:fentrega},
 
 				'type':'POST',
 				dataSrc:''
@@ -64,3 +90,12 @@ $('#tblproductosen').DataTable({
  "order":[[0,"asc"]],
 
 		});	
+
+
+
+
+
+
+}
+
+
