@@ -64,16 +64,16 @@ resfiltrar();
 			{data:'nbordados'},
 			{data:'valor bordado'},
 			{data:'fecha'},
+			{data:'idtrabajador'},
 			{data:'nombres'},
 			{"orderable":true,
 			render:function(data,type,row){
 
 
 
-				return'<span class="glyphicon glyphicon-check"></span>';
+				return'<button  class="btn btn-primary " data-toggle="modal" data-target="#acionesmod" onClick="editarinfo(\''+row.idproceso+'\',\''+row.idtrabajador+'\',\''+row.id_prod+'\',\''+row.cantidad+'\');">Acciones</button>';
 
-					//return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" data-toggle="modal" data-target="#myModal"><i class=" fa fa-edit"></i></a
-					//return '<a  href="#"  class="btn btn-primary  btn-sm" style="width:80%;" title="Editar informacion" data-toggle="modal" data-target="#modalEditPersona" onClick="selPersona(\''+row.idpersona+'\',\''+row.cedula+'\',\''+row.nombres+'\',\''+row.telefono+'\');"><i class=" fa fa-edit"></i></a>';
+					
 					}
 			}
 
@@ -156,7 +156,163 @@ success:function(data){
 	 });
  });
 
+   editarinfo=function(idproceso,idtrabajador,id_prod,cantidad){
 
+  	$('#datoproceso').val(idproceso);
+  	$('#tr').val(idtrabajador);
+  	$('#tipoproducto').val(id_prod);
+  	$("#cantidad").val(cantidad);
+
+  	$.ajax({
+  type: "POST",
+  url:baseurl+"Cresumenprocesos/datosResumen",
+  data:{idproceso:idproceso},
+  success:function(data){
+ if(data==4){
+
+ 	html="<label for='vcero'>Valor Cero</label><input type='radio' name='tipopago' value='1'  id='vcero'> <label for='vsatelite'>Valor Satelite</label><input type='radio' name='tipopago' value='0' id='vsatelite'>";
+ 	$("#tppago").html(html);
+
+ }else{
+
+html="<label for='vcero'>Valor normal</label><input type='radio' name='tipopago' value='2'  id='vnormal'> <label for='vsatelite'>Valor nocturno</label><input type='radio' name='tipopago' value='3' id='vtercer'>";
+ 	$("#tppago").html(html);
+ }
+  }
+  
+});
+
+
+
+  }
+
+  listatrabajadores();
+
+ function listatrabajadores(){
+
+
+ 	$.ajax({
+ 		'url':baseurl+'Cnomina/listatrabajadores',
+ 		'type':'POST',
+ 		'data':'',
+ 		success:function(data){
+ 			
+
+			var obj=JSON.parse(data);
+
+			html='';
+			html+='<option value="1">Seleccione una opcion</option>';
+
+
+			$.each(obj,function(i,items){
+				html+='<option data="'+items.idtrabajador+'" value="'+items.idtrabajador+'"">' + items.nombres+ '</option>';
+			});
+
+
+
+			//html+='</select>';
+			$("#tr").html(html);
+			$("#tr1").html(html);
+
+
+			
+
+
+ 		}
+
+ 	})
+ }
+
+  function updateproceso(){
+
+  	 var idtrabajador=$('#tr').val();
+  	 var idproceso=$('#datoproceso').val();
+  	  var tipopago=$('input[name=tipopago]:checked').val();
+  	  var idproducto=$('#tipoproducto').val();
+  	   var cantidad=$('#cantidad').val();
+
+
+  	  if(tipopago==null){
+  	  	alert('Seleccione  el tipo de pago');
+
+  	  }else{
+
+
+  	  	$.ajax({
+  	 	url:baseurl+'Cresumenprocesos/updateproceso',
+  	 	type:'POST',
+  	 	data:{idtrabajador:idtrabajador,idproceso:idproceso,tipoprecio:tipopago,idproducto:idproducto,cantidad:cantidad},
+  	 	success:function(data){
+  	 		alert(data);
+
+  	 	}
+  	 })
+
+  	  }
+
+  	 
+  }
+
+  //llamar a todos los productos
+  listaProductos();
+  function listaProductos(){
+
+
+
+$.post(baseurl+"Cresumenprocesos/listaProductos", function( data ) {
+obj=JSON.parse(data);
+html='<select id="tipoproducto" class="form-control">';
+html+='<option>Seleccione</option>'
+
+
+$.each(obj,function(i,item){
+				html+='<option value='+item.id_prod+'>'+item.nomprod+'</option>';
+			});
+			html+='</select>';	
+			
+			$('#lisprod').html(html);
+
+
+});
+
+
+  }
+
+ function vertipo(){
+ 	idtrabajador=$('#tr').val();
+ 	$.ajax({
+ 		url:baseurl+'Cresumenprocesos/vertipo',
+ 		type:'POST',
+ 		data:{idtrabajador:idtrabajador},
+ 		success:function(data){
+ 			//alert(data);
+
+ 			 if(data==4){
+
+ 	html="<label for='vcero'>Valor Cero</label><input type='radio' name='tipopago' value='1'  id='vcero'> <label for='vsatelite'>Valor Satelite</label><input type='radio' name='tipopago' value='0' id='vsatelite'>";
+ 	$("#tppago").html(html);
+
+ }else{
+
+html="<label for='vcero'>Valor normal</label><input type='radio' name='tipopago' value='2'  id='vnormal'> <label for='vsatelite'>Valor nocturno</label><input type='radio' name='tipopago' value='3' id='vtercer'>";
+ 	$("#tppago").html(html);
+ }
+
+
+
+ 		}
+
+ 	}
+
+ 		
+
+ 		);
+
+
+
+
+
+}
 
  
 

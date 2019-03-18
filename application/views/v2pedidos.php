@@ -11,6 +11,9 @@
   margin-right: 150px;
 
 }
+/*#panel2{
+	height: 150px;
+}*/
 
 	</style>
 <br>
@@ -98,22 +101,38 @@
 <div class="box-body">
 
 
-				<div class="panel panel-success">
+				<div class="panel panel-primary">
 					<div class="panel-heading"><strong>Datos de Cliente</strong></div>
-				  <div class="panel-body">
-				  	<strong class="bg bg-danger" id='msj'></strong><br>
-				 <label for="idcliente"><strong>Identificacion  :</strong></label><input type="number" name="" class="form-control" id="idcliente">
-				 <label for="nomcli"> <strong>Nombres</strong></label> <input type="text" name="" placeholder="Nombre cliente" class="form-control" id="nomcli">
-				 <label for="telcli">Tel-cel</label> <input type="number" name="" class="form-control"  id="telcli"><br>
-				 <button class="btn btn-primary" id="btnnuevocli" name="btnnuevocli" onclick="newcliente();">Nuevo cliente</button>
-				   
+				  	<div class="panel-body">
+
+				  	<div class="col-lg-12">
+				  		<strong class="bg bg-danger" id='msj'></strong>
+
+					<div class="col-lg-3">
+						
+					
+				  	
+				 	<label for="idcliente"><strong>Identificacion  :</strong></label><input type="number" name="" class="form-control" id="idcliente">
+				 </div>
+						<div class="col-lg-3">
+						
+					
+				 	<label for="nomcli"> <strong>Nombres</strong></label> <input type="text" name="" placeholder="Nombre cliente" class="form-control" id="nomcli">
+				 	</div>
+				 	<div class="col-lg-3">
+				 	<label for="telcli">Tel-cel</label> <input type="number" name="" class="form-control"  id="telcli"><br>
+				 	</div>
+				 	<button class="btn btn-primary" id="btnnuevocli" name="btnnuevocli" onclick="newcliente();">Nuevo cliente</button>
+
+				   </div>
 				  </div>
 				  <div class="panel-footer"></div>
 				</div>
 
-				<div class="panel panel-success">
+				<div class="panel panel-primary" id="panel2">
 					<div class="panel-heading"><strong>Tipo cliente</strong></div>
 				  <div class="panel-body">
+
 				  	<div class="row">
 				  		
 				  		<div class="col-md-4">
@@ -146,20 +165,20 @@
 				  	</div>
 				      
 
-				      <br> <br>
-
-
-				      <div id="">
+				      <div id="" class="col-lg-12">
+				      	<div id="" class="col-lg-4">
 				      	
-				<select id="cont_tpcli" name="cont_tpcli" class=" pr form-control"  required="true"></select>
+				<select id="cont_tpcli" name="cont_tpcli" class=" pr form-control"  required="true"></select> <label>Mas</label>
+			</div>
 
-				      </div>
-				      <br><label>Mas</label>
-				        <div id="">
+				     
+				     
+				        <div id="" class="col-lg-4">
 				      	<select  id='dep' class="form-control"></select> 
 
 
 				      </div>
+				       </div>
 
 				      
 				   
@@ -167,17 +186,22 @@
 				  <div class="panel-footer"></div>
 				</div>
 
-				<div class="panel panel-success">
+				<div class="panel panel-primary">
 					<div class="panel-heading"><strong>Detalles de pedido</strong></div>
 				  <div class="panel-body">
-				      <label><strong>Factura</strong></label><input class="form-control" type="number" id='faccli'>
-				      <label><strong>Fecha Entrega</strong></label><input class="form-control" type="date" id="fecentre">
-				      <label for="tpprod" >Tipo Producto:</label>
+				  	<!--INICIO-->
+				  	<div class="col-md-12">
 
-					<div id='tpprod'></div>
+				  		<div class="col-lg-10">
 
-					
-				      <div class="form-group ">	
+				  			<div class="col-lg-2"><label><strong>Factura</strong></label><input class="form-control" type="number" id='faccli'></div>
+				     <div class="col-lg-2"> <label><strong>Fecha Entrega</strong></label><input class="form-control" type="date" id="fecentre"></div>
+				    <div class="col-lg-3">  <label for="tpprod" >Tipo Producto:</label>
+
+					<div id='tpprod'></div></div>
+
+					<div class="col-lg-2">
+						    <div class="form-group ">	
 				<label for="talla" >Talla</label>
 				<select name="talla" id="talla" class="form-control ">
 					<option value="0">0</option>
@@ -200,8 +224,26 @@
 				</select>
 
 			</div>
-			<label for="lblcn"><strong>Cantidad</strong></label> <input class="form-control" type="numer" name="" id="lblcn" min="1" value="1">
-			<label for="lbldesc"><strong>Descripcion</strong></label> <textarea cols="30" rows="5" class='form-control 'id='lbldesc' ></textarea>
+						
+					</div>
+					<div class="col-lg-2"><label for="lblcn"><strong>Cantidad</strong></label> <input class="form-control" type="numer" name="" id="lblcn" min="1" value="1"></div>
+				  		</div>
+				  		
+				  	
+
+
+				      
+
+					
+		
+				
+				  
+			
+			<div class="col-lg-10"><label for="lbldesc"><strong>Descripcion</strong></label> <textarea cols="30" rows="2" class='form-control 'id='lbldesc' ></textarea></div>
+
+
+			</div>
+			<!--FIN-->
 				   
 				  </div>
 				  <div class="panel-footer">

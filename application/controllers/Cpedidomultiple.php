@@ -12,6 +12,14 @@ class Cpedidomultiple extends CI_Controller
 	}
 
 
+public  function pedidosVersion2019(){
+
+$nombres['nombres']=$this->session->userdata('nombres');
+		$this->load->view('layou/header',$nombres);
+		$this->load->view('layou/menu',$nombres);
+		$this->load->view('pedidos2019');
+		$this->load->view('layou/footer');
+}
 
 
 

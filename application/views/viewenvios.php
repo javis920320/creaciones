@@ -216,6 +216,7 @@
                    <select class="form-control" id="trabajadorC">
                     <option value="">Seleccione</option>
                     <option  ng-repeat="dat in dataja" value="{{dat.idtrabajador}}">{{dat.nombres}}</option>
+                    <input type="radio" name="tipopago">
                      
                    </select>     
                    </div>

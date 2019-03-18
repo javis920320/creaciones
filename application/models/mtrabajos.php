@@ -11,6 +11,123 @@ class Mtrabajos extends CI_Model
 
 	}
 
+	public   function vertipo($datos){
+
+		$query=$this->db->query("
+			select u.tipo from  usuarios u  
+			inner join  persona p on p.idpersona=u.idpersona
+			inner join trabajador t on t.idpersona=p.idpersona where idtrabajador=
+			".$datos['idtrabajador']);
+
+
+		return $query->result(); 
+
+	}
+
+
+public  function verPrecio($tipovalor,$datos){
+		$res=$this->db->query("select ".$tipovalor." from precio where id_prod=".$datos['id_prod']." and estado=1");
+		
+		
+		return $res->result();
+		
+
+	}
+	public  function precio($datos){
+		$res=$this->db->query("select valorsatelite from precio where id_prod=".$datos['id_prod']." and estado=1");
+		
+		foreach ($res->result() as $row) {
+		return $row->valorsatelite;
+		}
+
+	}
+	public  function precio1($datos){
+
+		$res=$this->db->query("select valor from precio where id_prod=".$datos['id_prod']." and estado=1");
+
+
+
+
+		foreach ($res->result() as $row) {
+		return $row->valor;
+		}
+
+
+	}
+
+
+	public function upprocesosatelite($p,$p1,$datos){
+		try {
+			
+			$data = array('precio1' =>$p ,'precio'=>$p1,'idtrabajador'=>$datos['idtrabajador'] ,'id_prod'=>$datos['id_prod']);
+
+		$this->db->where('idproceso',$datos['idproceso']);
+		$this->db->update('proceso',$data);
+		$res=$this->db->affected_rows();
+		return$res;
+		} catch (Exception $e) {
+
+			return -1;
+			
+		}
+
+
+		
+
+
+		
+
+	}
+
+
+
+	public  function listaProductos(){
+
+		$res=$this->db->query('select id_prod,nomprod,idtipoprod from producto where  estado=1 order by idtipoprod ');
+
+		return $res->result();
+	}
+
+	public  function updatecli($datos){
+
+		try {
+			$arreglo = array('idtrabajador' => $datos['idtrabajador'] );
+
+			$this->db->where('idproceso',$datos['idproceso']);
+			$this->db->update('proceso',$arreglo);
+			 $res=$this->db->affected_rows();
+		return$res;
+			
+		} catch (Exception $e) {
+
+			return -1;
+			
+		}
+
+	}
+
+
+	public function tipotrabajador($datos){
+
+		try {
+
+			$res=$this->db->query('select u.tipo from trabajador t 
+				inner join proceso pro on pro.idtrabajador=t.idtrabajador
+				inner join persona p on p.idpersona=t.idpersona
+				inner join usuarios u on u.idpersona=t.idpersona where pro.idproceso='.$datos['idproceso']);
+			foreach ($res->result() as $row) {
+
+				return$row->tipo;
+				# code...
+			}
+			
+		} catch (Exception $e) {
+			return 0;
+			
+		}
+
+	}
+
 
   public  function valorCompare($param){
 
@@ -385,7 +502,7 @@ $query=$this->db->query("select pr.idproceso,pd.factura,pd.talla,pd.facultad,p.n
 
 
 
-		$this->db->select('pr.idproceso,pd.factura,pd.facultad,pd.talla,p.nomprod,pd.descripcion,pr.cantidad,pr.precio,pr.precio1,(sum(bp.cantidad)*pr.cantidad) as nbordados,prebordado as valor bordado,pr.fecha,pe.nombres');
+		$this->db->select('pr.idproceso,pd.factura,pd.facultad,pd.talla,p.id_prod,p.nomprod,pd.descripcion,pr.cantidad,pr.precio,pr.precio1,(sum(bp.cantidad)*pr.cantidad) as nbordados,prebordado as valor bordado,pr.fecha,pe.nombres,pr.idtrabajador');
 		$this->db->from('periodo x,proceso pr');
 		$this->db->join('producto p','p.id_prod=pr.id_prod');
 		$this->db->join ('bordadosproductos bp','p.id_prod = bp.id_prod');

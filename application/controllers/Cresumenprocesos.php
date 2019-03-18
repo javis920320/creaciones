@@ -30,6 +30,118 @@ class Cresumenprocesos extends CI_Controller
 
 	 }
 
+	 public  function listaProductos(){
+
+	 	$res=$this->Mtrabajos->listaProductos();
+	 	 echo json_encode($res);
+	 }
+
+	 public   function updateproceso(){
+
+	 	$datos['idtrabajador']=$this->input->post('idtrabajador');
+	 	$datos['idproceso']=$this->input->post('idproceso');
+	 	$datos['tipoprecio']=$this->input->post('tipoprecio');
+	 	$datos['id_prod']=$this->input->post('idproducto');
+	 	$datos['cantidad']=$this->input->post('cantidad');
+
+
+	$tipotrabajador=$this->Mtrabajos->tipotrabajador($datos);
+	 if ($tipotrabajador==4) {
+	 	
+	 	if($datos['tipoprecio']==1){
+	 		$res=$this->Mtrabajos->upprocesosatelite(0,0,$datos);
+	 		echo "Cambio a Satelite".$datos['idtrabajador'];
+	 		
+
+	 	}else{
+
+	 		 $precio=$this->Mtrabajos->precio($datos);
+	 		$precio1=$this->Mtrabajos->precio1($datos);
+
+	 		
+	 		$this->Mtrabajos->upprocesosatelite($precio*$datos['cantidad'],$precio1*$datos['cantidad'],$datos);
+	 		
+	 		echo "valore normal".$datos['tipoprecio'];
+
+	 	}
+
+	 	
+	 	
+	 }else{
+
+
+	 	if($datos['tipoprecio']==2){
+	 		//precio normal
+
+	 		
+
+	 		$vadmin=$this->Mtrabajos->verPrecio('valor',$datos);
+	 		$voperario=$this->Mtrabajos->verPrecio('subvalor',$datos);
+	 	
+ 
+$precio= $vadmin[0]->valor;
+$precio1= $voperario[0]->subvalor;
+
+$this->Mtrabajos->upprocesosatelite($precio*$datos['cantidad'],$precio1*$datos['cantidad'],$datos);
+	 		 
+
+
+	 		echo'DATOS ACTUALIZADOS';
+	 		
+
+	 	}else{
+	 		
+	 		$vadmin=$this->Mtrabajos->verPrecio('valor',$datos);
+	 		$voperario=$this->Mtrabajos->verPrecio('precionocturno',$datos);
+	 	
+ 
+$precio= $vadmin[0]->valor;
+$precio1= $voperario[0]->precionocturno;
+
+$this->Mtrabajos->upprocesosatelite($precio*$datos['cantidad'],$precio1*$datos['cantidad'],$datos);
+echo'DATOS ACTUALIZADOS';
+
+	 		
+
+	 	}
+
+
+
+
+
+
+	 }
+
+
+
+
+
+	 }
+
+
+	 /*$this->Mtrabajos->actualizaPrecio($tipotrabajador,$datos);
+
+	 	//si  tipo precio cambia calcular precio
+
+	 	//$this->Mtrabajos->updatePrecio($datos);
+
+	 	$tipotrabajador=$this->Mtrabajos->tipotrabajador($datos);
+
+	 	$res=$this->Mtrabajos->updatecli($datos);
+	 	echo $res;*/
+
+
+	 public  function datosResumen(){
+	 	$datos['idproceso']=$this->input->post('idproceso');
+
+	 	$res=$this->Mtrabajos->tipotrabajador($datos);
+	 	echo $res;
+
+
+	 }
+
+
+
 
 	 public function periodosaldo (){
 
@@ -228,6 +340,19 @@ $arreglo['fechaf']=$this->input->post('fechaf');
 $arreglo['finicio']=$this->input->post('finicio');
 
 $arreglo['finicio']=$this->input->post('finicio');
+  }
+
+
+  public function vertipo(){
+  	$datos['idtrabajador']=$this->input->post('idtrabajador');
+
+
+  	$res=$this->Mtrabajos->vertipo($datos);
+  	echo $res[0]->tipo;
+
+
+
+
   }
 
 

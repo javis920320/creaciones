@@ -3,6 +3,34 @@
 	<title></title>
 </head>
 <body>
+  <!-- Button trigger modal -->
+ 
+  
+  <!-- Modal -->
+  <div class="modal fade" id="acionesmod" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Ajustes de pedido</h4>
+        </div>
+        <div class="modal-body">
+         <input type="hidden" id="datoproceso">
+          <input type="hidden" id="cantidad">
+         <label for="lisprod">PRODUCTOS</label>
+         <div id="lisprod"></div>
+         <label for="tr">TRABAJADOR</label>
+         <select id="tr" class="form-control" onchange="vertipo();"></select>
+
+         <div id="tppago"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" onclick="updateproceso();">Guardar Datos</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   
   <!-- Modal -->
@@ -100,6 +128,7 @@
                       <th style="width: 10%;background-color: #006699; color: white;">N°bordados</th>
                       <th style="width: 10%;background-color: #006699; color: white;">Precio bordados</th>
                       <th style="width: 10%;background-color: #006699; color: white;">Fecha</th>
+                        <th style="width: 2%;background-color: #006699; color: white;">Id</th>
                       <th style="width: 10%;background-color: #006699; color: white;">operario</th>
 
               <th style="width: 10%;background-color: #006699; color: white;">Acción</th>
