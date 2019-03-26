@@ -263,3 +263,56 @@ return '<button class=" report btn btn-success"> <i class="glyphicon glyphicon-d
 
 
 		});
+
+		crearListaResumensatelite();
+
+		 function crearListaResumensatelite(){
+
+
+		 	$.ajax({
+		 		url:baseurl+'Clistasatel/verlista',
+		 		type:'POST',
+		 		data:{},
+		 		success: function(data){
+		 			//alert(data);
+		 			var obj=JSON.parse(data);
+		 			 html='';
+
+		 			 $.each(obj,function(i,items){
+				//html+='<option value="'+items.idtrabajador+'"">' + items.nombres+ '</option>';
+
+				html+='<div id="mycontenedor" data-toggle="popover" title="'+items.nombres+'" title" data-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et doloribus inventore laborum tempore tempora sapiente error, dicta, possimus, saepe a ratione eaque esse cupiditate. Saepe numquam totam sapiente, recusandae laboriosam."  onmouseover="verdetalles('+items.idtrabajador+');"><span><strong>'+items.nombres+'</strong></span><h4><code>'+items.fecha+'</code></h4><h5>Productos Asignados('+items.cantidad+')</h5></div>';
+			});
+
+		 			 $('#contenedor').html(html);
+
+
+
+
+		 		}
+
+		 	});
+
+		 }
+
+
+		 function formatDate(date) {
+  var monthNames = [
+    "January", "February", "March",
+    "April", "May", "June", "July",
+    "August", "September", "October",
+    "November", "December"
+  ];
+
+  var day = date.getDate();
+  var monthIndex = date.getMonth();
+  var year = date.getFullYear();
+
+  return day + ' ' + monthNames[monthIndex] + ' ' + year;
+}
+ function verdetalles(event){
+ //alert();
+  console.log(event);
+
+  $('[data-toggle="popover"]').popover()
+ }

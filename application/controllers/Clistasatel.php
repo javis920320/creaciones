@@ -25,7 +25,24 @@ class Clistasatel extends CI_Controller
 
 	 }
 	 
+	  public function listaresumen(){
 
+	  		$nombres['nombres']=$this->session->userdata('nombres');
+
+	 	$this->load->view('layou/header',$nombres);
+	 	$this->load->view('layou/menu',$nombres);
+	 	$this->load->view('vresumensatelites');
+	 	$this->load->view('layou/footer',$nombres);
+
+	  }
+
+
+ public  function verlista(){
+$res=$this->Madmin->verlista();
+echo json_encode($res);
+
+
+ }
 	 public  function lstvalores(){
 
 

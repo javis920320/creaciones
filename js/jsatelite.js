@@ -88,6 +88,12 @@ return '<span class="pull-right"> $ ' +
 
 function buscar(){
 
+
+	//$("#fac").on('change',function(event)){
+
+	
+
+
 	var fac=$('#fac').val();
 
 
@@ -105,11 +111,12 @@ $.post(baseurl+"Ctrabajos/lsttipoprod",
 				$('#res').html('<span class="text-danger"><h3>Por Favor Verifica la Factura!!</h3></span>');
 
 			}else{
+				
 				$('#res').addClass('hide');
 
 			var obj=JSON.parse(data);
 
-			// console.log(obj[0].nombres);
+			 //console.log(obj[0].nomtipoprod);
 
 
 			//html='<select id="tpprod" name="tpprod" class=" pr form-control">';

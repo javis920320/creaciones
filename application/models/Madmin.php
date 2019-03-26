@@ -8,6 +8,17 @@ class Madmin extends CI_Model
 		parent::__construct();
 	}
 
+	public  function verlista(){
+
+		
+
+			$query=$this->db->query('select * from versatelitetrporfecha');
+return $query->result();
+		
+
+		
+	}
+
 
 
 public function tipoprecio($res,$tpv){

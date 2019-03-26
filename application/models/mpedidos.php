@@ -763,7 +763,7 @@ $this->db->select('p.idpedido,tp.nomtipoprod,p.factura,p.facultad,p.cantidad,p.t
 				");*/
 
 
-					$query=$this->db->query("select p.idpedido,tp.nomtipoprod,p.factura,p.facultad,p.cantidad,p.talla,p.descripcion,pe.nombres,p.fecha_ingreso,p.fentrega ,p.estado
+					$query=$this->db->query("select p.idpedido,tp.nomtipoprod,p.factura,p.facultad,p.cantidad,p.talla,p.descripcion,pe.nombres,p.fecha_ingreso,p.fentrega ,p.estado,tp.idtipoprod
 						from pedido p
 						inner join cliente c on c.idcliente=p.idcliente
 						inner join tipo_producto tp on tp.idtipoprod=p.idtipoprod
