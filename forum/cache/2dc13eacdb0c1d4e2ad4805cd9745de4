@@ -1,0 +1,138 @@
+a:5:{s:8:"template";s:11619:"<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>{{ keyword }}</title>
+<link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,300|Montserrat:400,700|Inconsolata" id="prefix_google_fonts-css" media="screen" rel="stylesheet" type="text/css"/>
+<style rel="stylesheet" type="text/css">@charset "UTF-8"; html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}body{margin:0}footer,header,nav{display:block}a{background-color:transparent}a:active,a:hover{outline:0}h1{margin:.67em 0;font-size:2em}button{margin:0;font:inherit;color:inherit}button{overflow:visible}button{text-transform:none}button{-webkit-appearance:button;cursor:pointer}button::-moz-focus-inner{padding:0;border:0} *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}:after,:before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}html{font-size:10px;-webkit-tap-highlight-color:transparent}body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:14px;line-height:1.42857143;color:#333;background-color:#fff}button{font-family:inherit;font-size:inherit;line-height:inherit}a{color:#337ab7;text-decoration:none}a:focus,a:hover{color:#23527c;text-decoration:underline}a:focus{outline:thin dotted;outline:5px auto -webkit-focus-ring-color;outline-offset:-2px}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}h1,h3{font-family:inherit;font-weight:500;line-height:1.1;color:inherit}h1,h3{margin-top:20px;margin-bottom:10px}h1{font-size:36px}h3{font-size:24px}ul{margin-top:0;margin-bottom:10px}.container{padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}@media (min-width:768px){.container{width:750px}}@media (min-width:992px){.container{width:970px}}@media (min-width:1200px){.container{width:1170px}}.row{margin-right:-15px;margin-left:-15px}.col-md-7,.col-sm-4,.col-sm-8,.col-xs-3,.col-xs-9{position:relative;min-height:1px;padding-right:15px;padding-left:15px}.col-xs-3,.col-xs-9{float:left}.col-xs-9{width:75%}.col-xs-3{width:25%}@media (min-width:768px){.col-sm-4,.col-sm-8{float:left}.col-sm-8{width:66.66666667%}.col-sm-4{width:33.33333333%}}@media (min-width:992px){.col-md-7{float:left}.col-md-7{width:58.33333333%}}.collapse{display:none;visibility:hidden}.caret{display:inline-block;width:0;height:0;margin-left:2px;vertical-align:middle;border-top:4px solid;border-right:4px solid transparent;border-left:4px solid transparent}.dropdown{position:relative}.dropdown-toggle:focus{outline:0}.nav{padding-left:0;margin-bottom:0;list-style:none}.nav>li{position:relative;display:block}.nav>li>a{position:relative;display:block;padding:10px 15px}.nav>li>a:focus,.nav>li>a:hover{text-decoration:none;background-color:#eee}.navbar-collapse{padding-right:15px;padding-left:15px;overflow-x:visible;-webkit-overflow-scrolling:touch;border-top:1px solid transparent;-webkit-box-shadow:inset 0 1px 0 rgba(255,255,255,.1);box-shadow:inset 0 1px 0 rgba(255,255,255,.1)}@media (min-width:768px){.navbar-collapse{width:auto;border-top:0;-webkit-box-shadow:none;box-shadow:none}.navbar-collapse.collapse{display:block!important;height:auto!important;padding-bottom:0;overflow:visible!important;visibility:visible!important}}.navbar-nav{margin:7.5px -15px}.navbar-nav>li>a{padding-top:10px;padding-bottom:10px;line-height:20px}@media (min-width:768px){.navbar-nav{float:left;margin:0}.navbar-nav>li{float:left}.navbar-nav>li>a{padding-top:15px;padding-bottom:15px}}@media (min-width:768px){.navbar-right{float:right!important;margin-right:-15px}}.container:after,.container:before,.nav:after,.nav:before,.navbar-collapse:after,.navbar-collapse:before,.row:after,.row:before{display:table;content:" "}.container:after,.nav:after,.navbar-collapse:after,.row:after{clear:both}@-ms-viewport{width:device-width}.has-drop-cap:not(:focus):first-letter{float:left;font-size:8.4em;line-height:.68;font-weight:100;margin:.05em .1em 0 0;text-transform:uppercase;font-style:normal}.has-drop-cap:not(:focus):after{content:"";display:table;clear:both;padding-top:14px}.wc-block-product-categories__button:not(:disabled):not([aria-disabled=true]):hover{background-color:#fff;color:#191e23;box-shadow:inset 0 0 0 1px #e2e4e7,inset 0 0 0 2px #fff,0 1px 1px rgba(25,30,35,.2)}.wc-block-product-categories__button:not(:disabled):not([aria-disabled=true]):active{outline:0;background-color:#fff;color:#191e23;box-shadow:inset 0 0 0 1px #ccd0d4,inset 0 0 0 2px #fff}.wc-block-product-search .wc-block-product-search__button:not(:disabled):not([aria-disabled=true]):hover{background-color:#fff;color:#191e23;box-shadow:inset 0 0 0 1px #e2e4e7,inset 0 0 0 2px #fff,0 1px 1px rgba(25,30,35,.2)}.wc-block-product-search .wc-block-product-search__button:not(:disabled):not([aria-disabled=true]):active{outline:0;background-color:#fff;color:#191e23;box-shadow:inset 0 0 0 1px #ccd0d4,inset 0 0 0 2px #fff} html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}body{margin:0}footer,header,nav{display:block}a{background-color:transparent}a:active,a:hover{outline:0}h1{font-size:2em;margin:.67em 0}button{color:inherit;font:inherit;margin:0}button{overflow:visible}button{text-transform:none}button{-webkit-appearance:button;cursor:pointer}button::-moz-focus-inner{border:0;padding:0}body,button{color:#4a4a4a;font-family:"Open Sans",sans-serif;font-size:14px;font-weight:300;line-height:1.625}h1,h3{clear:both;font-family:Montserrat,sans-serif}html{box-sizing:border-box}*,:after,:before{box-sizing:inherit}body{background:#fff}ul{margin:0 0 1.5em 0;padding:0 0 0 1.5em}ul{list-style:disc}a{color:#3598db}a:active,a:focus,a:hover{color:#258cd1}a:focus{outline:thin dotted}a:active,a:hover{outline:0}.site-header .nav li a{color:#4a4a4a;font-family:Montserrat,sans-serif;font-size:14px;text-transform:uppercase;font-weight:400;-webkit-transition:.3s;transition:.3s}@media (min-width:768px){.site-header .nav li a{margin:15px 5px 10px;padding:10px 10px;border-bottom:5px solid transparent}}@media (min-width:992px){.site-header .nav li a{font-size:15px;margin:20px 5px 15px}}.site-header .nav li a:focus,.site-header .nav li a:hover{color:#4a4a4a;text-decoration:none;background-color:transparent;border-bottom:5px solid #ef3e36}.navbar-collapse{border-top:none;box-shadow:none}#navbar-collapse-1{padding-left:0}.hamburger{display:block;float:right;position:relative;z-index:1000;overflow:hidden;margin:15px 0;padding:0;width:70px;height:40px;font-size:0;text-indent:-9999px;-webkit-appearance:none;-moz-appearance:none;appearance:none;box-shadow:none;border-radius:0;border:none;cursor:pointer;-webkit-transition:background .3s;transition:background .3s}.hamburger:focus{outline:0}@media (min-width:768px){.hamburger{display:none}}.hamburger span{display:block;position:absolute;top:19px;left:15px;right:15px;height:2px;background-color:#f3773b;-webkit-transition:background .3s;transition:background .3s}.hamburger span::after,.hamburger span::before{position:absolute;display:block;left:0;width:100%;height:2px;background-color:#f3773b;content:"";-webkit-transition-duration:.3s,.3s;transition-duration:.3s,.3s}.hamburger span::before{top:-12px;-webkit-transition-property:top,-webkit-transform;transition-property:top,-webkit-transform;transition-property:top,transform;transition-property:top,transform,-webkit-transform}.hamburger span::after{bottom:-12px;-webkit-transition-property:bottom,-webkit-transform;transition-property:bottom,-webkit-transform;transition-property:bottom,transform;transition-property:bottom,transform,-webkit-transform}button.hamburger,button.hamburger:focus,button.hamburger:hover{background-color:transparent;border-color:transparent;box-shadow:none}.sideNavBody{overflow-x:hidden;position:relative;right:0;-webkit-transition:all .3s ease;transition:all .3s ease}.nav>li>a:focus,.nav>li>a:hover{color:#fff;text-decoration:none;background-color:#f15952}.screen-reader-text{clip:rect(1px,1px,1px,1px);position:absolute!important;height:1px;width:1px;overflow:hidden}.screen-reader-text:focus{background-color:#f1f1f1;border-radius:3px;box-shadow:0 0 2px 2px rgba(0,0,0,.6);clip:auto!important;color:#21759b;display:block;font-size:14px;font-size:.875rem;font-weight:700;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}.site-content:after,.site-content:before,.site-footer:after,.site-footer:before,.site-header:after,.site-header:before{content:"";display:table}.site-content:after,.site-footer:after,.site-header:after{clear:both}.site-header{background-color:#fff;padding:0;border-bottom:1px solid #d1d1d1}.site-header .menu-container{padding:0}a.site-logo{display:block;width:176px;height:40px;margin:15px 0}@media (min-width:768px){a.site-logo{width:220px;height:50px;margin:10px 0}}@media (min-width:992px){a.site-logo{width:264px;height:60px;margin:10px 0}}.footer-container{background:-webkit-linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url(img/footer-bg.jpg);background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url(img/footer-bg.jpg);background-repeat:no-repeat;background-position:center;background-size:cover}.site-footer{padding:20px 0}.copyright{color:#fff;font-size:14px;padding:15px 0;text-align:center}@media (min-width:992px){.copyright{text-align:left}}.copyright span{font-size:14px} *{box-sizing:border-box}</style>
+</head>
+<body class="sideNavBody theme-birthme woocommerce-no-js group-blog">
+<div class="hfeed site" id="page">
+<a class="skip-link screen-reader-text" href="#">Skip to content</a>
+<header class="site-header" id="masthead">
+<div class="container">
+<div class="row">
+<div class="col-xs-9 col-sm-4 logo-container">
+<h1 class="sr-only">BirthME, Doulas</h1>
+<a class="site-logo" href="#" rel="home"></a>
+</div>
+<div class="col-xs-3 col-sm-8 menu-container">
+<button class="hamburger">
+<span>toggle menu</span>
+</button>
+<nav class="nav-primary">
+<h3 class="sr-only">Primary Navigation</h3>
+<div class="collapse navbar-collapse" id="navbar-collapse-1"><ul class="nav navbar-nav navbar-right" id="menu-primary-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-25" id="menu-item-25"><a href="#" title="Home">Home</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-131 dropdown" id="menu-item-131"><a aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown" href="#" title="Services">Services <span class="caret"></span></a>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22" id="menu-item-22"><a href="#" title="About">About</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-24" id="menu-item-24"><a href="#" title="Blog">Blog</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23" id="menu-item-23"><a href="#" title="Contact">Contact</a></li>
+</ul></div> </nav>
+</div>
+</div>
+</div>
+</header>
+<div class="site-content" id="content">
+{{ text }}
+</div>
+<div class="footer-container">
+<footer class="site-footer" id="colophon">
+<div class="container">
+<div class="row">
+{{ links }}
+</div>
+</div>
+</footer>
+<div class="copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-7 footer-left">
+<span>Copyright 2020 {{ keyword }}</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+</body>
+</html>";s:4:"text";s:3740:"<br>Cette superposition de notes permet d’enrichir les accords. Il est plus facile à jouer qu’un accord de Ré mineur ou majeur puisque vous pouvez le jouer avec 2 doigts uniquement. 7. – Corde 3 : L’index à la 1ère case. Vous devez jouer les 4 cordes les plus aiguës et ne pas gratter les cordes de Mi grave et de La lorsque vous jouez cet accord. Mais ou sont les deux autres? Remplace IVm par VI. Il nécessite trois doigts pour être joué mais la position est assez naturelle à adopter pour un guitariste qui débute.  <br>Voici quelques accords supplémentaires à découvrir : L’accord de Do add9 est un accord de Do majeur traditionnel auquel on ajoute une 9e (le Ré). <br> <br>Pour l’exécuter vous pouvez partir d’une position de Mi mineur à laquelle vous ajoutez votre annulaire en case 2 corde de Sol. L’accord de Ré majeur n’est pas le plus facile de cette liste. Pensez à bien gratter les 5 cordes les plus aigües pour éviter le Mi grave. C’est un accord de guitare facile à jouer car vous pouvez abandonner le barré pour libérer la corde de Mi aigu ici. Tant que vous y serez, pourquoi ne pas recommencer mais en portant cette fois votre attention sur le … <br> <br>L’accord de Ré mineur est composé des notes suivantes : Accord facile par excellence, le Mi mineur ne nécessite que 2 doigts pour être joué. ».Et pourtant si, il suffit de trois notes pour jouer n’importe quel accord majeur (à savoir la tonique, la tierce majeure et la quinte).Si il y’a 5 cordes jouées dans le Si barré habituel, 2 sur 5 sont des doublons mais en réalité il n’y a que 3 notes différentes!Si vous savez jouer un accord de La majeur, vous avez déjà gagné!En effet pour jouer votre accord de Si facilement, il vous suffit de décaler de 2 cases à droite votre accord de La habituel.-utiliser 3 doigts sur les cordes de Si, Sol et Re (n° 2, 3 et 4 en partant du bas) en case n°4.-faire un petit barré avec l’index sur les mêmes cases.Nous vous recommandons la deuxième solution car elle vous habitue au barré et permet de faire des décorations façon Rolling Stones avec les doigts qui restent!Donc évitez de taper les deux grosses cordes et essayez d’effleurer la corde de Mi aigüe avec les doigts qui appuient sur les cordes pour l’empêcher de sonner! Je préfère laisser de côté les barrés pour aujourd’hui. La forme d’accord de La permet, tout comme pour le Ré, de pouvoir jouer différentes variations facilement. L’accord de La majeur 7 est composé des notes suivantes : Pour exécuter cet accord, partez de l’accord de La mineur et retirez votre annulaire en case 2 pour laisser la corde jouée à vide. L’accord de La mineur 7 est composé des notes suivantes : Vous commencez à connaître le principe des accords suspendus maintenant non ? Même les plus grands ont eu des difficultés à leur débuts à enchaîner des accords ou à en jouer certains plus compliqués. Au niveau de la position vous pouvez opter pour l’utilisation de l’index/majeur ou du majeur/annulaire sur cet accord. Autrement merci pour l'article trèèèès utile pour les débutants (lol), je vais choper ton si mineur et ton second fa (même si je le connaissais déjà) ;) alain 20/04/2014 06:22 Bonjour et merci pour ses accords simplifié , mais j aimerais savoir si pour l accord du fa#m on peut aussi le … <br> <br>L’accord de Fa est traditionnellement joué en barré. <br> Vous retrouverez très souvent ces lettres dans votre vie de musicien. – Corde 4 : L’annulaire à la 2ème case. Il suffit de tout remonter d’une corde vers le grave. L’accord de La, l’accord de Mi ou encore l’accord de Sol sont relativement faciles à jouer. <br>";s:7:"keyword";s:35:"accord si majeur guitare simplifié";s:5:"links";s:9234:"<a href='https://www.creacionescrea.com.co/forum/23794f-branchement-moteur-machine-%C3%A0-laver-3-fils'>Branchement Moteur Machine à Laver 3 Fils</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-jupiler-pro-league-division-2'>Jupiler Pro League Division 2</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-pr%C3%A9nom-marina-en-amour'>Prénom Marina En Amour</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-sauce-soja-gingembre-ail'>Sauce Soja Gingembre Ail</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-oeuf-cocotte-jambon-bayonne'>Oeuf Cocotte Jambon Bayonne</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-ursl-vis%C3%A9-standard'>Ursl Visé Standard</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-Narine-de-baleine'>Narine De Baleine</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-youtube-1962-hits'>Youtube 1962 Hits</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-google-home-bureau-en-gros'>Google Home Bureau En Gros</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-papicha-en-ligne'>Papicha En Ligne</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-rt-2020-isolation-toiture-terrasse'>Rt 2020 Isolation Toiture Terrasse</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-Les-Ramoneurs-de-Menhirs-YouTube'>Les Ramoneurs De Menhirs YouTube</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-ensemble-matelas-ressort-7-zones-160x200-m%C3%A9moire-de-forme-2-sommiers-80x200-bellagio'>Ensemble Matelas Ressort 7 Zones 160x200 Mémoire De Forme 2 Sommiers 80x200 Bellagio</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-visiophone-sans-fil-port%C3%A9e-%3A-600-m'>Visiophone Sans Fil Portée : 600 M</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-module-knx-hager'>Module Knx Hager</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-trousse-de-lecture-2e-ann%C3%A9e-t%C3%A9l%C3%A9-qu%C3%A9bec'>Trousse De Lecture 2e Année Télé Québec</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-surya-bonaly-vie-priv%C3%A9e'>Surya Bonaly Vie Privée</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-qui-a-invent%C3%A9-le-tiki-taka'>Qui A Inventé Le Tiki-taka</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-paroles-j%27irai-o%C3%B9-tu-iras'>Paroles J'irai Où Tu Iras</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-pedagogy-of-teaching'>Pedagogy Of Teaching</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-les-filles-de-lucie-baud'>Les Filles De Lucie Baud</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-ssh-github-tutorial'>Ssh Github Tutorial</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-masque-protection-ac%2Fdc'>Masque Protection Ac/dc</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-devilman-crybaby-saison-2'>Devilman Crybaby Saison 2</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-conte-d%27%C3%A9t%C3%A9-lieu-de-tournage'>Conte D'été Lieu De Tournage</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-ligne-de-t%C3%AAte'>Ligne De Tête</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-hey-hey-hey-lyrics'>Hey Hey Hey Lyrics</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-sims-4-streetwear'>Sims 4 Streetwear</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-ept-prague-2020'>Ept Prague 2020</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-recette-curcuma-poulet'>Recette Curcuma Poulet</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-fraise-surgel%C3%A9-lidl-prix'>Fraise Surgelé Lidl Prix</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-branchement-contacteur-de-puissance-monophas%C3%A9'>Branchement Contacteur De Puissance Monophasé</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-journal-officiel-de-lalg%C3%A9rie-en-1927'>Journal Officiel De Lalgérie En 1927</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-pistolet-pneumatique-pour-cartouche-silicone'>Pistolet Pneumatique Pour Cartouche Silicone</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-graine-morning-glory'>Graine Morning Glory</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-sauce-pour-remplacer-la-vinaigrette'>Sauce Pour Remplacer La Vinaigrette</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-m%C3%A9tier-pour-les-gens-curieux'>Métier Pour Les Gens Curieux</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-ch%C3%A2teau-de-sable-genius'>Château De Sable Genius</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-abattoir-des-animaux'>Abattoir Des Animaux</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-bouteille-co2-5kg-bi%C3%A8re'>Bouteille Co2 5kg Bière</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-15-million-en-chiffre'>15 Million En Chiffre</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-maquette-chalet-bois'>Maquette Chalet Bois</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-eve-vegan-01'>Eve Vegan 01</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-algorithme-robot-aspirateur'>Algorithme Robot Aspirateur</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-bobine-tesla-fabrication-pdf'>Bobine Tesla Fabrication Pdf</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-pistolet-d%27abattage-pour-volaille'>Pistolet D'abattage Pour Volaille</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-combien-mesure-une-goutte-d%27eau'>Combien Mesure Une Goutte D'eau</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-pottok-%C3%A0-sauver'>Pottok à Sauver</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-diviser-pour-mieux-r%C3%A9gner-algorithme'>Diviser Pour Mieux Régner Algorithme</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-mot-arabe-wallah'>Mot Arabe Wallah</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-rungis-ville-actualit%C3%A9s'>Rungis Ville Actualités</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-tarak-team-pok%C3%A9mon'>Tarak Team Pokémon</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-Blitz-LoL-autoris%C3%A9'>Blitz LoL Autorisé</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-lanceur-sac-%C3%A0-lancer'>Lanceur Sac à Lancer</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-martini-blanc-composition'>Martini Blanc Composition</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-famas-airsoft-occasion'>Famas Airsoft Occasion</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-bo%C3%AEte-foodsaver-pas-cher'>Boîte Foodsaver Pas Cher</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-interrupteur-noir-mat-legrand'>Interrupteur Noir Mat Legrand</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-pierres-tombales-photos'>Pierres Tombales Photos</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-fc-haka-foot'>Fc Haka Foot</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-disjoncteur-triphas%C3%A9-40a'>Disjoncteur Triphasé 40a</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-porte-automatique-maison'>Porte Automatique Maison</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-l%27anarchie-en-arabe'>L'anarchie En Arabe</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-lunette-zeiss-conquest-3-12x50'>Lunette Zeiss Conquest 3-12x50</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-symbolique-des-animaux-dans-l%27art'>Symbolique Des Animaux Dans L'art</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-film-apocalyptique-comique'>Film Apocalyptique Comique</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-parme-2001-2002'>Parme 2001 2002</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-tension-alternative-exercices-corrig%C3%A9s-pdf'>Tension Alternative Exercices Corrigés Pdf</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-smart-tv-samsung-bug'>Smart Tv Samsung Bug</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-gestion-de-projet-%3A-d%C3%A9finition'>Gestion De Projet : Définition</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-musique-douce-de-cirque'>Musique Douce De Cirque</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-discours-contre-la-corrida'>Discours Contre La Corrida</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-resistance-muse-lyrics'>Resistance Muse Lyrics</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-prix-pose-motorisation-volet-roulant'>Prix Pose Motorisation Volet Roulant</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-%C3%A9metteur-r%C3%A9cepteur-infrarouge-d%C3%A9finition'>émetteur-récepteur Infrarouge Définition</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-veau-de-lait-poids'>Veau De Lait Poids</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-cl%C3%A9-rentre-difficilement-dans-serrure'>Clé Rentre Difficilement Dans Serrure</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-fichier-midi-2018'>Fichier Midi 2018</a>,
+";s:7:"expired";i:-1;}

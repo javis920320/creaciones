@@ -1,0 +1,142 @@
+a:5:{s:8:"template";s:11619:"<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>{{ keyword }}</title>
+<link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,300|Montserrat:400,700|Inconsolata" id="prefix_google_fonts-css" media="screen" rel="stylesheet" type="text/css"/>
+<style rel="stylesheet" type="text/css">@charset "UTF-8"; html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}body{margin:0}footer,header,nav{display:block}a{background-color:transparent}a:active,a:hover{outline:0}h1{margin:.67em 0;font-size:2em}button{margin:0;font:inherit;color:inherit}button{overflow:visible}button{text-transform:none}button{-webkit-appearance:button;cursor:pointer}button::-moz-focus-inner{padding:0;border:0} *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}:after,:before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}html{font-size:10px;-webkit-tap-highlight-color:transparent}body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:14px;line-height:1.42857143;color:#333;background-color:#fff}button{font-family:inherit;font-size:inherit;line-height:inherit}a{color:#337ab7;text-decoration:none}a:focus,a:hover{color:#23527c;text-decoration:underline}a:focus{outline:thin dotted;outline:5px auto -webkit-focus-ring-color;outline-offset:-2px}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}h1,h3{font-family:inherit;font-weight:500;line-height:1.1;color:inherit}h1,h3{margin-top:20px;margin-bottom:10px}h1{font-size:36px}h3{font-size:24px}ul{margin-top:0;margin-bottom:10px}.container{padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}@media (min-width:768px){.container{width:750px}}@media (min-width:992px){.container{width:970px}}@media (min-width:1200px){.container{width:1170px}}.row{margin-right:-15px;margin-left:-15px}.col-md-7,.col-sm-4,.col-sm-8,.col-xs-3,.col-xs-9{position:relative;min-height:1px;padding-right:15px;padding-left:15px}.col-xs-3,.col-xs-9{float:left}.col-xs-9{width:75%}.col-xs-3{width:25%}@media (min-width:768px){.col-sm-4,.col-sm-8{float:left}.col-sm-8{width:66.66666667%}.col-sm-4{width:33.33333333%}}@media (min-width:992px){.col-md-7{float:left}.col-md-7{width:58.33333333%}}.collapse{display:none;visibility:hidden}.caret{display:inline-block;width:0;height:0;margin-left:2px;vertical-align:middle;border-top:4px solid;border-right:4px solid transparent;border-left:4px solid transparent}.dropdown{position:relative}.dropdown-toggle:focus{outline:0}.nav{padding-left:0;margin-bottom:0;list-style:none}.nav>li{position:relative;display:block}.nav>li>a{position:relative;display:block;padding:10px 15px}.nav>li>a:focus,.nav>li>a:hover{text-decoration:none;background-color:#eee}.navbar-collapse{padding-right:15px;padding-left:15px;overflow-x:visible;-webkit-overflow-scrolling:touch;border-top:1px solid transparent;-webkit-box-shadow:inset 0 1px 0 rgba(255,255,255,.1);box-shadow:inset 0 1px 0 rgba(255,255,255,.1)}@media (min-width:768px){.navbar-collapse{width:auto;border-top:0;-webkit-box-shadow:none;box-shadow:none}.navbar-collapse.collapse{display:block!important;height:auto!important;padding-bottom:0;overflow:visible!important;visibility:visible!important}}.navbar-nav{margin:7.5px -15px}.navbar-nav>li>a{padding-top:10px;padding-bottom:10px;line-height:20px}@media (min-width:768px){.navbar-nav{float:left;margin:0}.navbar-nav>li{float:left}.navbar-nav>li>a{padding-top:15px;padding-bottom:15px}}@media (min-width:768px){.navbar-right{float:right!important;margin-right:-15px}}.container:after,.container:before,.nav:after,.nav:before,.navbar-collapse:after,.navbar-collapse:before,.row:after,.row:before{display:table;content:" "}.container:after,.nav:after,.navbar-collapse:after,.row:after{clear:both}@-ms-viewport{width:device-width}.has-drop-cap:not(:focus):first-letter{float:left;font-size:8.4em;line-height:.68;font-weight:100;margin:.05em .1em 0 0;text-transform:uppercase;font-style:normal}.has-drop-cap:not(:focus):after{content:"";display:table;clear:both;padding-top:14px}.wc-block-product-categories__button:not(:disabled):not([aria-disabled=true]):hover{background-color:#fff;color:#191e23;box-shadow:inset 0 0 0 1px #e2e4e7,inset 0 0 0 2px #fff,0 1px 1px rgba(25,30,35,.2)}.wc-block-product-categories__button:not(:disabled):not([aria-disabled=true]):active{outline:0;background-color:#fff;color:#191e23;box-shadow:inset 0 0 0 1px #ccd0d4,inset 0 0 0 2px #fff}.wc-block-product-search .wc-block-product-search__button:not(:disabled):not([aria-disabled=true]):hover{background-color:#fff;color:#191e23;box-shadow:inset 0 0 0 1px #e2e4e7,inset 0 0 0 2px #fff,0 1px 1px rgba(25,30,35,.2)}.wc-block-product-search .wc-block-product-search__button:not(:disabled):not([aria-disabled=true]):active{outline:0;background-color:#fff;color:#191e23;box-shadow:inset 0 0 0 1px #ccd0d4,inset 0 0 0 2px #fff} html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}body{margin:0}footer,header,nav{display:block}a{background-color:transparent}a:active,a:hover{outline:0}h1{font-size:2em;margin:.67em 0}button{color:inherit;font:inherit;margin:0}button{overflow:visible}button{text-transform:none}button{-webkit-appearance:button;cursor:pointer}button::-moz-focus-inner{border:0;padding:0}body,button{color:#4a4a4a;font-family:"Open Sans",sans-serif;font-size:14px;font-weight:300;line-height:1.625}h1,h3{clear:both;font-family:Montserrat,sans-serif}html{box-sizing:border-box}*,:after,:before{box-sizing:inherit}body{background:#fff}ul{margin:0 0 1.5em 0;padding:0 0 0 1.5em}ul{list-style:disc}a{color:#3598db}a:active,a:focus,a:hover{color:#258cd1}a:focus{outline:thin dotted}a:active,a:hover{outline:0}.site-header .nav li a{color:#4a4a4a;font-family:Montserrat,sans-serif;font-size:14px;text-transform:uppercase;font-weight:400;-webkit-transition:.3s;transition:.3s}@media (min-width:768px){.site-header .nav li a{margin:15px 5px 10px;padding:10px 10px;border-bottom:5px solid transparent}}@media (min-width:992px){.site-header .nav li a{font-size:15px;margin:20px 5px 15px}}.site-header .nav li a:focus,.site-header .nav li a:hover{color:#4a4a4a;text-decoration:none;background-color:transparent;border-bottom:5px solid #ef3e36}.navbar-collapse{border-top:none;box-shadow:none}#navbar-collapse-1{padding-left:0}.hamburger{display:block;float:right;position:relative;z-index:1000;overflow:hidden;margin:15px 0;padding:0;width:70px;height:40px;font-size:0;text-indent:-9999px;-webkit-appearance:none;-moz-appearance:none;appearance:none;box-shadow:none;border-radius:0;border:none;cursor:pointer;-webkit-transition:background .3s;transition:background .3s}.hamburger:focus{outline:0}@media (min-width:768px){.hamburger{display:none}}.hamburger span{display:block;position:absolute;top:19px;left:15px;right:15px;height:2px;background-color:#f3773b;-webkit-transition:background .3s;transition:background .3s}.hamburger span::after,.hamburger span::before{position:absolute;display:block;left:0;width:100%;height:2px;background-color:#f3773b;content:"";-webkit-transition-duration:.3s,.3s;transition-duration:.3s,.3s}.hamburger span::before{top:-12px;-webkit-transition-property:top,-webkit-transform;transition-property:top,-webkit-transform;transition-property:top,transform;transition-property:top,transform,-webkit-transform}.hamburger span::after{bottom:-12px;-webkit-transition-property:bottom,-webkit-transform;transition-property:bottom,-webkit-transform;transition-property:bottom,transform;transition-property:bottom,transform,-webkit-transform}button.hamburger,button.hamburger:focus,button.hamburger:hover{background-color:transparent;border-color:transparent;box-shadow:none}.sideNavBody{overflow-x:hidden;position:relative;right:0;-webkit-transition:all .3s ease;transition:all .3s ease}.nav>li>a:focus,.nav>li>a:hover{color:#fff;text-decoration:none;background-color:#f15952}.screen-reader-text{clip:rect(1px,1px,1px,1px);position:absolute!important;height:1px;width:1px;overflow:hidden}.screen-reader-text:focus{background-color:#f1f1f1;border-radius:3px;box-shadow:0 0 2px 2px rgba(0,0,0,.6);clip:auto!important;color:#21759b;display:block;font-size:14px;font-size:.875rem;font-weight:700;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}.site-content:after,.site-content:before,.site-footer:after,.site-footer:before,.site-header:after,.site-header:before{content:"";display:table}.site-content:after,.site-footer:after,.site-header:after{clear:both}.site-header{background-color:#fff;padding:0;border-bottom:1px solid #d1d1d1}.site-header .menu-container{padding:0}a.site-logo{display:block;width:176px;height:40px;margin:15px 0}@media (min-width:768px){a.site-logo{width:220px;height:50px;margin:10px 0}}@media (min-width:992px){a.site-logo{width:264px;height:60px;margin:10px 0}}.footer-container{background:-webkit-linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url(img/footer-bg.jpg);background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url(img/footer-bg.jpg);background-repeat:no-repeat;background-position:center;background-size:cover}.site-footer{padding:20px 0}.copyright{color:#fff;font-size:14px;padding:15px 0;text-align:center}@media (min-width:992px){.copyright{text-align:left}}.copyright span{font-size:14px} *{box-sizing:border-box}</style>
+</head>
+<body class="sideNavBody theme-birthme woocommerce-no-js group-blog">
+<div class="hfeed site" id="page">
+<a class="skip-link screen-reader-text" href="#">Skip to content</a>
+<header class="site-header" id="masthead">
+<div class="container">
+<div class="row">
+<div class="col-xs-9 col-sm-4 logo-container">
+<h1 class="sr-only">BirthME, Doulas</h1>
+<a class="site-logo" href="#" rel="home"></a>
+</div>
+<div class="col-xs-3 col-sm-8 menu-container">
+<button class="hamburger">
+<span>toggle menu</span>
+</button>
+<nav class="nav-primary">
+<h3 class="sr-only">Primary Navigation</h3>
+<div class="collapse navbar-collapse" id="navbar-collapse-1"><ul class="nav navbar-nav navbar-right" id="menu-primary-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-25" id="menu-item-25"><a href="#" title="Home">Home</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-131 dropdown" id="menu-item-131"><a aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown" href="#" title="Services">Services <span class="caret"></span></a>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22" id="menu-item-22"><a href="#" title="About">About</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-24" id="menu-item-24"><a href="#" title="Blog">Blog</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23" id="menu-item-23"><a href="#" title="Contact">Contact</a></li>
+</ul></div> </nav>
+</div>
+</div>
+</div>
+</header>
+<div class="site-content" id="content">
+{{ text }}
+</div>
+<div class="footer-container">
+<footer class="site-footer" id="colophon">
+<div class="container">
+<div class="row">
+{{ links }}
+</div>
+</div>
+</footer>
+<div class="copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-7 footer-left">
+<span>Copyright 2020 {{ keyword }}</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+</body>
+</html>";s:4:"text";s:6347:"<br>Now I can’t get to connect either through the subdomain or the local IP.Hi Harry, you can get help via the support forum on DIscourse This seems like a very good initiative, but it has a few major pitfalls:1) You’ve released an IoT standard “to lay the groundwork” way, waaay after everybody else attempted at solving this problem. Except where otherwise noted, content on this site is licensed The first thing to do is to get your hands on a Raspberry Pi® single board computer. The two zigbee must be in a line of sight and check the results in the Python shell and in the hyperterminal of the computer. That may open up a lot of doors for a number of developers.An MQTT adapter on its own isn’t particularly useful because it’s just a messaging protocol, we need to figure out particular devices that can communicate via MQTT and be exposed as a Web Thing via WebSockets.If you have ideas about devices which speak MQTT which could be bridge to the Web Thing API, please do file an issue on GitHub.Sometimes the mDNS broadcasts take a while to propagate and aren’t supported by all operating systems (e.g. It may be possible to re-use existing open source code to build a Z-Wave adapter (or extend the existing one) to support smart lock devices.Not yet, I recommend you file these as feature requests on GitHub so other people can express their interest too and hopefully someone will write adapters. I’m looking forward to seeing what adaptors the Mozilla IoT can get out in the next release, and taking a look at your next blog on how to create adaptors — I might be able to port over some of the custom components I use for Home Assistant.That sounds great! There is already an issue for HomeKit.I installed it and booted it up was am disappointed by a few things. Extensibility through the use of add-ons and a schema-based system for web thing types is core to the project. But given the Raspberry Pi 3 has Bluetooth built in, it should be possible to create an adapter to talk to your BLE devices.Super awsome but security security security and IoT…Please help me save some time and answer these 7 questions:1. Mozilla is just a recent participant since standardisation started at the W3C.It’s important to understand that the idea of the Web of Things is not to compete with existing protocols like ZigBee, Z-Wave, Bluetooth, HomeKit and Weave but rather to provide a unified application layer which runs on top of them. <br> <br>Is this a competitor to hass.io or complementary?There is no Google Home integration yet, but it should be possible if Google Home can call the REST/WebSockets API on the gateway. This is an ongoing evolution of the Web of Things, including their Web Thing Model member submission from 2015 I have google home and prefer to use that for my voice UI. <br> What would it take to add a “driver” for a bespoke application (using a BLE or ANT ANT+) dongle?See this blog post for information on creating an adapter add-on On my todo list and watching the development … any plans for a Modbus protocol interface  .. for such things as solar panels etc.Hi, a “time series database” is on our backlog but I don’t think anyone is working on that yet (I don’t think anyone is looking at Modbus, feel free to file an issue Hello.. very interesting and hassle free procedure to install. >   3. Small trusted computing base: Is most of the device’s software outside its trusted computing base?Please can you define your understanding of “trusted computing base”? The latest If you want to use smart home devices using other protocols like Zigbee or Z-Wave, you will need to invest in USB dongles. It comes with the Zigbee and Z-Wave adapter add-ons installed by default, but you can add support for additional adapters through the add-ons system under “settings” in the main menu.For example, there is a Virtual Things add-on which allows you to experiment with different types of web things without needing to buy any real hardware. Today I’m excited to tell you about the latest version of the There are lots of exciting new features in the latest version of the gateway, including a rules engine for setting ‘The first thing to do is to get your hands on a Raspberry Pi® single board computer. Number of devices: Z-Wave networks are limited to 232 devices, while Zigbee supports up to 65k devices. <br> <br>AES encryption for Zigbee, WPA for WiFi).>    4. The hardware-based root of trust: Does each device have a unique identity that is inseparable from the hardware?I will try to answer your questions the best I can. ESP8266 based, Wifi/433Mhz, cloud operated.Very cool, I’m ready to try it out. JavaScript, Python or Rust).The gateway also comes with experimental voice controls which are turned off by default. Got the login and password info?The gateway is designed to be used as a headless web server, not by plugging in a monitor. Everybody who needs a GUI already has one), and you’re specifically tying it to the Raspberry Pi (again, this would have worked several years ago, but have you seen just how many boards are out there already?           under the If you keep having this problem then please file a bug in the gateway repository If you have further issues Discourse is a good place to go for support (Having a litttle trouble – can’t get to the GUI. Si vous continuez à utiliser ce site Web sans modifier vos paramètres de cookies ou si vous cliquez sur "Accepter" ci-dessous, vous consentez à cela. Devices themselves may also use encryption on the local network (e.g. We will continue to work in the open, release early and release often and we encourage community contributions to help create a solid 1.0 version which more people can enjoy. Please follow the steps in this blog post to set up the gateway and access the web interface from your web browser.This is a very exciting project. We’re also now working on a library to help you build a “native web thing” with the higher end Arduino boards that can support a full TCP/IP stack and expose the Web Thing API themselves. Pour ceux qui souhaitent avoir la main, il ne faudra pas avoir peur de plonger dans la documentation pour comprendre ce qu’il s’y passe.Au final, le projet est prometteur et offre de bonnes perspectives quant à l’utilisation du Zigbee. ";s:7:"keyword";s:21:"Zigbee Raspberry Pi 3";s:5:"links";s:9756:"<a href='https://www.creacionescrea.com.co/forum/23794f-Don-Carlo-Ferdinando-Borromeo'>Don Carlo Ferdinando Borromeo</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-les-contes-de-f%C3%A9es-les-frangines-paroles'>Les Contes De Fées Les Frangines Paroles</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-branchement-prise-240v'>Branchement Prise 240v</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-p%C3%AAche-lapeyrouse-63'>Pêche Lapeyrouse 63</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-rue-du-commerce-sommier'>Rue Du Commerce Sommier</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-plats-familiaux-v%C3%A9g%C3%A9tariens'>Plats Familiaux Végétariens</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-meilleur-challenge-fm-2019'>Meilleur Challenge Fm 2019</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-altered-carbon-elder'>Altered Carbon Elder</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-aircrack-ng-gui-windows'>Aircrack-ng Gui Windows</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-du-rhum-des-femmes-et-de-la-bi%C3%A8re'>Du Rhum Des Femmes Et De La Bière</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-veridis-quo-paroles'>Veridis Quo Paroles</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-final-scene-edge-of-tomorrow'>Final Scene Edge Of Tomorrow</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-youtube-siffler-sur-la-colline'>Youtube Siffler Sur La Colline</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-oeuf-cocotte-micro-onde-epinard'>Oeuf Cocotte Micro Onde Epinard</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-amina-sta-instagram'>Amina Sta Instagram</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-controle-d-acc%C3%A8s-horoquartz'>Controle D Accès Horoquartz</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-et-pourtant-elle-tourne-en-anglais'>Et Pourtant Elle Tourne En Anglais</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-serrure-%C3%A0-p%C3%AAne-piston'>Serrure à Pêne Piston</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-%C3%A9lections-pr%C3%A9sidentielles-france'>élections Présidentielles France</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-pushbullet-home-assistant'>Pushbullet Home Assistant</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-quotes-about-being-alone-and-happy'>Quotes About Being Alone And Happy</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-abattoirs-de-vaugirard'>Abattoirs De Vaugirard</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-creamy-hydrating-masque-nuskin'>Creamy Hydrating Masque Nuskin</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-comment-fonctionne-netflix-prix'>Comment Fonctionne Netflix Prix</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-exercice-boucherot-monophas%C3%A9'>Exercice Boucherot Monophasé</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-qu%27est-ce-que-le-rip'>Qu'est Ce Que Le Rip</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-louise-attaque---anomalie'>Louise Attaque - Anomalie</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-organisation-internationale-de-protection-des-animaux'>Organisation Internationale De Protection Des Animaux</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-voiture-de-drift-telecommander'>Voiture De Drift Telecommander</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-CIBLE-tir-carabine-decathlon'>CIBLE Tir Carabine Decathlon</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-my-bet-advice'>My Bet Advice</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-habitant-de-brou-28'>Habitant De Brou 28</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-mesurer-taille-mors-cheval'>Mesurer Taille Mors Cheval</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-philips-tv-remote-ne-fonctionne-pas'>Philips Tv Remote Ne Fonctionne Pas</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-lewsor-pok%C3%A9mon-noire-2'>Lewsor Pokémon Noire 2</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-Never-en-fran%C3%A7ais'>Never En Français</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-inter-milan-fm-2020'>Inter Milan Fm 2020</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-formule-r%C3%A9v%C3%A9lateur-photo'>Formule Révélateur Photo</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-sense8-distribution-saison-2'>Sense8 Distribution Saison 2</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-technicien-v%C3%A9t%C3%A9rinaire-abattoir'>Technicien Vétérinaire Abattoir</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-roul%C3%A9-au-citron'>Roulé Au Citron</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-turban-femme-moderne'>Turban Femme Moderne</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-chanson-mama-queen'>Chanson Mama Queen</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-symbolique-des-animaux-dans-l%27art'>Symbolique Des Animaux Dans L'art</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-equus-caballus-silvaticus'>Equus Caballus Silvaticus</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-bobine-tesla-miniature-prix'>Bobine Tesla Miniature Prix</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-biblioth%C3%A8que-dfplayer-arduino'>Bibliothèque Dfplayer Arduino</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-la-presse-les-affam%C3%A9s'>La Presse Les Affamés</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-saillie-de-trotteurs'>Saillie De Trotteurs</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-faisan-obscur-sauvage'>Faisan Obscur Sauvage</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-omelette-courgette-mozzarella'>Omelette Courgette Mozzarella</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-DJ-Bigflo-et-Oli'>DJ Bigflo Et Oli</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-quiz-rome-du-mythe-%C3%A0-lhistoire'>Quiz Rome Du Mythe à Lhistoire</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-chart-definition-english'>Chart Definition English</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-fumig%C3%A8ne-d%C3%A9sinfectant-voiture'>Fumigène Désinfectant Voiture</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-branchement-moteur-machine-%C3%A0-laver-3-fils'>Branchement Moteur Machine à Laver 3 Fils</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-R%C3%A9pertoire-pour-chorale-adulte'>Répertoire Pour Chorale Adulte</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-association-protection-for%C3%AAt-france'>Association Protection Forêt France</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-carte-sim-nfc-orange'>Carte Sim Nfc Orange</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-Diaspora-dans-le-monde'>Diaspora Dans Le Monde</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-cr%C3%AApe-avec-un-oeuf'>Crêpe Avec Un Oeuf</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-lit-boxspring-conforama'>Lit Boxspring Conforama</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-volet-roulant-velux-solaire-ou-%C3%A9lectrique'>Volet Roulant Velux Solaire Ou électrique</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-les-limites-de-la-d%C3%A9mocratie-participative-pdf'>Les Limites De La Démocratie Participative Pdf</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-Claudio-Cap%C3%A9o-%E2%80%91-%C3%A7a-va'>Claudio Capéo ‑ ça Va</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-le-monde-de-narnia-%3A-le-prince-caspian-streaming-vf'>Le Monde De Narnia : Le Prince Caspian Streaming Vf</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-natalie-martinez-s%C3%A9rie'>Natalie Martinez Série</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-bourse-du-travail-bordeaux-horaires'>Bourse Du Travail Bordeaux Horaires</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-bet365-application-iphone'>Bet365 Application Iphone</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-miossec-concert-youtube'>Miossec Concert Youtube</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-Bubu-le-clown'>Bubu Le Clown</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-il-%C3%A9tait-encore-une-fois'>Il était Encore Une Fois</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-veste-en-cuir-ann%C3%A9e-80-femme'>Veste En Cuir Année 80 Femme</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-plan-support-cible-tir-%C3%A0-l%27arc'>Plan Support Cible Tir à L'arc</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-bio-c-bon-lyon-1'>Bio C Bon Lyon 1</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-barri%C3%A8re-de-parking-automatique'>Barrière De Parking Automatique</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-code-scout-d%C3%A9codeur'>Code Scout Décodeur</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-comment-siffler-fort'>Comment Siffler Fort</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-grove---nfc-tag'>Grove - Nfc Tag</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-prix-tube-cigarette-belgique'>Prix Tube Cigarette Belgique</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-cl%C3%B4ture-bois-jardin'>Clôture Bois Jardin</a>,
+<a href='https://www.creacionescrea.com.co/forum/23794f-mas-36-pas-cher'>Mas 36 Pas Cher</a>,
+";s:7:"expired";i:-1;}
