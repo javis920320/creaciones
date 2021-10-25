@@ -832,19 +832,22 @@ function creaentidad() {
 }
 
 
-function parametros(x) {
-    //alert(x);
-    $('#tipoent').val(x);
+function modalparametros(tipoentidad) {
+   
+    $('#tipoent').val(tipoentidad);
+    nombrebotonmodal(tipoentidad);
+   
+    
     $('#contend').addClass('hide');
     $('#lstdepe').addClass('hide');
 
 
 
-    $.post(baseurl + "Cpedidomultiple/tipoentidad", { tipoentidad: x },
+    $.post(baseurl + "Cpedidomultiple/tipoentidad", { tipoentidad: tipoentidad },
         function(data) {
             var x = JSON.parse(data);
             html = "<select class=' x1 form-control'><option value='0'>Seleccione una opcion</option>";
-            //html='':
+           
             $.each(x, function(i, items) {
                 html += "<option value=" + items.identidad + ">" + items.nomentidad + "</option>";
             });
@@ -854,6 +857,27 @@ function parametros(x) {
             $('#x1').html(html);
         });
 
+
+}
+
+const nombrebotonmodal=(tipoentidad)=>{
+
+    if(tipoentidad=='E')
+    {
+        document.getElementById('formentidad').innerText='Empresa';
+    
+    }
+    else if(tipoentidad=='U'){
+                document.getElementById('formentidad').innerText='Universidades';
+                document.getElementById('formdep').innerText='Programas o cursos';
+                
+            }else if(tipoentidad=='C'){
+                document.getElementById('formentidad').innerText='Colegios';
+                document.getElementById('formdep').innerText='Tipo Unifome';
+
+            }
+
+             
 
 }
 
